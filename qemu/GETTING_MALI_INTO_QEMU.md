@@ -32,7 +32,7 @@ support kernel 3.10.
 Checked GitHub mirrors of ARM's open-source Mali releases:
 
 | Repository | Versions Available |
-|------------|-------------------|
+| ------------ | ------------------- |
 | [LibreELEC/mali-midgard](https://github.com/LibreELEC/mali-midgard) | r26p0, r27p0, r28p0 |
 | [EasyNetDev/mali-midgard](https://github.com/EasyNetDev/mali-midgard) | r26p0, r28p0 |
 
@@ -47,7 +47,7 @@ downloads require registration and the r7p0 archives aren't easily accessible.
 Samsung is required by the GPL to release kernel source for their devices. Found
 a GitHub mirror of the exact kernel:
 
-```
+```url
 https://github.com/jcadduono/android_kernel_samsung_universal3475
 ```
 
@@ -70,7 +70,7 @@ This pulled ~1.5 MB (844 objects) — just the GPU drivers.
 
 ### What's inside
 
-```
+```path
 drivers/gpu/arm/
 ├── Kconfig          # Top-level GPU menu
 ├── Kbuild
@@ -166,15 +166,18 @@ the real driver, we built a **stub kernel module** that:
 ### What was extracted from the real driver
 
 From `mali_uk.h`:
+
 - `union uk_header` structure (8 bytes: id + ret + alignment)
 - `UK_FUNC_ID = 512` base offset
 - `struct uku_version_check_args`
 
 From `mali_kbase_uku.h`:
+
 - All 40+ `KBASE_FUNC_*` constants (MEM_ALLOC = 512, MEM_IMPORT = 513, etc.)
 - Argument structures for each function
 
 From `mali_kbase_core_linux.c`:
+
 - `CALL_MAX_SIZE = 536` max payload
 - `kbase_ioctl()` copy_from_user / dispatch / copy_to_user flow
 - `kbase_dispatch()` version handshake requirement
@@ -211,7 +214,7 @@ insmod /lib/modules/mali_stub.ko
 ## How the Stub Compares to the Real Driver
 
 | Aspect | Real Driver | Stub |
-|--------|-------------|------|
+| -------- | ------------- | ------ |
 | Device node | `/dev/mali0` | `/dev/mali0` ✅ |
 | Ioctl protocol | UK header + payload | Same ✅ |
 | Function IDs | 40+ KBASE_FUNC_* | Same ✅ |
@@ -247,14 +250,14 @@ repacks the initramfs. Then just `run-qemu.bat` to test.
 ## Source Files
 
 | File | Purpose |
-|------|---------|
+| ------ | --------- |
 | `mali_stub.c` | The stub kernel module source |
 | `build_mali_stub.sh` | Build script (compile + inject into rootfs) |
 | `ioctl_enum.c` | Userspace test program that exercises the Mali ioctl interface |
 
 ## References
 
-- Samsung GPL kernel source: https://github.com/jcadduono/android_kernel_samsung_universal3475
+- Samsung GPL kernel source: <https://github.com/jcadduono/android_kernel_samsung_universal3475>
 - Driver location in source tree: `drivers/gpu/arm/t72x/r7p0/`
 - Key files consulted: `mali_kbase_core_linux.c`, `mali_kbase_uku.h`, `mali_uk.h`
-- ARM Mali Midgard architecture: https://developer.arm.com/ip-products/graphics-and-multimedia/mali-gpus
+- ARM Mali Midgard architecture: <https://developer.arm.com/ip-products/graphics-and-multimedia/mali-gpus>
