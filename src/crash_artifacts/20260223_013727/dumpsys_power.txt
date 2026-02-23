@@ -1,0 +1,436 @@
+POWER MANAGER (dumpsys power)
+
+
+
+Power Manager State:
+
+  mDirty=0x0
+
+  mWakefulness=Awake
+
+  mWakefulnessChanging=false
+
+  mIsPowered=true
+
+  mPlugType=2
+
+  mBatteryLevel=100
+
+  mIsScreenBrightnessSettingChangedAfterCriticalLowBattery=false
+
+  mIsScreenBrightnessOverridenAfterCriticalLowBattery=false
+
+  mBatteryLevelWhenDreamStarted=0
+
+  mDockState=0
+
+  mStayOn=true
+
+  mProximityPositive=false
+
+  mBootCompleted=true
+
+  mSystemReady=true
+
+  mHalAutoSuspendModeEnabled=false
+
+  mHalInteractiveModeEnabled=true
+
+  mWakeLockSummary=0x1
+
+  mUserActivitySummary=0x1
+
+  mRequestWaitForNegativeProximity=false
+
+  mSandmanScheduled=false
+
+  mSandmanSummoned=false
+
+  mLowPowerModeEnabled=false
+
+  mBatteryLevelLow=false
+
+  mDeviceIdleMode=false
+
+  mDeviceIdleWhitelist=[10008, 10044]
+
+  mDeviceIdleTempWhitelist=[]
+
+  mLastWakeTime=3016540 (529952 ms ago)
+
+  mLastSleepTime=3015850 (530642 ms ago)
+
+  mLastUserActivityTime=3545297 (1195 ms ago)
+
+  mLastUserActivityTimeNoChangeLights=3543307 (3185 ms ago)
+
+  mLastInteractivePowerHintTime=3545297 (1195 ms ago)
+
+  mLastScreenBrightnessBoostTime=0 (3546492 ms ago)
+
+  mScreenBrightnessBoostInProgress=false
+
+  mDisplayReady=true
+
+  mHoldingWakeLockSuspendBlocker=true
+
+  mHoldingDisplaySuspendBlocker=true
+
+
+
+Settings and Configuration:
+
+  mDecoupleHalAutoSuspendModeFromDisplayConfig=false
+
+  mDecoupleHalInteractiveModeFromDisplayConfig=false
+
+  mWakeUpWhenPluggedOrUnpluggedConfig=true
+
+  mWakeUpWhenPluggedOrUnpluggedInTheaterModeConfig=false
+
+  mTheaterModeEnabled=false
+
+  mSuspendWhenScreenOffDueToProximityConfig=false
+
+  mDreamsSupportedConfig=true
+
+  mDreamsEnabledByDefaultConfig=false
+
+  mDreamsActivatedOnSleepByDefaultConfig=false
+
+  mDreamsActivatedOnDockByDefaultConfig=true
+
+  mDreamsEnabledOnBatteryConfig=false
+
+  mDreamsBatteryLevelMinimumWhenPoweredConfig=-1
+
+  mDreamsBatteryLevelMinimumWhenNotPoweredConfig=15
+
+  mDreamsBatteryLevelDrainCutoffConfig=5
+
+  mDreamsEnabledSetting=false
+
+  mDreamsActivateOnSleepSetting=true
+
+  mDreamsActivateOnDockSetting=false
+
+  mDozeAfterScreenOffConfig=false
+
+  mLowPowerModeSetting=false
+
+  mAutoLowPowerModeConfigured=false
+
+  mAutoLowPowerModeSnoozing=false
+
+  mLowBatteryTriggerLevel=0
+
+  mMinimumScreenOffTimeoutConfig=3000
+
+  mMaximumScreenDimDurationConfig=7000
+
+  mMaximumScreenDimRatioConfig=0.20000005
+
+  mScreenOffTimeoutSetting=600000
+
+  mSleepTimeoutSetting=-1
+
+  mMaximumScreenOffTimeoutFromDeviceAdmin=2147483647 (enforced=false)
+
+  mStayOnWhilePluggedInSetting=3
+
+  mScreenBrightnessSetting=104
+
+  mScreenAutoBrightnessAdjustmentSetting=-0.192
+
+  mScreenBrightnessModeSetting=0
+
+  mScreenBrightnessOverrideFromWindowManager=-1
+
+  mUserActivityTimeoutOverrideFromWindowManager=-1
+
+  mTemporaryScreenBrightnessSettingOverride=-1
+
+  mTemporaryScreenAutoBrightnessAdjustmentSettingOverride=NaN
+
+  mDozeScreenStateOverrideFromDreamManager=0
+
+  mDozeScreenBrightnessOverrideFromDreamManager=-1
+
+  mScreenBrightnessSettingMinimum=3
+
+  mScreenBrightnessSettingMaximum=255
+
+  mScreenBrightnessSettingDefault=128
+
+  mDoubleTapWakeEnabled=false
+
+  mLastUserActivitySummary: 1
+
+  mIsCocktailBarCover: false
+
+  mIsSupportedSensorHub: false
+
+  mIsInPocketOrBagAvailable: false
+
+  mLastWakeUpReason: 0
+
+  mWakeUpPreventionForNotificationSetting: false
+
+  mWakeUpPreventionPackagesForNotificationSetting: null
+
+  mOutdoorModeSetting: false
+
+  mIsSupportedLightSensor: false
+
+  mTemporaryMarkerScreenBrightnessSettingOverride=-1
+
+
+
+  SecProductFeature_FRAMEWORK.SEC_PRODUCT_FEATURE_FRAMEWORK_ENABLE_SMART_STAY: true
+
+  SecProductFeature_CAMERA.SEC_PRODUCT_FEATURE_CAMERA_DELAY_TIME_FOR_SMART_STAY: 2750
+
+  USE_AUTO_BRIGHTNESS_DETAIL: false (mSCafeName:  mIsMocha: false upgradeLollipop: false SEC_FLOATING_FEATURE_SETTINGS_SUPPORT_AUTOMATIC_BRIGHTNESS_DETAIL: true)
+
+  mFeatureNotifyScreenOffTimeout: false
+
+
+
+Sleep timeout: -1 ms
+
+Screen off timeout: 600000 ms
+
+Screen dim duration: 7000 ms
+
+Screen dim duration override: -1 ms
+
+
+
+Smart Stay:
+
+  USE_SMART_STAY: true
+
+  USE_PRE_SMART_STAY: true
+
+  mSmartStayEnabledSetting: false
+
+  SmartStayDelay: 2750
+
+  mNextTimeoutForSmartStay: -1
+
+  mPendingMessageSmartStay: false
+
+  mPendingMessagePreSmartStay: false
+
+  mFaceDetected: false
+
+  mIsBadCurrentConsumptionDevice: true
+
+
+
+UID states:
+
+  UID 1000: 0
+
+  UID 1001: 0
+
+  UID 1002: 3
+
+  UID 1037: 16
+
+  UID 5006: 6
+
+  UID u0a5: 6
+
+  UID u0a6: 10
+
+  UID u0a8: 2
+
+  UID u0a32: 2
+
+  UID u0a35: 10
+
+  UID u0a43: 6
+
+  UID u0a47: 0
+
+  UID u0a48: 12
+
+  UID u0a50: 3
+
+  UID u0a160: 2
+
+
+
+InputDeviceLightState:
+
+  mTouchKeyOffTimeoutSetting: 6000
+
+  mIsSipVisible: false
+
+  mTouchKeyForceDisable: false
+
+  mTouchKeyForceDisableOverrideFromSystemPowerSaveMode: false
+
+  mInputDeviceEnabled: true
+
+  mEmergencyMode: false
+
+  mIsFolderType: false
+
+
+
+ATT EAS Pin lock:
+
+  mSecuredLockEnableSetting: 0
+
+  mSecuredLockTimeoutSetting: 600000
+
+
+
+UID states:
+
+  UID 1000: 0
+
+  UID 1001: 0
+
+  UID 1002: 3
+
+  UID 1037: 16
+
+  UID 5006: 6
+
+  UID u0a5: 6
+
+  UID u0a6: 10
+
+  UID u0a8: 2
+
+  UID u0a32: 2
+
+  UID u0a35: 10
+
+  UID u0a43: 6
+
+  UID u0a47: 0
+
+  UID u0a48: 12
+
+  UID u0a50: 3
+
+  UID u0a160: 2
+
+
+
+Clear Cover:
+
+  mIsCoverClosed: false
+
+  mlastUpdateCoverStateReason: isCoverClosedBySysfs called on closed = false
+
+  mlastUpdateCoverStateTime: = -1 (3546502 ms ago)
+
+  mFeatureCoverSysfs: false
+
+  mIsCocktailBarCover: false
+
+  mCoverType: 2 at -1 (3546502 ms ago)
+
+  mlastUpdateCoverTypeReason: 
+
+
+
+ALPM Mode:
+
+  mIsAlpmMode: false
+
+  mPendingForceUnblankDisplayState: -1
+
+
+
+SEC_PRODUCT_FEATURE_COMMON_SUPPORT_COCKTAIL_FW: false
+
+
+
+FTA mode: false
+
+SEC_USE_FACTORY_BINARY: false
+
+
+
+SEC_FEATURE_MARKER_TRACKER: false
+
+
+
+SEC_FEATURE_MAXMANUAL_HBM: true
+
+
+
+Wake Locks: size=3
+
+  PARTIAL_WAKE_LOCK              '*job*/com.android.vending/com.google.android.finsky.scheduler.process.backgroundimpl.PhoneskyJobServiceBackground' (uid=1000, pid=2764, ws=WorkSource{10032}) (elapsedTime=227020)
+
+  PARTIAL_WAKE_LOCK              '*job*/com.android.vending/com.google.android.finsky.scheduler.process.backgroundimpl.PhoneskyJobServiceBackground' (uid=1000, pid=2764, ws=WorkSource{10032}) (elapsedTime=227018)
+
+  PARTIAL_WAKE_LOCK              '*dexopt*' (uid=1000, pid=2764, ws=WorkSource{-1}) (elapsedTime=46939)
+
+
+
+Suspend Blockers: size=4
+
+  PowerManagerService.WakeLocks: ref count=1
+
+  PowerManagerService.Display: ref count=1
+
+  PowerManagerService.Broadcasts: ref count=0
+
+  PowerManagerService.WirelessChargerDetector: ref count=0
+
+
+
+Display Power: state=ON
+
+
+
+Wireless Charger Detector State:
+
+  mGravitySensor=null
+
+  mPoweredWirelessly=false
+
+  mAtRest=false
+
+  mRestX=0.0, mRestY=0.0, mRestZ=0.0
+
+  mDetectionInProgress=false
+
+  mDetectionStartTime=0 (never)
+
+  mMustUpdateRestPosition=false
+
+  mTotalSamples=0
+
+  mMovingSamples=0
+
+  mFirstSampleX=0.0, mFirstSampleY=0.0, mFirstSampleZ=0.0
+
+  mLastSampleX=0.0, mLastSampleY=0.0, mLastSampleZ=0.0
+
+
+
+
+
+ ====================== beginning of PMS  log ======================
+
+  Day       Time    Tid Debug     TAG            INFO
+
+ ===================================================================
+
+ ======================= end of PMS log ========================
+
+ PMSLog Done !!! 
+
+
+
+
+

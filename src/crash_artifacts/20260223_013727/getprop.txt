@@ -1,0 +1,848 @@
+[audioflinger.bootsnd]: [0]
+
+[boot.sfbootcomplete]: [0]
+
+[dalvik.vm.dex2oat-Xms]: [64m]
+
+[dalvik.vm.dex2oat-Xmx]: [512m]
+
+[dalvik.vm.dex2oat-filter]: [speed]
+
+[dalvik.vm.heapgrowthlimit]: [128m]
+
+[dalvik.vm.heapmaxfree]: [8m]
+
+[dalvik.vm.heapminfree]: [2m]
+
+[dalvik.vm.heapsize]: [256m]
+
+[dalvik.vm.heapstartsize]: [8m]
+
+[dalvik.vm.heaptargetutilization]: [0.75]
+
+[dalvik.vm.image-dex2oat-Xms]: [64m]
+
+[dalvik.vm.image-dex2oat-Xmx]: [64m]
+
+[dalvik.vm.image-dex2oat-filter]: [speed]
+
+[dalvik.vm.isa.arm.features]: [default]
+
+[dalvik.vm.isa.arm.variant]: [cortex-a7]
+
+[dalvik.vm.stack-trace-file]: [/data/anr/traces.txt]
+
+[debug.atrace.tags.enableflags]: [0]
+
+[debug.force_rtl]: [0]
+
+[debug.hwui.render_dirty_regions]: [false]
+
+[debug.sf.layerdump]: [0]
+
+[dev.bootcomplete]: [1]
+
+[dev.kies.deviceowner]: [0]
+
+[dev.kies.sommode]: [TRUE]
+
+[dev.kiessupport]: [TRUE]
+
+[dev.knoxapp.running]: [false]
+
+[dev.ssrm.app.type]: [false]
+
+[dev.ssrm.appsync3p]: [true]
+
+[dev.ssrm.emergencymode]: [false]
+
+[dev.ssrm.init]: [1]
+
+[dev.ssrm.lpc_ver]: [1.0.21]
+
+[dev.ssrm.mode]: []
+
+[dev.ssrm.pst]: [418]
+
+[dev.ssrm.smart_switch]: [false]
+
+[dhcp.wlan0.dns1]: [192.168.1.13]
+
+[dhcp.wlan0.dns2]: []
+
+[dhcp.wlan0.dns3]: []
+
+[dhcp.wlan0.dns4]: []
+
+[dhcp.wlan0.domain]: [dogeplanet.home]
+
+[dhcp.wlan0.gateway]: [192.168.1.13]
+
+[dhcp.wlan0.ipaddress]: [192.168.1.104]
+
+[dhcp.wlan0.leasetime]: [86400]
+
+[dhcp.wlan0.mask]: [255.255.255.0]
+
+[dhcp.wlan0.mtu]: []
+
+[dhcp.wlan0.pid]: [3842]
+
+[dhcp.wlan0.reason]: [REBOOT]
+
+[dhcp.wlan0.result]: [ok]
+
+[dhcp.wlan0.roaming]: [0]
+
+[dhcp.wlan0.server]: [192.168.1.13]
+
+[dhcp.wlan0.vendorInfo]: []
+
+[gsm.current.phone-type]: [1]
+
+[gsm.network.type]: [Unknown]
+
+[gsm.operator.alpha]: []
+
+[gsm.operator.iso-country]: []
+
+[gsm.operator.ispsroaming]: [false]
+
+[gsm.operator.isroaming]: [false]
+
+[gsm.operator.numeric]: []
+
+[gsm.sim.operator.alpha]: []
+
+[gsm.sim.operator.iso-country]: []
+
+[gsm.sim.operator.numeric]: []
+
+[gsm.sim.state]: [NETWORK_LOCKED]
+
+[gsm.version.baseband]: [T377AUCU2AQGF]
+
+[gsm.version.ril-impl]: [Samsung RIL v3.0]
+
+[init.svc.BCS-daemon]: [running]
+
+[init.svc.DIAG-daemon]: [running]
+
+[init.svc.DR-daemon]: [running]
+
+[init.svc.SMD-daemon]: [running]
+
+[init.svc.adbd]: [running]
+
+[init.svc.argos-daemon]: [running]
+
+[init.svc.at_distributor]: [running]
+
+[init.svc.auditd]: [running]
+
+[init.svc.bootanim]: [stopped]
+
+[init.svc.bootchecker]: [stopped]
+
+[init.svc.ccm]: [running]
+
+[init.svc.compact_memory]: [stopped]
+
+[init.svc.cpboot-daemon]: [running]
+
+[init.svc.cs_service]: [running]
+
+[init.svc.debuggerd]: [running]
+
+[init.svc.dhcpcd_wlan0]: [running]
+
+[init.svc.drm]: [running]
+
+[init.svc.dumpstate]: [stopped]
+
+[init.svc.edmaudit]: [running]
+
+[init.svc.epmlogd]: [stopped]
+
+[init.svc.flash_recovery]: [stopped]
+
+[init.svc.gatekeeperd]: [running]
+
+[init.svc.gpsd]: [running]
+
+[init.svc.healthd]: [running]
+
+[init.svc.icd]: [stopped]
+
+[init.svc.imsd]: [running]
+
+[init.svc.installd]: [running]
+
+[init.svc.keystore]: [running]
+
+[init.svc.lmkd]: [running]
+
+[init.svc.logd]: [running]
+
+[init.svc.logd-reinit]: [stopped]
+
+[init.svc.macloader]: [stopped]
+
+[init.svc.media]: [running]
+
+[init.svc.mobex-daemon]: [running]
+
+[init.svc.mobicore]: [running]
+
+[init.svc.netd]: [running]
+
+[init.svc.otp]: [running]
+
+[init.svc.p2p_supplicant]: [running]
+
+[init.svc.powersnd]: [stopped]
+
+[init.svc.prepare_param]: [stopped]
+
+[init.svc.ril-daemon]: [running]
+
+[init.svc.scs]: [stopped]
+
+[init.svc.sdp_cryptod]: [running]
+
+[init.svc.sec-sh]: [stopped]
+
+[init.svc.secure_storage]: [running]
+
+[init.svc.servicemanager]: [running]
+
+[init.svc.surfaceflinger]: [running]
+
+[init.svc.swapon]: [stopped]
+
+[init.svc.ueventd]: [running]
+
+[init.svc.vold]: [running]
+
+[init.svc.watchdogd]: [running]
+
+[init.svc.zygote]: [running]
+
+[installd.sdcard_manipulate_done]: [0]
+
+[keyguard.no_require_sim]: [true]
+
+[logd.auditd]: [false]
+
+[logd.klogd]: [false]
+
+[net.bt.name]: [Android]
+
+[net.change]: [net.dns1]
+
+[net.dns1]: [192.168.1.13]
+
+[net.hostname]: [android-fb942a8fd38f9c5a]
+
+[net.knox.shareddevice.version]: [2.6.0]
+
+[net.knoxscep.version]: [2.0.1]
+
+[net.knoxsso.version]: [2.5.0]
+
+[net.knoxvpn.version]: [2.2.5]
+
+[net.qtaguid_enabled]: [1]
+
+[net.smart_switch.disabled]: [1]
+
+[net.tcp.default_init_rwnd]: [60]
+
+[persist.audio.allsoundmute]: [0]
+
+[persist.audio.cpufreq]: [350000]
+
+[persist.audio.finemediavolume]: [1]
+
+[persist.audio.globaleffect]: [1]
+
+[persist.audio.headsetsysvolume]: [9]
+
+[persist.audio.hphonesysvolume]: [9]
+
+[persist.audio.mpseek]: [0]
+
+[persist.audio.mysound]: [1]
+
+[persist.audio.ringermode]: [1]
+
+[persist.audio.soundalivefxsec]: [1]
+
+[persist.audio.stereospeaker]: [0]
+
+[persist.audio.sysvolume]: [0]
+
+[persist.audio.uhqa]: [0]
+
+[persist.audio.voipcpufreq]: [350000]
+
+[persist.bluetooth_fw_ver]: [bcm43454_V0100.0131.hcd]
+
+[persist.eons.enabled]: [true]
+
+[persist.hdmi.hdcp_enabled]: [1]
+
+[persist.keyguard.ucs]: []
+
+[persist.keyguard.ucs.csname]: []
+
+[persist.radio.calldefault.simid]: [0]
+
+[persist.radio.dataprefer.slotId]: [0]
+
+[persist.radio.defdataSIMchange]: [true]
+
+[persist.radio.initphone-type]: [1]
+
+[persist.radio.plmnname_1]: []
+
+[persist.radio.plmnname_2]: []
+
+[persist.radio.sib16_support]: [0]
+
+[persist.radio.ss.voiceclassims]: [false]
+
+[persist.ril.ims.eutranParam]: [3]
+
+[persist.ril.ims.pdnFailCause]: [0]
+
+[persist.ril.ims.utranParam]: [0]
+
+[persist.ril.modem.board]: [SHANNON308]
+
+[persist.ril.xcap.pdnFailCause]: [0]
+
+[persist.security.ams.enforcing]: [3]
+
+[persist.security.tlc.ccm]: [0]
+
+[persist.security.tlc.otp]: [0]
+
+[persist.security.tlc.tui]: [1]
+
+[persist.service.bdroid.version]: [4.1]
+
+[persist.sys.ccm.date]: [Wed Jul  5 19:43:28 KST 2017]
+
+[persist.sys.dalvik.vm.lib.2]: [libart.so]
+
+[persist.sys.drs.date]: [Wed Jul  5 19:43:28 KST 2017]
+
+[persist.sys.kap.date]: [Wed Jul  5 19:43:28 KST 2017]
+
+[persist.sys.kap.status]: [NONE]
+
+[persist.sys.locale]: [en-US]
+
+[persist.sys.localedefault]: []
+
+[persist.sys.localenosim]: [en-US]
+
+[persist.sys.profiler_ms]: [0]
+
+[persist.sys.setupwizard]: [FINISH]
+
+[persist.sys.silent]: [1]
+
+[persist.sys.sm_mode]: [1]
+
+[persist.sys.storage_preload]: [2]
+
+[persist.sys.timezone]: [America/Los_Angeles]
+
+[persist.sys.usb.config]: [acm,dm]
+
+[persist.sys.usb.q_config]: [acm,dm,adb]
+
+[persist.sys.webview.vmsize]: [123422160]
+
+[ril.CompleteMsg]: [OK]
+
+[ril.ICC_TYPE]: [2]
+
+[ril.RildInit]: [1]
+
+[ril.approved_codever]: [none]
+
+[ril.approved_cscver]: [none]
+
+[ril.approved_modemver]: [none]
+
+[ril.atd_status]: [1_1_0]
+
+[ril.backoffstate]: [1024]
+
+[ril.cbd.boot_done]: [1]
+
+[ril.cbd.rfs_check_done]: [1]
+
+[ril.cs_svc]: [1]
+
+[ril.ecclist00]: [911/0,112/0,112,911]
+
+[ril.hasisim]: [1]
+
+[ril.hw_ver]: [REV0.3]
+
+[ril.ims.ecsupport]: [2]
+
+[ril.ims.ltevoicesupport]: [2]
+
+[ril.manufacturedate]: [161019]
+
+[ril.model_id]: [QB6896004]
+
+[ril.modem.board]: [SHANNON308]
+
+[ril.official_cscver]: [T377AATT2AQGF]
+
+[ril.product_code]: [SM-T377AZKAATT]
+
+[ril.radiostate]: [10]
+
+[ril.rfcal_date]: [20161020]
+
+[ril.serialnumber]: [R52HA1JT2HE]
+
+[ril.servicestate]: [1]
+
+[ril.ss.routing]: [0]
+
+[ril.subinfo]: [0:4]
+
+[ril.sw_ver]: [T377AUCU2AQGF]
+
+[rild.libpath]: [/system/lib/libsec-ril.so]
+
+[ro.adb.qemud]: [1]
+
+[ro.adb.secure]: [1]
+
+[ro.allow.mock.location]: [0]
+
+[ro.arch]: [exynos3475]
+
+[ro.astcenc.astcsupport]: [1]
+
+[ro.baseband]: [unknown]
+
+[ro.board.platform]: [exynos3]
+
+[ro.boot.bcd_im_offset]: [7341616]
+
+[ro.boot.bcd_me_offset]: [7341696]
+
+[ro.boot.bcd_pr_offset]: [7341856]
+
+[ro.boot.bcd_sku_offset]: [7341936]
+
+[ro.boot.bcd_sn_offset]: [7341776]
+
+[ro.boot.boot_salescode]: []
+
+[ro.boot.bootloader]: [T377AUCU2AQGF]
+
+[ro.boot.debug_level]: [0x4f4c]
+
+[ro.boot.emmc_checksum]: [3]
+
+[ro.boot.hardware]: [universal3475]
+
+[ro.boot.odin_download]: [1]
+
+[ro.boot.sec_atd.tty]: [/dev/ttySAC2]
+
+[ro.boot.security_mode]: [1526595584]
+
+[ro.boot.selinux]: [enforcing]
+
+[ro.boot.serialno]: [52030d9842d7a3bd]
+
+[ro.boot.warranty_bit]: [0]
+
+[ro.boot_recovery]: [unknown]
+
+[ro.bootimage.build.date]: [Wed Jul 5 19:45:00 KST 2017]
+
+[ro.bootimage.build.date.utc]: [1499251500]
+
+[ro.bootimage.build.fingerprint]: [samsung/gteslteuc/gteslteatt:6.0.1/MMB29K/T377AUCU2AQGF:user/test-keys]
+
+[ro.bootloader]: [T377AUCU2AQGF]
+
+[ro.bootmode]: [unknown]
+
+[ro.bt.bdaddr_path]: [/efs/bluetooth/bt_addr]
+
+[ro.build.PDA]: [T377AUCU2AQGF]
+
+[ro.build.changelist]: [11788437]
+
+[ro.build.characteristics]: [tablet,att]
+
+[ro.build.date]: [Wed Jul  5 19:43:28 KST 2017]
+
+[ro.build.date.utc]: [1499251408]
+
+[ro.build.description]: [gteslteuc-user 6.0.1 MMB29K T377AUCU2AQGF release-keys]
+
+[ro.build.display.id]: [MMB29K.T377AUCU2AQGF]
+
+[ro.build.fingerprint]: [samsung/gteslteuc/gteslteatt:6.0.1/MMB29K/T377AUCU2AQGF:user/release-keys]
+
+[ro.build.flavor]: [gteslteuc-user]
+
+[ro.build.hidden_ver]: [T377AUCU2AQGF]
+
+[ro.build.host]: [SWDG4707]
+
+[ro.build.id]: [MMB29K]
+
+[ro.build.official.release]: [true]
+
+[ro.build.product]: [gteslteatt]
+
+[ro.build.scafe.cream]: [white]
+
+[ro.build.scafe.shot]: [half]
+
+[ro.build.scafe.size]: [tall]
+
+[ro.build.scafe.version]: [2016A]
+
+[ro.build.selinux]: [1]
+
+[ro.build.selinux.enforce]: [1]
+
+[ro.build.tags]: [release-keys]
+
+[ro.build.type]: [user]
+
+[ro.build.user]: [dpi]
+
+[ro.build.version.all_codenames]: [REL]
+
+[ro.build.version.base_os]: []
+
+[ro.build.version.codename]: [REL]
+
+[ro.build.version.incremental]: [T377AUCU2AQGF]
+
+[ro.build.version.preview_sdk]: [0]
+
+[ro.build.version.release]: [6.0.1]
+
+[ro.build.version.sdk]: [23]
+
+[ro.build.version.sdl]: [2301]
+
+[ro.build.version.security_patch]: [2017-07-01]
+
+[ro.carrier]: [unknown]
+
+[ro.chipname]: [exynos3475]
+
+[ro.com.google.clientidbase]: [android-samsung]
+
+[ro.com.google.clientidbase.am]: [android-att-us]
+
+[ro.com.google.clientidbase.gmm]: [android-samsung]
+
+[ro.com.google.clientidbase.ms]: [android-att-us]
+
+[ro.com.google.clientidbase.yt]: [android-samsung]
+
+[ro.com.google.gmsversion]: [6.0_r12]
+
+[ro.config.alarm_alert]: [Morning_Flower.ogg]
+
+[ro.config.dha_cached_min]: [3]
+
+[ro.config.dha_empty_init]: [24]
+
+[ro.config.dha_empty_max]: [24]
+
+[ro.config.dha_empty_min]: [8]
+
+[ro.config.dha_lmk_scale]: [1.34]
+
+[ro.config.dha_pwhitelist_enable]: [1]
+
+[ro.config.dha_pwhl_key]: [514]
+
+[ro.config.dha_th_rate]: [2.0]
+
+[ro.config.dha_whitelist_enable]: [1]
+
+[ro.config.dha_whl_key]: [144]
+
+[ro.config.dmverity]: [true]
+
+[ro.config.kap]: [true]
+
+[ro.config.knox]: [v30]
+
+[ro.config.media_sound]: [Media_preview_Touch_the_light.ogg]
+
+[ro.config.notification_sound]: [Whisper.ogg]
+
+[ro.config.notification_sound_2]: [S_Charming_Bell.ogg]
+
+[ro.config.ringtone]: [ATT_Firefly_Default.ogg]
+
+[ro.config.ringtone_2]: [Basic_Bell.ogg]
+
+[ro.config.rm_preload_enabled]: [0]
+
+[ro.config.tima]: [1]
+
+[ro.config.timaversion]: [3.0]
+
+[ro.cp_debug_level]: [unknown]
+
+[ro.crypto.fuse_sdcard]: [true]
+
+[ro.crypto.state]: [unencrypted]
+
+[ro.csc.country_code]: [USA]
+
+[ro.csc.countryiso_code]: [US]
+
+[ro.csc.sales_code]: [ATT]
+
+[ro.dalvik.vm.native.bridge]: [0]
+
+[ro.debug_level]: [0x4f4c]
+
+[ro.debuggable]: [0]
+
+[ro.emmc_checksum]: [3]
+
+[ro.error.receiver.default]: [com.samsung.receiver.error]
+
+[ro.expect.recovery_id]: [0x6a0ee8f747f44bc306ae704b9d04e73987dbf1e3000000000000000000000000]
+
+[ro.fmp_config]: [unknown]
+
+[ro.frp.pst]: [/dev/block/persistent]
+
+[ro.hardware]: [universal3475]
+
+[ro.hmac_mismatch]: [unknown]
+
+[ro.hwui.drop_shadow_cache_size]: [2]
+
+[ro.hwui.gradient_cache_size]: [2]
+
+[ro.hwui.layer_cache_size]: [16]
+
+[ro.hwui.path_cache_size]: [4]
+
+[ro.hwui.r_buffer_cache_size]: [2]
+
+[ro.hwui.shape_cache_size]: [2]
+
+[ro.hwui.text_large_cache_height]: [1024]
+
+[ro.hwui.text_large_cache_width]: [2048]
+
+[ro.hwui.text_small_cache_height]: [512]
+
+[ro.hwui.text_small_cache_width]: [1024]
+
+[ro.hwui.texture_cache_flushrate]: [0.4]
+
+[ro.hwui.texture_cache_size]: [24]
+
+[ro.im.param.offset]: [7341616]
+
+[ro.kernel.qemu]: [0]
+
+[ro.kernel.qemu.gles]: [1]
+
+[ro.mct.compressiontype]: [ETC1]
+
+[ro.me.param.offset]: [7341696]
+
+[ro.multisim.simslotcount]: [1]
+
+[ro.nfc.port]: [I2C]
+
+[ro.opengles.version]: [196609]
+
+[ro.pr.param.offset]: [7341856]
+
+[ro.product.board]: [universal3475]
+
+[ro.product.brand]: [samsung]
+
+[ro.product.cpu.abi]: [armeabi-v7a]
+
+[ro.product.cpu.abi2]: [armeabi]
+
+[ro.product.cpu.abilist]: [armeabi-v7a,armeabi]
+
+[ro.product.cpu.abilist32]: [armeabi-v7a,armeabi]
+
+[ro.product.cpu.abilist64]: []
+
+[ro.product.device]: [gteslteatt]
+
+[ro.product.locale]: [en-US]
+
+[ro.product.manufacturer]: [samsung]
+
+[ro.product.model]: [SAMSUNG-SM-T377A]
+
+[ro.product.name]: [gteslteuc]
+
+[ro.product_ship]: [true]
+
+[ro.revision]: [0]
+
+[ro.ril.gprsclass]: [10]
+
+[ro.ril.hsxpa]: [1]
+
+[ro.rtn_config]: [unknown]
+
+[ro.runtime.firstboot]: [1771825323505]
+
+[ro.sec.fle.encryption]: [true]
+
+[ro.secure]: [1]
+
+[ro.securestorage.support]: [true]
+
+[ro.security.icd.flagmode]: [multi]
+
+[ro.security.reactive.version]: [2.0.9]
+
+[ro.security.vpnpp.release]: [6.1]
+
+[ro.security.vpnpp.ver]: [1.4]
+
+[ro.security_mode]: [1526595584]
+
+[ro.serialno]: [52030d9842d7a3bd]
+
+[ro.setupwizard.mode]: [OPTIONAL]
+
+[ro.sf.lcd_density]: [213]
+
+[ro.sku.param.offset]: [7341936]
+
+[ro.sn.param.offset]: [7341776]
+
+[ro.telephony.default_network]: [9]
+
+[ro.warranty_bit]: [0]
+
+[ro.wifi.channels]: []
+
+[ro.zygote]: [zygote32]
+
+[rw.km_fips_status]: [ready]
+
+[sec.fle.encryption.status]: [Dec NewFile IncludeMedia]
+
+[security.ASKS.policy_version]: [161011]
+
+[security.mdpp.mass]: [skmm]
+
+[selinux.policy_version]: [SEPF_SECMOBILE_6.0.1_0035]
+
+[selinux.reload_policy]: [1]
+
+[service.bootanim.exit]: [0]
+
+[service.bt.security.policy.mode]: [2]
+
+[service.camera.rec.running]: [0]
+
+[service.camera.running]: [0]
+
+[service.media.powersnd]: [1]
+
+[storage.mmc.size]: [15758000128]
+
+[sys.boot_completed]: [1]
+
+[sys.cameramode.blackbox]: [0]
+
+[sys.cameramode.vtcall]: [0]
+
+[sys.dockstate]: [0]
+
+[sys.dumpstate.type]: []
+
+[sys.enterprise.billing.version]: [1.2.0]
+
+[sys.enterprise.otp.version]: [2.6.0]
+
+[sys.ims.service_started]: [true]
+
+[sys.isdumpstaterunning]: [0]
+
+[sys.knox.exists]: [0]
+
+[sys.knox.store]: [0]
+
+[sys.mobicoredaemon.enable]: [true]
+
+[sys.multiwindow.running]: [0]
+
+[sys.nfc.support]: [0]
+
+[sys.oem_unlock_allowed]: [1]
+
+[sys.settings_global_version]: [21]
+
+[sys.settings_secure_version]: [2]
+
+[sys.settings_system_version]: [17]
+
+[sys.siop.level]: [2]
+
+[sys.ssrm.mdnie]: [-1]
+
+[sys.sysctl.compact_memory]: [0]
+
+[sys.sysctl.extra_free_kbytes]: [12000]
+
+[sys.sysctl.tcp_adv_win_scale]: [1]
+
+[sys.sysctl.tcp_def_init_rwnd]: [60]
+
+[sys.usb.config]: [acm,dm,adb]
+
+[sys.usb.configfs]: [0]
+
+[sys.usb.state]: [acm,dm,adb]
+
+[system.camera.CC.disable]: [0]
+
+[telephony.lteOnCdmaDevice]: [0]
+
+[vold.has_adoptable]: [0]
+
+[vold.post_fs_data_done]: [1]
+
+[vzw.os.rooted]: [false]
+
+[wifi.interface]: [wlan0]
+
+[wlan.driver.status]: [ok]
+
+[wlan.p2p.chkintent]: [8]
+

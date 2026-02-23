@@ -1,0 +1,4080 @@
+ACTIVITY MANAGER RUNNING PROCESSES (dumpsys activity processes)
+
+  All known processes:
+
+  *APP* UID 10006 ProcessRecord{94fb9c6 17641:com.att.android.digitallocker/u0a6}
+
+    user #0 uid=10006 gids={50006, 9997, 3003}
+
+    requiredAbi=armeabi-v7a instructionSet=null
+
+    class=com.newbay.syncdrive.android.ui.application.SyncDriveApplication
+
+    dir=/data/app/com.att.android.digitallocker-1/base.apk publicDir=/data/app/com.att.android.digitallocker-1/base.apk data=/data/user/0/com.att.android.digitallocker
+
+    packageList={com.att.android.digitallocker}
+
+    compat={213dpi always-compat}
+
+    thread=android.app.ApplicationThreadProxy@d494b7d
+
+    pid=17641 starting=false
+
+    lastActivityTime=-10s342ms lastPssTime=-10s438ms nextPssTime=+9s658ms
+
+    adjSeq=16738 lruSeq=0 lastPss=0.00 lastCachedPss=0.00
+
+    cached=false empty=true
+
+    oom: max=16 curRaw=5 setRaw=5 cur=5 set=5
+
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=15
+
+    curProcState=10 repProcState=10 pssProcState=-1 setProcState=10 lastStateTime=-10s342ms
+
+    hasStartedServices=true
+
+    lastWakeTime=0 timeUsed=0
+
+    lastCpuTime=0 timeUsed=0
+
+    lastRequestedGc=-10s342ms lastLowMemory=-10s342ms reportLowMemory=false
+
+    Services:
+
+      - ServiceRecord{1294b10 u0 com.att.android.digitallocker/com.onmobile.service.DeviceService}
+
+    Published Providers:
+
+      - android.support.v4.content.FileProvider
+
+        -> ContentProviderRecord{ce36a72 u0 com.att.android.digitallocker/android.support.v4.content.FileProvider}
+
+      - com.synchronoss.android.vault.sync.dv.provider.VaultProvider
+
+        -> ContentProviderRecord{d6f3ec3 u0 com.att.android.digitallocker/com.synchronoss.android.vault.sync.dv.provider.VaultProvider}
+
+      - com.newbay.syncdrive.android.model.util.sync.BackupProvider
+
+        -> ContentProviderRecord{b4f5340 u0 com.att.android.digitallocker/com.newbay.syncdrive.android.model.util.sync.BackupProvider}
+
+      - com.synchronoss.cloudsdk.impl.pdstorage.cloudshare.api.db.provider.CsContentProvider
+
+        -> ContentProviderRecord{fa42279 u0 com.att.android.digitallocker/com.synchronoss.cloudsdk.impl.pdstorage.cloudshare.api.db.provider.CsContentProvider}
+
+      - com.google.android.gms.measurement.AppMeasurementContentProvider
+
+        -> ContentProviderRecord{df9bbbe u0 com.att.android.digitallocker/com.google.android.gms.measurement.AppMeasurementContentProvider}
+
+      - com.synchronoss.cloudshare.api.db.provider.CsContentProvider
+
+        -> ContentProviderRecord{d7d041f u0 com.att.android.digitallocker/com.synchronoss.cloudshare.api.db.provider.CsContentProvider}
+
+      - com.newbay.syncdrive.android.ui.gui.activities.SearchSuggestionsProvider
+
+        -> ContentProviderRecord{476636c u0 com.att.android.digitallocker/com.newbay.syncdrive.android.ui.gui.activities.SearchSuggestionsProvider}
+
+      - com.fusionone.android.sync.provider.settings.CHSettingsProvider
+
+        -> ContentProviderRecord{a3b6d35 u0 com.att.android.digitallocker/com.fusionone.android.sync.provider.settings.CHSettingsProvider}
+
+      - com.synchronoss.syncdrive.android.nab.vox.SyncSdkCoreDatabaseProvider
+
+        -> ContentProviderRecord{291d5ca u0 com.att.android.digitallocker/com.synchronoss.syncdrive.android.nab.vox.SyncSdkCoreDatabaseProvider}
+
+    Connected Providers:
+
+      - 7c3bcf/com.android.providers.settings/.SettingsProvider->17641:com.att.android.digitallocker/u0a6 s1/1 u0/0 +8s434ms
+
+    Receivers:
+
+      - ReceiverList{5a4cc2 17641 com.att.android.digitallocker/10006/u0 remote:8c0050d}
+
+      - ReceiverList{2fa5695 17641 com.att.android.digitallocker/10006/u0 remote:e63964c}
+
+      - ReceiverList{4759a25 17641 com.att.android.digitallocker/10006/u0 remote:e1a6e1c}
+
+      - ReceiverList{4b692e3 17641 com.att.android.digitallocker/10006/u0 remote:160fb12}
+
+      - ReceiverList{4c7712f 17641 com.att.android.digitallocker/10006/u0 remote:104730e}
+
+      - ReceiverList{7627237 17641 com.att.android.digitallocker/10006/u0 remote:e63336}
+
+      - ReceiverList{7b92fb0 17641 com.att.android.digitallocker/10006/u0 remote:d7e06f3}
+
+      - ReceiverList{894ec2d 17641 com.att.android.digitallocker/10006/u0 remote:68b2344}
+
+      - ReceiverList{8ac6f33 17641 com.att.android.digitallocker/10006/u0 remote:86e56a2}
+
+      - ReceiverList{8cfb65e 17641 com.att.android.digitallocker/10006/u0 remote:c0e399}
+
+      - ReceiverList{d1fe574 17641 com.att.android.digitallocker/10006/u0 remote:a82a947}
+
+      - ReceiverList{de96ff8 17641 com.att.android.digitallocker/10006/u0 remote:d917b5b}
+
+      - ReceiverList{f6d6961 17641 com.att.android.digitallocker/10006/u0 remote:77744c8}
+
+      - ReceiverList{f6e5008 17641 com.att.android.digitallocker/10006/u0 remote:c3c91ab}
+
+      - ReceiverList{fb34eba 17641 com.att.android.digitallocker/10006/u0 remote:7e473e5}
+
+  *PERS* UID 1000 ProcessRecord{ad85e7a 3290:com.sec.vsimservice/1000}
+
+    user #0 uid=1000 gids={41000, 9997, 2001, 3004, 3002, 1023, 1015, 3003, 3001, 1001, 1024, 1007, 3005, 1300}
+
+    requiredAbi=armeabi-v7a instructionSet=arm
+
+    class=com.sec.internal.vsim.VSimServiceApp
+
+    dir=/system/app/vsimservice/vsimservice.apk publicDir=/system/app/vsimservice/vsimservice.apk data=/data/user/0/com.sec.vsimservice
+
+    packageList={com.sec.vsimservice}
+
+    compat={213dpi always-compat}
+
+    thread=android.app.ApplicationThreadProxy@9d15f98
+
+    pid=3290 starting=false
+
+    lastActivityTime=-20m17s51ms lastPssTime=-18s360ms nextPssTime=+14m41s99ms
+
+    adjSeq=16738 lruSeq=0 lastPss=848KB lastCachedPss=0.00
+
+    cached=false empty=false
+
+    oom: max=-12 curRaw=-12 setRaw=-12 cur=-12 set=-12
+
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=true trimMemoryLevel=15
+
+    curProcState=0 repProcState=0 pssProcState=0 setProcState=0 lastStateTime=-56m27s44ms
+
+    setIsForeground=false foregroundServices=false forcingToForeground=android.os.BinderProxy@d633f1
+
+    reportedInteraction=true time=-56m31s113ms
+
+    persistent=true removed=false
+
+    hasStartedServices=true
+
+    lastRequestedGc=-- lastLowMemory=-34s23ms reportLowMemory=true
+
+    Services:
+
+      - ServiceRecord{3ef9e59 u0 com.sec.vsimservice/com.sec.internal.vsim.attsoftphone.SoftphoneService}
+
+      - ServiceRecord{8f28c21 u0 com.sec.vsimservice/com.sec.internal.vsim.ericssonnsds.NSDSService}
+
+    Connections:
+
+      - ConnectionRecord{ca43a88 u0 CR com.sec.vsimservice/com.sec.internal.vsim.ericssonnsds.NSDSService:@745962b}
+
+    Published Providers:
+
+      - com.sec.internal.vsim.ericssonnsds.persist.NSDSContentProvider
+
+        -> ContentProviderRecord{cb9a6c9 u0 com.sec.vsimservice/com.sec.internal.vsim.ericssonnsds.persist.NSDSContentProvider}
+
+      - com.sec.internal.vsim.attsoftphone.SoftphoneSettingsProvider
+
+        -> ContentProviderRecord{ef4bed3 u0 com.sec.vsimservice/com.sec.internal.vsim.attsoftphone.SoftphoneSettingsProvider}
+
+    Receivers:
+
+      - ReceiverList{3e19232 3290 com.sec.vsimservice/1000/u0 remote:7cc3a3d}
+
+      - ReceiverList{3f077e7 3290 com.sec.vsimservice/1000/u0 remote:5701a6}
+
+      - ReceiverList{fb128d7 3290 com.sec.vsimservice/1000/u0 remote:3392056}
+
+  *APP* UID 1000 ProcessRecord{9eb41ac 3388:com.samsung.ucs.agent.boot/1000}
+
+    user #0 uid=1000 gids={41000, 9997, 2001, 3004, 3002, 1023, 1015, 3003, 3001, 1001, 1024, 1007, 3005, 1300}
+
+    requiredAbi=armeabi-v7a instructionSet=arm
+
+    dir=/system/app/bootagent/bootagent.apk publicDir=/system/app/bootagent/bootagent.apk data=/data/user/0/com.samsung.ucs.agent.boot
+
+    packageList={com.samsung.ucs.agent.boot}
+
+    compat={213dpi always-compat}
+
+    thread=android.app.ApplicationThreadProxy@7785e57
+
+    pid=3388 starting=false
+
+    lastActivityTime=-56m30s465ms lastPssTime=-2m3s171ms nextPssTime=+12m55s164ms
+
+    adjSeq=16738 lruSeq=0 lastPss=623KB lastCachedPss=0.00
+
+    cached=false empty=true
+
+    oom: max=16 curRaw=1 setRaw=1 cur=1 set=1
+
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=false trimMemoryLevel=15
+
+    curProcState=6 repProcState=6 pssProcState=6 setProcState=6 lastStateTime=-56m30s465ms
+
+    reportedInteraction=true time=-56m30s465ms
+
+    lastRequestedGc=-- lastLowMemory=-34s25ms reportLowMemory=true
+
+    Services:
+
+      - ServiceRecord{c3407fb u0 com.samsung.ucs.agent.boot/.BootAgentService}
+
+  *APP* UID 10008 ProcessRecord{722250a 3667:com.google.android.gms.persistent/u0a8}
+
+    user #0 uid=10008 gids={50008, 9997, 2001, 1005, 3002, 3003, 3001, 1007, 3006, 3007}
+
+    requiredAbi=armeabi-v7a instructionSet=arm
+
+    class=co.g.App
+
+    manageSpaceActivityName=co.g.Space
+
+    dir=/data/app/com.google.android.gms-2/base.apk publicDir=/data/app/com.google.android.gms-2/base.apk data=/data/user/0/com.google.android.gms
+
+    packageList={com.google.android.gms}
+
+    compat={213dpi always-compat}
+
+    thread=android.app.ApplicationThreadProxy@948dd44
+
+    pid=3667 starting=false
+
+    lastActivityTime=-1s3ms lastPssTime=-18s659ms nextPssTime=+9s870ms
+
+    adjSeq=16738 lruSeq=0 lastPss=40MB lastCachedPss=0.00
+
+    cached=false empty=true
+
+    oom: max=16 curRaw=1 setRaw=1 cur=1 set=1
+
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=false trimMemoryLevel=15
+
+    curProcState=2 repProcState=2 pssProcState=3 setProcState=2 lastStateTime=-130ms
+
+    reportedInteraction=true time=-8m49s511ms
+
+    hasClientActivities=true foregroundActivities=false (rep=false)
+
+    hasStartedServices=true
+
+    lastRequestedGc=-- lastLowMemory=-34s30ms reportLowMemory=true
+
+    Services:
+
+      - ServiceRecord{10e0de9 u0 com.google.android.gms/.chimera.PersistentApiService}
+
+      - ServiceRecord{16e05a4 u0 com.google.android.gms/.gcm.GcmService}
+
+      - ServiceRecord{297401e u0 com.google.android.gms/.thunderbird.EmergencyPersistentService}
+
+      - ServiceRecord{3777c99 u0 com.google.android.gms/com.google.android.location.internal.server.HardwareArProviderService}
+
+      - ServiceRecord{4690bc1 u0 com.google.android.gms/.nearby.presence.service.LifeCycleService}
+
+      - ServiceRecord{48f774d u0 com.google.android.gms/.clearcut.debug.ClearcutDebugDumpService}
+
+      - ServiceRecord{4cd7537 u0 com.google.android.gms/.gcm.nts.SchedulerService}
+
+      - ServiceRecord{561abf2 u0 com.google.android.gms/.chimera.PersistentApiServiceNoInstantApps}
+
+      - ServiceRecord{561e4bf u0 com.google.android.gms/.stats.eastworld.EastworldService}
+
+      - ServiceRecord{655c66e u0 com.google.android.gms/com.google.android.location.internal.server.GoogleLocationService}
+
+      - ServiceRecord{704c298 u0 com.google.android.gms/com.google.android.location.network.NetworkLocationService}
+
+      - ServiceRecord{77e9f9f u0 com.google.android.gms/.nearby.sharing.ReceiveSurfaceService}
+
+      - ServiceRecord{7945dc5 u0 com.google.android.gms/com.google.android.location.internal.PendingIntentCallbackService}
+
+      - ServiceRecord{943cd01 u0 com.google.android.gms/.location.persistent.LocationPersistentService}
+
+      - ServiceRecord{98698ec u0 com.google.android.gms/.nearby.sharing.SendSurfaceService}
+
+      - ServiceRecord{a53ac68 u0 com.google.android.gms/.backup.BackupTransportService}
+
+      - ServiceRecord{a5a83dc u0 com.google.android.gms/.location.geocode.GeocodeService}
+
+      - ServiceRecord{a7b32da u0 com.google.android.gms/com.google.android.location.internal.GoogleLocationManagerService}
+
+      - ServiceRecord{af75782 u0 com.google.android.gms/.findmydevice.spot.bleadvertising.OfflineBeaconService_Persistent}
+
+      - ServiceRecord{b19ae7c u0 com.google.android.gms/.crisisalerts.init.CrisisAlertsPersistentService}
+
+      - ServiceRecord{ba2dcfd u0 com.google.android.gms/.nearby.discovery.service.DiscoveryService}
+
+      - ServiceRecord{ca90d50 u0 com.google.android.gms/.common.stats.GmsCoreStatsService}
+
+      - ServiceRecord{cd253d0 u0 com.google.android.gms/.auth.setup.devicesignals.LockScreenService}
+
+      - ServiceRecord{d014305 u0 com.google.android.gms/.fido.authenticator.service.AuthenticatorService}
+
+      - ServiceRecord{e5477f3 u0 com.google.android.gms/com.google.android.location.fused.FusedLocationService}
+
+      - ServiceRecord{ed93195 u0 com.google.android.gms/.play.integrity.api.service.IntegrityApiPersistentService}
+
+      - ServiceRecord{fb28926 u0 com.google.android.gms/.chimera.PersistentDirectBootAwareApiService}
+
+    Connections:
+
+      - ConnectionRecord{1eefe4d u0 CR WACT com.google.android.gms/.chimera.PersistentApiServiceNoInstantApps:@ed7a9e4}
+
+      - ConnectionRecord{2b9a2fd u0 CR com.google.android.gms/.chimera.PersistentApiServiceNoInstantApps:@7283354}
+
+      - ConnectionRecord{2f3e9e9 u0 CR WACT com.google.android.gms/com.google.android.location.internal.GoogleLocationManagerService:@5ccd270}
+
+      - ConnectionRecord{65382cd u0 com.android.bluetooth/.a2dp.A2dpService:@a17064}
+
+      - ConnectionRecord{8496911 u0 CR WACT com.google.android.gms/.chimera.PersistentDirectBootAwareApiService:@29b538}
+
+      - ConnectionRecord{ca26707 u0 CR WACT com.google.android.gms/.chimera.PersistentApiService:@32cb946}
+
+      - ConnectionRecord{e616c29 u0 CR WACT com.google.android.gms/.chimera.PersistentDirectBootAwareApiService:@ed1f5b0}
+
+      - ConnectionRecord{e691984 u0 CR WACT com.google.android.gms/.chimera.PersistentApiServiceNoInstantApps:@ebee397}
+
+      - ConnectionRecord{f794b98 u0 CR WACT com.google.android.gms/.chimera.PersistentApiService:@8f017b}
+
+    Published Providers:
+
+      - com.google.android.gms.auth.account.be.accountstate.AccountStateContentProvider
+
+        -> ContentProviderRecord{27e61d4 u0 com.google.android.gms/.auth.account.be.accountstate.AccountStateContentProvider}
+
+      - com.google.android.gms.drivingmode.DrivingModeProvider
+
+        -> ContentProviderRecord{fe3de7c u0 com.google.android.gms/.drivingmode.DrivingModeProvider}
+
+      - com.google.android.gms.security.provider.SecurityProvider
+
+        -> ContentProviderRecord{9b4ab11 u0 com.google.android.gms/.security.provider.SecurityProvider}
+
+      - com.google.android.gms.fitness.sync.FitnessContentProvider
+
+        -> ContentProviderRecord{13713ad u0 com.google.android.gms/.fitness.sync.FitnessContentProvider}
+
+      - com.google.android.gms.instantapps.routing.InstantAppsContentProvider
+
+        -> ContentProviderRecord{fd238 u0 com.google.android.gms/.instantapps.routing.InstantAppsContentProvider}
+
+      - com.google.android.gms.fonts.provider.FontsProvider
+
+        -> ContentProviderRecord{105a3e u0 com.google.android.gms/.fonts.provider.FontsProvider}
+
+      - com.google.android.gms.common.appdoctor.AppDoctorProvider
+
+        -> ContentProviderRecord{f9fbf5b u0 com.google.android.gms/.common.appdoctor.AppDoctorProvider}
+
+      - com.google.android.gms.auth.account.be.accountstate.CredentialStateContentProvider
+
+        -> ContentProviderRecord{88f4909 u0 com.google.android.gms/.auth.account.be.accountstate.CredentialStateContentProvider}
+
+      - com.google.android.gms.findmydevice.spot.localstorage.DebugStateProvider
+
+        -> ContentProviderRecord{1bc290d u0 com.google.android.gms/.findmydevice.spot.localstorage.DebugStateProvider}
+
+      - com.google.android.gms.chimera.container.router.PersistentComponentRouterProvider
+
+        -> ContentProviderRecord{ea2874e u0 com.google.android.gms/.chimera.container.router.PersistentComponentRouterProvider}
+
+      - com.google.android.gms.nearby.discovery.fastpair.slice.FastPairSliceProvider
+
+        -> ContentProviderRecord{69c3998 u0 com.google.android.gms/.nearby.discovery.fastpair.slice.FastPairSliceProvider}
+
+      - com.google.android.gms.phenotype.provider.ConfigurationProvider
+
+        -> ContentProviderRecord{5137f9b u0 com.google.android.gms/.phenotype.provider.ConfigurationProvider}
+
+      - com.google.android.gms.chimera.PersistentBrokerContentProvider
+
+        -> ContentProviderRecord{575221c u0 com.google.android.gms/.chimera.PersistentBrokerContentProvider}
+
+      - com.google.android.gms.auth.account.be.legacy.AccountContentProvider
+
+        -> ContentProviderRecord{c03f39a u0 com.google.android.gms/.auth.account.be.legacy.AccountContentProvider}
+
+      - com.google.android.gms.chimera.container.GmsModuleProvider
+
+        -> ContentProviderRecord{610f637 u0 com.google.android.gms/.chimera.container.GmsModuleProvider}
+
+      - com.google.android.location.reporting.service.utils.ReportingContentProvider
+
+        -> ContentProviderRecord{75b7316 u0 com.google.android.gms/com.google.android.location.reporting.service.utils.ReportingContentProvider}
+
+    Connected Providers:
+
+      - 7c3bcf/com.android.providers.settings/.SettingsProvider->3667:com.google.android.gms.persistent/u0a8 s1/1 u0/0 +56m9s913ms
+
+    Receivers:
+
+      - ReceiverList{11671e 3667 com.google.android.gms.persistent/10008/u0 remote:5abdf59}
+
+      - ReceiverList{2e34cd 3667 com.google.android.gms.persistent/10008/u0 remote:74faa64}
+
+      - ReceiverList{2f8548 3667 com.google.android.gms.persistent/10008/u0 remote:f9853eb}
+
+      - ReceiverList{6f4d19 3667 com.google.android.gms.persistent/10008/u0 remote:9380460}
+
+      - ReceiverList{769928 3667 com.google.android.gms.persistent/10008/u0 remote:7c1cb4b}
+
+      - ReceiverList{7a6656 3667 com.google.android.gms.persistent/10008/u0 remote:d8f871}
+
+      - ReceiverList{a33314 3667 com.google.android.gms.persistent/10008/u0 remote:e322967}
+
+      - ReceiverList{dac5fc 3667 com.google.android.gms.persistent/10008/u0 remote:1a216ef}
+
+      - ReceiverList{fd9c25 3667 com.google.android.gms.persistent/10008/u0 remote:b99381c}
+
+      - ReceiverList{10fd009 3667 com.google.android.gms.persistent/10008/u0 remote:2dfd10}
+
+      - ReceiverList{15ff322 3667 com.google.android.gms.persistent/10008/u0 remote:b14c8ed}
+
+      - ReceiverList{166c74a 3667 com.google.android.gms.persistent/10008/u0 remote:36f34b5}
+
+      - ReceiverList{182f4df 3667 com.google.android.gms.persistent/10008/u0 remote:311f77e}
+
+      - ReceiverList{1c90c1d 3667 com.google.android.gms.persistent/10008/u0 remote:5dd0cf4}
+
+      - ReceiverList{1ceabb8 3667 com.google.android.gms.persistent/10008/u0 remote:29b4e1b}
+
+      - ReceiverList{26d92c5 3667 com.google.android.gms.persistent/10008/u0 remote:dca653c}
+
+      - ReceiverList{2a643c7 3667 com.google.android.gms.persistent/10008/u0 remote:5171106}
+
+      - ReceiverList{2a9c493 3667 com.google.android.gms.persistent/10008/u0 remote:9202582}
+
+      - ReceiverList{2c76afd 3667 com.google.android.gms.persistent/10008/u0 remote:b301b54}
+
+      - ReceiverList{2f79c98 3667 com.google.android.gms.persistent/10008/u0 remote:ebff67b}
+
+      - ReceiverList{304597f 3667 com.google.android.gms.persistent/10008/u0 remote:a1d8a9e}
+
+      - ReceiverList{3124f76 3667 com.google.android.gms.persistent/10008/u0 remote:1e85211}
+
+      - ReceiverList{38828c6 3667 com.google.android.gms.persistent/10008/u0 remote:9b37ea1}
+
+      - ReceiverList{3920f20 3667 com.google.android.gms.persistent/10008/u0 remote:719fe23}
+
+      - ReceiverList{392988f 3667 com.google.android.gms.persistent/10008/u0 remote:8b01bee}
+
+      - ReceiverList{3d8f5a2 3667 com.google.android.gms.persistent/10008/u0 remote:89e456d}
+
+      - ReceiverList{3e6cb69 3667 com.google.android.gms.persistent/10008/u0 remote:2049f0}
+
+      - ReceiverList{40a11d1 3667 com.google.android.gms.persistent/10008/u0 remote:d488f8}
+
+      - ReceiverList{40b9806 3667 com.google.android.gms.persistent/10008/u0 remote:9ee22e1}
+
+      - ReceiverList{444f26b 3667 com.google.android.gms.persistent/10008/u0 remote:f8683ba}
+
+      - ReceiverList{486568b 3667 com.google.android.gms.persistent/10008/u0 remote:b5c645a}
+
+      - ReceiverList{48689ed 3667 com.google.android.gms.persistent/10008/u0 remote:86da004}
+
+      - ReceiverList{4fc3546 3667 com.google.android.gms.persistent/10008/u0 remote:c75ed21}
+
+      - ReceiverList{51e459f 3667 com.google.android.gms.persistent/10008/u0 remote:d39133e}
+
+      - ReceiverList{5247741 3667 com.google.android.gms.persistent/10008/u0 remote:94c5e28}
+
+      - ReceiverList{54a31f5 3667 com.google.android.gms.persistent/10008/u0 remote:ea6432c}
+
+      - ReceiverList{56b5414 3667 com.google.android.gms.persistent/10008/u0 remote:722e67}
+
+      - ReceiverList{5a73a7e 3667 com.google.android.gms.persistent/10008/u0 remote:3316439}
+
+      - ReceiverList{5cef9ca 3667 com.google.android.gms.persistent/10008/u0 remote:566a135}
+
+      - ReceiverList{5f7a4ab 3667 com.google.android.gms.persistent/10008/u0 remote:4e796fa}
+
+      - ReceiverList{5fa31c3 3667 com.google.android.gms.persistent/10008/u0 remote:3c64972}
+
+      - ReceiverList{60f56d6 3667 com.google.android.gms.persistent/10008/u0 remote:9e15af1}
+
+      - ReceiverList{62b96ce 3667 com.google.android.gms.persistent/10008/u0 remote:df73fc9}
+
+      - ReceiverList{6d3a0bb 3667 com.google.android.gms.persistent/10008/u0 remote:3a4b94a}
+
+      - ReceiverList{70694d3 3667 com.google.android.gms.persistent/10008/u0 remote:3290ec2}
+
+      - ReceiverList{71a329e 3667 com.google.android.gms.persistent/10008/u0 remote:e72a8d9}
+
+      - ReceiverList{7431e75 3667 com.google.android.gms.persistent/10008/u0 remote:f7511ac}
+
+      - ReceiverList{751196a 3667 com.google.android.gms.persistent/10008/u0 remote:b64fb55}
+
+      - ReceiverList{789068c 3667 com.google.android.gms.persistent/10008/u0 remote:1b5bfbf}
+
+      - ReceiverList{797483a 3667 com.google.android.gms.persistent/10008/u0 remote:85e6365}
+
+      - ReceiverList{7eaaa05 3667 com.google.android.gms.persistent/10008/u0 remote:9bc517c}
+
+      - ReceiverList{7f8189b 3667 com.google.android.gms.persistent/10008/u0 remote:1f2a4aa}
+
+      - ReceiverList{88fd74e 3667 com.google.android.gms.persistent/10008/u0 remote:33a3249}
+
+      - ReceiverList{8d8151c 3667 com.google.android.gms.persistent/10008/u0 remote:e54ae8f}
+
+      - ReceiverList{8fb821f 3667 com.google.android.gms.persistent/10008/u0 remote:28b71be}
+
+      - ReceiverList{9004831 3667 com.google.android.gms.persistent/10008/u0 remote:5421cd8}
+
+      - ReceiverList{91e0e64 3667 com.google.android.gms.persistent/10008/u0 remote:acd1ff7}
+
+      - ReceiverList{921e329 3667 com.google.android.gms.persistent/10008/u0 remote:8fde8b0}
+
+      - ReceiverList{93b0968 3667 com.google.android.gms.persistent/10008/u0 remote:e8cd48b}
+
+      - ReceiverList{9d0dfdc 3667 com.google.android.gms.persistent/10008/u0 remote:75aec4f}
+
+      - ReceiverList{9fd5eda 3667 com.google.android.gms.persistent/10008/u0 remote:b0a3085}
+
+      - ReceiverList{a15e4ba 3667 com.google.android.gms.persistent/10008/u0 remote:67ba1e5}
+
+      - ReceiverList{a559848 3667 com.google.android.gms.persistent/10008/u0 remote:f0ed2eb}
+
+      - ReceiverList{a83fe6b 3667 com.google.android.gms.persistent/10008/u0 remote:26a3fba}
+
+      - ReceiverList{a96b613 3667 com.google.android.gms.persistent/10008/u0 remote:cbed02}
+
+      - ReceiverList{ac49565 3667 com.google.android.gms.persistent/10008/u0 remote:d274e5c}
+
+      - ReceiverList{ac6f7d1 3667 com.google.android.gms.persistent/10008/u0 remote:67d46f8}
+
+      - ReceiverList{b694a03 3667 com.google.android.gms.persistent/10008/u0 remote:a1d9ab2}
+
+      - ReceiverList{b7bced5 3667 com.google.android.gms.persistent/10008/u0 remote:91ac78c}
+
+      - ReceiverList{c092186 3667 com.google.android.gms.persistent/10008/u0 remote:bade261}
+
+      - ReceiverList{c1cb359 3667 com.google.android.gms.persistent/10008/u0 remote:5be1ba0}
+
+      - ReceiverList{c1d34d4 3667 com.google.android.gms.persistent/10008/u0 remote:8b01a27}
+
+      - ReceiverList{c774853 3667 com.google.android.gms.persistent/10008/u0 remote:4e66042}
+
+      - ReceiverList{c8a8929 3667 com.google.android.gms.persistent/10008/u0 remote:7a966b0}
+
+      - ReceiverList{c8e6079 3667 com.google.android.gms.persistent/10008/u0 remote:8a3c940}
+
+      - ReceiverList{cc4a942 3667 com.google.android.gms.persistent/10008/u0 remote:a20038d}
+
+      - ReceiverList{cd6ec47 3667 com.google.android.gms.persistent/10008/u0 remote:9770b86}
+
+      - ReceiverList{ce863dd 3667 com.google.android.gms.persistent/10008/u0 remote:887ebb4}
+
+      - ReceiverList{cecd536 3667 com.google.android.gms.persistent/10008/u0 remote:5a656d1}
+
+      - ReceiverList{d0f0e9b 3667 com.google.android.gms.persistent/10008/u0 remote:dd3b2aa}
+
+      - ReceiverList{d16b0f7 3667 com.google.android.gms.persistent/10008/u0 remote:f5d34f6}
+
+      - ReceiverList{d1bb832 3667 com.google.android.gms.persistent/10008/u0 remote:29f383d}
+
+      - ReceiverList{d2f0be4 3667 com.google.android.gms.persistent/10008/u0 remote:fb5a377}
+
+      - ReceiverList{d4d7f57 3667 com.google.android.gms.persistent/10008/u0 remote:7cec0d6}
+
+      - ReceiverList{d7951cc 3667 com.google.android.gms.persistent/10008/u0 remote:fd72fff}
+
+      - ReceiverList{dad042b 3667 com.google.android.gms.persistent/10008/u0 remote:1a0c47a}
+
+      - ReceiverList{e0206e9 3667 com.google.android.gms.persistent/10008/u0 remote:bfd4370}
+
+      - ReceiverList{e1d98c0 3667 com.google.android.gms.persistent/10008/u0 remote:c1d2a43}
+
+      - ReceiverList{e2b6731 3667 com.google.android.gms.persistent/10008/u0 remote:bba57d8}
+
+      - ReceiverList{e46affe 3667 com.google.android.gms.persistent/10008/u0 remote:4773fb9}
+
+      - ReceiverList{e48449d 3667 com.google.android.gms.persistent/10008/u0 remote:16bd774}
+
+      - ReceiverList{e4eaf31 3667 com.google.android.gms.persistent/10008/u0 remote:4bdbfd8}
+
+      - ReceiverList{e5b0d2f 3667 com.google.android.gms.persistent/10008/u0 remote:474ff0e}
+
+      - ReceiverList{e777d2d 3667 com.google.android.gms.persistent/10008/u0 remote:d095844}
+
+      - ReceiverList{e7c69ea 3667 com.google.android.gms.persistent/10008/u0 remote:ee13dd5}
+
+      - ReceiverList{edb958b 3667 com.google.android.gms.persistent/10008/u0 remote:6d33f5a}
+
+      - ReceiverList{eef1d3f 3667 com.google.android.gms.persistent/10008/u0 remote:52e055e}
+
+      - ReceiverList{efd550e 3667 com.google.android.gms.persistent/10008/u0 remote:e9c0f09}
+
+      - ReceiverList{f2f254a 3667 com.google.android.gms.persistent/10008/u0 remote:fc64ab5}
+
+      - ReceiverList{f964b89 3667 com.google.android.gms.persistent/10008/u0 remote:e1b3690}
+
+  *APP* UID 1037 ProcessRecord{4e1bf62 3086:WebViewLoader-armeabi-v7a/1037}
+
+    user #0 uid=1000 ISOLATED uid=1037 gids={}
+
+    requiredAbi=armeabi-v7a instructionSet=null
+
+    class=android.webkit.WebViewFactory$RelroFileCreator
+
+    dir=null publicDir=null data=null
+
+    packageList={android}
+
+    compat=null
+
+    thread=null
+
+    pid=3086 starting=false
+
+    lastActivityTime=-- lastPssTime=-56m33s354ms nextPssTime=-56m33s354ms
+
+    adjSeq=0 lruSeq=0 lastPss=0.00 lastCachedPss=0.00
+
+    cached=false empty=false
+
+    oom: max=16 curRaw=-100 setRaw=-100 cur=-100 set=-100
+
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=0
+
+    curProcState=-1 repProcState=-1 pssProcState=-1 setProcState=-1 lastStateTime=-56m33s354ms
+
+    lastRequestedGc=-- lastLowMemory=-- reportLowMemory=false
+
+  *APP* UID 10160 ProcessRecord{b1b45bb 17018:repair.system.phone.fixsystem/u0a160}
+
+    user #0 uid=10160 gids={50160, 9997, 3003}
+
+    requiredAbi=armeabi-v7a instructionSet=null
+
+    class=repair.system.phone.fixsystem.App
+
+    dir=/data/app/repair.system.phone.fixsystem-1/base.apk publicDir=/data/app/repair.system.phone.fixsystem-1/base.apk data=/data/user/0/repair.system.phone.fixsystem
+
+    packageList={repair.system.phone.fixsystem}
+
+    packageDependencies={com.google.android.webview, com.google.android.gms}
+
+    compat={213dpi always-compat}
+
+    thread=android.app.ApplicationThreadProxy@b77c33b
+
+    pid=17018 starting=false
+
+    lastActivityTime=-3s415ms lastPssTime=-1m19s225ms nextPssTime=+38s829ms
+
+    adjSeq=16738 lruSeq=0 lastPss=115MB lastCachedPss=0.00
+
+    cached=false empty=false
+
+    oom: max=16 curRaw=0 setRaw=0 cur=0 set=0
+
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=false trimMemoryLevel=15
+
+    curProcState=2 repProcState=2 pssProcState=2 setProcState=2 lastStateTime=-1m31s190ms
+
+    hasShownUi=true pendingUiClean=true hasAboveClient=false treatLikeActivity=false
+
+    reportedInteraction=true time=-1m31s190ms
+
+    hasClientActivities=false foregroundActivities=true (rep=true)
+
+    lastRequestedGc=-- lastLowMemory=-17s394ms reportLowMemory=true
+
+    Activities:
+
+      - ActivityRecord{f6eb939 u0 repair.system.phone.fixsystem/com.google.android.gms.ads.AdActivity t506 f}
+
+      - ActivityRecord{e069681 u0 repair.system.phone.fixsystem/.LanguageActivity t506}
+
+    Connections:
+
+      - ConnectionRecord{542e31 u0 CR WACT com.google.android.gms/.chimera.PersistentApiService:@37ddad8}
+
+      - ConnectionRecord{5d950f u0 CR WACT com.google.android.gms/.chimera.GmsApiService:@30f3a6e}
+
+      - ConnectionRecord{481d2bd u0 CR WACT com.google.android.gms/.chimera.GmsBoundBrokerService:@b84a14}
+
+      - ConnectionRecord{4e81f4f u0 CR WACT com.google.android.gms/.measurement.service.MeasurementBrokerService:@2e085ae}
+
+      - ConnectionRecord{5164eec u0 CR WACT com.google.android.gms/.chimera.GmsApiService:@9436d9f}
+
+      - ConnectionRecord{56e94b9 u0 CR WACT com.google.android.gms/.ads.cache.CacheBrokerService:@b4f2680}
+
+      - ConnectionRecord{6032dd4 u0 CR WACT com.google.android.gms/.chimera.GmsBoundBrokerService:@cfe5727}
+
+      - ConnectionRecord{6eff152 u0 CR WACT com.google.android.gms/.chimera.PersistentDirectBootAwareApiService:@bea21dd}
+
+      - ConnectionRecord{7b32055 u0 CR WACT com.google.android.gms/.ads.AdRequestBrokerService:@83e6f0c}
+
+      - ConnectionRecord{9e495d7 u0 CR com.android.vending/com.google.android.finsky.billing.iab.InAppBillingService:@3922156}
+
+      - ConnectionRecord{a849f68 u0 CR WACT com.google.android.gms/.chimera.PersistentApiService:@347028b}
+
+    Published Providers:
+
+      - com.facebook.ads.AudienceNetworkContentProvider
+
+        -> ContentProviderRecord{a1c4a58 u0 repair.system.phone.fixsystem/com.facebook.ads.AudienceNetworkContentProvider}
+
+      - androidx.startup.InitializationProvider
+
+        -> ContentProviderRecord{4c2a7b1 u0 repair.system.phone.fixsystem/androidx.startup.InitializationProvider}
+
+      - com.ironsource.lifecycle.IronsourceLifecycleProvider
+
+        -> ContentProviderRecord{9df8496 u0 repair.system.phone.fixsystem/com.ironsource.lifecycle.IronsourceLifecycleProvider}
+
+      - com.ironsource.lifecycle.LevelPlayActivityLifecycleProvider
+
+        -> ContentProviderRecord{955817 u0 repair.system.phone.fixsystem/com.ironsource.lifecycle.LevelPlayActivityLifecycleProvider}
+
+      - com.google.android.gms.ads.MobileAdsInitProvider
+
+        -> ContentProviderRecord{937b404 u0 repair.system.phone.fixsystem/com.google.android.gms.ads.MobileAdsInitProvider}
+
+      - com.google.firebase.provider.FirebaseInitProvider
+
+        -> ContentProviderRecord{4a90ded u0 repair.system.phone.fixsystem/com.google.firebase.provider.FirebaseInitProvider}
+
+    Connected Providers:
+
+      - 7c3bcf/com.android.providers.settings/.SettingsProvider->17018:repair.system.phone.fixsystem/u0a160 s1/1 u0/0 +1m17s348ms
+
+    Receivers:
+
+      - ReceiverList{99ee87 17018 repair.system.phone.fixsystem/10160/u0 remote:8b7aec6}
+
+      - ReceiverList{aac6ef 17018 repair.system.phone.fixsystem/10160/u0 remote:92c87ce}
+
+      - ReceiverList{dfe1a7 17018 repair.system.phone.fixsystem/10160/u0 remote:c9efa66}
+
+      - ReceiverList{19b7a17 17018 repair.system.phone.fixsystem/10160/u0 remote:480ee96}
+
+      - ReceiverList{261cc84 17018 repair.system.phone.fixsystem/10160/u0 remote:72e8297}
+
+      - ReceiverList{3a161c5 17018 repair.system.phone.fixsystem/10160/u0 remote:d40103c}
+
+      - ReceiverList{46eaf3d 17018 repair.system.phone.fixsystem/10160/u0 remote:14c894}
+
+      - ReceiverList{4b188f5 17018 repair.system.phone.fixsystem/10160/u0 remote:e48962c}
+
+      - ReceiverList{4d55e22 17018 repair.system.phone.fixsystem/10160/u0 remote:4a0ffed}
+
+      - ReceiverList{4e820f4 17018 repair.system.phone.fixsystem/10160/u0 remote:aa0a2c7}
+
+      - ReceiverList{4fdc2a6 17018 repair.system.phone.fixsystem/10160/u0 remote:439d401}
+
+      - ReceiverList{5b1cbb7 17018 repair.system.phone.fixsystem/10160/u0 remote:add02b6}
+
+      - ReceiverList{62fcff7 17018 repair.system.phone.fixsystem/10160/u0 remote:cbb6ff6}
+
+      - ReceiverList{6cac848 17018 repair.system.phone.fixsystem/10160/u0 remote:c5ac2eb}
+
+      - ReceiverList{7a12458 17018 repair.system.phone.fixsystem/10160/u0 remote:effc53b}
+
+      - ReceiverList{7ae9442 17018 repair.system.phone.fixsystem/10160/u0 remote:622ba8d}
+
+      - ReceiverList{7b79965 17018 repair.system.phone.fixsystem/10160/u0 remote:1b3e25c}
+
+      - ReceiverList{894af95 17018 repair.system.phone.fixsystem/10160/u0 remote:4fbb34c}
+
+      - ReceiverList{9e6c6d6 17018 repair.system.phone.fixsystem/10160/u0 remote:1b08af1}
+
+      - ReceiverList{a42480e 17018 repair.system.phone.fixsystem/10160/u0 remote:6e0ee09}
+
+      - ReceiverList{bbbf5fe 17018 repair.system.phone.fixsystem/10160/u0 remote:fdddb9}
+
+      - ReceiverList{bf60826 17018 repair.system.phone.fixsystem/10160/u0 remote:579bf81}
+
+      - ReceiverList{db17c18 17018 repair.system.phone.fixsystem/10160/u0 remote:dbfa3fb}
+
+      - ReceiverList{e7aa463 17018 repair.system.phone.fixsystem/10160/u0 remote:d4c6292}
+
+      - ReceiverList{f5b1fe4 17018 repair.system.phone.fixsystem/10160/u0 remote:5758777}
+
+      - ReceiverList{ff8aff5 17018 repair.system.phone.fixsystem/10160/u0 remote:127f92c}
+
+  *APP* UID 10005 ProcessRecord{7365f97 14011:com.android.defcontainer/u0a5}
+
+    user #0 uid=10005 gids={50005, 9997, 2001, 1023, 1015}
+
+    requiredAbi=armeabi-v7a instructionSet=arm
+
+    dir=/system/priv-app/DefaultContainerService/DefaultContainerService.apk publicDir=/system/priv-app/DefaultContainerService/DefaultContainerService.apk data=/data/user/0/com.android.defcontainer
+
+    packageList={com.android.defcontainer}
+
+    compat={213dpi always-compat}
+
+    thread=android.app.ApplicationThreadProxy@57e0c70
+
+    pid=14011 starting=false
+
+    lastActivityTime=-1m18s820ms lastPssTime=-57s816ms nextPssTime=+14m2s99ms
+
+    adjSeq=16738 lruSeq=0 lastPss=3.6MB lastCachedPss=2.2MB
+
+    cached=false empty=true
+
+    oom: max=16 curRaw=1 setRaw=1 cur=1 set=1
+
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=false trimMemoryLevel=15
+
+    curProcState=6 repProcState=6 pssProcState=6 setProcState=6 lastStateTime=-1m18s824ms
+
+    reportedInteraction=true time=-1m18s829ms
+
+    lastRequestedGc=-- lastLowMemory=-34s40ms reportLowMemory=true
+
+    Services:
+
+      - ServiceRecord{91e98ba u0 com.android.defcontainer/.DefaultContainerService}
+
+    Connected Providers:
+
+      - 7c3bcf/com.android.providers.settings/.SettingsProvider->14011:com.android.defcontainer/u0a5 s1/1 u0/0 +6m39s447ms
+
+  *PERS* UID 1000 ProcessRecord{d39d9cf 3579:com.sec.sve/1000}
+
+    user #0 uid=1000 gids={41000, 9997, 2001, 3004, 3002, 1023, 1015, 3003, 3001, 1001, 1024, 1007, 3005, 1300}
+
+    requiredAbi=armeabi-v7a instructionSet=arm
+
+    class=com.sec.sve.SecVideoEngineApp
+
+    dir=/system/app/sveservice/sveservice.apk publicDir=/system/app/sveservice/sveservice.apk data=/data/user/0/com.sec.sve
+
+    packageList={com.sec.sve}
+
+    compat={213dpi always-compat}
+
+    thread=android.app.ApplicationThreadProxy@19889b0
+
+    pid=3579 starting=false
+
+    lastActivityTime=-56m27s912ms lastPssTime=-18s515ms nextPssTime=+14m41s77ms
+
+    adjSeq=16738 lruSeq=0 lastPss=761KB lastCachedPss=0.00
+
+    cached=false empty=false
+
+    oom: max=-12 curRaw=-12 setRaw=-12 cur=-12 set=-12
+
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=true trimMemoryLevel=15
+
+    curProcState=0 repProcState=0 pssProcState=0 setProcState=0 lastStateTime=-56m27s999ms
+
+    reportedInteraction=true time=-56m28s0ms
+
+    persistent=true removed=false
+
+    lastRequestedGc=-- lastLowMemory=-34s45ms reportLowMemory=true
+
+    Services:
+
+      - ServiceRecord{11d7bb8 u0 com.sec.sve/.service.SecVideoEngineService}
+
+    Receivers:
+
+      - ReceiverList{a4a757e 3579 com.sec.sve/1000/u-1 remote:1c0ab39}
+
+  *APP* UID 10032 ProcessRecord{f31758c 6027:com.android.vending/u0a32}
+
+    user #0 uid=10032 gids={50032, 9997, 3002, 3003, 3001}
+
+    requiredAbi=armeabi-v7a instructionSet=arm
+
+    class=com.google.android.finsky.application.classic.ClassicApplication
+
+    dir=/data/app/com.android.vending-1/base.apk publicDir=/data/app/com.android.vending-1/base.apk data=/data/user/0/com.android.vending
+
+    packageList={com.android.vending}
+
+    compat={213dpi always-compat}
+
+    thread=android.app.ApplicationThreadProxy@6067029
+
+    pid=6027 starting=false
+
+    lastActivityTime=-1s19ms lastPssTime=-7s630ms nextPssTime=+1m52s59ms
+
+    adjSeq=16738 lruSeq=0 lastPss=45MB lastCachedPss=5.4MB
+
+    cached=false empty=true
+
+    oom: max=16 curRaw=1 setRaw=1 cur=1 set=1
+
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=false trimMemoryLevel=15
+
+    curProcState=2 repProcState=2 pssProcState=2 setProcState=2 lastStateTime=-18s108ms
+
+    hasShownUi=true pendingUiClean=false hasAboveClient=false treatLikeActivity=false
+
+    reportedInteraction=true time=-1m16s854ms
+
+    hasClientActivities=true foregroundActivities=false (rep=false)
+
+    lastRequestedGc=-- lastLowMemory=-34s46ms reportLowMemory=true
+
+    Activities:
+
+      - ActivityRecord{acaf42d u0 com.android.vending/com.google.android.finsky.activities.MainActivity t496}
+
+    Services:
+
+      - ServiceRecord{35f0190 u0 com.android.vending/com.google.frameworks.client.data.android.server.play.MainProcessEndpointService}
+
+      - ServiceRecord{7457ec4 u0 com.android.vending/com.google.android.finsky.billing.iab.InAppBillingService}
+
+      - ServiceRecord{adaa6bc u0 com.android.vending/com.google.android.finsky.crossprofile.ProfileStateService}
+
+      - ServiceRecord{af88f7a u0 com.android.vending/com.google.android.finsky.developergroupidinfo.DeveloperGroupIdInfoService}
+
+    Connections:
+
+      - ConnectionRecord{1a602af u0 CR !FG com.android.vending/com.google.android.finsky.crossprofile.ProfileStateService:@9e45a8e}
+
+      - ConnectionRecord{b70c9af u0 CR com.android.vending/com.google.frameworks.client.data.android.server.play.BackgroundProcessEndpointService:@a91dd8e}
+
+      - ConnectionRecord{c52449a u0 CR com.android.vending/com.google.frameworks.client.data.android.server.play.QuickLaunchProcessEndpointService:@d301545}
+
+    Published Providers:
+
+      - com.google.android.finsky.setup.p2p.CachedPackageContentProvider
+
+        -> ContentProviderRecord{f2ce685 u0 com.android.vending/com.google.android.finsky.setup.p2p.CachedPackageContentProvider}
+
+      - com.google.android.finsky.dumpsys.mainimpl.MainDumpsysContentProvider
+
+        -> ContentProviderRecord{e9562aa u0 com.android.vending/com.google.android.finsky.dumpsys.mainimpl.MainDumpsysContentProvider}
+
+      - com.google.android.finsky.fileprovider.FinskyFileProvider
+
+        -> ContentProviderRecord{242752f u0 com.android.vending/com.google.android.finsky.fileprovider.FinskyFileProvider}
+
+      - com.google.android.finsky.searchsuggestions.RecentSuggestionsProvider
+
+        -> ContentProviderRecord{7f9f4d8 u0 com.android.vending/com.google.android.finsky.searchsuggestions.RecentSuggestionsProvider}
+
+      - com.google.android.finsky.securityhub.SecurityHubContentProvider
+
+        -> ContentProviderRecord{31450d1 u0 com.android.vending/com.google.android.finsky.securityhub.SecurityHubContentProvider}
+
+      - com.google.android.finsky.addtohomescreen.AddToHomeScreenSettingProvider
+
+        -> ContentProviderRecord{3713e58 u0 com.android.vending/com.google.android.finsky.addtohomescreen.AddToHomeScreenSettingProvider}
+
+    Connected Providers:
+
+      - 7c3bcf/com.android.providers.settings/.SettingsProvider->6027:com.android.vending/u0a32 s1/1 u0/0 +55m17s715ms
+
+    Receivers:
+
+      - ReceiverList{7d05b6 6027 com.android.vending/10032/u0 remote:68ef951}
+
+      - ReceiverList{1ba46ff 6027 com.android.vending/10032/u0 remote:a68be1e}
+
+      - ReceiverList{2251dd7 6027 com.android.vending/10032/u0 remote:9dfc956}
+
+      - ReceiverList{2388dbe 6027 com.android.vending/10032/u0 remote:932fc79}
+
+      - ReceiverList{2cbe82e 6027 com.android.vending/10032/u0 remote:24a7aa9}
+
+      - ReceiverList{46808c3 6027 com.android.vending/10032/u0 remote:8791c72}
+
+      - ReceiverList{47ff0cf 6027 com.android.vending/10032/u0 remote:c96ad2e}
+
+      - ReceiverList{53c29c7 6027 com.android.vending/10032/u0 remote:a5ccf06}
+
+      - ReceiverList{5a31a1a 6027 com.android.vending/10032/u0 remote:790d0c5}
+
+      - ReceiverList{66439b8 6027 com.android.vending/10032/u0 remote:8f6541b}
+
+      - ReceiverList{7e39348 6027 com.android.vending/10032/u0 remote:7bd9eb}
+
+      - ReceiverList{881c808 6027 com.android.vending/10032/u0 remote:812e9ab}
+
+      - ReceiverList{8c8bde6 6027 com.android.vending/10032/u0 remote:932b441}
+
+      - ReceiverList{978d98d 6027 com.android.vending/10032/u0 remote:5beea24}
+
+      - ReceiverList{cb7fbfb 6027 com.android.vending/10032/u0 remote:7c0798a}
+
+      - ReceiverList{da6fce2 6027 com.android.vending/10032/u0 remote:4cee1ad}
+
+      - ReceiverList{e271865 6027 com.android.vending/10032/u0 remote:c45fd5c}
+
+      - ReceiverList{e91392f 6027 com.android.vending/10032/u0 remote:385b0e}
+
+      - ReceiverList{f66d592 6027 com.android.vending/10032/u0 remote:898ef1d}
+
+      - ReceiverList{fe1c31e 6027 com.android.vending/10032/u0 remote:3542b59}
+
+  *PERS* UID 1000 ProcessRecord{517e834 2764:system/1000}
+
+    user #0 uid=1000 gids={}
+
+    requiredAbi=null instructionSet=null
+
+    dir=/system/framework/framework-res.apk publicDir=/system/framework/framework-res.apk data=/data/system
+
+    packageList={com.sec.android.providers.security, android, com.android.providers.settings, com.android.server.telecom, com.dsi.ant.server}
+
+    compat=null
+
+    thread=android.app.ActivityThread$ApplicationThread@7f490dc
+
+    pid=2764 starting=false
+
+    lastActivityTime=-8s459ms lastPssTime=-18s745ms nextPssTime=+14m41s70ms
+
+    adjSeq=16738 lruSeq=0 lastPss=85MB lastCachedPss=0.00
+
+    cached=false empty=false
+
+    oom: max=-16 curRaw=-16 setRaw=-16 cur=-16 set=-16
+
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=true trimMemoryLevel=15
+
+    curProcState=0 repProcState=0 pssProcState=0 setProcState=0 lastStateTime=-58m41s860ms
+
+    persistent=true removed=false
+
+    lastRequestedGc=-29s38ms lastLowMemory=-34s48ms reportLowMemory=false
+
+    Services:
+
+      - ServiceRecord{1ee58c3 u0 android/com.android.server.DrmEventService}
+
+      - ServiceRecord{3086a5a u0 com.android.server.telecom/.components.BluetoothPhoneService}
+
+      - ServiceRecord{69497c7 u0 com.android.server.telecom/.components.TelecomService}
+
+      - ServiceRecord{698e48b u0 com.android.server.telecom/.components.BluetoothVoIPService}
+
+      - ServiceRecord{7df6a50 u0 android/.hardware.location.GeofenceHardwareService}
+
+      - ServiceRecord{8b1f959 u0 android/com.android.internal.backup.LocalTransportService}
+
+      - ServiceRecord{f364005 u0 com.dsi.ant.server/.AntService}
+
+    Connections:
+
+      - ConnectionRecord{576239 u0 CR com.sec.enterprise.mdm.services.simpin/.EnterpriseSimPin:@f4cba00}
+
+      - ConnectionRecord{6bcfcc u0 CR com.google.android.gms/.backup.BackupTransportService:@12ce5ff}
+
+      - ConnectionRecord{1c9392e u0 CR FGSA UI com.android.systemui/.ImageWallpaper:@e966fa9}
+
+      - ConnectionRecord{2040813 u0 CR android/.hardware.location.GeofenceHardwareService:@b334702}
+
+      - ConnectionRecord{28d41e0 u0 CR !FG !VIS com.google.android.gms/com.google.android.location.internal.server.HardwareArProviderService:@48b43e3}
+
+      - ConnectionRecord{2b1860b u0 CR com.samsung.ucs.agent.boot/.BootAgentService:@a80a1da}
+
+      - ConnectionRecord{4a3f941 u0 CR !FG com.android.vending/com.google.android.finsky.scheduler.process.backgroundimpl.PhoneskyJobServiceBackground:@4f0a828}
+
+      - ConnectionRecord{52cb793 u0 CR com.sec.smartcard.manager/com.sec.enterprise.mdm.sc.bai.BaiMobileAgentService:@6db0482}
+
+      - ConnectionRecord{5419bd2 u0 com.android.bluetooth/.pan.PanService:@25e65d}
+
+      - ConnectionRecord{5a8dce2 u0 CR !FG UI !VIS com.sec.android.inputmethod/.SamsungKeypad:@62c41ad}
+
+      - ConnectionRecord{626a5e5 u0 CR com.android.defcontainer/.DefaultContainerService:@c7d50dc}
+
+      - ConnectionRecord{6820a62 u0 CR !FG !VIS com.google.android.gms/com.google.android.location.fused.FusedLocationService:@a1fb52d}
+
+      - ConnectionRecord{7c5d012 u0 CR !FG !VIS com.google.android.gms/com.google.android.location.internal.GoogleLocationManagerService:@c85439d}
+
+      - ConnectionRecord{87d8f79 u0 CR !FG com.android.vending/com.google.android.finsky.scheduler.process.backgroundimpl.PhoneskyJobServiceBackground:@5265440}
+
+      - ConnectionRecord{98ade41 u0 com.android.bluetooth/.hfp.HeadsetService:@6beb0d0}
+
+      - ConnectionRecord{9a25f62 u0 CR com.android.systemui/.keyguard.KeyguardService:@e83e2d}
+
+      - ConnectionRecord{9e4b9a0 u0 CR android/com.android.internal.backup.LocalTransportService:@ebac2a3}
+
+      - ConnectionRecord{9f0d8c9 u0 com.android.bluetooth/.hfp.HeadsetService:@6beb0d0}
+
+      - ConnectionRecord{b34a04f u0 CR !FG !VIS com.google.android.gms/.location.geocode.GeocodeService:@27a6aae}
+
+      - ConnectionRecord{c1a2012 u0 CR IMP com.android.bluetooth/.gatt.GattService:@a1f3e81}
+
+      - ConnectionRecord{c33c371 u0 CR FGS com.google.android.googlequicksearchbox/com.google.android.voiceinteraction.GsaVoiceInteractionService:@bf57d18}
+
+      - ConnectionRecord{d1f1b26 u0 CR IMP com.android.bluetooth/.btservice.AdapterService:@a1f3e81}
+
+      - ConnectionRecord{d3a3506 u0 CR IMP FGS com.android.server.telecom/.components.TelecomService:@87113e1}
+
+      - ConnectionRecord{da53885 u0 com.android.bluetooth/.a2dp.A2dpService:@7a609fc}
+
+      - ConnectionRecord{ebb0c8d u0 com.android.bluetooth/.hfp.HeadsetService:@6beb0d0}
+
+      - ConnectionRecord{fa7abbb u0 CR com.samsung.ucs.ucspinpad/.UcsPinpadService:@866104a}
+
+      - ConnectionRecord{fd1f47b u0 CR !FG !VIS com.google.android.gms/com.google.android.location.network.NetworkLocationService:@c9d040a}
+
+    Published Providers:
+
+      - com.android.providers.settings.SettingsProvider
+
+        -> ContentProviderRecord{7c3bcf u0 com.android.providers.settings/.SettingsProvider}
+
+      - com.android.server.telecom.NextiTelecomProvider
+
+        -> ContentProviderRecord{e79c3a7 u0 com.android.server.telecom/.NextiTelecomProvider}
+
+      - com.android.internal.os.SmartManagerProvider
+
+        -> ContentProviderRecord{38b95c u0 android/com.android.internal.os.SmartManagerProvider}
+
+      - com.android.server.am.DumpHeapProvider
+
+        -> ContentProviderRecord{b54189a u0 android/com.android.server.am.DumpHeapProvider}
+
+      - com.android.server.enterprise.content.SecContentProvider2
+
+        -> ContentProviderRecord{1932a30 u0 android/com.android.server.enterprise.content.SecContentProvider2}
+
+      - com.sec.android.providers.security.SecurityPoliciesProvider
+
+        -> ContentProviderRecord{d9f6054 u0 com.sec.android.providers.security/.SecurityPoliciesProvider}
+
+      - com.android.server.enterprise.content.SecContentProvider
+
+        -> ContentProviderRecord{12dcbfd u0 android/com.android.server.enterprise.content.SecContentProvider}
+
+      - com.android.server.SEAMSProvider
+
+        -> ContentProviderRecord{ff15b73 u0 android/com.android.server.SEAMSProvider}
+
+    Receivers:
+
+      - ReceiverList{dfbba 2764 system/1000/u0 local:com.android.server.KiesConnectivity.KiesUsbObserver$3@6073bdc,d79b4e5}
+
+      - ReceiverList{135692 2764 system/1000/u0 local:com.android.server.wallpaper.WallpaperManagerService$WallpaperBackupRequestReciever@5ab6ae1,12d41d}
+
+      - ReceiverList{142bcb 2764 system/1000/u0 local:b.o@86bdf45,853469a}
+
+      - ReceiverList{1f6553 2764 system/1000/u0 local:b.u@fcbcb8d,dd8d142}
+
+      - ReceiverList{45cb66 2764 system/1000/u0 local:com.android.server.EntropyMixer$2@dc560a8,a6d87c1}
+
+      - ReceiverList{4d0b7b 2764 system/1000/u0 local:com.android.server.wifi.WifiServiceImpl$8@112eb75,a4a170a}
+
+      - ReceiverList{5391b1 2764 system/1000/u0 local:com.android.server.DrmEventService$2@9801d3b,b169c58}
+
+      - ReceiverList{551ca5 2764 system/1000/u0 local:com.android.server.power.PowerManagerService$UserSwitchedReceiver@f9eea0f,8946a9c}
+
+      - ReceiverList{560cf0 2764 system/1000/u0 local:com.android.server.am.ActivityManagerService$8@fea40a2,5bb1133}
+
+      - ReceiverList{585ea2 2764 system/1000/u-1 local:com.android.server.smartclip.SpenGestureManagerService$1@a861a84,d45b26d}
+
+      - ReceiverList{5bcaf8 2764 system/1000/u-1 local:com.android.server.enterprise.billing.EnterpriseBillingAsyncHandler$3@7c2fd6a,138625b}
+
+      - ReceiverList{65bd73 2764 system/1000/u0 local:com.android.server.am.MultiWindowPolicy$2@a371ead,b9ef5e2}
+
+      - ReceiverList{66d212 2764 system/1000/u0 local:com.android.server.enterprise.keystore.TimaKeystoreService$1@3362474,2e10d9d}
+
+      - ReceiverList{6f8e10 2764 system/1000/u0 local:com.android.server.wifi.WifiWatchdogStateMachine$1@73054c2,97362d3}
+
+      - ReceiverList{746bb3 2764 system/1000/u0 local:com.android.server.IcccManagerService$1@e07ad04,79e7522}
+
+      - ReceiverList{75bfa6 2764 system/1000/u0 local:com.android.server.wifi.p2p.WifiP2pServiceImpl$WifiStateReceiver@a94aae8,4cfa501}
+
+      - ReceiverList{a31b5f 2764 system/1000/u0 local:com.android.server.enterprise.container.KnoxMUMContainerPolicy$3@57617b9,98a7fe}
+
+      - ReceiverList{a90f7b 2764 system/1000/u0 local:com.android.server.policy.PhoneWindowManager$29@d664f75,a43ab0a}
+
+      - ReceiverList{aa88b2 2764 system/1000/u0 local:com.android.server.usb.UsbHostRestrictor$2@1671214,fdcfabd}
+
+      - ReceiverList{ac7209 2764 system/1000/u0 local:com.android.server.TelephonyRegistry$2@4897fd3,3afe710}
+
+      - ReceiverList{b51e3c 2764 system/1000/u-1 local:com.android.server.enterprise.container.ContainerAdminIntentReceiver$StaticIntentReceiver@1a1260e,809a82f}
+
+      - ReceiverList{b7a79b 2764 system/1000/u-1 local:com.android.server.policy.sec.SamsungPhoneWindowManager$1@5cfe295,4cb0faa}
+
+      - ReceiverList{cde2de 2764 system/1000/u0 local:b.M@d6a1d60,361f219}
+
+      - ReceiverList{d2aeef 2764 system/1000/u-1 local:com.android.server.ConnectivityService$7@f6cfcc9,2e30fce}
+
+      - ReceiverList{dba1d0 2764 system/1000/u-1 local:d.bc@f4bd282,ff86d93}
+
+      - ReceiverList{f9d73d 2764 system/1000/u0 local:com.android.server.connectivity.PacManager$PacRefreshIntentReceiver@3fb8ce7,8b39094}
+
+      - ReceiverList{fbc746 2764 system/1000/u0 local:com.android.server.backup.BackupManagerService$2@6214188,5508721}
+
+      - ReceiverList{100100a 2764 system/1000/u-1 local:android.content.pm.RegisteredServicesCache$1@acd03ac,3712875}
+
+      - ReceiverList{109fdfb 2764 system/1000/u-1 local:c.c@860f9f5,5f1438a}
+
+      - ReceiverList{10b3a43 2764 system/1000/u-1 local:com.android.server.HarmonyEASService$1@fe2fafd,8cc23f2}
+
+      - ReceiverList{113415c 2764 system/1000/u0 local:com.android.server.AlarmManagerServiceExt$SyncScheduler$TrafficAnalyzer$1@d5e8c2e,98be3cf}
+
+      - ReceiverList{126f886 2764 system/1000/u0 local:com.android.server.BluetoothManagerService$2@56840c8,3d0b561}
+
+      - ReceiverList{133bc26 2764 system/1000/u-1 local:com.android.server.ServiceWatcher$2@5963368,f0dc381}
+
+      - ReceiverList{133c96b 2764 system/1000/u-1 local:com.android.server.wifi.WifiServiceImpl$14@2769be5,81e56ba}
+
+      - ReceiverList{13a9bef 2764 system/1000/u0 local:com.android.server.pm.PersonaManagerService$ExtSdcardPolicyUpdateReceiver@75e1c9,77290ce}
+
+      - ReceiverList{1430cfb 2764 system/1000/u0 local:com.samsung.clocinfo.CLocInfoService$1@279b0f5,4392e8a}
+
+      - ReceiverList{1548352 2764 system/1000/u0 local:com.android.server.enterprise.application.ApplicationPolicy$BackupRestoreResultReceiver@bdba3b4,99dbbdd}
+
+      - ReceiverList{17b3b5d 2764 system/1000/u0 local:com.android.server.power.PowerManagerService$FTAModeChangeReceiver@e700c07,dc97134}
+
+      - ReceiverList{18b577d 2764 system/1000/u0 local:com.android.server.InputMethodManagerService$USBKeyboardReceiver@9f68327,115e9d4}
+
+      - ReceiverList{18d0d52 2764 system/1000/u-1 local:com.android.server.accounts.AccountManagerService$2@c1a9db4,9a2ddd}
+
+      - ReceiverList{1943a8e 2764 system/1000/u0 local:com.android.server.search.SearchManagerService$UserReceiver@4d3e190,2511a89}
+
+      - ReceiverList{197b06f 2764 system/1000/u0 local:com.android.server.telecom.secutils.SecActionMemoManager$1@24ac249,e7d274e}
+
+      - ReceiverList{1aee10a 2764 system/1000/u0 local:com.android.server.wifi.WifiServiceImpl$3@aa12cac,b449d75}
+
+      - ReceiverList{1ce04f7 2764 system/1000/u0 local:com.android.server.pm.PersonaPolicyManagerService$1@8eb9191,9cd58f6}
+
+      - ReceiverList{1da0c7b 2764 system/1000/u0 local:com.android.server.usb.UsbSettingsManager$MyPackageMonitor@f2dc475,fd67c0a}
+
+      - ReceiverList{1ef44b7 2764 system/1000/u0 local:com.android.server.wifi.WifiStateMachine$6@4355b51,e30bfb6}
+
+      - ReceiverList{2034c08 2764 system/1000/u0 local:com.android.server.policy.PhoneWindowManager$31@f9db3fa,57fdab}
+
+      - ReceiverList{203a244 2764 system/1000/u-1 local:com.android.server.enterprise.otp.PackageRemovalReceiver@367b8d6,8ff1757}
+
+      - ReceiverList{2080e7b 2764 system/1000/u-1 local:com.android.server.enterprise.container.KnoxMUMContainerPolicy$4@5577675,fd3460a}
+
+      - ReceiverList{20903a5 2764 system/1000/u0 local:com.android.server.net.NetworkPolicyManagerService$13@a90b90f,89b8d9c}
+
+      - ReceiverList{20b62c6 2764 system/1000/u0 local:com.android.server.location.GpsLocationProvider$2@bdd9108,3b760a1}
+
+      - ReceiverList{20dc667 2764 system/1000/u0 local:com.android.server.enterprise.ucm.UniversalCredentialManagerService$UcsReceiver@5ccb981,3767a26}
+
+      - ReceiverList{237938a 2764 system/1000/u0 local:com.android.server.wifi.p2p.WifiP2pServiceImpl$3@c64fb2c,b8e89f5}
+
+      - ReceiverList{23b6ef3 2764 system/1000/u0 local:com.android.server.wifi.WifiServiceImpl$10@aaa142d,45e7d62}
+
+      - ReceiverList{24badbb 2764 system/1000/u0 local:com.android.server.wifi.WifiStateMachine$16@959b3b5,2f0da4a}
+
+      - ReceiverList{25f8b59 2764 system/1000/u0 local:android.bluetooth.BluetoothPan$1@d584a3,26553a0}
+
+      - ReceiverList{265eb37 2764 system/1000/u0 local:com.android.server.job.controllers.IdleController$IdlenessTracker@5b0fdd1,a57f036}
+
+      - ReceiverList{2679866 2764 system/1000/u-1 local:com.android.server.appwidget.AppWidgetServiceImpl$1@4bd25a8,df268c1}
+
+      - ReceiverList{273e6e5 2764 system/1000/u0 local:com.android.server.enterprise.shareddevice.EnterpriseSharedDevicePolicy$SDAgentPackageStateReceiver@a6f9a4f,aa2f5dc}
+
+      - ReceiverList{29f0977 2764 system/1000/u0 local:com.android.server.telecom.BluetoothPhoneServiceImpl$4@7b6e211,be59f76}
+
+      - ReceiverList{2a026eb 2764 system/1000/u0 local:com.android.server.wallpaper.WallpaperManagerService$WallpaperSimChangeObserver@bbd5d65,333ba3a}
+
+      - ReceiverList{2a7ba32 2764 system/1000/u0 local:com.android.server.AlarmManagerService$UninstallReceiver@d58794,ab2023d}
+
+      - ReceiverList{2c1b7f8 2764 system/1000/u0 local:com.android.server.wifi.WifiMaliciousHotspotDetector$1@f19e26a,8fde35b}
+
+      - ReceiverList{2c2bbc5 2764 system/1000/u0 local:com.android.server.clipboard.ClipboardService$1@da86c2f,d06923c}
+
+      - ReceiverList{2c44812 2764 system/1000/u0 local:com.android.server.twilight.TwilightService$2@21d2a74,3129b9d}
+
+      - ReceiverList{2ce16ec 2764 system/1000/u-1 local:com.android.server.execute.ExecuteManagerService$MyPackageMonitor@bca633e,f5d559f}
+
+      - ReceiverList{2e160aa 2764 system/1000/u0 local:com.android.server.usb.UsbDeviceManager$UsbHandler$1@a377b4c,9f8d795}
+
+      - ReceiverList{2e831e9 2764 system/1000/u0 local:com.android.server.net.NetworkPolicyManagerService$12@25c84b3,7453a70}
+
+      - ReceiverList{2f71e9b 2764 system/1000/u0 local:com.android.server.telecom.TelecomSystem$3@1dec195,91202aa}
+
+      - ReceiverList{2fd186e 2764 system/1000/u0 local:com.android.server.backup.BackupManagerService$RunBackupReceiver@a5b5470,b3d43e9}
+
+      - ReceiverList{2fef09d 2764 system/1000/u0 local:com.android.server.net.NetworkStatsService$6@692ef47,961b374}
+
+      - ReceiverList{30c49de 2764 system/1000/u0 local:com.android.server.wallpaper.WallpaperManagerService$1@a426c60,d8d9519}
+
+      - ReceiverList{316e457 2764 system/1000/u0 local:com.android.server.wifi.WifiServiceImpl$9@633c9f1,cfa99d6}
+
+      - ReceiverList{31f645b 2764 system/1000/u0 local:com.android.server.job.controllers.TimeController$1@19aa155,8bcc76a}
+
+      - ReceiverList{3312aaa 2764 system/1000/u-1 local:com.android.server.enterprise.application.ApplicationPolicy$5@66bb54c,1e18995}
+
+      - ReceiverList{34c0ef2 2764 system/1000/u0 local:android.accounts.AccountManager$19@2751e54,413b1fd}
+
+      - ReceiverList{35337f2 2764 system/1000/u0 local:com.android.server.SEAMService$1@f63df54,a89defd}
+
+      - ReceiverList{358e13e 2764 system/1000/u0 local:com.android.server.SEAMService$2@bc99cc0,f1a6df9}
+
+      - ReceiverList{35d80a5 2764 system/1000/u0 local:com.android.server.TextServicesManagerService$TextServicesBroadcastReceiver@3efae0f,2afde9c}
+
+      - ReceiverList{35f63a2 2764 system/1000/u-1 local:com.android.server.wallpaper.WallpaperManagerService$MyPackageMonitor@d625784,da1ab6d}
+
+      - ReceiverList{367a09f 2764 system/1000/u0 local:com.android.server.telecom.ui.MissedCallNotifierImpl$2@6994af9,9b2fa3e}
+
+      - ReceiverList{369179e 2764 system/1000/u0 local:com.android.server.policy.PhoneWindowManager$36@9ad9420,2ca01d9}
+
+      - ReceiverList{36f5b69 2764 system/1000/u0 local:com.android.server.telecom.BluetoothManager$2@2163233,d3119f0}
+
+      - ReceiverList{3700a35 2764 system/1000/u0 local:com.sec.android.emergencymode.EmergencyManager$2@677191f,757546c}
+
+      - ReceiverList{37baadb 2764 system/1000/u0 local:com.android.server.BatteryService$1@2dae3d5,45c17ea}
+
+      - ReceiverList{38520b4 2764 system/1000/u0 local:com.android.server.policy.PhoneWindowManager$32@315c6,f16c987}
+
+      - ReceiverList{38619ed 2764 system/1000/u0 local:com.android.server.InputMethodManagerService$KeyboardSubTypeReceiver@1f08417,c717004}
+
+      - ReceiverList{38ba5a9 2764 system/1000/u0 local:com.android.server.UiModeManagerService$3@4486273,8c32530}
+
+      - ReceiverList{39a8e6c 2764 system/1000/u0 local:android.sec.enterprise.WifiPolicyCache$1@4a92ebe,d3afb1f}
+
+      - ReceiverList{3a4eaba 2764 system/1000/u0 local:com.android.server.input.InputManagerService$2@e12d2dc,c6affe5}
+
+      - ReceiverList{3acd1fe 2764 system/1000/u0 local:com.android.server.TimaService$TuiReceiver@f106f80,8f8a9b9}
+
+      - ReceiverList{3b1b735 2764 system/1000/u0 local:com.android.server.DrmEventService$3@3d3be1f,f956c}
+
+      - ReceiverList{3b47cbf 2764 system/1000/u0 local:com.android.server.wifi.WifiStateMachine$4@15e8219,93732de}
+
+      - ReceiverList{3c1263f 2764 system/1000/u0 local:com.android.server.RCPManagerService$ModeSwitcherReceiver@cc1af99,b4e925e}
+
+      - ReceiverList{3d7b98c 2764 system/1000/u0 local:com.android.server.AlarmManagerService$EmergencyReceiver@41c5cde,6135ebf}
+
+      - ReceiverList{3eafcd8 2764 system/1000/u0 local:com.android.server.policy.PhoneWindowManager$30@eaba44a,65fafbb}
+
+      - ReceiverList{3faee79 2764 system/1000/u0 local:com.android.server.InputMethodManagerService$BTKeyboardReceiver@fbe2ac3,ad1cf40}
+
+      - ReceiverList{406d33f 2764 system/1000/u-1 local:com.android.server.job.controllers.ConnectivityController$ConnectivityChangedReceiver@1825499,19ad35e}
+
+      - ReceiverList{40c589e 2764 system/1000/u0 local:com.android.server.usb.UsbHostManager$2@4e4ad20,8dda6d9}
+
+      - ReceiverList{42403d3 2764 system/1000/u0 local:com.android.server.job.controllers.BatteryController$ChargingTracker@5f6a60d,baad9c2}
+
+      - ReceiverList{42635ed 2764 system/1000/u-1 local:com.android.server.job.JobSchedulerService$1@9f44017,1507c04}
+
+      - ReceiverList{4270d2d 2764 system/1000/u0 local:com.android.server.usb.UsbService$1@6f2f557,47d2844}
+
+      - ReceiverList{4447b09 2764 system/1000/u0 local:com.android.server.net.NetworkPolicyManagerService$4@9a620d3,fee7410}
+
+      - ReceiverList{44bf952 2764 system/1000/u0 local:com.android.server.usb.UsbNotificationHandler$2@f4ca9b4,49149dd}
+
+      - ReceiverList{44d275e 2764 system/1000/u0 local:com.android.server.content.SyncManager$2@49f7f9d,8f97899}
+
+      - ReceiverList{44eb45a 2764 system/1000/u-1 local:com.android.server.ServiceWatcher$1@fd8db7c,1d6c05}
+
+      - ReceiverList{4679f1c 2764 system/1000/u-1 local:com.android.server.ServiceWatcher$2@772c3ee,ba4208f}
+
+      - ReceiverList{47b0ac6 2764 system/1000/u0 local:com.android.server.accounts.AccountManagerService$1@94af908,fca8a1}
+
+      - ReceiverList{49bdd46 2764 system/1000/u0 local:com.android.server.net.NetworkPolicyManagerService$VideoCallBroadcastReceiver@da1e788,dab3521}
+
+      - ReceiverList{4be2b42 2764 system/1000/u0 local:com.android.server.input.InputManagerService$1@869ae24,be64d8d}
+
+      - ReceiverList{4cc13af 2764 system/1000/u0 local:com.android.server.wifi.WifiStateMachine$10@6772389,2840f8e}
+
+      - ReceiverList{4e4e51b 2764 system/1000/u0 local:com.android.server.enterprise.billing.EnterpriseConnectivity$4@6f48415,398d32a}
+
+      - ReceiverList{4fa34a6 2764 system/1000/u0 local:com.samsung.android.motion.MotionRecognitionService$1@2f4d7e8,178ce01}
+
+      - ReceiverList{4fce716 2764 system/1000/u0 local:com.samsung.android.mdnie.MdnieManagerService$ScreenWatchingReceiver@e5948d8,f460431}
+
+      - ReceiverList{4fd6a97 2764 system/1000/u0 local:com.android.server.wifi.WifiStateMachine$21@1bed631,e6a5116}
+
+      - ReceiverList{5210afc 2764 system/1000/u-1 local:d.bh@2e894ce,fb24fef}
+
+      - ReceiverList{5382b3b 2764 system/1000/u0 local:com.android.server.wifi.RttService$RttServiceImpl$1@adb9535,2f2ddca}
+
+      - ReceiverList{54f4db2 2764 system/1000/u0 local:com.android.server.wifi.WifiController$1@3bb0f14,2b5b3bd}
+
+      - ReceiverList{55e43ed 2764 system/1000/u0 local:com.android.server.net.NetworkPolicyManagerService$11@a9e1e17,f480204}
+
+      - ReceiverList{56f0bbf 2764 system/1000/u-1 local:com.android.server.notification.NotificationManagerService$2@1bcb919,169dde}
+
+      - ReceiverList{5715d4b 2764 system/1000/u-1 local:com.android.server.InputMethodManagerService$MyPackageMonitor@43a54c5,8084e1a}
+
+      - ReceiverList{5860c5f 2764 system/1000/u0 local:com.android.server.policy.multiwindow.MultiPhoneWindowManager$1@c1960b9,a5cbcfe}
+
+      - ReceiverList{58eb377 2764 system/1000/u-1 local:com.android.providers.settings.SettingsProvider$2@acffc11,f81b176}
+
+      - ReceiverList{5926d63 2764 system/1000/u0 local:com.android.server.wifi.WifiStateMachine$2@8bef11d,31af92}
+
+      - ReceiverList{5996f13 2764 system/1000/u0 local:com.android.server.policy.sec.SamsungPhoneWindowManager$3@8eacf4d,9b1ea02}
+
+      - ReceiverList{5a25db0 2764 system/1000/u0 local:com.android.server.net.NetworkStatsService$3@99a7362,5b72cf3}
+
+      - ReceiverList{5b103af 2764 system/1000/u0 local:b.n@8369389,526bf8e}
+
+      - ReceiverList{5b8952f 2764 system/1000/u-1 local:com.android.server.pm.LauncherAppsService$LauncherAppsImpl$MyPackageMonitor@8506909,33a70e}
+
+      - ReceiverList{5ce087b 2764 system/1000/u-1 local:com.android.server.ServiceWatcher$2@aaa6075,36ce80a}
+
+      - ReceiverList{5d8ef79 2764 system/1000/u0 local:com.sec.android.emergencymode.EmergencyManager$1@78203c3,b533440}
+
+      - ReceiverList{5e5a646 2764 system/1000/u0 local:com.android.server.TextServicesManagerService$TextServicesMonitor@32a4888,c4a8221}
+
+      - ReceiverList{5ee15d8 2764 system/1000/u0 local:com.android.server.policy.GlobalActions$34@cd8d54a,a8b8cbb}
+
+      - ReceiverList{6043ced 2764 system/1000/u0 local:com.android.server.power.PowerManagerService$BatteryReceiver@d3b2f17,d563f04}
+
+      - ReceiverList{62a9a81 2764 system/1000/u0 local:com.android.server.SdpManagerService$ActionReceiver@ca7a58b,c540668}
+
+      - ReceiverList{6405b6a 2764 system/1000/u0 local:com.android.server.content.SyncManager$6@6abc80c,3600555}
+
+      - ReceiverList{6411748 2764 system/1000/u0 local:com.android.server.AlarmManagerServiceExt$SyncScheduler$TrafficAnalyzer$4@e4b3d3a,78cedeb}
+
+      - ReceiverList{64629b3 2764 system/1000/u0 local:com.absolute.android.persistservice.i@f7420ed,ac86b22}
+
+      - ReceiverList{64aac9e 2764 system/1000/u0 local:com.android.server.DirEncryptServiceHelper$1@29de120,690cad9}
+
+      - ReceiverList{64cdd76 2764 system/1000/u0 local:com.android.server.usb.UsbDeviceManager$UsbHandler$2@6070038,65c5811}
+
+      - ReceiverList{6525beb 2764 system/1000/u-1 local:com.android.server.ssrm.bc@2a54a65,c29a33a}
+
+      - ReceiverList{6528762 2764 system/1000/u0 local:com.android.server.wifi.WifiServiceImpl$5@64a6544,f20062d}
+
+      - ReceiverList{65f2277 2764 system/1000/u0 local:com.android.server.policy.sec.SamsungPhoneWindowManager$2@191311,ea27c76}
+
+      - ReceiverList{66092fe 2764 system/1000/u0 local:com.android.server.wifi.WifiServiceImpl$2@4c40880,50eceb9}
+
+      - ReceiverList{66b485a 2764 system/1000/u0 local:com.android.server.usb.UsbDeviceManager$2@c364f7c,53fd005}
+
+      - ReceiverList{673e31b 2764 system/1000/u-1 local:com.android.server.trust.TrustManagerService$3@affd215,22d092a}
+
+      - ReceiverList{6856a07 2764 system/1000/u-1 local:com.samsung.location.g@92414b1,87de846}
+
+      - ReceiverList{69599a5 2764 system/1000/u0 local:com.android.server.InputMethodManagerService$KMSKeyboardReceiver@109df0f,7c4bb9c}
+
+      - ReceiverList{697e335 2764 system/1000/u0 local:com.android.server.net.NetworkPolicyManagerService$9@8b0a1f,b42f16c}
+
+      - ReceiverList{6c14ad7 2764 system/1000/u0 local:com.android.server.am.ActivityManagerService$ScreenStatusReceiver@d4d2c71,dcc8a56}
+
+      - ReceiverList{6d02536 2764 system/1000/u0 local:com.android.server.wifi.hs20.WifiHs20SubscriptionManager$1@31191f8,6c4e6d1}
+
+      - ReceiverList{6e203d6 2764 system/1000/u0 local:com.android.server.wifi.WifiServiceImpl$4@44a6798,6ce9bf1}
+
+      - ReceiverList{6e55f3a 2764 system/1000/u-1 local:com.android.server.telecom.TelecomLoaderService$5@984135c,4a7665}
+
+      - ReceiverList{6e9242a 2764 system/1000/u-1 local:com.android.server.pm.PersonaPolicyManagerService$PersonaPolicyReceiver@395b2cc,8ff7915}
+
+      - ReceiverList{6eae524 2764 system/1000/u-1 local:com.android.server.usage.UsageStatsService$UserActionsReceiver@bdbc8b6,68019b7}
+
+      - ReceiverList{6edaa4e 2764 system/1000/u0 local:com.samsung.commonimsinterface.imsinterface.IMSInterfaceForBaseService$1@be41d13,9ef7149}
+
+      - ReceiverList{6f45ff4 2764 system/1000/u0 local:com.android.server.AlarmManagerServiceExt$SyncScheduler$TrafficAnalyzer$5@81ff306,e4a7dc7}
+
+      - ReceiverList{701c2ee 2764 system/1000/u-1 local:com.android.server.print.PrintManagerService$PrintManagerImpl$2@78c5af0,180869}
+
+      - ReceiverList{71fde21 2764 system/1000/u0 local:com.android.server.power.PowerManagerService$DockReceiver@46a182b,cb9488}
+
+      - ReceiverList{7266203 2764 system/1000/u0 local:com.android.server.enterprise.container.KnoxMUMContainerPolicy$1@a6cbd,8c012b2}
+
+      - ReceiverList{72f2857 2764 system/1000/u0 local:com.android.server.policy.PhoneWindowManager$33@e596df1,4f96dd6}
+
+      - ReceiverList{7392ecd 2764 system/1000/u-1 local:com.android.server.trust.TrustManagerService$Receiver@e6395f7,c224c64}
+
+      - ReceiverList{7431f00 2764 system/1000/u-1 local:com.android.server.ssrm.E@921e032,e67e183}
+
+      - ReceiverList{75a76ec 2764 system/1000/u0 local:com.android.server.policy.GlobalActions$37@aa7c33e,6df359f}
+
+      - ReceiverList{760289b 2764 system/1000/u0 local:com.android.providers.settings.SettingsProvider$1@9ba3b95,cb0f4aa}
+
+      - ReceiverList{765dfe3 2764 system/1000/u0 local:com.android.server.TimaService$2@15c5e61,1395c12}
+
+      - ReceiverList{76bc4af 2764 system/1000/u-1 local:com.android.server.LockSettingsService$2@dd92c89,bffe48e}
+
+      - ReceiverList{798f8d4 2764 system/1000/u-1 local:com.android.server.enterprise.container.ContainerAdminIntentReceiver$1@f1fe8e6,1706e27}
+
+      - ReceiverList{7aa1338 2764 system/1000/u0 local:android.media.MediaRouter$VolumeChangeReceiver@42b7baa,5ada39b}
+
+      - ReceiverList{7bf5e4c 2764 system/1000/u0 local:android.media.MediaRouter$WifiDisplayStatusChangedReceiver@75ac39e,3739e7f}
+
+      - ReceiverList{7c48fd8 2764 system/1000/u-1 local:com.android.server.enterprise.EnterpriseDeviceManagerService$MyPackageMonitor@8a83f4a,27aebb}
+
+      - ReceiverList{7dbfd5e 2764 system/1000/u0 local:com.android.server.enterprise.ccm.ClientCertificateManager$1@bcb13e0,4c5e699}
+
+      - ReceiverList{7f2235a 2764 system/1000/u0 local:com.android.server.lights.LightsService$SvcLEDReceiver@8fcf27c,d7d3705}
+
+      - ReceiverList{7faa50e 2764 system/1000/u0 local:com.android.server.ethernet.EthernetServiceImpl$1@ba0a810,2fc9f09}
+
+      - ReceiverList{7fe9ea4 2764 system/1000/u-1 local:com.android.server.enterprise.billing.EnterpriseBillingAsyncHandler$4@28b8636,c10c937}
+
+      - ReceiverList{8020b18 2764 system/1000/u0 local:com.android.server.DirEncryptService$2@481f88a,9cd0efb}
+
+      - ReceiverList{8053879 2764 system/1000/u0 local:com.android.server.net.NetworkPolicyManagerService$8@188e4c3,ecf0140}
+
+      - ReceiverList{817aa1c 2764 system/1000/u0 local:com.android.server.policy.PhoneWindowManager$28@21316ee,d31778f}
+
+      - ReceiverList{81f7ee3 2764 system/1000/u0 local:com.android.server.RCPManagerService$BootReceiver@f82469d,66a1712}
+
+      - ReceiverList{8215b02 2764 system/1000/u0 local:com.android.server.usb.UsbDeviceManager$UsbHandler$3@747e7e4,9d644d}
+
+      - ReceiverList{821e96f 2764 system/1000/u0 local:com.android.server.policy.sec.SamsungPhoneWindowManager$4@ca21349,658a44e}
+
+      - ReceiverList{8223b0d 2764 system/1000/u0 local:com.android.server.net.NetworkPolicyManagerService$5@3103837,92e1a4}
+
+      - ReceiverList{830bec5 2764 system/1000/u0 local:com.android.server.net.NetworkPolicyManagerService$15@3a7f72f,92ec13c}
+
+      - ReceiverList{83f080b 2764 system/1000/u0 local:com.android.server.pm.KnoxTimeoutHandler$1@1f1d185,3aaebda}
+
+      - ReceiverList{8540077 2764 system/1000/u0 local:com.android.server.wifi.WifiNotificationController$1@5df4111,a081276}
+
+      - ReceiverList{8687016 2764 system/1000/u0 local:com.android.server.camera.CameraService$1@73d69d8,761131}
+
+      - ReceiverList{8717d0f 2764 system/1000/u0 local:com.android.server.connectivity.Tethering$StateReceiver@88255e9,e1c26e}
+
+      - ReceiverList{89c0ffb 2764 system/1000/u0 local:com.android.server.AlarmManagerServiceExt$SyncScheduler$3@fac3bf5,b185d8a}
+
+      - ReceiverList{8a125c5 2764 system/1000/u0 local:com.android.server.media.MediaRouterService$1@2e2462f,314643c}
+
+      - ReceiverList{8a97553 2764 system/1000/u0 local:com.android.server.wifi.WifiStateMachine$7@8235b8d,9012142}
+
+      - ReceiverList{8aa8a08 2764 system/1000/u0 local:com.android.server.am.ActivityManagerService$10@27741fa,43d73ab}
+
+      - ReceiverList{8b39798 2764 system/1000/u0 local:com.android.server.pm.KnoxKeyguardUpdateMonitor$1@9d75cac,452fd7b}
+
+      - ReceiverList{8b8aca8 2764 system/1000/u-1 local:com.android.server.devicepolicy.DevicePolicyManagerService$1@419bb9a,939fccb}
+
+      - ReceiverList{8c127d8 2764 system/1000/u0 local:com.android.server.telecom.WiredHeadsetManager$WiredHeadsetBroadcastReceiver@33d174a,b57a6bb}
+
+      - ReceiverList{8c48fba 2764 system/1000/u0 local:com.android.server.content.SyncManager$3@ceeafdc,b5e18e5}
+
+      - ReceiverList{8eb33f0 2764 system/1000/u-1 local:com.android.server.ServiceWatcher$1@a0b4fa2,2607433}
+
+      - ReceiverList{92609fb 2764 system/1000/u0 local:com.android.server.pm.PersonaManagerService$11@60ac97e,405ff8a}
+
+      - ReceiverList{92b0d37 2764 system/1000/u0 local:com.android.server.enterprise.utils.PackageDownloader$1@794cfd1,e545a36}
+
+      - ReceiverList{92d78cc 2764 system/1000/u0 local:com.android.server.notification.TwScheduleConditionProvider$1@11bba1e,cb792ff}
+
+      - ReceiverList{9356bee 2764 system/1000/u0 local:android.content.pm.RegisteredServicesCache$2@2b39bf0,b9cb569}
+
+      - ReceiverList{93a872c 2764 system/1000/u-1 local:com.android.server.display.WifiDisplayAdapter$13@5bdcf39,1705edf}
+
+      - ReceiverList{93e0386 2764 system/1000/u0 local:com.android.server.enterprise.keystore.TimaKeystoreService$KeystoreReceiver@e5793c8,f010c61}
+
+      - ReceiverList{945b79d 2764 system/1000/u0 local:com.android.server.NetworkTimeUpdateService$1@e649e47,afb3674}
+
+      - ReceiverList{94b7272 2764 system/1000/u0 local:com.android.server.wifi.WifiScanningServiceImpl$1@6d9f5d4,9ac737d}
+
+      - ReceiverList{94ccd1c 2764 system/1000/u-1 local:com.android.server.enterprise.application.ApplicationPolicy$4@97cc1ee,949468f}
+
+      - ReceiverList{94d2d51 2764 system/1000/u0 local:com.android.server.Watchdog$RebootRequestReceiver@42927db,e0ce278}
+
+      - ReceiverList{953f993 2764 system/1000/u0 local:com.android.server.pm.PersonaManagerService$BootReceiver@2a6b5cd,5ee0e82}
+
+      - ReceiverList{95e97ed 2764 system/1000/u0 local:com.android.server.DrmEventService$1@fc95217,4852604}
+
+      - ReceiverList{9707db1 2764 system/1000/u0 local:com.android.server.net.NetworkPolicyManagerService$10@860293b,c23b858}
+
+      - ReceiverList{97377a2 2764 system/1000/u-1 local:android.content.pm.RegisteredServicesCache$1@40b4b84,5e98f6d}
+
+      - ReceiverList{97f0e84 2764 system/1000/u0 local:com.android.server.policy.PhoneWindowManager$26@c07bb16,34f8c97}
+
+      - ReceiverList{986edec 2764 system/1000/u0 local:com.android.server.policy.PhoneWindowManager$25@79ba23e,2a7289f}
+
+      - ReceiverList{98f1661 2764 system/1000/u0 local:com.android.server.NetworkTimeUpdateService$2@b6e066b,58f85c8}
+
+      - ReceiverList{9901986 2764 system/1000/u0 local:com.android.server.KiesConnectivity.KiesUsbObserver$1@2ba39c8,f95ba61}
+
+      - ReceiverList{9929a6f 2764 system/1000/u0 local:com.android.internal.os.BatteryStatsDBHelper$1@82d1c49,349794e}
+
+      - ReceiverList{993f2f3 2764 system/1000/u0 local:com.android.server.policy.PhoneWindowManager$34@985f82d,f769162}
+
+      - ReceiverList{995eda0 2764 system/1000/u-1 local:com.android.server.accessibility.AccessibilityManagerService$8@f1625d2,e6046a3}
+
+      - ReceiverList{9a2485f 2764 system/1000/u0 local:com.android.server.DeviceIdleController$2@6f43cb9,9468fe}
+
+      - ReceiverList{9a4a107 2764 system/1000/u0 local:com.android.server.InputMethodManagerService$5@d6b2b21,a4b9b46}
+
+      - ReceiverList{9a79767 2764 system/1000/u0 local:com.android.server.policy.sec.SamsungPhoneWindowManager$6@9d3e281,f00ef26}
+
+      - ReceiverList{9be4026 2764 system/1000/u0 local:com.dsi.ant.core.JAntJava$2@1d41768,8dfd781}
+
+      - ReceiverList{9d3e228 2764 system/1000/u-1 local:com.android.server.enterprise.container.ContainerAdminIntentReceiver$DynamicIntentReceiver@c4d951a,c92984b}
+
+      - ReceiverList{9f6bf61 2764 system/1000/u0 local:com.android.server.net.NetworkStatsService$5@4a9476b,79832c8}
+
+      - ReceiverList{9f77395 2764 system/1000/u-1 local:com.android.server.ServiceWatcher$1@4144b7f,edf074c}
+
+      - ReceiverList{9fb131c 2764 system/1000/u-1 local:com.android.server.audio.AudioService$AudioServiceBroadcastReceiver@3f417ee,e4ce48f}
+
+      - ReceiverList{9fe4cf5 2764 system/1000/u0 local:com.android.server.voiceinteraction.VoiceInteractionManagerServiceImpl$1@ae76ddf,17dea2c}
+
+      - ReceiverList{a08f0e2 2764 system/1000/u0 local:com.android.server.dreams.DreamManagerService$1@95152c4,67025ad}
+
+      - ReceiverList{a13829e 2764 system/1000/u0 local:com.android.server.enterprise.application.ApplicationPolicy$6@4694720,73f38d9}
+
+      - ReceiverList{a27081c 2764 system/1000/u0 local:com.android.server.am.ActivityManagerService$9@acfc4ee,68b8d8f}
+
+      - ReceiverList{a2d919f 2764 system/1000/u-1 local:com.android.server.ServiceWatcher$1@5a793f9,3060f3e}
+
+      - ReceiverList{a2e3032 2764 system/1000/u0 local:com.android.server.wifi.p2p.WifiP2pServiceImpl$1@c7d8d94,710903d}
+
+      - ReceiverList{a3a3708 2764 system/1000/u0 local:com.android.server.telecom.TtyManager$TtyBroadcastReceiver@f1e6fa,abbb4ab}
+
+      - ReceiverList{a543173 2764 system/1000/u-1 local:com.android.server.ssrm.bd@edb72ad,f2eb9e2}
+
+      - ReceiverList{a5dce13 2764 system/1000/u0 local:com.android.server.enterprise.restriction.PhoneRestrictionPolicy$1@2aa564d,5606502}
+
+      - ReceiverList{a630cc1 2764 system/1000/u0 local:com.android.server.wm.WindowManagerService$1@dffbdcb,7b9d9a8}
+
+      - ReceiverList{a634f1e 2764 system/1000/u-1 local:com.android.server.connectivity.PermissionMonitor$1@141fa0,ff46759}
+
+      - ReceiverList{a63a8bb 2764 system/1000/u-1 local:com.android.server.ServiceWatcher$2@ec476b5,acfe14a}
+
+      - ReceiverList{a67cea7 2764 system/1000/u0 local:com.android.server.connectivity.NetworkMonitor$1@a88a53,ace7b66}
+
+      - ReceiverList{a74bae9 2764 system/1000/u0 local:com.android.server.power.PowerManagerService$DreamReceiver@39a5b3,47a4770}
+
+      - ReceiverList{a7dd283 2764 system/1000/u0 local:com.android.server.MountService$1@fa3493d,b04f532}
+
+      - ReceiverList{a832f90 2764 system/1000/u0 local:com.android.server.usage.UsageStatsService$DeviceStateReceiver@d3ba42,df29a53}
+
+      - ReceiverList{a859026 2764 system/1000/u0 local:com.android.server.usb.UsbHostRestrictor$1@c56e768,df26781}
+
+      - ReceiverList{a8b1d7e 2764 system/1000/u0 local:com.android.server.wifi.p2p.WifiP2pServiceImpl$2@d6fef00,d7af339}
+
+      - ReceiverList{a9c9808 2764 system/1000/u0 local:com.android.server.fingerprint.FingerprintService$2@2cb1ffa,996f9ab}
+
+      - ReceiverList{aa2fdb2 2764 system/1000/u0 local:com.android.server.pm.PersonaManagerService$4@d1b3f14,f4a23bd}
+
+      - ReceiverList{aa46020 2764 system/1000/u0 local:com.android.server.os.BackgroundCompactionService$1@af9b452,aaef323}
+
+      - ReceiverList{ab767e9 2764 system/1000/u0 local:com.android.server.InputMethodManagerService$PSSKeyboardReceiver@36f4ab3,8978870}
+
+      - ReceiverList{aba9662 2764 system/1000/u0 local:android.content.pm.RegisteredServicesCache$3@73a1c44,8f2f12d}
+
+      - ReceiverList{ace254e 2764 system/1000/u0 local:com.android.server.usb.UsbDeviceManager$3@58d9e50,568f849}
+
+      - ReceiverList{ad1c3b2 2764 system/1000/u0 local:com.android.server.DeviceIdleController$1@5ff1514,78041bd}
+
+      - ReceiverList{add50ec 2764 system/1000/u0 local:com.android.server.enterprise.log.LogManagerService$1@5748d3e,19d379f}
+
+      - ReceiverList{ae27c01 2764 system/1000/u0 local:com.android.server.connectivity.DataConnectionStats@4c54b0b,a607de8}
+
+      - ReceiverList{ae336c6 2764 system/1000/u0 local:com.android.server.usb.UsbNotificationHandler$1@9344508,47a04a1}
+
+      - ReceiverList{af07ed7 2764 system/1000/u-1 local:h.v@2944071,d280e56}
+
+      - ReceiverList{b2887d2 2764 system/1000/u0 local:com.android.server.net.NetworkPolicyManagerService$16@d31f434,ae5025d}
+
+      - ReceiverList{b2f469f 2764 system/1000/u0 local:com.android.server.wifi.WifiStateMachine$15@a7300f9,6d9783e}
+
+      - ReceiverList{b3194fc 2764 system/1000/u0 local:com.android.server.AlarmManagerService$ClockReceiver@f3f8ece,ce6c1ef}
+
+      - ReceiverList{b31fd54 2764 system/1000/u0 local:com.android.internal.location.GpsNetInitiatedHandler$1@1733966,470b4a7}
+
+      - ReceiverList{b32f935 2764 system/1000/u0 local:com.android.server.InputMethodManagerService$RangeModeChangeReceiver@3ceb01f,fa49f6c}
+
+      - ReceiverList{b55b7ae 2764 system/1000/u0 local:com.android.server.wifi.WifiServiceImpl$7@12a91b0,5a3d829}
+
+      - ReceiverList{b5dfbad 2764 system/1000/u0 local:com.android.server.UiModeManagerService$2@b539fd7,498c0c4}
+
+      - ReceiverList{b6469e5 2764 system/1000/u0 local:com.android.server.net.NetworkStatsService$4@93063ae,4c7a4dc}
+
+      - ReceiverList{b718ac7 2764 system/1000/u0 local:com.android.server.notification.ManagedServices$SettingRestoredReceiver@52a0ee1,6771406}
+
+      - ReceiverList{b7204df 2764 system/1000/u0 local:com.android.server.AlarmManagerService$FactoryOnOffControlReceiver@ec18539,213477e}
+
+      - ReceiverList{b8794d8 2764 system/1000/u0 local:com.android.server.telecom.operator.jpn.NextiCallSMSReceiver@29a9db5,eafa7bb}
+
+      - ReceiverList{b89eab2 2764 system/1000/u0 local:com.android.server.media.RemoteDisplayProviderWatcher$1@4cb2414,af4a4bd}
+
+      - ReceiverList{b8aa9a6 2764 system/1000/u0 local:com.android.server.AlarmManagerService$InteractiveStateReceiver@38104e8,ddf701}
+
+      - ReceiverList{b8cedc2 2764 system/1000/u0 local:com.android.server.content.SyncManager$SyncAlarmIntentReceiver@2e10ca4,6848a0d}
+
+      - ReceiverList{b9722d6 2764 system/1000/u0 local:android.content.pm.RegisteredServicesCache$2@dcae98,cb8d6f1}
+
+      - ReceiverList{b9b5bcc 2764 system/1000/u0 local:android.net.DhcpStateMachine$1@960251e,c7321ff}
+
+      - ReceiverList{ba6f3b1 2764 system/1000/u0 local:com.android.server.InputMethodManagerService$CarModeReceiver@3382f3b,ff24658}
+
+      - ReceiverList{bb47dfe 2764 system/1000/u0 local:com.android.server.usb.UsbHostRestrictor$3@4ad3b80,ae385b9}
+
+      - ReceiverList{bba9eb0 2764 system/1000/u-1 local:com.android.server.enterprise.otp.OTPTimeChangeLogger@dfe8c62,9f3d1f3}
+
+      - ReceiverList{bbe6d83 2764 system/1000/u0 local:com.android.server.display.WifiDisplayController$30@1d419e7,d9dac3d}
+
+      - ReceiverList{bd68373 2764 system/1000/u0 local:com.android.server.AlarmManagerServiceExt$SyncScheduler$PackageManagerReceiver@80cf4ad,adf13e2}
+
+      - ReceiverList{bed6fb6 2764 system/1000/u0 local:b.O@3423878,536cb51}
+
+      - ReceiverList{bf05732 2764 system/1000/u-1 local:com.android.server.voiceinteraction.VoiceInteractionManagerService$VoiceInteractionManagerServiceStub$1@ec39c94,176f33d}
+
+      - ReceiverList{bf1dae8 2764 system/1000/u-1 local:com.android.server.ssrm.bg@a7d2fda,87dfc0b}
+
+      - ReceiverList{c059cb2 2764 system/1000/u0 local:com.android.server.VibratorService$4@43f0614,a27debd}
+
+      - ReceiverList{c14074f 2764 system/1000/u0 local:com.android.server.wifi.WifiServiceImpl$12@ac0c629,d2b0dae}
+
+      - ReceiverList{c3096f6 2764 system/1000/u0 local:com.android.server.ssrm.p@106bdb8,1fd0791}
+
+      - ReceiverList{c353059 2764 system/1000/u0 local:com.android.server.power.PowerManagerService$9@bf761a3,f266ca0}
+
+      - ReceiverList{c3981f0 2764 system/1000/u0 local:com.android.server.enterprise.EnterpriseDeviceManagerService$1@2d16da2,fdf3a33}
+
+      - ReceiverList{c4a5943 2764 system/1000/u0 local:com.android.server.wifi.WifiStateMachine$14@96f41fd,1285ef2}
+
+      - ReceiverList{c50ae75 2764 system/1000/u-1 local:com.android.server.connectivity.Vpn$1@77b935f,fee1ac}
+
+      - ReceiverList{c57455a 2764 system/1000/u0 local:com.android.server.am.MARsTrigger$3@780c47c,199a105}
+
+      - ReceiverList{c5ef999 2764 system/1000/u0 local:com.android.server.net.NetworkStatsService$7@88538e3,aa092e0}
+
+      - ReceiverList{c9ddbc7 2764 system/1000/u0 local:com.samsung.android.server.wifi.SensorMonitor$1@adfb7e1,44e0906}
+
+      - ReceiverList{ca5017d 2764 system/1000/u0 local:com.android.server.net.NetworkPolicyManagerService$7@aa99d27,b43fbd4}
+
+      - ReceiverList{caacec0 2764 system/1000/u0 local:com.android.server.execute.ExecuteManagerService$UserReceiver@c5099f2,657843}
+
+      - ReceiverList{cc77317 2764 system/1000/u0 local:com.absolute.android.persistservice.c@8f28ab1,b6d2b96}
+
+      - ReceiverList{ccf4776 2764 system/1000/u0 local:com.android.server.enterprise.wifi.WifiPolicy$3@a44da38,91e2a11}
+
+      - ReceiverList{cd14eea 2764 system/1000/u0 local:b.K@f43af8c,19696d5}
+
+      - ReceiverList{cd761f6 2764 system/1000/u0 local:com.android.server.accessibility.AccessibilityManagerService$DirectAccessBrocastReceiver@68fd0b8,3241e91}
+
+      - ReceiverList{d0c4303 2764 system/1000/u0 local:com.android.server.policy.sec.SamsungPhoneWindowManager$19@7db25bd,afcd7b2}
+
+      - ReceiverList{d0ce984 2764 system/1000/u0 local:com.android.server.telecom.DockManager$DockBroadcastReceiver@3bd5e16,54ff397}
+
+      - ReceiverList{d1eec8b 2764 system/1000/u-1 local:com.android.server.enterprise.ucm.UniversalCredentialManagerService$2@9b90205,741925a}
+
+      - ReceiverList{d28c20d 2764 system/1000/u0 local:com.android.server.input.InputManagerService$4@62ba737,91324a4}
+
+      - ReceiverList{d2c9e0f 2764 system/1000/u-1 local:com.android.server.ssrm.ai@1564ee9,f00c76e}
+
+      - ReceiverList{d2d9c16 2764 system/1000/u0 local:com.android.server.DropBoxManagerService$1@4fbb5d8,da46d31}
+
+      - ReceiverList{d3671cf 2764 system/1000/u-1 local:com.android.server.ssrm.aY@6e98ca9,e02922e}
+
+      - ReceiverList{d3f0bf3 2764 system/1000/u0 local:com.android.server.LocationManagerService$7@71b292d,2ea6e62}
+
+      - ReceiverList{d4113df 2764 system/1000/u0 local:com.android.server.MountService$3@f003c39,289327e}
+
+      - ReceiverList{d437251 2764 system/1000/u0 local:com.android.server.storage.DeviceStorageMonitorService$2@212a4db,c8d1b78}
+
+      - ReceiverList{d72e6c8 2764 system/1000/u0 local:com.android.server.wifi.hs20.WifiHs20StateMachine$1@f49a0ba,b2e4b6b}
+
+      - ReceiverList{d9d719a 2764 system/1000/u-1 local:com.android.server.search.SearchManagerService$MyPackageMonitor@ebd86bc,727d645}
+
+      - ReceiverList{da8b411 2764 system/1000/u-1 local:com.android.server.ServiceWatcher$2@42c209b,b9b4c38}
+
+      - ReceiverList{dbe25db 2764 system/1000/u0 local:com.android.server.wifi.WifiStateMachine$5@acc26d5,a7f9eea}
+
+      - ReceiverList{dcb3099 2764 system/1000/u0 local:com.android.server.NetworkTimeUpdateService$3@d42d7e3,fcf45e0}
+
+      - ReceiverList{dd03bcb 2764 system/1000/u0 local:com.android.server.wifi.WifiStateMachine$11@2256f45,635969a}
+
+      - ReceiverList{dd0b111 2764 system/1000/u0 local:com.android.server.enterprise.container.KnoxMUMContainerPolicy$2@852959b,5a11d38}
+
+      - ReceiverList{ddd6c45 2764 system/1000/u0 local:com.android.server.webkit.WebViewUpdateService$1@60288af,b13b4bc}
+
+      - ReceiverList{e0dad8b 2764 system/1000/u0 local:com.android.server.policy.sec.SamsungPhoneWindowManager$5@66f9b05,99eb75a}
+
+      - ReceiverList{e178bd0 2764 system/1000/u-1 local:com.android.server.ssrm.aP@e472c82,269bf93}
+
+      - ReceiverList{e1c9655 2764 system/1000/u0 local:com.android.server.net.NetworkStatsService$2@dc8803f,52bfd0c}
+
+      - ReceiverList{e1d755f 2764 system/1000/u-1 local:com.android.server.ServiceWatcher$1@8e61b9,c7c29fe}
+
+      - ReceiverList{e1fce2f 2764 system/1000/u-1 local:com.android.server.content.SyncManager$4@7fcba09,340240e}
+
+      - ReceiverList{e27649f 2764 system/1000/u0 local:com.samsung.ucm.ucmservice.CredentialManagerService$2@3a6ef9,4474e3e}
+
+      - ReceiverList{e349d2a 2764 system/1000/u-1 local:com.android.server.accessibility.AccessibilityManagerService$9@bfc43cc,2d93615}
+
+      - ReceiverList{e36eac9 2764 system/1000/u-1 local:com.android.server.enterprise.email.AccountsReceiver$1@8319a93,ae9cad0}
+
+      - ReceiverList{e4d386f 2764 system/1000/u-1 local:com.android.server.enterprise.ucm.UniversalCredentialManagerService$1@530a49,df3cf4e}
+
+      - ReceiverList{e500e23 2764 system/1000/u0 local:com.android.server.telecom.secutils.SecCallLogManager$SrvccCallLogEntry@10bf3dd,525b52}
+
+      - ReceiverList{e76665b 2764 system/1000/u0 local:com.android.server.enterprise.utils.ConstrainedState$1@a855355,2e6916a}
+
+      - ReceiverList{e7dbd94 2764 system/1000/u-1 local:com.android.server.ssrm.aD@e8e6fa6,90e4de7}
+
+      - ReceiverList{e80c436 2764 system/1000/u-1 local:com.android.server.content.SyncManager$7@85358f8,868a1d1}
+
+      - ReceiverList{e91b0d7 2764 system/1000/u0 local:com.android.server.AlarmManagerServiceExt$SyncScheduler$1@51a271,6a6c856}
+
+      - ReceiverList{eb11a0c 2764 system/1000/u-1 local:com.android.server.enterprise.billing.EnterpriseBillingAsyncHandler$2@189a95e,5ebf13f}
+
+      - ReceiverList{eb435c0 2764 system/1000/u0 local:com.android.server.policy.PhoneWindowManager$24@33be8f2,ea81b43}
+
+      - ReceiverList{eb79e37 2764 system/1000/u0 local:com.android.server.RCPManagerService$EmergencyModeReceiver@820b8d1,e48f36}
+
+      - ReceiverList{eb959d1 2764 system/1000/u0 local:com.android.server.input.InputManagerService$3@8c1605b,713f0f8}
+
+      - ReceiverList{ece153a 2764 system/1000/u0 local:com.android.server.pm.PersonaManagerService$9@7b4595c,42c4465}
+
+      - ReceiverList{ed90110 2764 system/1000/u0 local:com.android.server.enterprise.billing.EnterpriseBillingAsyncHandler$5@281cfc2,9ec1d3}
+
+      - ReceiverList{ee38241 2764 system/1000/u0 local:com.android.server.net.NetworkPolicyManagerService$6@546d74b,3c4b528}
+
+      - ReceiverList{ee55dbd 2764 system/1000/u0 local:com.android.server.SdpManagerService$ActionReceiver@3e90f67,d972114}
+
+      - ReceiverList{ee64d7a 2764 system/1000/u0 local:com.android.server.backup.BackupManagerService$RunInitializeReceiver@ff9479c,f9d35a5}
+
+      - ReceiverList{ee72647 2764 system/1000/u0 local:com.android.server.content.SyncManager$1@2a4edc8,91bed86}
+
+      - ReceiverList{ef24f0e 2764 system/1000/u0 local:com.android.server.InputMethodManagerService$ImmsBroadcastReceiver@181c210,5c0b109}
+
+      - ReceiverList{ef8cbc7 2764 system/1000/u0 local:com.android.server.ssrm.be@7a527e1,c7eb906}
+
+      - ReceiverList{efa62ae 2764 system/1000/u0 local:com.android.server.KiesConnectivity.KiesUsbObserver$2@34684b0,1944f29}
+
+      - ReceiverList{f1058fa 2764 system/1000/u0 local:android.content.pm.RegisteredServicesCache$3@64e871c,8423f25}
+
+      - ReceiverList{f208ef0 2764 system/1000/u0 local:com.android.server.policy.PhoneWindowManager$27@f3c72a2,2f65b33}
+
+      - ReceiverList{f33d602 2764 system/1000/u0 local:com.android.server.VibratorService$2@b892ae4,4d0eb4d}
+
+      - ReceiverList{f5550e5 2764 system/1000/u-1 local:com.android.server.LocationManagerService$5@34744f,5dfc7dc}
+
+      - ReceiverList{f565ba4 2764 system/1000/u0 local:com.android.server.wifi.WWSMPatcher$1@8ebbb36,12d5a37}
+
+      - ReceiverList{f720c63 2764 system/1000/u0 local:com.android.server.notification.NotificationManagerService$3@2d7b81d,3606a92}
+
+      - ReceiverList{f80dc93 2764 system/1000/u0 local:com.android.server.ConnectivityService$3@2d220cd,5049d82}
+
+      - ReceiverList{f835e56 2764 system/1000/u0 local:com.android.server.wifi.WifiTrafficPoller$1@cbc9e18,30ad071}
+
+      - ReceiverList{f88283e 2764 system/1000/u-1 local:com.samsung.android.motion.MotionRecognitionPalmMotion$1@82fcbc0,2ee70f9}
+
+      - ReceiverList{f8b697f 2764 system/1000/u0 local:com.android.server.telecom.TelecomSystem$2@358f0d9,716da9e}
+
+      - ReceiverList{f905459 2764 system/1000/u0 local:com.android.server.wifi.p2p.WifiP2pTrafficPoller$1@2ce5a3,27a0a0}
+
+      - ReceiverList{f953d55 2764 system/1000/u0 local:com.android.server.NetworkTimeUpdateService$4@a410f3f,a12e00c}
+
+      - ReceiverList{f9720c6 2764 system/1000/u0 local:com.android.server.enterprise.application.ApplicationPolicy$ApplicationNetworkStatsTracker$1@4e79f08,14356a1}
+
+      - ReceiverList{fa30b30 2764 system/1000/u0 local:com.android.server.notification.ManagedServices$SettingRestoredReceiver@b2904e2,8c02073}
+
+      - ReceiverList{fa4c9a7 2764 system/1000/u0 local:com.android.server.wifi.WifiStateMachine$12@eb2bac1,9468266}
+
+      - ReceiverList{fabe75b 2764 system/1000/u0 local:com.android.server.RCPManagerService$1@f4ac55,36d766a}
+
+      - ReceiverList{fafb6ae 2764 system/1000/u0 local:com.android.server.content.SyncManager$5@6deb8b0,13a7329}
+
+      - ReceiverList{fe2b7f7 2764 system/1000/u0 local:com.android.server.enterprise.billing.EnterpriseConnectivity$3@8a64c91,348f7f6}
+
+      - ReceiverList{ff15ec2 2764 system/1000/u0 local:com.android.server.wifi.hs20.WifiHs20ServiceImpl$1@dc9d5a4,ee01f0d}
+
+      - ReceiverList{ff18760 2764 system/1000/u0 local:com.android.server.AlarmManagerServiceExt$SyncScheduler$TrafficAnalyzer$3@383992,2672f63}
+
+  *PERS* UID 1000 ProcessRecord{29ecd32 3433:com.sec.imsservice/1000}
+
+    user #0 uid=1000 gids={41000, 9997, 2001, 3004, 3002, 1023, 1015, 3003, 3001, 1001, 1024, 1007, 3005, 1300}
+
+    requiredAbi=armeabi-v7a instructionSet=arm
+
+    class=com.sec.imsservice.ImsFrameworkApp
+
+    dir=/system/priv-app/imsservice/imsservice.apk publicDir=/system/priv-app/imsservice/imsservice.apk data=/data/user/0/com.sec.imsservice
+
+    packageList={com.sec.imsservice}
+
+    compat={213dpi always-compat}
+
+    thread=android.app.ApplicationThreadProxy@d4ac686
+
+    pid=3433 starting=false
+
+    lastActivityTime=-1m32s605ms lastPssTime=-18s504ms nextPssTime=+14m41s50ms
+
+    adjSeq=16738 lruSeq=0 lastPss=1.7MB lastCachedPss=0.00
+
+    cached=false empty=false
+
+    oom: max=-12 curRaw=-12 setRaw=-12 cur=-12 set=-12
+
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=true trimMemoryLevel=15
+
+    curProcState=0 repProcState=0 pssProcState=0 setProcState=0 lastStateTime=-56m27s93ms
+
+    reportedInteraction=true time=-56m29s893ms
+
+    persistent=true removed=false
+
+    lastRequestedGc=-- lastLowMemory=-34s72ms reportLowMemory=true
+
+    Services:
+
+      - ServiceRecord{165f439 u0 com.sec.imsservice/com.sec.internal.ims.imsservice.CapabilityService}
+
+      - ServiceRecord{514efd0 u0 com.sec.imsservice/com.sec.internal.ims.imsservice.SmsService}
+
+      - ServiceRecord{6b33388 u0 com.sec.imsservice/com.sec.internal.ims.imsservice.VolteService2}
+
+      - ServiceRecord{77e75ef u0 com.sec.imsservice/com.sec.internal.ims.imsservice.SSConfigService}
+
+      - ServiceRecord{d5317d7 u0 com.sec.imsservice/com.sec.internal.ims.imsservice.PresenceService}
+
+      - ServiceRecord{dcf73d2 u0 com.sec.imsservice/com.sec.internal.ims.imsservice.ImsService}
+
+    Connections:
+
+      - ConnectionRecord{1816b56 u0 CR com.sec.imsservice/com.sec.internal.ims.imsservice.PresenceService:@734f171}
+
+      - ConnectionRecord{294040b u0 CR com.sec.sve/.service.SecVideoEngineService:@68657da}
+
+      - ConnectionRecord{47d4332 u0 CR com.sec.imsservice/com.sec.internal.ims.imsservice.CapabilityService:@9b40f3d}
+
+      - ConnectionRecord{50e260f u0 CR com.sec.sve/.service.SecVideoEngineService:@ad36f6e}
+
+      - ConnectionRecord{52f3e67 u0 CR com.sec.imsservice/com.sec.internal.ims.imsservice.CapabilityService:@d2d226}
+
+      - ConnectionRecord{9a89af5 u0 CR com.sec.imsservice/com.sec.internal.ims.imsservice.CapabilityService:@348b02c}
+
+      - ConnectionRecord{c125400 u0 CR com.sec.imsservice/com.sec.internal.ims.imsservice.CapabilityService:@6ceca83}
+
+      - ConnectionRecord{d641e5d u0 CR com.sec.imsservice/com.sec.internal.ims.imsservice.ImsService:@40c0034}
+
+      - ConnectionRecord{e8cfb1e u0 CR com.sec.imsservice/com.sec.internal.ims.imsservice.CapabilityService:@1494359}
+
+      - ConnectionRecord{ec0d32b u0 CR com.sec.imsservice/com.sec.internal.ims.imsservice.VolteService2:@4766f7a}
+
+    Published Providers:
+
+      - com.sec.internal.tapi.service.provider.FtProvider
+
+        -> ContentProviderRecord{ee80763 u0 com.sec.imsservice/com.sec.internal.tapi.service.provider.FtProvider}
+
+      - com.sec.internal.ims.profile.database.ProfileProvider
+
+        -> ContentProviderRecord{92ac5eb u0 com.sec.imsservice/com.sec.internal.ims.profile.database.ProfileProvider}
+
+      - com.sec.internal.tapi.service.provider.VideoSharingProvider
+
+        -> ContentProviderRecord{2351a3d u0 com.sec.imsservice/com.sec.internal.tapi.service.provider.VideoSharingProvider}
+
+      - com.sec.internal.tapi.service.provider.IshProvider
+
+        -> ContentProviderRecord{93e7fb u0 com.sec.imsservice/com.sec.internal.tapi.service.provider.IshProvider}
+
+      - com.sec.internal.ims.options.UriGeneratorProvider
+
+        -> ContentProviderRecord{71c5cdf u0 com.sec.imsservice/com.sec.internal.ims.options.UriGeneratorProvider}
+
+      - com.sec.internal.ims.config.ConfigProvider
+
+        -> ContentProviderRecord{75520f2 u0 com.sec.imsservice/com.sec.internal.ims.config.ConfigProvider}
+
+      - com.sec.internal.ims.im.ImProvider
+
+        -> ContentProviderRecord{75e718e u0 com.sec.imsservice/com.sec.internal.ims.im.ImProvider}
+
+      - com.sec.internal.ims.csh.CshProvider
+
+        -> ContentProviderRecord{cf07b1d u0 com.sec.imsservice/com.sec.internal.ims.csh.CshProvider}
+
+      - com.sec.internal.tapi.service.provider.ChatProvider
+
+        -> ContentProviderRecord{75e1d39 u0 com.sec.imsservice/com.sec.internal.tapi.service.provider.ChatProvider}
+
+      - com.sec.internal.ims.imsservice.SettingsProvider
+
+        -> ContentProviderRecord{ce93a71 u0 com.sec.imsservice/com.sec.internal.ims.imsservice.SettingsProvider}
+
+      - com.sec.internal.tapi.service.provider.GroupDeliveryInfoProvider
+
+        -> ContentProviderRecord{34b318c u0 com.sec.imsservice/com.sec.internal.tapi.service.provider.GroupDeliveryInfoProvider}
+
+      - com.sec.internal.ims.options.RcsUriProvider
+
+        -> ContentProviderRecord{a2f08d7 u0 com.sec.imsservice/com.sec.internal.ims.options.RcsUriProvider}
+
+      - com.sec.internal.ims.options.CapabilityProvider
+
+        -> ContentProviderRecord{62ca1e1 u0 com.sec.imsservice/com.sec.internal.ims.options.CapabilityProvider}
+
+      - com.sec.internal.ims.presence.PresenceProvider
+
+        -> ContentProviderRecord{2860cad u0 com.sec.imsservice/com.sec.internal.ims.presence.PresenceProvider}
+
+      - com.sec.internal.tapi.service.provider.GeolocProvider
+
+        -> ContentProviderRecord{33f8090 u0 com.sec.imsservice/com.sec.internal.tapi.service.provider.GeolocProvider}
+
+      - com.sec.internal.ims.config.DmConfigProvider
+
+        -> ContentProviderRecord{2068b83 u0 com.sec.imsservice/com.sec.internal.ims.config.DmConfigProvider}
+
+      - com.sec.internal.tapi.service.provider.HistoryLogProvider
+
+        -> ContentProviderRecord{17a53f5 u0 com.sec.imsservice/com.sec.internal.tapi.service.provider.HistoryLogProvider}
+
+      - com.sec.internal.ims.rcscore.RcsPreferencesProvider
+
+        -> ContentProviderRecord{9c92465 u0 com.sec.imsservice/com.sec.internal.ims.rcscore.RcsPreferencesProvider}
+
+      - com.sec.internal.tapi.service.provider.CapsProvider
+
+        -> ContentProviderRecord{3a3c6a9 u0 com.sec.imsservice/com.sec.internal.tapi.service.provider.CapsProvider}
+
+      - com.sec.internal.tapi.service.provider.RcsSettingsProvider
+
+        -> ContentProviderRecord{8bc2dc0 u0 com.sec.imsservice/com.sec.internal.tapi.service.provider.RcsSettingsProvider}
+
+    Connected Providers:
+
+      - 7c3bcf/com.android.providers.settings/.SettingsProvider->3433:com.sec.imsservice/1000 s1/1 u0/0 +56m28s835ms
+
+    Receivers:
+
+      - ReceiverList{14e297 3433 com.sec.imsservice/1000/u0 remote:1d4a916}
+
+      - ReceiverList{17ef087 3433 com.sec.imsservice/1000/u0 remote:de778c6}
+
+      - ReceiverList{1bc78ba 3433 com.sec.imsservice/1000/u0 remote:91005e5}
+
+      - ReceiverList{27cd5e7 3433 com.sec.imsservice/1000/u0 remote:60217a6}
+
+      - ReceiverList{2c75a73 3433 com.sec.imsservice/1000/u0 remote:c40e6e2}
+
+      - ReceiverList{4c068ec 3433 com.sec.imsservice/1000/u0 remote:73daf9f}
+
+      - ReceiverList{4c36fe8 3433 com.sec.imsservice/1000/u0 remote:3f4c50b}
+
+      - ReceiverList{6188538 3433 com.sec.imsservice/1000/u0 remote:be69d9b}
+
+      - ReceiverList{6c6fa34 3433 com.sec.imsservice/1000/u0 remote:83a1907}
+
+      - ReceiverList{6ef4ff6 3433 com.sec.imsservice/1000/u0 remote:40f0491}
+
+      - ReceiverList{782b236 3433 com.sec.imsservice/1000/u0 remote:9a587d1}
+
+      - ReceiverList{930abe0 3433 com.sec.imsservice/1000/u0 remote:f5215e3}
+
+      - ReceiverList{9fdfbf2 3433 com.sec.imsservice/1000/u0 remote:1d532fd}
+
+      - ReceiverList{add9f87 3433 com.sec.imsservice/1000/u0 remote:1e783c6}
+
+      - ReceiverList{ba65b86 3433 com.sec.imsservice/1000/u-1 remote:2f3c461}
+
+      - ReceiverList{be24045 3433 com.sec.imsservice/1000/u0 remote:59758bc}
+
+      - ReceiverList{d0cb8a5 3433 com.sec.imsservice/1000/u0 remote:538f69c}
+
+      - ReceiverList{d26bad8 3433 com.sec.imsservice/1000/u0 remote:5ba5bb}
+
+      - ReceiverList{d2f3cce 3433 com.sec.imsservice/1000/u0 remote:1c9bdc9}
+
+      - ReceiverList{dc8a745 3433 com.sec.imsservice/1000/u0 remote:50afbbc}
+
+      - ReceiverList{dcc6895 3433 com.sec.imsservice/1000/u0 remote:bcab04c}
+
+      - ReceiverList{e14a25f 3433 com.sec.imsservice/1000/u0 remote:44feafe}
+
+      - ReceiverList{ee3d493 3433 com.sec.imsservice/1000/u0 remote:8b87582}
+
+      - ReceiverList{f231929 3433 com.sec.imsservice/1000/u0 remote:a0a36b0}
+
+      - ReceiverList{f24a60c 3433 com.sec.imsservice/1000/u0 remote:1062d3f}
+
+      - ReceiverList{f5312a7 3433 com.sec.imsservice/1000/u0 remote:70c4f66}
+
+      - ReceiverList{fbb21cc 3433 com.sec.imsservice/1000/u0 remote:dbe3fff}
+
+  *PERS* UID 1000 ProcessRecord{d6c19db 3683:com.smartcomroot/1000}
+
+    user #0 uid=1000 gids={41000, 9997, 2001, 3004, 3002, 1023, 1015, 3003, 3001, 1001, 1024, 1007, 3005, 1300}
+
+    requiredAbi=armeabi-v7a instructionSet=arm
+
+    class=com.smartcomroot.services.Application
+
+    dir=/system/priv-app/APNWidgetBaseRoot_ATT/APNWidgetBaseRoot_ATT.apk publicDir=/system/priv-app/APNWidgetBaseRoot_ATT/APNWidgetBaseRoot_ATT.apk data=/data/user/0/com.smartcomroot
+
+    packageList={com.smartcomroot}
+
+    compat={213dpi always-compat}
+
+    thread=android.app.ApplicationThreadProxy@2f78b47
+
+    pid=3683 starting=false
+
+    lastActivityTime=-55m33s55ms lastPssTime=-18s584ms nextPssTime=+14m41s46ms
+
+    adjSeq=16738 lruSeq=0 lastPss=1.2MB lastCachedPss=0.00
+
+    cached=false empty=false
+
+    oom: max=-12 curRaw=-12 setRaw=-12 cur=-12 set=-12
+
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=true trimMemoryLevel=15
+
+    curProcState=0 repProcState=0 pssProcState=0 setProcState=0 lastStateTime=-56m26s882ms
+
+    reportedInteraction=true time=-56m26s883ms
+
+    persistent=true removed=false
+
+    lastRequestedGc=-- lastLowMemory=-34s76ms reportLowMemory=true
+
+    Services:
+
+      - ServiceRecord{4296686 u0 com.smartcomroot/.services.SmartcomRootService}
+
+  *APP* UID 10043 ProcessRecord{34ab606 3375:com.sec.smartcard.manager/u0a43}
+
+    user #0 uid=10043 gids={50043, 9997, 3002, 3001}
+
+    requiredAbi=armeabi-v7a instructionSet=arm
+
+    dir=/system/priv-app/SmartcardManager/SmartcardManager.apk publicDir=/system/priv-app/SmartcardManager/SmartcardManager.apk data=/data/user/0/com.sec.smartcard.manager
+
+    packageList={com.sec.smartcard.manager}
+
+    compat={213dpi always-compat}
+
+    thread=android.app.ApplicationThreadProxy@61aec9d
+
+    pid=3375 starting=false
+
+    lastActivityTime=-56m30s567ms lastPssTime=-2m3s179ms nextPssTime=+12m55s112ms
+
+    adjSeq=16738 lruSeq=0 lastPss=876KB lastCachedPss=0.00
+
+    cached=false empty=true
+
+    oom: max=16 curRaw=1 setRaw=1 cur=1 set=1
+
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=false trimMemoryLevel=15
+
+    curProcState=6 repProcState=6 pssProcState=6 setProcState=6 lastStateTime=-56m30s567ms
+
+    reportedInteraction=true time=-56m30s568ms
+
+    lastRequestedGc=-- lastLowMemory=-34s77ms reportLowMemory=true
+
+    Services:
+
+      - ServiceRecord{2fa7cdf u0 com.sec.smartcard.manager/com.sec.enterprise.mdm.sc.bai.BaiMobileAgentService}
+
+    Published Providers:
+
+      - com.sec.smartcard.pinservice.SmartCardContentProvider
+
+        -> ContentProviderRecord{c5ef8e1 u0 com.sec.smartcard.manager/com.sec.smartcard.pinservice.SmartCardContentProvider}
+
+    Receivers:
+
+      - ReceiverList{3b42763 3375 com.sec.smartcard.manager/10043/u0 remote:33e1192}
+
+      - ReceiverList{da7b4de 3375 com.sec.smartcard.manager/10043/u0 remote:b17cc19}
+
+  *APP* UID 10032 ProcessRecord{9ee828d 15152:com.android.vending:background/u0a32}
+
+    user #0 uid=10032 gids={50032, 9997, 3002, 3003, 3001}
+
+    requiredAbi=armeabi-v7a instructionSet=arm
+
+    class=com.google.android.finsky.application.classic.ClassicApplication
+
+    dir=/data/app/com.android.vending-1/base.apk publicDir=/data/app/com.android.vending-1/base.apk data=/data/user/0/com.android.vending
+
+    packageList={com.android.vending}
+
+    compat={213dpi always-compat}
+
+    thread=android.app.ApplicationThreadProxy@6ea906e
+
+    pid=15152 starting=false
+
+    lastActivityTime=-18s135ms lastPssTime=-2m4s697ms nextPssTime=+12m55s111ms
+
+    adjSeq=16738 lruSeq=0 lastPss=44MB lastCachedPss=0.00
+
+    cached=false empty=true
+
+    oom: max=16 curRaw=1 setRaw=1 cur=1 set=1
+
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=false trimMemoryLevel=15
+
+    curProcState=3 repProcState=3 pssProcState=3 setProcState=3 lastStateTime=-3m46s762ms
+
+    reportedInteraction=true time=-18s140ms
+
+    hasClientActivities=true foregroundActivities=false (rep=false)
+
+    lastRequestedGc=-- lastLowMemory=-34s78ms reportLowMemory=true
+
+    Services:
+
+      - ServiceRecord{8d361bc u0 com.android.vending/com.google.frameworks.client.data.android.server.play.BackgroundProcessEndpointService}
+
+      - ServiceRecord{9091ee6 u0 com.android.vending/com.google.android.finsky.scheduler.process.backgroundimpl.PhoneskyJobServiceBackground}
+
+    Connections:
+
+      - ConnectionRecord{8727453 u0 CR com.android.vending/com.google.frameworks.client.data.android.server.play.MainProcessEndpointService:@c62bc42}
+
+    Published Providers:
+
+      - com.google.android.finsky.dumpsys.backgroundimpl.BackgroundDumpsysContentProvider
+
+        -> ContentProviderRecord{cf5330f u0 com.android.vending/com.google.android.finsky.dumpsys.backgroundimpl.BackgroundDumpsysContentProvider}
+
+    Connected Providers:
+
+      - 7c3bcf/com.android.providers.settings/.SettingsProvider->15152:com.android.vending:background/u0a32 s1/1 u0/0 +6m52s321ms
+
+    Receivers:
+
+      - ReceiverList{ec9b4c 15152 com.android.vending:background/10032/u0 remote:e4baf7f}
+
+      - ReceiverList{3587b25 15152 com.android.vending:background/10032/u0 remote:b28331c}
+
+      - ReceiverList{3956dd5 15152 com.android.vending:background/10032/u0 remote:72b828c}
+
+      - ReceiverList{4620f77 15152 com.android.vending:background/10032/u0 remote:a58fd76}
+
+      - ReceiverList{51246d9 15152 com.android.vending:background/10032/u0 remote:487cd20}
+
+      - ReceiverList{68b7784 15152 com.android.vending:background/10032/u0 remote:e97f997}
+
+      - ReceiverList{6d437ee 15152 com.android.vending:background/10032/u0 remote:c873169}
+
+      - ReceiverList{7321952 15152 com.android.vending:background/10032/u0 remote:8bbe9dd}
+
+      - ReceiverList{8d653b7 15152 com.android.vending:background/10032/u0 remote:91eaab6}
+
+      - ReceiverList{c4aaee1 15152 com.android.vending:background/10032/u0 remote:3103048}
+
+      - ReceiverList{d543b78 15152 com.android.vending:background/10032/u0 remote:b0244db}
+
+      - ReceiverList{e8d7289 15152 com.android.vending:background/10032/u0 remote:56a9990}
+
+      - ReceiverList{ed89833 15152 com.android.vending:background/10032/u0 remote:27d83a2}
+
+  *APP* UID 1000 ProcessRecord{8303d50 3772:com.sec.android.inputmethod/1000}
+
+    user #0 uid=1000 gids={41000, 9997, 2001, 3004, 3002, 1023, 1015, 3003, 3001, 1001, 1024, 1007, 3005, 1300}
+
+    requiredAbi=armeabi-v7a instructionSet=arm
+
+    class=com.sec.android.inputmethod.SamsungKeypadApplication
+
+    dir=/system/app/SamsungIMEv3_SYSTEMUID_SWIFTKEY_VO/SamsungIMEv3_SYSTEMUID_SWIFTKEY_VO.apk publicDir=/system/app/SamsungIMEv3_SYSTEMUID_SWIFTKEY_VO/SamsungIMEv3_SYSTEMUID_SWIFTKEY_VO.apk data=/data/user/0/com.sec.android.inputmethod
+
+    packageList={com.sec.android.inputmethod}
+
+    compat={213dpi always-compat}
+
+    thread=android.app.ApplicationThreadProxy@679bee0
+
+    pid=3772 starting=false
+
+    lastActivityTime=-4m42s994ms lastPssTime=-2m4s638ms nextPssTime=+12m55s110ms
+
+    adjSeq=16738 lruSeq=0 lastPss=6.3MB lastCachedPss=0.00
+
+    cached=false empty=true
+
+    oom: max=16 curRaw=2 setRaw=2 cur=2 set=2
+
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=15
+
+    curProcState=7 repProcState=7 pssProcState=7 setProcState=7 lastStateTime=-56m23s850ms
+
+    hasShownUi=false pendingUiClean=false hasAboveClient=false treatLikeActivity=true
+
+    lastRequestedGc=-- lastLowMemory=-34s79ms reportLowMemory=true
+
+    Services:
+
+      - ServiceRecord{1ecc6e1 u0 com.sec.android.inputmethod/.SamsungKeypad}
+
+    Published Providers:
+
+      - com.sec.android.inputmethod.implement.setting.provider.KeyboardSettingsProvider
+
+        -> ContentProviderRecord{e984713 u0 com.sec.android.inputmethod/.implement.setting.provider.KeyboardSettingsProvider}
+
+      - com.myscript.atk.rmc.DataStorageProvider
+
+        -> ContentProviderRecord{d501bb4 u0 com.sec.android.inputmethod/com.myscript.atk.rmc.DataStorageProvider}
+
+      - com.samsung.android.scloud.oem.lib.sync.SyncClientProivder
+
+        -> ContentProviderRecord{eb40b65 u0 com.sec.android.inputmethod/com.samsung.android.scloud.oem.lib.sync.SyncClientProivder}
+
+      - com.samsung.android.scloud.oem.lib.bnr.BNRClientProivder
+
+        -> ContentProviderRecord{43e30a u0 com.sec.android.inputmethod/com.samsung.android.scloud.oem.lib.bnr.BNRClientProivder}
+
+      - com.sec.android.inputmethod.scloudsync.SipSyncProvider
+
+        -> ContentProviderRecord{d578114 u0 com.sec.android.inputmethod/.scloudsync.SipSyncProvider}
+
+    Connected Providers:
+
+      - 7c3bcf/com.android.providers.settings/.SettingsProvider->3772:com.sec.android.inputmethod/1000 s1/1 u0/0 +56m22s800ms
+
+    Receivers:
+
+      - ReceiverList{a9621 3772 com.sec.android.inputmethod/1000/u0 remote:44e2c88}
+
+      - ReceiverList{dcf529 3772 com.sec.android.inputmethod/1000/u0 remote:15202b0}
+
+      - ReceiverList{11a619d 3772 com.sec.android.inputmethod/1000/u0 remote:3f04874}
+
+      - ReceiverList{249e627 3772 com.sec.android.inputmethod/1000/u0 remote:e1440e6}
+
+      - ReceiverList{2dd8934 3772 com.sec.android.inputmethod/1000/u-1 remote:9658407}
+
+      - ReceiverList{364af96 3772 com.sec.android.inputmethod/1000/u0 remote:7c59eb1}
+
+      - ReceiverList{37a8ee8 3772 com.sec.android.inputmethod/1000/u0 remote:2a9000b}
+
+      - ReceiverList{43d620f 3772 com.sec.android.inputmethod/1000/u0 remote:8a1b6e}
+
+      - ReceiverList{556f193 3772 com.sec.android.inputmethod/1000/u0 remote:4c1e682}
+
+      - ReceiverList{5e0693f 3772 com.sec.android.inputmethod/1000/u0 remote:f25015e}
+
+      - ReceiverList{68fa764 3772 com.sec.android.inputmethod/1000/u0 remote:1117cf7}
+
+      - ReceiverList{6be223b 3772 com.sec.android.inputmethod/1000/u0 remote:58a50ca}
+
+      - ReceiverList{6d33014 3772 com.sec.android.inputmethod/1000/u0 remote:15ffa67}
+
+      - ReceiverList{7bb3979 3772 com.sec.android.inputmethod/1000/u0 remote:d886640}
+
+      - ReceiverList{80377e0 3772 com.sec.android.inputmethod/1000/u0 remote:5c091e3}
+
+      - ReceiverList{80fabfe 3772 com.sec.android.inputmethod/1000/u0 remote:c16abb9}
+
+      - ReceiverList{8c27e0e 3772 com.sec.android.inputmethod/1000/u0 remote:7083c09}
+
+      - ReceiverList{9ef8fc5 3772 com.sec.android.inputmethod/1000/u0 remote:c52363c}
+
+      - ReceiverList{a6474ed 3772 com.sec.android.inputmethod/1000/u0 remote:2b45704}
+
+      - ReceiverList{a70b6a4 3772 com.sec.android.inputmethod/1000/u0 remote:71c4137}
+
+      - ReceiverList{a96806b 3772 com.sec.android.inputmethod/1000/u0 remote:90d89ba}
+
+      - ReceiverList{b538572 3772 com.sec.android.inputmethod/1000/u0 remote:b4cf27d}
+
+      - ReceiverList{b67d603 3772 com.sec.android.inputmethod/1000/u0 remote:ed6b2}
+
+      - ReceiverList{bc0807a 3772 com.sec.android.inputmethod/1000/u0 remote:98454a5}
+
+      - ReceiverList{c4c99dc 3772 com.sec.android.inputmethod/1000/u0 remote:fe94e4f}
+
+      - ReceiverList{c4de3d1 3772 com.sec.android.inputmethod/1000/u0 remote:75c62f8}
+
+      - ReceiverList{cada66c 3772 com.sec.android.inputmethod/1000/u0 remote:cb731f}
+
+      - ReceiverList{ccc59a3 3772 com.sec.android.inputmethod/1000/u0 remote:2aa4d2}
+
+      - ReceiverList{ce9b9d3 3772 com.sec.android.inputmethod/1000/u0 remote:5bda7c2}
+
+      - ReceiverList{da1df70 3772 com.sec.android.inputmethod/1000/u0 remote:d609db3}
+
+      - ReceiverList{df44991 3772 com.sec.android.inputmethod/1000/u0 remote:529c7b8}
+
+      - ReceiverList{dfa8786 3772 com.sec.android.inputmethod/1000/u0 remote:e8d2061}
+
+      - ReceiverList{e2a7a28 3772 com.sec.android.inputmethod/1000/u0 remote:844904b}
+
+      - ReceiverList{f79fc2a 3772 com.sec.android.inputmethod/1000/u-1 remote:86cb115}
+
+      - ReceiverList{fbbd56a 3772 com.sec.android.inputmethod/1000/u0 remote:4152755}
+
+  *APP* UID 10008 ProcessRecord{2732d52 14320:com.google.android.gms/u0a8}
+
+    user #0 uid=10008 gids={50008, 9997, 2001, 1005, 3002, 3003, 3001, 1007, 3006, 3007}
+
+    requiredAbi=armeabi-v7a instructionSet=arm
+
+    class=co.g.App
+
+    manageSpaceActivityName=co.g.Space
+
+    dir=/data/app/com.google.android.gms-2/base.apk publicDir=/data/app/com.google.android.gms-2/base.apk data=/data/user/0/com.google.android.gms
+
+    packageList={com.google.android.gms}
+
+    packageDependencies={com.google.android.webview}
+
+    compat={213dpi always-compat}
+
+    thread=android.app.ApplicationThreadProxy@68f7f9c
+
+    pid=14320 starting=false
+
+    lastActivityTime=-1s55ms lastPssTime=-14s401ms nextPssTime=+19s373ms
+
+    adjSeq=16738 lruSeq=0 lastPss=60MB lastCachedPss=120MB
+
+    cached=false empty=true
+
+    oom: max=16 curRaw=1 setRaw=1 cur=1 set=1
+
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=false trimMemoryLevel=15
+
+    curProcState=3 repProcState=3 pssProcState=2 setProcState=3 lastStateTime=-627ms
+
+    reportedInteraction=true time=-1m26s39ms
+
+    hasClientActivities=true foregroundActivities=false (rep=false)
+
+    hasStartedServices=true
+
+    lastRequestedGc=-- lastLowMemory=-34s82ms reportLowMemory=true
+
+    Services:
+
+      - ServiceRecord{11e8127 u0 com.google.android.gms/.chimera.GmsApiService}
+
+      - ServiceRecord{17be0fe u0 com.google.android.gms/.ads.cache.CacheBrokerService}
+
+      - ServiceRecord{1dcda6a u0 com.google.android.gms/.ads.AdRequestBrokerService}
+
+      - ServiceRecord{39154c9 u0 com.google.android.gms/.chimera.GmsBoundBrokerService}
+
+      - ServiceRecord{67996dc u0 com.google.android.gms/.measurement.service.MeasurementBrokerService}
+
+    Connections:
+
+      - ConnectionRecord{410120 u0 CR WACT com.google.android.gms/.chimera.PersistentApiService:@2457823}
+
+      - ConnectionRecord{1f4e509 u0 CR WACT com.google.android.gms/.chimera.GmsBoundBrokerService:@1d64610}
+
+      - ConnectionRecord{6133cb8 u0 CR WACT com.google.android.gms/.chimera.PersistentApiService:@bc3831b}
+
+      - ConnectionRecord{7673fa5 u0 CR com.android.vending/com.google.android.finsky.developergroupidinfo.DeveloperGroupIdInfoService:@3dd399c}
+
+      - ConnectionRecord{f72cc9e u0 CR WACT com.google.android.gms/.chimera.PersistentDirectBootAwareApiService:@8c56ad9}
+
+    Published Providers:
+
+      - com.google.android.gms.chimera.GmsBrokerContentProvider
+
+        -> ContentProviderRecord{33457a u0 com.google.android.gms/.chimera.GmsBrokerContentProvider}
+
+      - com.google.android.gms.thunderbird.config.EmergencyConfigContentProvider
+
+        -> ContentProviderRecord{b5bf12b u0 com.google.android.gms/.thunderbird.config.EmergencyConfigContentProvider}
+
+      - com.google.android.gms.chromesync.sync.SyncContentProvider
+
+        -> ContentProviderRecord{be2f988 u0 com.google.android.gms/.chromesync.sync.SyncContentProvider}
+
+      - com.google.android.gms.nearby.sharing.SharingSliceProvider
+
+        -> ContentProviderRecord{edbdf21 u0 com.google.android.gms/.nearby.sharing.SharingSliceProvider}
+
+      - com.google.android.gms.update.OtaSuggestionSummaryProvider
+
+        -> ContentProviderRecord{6203f46 u0 com.google.android.gms/.update.OtaSuggestionSummaryProvider}
+
+      - com.google.android.gms.games.provider.NotificationStubContentProvider
+
+        -> ContentProviderRecord{3722634 u0 com.google.android.gms/.games.provider.NotificationStubContentProvider}
+
+      - com.google.android.gms.common.app.GmsFileProvider
+
+        -> ContentProviderRecord{f764c5d u0 com.google.android.gms/.common.app.GmsFileProvider}
+
+      - com.google.android.gms.icing.proxy.AppsContentProvider
+
+        -> ContentProviderRecord{d9109d2 u0 com.google.android.gms/.icing.proxy.AppsContentProvider}
+
+      - com.google.android.gms.reminders.provider.RemindersProvider
+
+        -> ContentProviderRecord{22b5aa3 u0 com.google.android.gms/.reminders.provider.RemindersProvider}
+
+      - com.google.android.gms.people.service.PeopleContentProvider
+
+        -> ContentProviderRecord{f2571a0 u0 com.google.android.gms/.people.service.PeopleContentProvider}
+
+      - com.google.android.gms.icing.indexapi.IndexApiContentProvider
+
+        -> ContentProviderRecord{d505159 u0 com.google.android.gms/.icing.indexapi.IndexApiContentProvider}
+
+      - androidx.lifecycle.ProcessLifecycleOwnerInitializer
+
+        -> ContentProviderRecord{7d1f11e u0 com.google.android.gms/androidx.lifecycle.ProcessLifecycleOwnerInitializer}
+
+      - com.google.android.gms.people.service.galprovider.PeopleGalProvider
+
+        -> ContentProviderRecord{70efdff u0 com.google.android.gms/.people.service.galprovider.PeopleGalProvider}
+
+      - com.google.android.gms.chimera.container.router.GmsComponentRouterProvider
+
+        -> ContentProviderRecord{50007cc u0 com.google.android.gms/.chimera.container.router.GmsComponentRouterProvider}
+
+      - androidx.credentials.providerevents.playservices.ImportExportFileProvider
+
+        -> ContentProviderRecord{72baa15 u0 com.google.android.gms/androidx.credentials.providerevents.playservices.ImportExportFileProvider}
+
+      - com.google.android.gms.subscribedfeeds.GmsSubscribedFeedsProvider
+
+        -> ContentProviderRecord{ca8012a u0 com.google.android.gms/.subscribedfeeds.GmsSubscribedFeedsProvider}
+
+      - com.google.android.gms.wallet.setupwizard.PaymentsSetupWizardSuggestionStateProvider
+
+        -> ContentProviderRecord{45f7b1b u0 com.google.android.gms/.wallet.setupwizard.PaymentsSetupWizardSuggestionStateProvider}
+
+      - com.google.android.gms.icing.proxy.InternalIcingCorporaProvider
+
+        -> ContentProviderRecord{60bd4b8 u0 com.google.android.gms/.icing.proxy.InternalIcingCorporaProvider}
+
+      - com.google.android.gms.games.chimera.GamesContentProviderProxy
+
+        -> ContentProviderRecord{c29d291 u0 com.google.android.gms/.games.chimera.GamesContentProviderProxy}
+
+    Connected Providers:
+
+      - 7c3bcf/com.android.providers.settings/.SettingsProvider->14320:com.google.android.gms/u0a8 s1/1 u0/0 +8m48s676ms
+
+      - fd238/com.google.android.gms/.instantapps.routing.InstantAppsContentProvider->14320:com.google.android.gms/u0a8 s0/0 u1/1 +5m32s603ms
+
+    Receivers:
+
+      - ReceiverList{184a688 14320 com.google.android.gms/10008/u0 remote:2f4322b}
+
+      - ReceiverList{1ef2040 14320 com.google.android.gms/10008/u0 remote:aa1fc3}
+
+      - ReceiverList{2834ae6 14320 com.google.android.gms/10008/u0 remote:43b5541}
+
+      - ReceiverList{322d79f 14320 com.google.android.gms/10008/u0 remote:90cad3e}
+
+      - ReceiverList{3329bd3 14320 com.google.android.gms/10008/u0 remote:9f4d1c2}
+
+      - ReceiverList{40227d3 14320 com.google.android.gms/10008/u0 remote:d5b0dc2}
+
+      - ReceiverList{481c607 14320 com.google.android.gms/10008/u0 remote:1823446}
+
+      - ReceiverList{5c27fb3 14320 com.google.android.gms/10008/u0 remote:fc85922}
+
+      - ReceiverList{6aa6e63 14320 com.google.android.gms/10008/u0 remote:951492}
+
+      - ReceiverList{73d0bda 14320 com.google.android.gms/10008/u0 remote:df87185}
+
+      - ReceiverList{84bdb9a 14320 com.google.android.gms/10008/u0 remote:345a845}
+
+      - ReceiverList{9b6e56e 14320 com.google.android.gms/10008/u0 remote:6ba24e9}
+
+      - ReceiverList{b27047d 14320 com.google.android.gms/10008/u0 remote:8502ad4}
+
+      - ReceiverList{b3df104 14320 com.google.android.gms/10008/u0 remote:c0a6917}
+
+      - ReceiverList{c8726a5 14320 com.google.android.gms/10008/u0 remote:1805c9c}
+
+      - ReceiverList{c878ce5 14320 com.google.android.gms/10008/u0 remote:3c573dc}
+
+      - ReceiverList{cebe7de 14320 com.google.android.gms/10008/u0 remote:6d0eb19}
+
+      - ReceiverList{cf74635 14320 com.google.android.gms/10008/u0 remote:9c6006c}
+
+      - ReceiverList{e19d438 14320 com.google.android.gms/10008/u0 remote:eefc89b}
+
+      - ReceiverList{f7c1fd5 14320 com.google.android.gms/10008/u0 remote:95bc8c}
+
+      - ReceiverList{fcbbdb4 14320 com.google.android.gms/10008/u0 remote:e11ba87}
+
+  *APP* UID 10032 ProcessRecord{e7535d9 17519:com.android.vending:quick_launch/u0a32}
+
+    user #0 uid=10032 gids={50032, 9997, 3002, 3003, 3001}
+
+    requiredAbi=armeabi-v7a instructionSet=arm
+
+    class=com.google.android.finsky.application.classic.ClassicApplication
+
+    dir=/data/app/com.android.vending-1/base.apk publicDir=/data/app/com.android.vending-1/base.apk data=/data/user/0/com.android.vending
+
+    packageList={com.android.vending}
+
+    compat={213dpi always-compat}
+
+    thread=android.app.ApplicationThreadProxy@91d05f6
+
+    pid=17519 starting=false
+
+    lastActivityTime=-17s665ms lastPssTime=-4s983ms nextPssTime=+1m54s837ms
+
+    adjSeq=16738 lruSeq=0 lastPss=25MB lastCachedPss=0.00
+
+    cached=false empty=true
+
+    oom: max=16 curRaw=1 setRaw=1 cur=1 set=1
+
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=false trimMemoryLevel=15
+
+    curProcState=2 repProcState=2 pssProcState=2 setProcState=2 lastStateTime=-15s169ms
+
+    reportedInteraction=true time=-17s669ms
+
+    hasClientActivities=true foregroundActivities=false (rep=false)
+
+    lastRequestedGc=-17s668ms lastLowMemory=-17s668ms reportLowMemory=false
+
+    Services:
+
+      - ServiceRecord{90a51cb u0 com.android.vending/com.google.frameworks.client.data.android.server.play.QuickLaunchProcessEndpointService}
+
+    Connections:
+
+      - ConnectionRecord{9a5b67f u0 CR WACT com.google.android.gms/.chimera.PersistentApiService:@d263b9e}
+
+    Connected Providers:
+
+      - 7c3bcf/com.android.providers.settings/.SettingsProvider->17519:com.android.vending:quick_launch/u0a32 s1/1 u0/0 +15s854ms
+
+    Receivers:
+
+      - ReceiverList{5cc2c54 17519 com.android.vending:quick_launch/10032/u0 remote:36a3fa7}
+
+      - ReceiverList{6c1c0c1 17519 com.android.vending:quick_launch/10032/u0 remote:c52dda8}
+
+      - ReceiverList{96f8b23 17519 com.android.vending:quick_launch/10032/u0 remote:7dac52}
+
+  *APP* UID 10048 ProcessRecord{8280832 3334:com.sec.android.app.launcher/u0a48}
+
+    user #0 uid=10048 gids={50048, 9997, 3001}
+
+    requiredAbi=armeabi-v7a instructionSet=null
+
+    class=com.android.launcher2.LauncherApplication
+
+    dir=/system/priv-app/TouchWizHome_2016/TouchWizHome_2016.apk publicDir=/system/priv-app/TouchWizHome_2016/TouchWizHome_2016.apk data=/data/user/0/com.sec.android.app.launcher
+
+    packageList={com.sec.android.app.launcher}
+
+    compat={213dpi always-compat}
+
+    thread=android.app.ApplicationThreadProxy@13c1255
+
+    pid=3334 starting=false
+
+    lastActivityTime=-1m35s542ms lastPssTime=-39s586ms nextPssTime=+29m20s339ms
+
+    adjSeq=16738 lruSeq=0 lastPss=17MB lastCachedPss=17MB
+
+    cached=false empty=true
+
+    oom: max=16 curRaw=6 setRaw=6 cur=6 set=6
+
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=80
+
+    curProcState=12 repProcState=12 pssProcState=12 setProcState=12 lastStateTime=-1m11s64ms
+
+    hasShownUi=true pendingUiClean=false hasAboveClient=false treatLikeActivity=false
+
+    lastWakeTime=0 timeUsed=0
+
+    lastCpuTime=0 timeUsed=0
+
+    lastRequestedGc=-56m30s909ms lastLowMemory=-34s94ms reportLowMemory=true
+
+    Activities:
+
+      - ActivityRecord{725c504 u0 com.sec.android.app.launcher/.activities.LauncherActivity t497}
+
+    Connections:
+
+      - ConnectionRecord{4d98700 u0 CR com.google.android.googlequicksearchbox/com.google.android.hotword.service.HotwordService:@436e983}
+
+    Published Providers:
+
+      - com.android.launcher2.LauncherProvider
+
+        -> ContentProviderRecord{20b8414 u0 com.sec.android.app.launcher/com.android.launcher2.LauncherProvider}
+
+      - com.samsung.android.scloud.oem.lib.bnr.BNRClientProivder
+
+        -> ContentProviderRecord{ca91ea3 u0 com.sec.android.app.launcher/com.samsung.android.scloud.oem.lib.bnr.BNRClientProivder}
+
+      - com.android.launcher2.LauncherProviderID
+
+        -> ContentProviderRecord{70e0fb2 u0 com.sec.android.app.launcher/com.android.launcher2.LauncherProviderID}
+
+    Connected Providers:
+
+      - 7c3bcf/com.android.providers.settings/.SettingsProvider->3334:com.sec.android.app.launcher/u0a48 s1/1 u0/0 +56m30s79ms
+
+      - 1932a30/android/com.android.server.enterprise.content.SecContentProvider2->3334:com.sec.android.app.launcher/u0a48 s0/0 u1/1 +56m27s941ms
+
+    Receivers:
+
+      - ReceiverList{9261de 3334 com.sec.android.app.launcher/10048/u0 remote:37d0d19}
+
+      - ReceiverList{16d523a 3334 com.sec.android.app.launcher/10048/u0 remote:efe5565}
+
+      - ReceiverList{43dccf4 3334 com.sec.android.app.launcher/10048/u0 remote:8517ec7}
+
+      - ReceiverList{48abf78 3334 com.sec.android.app.launcher/10048/u0 remote:2b058db}
+
+      - ReceiverList{7452042 3334 com.sec.android.app.launcher/10048/u0 remote:b0bf68d}
+
+      - ReceiverList{7c861d5 3334 com.sec.android.app.launcher/10048/u0 remote:941c68c}
+
+      - ReceiverList{7ed21b3 3334 com.sec.android.app.launcher/10048/u0 remote:f504322}
+
+      - ReceiverList{803e2e1 3334 com.sec.android.app.launcher/10048/u0 remote:9ddb448}
+
+      - ReceiverList{8757593 3334 com.sec.android.app.launcher/10048/u0 remote:6f7fa82}
+
+      - ReceiverList{8d1902a 3334 com.sec.android.app.launcher/10048/u0 remote:d61515}
+
+      - ReceiverList{8e538a0 3334 com.sec.android.app.launcher/10048/u0 remote:581dda3}
+
+      - ReceiverList{a77c1f5 3334 com.sec.android.app.launcher/10048/u0 remote:cd0132c}
+
+      - ReceiverList{be8f6a8 3334 com.sec.android.app.launcher/10048/u0 remote:9352ecb}
+
+      - ReceiverList{c5d4063 3334 com.sec.android.app.launcher/10048/u0 remote:8e7ee92}
+
+      - ReceiverList{ebf3041 3334 com.sec.android.app.launcher/10048/u0 remote:c2a5b28}
+
+      - ReceiverList{f51a7b7 3334 com.sec.android.app.launcher/10048/u0 remote:1e2ceb6}
+
+  *APP* UID 10035 ProcessRecord{b70adf7 17585:com.samsung.android.email.provider:service/u0a35}
+
+    user #0 uid=10035 gids={50035, 9997, 3002, 1003, 1023, 1015, 3003, 3001}
+
+    requiredAbi=armeabi-v7a instructionSet=arm
+
+    class=com.samsung.android.email.provider.Email
+
+    dir=/system/priv-app/SecEmail_M/SecEmail_M.apk publicDir=/system/priv-app/SecEmail_M/SecEmail_M.apk data=/data/user/0/com.samsung.android.email.provider
+
+    packageList={com.samsung.android.email.provider}
+
+    compat={213dpi always-compat}
+
+    thread=android.app.ApplicationThreadProxy@8058464
+
+    pid=17585 starting=false
+
+    lastActivityTime=-13s482ms lastPssTime=-13s611ms nextPssTime=+6s518ms
+
+    adjSeq=16738 lruSeq=0 lastPss=0.00 lastCachedPss=0.00
+
+    cached=false empty=true
+
+    serviceb=true serviceHighRam=false
+
+    oom: max=16 curRaw=8 setRaw=8 cur=8 set=8
+
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=15
+
+    curProcState=10 repProcState=10 pssProcState=-1 setProcState=10 lastStateTime=-13s482ms
+
+    hasStartedServices=true
+
+    lastWakeTime=0 timeUsed=0
+
+    lastCpuTime=0 timeUsed=0
+
+    lastRequestedGc=-13s482ms lastLowMemory=-13s482ms reportLowMemory=false
+
+    Services:
+
+      - ServiceRecord{da812f4 u0 com.samsung.android.email.provider/com.samsung.android.email.sync.service.EmailService}
+
+    Published Providers:
+
+      - com.samsung.android.email.sync.homecard.OtherProvider
+
+        -> ContentProviderRecord{20806cd u0 com.samsung.android.email.provider/com.samsung.android.email.sync.homecard.OtherProvider}
+
+      - com.samsung.android.email.sync.provider.EmailSyncProvider
+
+        -> ContentProviderRecord{f0b8b82 u0 com.samsung.android.email.provider/com.samsung.android.email.sync.provider.EmailSyncProvider}
+
+      - com.samsung.android.email.sync.exchange.provider.ExchangeDirectoryProvider
+
+        -> ContentProviderRecord{4f83293 u0 com.samsung.android.email.provider/com.samsung.android.email.sync.exchange.provider.ExchangeDirectoryProvider}
+
+      - com.samsung.android.scloud.oem.lib.bnr.BNRClientProivder
+
+        -> ContentProviderRecord{dc882d0 u0 com.samsung.android.email.provider/com.samsung.android.scloud.oem.lib.bnr.BNRClientProivder}
+
+      - com.samsung.android.email.sync.provider.FolderManageProvider
+
+        -> ContentProviderRecord{31b42c9 u0 com.samsung.android.email.provider/com.samsung.android.email.sync.provider.FolderManageProvider}
+
+      - com.samsung.android.email.sync.provider.AddLogsProvider
+
+        -> ContentProviderRecord{16addce u0 com.samsung.android.email.provider/com.samsung.android.email.sync.provider.AddLogsProvider}
+
+    Connected Providers:
+
+      - 7c3bcf/com.android.providers.settings/.SettingsProvider->17585:com.samsung.android.email.provider:service/u0a35 s1/1 u0/0 +11s844ms
+
+    Receivers:
+
+      - ReceiverList{33743bb 17585 com.samsung.android.email.provider:service/10035/u0 remote:895084a}
+
+  *APP* UID 5006 ProcessRecord{8ffd861 6945:com.samsung.android.beaconmanager/5006}
+
+    user #0 uid=5006 gids={45006, 9997, 3002, 3001}
+
+    requiredAbi=armeabi instructionSet=arm
+
+    dir=/data/app/com.samsung.android.beaconmanager-1/base.apk publicDir=/data/app/com.samsung.android.beaconmanager-1/base.apk data=/data/user/0/com.samsung.android.beaconmanager
+
+    packageList={com.samsung.android.beaconmanager}
+
+    compat={213dpi always-compat}
+
+    thread=android.app.ApplicationThreadProxy@c787ed1
+
+    pid=6945 starting=false
+
+    lastActivityTime=-54m54s608ms lastPssTime=-2m3s399ms nextPssTime=+12m55s90ms
+
+    adjSeq=16738 lruSeq=0 lastPss=1.0MB lastCachedPss=0.00
+
+    cached=false empty=true
+
+    oom: max=16 curRaw=2 setRaw=2 cur=2 set=2
+
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=false trimMemoryLevel=15
+
+    curProcState=6 repProcState=6 pssProcState=6 setProcState=6 lastStateTime=-54m54s436ms
+
+    setIsForeground=false foregroundServices=false forcingToForeground=android.os.BinderProxy@c97dd36
+
+    reportedInteraction=true time=-54m54s436ms
+
+    hasStartedServices=true
+
+    lastRequestedGc=-- lastLowMemory=-34s99ms reportLowMemory=true
+
+    Services:
+
+      - ServiceRecord{bdd89e3 u0 com.samsung.android.beaconmanager/.BeaconService}
+
+    Connected Providers:
+
+      - 7c3bcf/com.android.providers.settings/.SettingsProvider->6945:com.samsung.android.beaconmanager/5006 s1/1 u0/0 +54m54s616ms
+
+    Receivers:
+
+      - ReceiverList{4de9bd1 6945 com.samsung.android.beaconmanager/5006/u0 remote:95cfaf8}
+
+      - ReceiverList{7e2cea4 6945 com.samsung.android.beaconmanager/5006/u0 remote:927b937}
+
+      - ReceiverList{ab4ad6a 6945 com.samsung.android.beaconmanager/5006/u0 remote:e8a5f55}
+
+  *APP* UID 1000 ProcessRecord{63ae538 3644:com.samsung.ucs.ucspinpad/1000}
+
+    user #0 uid=1000 gids={41000, 9997, 2001, 3004, 3002, 1023, 1015, 3003, 3001, 1001, 1024, 1007, 3005, 1300}
+
+    requiredAbi=armeabi-v7a instructionSet=arm
+
+    dir=/system/priv-app/UcsPinpad/UcsPinpad.apk publicDir=/system/priv-app/UcsPinpad/UcsPinpad.apk data=/data/user/0/com.samsung.ucs.ucspinpad
+
+    packageList={com.samsung.ucs.ucspinpad}
+
+    compat={213dpi always-compat}
+
+    thread=android.app.ApplicationThreadProxy@fd3d437
+
+    pid=3644 starting=false
+
+    lastActivityTime=-56m27s76ms lastPssTime=-2m3s276ms nextPssTime=+12m55s89ms
+
+    adjSeq=16738 lruSeq=0 lastPss=610KB lastCachedPss=0.00
+
+    cached=false empty=true
+
+    oom: max=16 curRaw=1 setRaw=1 cur=1 set=1
+
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=false trimMemoryLevel=15
+
+    curProcState=6 repProcState=6 pssProcState=6 setProcState=6 lastStateTime=-56m27s76ms
+
+    reportedInteraction=true time=-56m27s76ms
+
+    lastRequestedGc=-- lastLowMemory=-34s100ms reportLowMemory=true
+
+    Services:
+
+      - ServiceRecord{230f87f u0 com.samsung.ucs.ucspinpad/.UcsPinpadService}
+
+  *APP* UID 10050 ProcessRecord{7f73e22 3244:com.google.android.googlequicksearchbox:interactor/u0a50}
+
+    user #0 uid=10050 gids={50050, 9997, 1005, 3002, 3003, 3001}
+
+    requiredAbi=armeabi-v7a instructionSet=arm
+
+    class=com.google.android.apps.gsa.binaries.velvet.app.VelvetRoot_Application
+
+    manageSpaceActivityName=com.google.android.apps.gsa.managespace.VelvetManageSpaceActivity
+
+    dir=/data/app/com.google.android.googlequicksearchbox-2/base.apk publicDir=/data/app/com.google.android.googlequicksearchbox-2/base.apk data=/data/user/0/com.google.android.googlequicksearchbox
+
+    packageList={com.google.android.googlequicksearchbox}
+
+    compat={213dpi always-compat}
+
+    thread=android.app.ApplicationThreadProxy@1644da4
+
+    pid=3244 starting=false
+
+    lastActivityTime=-56m31s590ms lastPssTime=-2m3s128ms nextPssTime=+12m55s89ms
+
+    adjSeq=16738 lruSeq=0 lastPss=1.0MB lastCachedPss=0.00
+
+    cached=false empty=true
+
+    oom: max=16 curRaw=1 setRaw=1 cur=1 set=1
+
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=false trimMemoryLevel=15
+
+    curProcState=3 repProcState=3 pssProcState=3 setProcState=3 lastStateTime=-56m31s589ms
+
+    reportedInteraction=true time=-56m31s593ms
+
+    lastRequestedGc=-- lastLowMemory=-34s100ms reportLowMemory=true
+
+    Services:
+
+      - ServiceRecord{ed3ce51 u0 com.google.android.googlequicksearchbox/com.google.android.voiceinteraction.GsaVoiceInteractionService}
+
+    Published Providers:
+
+      - com.google.android.apps.gsa.voiceinteraction.dump.StateDumpProvider
+
+        -> ContentProviderRecord{6cc2c92 u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.voiceinteraction.dump.StateDumpProvider}
+
+      - com.google.android.apps.gsa.contentprovider.initializer.InteractorInitializer
+
+        -> ContentProviderRecord{813aaa2 u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.contentprovider.initializer.InteractorInitializer}
+
+      - com.google.android.apps.gsa.voiceinteraction.hotword.HotwordAudioProvider
+
+        -> ContentProviderRecord{e12aa83 u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.voiceinteraction.hotword.HotwordAudioProvider}
+
+      - com.google.android.apps.gsa.nga.engine.bisto.TranscriptionAudioProvider
+
+        -> ContentProviderRecord{4443226 u0 com.google.android.googlequicksearchbox/com.google.android.apps.gsa.nga.engine.bisto.TranscriptionAudioProvider}
+
+      - com.google.android.libraries.search.feedback.bugreport.InteractorBugReportContentProvider
+
+        -> ContentProviderRecord{f0f79f0 u0 com.google.android.googlequicksearchbox/com.google.android.libraries.search.feedback.bugreport.InteractorBugReportContentProvider}
+
+    Connected Providers:
+
+      - 7c3bcf/com.android.providers.settings/.SettingsProvider->3244:com.google.android.googlequicksearchbox:interactor/u0a50 s1/1 u0/0 +31m33s980ms
+
+    Receivers:
+
+      - ReceiverList{24b53c7 3244 com.google.android.googlequicksearchbox:interactor/10050/u0 remote:6e66106}
+
+      - ReceiverList{4413291 3244 com.google.android.googlequicksearchbox:interactor/10050/u0 remote:c64b4b8}
+
+      - ReceiverList{4b2ba6a 3244 com.google.android.googlequicksearchbox:interactor/10050/u0 remote:ab48055}
+
+      - ReceiverList{4e591e7 3244 com.google.android.googlequicksearchbox:interactor/10050/u0 remote:9e843a6}
+
+      - ReceiverList{bede4bc 3244 com.google.android.googlequicksearchbox:interactor/10050/u0 remote:62778af}
+
+      - ReceiverList{ec1f5de 3244 com.google.android.googlequicksearchbox:interactor/10050/u0 remote:d1e7119}
+
+  *APP* UID 1000 ProcessRecord{56964ef 17818:com.ws.dm/1000}
+
+    user #0 uid=1000 gids={41000, 9997, 2001, 3004, 3002, 1023, 1015, 3003, 3001, 1001, 1024, 1007, 3005, 1300}
+
+    requiredAbi=armeabi-v7a instructionSet=arm
+
+    class=com.ws.dm.DMApplication
+
+    dir=/system/priv-app/wssyncmldm/wssyncmldm.apk publicDir=/system/priv-app/wssyncmldm/wssyncmldm.apk data=/data/user/0/com.ws.dm
+
+    packageList={com.ws.dm}
+
+    compat={213dpi always-compat}
+
+    thread=android.app.ApplicationThreadProxy@a7afbfc
+
+    pid=17818 starting=false
+
+    lastActivityTime=-205ms lastPssTime=-524ms nextPssTime=+19s795ms
+
+    adjSeq=16738 lruSeq=0 lastPss=0.00 lastCachedPss=0.00
+
+    cached=false empty=false
+
+    oom: max=16 curRaw=0 setRaw=0 cur=0 set=0
+
+    curSchedGroup=0 setSchedGroup=0 systemNoUi=false trimMemoryLevel=15
+
+    curProcState=10 repProcState=10 pssProcState=-1 setProcState=10 lastStateTime=-205ms
+
+    hasStartedServices=true
+
+    lastWakeTime=0 timeUsed=0
+
+    lastCpuTime=0 timeUsed=0
+
+    lastRequestedGc=-206ms lastLowMemory=-206ms reportLowMemory=false
+
+    Services:
+
+      - ServiceRecord{5801e4a u0 com.ws.dm/.DMService}
+
+    Executing Services (fg=false)
+
+      - ServiceRecord{5801e4a u0 com.ws.dm/.DMService}
+
+    Published Providers:
+
+      - com.ws.dm.database.wssdmdbContentProvider
+
+        -> ContentProviderRecord{c4285 u0 com.ws.dm/.database.wssdmdbContentProvider}
+
+  *APP* UID 1001 ProcessRecord{6d81b22 3844:com.sec.phone/1001}
+
+    user #0 uid=1001 gids={41001, 9997, 1030, 3002, 1023, 1015, 3003, 3001, 1007, 3006}
+
+    requiredAbi=armeabi-v7a instructionSet=null
+
+    dir=/system/app/SecFactoryPhoneTest/SecFactoryPhoneTest.apk publicDir=/system/app/SecFactoryPhoneTest/SecFactoryPhoneTest.apk data=/data/user/0/com.sec.phone
+
+    packageList={com.sec.phone}
+
+    compat={213dpi always-compat}
+
+    thread=android.app.ApplicationThreadProxy@5077cd3
+
+    pid=3844 starting=false
+
+    lastActivityTime=-55m36s224ms lastPssTime=-2m3s414ms nextPssTime=+12m54s989ms
+
+    adjSeq=16738 lruSeq=0 lastPss=619KB lastCachedPss=0.00
+
+    cached=false empty=true
+
+    oom: max=16 curRaw=1 setRaw=1 cur=1 set=1
+
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=false trimMemoryLevel=15
+
+    curProcState=6 repProcState=6 pssProcState=6 setProcState=6 lastStateTime=-56m21s778ms
+
+    reportedInteraction=true time=-56m21s778ms
+
+    lastRequestedGc=-- lastLowMemory=-34s200ms reportLowMemory=true
+
+    Services:
+
+      - ServiceRecord{54c922b u0 com.sec.phone/.SecPhoneService}
+
+  *APP* UID 10047 ProcessRecord{72443eb 3158:com.android.systemui.recents/u0a47}
+
+    user #0 uid=10047 gids={50047, 9997, 3002, 1023, 1015, 3003, 3001, 3006}
+
+    requiredAbi=armeabi-v7a instructionSet=null
+
+    class=com.android.systemui.SystemUIApplication
+
+    dir=/system/priv-app/SystemUI/SystemUI.apk publicDir=/system/priv-app/SystemUI/SystemUI.apk data=/data/user/0/com.android.systemui
+
+    packageList={com.android.systemui}
+
+    compat={213dpi always-compat}
+
+    thread=android.app.ApplicationThreadProxy@8015d0e
+
+    pid=3158 starting=false
+
+    lastActivityTime=-3m20s508ms lastPssTime=-2m4s905ms nextPssTime=+12m54s989ms
+
+    adjSeq=16738 lruSeq=0 lastPss=17MB lastCachedPss=0.00
+
+    cached=false empty=true
+
+    oom: max=16 curRaw=1 setRaw=1 cur=1 set=1
+
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=false trimMemoryLevel=15
+
+    curProcState=6 repProcState=6 pssProcState=6 setProcState=6 lastStateTime=-3m18s368ms
+
+    hasShownUi=true pendingUiClean=true hasAboveClient=false treatLikeActivity=false
+
+    reportedInteraction=true time=-56m31s778ms
+
+    hasStartedServices=true
+
+    lastRequestedGc=-- lastLowMemory=-34s200ms reportLowMemory=true
+
+    Activities:
+
+      - ActivityRecord{f098536 u0 com.android.systemui/.recents.SeparatedRecentsActivity t498}
+
+    Services:
+
+      - ServiceRecord{267ef7f u0 com.android.systemui/.multiwindow.centerbarwindow.CenterBarWindowService}
+
+      - ServiceRecord{bf13e08 u0 com.android.systemui/.recents.RecentsService}
+
+    Connected Providers:
+
+      - 7c3bcf/com.android.providers.settings/.SettingsProvider->3158:com.android.systemui.recents/u0a47 s1/1 u0/0 +56m32s800ms
+
+      - 1932a30/android/com.android.server.enterprise.content.SecContentProvider2->3158:com.android.systemui.recents/u0a47 s0/0 u1/1 +36m8s27ms
+
+    Receivers:
+
+      - ReceiverList{13a65b9 3158 com.android.systemui.recents/10047/u0 remote:4939b80}
+
+      - ReceiverList{279ec7b 3158 com.android.systemui.recents/10047/u-1 remote:189dc0a}
+
+      - ReceiverList{2b92a52 3158 com.android.systemui.recents/10047/u0 remote:aa09edd}
+
+      - ReceiverList{3514768 3158 com.android.systemui.recents/10047/u-1 remote:23d4a8b}
+
+      - ReceiverList{356efac 3158 com.android.systemui.recents/10047/u-1 remote:713195f}
+
+      - ReceiverList{3db184f 3158 com.android.systemui.recents/10047/u-1 remote:44fc2ae}
+
+      - ReceiverList{4c7ed2d 3158 com.android.systemui.recents/10047/u-1 remote:1958844}
+
+      - ReceiverList{52cb005 3158 com.android.systemui.recents/10047/u-1 remote:64aaf7c}
+
+      - ReceiverList{5595bba 3158 com.android.systemui.recents/10047/u-1 remote:55694e5}
+
+      - ReceiverList{60d8a74 3158 com.android.systemui.recents/10047/u-1 remote:3bbc247}
+
+      - ReceiverList{79d957a 3158 com.android.systemui.recents/10047/u0 remote:7049da5}
+
+      - ReceiverList{7c825ca 3158 com.android.systemui.recents/10047/u0 remote:418fd35}
+
+      - ReceiverList{8609a61 3158 com.android.systemui.recents/10047/u-1 remote:66499c8}
+
+      - ReceiverList{8f1aed6 3158 com.android.systemui.recents/10047/u0 remote:bf612f1}
+
+      - ReceiverList{984e4b0 3158 com.android.systemui.recents/10047/u-1 remote:f036ff3}
+
+      - ReceiverList{9dc5053 3158 com.android.systemui.recents/10047/u0 remote:41a8842}
+
+      - ReceiverList{ae83be3 3158 com.android.systemui.recents/10047/u-1 remote:a1ba812}
+
+      - ReceiverList{bd58324 3158 com.android.systemui.recents/10047/u0 remote:41a6fb7}
+
+      - ReceiverList{c78430f 3158 com.android.systemui.recents/10047/u0 remote:54fe06e}
+
+      - ReceiverList{db40467 3158 com.android.systemui.recents/10047/u-1 remote:4f6f026}
+
+  *PERS* UID 1001 ProcessRecord{4da29b0 3321:com.android.phone/1001}
+
+    user #0 uid=1001 gids={41001, 9997, 1030, 3002, 1023, 1015, 3003, 3001, 1007, 3006}
+
+    requiredAbi=armeabi-v7a instructionSet=null
+
+    class=com.android.phone.PhoneApp
+
+    dir=/system/priv-app/TeleService/TeleService.apk publicDir=/system/priv-app/TeleService/TeleService.apk data=/data/user/0/com.android.phone
+
+    packageList={com.android.providers.telephony, com.sec.ims, com.android.stk, com.sec.enterprise.mdm.services.simpin, com.sec.android.app.bluetoothtest, com.android.phone, com.samsung.sec.android.application.csc}
+
+    packageDependencies={com.android.providers.telephony}
+
+    compat={213dpi always-compat}
+
+    thread=android.app.ApplicationThreadProxy@9c3132f
+
+    pid=3321 starting=false
+
+    lastActivityTime=-1m34s175ms lastPssTime=-18s571ms nextPssTime=+14m40s920ms
+
+    adjSeq=16738 lruSeq=0 lastPss=7.2MB lastCachedPss=0.00
+
+    cached=false empty=false
+
+    oom: max=-12 curRaw=-12 setRaw=-12 cur=-12 set=-12
+
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=true trimMemoryLevel=15
+
+    curProcState=0 repProcState=0 pssProcState=0 setProcState=0 lastStateTime=-56m31s122ms
+
+    hasShownUi=true pendingUiClean=false hasAboveClient=false treatLikeActivity=false
+
+    reportedInteraction=true time=-56m31s122ms
+
+    persistent=true removed=false
+
+    lastRequestedGc=-- lastLowMemory=-34s202ms reportLowMemory=true
+
+    Services:
+
+      - ServiceRecord{270c05e u0 com.android.phone/.TelephonyDebugService}
+
+      - ServiceRecord{375bf41 u0 com.android.stk/.StkAppService}
+
+      - ServiceRecord{638607e u0 com.sec.enterprise.mdm.services.simpin/.EnterpriseSimPin}
+
+      - ServiceRecord{6d0e14f u0 com.sec.ims/.ImsTelephonyService}
+
+      - ServiceRecord{8c0083c u0 com.sec.android.app.bluetoothtest/.BluetoothBDTestService}
+
+      - ServiceRecord{c326510 u0 com.samsung.sec.android.application.csc/.CscUpdateService}
+
+    Connections:
+
+      - ConnectionRecord{1d4d104 u0 CR com.sec.phone/.SecPhoneService:@530c917}
+
+      - ConnectionRecord{32e3393 u0 CR com.sec.imsservice/com.sec.internal.ims.imsservice.SmsService:@644f082}
+
+      - ConnectionRecord{35592ce u0 CR com.sec.imsservice/com.sec.internal.ims.imsservice.SSConfigService:@5dbabc9}
+
+      - ConnectionRecord{90a0458 u0 com.android.server.telecom/.components.BluetoothVoIPService:@300253b}
+
+      - ConnectionRecord{aeedfb3 u0 CR com.sec.imsservice/com.sec.internal.ims.imsservice.ImsService:@66a3922}
+
+      - ConnectionRecord{b752164 u0 CR com.sec.imsservice/com.sec.internal.ims.imsservice.VolteService2:@989ef7}
+
+      - ConnectionRecord{fcb0fae u0 CR com.sec.ims/.ImsTelephonyService:@7b79029}
+
+    Published Providers:
+
+      - com.android.phone.PhoneSearchIndexablesProvider
+
+        -> ContentProviderRecord{7118c20 u0 com.android.phone/.PhoneSearchIndexablesProvider}
+
+      - com.android.providers.telephony.SmsProvider
+
+        -> ContentProviderRecord{7edd5c7 u0 com.android.providers.telephony/.SmsProvider}
+
+      - com.android.phone.SettingSearchProvider
+
+        -> ContentProviderRecord{32acb6 u0 com.android.phone/.SettingSearchProvider}
+
+      - com.android.providers.telephony.ChannelsProvider
+
+        -> ContentProviderRecord{9243a9e u0 com.android.providers.telephony/.ChannelsProvider}
+
+      - com.android.phone.IccProvider
+
+        -> ContentProviderRecord{215e9d u0 com.android.phone/.IccProvider}
+
+      - com.samsung.android.scloud.oem.lib.bnr.BNRClientProivder
+
+        -> ContentProviderRecord{631beb7 u0 com.android.providers.telephony/com.samsung.android.scloud.oem.lib.bnr.BNRClientProivder}
+
+      - com.android.phone.callsettings.CallSettingsProvider
+
+        -> ContentProviderRecord{f996342 u0 com.android.phone/.callsettings.CallSettingsProvider}
+
+      - com.android.providers.telephony.ImProvider
+
+        -> ContentProviderRecord{1c415bc u0 com.android.providers.telephony/.ImProvider}
+
+      - com.android.providers.telephony.MmsSmsProvider
+
+        -> ContentProviderRecord{ebca4c1 u0 com.android.providers.telephony/.MmsSmsProvider}
+
+      - com.android.providers.telephony.HbpcdLookupProvider
+
+        -> ContentProviderRecord{d3fda78 u0 com.android.providers.telephony/.HbpcdLookupProvider}
+
+      - com.android.providers.telephony.MmsProvider
+
+        -> ContentProviderRecord{1d514de u0 com.android.providers.telephony/.MmsProvider}
+
+      - com.android.phone.BackupRestoreProvider
+
+        -> ContentProviderRecord{cc55bf2 u0 com.android.phone/.BackupRestoreProvider}
+
+      - com.android.providers.telephony.TelephonyProvider
+
+        -> ContentProviderRecord{c19a0ea u0 com.android.providers.telephony/.TelephonyProvider}
+
+      - com.android.providers.telephony.NwkInfoProvider
+
+        -> ContentProviderRecord{c61fa95 u0 com.android.providers.telephony/.NwkInfoProvider}
+
+      - com.android.providers.telephony.MessageProvider
+
+        -> ContentProviderRecord{36995cb u0 com.android.providers.telephony/.MessageProvider}
+
+    Connected Providers:
+
+      - 7c3bcf/com.android.providers.settings/.SettingsProvider->3321:com.android.phone/1001 s1/1 u0/0 +56m28s620ms
+
+    Receivers:
+
+      - ReceiverList{3aebb5 3321 com.android.phone/1001/u0 remote:5e2cbec}
+
+      - ReceiverList{6c978c 3321 com.android.phone/1001/u0 remote:298f4bf}
+
+      - ReceiverList{12ce088 3321 com.android.phone/1001/u0 remote:791142b}
+
+      - ReceiverList{1795dff 3321 com.android.phone/1001/u0 remote:9e9d11e}
+
+      - ReceiverList{1b0d03e 3321 com.android.phone/1001/u0 remote:730b8f9}
+
+      - ReceiverList{2721ddb 3321 com.android.phone/1001/u0 remote:22876ea}
+
+      - ReceiverList{2dda080 3321 com.android.phone/1001/u0 remote:cbd7903}
+
+      - ReceiverList{2f0199c 3321 com.android.phone/1001/u-1 remote:66ff50f}
+
+      - ReceiverList{30ac807 3321 com.android.phone/1001/u0 remote:465fe46}
+
+      - ReceiverList{38f17b6 3321 com.android.phone/1001/u0 remote:5361351}
+
+      - ReceiverList{3c0dd1b 3321 com.android.phone/1001/u0 remote:509ab2a}
+
+      - ReceiverList{40c63eb 3321 com.android.phone/1001/u0 remote:3e6cb3a}
+
+      - ReceiverList{477938d 3321 com.android.phone/1001/u0 remote:afc4c24}
+
+      - ReceiverList{518b898 3321 com.android.phone/1001/u0 remote:684027b}
+
+      - ReceiverList{5335143 3321 com.android.phone/1001/u0 remote:8ba36f2}
+
+      - ReceiverList{64a1b91 3321 com.android.phone/1001/u0 remote:8cba1b8}
+
+      - ReceiverList{755c678 3321 com.android.phone/1001/u0 remote:b371bdb}
+
+      - ReceiverList{76d4a75 3321 com.android.phone/1001/u0 remote:27c6dac}
+
+      - ReceiverList{7ce263b 3321 com.android.phone/1001/u0 remote:887e4ca}
+
+      - ReceiverList{8645bd6 3321 com.android.phone/1001/u0 remote:e0353f1}
+
+      - ReceiverList{896c56e 3321 com.android.phone/1001/u0 remote:7ad84e9}
+
+      - ReceiverList{94d4d3c 3321 com.android.phone/1001/u0 remote:639332f}
+
+      - ReceiverList{96e41a7 3321 com.android.phone/1001/u0 remote:eeada66}
+
+      - ReceiverList{9732a0e 3321 com.android.phone/1001/u0 remote:6a01809}
+
+      - ReceiverList{9ba5e5b 3321 com.android.phone/1001/u0 remote:15f696a}
+
+      - ReceiverList{9fc67ce 3321 com.android.phone/1001/u0 remote:834b4c9}
+
+      - ReceiverList{aa78396 3321 com.android.phone/1001/u0 remote:1bf42b1}
+
+      - ReceiverList{ae03a19 3321 com.android.phone/1001/u0 remote:6548560}
+
+      - ReceiverList{b3bb90a 3321 com.android.phone/1001/u-1 remote:21dd575}
+
+      - ReceiverList{b464b57 3321 com.android.phone/1001/u0 remote:a3b3cd6}
+
+      - ReceiverList{bc81652 3321 com.android.phone/1001/u-1 remote:c27badd}
+
+      - ReceiverList{c6d04e7 3321 com.android.phone/1001/u0 remote:3e9a2a6}
+
+      - ReceiverList{c980b01 3321 com.android.phone/1001/u0 remote:846e8e8}
+
+      - ReceiverList{cba9d3d 3321 com.android.phone/1001/u0 remote:783ae94}
+
+      - ReceiverList{ccab0ff 3321 com.android.phone/1001/u0 remote:330901e}
+
+      - ReceiverList{d24e55c 3321 com.android.phone/1001/u0 remote:20d97cf}
+
+      - ReceiverList{d6a17a8 3321 com.android.phone/1001/u0 remote:37233cb}
+
+      - ReceiverList{dbfbbc2 3321 com.android.phone/1001/u0 remote:5a9d00d}
+
+      - ReceiverList{e02e201 3321 com.android.phone/1001/u0 remote:9cabbe8}
+
+      - ReceiverList{fd084f6 3321 com.android.phone/1001/u0 remote:d8fed91}
+
+      - ReceiverList{fd6db89 3321 com.android.phone/1001/u0 remote:bc40690}
+
+      - ReceiverList{ff78792 3321 com.android.phone/1001/u0 remote:715291d}
+
+  *PERS* UID 10047 ProcessRecord{64f9533 3092:com.android.systemui/u0a47}
+
+    user #0 uid=10047 gids={50047, 9997, 3002, 1023, 1015, 3003, 3001, 3006}
+
+    requiredAbi=armeabi-v7a instructionSet=null
+
+    class=com.android.systemui.SystemUIApplication
+
+    dir=/system/priv-app/SystemUI/SystemUI.apk publicDir=/system/priv-app/SystemUI/SystemUI.apk data=/data/user/0/com.android.systemui
+
+    packageList={com.android.systemui}
+
+    compat={213dpi always-compat}
+
+    thread=android.app.ApplicationThreadProxy@d41ad3c
+
+    pid=3092 starting=false
+
+    lastActivityTime=-7m46s933ms lastPssTime=-18s493ms nextPssTime=+14m40s917ms
+
+    adjSeq=16738 lruSeq=0 lastPss=33MB lastCachedPss=0.00
+
+    cached=false empty=false
+
+    oom: max=-12 curRaw=-12 setRaw=-12 cur=-12 set=-12
+
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=true trimMemoryLevel=15
+
+    curProcState=0 repProcState=0 pssProcState=0 setProcState=0 lastStateTime=-56m31s144ms
+
+    reportedInteraction=true time=-56m31s782ms
+
+    persistent=true removed=false
+
+    hasStartedServices=true
+
+    lastRequestedGc=-23s328ms lastLowMemory=-34s205ms reportLowMemory=false
+
+    Services:
+
+      - ServiceRecord{40a0d1d u0 com.android.systemui/.SystemUIService}
+
+      - ServiceRecord{9ad8ccf u0 com.android.systemui/.ImageWallpaper}
+
+      - ServiceRecord{afea8f3 u0 com.android.systemui/.keyguard.KeyguardService}
+
+    Connections:
+
+      - ConnectionRecord{7239adb u0 com.android.bluetooth/.a2dp.A2dpService:@eedc7ea}
+
+      - ConnectionRecord{7d348dd u0 com.android.bluetooth/.pbap.BluetoothPbapService:@267dc9f}
+
+      - ConnectionRecord{a86f669 u0 CR com.android.systemui/.recents.RecentsService:@7ca40f0}
+
+      - ConnectionRecord{d19118e u0 com.android.bluetooth/.sap.SapService:@e16ed89}
+
+      - ConnectionRecord{d6b91ec u0 com.android.bluetooth/.pbap.BluetoothPbapService:@267dc9f}
+
+      - ConnectionRecord{e4bc624 u0 com.android.bluetooth/.pan.PanService:@743deb7}
+
+      - ConnectionRecord{f3bb817 u0 com.android.bluetooth/.hid.HidService:@ba36496}
+
+    Connected Providers:
+
+      - 7c3bcf/com.android.providers.settings/.SettingsProvider->3092:com.android.systemui/u0a47 s1/1 u0/0 +56m33s184ms
+
+      - 1932a30/android/com.android.server.enterprise.content.SecContentProvider2->3092:com.android.systemui/u0a47 s0/0 u1/1 +56m32s635ms
+
+      - 12dcbfd/android/com.android.server.enterprise.content.SecContentProvider->3092:com.android.systemui/u0a47 s0/0 u1/1 +17m11s49ms
+
+    Receivers:
+
+      - ReceiverList{29d5fa 3092 com.android.systemui/10047/u0 remote:20f9025}
+
+      - ReceiverList{389af3 3092 com.android.systemui/10047/u0 remote:ca4d962}
+
+      - ReceiverList{bea057 3092 com.android.systemui/10047/u0 remote:5bbc5d6}
+
+      - ReceiverList{c9d998 3092 com.android.systemui/10047/u0 remote:5b1077b}
+
+      - ReceiverList{d1cb11 3092 com.android.systemui/10047/u0 remote:1ee5f38}
+
+      - ReceiverList{ea0342 3092 com.android.systemui/10047/u0 remote:7a858d}
+
+      - ReceiverList{148ded3 3092 com.android.systemui/10047/u0 remote:33e40c2}
+
+      - ReceiverList{263eadc 3092 com.android.systemui/10047/u-1 remote:777434f}
+
+      - ReceiverList{281fc4e 3092 com.android.systemui/10047/u0 remote:4b9cb49}
+
+      - ReceiverList{2acec81 3092 com.android.systemui/10047/u0 remote:f046068}
+
+      - ReceiverList{3049fa3 3092 com.android.systemui/10047/u-1 remote:2a042d2}
+
+      - ReceiverList{3524d47 3092 com.android.systemui/10047/u0 remote:32f5086}
+
+      - ReceiverList{36f5e25 3092 com.android.systemui/10047/u0 remote:190c21c}
+
+      - ReceiverList{3736799 3092 com.android.systemui/10047/u0 remote:4a9f8e0}
+
+      - ReceiverList{3a1c1e1 3092 com.android.systemui/10047/u-1 remote:1dbaf48}
+
+      - ReceiverList{3c636e4 3092 com.android.systemui/10047/u0 remote:d29a77}
+
+      - ReceiverList{3caa229 3092 com.android.systemui/10047/u-1 remote:be643b0}
+
+      - ReceiverList{3f31b14 3092 com.android.systemui/10047/u0 remote:eb0b167}
+
+      - ReceiverList{44ad305 3092 com.android.systemui/10047/u0 remote:24f7e7c}
+
+      - ReceiverList{47f8775 3092 com.android.systemui/10047/u0 remote:dad7eac}
+
+      - ReceiverList{48071a8 3092 com.android.systemui/10047/u0 remote:de1b5cb}
+
+      - ReceiverList{50d00b7 3092 com.android.systemui/10047/u-1 remote:7febb6}
+
+      - ReceiverList{548570f 3092 com.android.systemui/10047/u0 remote:5c3c46e}
+
+      - ReceiverList{54f3a80 3092 com.android.systemui/10047/u0 remote:5ed3b03}
+
+      - ReceiverList{5631637 3092 com.android.systemui/10047/u-1 remote:1b2e736}
+
+      - ReceiverList{56bb97a 3092 com.android.systemui/10047/u0 remote:864d1a5}
+
+      - ReceiverList{581da7f 3092 com.android.systemui/10047/u0 remote:40c6f9e}
+
+      - ReceiverList{5e4518f 3092 com.android.systemui/10047/u0 remote:8c118ee}
+
+      - ReceiverList{6066962 3092 com.android.systemui/10047/u0 remote:38e302d}
+
+      - ReceiverList{64d9ea8 3092 com.android.systemui/10047/u0 remote:12376cb}
+
+      - ReceiverList{6986ed8 3092 com.android.systemui/10047/u0 remote:e73a9bb}
+
+      - ReceiverList{6df2070 3092 com.android.systemui/10047/u0 remote:63642b3}
+
+      - ReceiverList{80fdf5b 3092 com.android.systemui/10047/u0 remote:f864e6a}
+
+      - ReceiverList{82216c1 3092 com.android.systemui/10047/u0 remote:c46cba8}
+
+      - ReceiverList{84be7aa 3092 com.android.systemui/10047/u0 remote:5ed1a95}
+
+      - ReceiverList{853e3a7 3092 com.android.systemui/10047/u0 remote:d39c466}
+
+      - ReceiverList{8f5e321 3092 com.android.systemui/10047/u0 remote:dd28d88}
+
+      - ReceiverList{946ff89 3092 com.android.systemui/10047/u0 remote:a0e3a90}
+
+      - ReceiverList{948f750 3092 com.android.systemui/10047/u0 remote:a17a913}
+
+      - ReceiverList{97b29ae 3092 com.android.systemui/10047/u0 remote:c0fd229}
+
+      - ReceiverList{98d8f7d 3092 com.android.systemui/10047/u0 remote:b5e01d4}
+
+      - ReceiverList{9a3b1aa 3092 com.android.systemui/10047/u0 remote:dfdcc95}
+
+      - ReceiverList{9d846c7 3092 com.android.systemui/10047/u0 remote:f934006}
+
+      - ReceiverList{9e5e469 3092 com.android.systemui/10047/u0 remote:ab826f0}
+
+      - ReceiverList{b210b8c 3092 com.android.systemui/10047/u0 remote:646b8bf}
+
+      - ReceiverList{b42bc7f 3092 com.android.systemui/10047/u0 remote:a9b999e}
+
+      - ReceiverList{b58665f 3092 com.android.systemui/10047/u0 remote:8f83efe}
+
+      - ReceiverList{c8651ed 3092 com.android.systemui/10047/u-1 remote:4ef8804}
+
+      - ReceiverList{c9fef12 3092 com.android.systemui/10047/u0 remote:8087e9d}
+
+      - ReceiverList{ca70497 3092 com.android.systemui/10047/u-1 remote:eb21316}
+
+      - ReceiverList{cea4fb5 3092 com.android.systemui/10047/u0 remote:be13fec}
+
+      - ReceiverList{cf8273b 3092 com.android.systemui/10047/u0 remote:a0549ca}
+
+      - ReceiverList{d3821db 3092 com.android.systemui/10047/u0 remote:bf40aea}
+
+      - ReceiverList{d65c30c 3092 com.android.systemui/10047/u-1 remote:b559e3f}
+
+      - ReceiverList{d836740 3092 com.android.systemui/10047/u-1 remote:e5722c3}
+
+      - ReceiverList{da077f4 3092 com.android.systemui/10047/u0 remote:237f5c7}
+
+      - ReceiverList{e0dc0f2 3092 com.android.systemui/10047/u-1 remote:2e4ebfd}
+
+      - ReceiverList{e344aa2 3092 com.android.systemui/10047/u0 remote:2adce6d}
+
+      - ReceiverList{e3b9d11 3092 com.android.systemui/10047/u0 remote:2743938}
+
+      - ReceiverList{e70d480 3092 com.android.systemui/10047/u-1 remote:28cfd03}
+
+      - ReceiverList{e85d801 3092 com.android.systemui/10047/u0 remote:b47c9e8}
+
+      - ReceiverList{e914af2 3092 com.android.systemui/10047/u-1 remote:785dfd}
+
+      - ReceiverList{e91a084 3092 com.android.systemui/10047/u0 remote:1a92697}
+
+      - ReceiverList{ee3d95a 3092 com.android.systemui/10047/u0 remote:2ec0505}
+
+      - ReceiverList{eef15e8 3092 com.android.systemui/10047/u0 remote:e8f430b}
+
+      - ReceiverList{ef1dcf9 3092 com.android.systemui/10047/u0 remote:5ad67c0}
+
+      - ReceiverList{efecc27 3092 com.android.systemui/10047/u0 remote:694fee6}
+
+      - ReceiverList{eff281f 3092 com.android.systemui/10047/u0 remote:15defbe}
+
+      - ReceiverList{f170d42 3092 com.android.systemui/10047/u-1 remote:a6d778d}
+
+      - ReceiverList{f473d39 3092 com.android.systemui/10047/u0 remote:4f72100}
+
+      - ReceiverList{f49c36f 3092 com.android.systemui/10047/u0 remote:82fa64e}
+
+      - ReceiverList{f8fb5bc 3092 com.android.systemui/10047/u0 remote:8d9edaf}
+
+      - ReceiverList{fc46fbc 3092 com.android.systemui/10047/u0 remote:e654faf}
+
+      - ReceiverList{fcc6713 3092 com.android.systemui/10047/u0 remote:175c202}
+
+      - ReceiverList{fcfb0e4 3092 com.android.systemui/10047/u0 remote:d8dbc77}
+
+  *APP* UID 1002 ProcessRecord{7fe7fc3 3653:com.android.bluetooth/1002}
+
+    user #0 uid=1002 gids={41002, 9997, 3002, 3003, 3001, 3008, 3005, 1016}
+
+    requiredAbi=armeabi-v7a instructionSet=arm
+
+    class=com.android.bluetooth.btservice.AdapterApp
+
+    dir=/system/app/Bluetooth/Bluetooth.apk publicDir=/system/app/Bluetooth/Bluetooth.apk data=/data/user/0/com.android.bluetooth
+
+    packageList={com.android.bluetooth}
+
+    compat={213dpi always-compat}
+
+    thread=android.app.ApplicationThreadProxy@41a6128
+
+    pid=3653 starting=false
+
+    lastActivityTime=-6s607ms lastPssTime=-2m4s692ms nextPssTime=+12m54s981ms
+
+    adjSeq=16738 lruSeq=0 lastPss=3.1MB lastCachedPss=0.00
+
+    cached=false empty=true
+
+    oom: max=16 curRaw=-11 setRaw=-11 cur=-11 set=-11
+
+    curSchedGroup=-1 setSchedGroup=-1 systemNoUi=false trimMemoryLevel=15
+
+    curProcState=3 repProcState=3 pssProcState=3 setProcState=3 lastStateTime=-7m44s882ms
+
+    reportedInteraction=true time=-8m49s691ms
+
+    hasStartedServices=true
+
+    lastRequestedGc=-- lastLowMemory=-34s208ms reportLowMemory=true
+
+    Services:
+
+      - ServiceRecord{eefd87 u0 com.android.bluetooth/.opp.BluetoothOppService}
+
+      - ServiceRecord{2943cf8 u0 com.android.bluetooth/.a2dp.A2dpService}
+
+      - ServiceRecord{2a44e09 u0 com.android.bluetooth/.hdp.HealthService}
+
+      - ServiceRecord{46b44b4 u0 com.android.bluetooth/com.samsung.ble.BleAutoConnectService}
+
+      - ServiceRecord{530124b u0 com.android.bluetooth/.sap.SapService}
+
+      - ServiceRecord{602a330 u0 com.android.bluetooth/.gatt.GattService}
+
+      - ServiceRecord{83ac1c5 u0 com.android.bluetooth/.pan.PanService}
+
+      - ServiceRecord{94a13a1 u0 com.android.bluetooth/.pbap.BluetoothPbapService}
+
+      - ServiceRecord{a4c30a4 u0 com.android.bluetooth/.hid.HidService}
+
+      - ServiceRecord{bf59f6a u0 com.android.bluetooth/.hfp.HeadsetService}
+
+      - ServiceRecord{e7925b2 u0 com.android.bluetooth/.btservice.AdapterService}
+
+    Connections:
+
+      - ConnectionRecord{37fcb79 u0 com.android.server.telecom/.components.BluetoothPhoneService:@61c0040}
+
+      - ConnectionRecord{3e0e06c u0 com.android.server.telecom/.components.BluetoothVoIPService:@83f551f}
+
+    Published Providers:
+
+      - com.android.bluetooth.opp.BluetoothOppProvider
+
+        -> ContentProviderRecord{d4260c0 u0 com.android.bluetooth/.opp.BluetoothOppProvider}
+
+      - com.android.bluetooth.map.MmsFileProvider
+
+        -> ContentProviderRecord{2139d02 u0 com.android.bluetooth/.map.MmsFileProvider}
+
+    Connected Providers:
+
+      - 7c3bcf/com.android.providers.settings/.SettingsProvider->3653:com.android.bluetooth/1002 s1/1 u0/0 +56m26s371ms
+
+      - 12dcbfd/android/com.android.server.enterprise.content.SecContentProvider->3653:com.android.bluetooth/1002 s0/0 u1/1 +56m21s235ms
+
+    Receivers:
+
+      - ReceiverList{9322eb 3653 com.android.bluetooth/1002/u0 remote:d65263a}
+
+      - ReceiverList{185e313 3653 com.android.bluetooth/1002/u0 remote:77ae02}
+
+      - ReceiverList{27a5c18 3653 com.android.bluetooth/1002/u0 remote:6a003fb}
+
+      - ReceiverList{2d8fb5a 3653 com.android.bluetooth/1002/u0 remote:ad86f05}
+
+      - ReceiverList{3ef2d14 3653 com.android.bluetooth/1002/u0 remote:3a9cb67}
+
+      - ReceiverList{615ab94 3653 com.android.bluetooth/1002/u0 remote:d7933e7}
+
+      - ReceiverList{61c7d6c 3653 com.android.bluetooth/1002/u0 remote:7e3461f}
+
+      - ReceiverList{6fdb703 3653 com.android.bluetooth/1002/u0 remote:bb9bb2}
+
+      - ReceiverList{8619d6f 3653 com.android.bluetooth/1002/u0 remote:db6a84e}
+
+      - ReceiverList{9ff02c7 3653 com.android.bluetooth/1002/u0 remote:96f6c06}
+
+      - ReceiverList{ea65927 3653 com.android.bluetooth/1002/u0 remote:71e9fe6}
+
+      - ReceiverList{fe0fd92 3653 com.android.bluetooth/1002/u0 remote:382b71d}
+
+
+
+  Isolated process list (sorted by uid):
+
+    Isolated # 0: ProcessRecord{4e1bf62 3086:WebViewLoader-armeabi-v7a/1037}
+
+
+
+  UID states:
+
+    UID 1000: UidRecord{c6fffe6 1000 P  / 9 procs}
+
+    UID 1001: UidRecord{d8c3927 1001 P  / 2 procs}
+
+    UID 1002: UidRecord{94867d4 1002 SB / 1 procs}
+
+    UID 1037: UidRecord{56efd7d 1037 CE / 1 procs}
+
+    UID 5006: UidRecord{d2c3472 5006 IF / 1 procs}
+
+    UID u0a5: UidRecord{95b08da u0a5 IF / 1 procs}
+
+    UID u0a6: UidRecord{b11610b u0a6 S  / 1 procs}
+
+    UID u0a8: UidRecord{b0525be u0a8 T  / 2 procs}
+
+    UID u0a32: UidRecord{700053b u0a32 T  / 3 procs}
+
+    UID u0a35: UidRecord{b79dbe8 u0a35 S  / 1 procs}
+
+    UID u0a43: UidRecord{d3f6e04 u0a43 IF / 1 procs}
+
+    UID u0a47: UidRecord{29f3fed u0a47 P  / 2 procs}
+
+    UID u0a48: UidRecord{1969e22 u0a48 HO / 1 procs}
+
+    UID u0a50: UidRecord{19be0b3 u0a50 SB / 1 procs}
+
+    UID u0a160: UidRecord{1538201 u0a160 T  / 1 procs}
+
+
+
+  Process LRU list (sorted by oom_adj, 27 total, non-act at 11, non-svc at 11):
+
+    PERS #26: sys   F/ /P  trm:15 2764:system/1000 (fixed)
+
+    PERS #25: pers  F/ /P  trm:15 3092:com.android.systemui/u0a47 (fixed)
+
+    PERS #23: pers  F/ /P  trm:15 3290:com.sec.vsimservice/1000 (fixed)
+
+    PERS #22: pers  F/ /P  trm:15 3321:com.android.phone/1001 (fixed)
+
+    PERS #19: pers  F/ /P  trm:15 3433:com.sec.imsservice/1000 (fixed)
+
+    PERS #18: pers  F/ /P  trm:15 3579:com.sec.sve/1000 (fixed)
+
+    PERS #17: pers  F/ /P  trm:15 3683:com.smartcomroot/1000 (fixed)
+
+    Proc # 9: psvc  F/ /SB trm:15 3653:com.android.bluetooth/1002 (service)
+
+        com.android.bluetooth/.a2dp.A2dpService<=Proc{2764:system/1000}
+
+    Proc #11: fore  B/ /S  trm:15 17818:com.ws.dm/1000 (exec-service)
+
+    Proc # 0: fore  F/A/T  trm:15 17018:repair.system.phone.fixsystem/u0a160 (top-activity)
+
+    Proc #24: vis   F/ /SB trm:15 3244:com.google.android.googlequicksearchbox:interactor/u0a50 (service)
+
+        com.google.android.googlequicksearchbox/com.google.android.voiceinteraction.GsaVoiceInteractionService<=Proc{2764:system/1000}
+
+    Proc #21: vis   F/ /IF trm:15 3375:com.sec.smartcard.manager/u0a43 (service)
+
+        com.sec.smartcard.manager/com.sec.enterprise.mdm.sc.bai.BaiMobileAgentService<=Proc{2764:system/1000}
+
+    Proc #20: vis   F/ /IF trm:15 3388:com.samsung.ucs.agent.boot/1000 (service)
+
+        com.samsung.ucs.agent.boot/.BootAgentService<=Proc{2764:system/1000}
+
+    Proc #16: vis   F/ /IF trm:15 3644:com.samsung.ucs.ucspinpad/1000 (service)
+
+        com.samsung.ucs.ucspinpad/.UcsPinpadService<=Proc{2764:system/1000}
+
+    Proc #15: vis   F/ /IF trm:15 3844:com.sec.phone/1001 (service)
+
+        com.sec.phone/.SecPhoneService<=Proc{3321:com.android.phone/1001}
+
+    Proc #13: vis   F/ /IF trm:15 14011:com.android.defcontainer/u0a5 (service)
+
+        com.android.defcontainer/.DefaultContainerService<=Proc{2764:system/1000}
+
+    Proc # 7: vis   F/ /IF trm:15 3158:com.android.systemui.recents/u0a47 (service)
+
+        com.android.systemui/.recents.RecentsService<=Proc{3092:com.android.systemui/u0a47}
+
+    Proc # 5: vis   F/ /SB trm:15 15152:com.android.vending:background/u0a32 (service)
+
+        com.android.vending/com.google.android.finsky.scheduler.process.backgroundimpl.PhoneskyJobServiceBackground<=Proc{2764:system/1000}
+
+    Proc # 4: vis   F/ /T  trm:15 3667:com.google.android.gms.persistent/u0a8 (service)
+
+        com.google.android.gms/.chimera.PersistentApiService<=Proc{17018:repair.system.phone.fixsystem/u0a160}
+
+    Proc # 3: vis   F/ /T  trm:15 17519:com.android.vending:quick_launch/u0a32 (service)
+
+        com.android.vending/com.google.frameworks.client.data.android.server.play.QuickLaunchProcessEndpointService<=Proc{6027:com.android.vending/u0a32}
+
+    Proc # 2: vis   F/ /T  trm:15 6027:com.android.vending/u0a32 (service)
+
+        com.android.vending/com.google.android.finsky.billing.iab.InAppBillingService<=Proc{17018:repair.system.phone.fixsystem/u0a160}
+
+    Proc # 1: vis   F/ /SB trm:15 14320:com.google.android.gms/u0a8 (service)
+
+        com.google.android.gms/.chimera.GmsApiService<=Proc{17018:repair.system.phone.fixsystem/u0a160}
+
+    Proc #14: prcp  F/ /IF trm:15 6945:com.samsung.android.beaconmanager/5006 (force-fg)
+
+        {null}<=android.os.BinderProxy@c97dd36
+
+    Proc # 8: prcp  B/ /IB trm:15 3772:com.sec.android.inputmethod/1000 (service)
+
+        com.sec.android.inputmethod/.SamsungKeypad<=Proc{2764:system/1000}
+
+    Proc #10: svc   B/ /S  trm:15 17641:com.att.android.digitallocker/u0a6 (started-services)
+
+    Proc # 6: home  B/ /HO trm:80 3334:com.sec.android.app.launcher/u0a48 (home)
+
+    Proc #12: svcb  B/ /S  trm:15 17585:com.samsung.android.email.provider:service/u0a35 (started-services)
+
+
+
+  PID mappings:
+
+    PID #2764: ProcessRecord{517e834 2764:system/1000}
+
+    PID #3086: ProcessRecord{4e1bf62 3086:WebViewLoader-armeabi-v7a/1037}
+
+    PID #3092: ProcessRecord{64f9533 3092:com.android.systemui/u0a47}
+
+    PID #3158: ProcessRecord{72443eb 3158:com.android.systemui.recents/u0a47}
+
+    PID #3244: ProcessRecord{7f73e22 3244:com.google.android.googlequicksearchbox:interactor/u0a50}
+
+    PID #3290: ProcessRecord{ad85e7a 3290:com.sec.vsimservice/1000}
+
+    PID #3321: ProcessRecord{4da29b0 3321:com.android.phone/1001}
+
+    PID #3334: ProcessRecord{8280832 3334:com.sec.android.app.launcher/u0a48}
+
+    PID #3375: ProcessRecord{34ab606 3375:com.sec.smartcard.manager/u0a43}
+
+    PID #3388: ProcessRecord{9eb41ac 3388:com.samsung.ucs.agent.boot/1000}
+
+    PID #3433: ProcessRecord{29ecd32 3433:com.sec.imsservice/1000}
+
+    PID #3579: ProcessRecord{d39d9cf 3579:com.sec.sve/1000}
+
+    PID #3644: ProcessRecord{63ae538 3644:com.samsung.ucs.ucspinpad/1000}
+
+    PID #3653: ProcessRecord{7fe7fc3 3653:com.android.bluetooth/1002}
+
+    PID #3667: ProcessRecord{722250a 3667:com.google.android.gms.persistent/u0a8}
+
+    PID #3683: ProcessRecord{d6c19db 3683:com.smartcomroot/1000}
+
+    PID #3772: ProcessRecord{8303d50 3772:com.sec.android.inputmethod/1000}
+
+    PID #3844: ProcessRecord{6d81b22 3844:com.sec.phone/1001}
+
+    PID #6027: ProcessRecord{f31758c 6027:com.android.vending/u0a32}
+
+    PID #6945: ProcessRecord{8ffd861 6945:com.samsung.android.beaconmanager/5006}
+
+    PID #14011: ProcessRecord{7365f97 14011:com.android.defcontainer/u0a5}
+
+    PID #14320: ProcessRecord{2732d52 14320:com.google.android.gms/u0a8}
+
+    PID #15152: ProcessRecord{9ee828d 15152:com.android.vending:background/u0a32}
+
+    PID #17018: ProcessRecord{b1b45bb 17018:repair.system.phone.fixsystem/u0a160}
+
+    PID #17519: ProcessRecord{e7535d9 17519:com.android.vending:quick_launch/u0a32}
+
+    PID #17585: ProcessRecord{b70adf7 17585:com.samsung.android.email.provider:service/u0a35}
+
+    PID #17641: ProcessRecord{94fb9c6 17641:com.att.android.digitallocker/u0a6}
+
+    PID #17818: ProcessRecord{56964ef 17818:com.ws.dm/1000}
+
+
+
+  Foreground Processes:
+
+    PID #3290: com.android.server.am.ActivityManagerService$13@469d50f
+
+    PID #6945: com.android.server.am.ActivityManagerService$13@894799c
+
+
+
+  Processes that are waiting to GC:
+
+    Process ProcessRecord{b1b45bb 17018:repair.system.phone.fixsystem/u0a160}
+
+      lowMem=true, last gced=3546331 ms ago, last lowMem=17582 ms ago
+
+    Process ProcessRecord{7f73e22 3244:com.google.android.googlequicksearchbox:interactor/u0a50}
+
+      lowMem=true, last gced=3546331 ms ago, last lowMem=34223 ms ago
+
+    Process ProcessRecord{ad85e7a 3290:com.sec.vsimservice/1000}
+
+      lowMem=true, last gced=3546331 ms ago, last lowMem=34223 ms ago
+
+    Process ProcessRecord{4da29b0 3321:com.android.phone/1001}
+
+      lowMem=true, last gced=3546331 ms ago, last lowMem=34223 ms ago
+
+    Process ProcessRecord{34ab606 3375:com.sec.smartcard.manager/u0a43}
+
+      lowMem=true, last gced=3546331 ms ago, last lowMem=34223 ms ago
+
+    Process ProcessRecord{9eb41ac 3388:com.samsung.ucs.agent.boot/1000}
+
+      lowMem=true, last gced=3546331 ms ago, last lowMem=34223 ms ago
+
+    Process ProcessRecord{29ecd32 3433:com.sec.imsservice/1000}
+
+      lowMem=true, last gced=3546331 ms ago, last lowMem=34223 ms ago
+
+    Process ProcessRecord{d39d9cf 3579:com.sec.sve/1000}
+
+      lowMem=true, last gced=3546331 ms ago, last lowMem=34223 ms ago
+
+    Process ProcessRecord{d6c19db 3683:com.smartcomroot/1000}
+
+      lowMem=true, last gced=3546331 ms ago, last lowMem=34223 ms ago
+
+    Process ProcessRecord{63ae538 3644:com.samsung.ucs.ucspinpad/1000}
+
+      lowMem=true, last gced=3546331 ms ago, last lowMem=34223 ms ago
+
+    Process ProcessRecord{6d81b22 3844:com.sec.phone/1001}
+
+      lowMem=true, last gced=3546331 ms ago, last lowMem=34223 ms ago
+
+    Process ProcessRecord{8ffd861 6945:com.samsung.android.beaconmanager/5006}
+
+      lowMem=true, last gced=3546331 ms ago, last lowMem=34223 ms ago
+
+    Process ProcessRecord{7365f97 14011:com.android.defcontainer/u0a5}
+
+      lowMem=true, last gced=3546331 ms ago, last lowMem=34223 ms ago
+
+    Process ProcessRecord{9ee828d 15152:com.android.vending:background/u0a32}
+
+      lowMem=true, last gced=3546331 ms ago, last lowMem=34223 ms ago
+
+    Process ProcessRecord{7fe7fc3 3653:com.android.bluetooth/1002}
+
+      lowMem=true, last gced=3546331 ms ago, last lowMem=34223 ms ago
+
+    Process ProcessRecord{8303d50 3772:com.sec.android.inputmethod/1000}
+
+      lowMem=true, last gced=3546331 ms ago, last lowMem=34223 ms ago
+
+    Process ProcessRecord{72443eb 3158:com.android.systemui.recents/u0a47}
+
+      lowMem=true, last gced=3546331 ms ago, last lowMem=34223 ms ago
+
+    Process ProcessRecord{2732d52 14320:com.google.android.gms/u0a8}
+
+      lowMem=true, last gced=3546331 ms ago, last lowMem=34223 ms ago
+
+    Process ProcessRecord{f31758c 6027:com.android.vending/u0a32}
+
+      lowMem=true, last gced=3546331 ms ago, last lowMem=34223 ms ago
+
+    Process ProcessRecord{722250a 3667:com.google.android.gms.persistent/u0a8}
+
+      lowMem=true, last gced=3546331 ms ago, last lowMem=34223 ms ago
+
+    Process ProcessRecord{8280832 3334:com.sec.android.app.launcher/u0a48}
+
+      lowMem=true, last gced=3391038 ms ago, last lowMem=34223 ms ago
+
+
+
+  Time since processes crashed:
+
+    Process com.mayank.rucky uid 10151: last crashed +55m32s843ms ago
+
+
+
+  mStartedUsers:
+
+    User #0: mState=RUNNING
+
+  mStartedUserArray: [0]
+
+  mUserLru: [0]
+
+  mStartedUserArray: [0]
+
+  mHomeProcess: ProcessRecord{8280832 3334:com.sec.android.app.launcher/u0a48}
+
+  mPreviousProcess: ProcessRecord{f31758c 6027:com.android.vending/u0a32}
+
+  mPreviousProcessVisibleTime: +55m47s905ms
+
+  mProcessLimit: 8
+
+  mProcessLimitOverride: -1
+
+  ProcessList.mMaxCached: 4
+
+  mConfiguration: {0 1.0 showBtnBg = 0 ?mcc?mnc en_US ldltr sw600dp w600dp h937dp 213dpi lrg port finger -keyb/v/h -nav/h mkbd/? s.10}
+
+  mConfigWillChange: false
+
+  mWakefulness=Awake
+
+  mSleepTokens=[]
+
+  mSleeping=false mLockScreenShown=LOCK_SCREEN_HIDDEN
+
+  mShuttingDown=false mTestPssMode=false
+
+  Total persistent processes: 7
+
+  mProcessesReady=true mSystemReady=true mBooted=true mFactoryTest=0
+
+  mBooting=false mCallFinishBooting=false mBootAnimationComplete=true
+
+  mLastPowerCheckRealtime=+50m16s407ms
+
+  mLastPowerCheckUptime=+50m16s407ms
+
+  mGoingToSleep=WakeLock{eed7fa5 held=false, refCount=0}
+
+  mLaunchingActivity=WakeLock{6a1cf7a held=true, refCount=0}
+
+  mAdjSeq=16738 mLruSeq=3913
+
+  mNumNonCachedProcs=26 (27 total) mNumCachedHiddenProcs=0 mNumServiceProcs=2 mNewNumServiceProcs=2
+
+  mAllowLowerMemLevel=true mLastMemoryLevel3 mLastNumProcesses27
+
+  mLastIdleTime=+58m53s478ms mLowRamSinceLastIdle=+5m5s869ms
+
+  TRIM_EMPTY_APPS: 8
+
+  TRIM_CACHED_APPS: 2
+
+  TRIM_CRITICAL_THRESHOLD: 3
+
+  TRIM_LOW_THRESHOLD: 5
+
