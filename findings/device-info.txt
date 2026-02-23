@@ -1,0 +1,133 @@
+Android Device Security Audit Report
+Device ID: 52030d9842d7a3bd
+Timestamp: 2026-02-18 19:27:56
+================================================================================
+
+
+--- Build ID ---
+MMB29K.T377AUCU2AQGF
+
+
+
+--- Android Version ---
+6.0.1
+
+
+
+--- Security Patch Level ---
+2017-07-01
+
+
+
+--- Device Model ---
+SAMSUNG-SM-T377A
+
+
+
+--- Brand ---
+samsung
+
+
+
+--- Manufacturer ---
+samsung
+
+
+
+--- Hardware ---
+universal3475
+
+
+
+--- Platform ---
+exynos3
+
+
+
+--- Kernel Version ---
+Linux localhost 3.10.9-11788437 #1 SMP PREEMPT Wed Jul 5 19:41:07 KST 2017 armv7l
+
+
+
+--- SELinux Status ---
+Enforcing
+
+
+
+--- Encryption Status ---
+unencrypted
+
+
+
+--- Verified Boot State ---
+
+
+
+
+--- Bootloader Info ---
+T377AUCU2AQGF
+
+
+
+--- Debug Mode ---
+0
+
+
+
+--- Secure Boot ---
+1
+
+
+
+--- Build Type ---
+user
+
+
+
+--- Build Tags ---
+release-keys
+
+
+
+--- CPU Info ---
+[ERROR: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.]
+
+
+--- Kernel Version Detail ---
+Linux version 3.10.9-11788437 (dpi@SWDG4707) (gcc version 4.8 (GCC) ) #1 SMP PREEMPT Wed Jul 5 19:41:07 KST 2017
+
+
+
+--- USB Config ---
+acm,dm
+
+
+
+--- ADB Security ---
+1
+
+
+
+
+--- CPU Info (CORRECTED) ---
+processor	: 0
+
+model name	: ARMv7 Processor rev 3 (v7l)
+
+BogoMIPS	: 1731.00
+
+Features	: swp half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt 
+
+CPU implementer	: 0x41
+
+CPU architecture: 7
+
+CPU variant	: 0x0
+
+CPU part	: 0xc07
+
+CPU revision	: 3
+
+
+

@@ -1,0 +1,1171 @@
+================================================================================
+ANDROID SECURITY AUDIT - SERVICES AND PROCESSES
+================================================================================
+Device ID: 52030d9842d7a3bd
+Audit Time: 2026-02-18 19:27:59
+================================================================================
+
+
+================================================================================
+SECTION: ALL RUNNING PROCESSES
+================================================================================
+
+
+USER      PID   PPID  VSIZE  RSS   WCHAN            PC  NAME
+
+root      1     0     3152   704   SyS_epoll_ 00000000 S /init
+
+root      2     0     0      0       kthreadd 00000000 S kthreadd
+
+root      3     2     0      0     smpboot_th 00000000 S ksoftirqd/0
+
+root      4     2     0      0     worker_thr 00000000 S kworker/0:0
+
+root      5     2     0      0     worker_thr 00000000 S kworker/0:0H
+
+root      6     2     0      0     worker_thr 00000000 S kworker/u8:0
+
+root      7     2     0      0     smpboot_th 00000000 S migration/0
+
+root      8     2     0      0                00000000 R rcu_preempt
+
+root      9     2     0      0     rcu_gp_kth 00000000 S rcu_bh
+
+root      10    2     0      0     rcu_gp_kth 00000000 S rcu_sched
+
+root      11    2     0      0     smpboot_th 00000000 S watchdog/0
+
+root      12    2     0      0     smpboot_th 00000000 S watchdog/1
+
+root      13    2     0      0     smpboot_th 00000000 S migration/1
+
+root      14    2     0      0     smpboot_th 00000000 S ksoftirqd/1
+
+root      16    2     0      0     worker_thr 00000000 S kworker/1:0H
+
+root      17    2     0      0     smpboot_th 00000000 S watchdog/2
+
+root      18    2     0      0     smpboot_th 00000000 S migration/2
+
+root      19    2     0      0     smpboot_th 00000000 S ksoftirqd/2
+
+root      20    2     0      0     worker_thr 00000000 S kworker/2:0
+
+root      21    2     0      0     worker_thr 00000000 S kworker/2:0H
+
+root      22    2     0      0     smpboot_th 00000000 S watchdog/3
+
+root      23    2     0      0     smpboot_th 00000000 S migration/3
+
+root      24    2     0      0     smpboot_th 00000000 S ksoftirqd/3
+
+root      25    2     0      0     worker_thr 00000000 S kworker/3:0
+
+root      26    2     0      0     worker_thr 00000000 S kworker/3:0H
+
+root      27    2     0      0     rescuer_th 00000000 S khelper
+
+root      28    2     0      0      devtmpfsd 00000000 S kdevtmpfs
+
+root      29    2     0      0     rescuer_th 00000000 S netns
+
+root      30    2     0      0     worker_thr 00000000 S kworker/u8:1
+
+root      318   2     0      0     rescuer_th 00000000 S writeback
+
+root      328   2     0      0     rescuer_th 00000000 S bioset
+
+root      331   2     0      0     rescuer_th 00000000 S kblockd
+
+root      368   2     0      0     hub_thread 00000000 S khubd
+
+root      425   2     0      0     irq_thread 00000000 S irq/512-s2mpu04
+
+root      544   2     0      0     ion_heap_d 00000000 S ion_noncontig_h
+
+root      550   2     0      0     rescuer_th 00000000 S devfreq_wq
+
+root      566   2     0      0     worker_thr 00000000 S kworker/3:1
+
+root      567   2     0      0     rescuer_th 00000000 S cfg80211
+
+root      659   2     0      0       watchdog 00000000 S khungtaskd
+
+root      664   2     0      0         kswapd 00000000 S kswapd0
+
+root      714   2     0      0     fsnotify_m 00000000 S fsnotify_mark
+
+root      735   2     0      0     ecryptfs_t 00000000 S ecryptfs-kthrea
+
+root      750   2     0      0     rescuer_th 00000000 S crypto
+
+root      892   2     0      0                00000000 R hwrng
+
+root      895   2     0      0     rescuer_th 00000000 S g3d_dvfs
+
+root      896   2     0      0     rescuer_th 00000000 S kbase_job_fault
+
+root      904   2     0      0     irq_thread 00000000 S irq/533-muic-ir
+
+root      985   2     0      0     irq_thread 00000000 S irq/558-sm5703
+
+root      1026  2     0      0     rescuer_th 00000000 S usb_switch
+
+root      1035  2     0      0     worker_thr 00000000 S kworker/1:1
+
+root      1038  2     0      0     rescuer_th 00000000 S usb_notify
+
+root      1045  2     0      0     worker_thr 00000000 S kworker/2:1
+
+root      1047  2     0      0     worker_thr 00000000 S kworker/0:2
+
+root      1051  2     0      0     rescuer_th 00000000 S esd_tmr_workque
+
+root      1052  2     0      0     irq_thread 00000000 S irq/561-bt532_t
+
+root      1071  2     0      0     irq_thread 00000000 S irq/390-12c3000
+
+root      1076  2     0      0     rescuer_th 00000000 S s5p_mfc/watchdo
+
+root      1077  2     0      0     worker_thr 00000000 S kworker/u9:0
+
+root      1078  2     0      0     rescuer_th 00000000 S s5p_mfc/sched
+
+root      1103  2     0      0     rescuer_th 00000000 S scaler_fence_wo
+
+root      1106  2     0      0     rescuer_th 00000000 S scaler_fence_wo
+
+root      1119  2     0      0     rescuer_th 00000000 S dm_bufio_cache
+
+root      1124  2     0      0     cpufreq_in 00000000 S cfinteractive0
+
+root      1127  2     0      0     rescuer_th 00000000 S dw-mci-card
+
+root      1129  2     0      0     rescuer_th 00000000 S dw-mci-card
+
+root      1130  2     0      0     worker_thr 00000000 S kworker/u8:2
+
+root      1132  2     0      0     rescuer_th 00000000 S dw-mci-card
+
+root      1135  2     0      0     mmc_queue_ 00000000 S mmcqd/0
+
+root      1136  2     0      0     mmc_queue_ 00000000 S mmcqd/0boot0
+
+root      1137  2     0      0     mmc_queue_ 00000000 S mmcqd/0boot1
+
+root      1138  2     0      0     mmc_queue_ 00000000 S mmcqd/0rpmb
+
+root      1167  2     0      0     rescuer_th 00000000 S binder
+
+root      1230  2     0      0     rescuer_th 00000000 S devfreq_thermal
+
+root      1267  2     0      0     irq_thread 00000000 S irq/565-fuelgau
+
+root      1270  2     0      0     rescuer_th 00000000 S sm5703chg_workq
+
+root      1276  2     0      0     kthread_wo 00000000 S mc_fastcall
+
+root      1280  2     0      0     irq_thread 00000000 S irq/532-k2hh_ac
+
+root      1283  2     0      0     rescuer_th 00000000 S accel_wq
+
+root      1289  2     0      0     irq_thread 00000000 S irq/530-sx9500_
+
+root      1294  2     0      0     irq_thread 00000000 S irq/531-sx9500_
+
+root      1311  2     0      0     rescuer_th 00000000 S buttons_wq
+
+root      1312  2     0      0     rescuer_th 00000000 S jack_det_wq
+
+root      1313  2     0      0     rescuer_th 00000000 S mixer-cp-wq
+
+root      1314  2     0      0     worker_thr 00000000 S kworker/u8:3
+
+root      1360  2     0      0     decon_wait 00000000 S s3c-fb-vsync
+
+root      1361  2     0      0     rescuer_th 00000000 S decon_lpd
+
+root      1362  2     0      0     rescuer_th 00000000 S decon_esd
+
+root      1364  2     0      0     kthread_wo 00000000 S decon0
+
+root      1368  2     0      0     rescuer_th 00000000 S deferwq
+
+root      1375  2     0      0     rescuer_th 00000000 S detect_wq
+
+root      1377  2     0      0     rescuer_th 00000000 S buttons_wq
+
+root      1392  2     0      0     rescuer_th 00000000 S mtp_read_send
+
+root      1399  2     0      0     sleep_thre 00000000 S file-storage
+
+root      1416  2     0      0         on_run 00000000 S thread_hotplug
+
+root      1417  2     0      0     rescuer_th 00000000 S force-hotplug
+
+root      1420  2     0      0     rescuer_th 00000000 S battery.31
+
+root      1435  2     0      0     mmc_queue_ 00000000 S mmcqd/2
+
+root      1439  2     0      0     worker_thr 00000000 S kworker/1:2
+
+root      1440  2     0      0     worker_thr 00000000 S kworker/2:2
+
+root      1441  1     2636   332   poll_sched 00000000 S /sbin/ueventd
+
+root      2125  1     1608   108   hrtimer_na 00000000 S /sbin/watchdogd
+
+root      2127  2     0      0     worker_thr 00000000 S kworker/0:1H
+
+root      2128  2     0      0     kjournald2 00000000 S jbd2/mmcblk0p4-
+
+root      2129  2     0      0     rescuer_th 00000000 S ext4-dio-unwrit
+
+root      2132  2     0      0     rescuer_th 00000000 S ext4-dio-unwrit
+
+root      2134  2     0      0     kjournald2 00000000 S jbd2/mmcblk0p21
+
+root      2135  2     0      0     rescuer_th 00000000 S ext4-dio-unwrit
+
+root      2137  2     0      0     kjournald2 00000000 S jbd2/mmcblk0p22
+
+root      2138  2     0      0     rescuer_th 00000000 S ext4-dio-unwrit
+
+root      2140  2     0      0     kjournald2 00000000 S jbd2/mmcblk0p3-
+
+root      2141  2     0      0     rescuer_th 00000000 S ext4-dio-unwrit
+
+root      2143  2     0      0     kjournald2 00000000 S jbd2/mmcblk0p18
+
+root      2144  2     0      0     rescuer_th 00000000 S ext4-dio-unwrit
+
+logd      2146  1     7596   400   sigsuspend 00000000 S /system/bin/logd
+
+root      2147  2     0      0     worker_thr 00000000 S kworker/2:1H
+
+root      2148  2     0      0     worker_thr 00000000 S kworker/1:1H
+
+root      2149  2     0      0     worker_thr 00000000 S kworker/3:1H
+
+root      2155  1     50968  1308  sys_restar 00000000 S /system/bin/vold
+
+root      2169  2     0      0     down_inter 00000000 S dhd_watchdog_th
+
+root      2170  2     0      0     down_inter 00000000 S dhd_dpc
+
+root      2171  2     0      0     down_inter 00000000 S dhd_rxf
+
+root      2176  1     2724   316   SyS_epoll_ 00000000 S /sbin/healthd
+
+root      2177  1     3068   540   SyS_epoll_ 00000000 S /system/bin/lmkd
+
+system    2178  1     3724   672   binder_thr 00000000 S /system/bin/servicemanager
+
+system    2179  1     16296  428   futex_wait 00000000 S /system/bin/mcDriverDaemon
+
+system    2180  1     65100  5164  SyS_epoll_ 00000000 S /system/bin/surfaceflinger
+
+system    2184  1     7736   420   __skb_recv 00000000 S /system/bin/ddexe
+
+system    2185  1     7292   576   hrtimer_na 00000000 S /system/bin/smdexe
+
+system    2186  1     4536   468   poll_sched 00000000 S /system/bin/connfwexe
+
+system    2187  1     4808   672   hrtimer_na 00000000 S /system/bin/edmaudit
+
+root      2189  1     15516  884   hrtimer_na 00000000 S /system/bin/netd
+
+root      2190  1     4680   552   __skb_recv 00000000 S /system/bin/debuggerd
+
+root      2192  2     0      0     log_worker 00000000 S mc_log
+
+radio     2196  1     27848  1768  hrtimer_na 00000000 S /system/bin/rild
+
+drm       2197  1     17320  804   binder_thr 00000000 S /system/bin/drmserver
+
+media     2198  1     138540 2228  binder_thr 00000000 S /system/bin/mediaserver
+
+root      2199  1     40376  1300  unix_strea 00000000 S /system/bin/installd
+
+keystore  2201  1     6828   1096  binder_thr 00000000 S /system/bin/keystore
+
+system    2202  1     5588   388   futex_wait 00000000 S /system/bin/npsmobex
+
+system    2203  1     988    136   hrtimer_na 00000000 S /system/bin/argosd
+
+gps       2204  1     50176  1040  poll_sched 00000000 S /system/bin/gpsd
+
+radio     2205  1     2644   252   poll_sched 00000000 S /sbin/cbd
+
+system    2207  1     32232  716   binder_thr 00000000 S /system/bin/imsd
+
+root      2208  1     1042312 22936 poll_sched 00000000 S zygote
+
+system    2210  1     38928  1056  poll_sched 00000000 S /system/bin/sdp_cryptod
+
+system    2211  1     12052  444   __skb_recv 00000000 S /system/bin/diagexe
+
+radio     2212  1     5836   572   poll_sched 00000000 S /system/bin/at_distributor
+
+system    2213  1     5404   496   binder_thr 00000000 S /system/bin/gatekeeperd
+
+system    2214  1     2504   416   hrtimer_na 00000000 S /system/bin/bootchecker
+
+system    2216  1     10860  944   poll_sched 00000000 S /system/bin/secure_storage_daemon
+
+system    2234  1     2564   376   __skb_recv 00000000 S /system/bin/cs
+
+root      2248  2     0      0     rescuer_th 00000000 S kbase_event
+
+root      2345  2     0      0     irq_thread 00000000 S irq/455-1382000
+
+system    2757  2208  1372184 95348 SyS_epoll_ 00000000 S system_server
+
+root      2877  2     0      0     inotify_re 00000000 S pkgld
+
+root      2878  2     0      0     inotify_re 00000000 S pkgld
+
+root      2879  2     0      0     inotify_re 00000000 S pkgld
+
+root      2880  2     0      0     inotify_re 00000000 S pkgld
+
+root      2881  2     0      0     inotify_re 00000000 S pkgld
+
+system    2940  1     7760   564   binder_thr 00000000 S /system/bin/tlc_server
+
+root      2987  2     0      0     rescuer_th 00000000 S kbase_event
+
+root      2999  2     0      0     worker_thr 00000000 S kworker/0:3
+
+system    3016  1     5864   524   binder_thr 00000000 S /system/bin/otp_server
+
+shell     3044  1     8092   432   poll_sched 00000000 R /sbin/adbd
+
+wifi      3057  1     7248   1396  poll_sched 00000000 S /system/bin/wpa_supplicant
+
+u0_a47    3092  2208  888228 34864 SyS_epoll_ 00000000 S com.android.systemui
+
+root      3103  2     0      0     inotify_re 00000000 S pkgld
+
+root      3110  2     0      0     inotify_re 00000000 S pkgld
+
+root      3112  2     0      0     inotify_re 00000000 S pkgld
+
+u0_a47    3154  2208  970968 22488 SyS_epoll_ 00000000 S com.android.systemui.recents
+
+root      3196  2     0      0     rescuer_th 00000000 S dhd_eventd
+
+u0_a50    3245  2208  1417544 24180 SyS_epoll_ 00000000 S com.google.android.googlequicksearchbox:interactor
+
+system    3295  2208  805364 21716 SyS_epoll_ 00000000 S com.sec.vsimservice
+
+radio     3326  2208  877472 30836 SyS_epoll_ 00000000 S com.android.phone
+
+u0_a48    3342  2208  1229972 35844 SyS_epoll_ 00000000 S com.sec.android.app.launcher
+
+u0_a43    3388  2208  785448 19416 SyS_epoll_ 00000000 S com.sec.smartcard.manager
+
+system    3396  2208  787392 18892 SyS_epoll_ 00000000 S com.samsung.ucs.agent.boot
+
+root      3427  2155  0      0        do_exit 00000000 Z sdcard
+
+root      3433  2     0      0     inotify_re 00000000 S pkgld
+
+root      3434  2     0      0     inotify_re 00000000 S pkgld
+
+root      3435  2     0      0     inotify_re 00000000 S pkgld
+
+system    3436  2208  826512 24120 SyS_epoll_ 00000000 S com.sec.imsservice
+
+root      3455  2     0      0     worker_thr 00000000 S kworker/0:2H
+
+u0_a2     3475  2208  1067196 27744 SyS_epoll_ 00000000 S android.process.acore
+
+root      3514  2     0      0     rescuer_th 00000000 S kbase_event
+
+system    3554  2208  794104 19776 SyS_epoll_ 00000000 S com.sec.sve
+
+u0_a128   3567  2208  796004 24876 SyS_epoll_ 00000000 S com.sec.android.daemonapp
+
+u0_a50    3591  2208  1582944 81960 SyS_epoll_ 00000000 S com.google.android.googlequicksearchbox:search
+
+root      3609  2     0      0     rescuer_th 00000000 S kbase_event
+
+system    3631  2208  785208 18684 SyS_epoll_ 00000000 S com.samsung.ucs.ucspinpad
+
+bluetooth 3637  2208  836152 23996 SyS_epoll_ 00000000 S com.android.bluetooth
+
+u0_a8     3647  2208  1114476 142176 SyS_epoll_ 00000000 S com.google.android.gms.persistent
+
+audit     3654  1     4380   564   poll_sched 00000000 S /system/bin/auditd
+
+system    3674  2208  786368 20100 SyS_epoll_ 00000000 S com.smartcomroot
+
+root      3687  2     0      0     kauditd_th 00000000 S kauditd
+
+root      3787  2     0      0     irq_thread 00000000 S irq/454-1381000
+
+system    3790  2208  1137724 32824 SyS_epoll_ 00000000 S com.sec.android.inputmethod
+
+dhcp      3811  1     2876   448   poll_sched 00000000 S /system/bin/dhcpcd
+
+radio     3880  2208  787008 19824 SyS_epoll_ 00000000 S com.sec.phone
+
+root      4035  2     0      0     rescuer_th 00000000 S kbase_event
+
+u0_a8     4070  2208  797664 24368 SyS_epoll_ 00000000 S com.google.process.gapps
+
+u0_a94    4092  2208  1461068 30124 SyS_epoll_ 00000000 S com.google.android.gm
+
+u0_a30    4194  2208  797792 21860 SyS_epoll_ 00000000 S android.process.media
+
+root      4209  2     0      0     rescuer_th 00000000 S kbase_event
+
+u0_a8     4350  2208  1198460 106440 SyS_epoll_ 00000000 S com.google.android.gms
+
+u0_a32    4392  2208  1144116 76704 SyS_epoll_ 00000000 S com.android.vending
+
+system    4429  2208  796060 21812 SyS_epoll_ 00000000 S com.ws.dm
+
+u0_a6     4722  2208  1102820 24084 SyS_epoll_ 00000000 S com.att.android.digitallocker
+
+u0_a32    4782  2208  1042500 32584 SyS_epoll_ 00000000 S com.android.vending:background
+
+u0_a35    5252  2208  1111516 22208 SyS_epoll_ 00000000 S com.samsung.android.email.provider:service
+
+u0_a2     5565  2208  1084776 21228 SyS_epoll_ 00000000 S com.android.contacts
+
+u0_a36    5711  2208  1081304 20012 SyS_epoll_ 00000000 S com.sec.android.gallery3d
+
+system    6126  2208  791424 21824 SyS_epoll_ 00000000 S com.samsung.android.fmm
+
+u0_a143   6257  2208  827312 28744 SyS_epoll_ 00000000 S com.offsec.nethunter.store
+
+u0_a52    6297  2208  808928 24672 SyS_epoll_ 00000000 S com.ampsvc.android
+
+u0_a14    6358  2208  785564 20556 SyS_epoll_ 00000000 S com.samsung.klmsagent
+
+u0_a15    6375  2208  785636 19076 SyS_epoll_ 00000000 S com.android.managedprovisioning
+
+u0_a34    6788  2208  1060208 20148 SyS_epoll_ 00000000 S com.sec.android.app.camera
+
+u0_a5     6853  2208  786964 20228 SyS_epoll_ 00000000 S com.android.defcontainer
+
+bcmgr     7100  2208  789356 20208 SyS_epoll_ 00000000 S com.samsung.android.beaconmanager
+
+u0_a8     7261  2208  955240 56148 SyS_epoll_ 00000000 S com.google.android.gms.unstable
+
+u0_a134   7281  2208  895132 23604 SyS_epoll_ 00000000 S com.fullscreen.android
+
+root      7517  2     0      0     worker_thr 00000000 S kworker/2:3
+
+u0_a26    7604  2208  1070668 24072 SyS_epoll_ 00000000 S com.sec.android.app.billing
+
+root      7631  2     0      0     worker_thr 00000000 S kworker/1:0
+
+u0_a140   7658  2208  1014032 117844 SyS_epoll_ 00000000 S com.google.android.apps.chromecast.app
+
+root      7670  2     0      0     rescuer_th 00000000 S kbase_event
+
+root      7746  2     0      0     rescuer_th 00000000 S kbase_event
+
+root      7789  2     0      0     rescuer_th 00000000 S kbase_event
+
+u0_a156   7945  2208  943348 53432 SyS_epoll_ 00000000 S com.google.android.apps.messaging
+
+root      8121  2     0      0     rescuer_th 00000000 S kbase_event
+
+u0_a152   8152  2208  784560 24784 SyS_epoll_ 00000000 S com.termux.boot
+
+u0_a157   8164  2208  786280 27080 SyS_epoll_ 00000000 S com.noshufou.android.su
+
+u0_a150   8178  2208  864516 53444 SyS_epoll_ 00000000 S com.google.android.apps.paidtasks
+
+shell     8243  3044  0      0        do_exit 00000000 Z main
+
+shell     8325  3044  3448   1252           0 b6e3b228 R ps
+
+shell     8328  3044  25252  1628  sleep_on_p b6f72de8 D app_process
+
+
+
+
+
+================================================================================
+SECTION: ROOT PROCESSES
+================================================================================
+
+
+root      1     0     3152   704   SyS_epoll_ 00000000 S /init
+
+root      2     0     0      0       kthreadd 00000000 S kthreadd
+
+root      3     2     0      0     smpboot_th 00000000 S ksoftirqd/0
+
+root      4     2     0      0     worker_thr 00000000 S kworker/0:0
+
+root      5     2     0      0     worker_thr 00000000 S kworker/0:0H
+
+root      6     2     0      0     worker_thr 00000000 S kworker/u8:0
+
+root      7     2     0      0     smpboot_th 00000000 S migration/0
+
+root      8     2     0      0     rcu_gp_kth 00000000 S rcu_preempt
+
+root      9     2     0      0     rcu_gp_kth 00000000 S rcu_bh
+
+root      10    2     0      0     rcu_gp_kth 00000000 S rcu_sched
+
+root      11    2     0      0     smpboot_th 00000000 S watchdog/0
+
+root      12    2     0      0     smpboot_th 00000000 S watchdog/1
+
+root      13    2     0      0     smpboot_th 00000000 S migration/1
+
+root      14    2     0      0     smpboot_th 00000000 S ksoftirqd/1
+
+root      16    2     0      0     worker_thr 00000000 S kworker/1:0H
+
+root      17    2     0      0     smpboot_th 00000000 S watchdog/2
+
+root      18    2     0      0     smpboot_th 00000000 S migration/2
+
+root      19    2     0      0     smpboot_th 00000000 S ksoftirqd/2
+
+root      20    2     0      0     worker_thr 00000000 S kworker/2:0
+
+root      21    2     0      0     worker_thr 00000000 S kworker/2:0H
+
+root      22    2     0      0     smpboot_th 00000000 S watchdog/3
+
+root      23    2     0      0     smpboot_th 00000000 S migration/3
+
+root      24    2     0      0     smpboot_th 00000000 S ksoftirqd/3
+
+root      25    2     0      0     worker_thr 00000000 S kworker/3:0
+
+root      26    2     0      0     worker_thr 00000000 S kworker/3:0H
+
+root      27    2     0      0     rescuer_th 00000000 S khelper
+
+root      28    2     0      0      devtmpfsd 00000000 S kdevtmpfs
+
+root      29    2     0      0     rescuer_th 00000000 S netns
+
+root      30    2     0      0     worker_thr 00000000 S kworker/u8:1
+
+root      318   2     0      0     rescuer_th 00000000 S writeback
+
+root      328   2     0      0     rescuer_th 00000000 S bioset
+
+root      331   2     0      0     rescuer_th 00000000 S kblockd
+
+root      368   2     0      0     hub_thread 00000000 S khubd
+
+root      425   2     0      0     irq_thread 00000000 S irq/512-s2mpu04
+
+root      544   2     0      0     ion_heap_d 00000000 S ion_noncontig_h
+
+root      550   2     0      0     rescuer_th 00000000 S devfreq_wq
+
+root      566   2     0      0     worker_thr 00000000 S kworker/3:1
+
+root      567   2     0      0     rescuer_th 00000000 S cfg80211
+
+root      659   2     0      0       watchdog 00000000 S khungtaskd
+
+root      664   2     0      0         kswapd 00000000 S kswapd0
+
+root      714   2     0      0     fsnotify_m 00000000 S fsnotify_mark
+
+root      735   2     0      0     ecryptfs_t 00000000 S ecryptfs-kthrea
+
+root      750   2     0      0     rescuer_th 00000000 S crypto
+
+root      892   2     0      0                00000000 R hwrng
+
+root      895   2     0      0     rescuer_th 00000000 S g3d_dvfs
+
+root      896   2     0      0     rescuer_th 00000000 S kbase_job_fault
+
+root      904   2     0      0     irq_thread 00000000 S irq/533-muic-ir
+
+root      985   2     0      0     irq_thread 00000000 S irq/558-sm5703
+
+root      1026  2     0      0     rescuer_th 00000000 S usb_switch
+
+root      1035  2     0      0     worker_thr 00000000 S kworker/1:1
+
+root      1038  2     0      0     rescuer_th 00000000 S usb_notify
+
+root      1045  2     0      0     worker_thr 00000000 S kworker/2:1
+
+root      1047  2     0      0     worker_thr 00000000 S kworker/0:2
+
+root      1051  2     0      0     rescuer_th 00000000 S esd_tmr_workque
+
+root      1052  2     0      0     irq_thread 00000000 S irq/561-bt532_t
+
+root      1071  2     0      0     irq_thread 00000000 S irq/390-12c3000
+
+root      1076  2     0      0     rescuer_th 00000000 S s5p_mfc/watchdo
+
+root      1077  2     0      0     worker_thr 00000000 S kworker/u9:0
+
+root      1078  2     0      0     rescuer_th 00000000 S s5p_mfc/sched
+
+root      1103  2     0      0     rescuer_th 00000000 S scaler_fence_wo
+
+root      1106  2     0      0     rescuer_th 00000000 S scaler_fence_wo
+
+root      1119  2     0      0     rescuer_th 00000000 S dm_bufio_cache
+
+root      1124  2     0      0     cpufreq_in 00000000 S cfinteractive0
+
+root      1127  2     0      0     rescuer_th 00000000 S dw-mci-card
+
+root      1129  2     0      0     rescuer_th 00000000 S dw-mci-card
+
+root      1130  2     0      0     worker_thr 00000000 S kworker/u8:2
+
+root      1132  2     0      0     rescuer_th 00000000 S dw-mci-card
+
+root      1135  2     0      0     mmc_queue_ 00000000 S mmcqd/0
+
+root      1136  2     0      0     mmc_queue_ 00000000 S mmcqd/0boot0
+
+root      1137  2     0      0     mmc_queue_ 00000000 S mmcqd/0boot1
+
+root      1138  2     0      0     mmc_queue_ 00000000 S mmcqd/0rpmb
+
+root      1167  2     0      0     rescuer_th 00000000 S binder
+
+root      1230  2     0      0     rescuer_th 00000000 S devfreq_thermal
+
+root      1267  2     0      0     irq_thread 00000000 S irq/565-fuelgau
+
+root      1270  2     0      0     rescuer_th 00000000 S sm5703chg_workq
+
+root      1276  2     0      0     kthread_wo 00000000 S mc_fastcall
+
+root      1280  2     0      0     irq_thread 00000000 S irq/532-k2hh_ac
+
+root      1283  2     0      0     rescuer_th 00000000 S accel_wq
+
+root      1289  2     0      0     irq_thread 00000000 S irq/530-sx9500_
+
+root      1294  2     0      0     irq_thread 00000000 S irq/531-sx9500_
+
+root      1311  2     0      0     rescuer_th 00000000 S buttons_wq
+
+root      1312  2     0      0     rescuer_th 00000000 S jack_det_wq
+
+root      1313  2     0      0     rescuer_th 00000000 S mixer-cp-wq
+
+root      1314  2     0      0     worker_thr 00000000 S kworker/u8:3
+
+root      1360  2     0      0     decon_wait 00000000 S s3c-fb-vsync
+
+root      1361  2     0      0     rescuer_th 00000000 S decon_lpd
+
+root      1362  2     0      0     rescuer_th 00000000 S decon_esd
+
+root      1364  2     0      0     kthread_wo 00000000 S decon0
+
+root      1368  2     0      0     rescuer_th 00000000 S deferwq
+
+root      1375  2     0      0     rescuer_th 00000000 S detect_wq
+
+root      1377  2     0      0     rescuer_th 00000000 S buttons_wq
+
+root      1392  2     0      0     rescuer_th 00000000 S mtp_read_send
+
+root      1399  2     0      0     sleep_thre 00000000 S file-storage
+
+root      1416  2     0      0         on_run 00000000 S thread_hotplug
+
+root      1417  2     0      0     rescuer_th 00000000 S force-hotplug
+
+root      1420  2     0      0     rescuer_th 00000000 S battery.31
+
+root      1435  2     0      0     mmc_queue_ 00000000 S mmcqd/2
+
+root      1439  2     0      0     worker_thr 00000000 S kworker/1:2
+
+root      1440  2     0      0     worker_thr 00000000 S kworker/2:2
+
+root      1441  1     2636   332   poll_sched 00000000 S /sbin/ueventd
+
+root      2125  1     1608   108   hrtimer_na 00000000 S /sbin/watchdogd
+
+root      2127  2     0      0     worker_thr 00000000 S kworker/0:1H
+
+root      2128  2     0      0     kjournald2 00000000 S jbd2/mmcblk0p4-
+
+root      2129  2     0      0     rescuer_th 00000000 S ext4-dio-unwrit
+
+root      2132  2     0      0     rescuer_th 00000000 S ext4-dio-unwrit
+
+root      2134  2     0      0     kjournald2 00000000 S jbd2/mmcblk0p21
+
+root      2135  2     0      0     rescuer_th 00000000 S ext4-dio-unwrit
+
+root      2137  2     0      0     kjournald2 00000000 S jbd2/mmcblk0p22
+
+root      2138  2     0      0     rescuer_th 00000000 S ext4-dio-unwrit
+
+root      2140  2     0      0     kjournald2 00000000 S jbd2/mmcblk0p3-
+
+root      2141  2     0      0     rescuer_th 00000000 S ext4-dio-unwrit
+
+root      2143  2     0      0     kjournald2 00000000 S jbd2/mmcblk0p18
+
+root      2144  2     0      0     rescuer_th 00000000 S ext4-dio-unwrit
+
+root      2147  2     0      0     worker_thr 00000000 S kworker/2:1H
+
+root      2148  2     0      0     worker_thr 00000000 S kworker/1:1H
+
+root      2149  2     0      0     worker_thr 00000000 S kworker/3:1H
+
+root      2155  1     50968  1308  sys_restar 00000000 S /system/bin/vold
+
+root      2169  2     0      0     down_inter 00000000 S dhd_watchdog_th
+
+root      2170  2     0      0     down_inter 00000000 S dhd_dpc
+
+root      2171  2     0      0     down_inter 00000000 S dhd_rxf
+
+root      2176  1     2724   316   SyS_epoll_ 00000000 S /sbin/healthd
+
+root      2177  1     3068   540   SyS_epoll_ 00000000 S /system/bin/lmkd
+
+root      2189  1     15516  884   hrtimer_na 00000000 S /system/bin/netd
+
+root      2190  1     4680   552   __skb_recv 00000000 S /system/bin/debuggerd
+
+root      2192  2     0      0     log_worker 00000000 S mc_log
+
+root      2199  1     40376  1300  unix_strea 00000000 S /system/bin/installd
+
+root      2208  1     1042312 22936 poll_sched 00000000 S zygote
+
+root      2248  2     0      0     rescuer_th 00000000 S kbase_event
+
+root      2345  2     0      0     irq_thread 00000000 S irq/455-1382000
+
+root      2877  2     0      0     inotify_re 00000000 S pkgld
+
+root      2878  2     0      0     inotify_re 00000000 S pkgld
+
+root      2879  2     0      0     inotify_re 00000000 S pkgld
+
+root      2880  2     0      0     inotify_re 00000000 S pkgld
+
+root      2881  2     0      0     inotify_re 00000000 S pkgld
+
+root      2987  2     0      0     rescuer_th 00000000 S kbase_event
+
+root      2999  2     0      0     worker_thr 00000000 S kworker/0:3
+
+root      3103  2     0      0     inotify_re 00000000 S pkgld
+
+root      3110  2     0      0     inotify_re 00000000 S pkgld
+
+root      3112  2     0      0     inotify_re 00000000 S pkgld
+
+root      3196  2     0      0     rescuer_th 00000000 S dhd_eventd
+
+root      3427  2155  0      0        do_exit 00000000 Z sdcard
+
+root      3433  2     0      0     inotify_re 00000000 S pkgld
+
+root      3434  2     0      0     inotify_re 00000000 S pkgld
+
+root      3435  2     0      0     inotify_re 00000000 S pkgld
+
+root      3455  2     0      0     worker_thr 00000000 S kworker/0:2H
+
+root      3514  2     0      0     rescuer_th 00000000 S kbase_event
+
+root      3609  2     0      0     rescuer_th 00000000 S kbase_event
+
+system    3674  2208  786368 20100 SyS_epoll_ 00000000 S com.smartcomroot
+
+root      3687  2     0      0     kauditd_th 00000000 S kauditd
+
+root      3787  2     0      0     irq_thread 00000000 S irq/454-1381000
+
+root      4035  2     0      0     rescuer_th 00000000 S kbase_event
+
+root      4209  2     0      0     rescuer_th 00000000 S kbase_event
+
+root      7517  2     0      0     worker_thr 00000000 S kworker/2:3
+
+root      7631  2     0      0     worker_thr 00000000 S kworker/1:0
+
+root      7670  2     0      0     rescuer_th 00000000 S kbase_event
+
+root      7746  2     0      0     rescuer_th 00000000 S kbase_event
+
+root      7789  2     0      0     rescuer_th 00000000 S kbase_event
+
+root      8121  2     0      0     rescuer_th 00000000 S kbase_event
+
+
+
+
+
+================================================================================
+SECTION: SYSTEM SERVICES (first 60 lines)
+================================================================================
+
+
+Found 164 services:
+
+0	sip: [android.net.sip.ISipService]
+
+1	ims6: [com.sec.ims.IImsService]
+
+2	secims: [com.samsung.commonimsinterface.imscommon.internal.IVolteService]
+
+3	carrier_config: [com.android.internal.telephony.ICarrierConfigLoader]
+
+4	phone: [com.android.internal.telephony.ITelephony]
+
+5	telecom: [com.android.internal.telecom.ITelecomService]
+
+6	com.smartcom.root.APNWidgetRootService: [com.smartcomroot.services.IAPNWidgetRootService]
+
+7	imsopenapi: [com.sec.ims.openapi.IOpenApiService]
+
+8	isms: [com.android.internal.telephony.ISms]
+
+9	iphonesubinfo: [com.android.internal.telephony.IPhoneSubInfo]
+
+10	simphonebook: [com.android.internal.telephony.IIccPhoneBook]
+
+11	volte: [com.sec.ims.volte2.IVolteService]
+
+12	SveService: [SveService]
+
+13	isub: [com.android.internal.telephony.ISub]
+
+14	emergency_service: []
+
+15	sec_analytics: [com.sec.analytics.data.collection.serviceif.IDataCollectionManager]
+
+16	edmnativehelper: [mdm.edmnativehelperservice]
+
+17	imms: [com.android.internal.telephony.IMms]
+
+18	lpnet: [android.os.ILpnetManager]
+
+19	media_projection: [android.media.projection.IMediaProjectionManager]
+
+20	voip: [android.os.IVoIPInterface]
+
+21	launcherapps: [android.content.pm.ILauncherApps]
+
+22	fingerprint: [android.hardware.fingerprint.IFingerprintService]
+
+23	trust: [android.app.trust.ITrustManager]
+
+24	media_router: [android.media.IMediaRouterService]
+
+25	media_session: [android.media.session.ISessionManager]
+
+26	restrictions: [android.content.IRestrictionsManager]
+
+27	print: [android.print.IPrintManager]
+
+28	graphicsstats: [android.view.IGraphicsStats]
+
+
+
+
+
+================================================================================
+SECTION: ACTIVE SERVICES FROM DUMPSYS (first 80 lines)
+================================================================================
+
+
+ACTIVITY MANAGER SERVICES (dumpsys activity services)
+
+  User 0 active services:
+
+  * ServiceRecord{cb21bb6 u0 com.google.android.gms/.nearby.presence.service.LifeCycleService}
+
+    intent={cmp=com.google.android.gms/.nearby.presence.service.LifeCycleService}
+
+    packageName=com.google.android.gms
+
+    processName=com.google.android.gms.persistent
+
+    baseDir=/data/app/com.google.android.gms-2/base.apk
+
+    dataDir=/data/user/0/com.google.android.gms
+
+    app=ProcessRecord{7c8881c 3647:com.google.android.gms.persistent/u0a8}
+
+    createTime=-35s221ms startingBgTimeout=--
+
+    lastActivity=-35s220ms restartTime=-35s220ms createdFromFg=true
+
+    startRequested=true delayedStop=false stopIfKilled=false callStart=true lastStartId=1
+
+
+
+  * ServiceRecord{ac8390f u0 com.android.bluetooth/.hid.HidService}
+
+    intent={cmp=com.android.bluetooth/.hid.HidService}
+
+    packageName=com.android.bluetooth
+
+    processName=com.android.bluetooth
+
+    baseDir=/system/app/Bluetooth/Bluetooth.apk
+
+    dataDir=/data/user/0/com.android.bluetooth
+
+    app=ProcessRecord{4b1a3f6 3637:com.android.bluetooth/1002}
+
+    createTime=-3m22s214ms startingBgTimeout=--
+
+    lastActivity=-3m22s214ms restartTime=-3m22s214ms createdFromFg=true
+
+    startRequested=true delayedStop=false stopIfKilled=true callStart=true lastStartId=1
+
+    Bindings:
+
+    * IntentBindRecord{2c7390d}:
+
+      intent={act=android.bluetooth.IBluetoothInputDevice cmp=com.android.bluetooth/.hid.HidService}
+
+      binder=android.os.BinderProxy@f4370c2
+
+      requested=true received=true hasBound=true doRebind=false
+
+      * Client AppBindRecord{41e4ed3 ProcessRecord{e0c8c14 3092:com.android.systemui/u0a47}}
+
+        Per-process Connections:
+
+          ConnectionRecord{b97258b u0 com.android.bluetooth/.hid.HidService:@a030f5a}
+
+    All Connections:
+
+      ConnectionRecord{b97258b u0 com.android.bluetooth/.hid.HidService:@a030f5a}
+
+
+
+  * ServiceRecord{b279adc u0 com.google.android.apps.paidtasks/com.google.android.libraries.notifications.executor.impl.basic.ChimeExecutorApiService}
+
+    intent={act=ACTION_NEW_TASK cmp=com.google.android.apps.paidtasks/com.google.android.libraries.notifications.executor.impl.basic.ChimeExecutorApiService}
+
+    packageName=com.google.android.apps.paidtasks
+
+    processName=com.google.android.apps.paidtasks
+
+    baseDir=/data/app/com.google.android.apps.paidtasks-1/base.apk
+
+    dataDir=/data/user/0/com.google.android.apps.paidtasks
+
+
+
+
+
+================================================================================
+SECTION: ADB DAEMON STATUS
+================================================================================
+
+
+running
+
+
+
+
+
+================================================================================
+SECTION: DEBUG DAEMON STATUS
+================================================================================
+
+
+running
+
+
+
+
+
+================================================================================
+SECTION: INIT SCRIPTS
+================================================================================
+
+
+/init.baseband.rc
+
+/init.carrier.rc
+
+/init.container.rc
+
+/init.environ.rc
+
+/init.goldfish.rc
+
+/init.ranchu.rc
+
+/init.rc
+
+/init.rilcarrier.rc
+
+/init.rilchip.rc
+
+/init.rilcommon.rc
+
+/init.trace.rc
+
+/init.universal3475.rc
+
+/init.universal3475.usb.rc
+
+/init.usb.configfs.rc
+
+/init.usb.rc
+
+/init.wifi.rc
+
+/init.zygote32.rc
+
+
+
+
+
+================================================================================
+SECTION: MAIN INIT SCRIPT (first 80 lines)
+================================================================================
+
+
+/system/bin/sh: cat: /init.rc: Permission denied
+
+
+
+
+
+================================================================================
+SECTION: DEFAULT PROPERTIES
+================================================================================
+
+
+#
+
+# ADDITIONAL_DEFAULT_PROPERTIES
+
+#
+
+telephony.lteOnCdmaDevice=0
+
+persist.eons.enabled=true
+
+rild.libpath=/system/lib/libsec-ril.so
+
+persist.security.ams.enforcing=3
+
+ro.secure=1
+
+ro.allow.mock.location=0
+
+ro.debuggable=0
+
+ro.adb.secure=1
+
+persist.sys.usb.config=mtp
+
+ro.zygote=zygote32
+
+dalvik.vm.image-dex2oat-Xms=64m
+
+dalvik.vm.image-dex2oat-Xmx=64m
+
+dalvik.vm.dex2oat-Xms=64m
+
+dalvik.vm.dex2oat-Xmx=512m
+
+ro.dalvik.vm.native.bridge=0
+
+debug.atrace.tags.enableflags=0
+
+#
+
+# BOOTIMAGE_BUILD_PROPERTIES
+
+#
+
+ro.bootimage.build.date=Wed Jul 5 19:45:00 KST 2017
+
+ro.bootimage.build.date.utc=1499251500
+
+ro.bootimage.build.fingerprint=samsung/gteslteuc/gteslteatt:6.0.1/MMB29K/T377AUCU2AQGF:user/test-keys
+
+
+
+
+
+================================================================================
+SECTION: DEVICE IDLE INFO (first 30 lines)
+================================================================================
+
+
+  Settings:
+
+    inactive_to=+30m0s0ms
+
+    sensing_to=+4m0s0ms
+
+    locating_to=+30s0ms
+
+    location_accuracy=20.0m
+
+    motion_inactive_to=+10m0s0ms
+
+    idle_after_inactive_to=+30m0s0ms
+
+    idle_pending_to=+5m0s0ms
+
+    max_idle_pending_to=+10m0s0ms
+
+    idle_pending_factor=2.0
+
+    idle_to=+60m0s0ms
+
+    max_idle_to=+6h0m0s0ms
+
+    idle_factor=2.0
+
+    min_time_to_alarm=+60m0s0ms
+
+    max_temp_app_whitelist_duration=+5m0s0ms
+
+
+
+
+
+================================================================================
+SECTION: PROCESS DETAILS WITH USER AND COMMAND (first 50 lines)
+================================================================================
+
+
+USER      PID   PPID  VSIZE  RSS   WCHAN            PC  NAME
+
+
+
+
+
+================================================================================
+SECTION: SYSTEM LOAD AVERAGE
+================================================================================
+
+
+33.45 18.13 7.49 37/1690 8397
+
+
+
+

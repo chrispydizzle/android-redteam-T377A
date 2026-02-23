@@ -1,0 +1,505 @@
+================================================================================
+ANDROID SECURITY AUDIT - FILE PERMISSIONS AND ACCESS CONTROLS
+Device ID: 52030d9842d7a3bd
+Timestamp: 2026-02-18 19:28:22
+================================================================================
+
+================================================================================
+1. COMMAND: adb shell ls -la /system/
+Description: System directory permissions
+================================================================================
+-rw-r--r-- root     root           14 2008-08-01 05:00 CSCVersion.txt
+
+-rw-r--r-- root     root          323 2017-08-08 21:04 SW_Configuration.xml
+
+drwxr-xr-x root     root              2015-01-01 05:29 VODB
+
+drwxr-xr-x root     root              2017-08-08 21:13 app
+
+drwxr-xr-x root     shell             2017-08-08 21:13 bin
+
+-rw-r--r-- root     root         4586 2017-08-08 21:13 build.prop
+
+drwxr-xr-x root     root              2008-12-31 07:00 cameradata
+
+drwxr-xr-x root     root              2016-08-12 04:38 container
+
+drwxr-xr-x root     root              2017-08-08 21:05 csc
+
+lrwxrwxrwx root     root              2026-02-18 13:26 csc_contents -> /system/csc/ATT/csc_contents
+
+drwxr-xr-x root     root              2017-08-08 21:13 etc
+
+drwxr-xr-x root     root              2008-12-31 07:00 fonts
+
+drwxr-xr-x root     root              2017-08-08 21:13 framework
+
+drwxr-xr-x root     root              2015-01-01 05:29 hidden
+
+-rw-r--r-- root     root         6760 2008-08-01 05:00 kern_sec_info
+
+drwxr-xr-x root     root              2017-08-08 21:07 lib
+
+drwxr-xr-x root     root              2017-08-08 21:03 lib64
+
+-rw-r--r-- root     root          266 2008-12-31 07:00 lkm_sec_info
+
+drwxr-xr-x root     root              1969-12-31 16:00 lost+found
+
+drwxr-xr-x root     root              2017-08-08 21:07 media
+
+drwxr-xr-x root     root              2016-08-12 04:38 preloadedmdm
+
+drwxr-xr-x root     root              2017-08-08 21:13 priv-app
+
+-rw-r--r-- root     root      3652593 2008-08-01 05:00 recovery-from-boot.p
+
+drwxr-xr-x root     root              2008-12-31 07:00 saiv
+
+drwxr-xr-x root     root              2015-01-01 05:29 sipdb
+
+-rw-r--r-- root     root          417 2008-08-01 05:00 tima_measurement_info
+
+drwxr-xr-x root     root              2008-12-31 07:00 tts
+
+drwxr-xr-x root     root              2008-12-31 07:00 usr
+
+drwxr-xr-x root     shell             2008-12-31 07:00 vendor
+
+drwxr-xr-x root     root              2015-01-01 05:29 wallpaper
+
+drwxr-xr-x root     shell             2017-08-08 21:05 xbin
+
+
+================================================================================
+2. COMMAND: adb shell ls -la /system/bin/su 2>&1
+Description: Check for su binary
+================================================================================
+/system/bin/su: No such file or directory
+
+
+================================================================================
+3. COMMAND: adb shell ls -la /system/xbin/su 2>&1
+Description: Check for su binary (alt location)
+================================================================================
+/system/xbin/su: No such file or directory
+
+
+================================================================================
+4. COMMAND: adb shell which su 2>&1
+Description: Find su binary
+================================================================================
+
+================================================================================
+5. COMMAND: adb shell ls -la /data/ 2>&1
+Description: Data directory permissions
+================================================================================
+opendir failed, Permission denied
+
+
+================================================================================
+6. COMMAND: adb shell ls -la /data/local/tmp/ 2>&1
+Description: Temp directory
+================================================================================
+-rwxrwxrwx shell    shell      601454 2026-02-16 22:51 busybox
+
+-rwxrwxrwx shell    shell      585731 2026-02-18 12:59 psneuter
+
+-rwxrwxrwx shell    shell        5392 2026-02-16 22:51 rageagainstthecage
+
+-rwxrwxrwx shell    shell        6632 2026-02-16 22:51 su
+
+-rwxrwxrwx shell    shell      130552 2026-02-16 22:51 superuser.apk
+
+-rwxrwxrwx shell    shell     1900544 2026-02-18 09:53 tsd_client
+
+-rwxrwxrwx shell    shell     1966080 2026-02-18 09:56 tsd_client_arm32
+
+-rwxrwxrwx shell    shell       23060 2026-02-18 12:59 zergRush
+
+
+================================================================================
+7. COMMAND: adb shell find /system -perm -o+w -type f 2>/dev/null | head -50
+Description: World-writable files in /system
+================================================================================
+
+================================================================================
+8. COMMAND: adb shell find /data -perm -o+r -type f 2>/dev/null | head -50
+Description: World-readable files in /data
+================================================================================
+
+================================================================================
+9. COMMAND: adb shell find / -perm -4000 -type f 2>/dev/null | head -30
+Description: SUID binaries
+================================================================================
+
+================================================================================
+10. COMMAND: adb shell id
+Description: Current user context
+================================================================================
+uid=2000(shell) gid=2000(shell) groups=2000(shell),1004(input),1007(log),1011(adb),1015(sdcard_rw),1028(sdcard_r),3001(net_bt_admin),3002(net_bt),3003(inet),3006(net_bw_stats) context=u:r:shell:s0
+
+
+================================================================================
+11. COMMAND: adb shell whoami
+Description: Current user
+================================================================================
+shell
+
+
+================================================================================
+12. COMMAND: adb shell ls -la /system/app/ 2>&1 | head -30
+Description: System apps directory
+================================================================================
+drwxr-xr-x root     root              2017-08-08 21:04 AASAservice
+
+drwxr-xr-x root     root              2016-08-12 04:38 ANTPlusPlugins
+
+drwxr-xr-x root     root              2017-08-08 21:05 ANTPlusTest
+
+drwxr-xr-x root     root              2016-08-12 04:38 ATTAPNWidget_ATT
+
+drwxr-xr-x root     root              2017-08-08 21:07 AccuweatherTablet2015_WXGA_tvdpi_TFT
+
+drwxr-xr-x root     root              2017-08-08 21:05 AllshareFileShare
+
+drwxr-xr-x root     root              2017-08-08 21:05 AllshareFileShareClient
+
+drwxr-xr-x root     root              2017-08-08 21:05 AllshareFileShareServer
+
+drwxr-xr-x root     root              2017-08-08 21:04 AllshareMediaShare
+
+drwxr-xr-x root     root              2016-08-12 04:38 AmazonKindle_vpl_ATT
+
+drwxr-xr-x root     root              2017-08-08 21:05 AntHalService
+
+drwxr-xr-x root     root              2017-08-08 21:05 AssistantMenu_M_Tablet
+
+drwxr-xr-x root     root              2017-08-08 21:04 BBCAgent
+
+drwxr-xr-x root     root              2017-08-08 21:04 BCService
+
+drwxr-xr-x root     root              2017-08-08 21:04 BasicDreams
+
+drwxr-xr-x root     root              2017-08-08 21:05 BeaconManager_40
+
+drwxr-xr-x root     root              2017-08-08 21:05 Bluetooth
+
+drwxr-xr-x root     root              2017-08-08 21:04 BluetoothMidiService
+
+drwxr-xr-x root     root              2017-08-08 21:05 BluetoothTest
+
+drwxr-xr-x root     root              2017-08-08 21:04 BookmarkProvider
+
+drwxr-xr-x root     root              2017-08-08 21:05 CaptivePortalLogin
+
+drwxr-xr-x root     root              2017-08-08 21:05 CertInstaller
+
+drwxr-xr-x root     root              2017-08-08 21:04 ChocoEUKor
+
+drwxr-xr-x root     root              2017-08-08 21:11 Chrome
+
+drwxr-xr-x root     root              2017-08-08 21:04 ChromeCustomizations
+
+drwxr-xr-x root     root              2017-08-08 21:06 ClockPackage_M_Tablet
+
+drwxr-xr-x root     root              2017-08-08 21:05 ColorBlind_Tablet_M
+
+drwxr-xr-x root     root              2017-08-08 21:05 ConnectivityWidget
+
+drwxr-xr-x root     root              2017-08-08 21:04 CoolEUKor
+
+drwxr-xr-x root     root              2017-08-08 21:04 DRParser
+
+
+================================================================================
+13. COMMAND: adb shell ls -la /system/priv-app/ 2>&1 | head -30
+Description: Privileged apps directory
+================================================================================
+drwxr-xr-x root     root              2017-08-08 21:05 ANTRadioService
+
+drwxr-xr-x root     root              2017-08-08 21:05 APNWidgetBaseRoot_ATT
+
+drwxr-xr-x root     root              2017-08-08 21:04 ASKSManager
+
+drwxr-xr-x root     root              2017-08-08 21:05 AccessControl_M
+
+drwxr-xr-x root     root              2017-08-08 21:05 AmazonShopping_Tablet_ATT
+
+drwxr-xr-x root     root              2017-08-08 21:05 AutoPreconfig
+
+drwxr-xr-x root     root              2017-08-08 21:05 AutomationTest_FB
+
+drwxr-xr-x root     root              2017-08-08 21:04 BackupRestoreConfirmation
+
+drwxr-xr-x root     root              2017-08-08 21:04 BadgeProvider_M
+
+drwxr-xr-x root     root              2017-08-08 21:05 CMHProvider
+
+drwxr-xr-x root     root              2017-08-08 21:04 CSC
+
+drwxr-xr-x root     root              2017-08-08 21:05 CallLogBackup
+
+drwxr-xr-x root     root              2017-08-08 21:04 CarrierConfig
+
+drwxr-xr-x root     root              2016-08-12 04:38 ConfigUpdater
+
+drwxr-xr-x root     root              2017-08-08 21:04 DCMService
+
+drwxr-xr-x root     root              2017-08-08 21:04 DefaultContainerService
+
+drwxr-xr-x root     root              2017-08-08 21:04 DeviceKeystring
+
+drwxr-xr-x root     root              2017-08-08 21:05 DeviceTest
+
+drwxr-xr-x root     root              2017-08-08 21:04 DiagMonAgent
+
+drwxr-xr-x root     root              2016-08-12 04:38 DigitalLocker_ATT
+
+drwxr-xr-x root     root              2017-08-08 21:05 ExternalStorageProvider
+
+drwxr-xr-x root     root              2017-08-08 21:05 Fmm
+
+drwxr-xr-x root     root              2017-08-08 21:05 FusedLocation
+
+drwxr-xr-x root     root              2017-08-08 21:03 GalaxyApps_Tablet
+
+drwxr-xr-x root     root              2017-08-08 21:13 GmsCore
+
+drwxr-xr-x root     root              2016-08-12 04:38 GoogleBackupTransport
+
+drwxr-xr-x root     root              2016-08-12 04:38 GoogleFeedback
+
+drwxr-xr-x root     root              2016-08-12 04:38 GoogleLoginService_tablet
+
+drwxr-xr-x root     root              2016-08-12 04:38 GoogleOneTimeInitializer
+
+drwxr-xr-x root     root              2017-08-08 21:04 GooglePackageInstaller
+
+
+================================================================================
+14. COMMAND: adb shell ls -la /dev/ 2>&1 | head -30
+Description: Device nodes
+================================================================================
+lstat '/dev//hw_random' failed: Permission denied
+
+---------- root     root            0 2026-02-18 16:22 .coldboot_done
+
+drwx--x--x system   system            2026-02-18 16:22 .secure_storage
+
+-r--r--r-- root     root       131072 2026-02-18 16:25 __properties__
+
+crw-rw-r-- system   radio     10,  34 2026-02-18 16:22 alarm
+
+crw-rw---- adb      adb       10,  18 2026-02-18 16:22 android_adb
+
+crw-rw---- system   system    10,  14 2026-02-18 16:22 android_ssusbcon
+
+crw-rw-rw- root     root      10,  39 2026-02-18 16:22 ashmem
+
+crw-rw-rw- root     root      10,  40 2026-02-18 16:22 binder
+
+drwxr-xr-x root     root              2026-02-18 16:22 block
+
+drwxr-xr-x root     root              2026-02-18 16:22 bus
+
+crw------- root     root      10,  27 2026-02-18 16:22 bus_throughput
+
+crw------- root     root      10,  26 2026-02-18 16:22 bus_throughput_max
+
+crw------- root     root      10,  19 2026-02-18 16:22 cam_throughput
+
+crw------- root     root       5,   1 2026-02-18 16:22 console
+
+crw------- root     root      10,  31 2026-02-18 16:22 cpu_dma_latency
+
+crw------- root     root      10,  23 2026-02-18 16:22 cpu_freq_max
+
+crw------- root     root      10,  24 2026-02-18 16:22 cpu_freq_min
+
+drwxr-xr-x system   system            2026-02-18 16:22 cpuctl
+
+drwxr-xr-x system   system            2026-02-18 16:22 cpuset
+
+crw------- system   system    10,  59 2026-02-18 16:22 dek_evt
+
+crw------- root     root      10,  57 2026-02-18 16:22 dek_log
+
+crw-rw---- system   dpgp      10,  58 2026-02-18 16:22 dek_req
+
+crw------- root     root      10, 236 2026-02-18 16:22 device-mapper
+
+crw------- root     root      10,  28 2026-02-18 16:22 device_throughput
+
+crw------- root     root      10,  20 2026-02-18 16:22 display_throughput
+
+crw------- system   system    10,  44 2026-02-18 16:22 dun
+
+drwxrwx--- root     system            2026-02-18 16:25 fscklogs
+
+crw-rw-rw- root     root       1,   7 2026-02-18 16:22 full
+
+crw------- root     root      10, 229 2026-02-18 16:22 fuse
+
+
+================================================================================
+15. COMMAND: adb shell mount
+Description: Mounted filesystems and their options
+================================================================================
+rootfs / rootfs ro,seclabel,relatime 0 0
+
+tmpfs /dev tmpfs rw,seclabel,nosuid,relatime,size=712740k,nr_inodes=150802,mode=755 0 0
+
+devpts /dev/pts devpts rw,seclabel,relatime,mode=600 0 0
+
+proc /proc proc rw,relatime 0 0
+
+sysfs /sys sysfs rw,seclabel,relatime 0 0
+
+selinuxfs /sys/fs/selinux selinuxfs rw,relatime 0 0
+
+/sys/kernel/debug /sys/kernel/debug debugfs rw,relatime 0 0
+
+none /acct cgroup rw,relatime,cpuacct 0 0
+
+none /sys/fs/cgroup tmpfs rw,seclabel,relatime,size=712740k,nr_inodes=150802,mode=750,gid=1000 0 0
+
+tmpfs /mnt tmpfs rw,seclabel,relatime,size=712740k,nr_inodes=150802,mode=755,gid=1000 0 0
+
+tmpfs /mnt/secure tmpfs rw,seclabel,relatime,size=712740k,nr_inodes=150802,mode=700 0 0
+
+tmpfs /mnt/secure/asec tmpfs rw,seclabel,relatime,size=712740k,nr_inodes=150802,mode=700 0 0
+
+none /dev/cpuctl cgroup rw,relatime,cpu 0 0
+
+/dev/block/platform/13540000.dwmmc0/by-name/CPEFS /cpefs ext4 rw,seclabel,nosuid,nodev,noatime,data=ordered 0 0
+
+/dev/block/platform/13540000.dwmmc0/by-name/SYSTEM /system ext4 ro,seclabel,relatime,block_validity,norecovery 0 0
+
+/dev/block/platform/13540000.dwmmc0/by-name/CACHE /cache ext4 rw,seclabel,nosuid,nodev,noatime,discard,journal_checksum,journal_async_commit,noauto_da_alloc,data=ordered 0 0
+
+/dev/block/platform/13540000.dwmmc0/by-name/USERDATA /data ext4 rw,seclabel,nosuid,nodev,noatime,discard,journal_checksum,journal_async_commit,noauto_da_alloc,data=ordered 0 0
+
+/dev/block/platform/13540000.dwmmc0/by-name/EFS /efs ext4 rw,seclabel,nosuid,nodev,noatime,discard,journal_checksum,journal_async_commit,noauto_da_alloc,data=ordered 0 0
+
+/dev/block/platform/13540000.dwmmc0/by-name/PERSDATA /persdata/absolute ext4 rw,seclabel,nosuid,nodev,relatime,data=ordered 0 0
+
+tmpfs /storage tmpfs rw,seclabel,relatime,size=712740k,nr_inodes=150802,mode=755,gid=1000 0 0
+
+/data/knox/tmp_sdcard /mnt/knox sdcardfs rw,seclabel,nosuid,nodev,relatime,mask=0077 0 0
+
+/data/knox/sdcard /mnt/knox/default/knox-emulated sdcardfs rw,seclabel,nosuid,nodev,relatime,low_uid=1000,low_gid=1000,gid=1015,multi_user,mask=0006 0 0
+
+/data/knox/sdcard /mnt/knox/read/knox-emulated sdcardfs rw,seclabel,nosuid,nodev,relatime,low_uid=1000,low_gid=1000,gid=9997,multi_user,mask=0027 0 0
+
+/data/knox/sdcard /mnt/knox/write/knox-emulated sdcardfs rw,seclabel,nosuid,nodev,relatime,low_uid=1000,low_gid=1000,gid=9997,multi_user,mask=0007 0 0
+
+/data/knox/secure_fs/enc_media /mnt/shell/enc_media sdcardfs rw,seclabel,nosuid,nodev,relatime,low_uid=1000,low_gid=1000,gid=9997,multi_user,reserved=20MB 0 0
+
+/data/media /mnt/runtime/default/emulated sdcardfs rw,seclabel,nosuid,nodev,noexec,relatime,low_uid=1023,low_gid=1023,gid=1015,multi_user,mask=0006,reserved=20MB 0 0
+
+/data/media /storage/emulated sdcardfs rw,seclabel,nosuid,nodev,noexec,relatime,low_uid=1023,low_gid=1023,gid=1015,multi_user,mask=0006,reserved=20MB 0 0
+
+/data/media /mnt/runtime/read/emulated sdcardfs rw,seclabel,nosuid,nodev,noexec,relatime,low_uid=1023,low_gid=1023,gid=9997,multi_user,mask=0027,reserved=20MB 0 0
+
+/data/media /mnt/runtime/write/emulated sdcardfs rw,seclabel,nosuid,nodev,noexec,relatime,low_uid=1023,low_gid=1023,gid=9997,multi_user,mask=0007,reserved=20MB 0 0
+
+/data/knox/secure_fs/enc_user /data/enc_user ecryptfs rw,seclabel,nodev,relatime,ecryptfs_fnek_sig=68d153b3e77864c9,ecryptfs_sig=68d153b3e77864c9,userid=0,sdp_enabled,partition_id=0,ecryptfs_cipher=aes,ecryptfs_key_bytes=32,ecryptfs_passthrough,base=,label= 0 0
+
+/mnt/shell/enc_media /mnt/shell/enc_emulated ecryptfs rw,seclabel,nodev,relatime,ecryptfs_fnek_sig=68d153b3e77864c9,ecryptfs_sig=68d153b3e77864c9,userid=0,sdp_enabled,partition_id=1,ecryptfs_cipher=aes,ecryptfs_key_bytes=32,ecryptfs_passthrough,base=,label= 0 0
+
+/dev/block/vold/public:179,33 /mnt/media_rw/56C2-A183 exfat rw,dirsync,nosuid,nodev,noexec,noatime,nodiratime,uid=1023,gid=1023,fmask=0007,dmask=0007,allow_utime=0020,codepage=cp437,iocharset=utf8,namecase=0,errors=remount-ro 0 0
+
+/dev/block/vold/public:179,33 /mnt/secure/asec exfat rw,dirsync,nosuid,nodev,noexec,noatime,nodiratime,uid=1023,gid=1023,fmask=0007,dmask=0007,allow_utime=0020,codepage=cp437,iocharset=utf8,namecase=0,errors=remount-ro 0 0
+
+/mnt/media_rw/56C2-A183 /mnt/runtime/default/56C2-A183 sdcardfs rw,seclabel,nosuid,nodev,noexec,relatime,low_uid=1023,low_gid=1023,gid=1015,mask=0006 0 0
+
+/mnt/media_rw/56C2-A183 /storage/56C2-A183 sdcardfs rw,seclabel,nosuid,nodev,noexec,relatime,low_uid=1023,low_gid=1023,gid=1015,mask=0006 0 0
+
+/mnt/media_rw/56C2-A183 /mnt/runtime/read/56C2-A183 sdcardfs rw,seclabel,nosuid,nodev,noexec,relatime,low_uid=1023,low_gid=1023,gid=9997,mask=0022 0 0
+
+/mnt/media_rw/56C2-A183 /mnt/runtime/write/56C2-A183 sdcardfs rw,seclabel,nosuid,nodev,noexec,relatime,low_uid=1023,low_gid=1023,gid=9997,mask=0022 0 0
+
+
+================================================================================
+16. COMMAND: adb shell cat /proc/mounts
+Description: Mount points
+================================================================================
+rootfs / rootfs ro,seclabel,relatime 0 0
+
+tmpfs /dev tmpfs rw,seclabel,nosuid,relatime,size=712740k,nr_inodes=150802,mode=755 0 0
+
+devpts /dev/pts devpts rw,seclabel,relatime,mode=600 0 0
+
+proc /proc proc rw,relatime 0 0
+
+sysfs /sys sysfs rw,seclabel,relatime 0 0
+
+selinuxfs /sys/fs/selinux selinuxfs rw,relatime 0 0
+
+/sys/kernel/debug /sys/kernel/debug debugfs rw,relatime 0 0
+
+none /acct cgroup rw,relatime,cpuacct 0 0
+
+none /sys/fs/cgroup tmpfs rw,seclabel,relatime,size=712740k,nr_inodes=150802,mode=750,gid=1000 0 0
+
+tmpfs /mnt tmpfs rw,seclabel,relatime,size=712740k,nr_inodes=150802,mode=755,gid=1000 0 0
+
+tmpfs /mnt/secure tmpfs rw,seclabel,relatime,size=712740k,nr_inodes=150802,mode=700 0 0
+
+tmpfs /mnt/secure/asec tmpfs rw,seclabel,relatime,size=712740k,nr_inodes=150802,mode=700 0 0
+
+none /dev/cpuctl cgroup rw,relatime,cpu 0 0
+
+/dev/block/platform/13540000.dwmmc0/by-name/CPEFS /cpefs ext4 rw,seclabel,nosuid,nodev,noatime,data=ordered 0 0
+
+/dev/block/platform/13540000.dwmmc0/by-name/SYSTEM /system ext4 ro,seclabel,relatime,block_validity,norecovery 0 0
+
+/dev/block/platform/13540000.dwmmc0/by-name/CACHE /cache ext4 rw,seclabel,nosuid,nodev,noatime,discard,journal_checksum,journal_async_commit,noauto_da_alloc,data=ordered 0 0
+
+/dev/block/platform/13540000.dwmmc0/by-name/USERDATA /data ext4 rw,seclabel,nosuid,nodev,noatime,discard,journal_checksum,journal_async_commit,noauto_da_alloc,data=ordered 0 0
+
+/dev/block/platform/13540000.dwmmc0/by-name/EFS /efs ext4 rw,seclabel,nosuid,nodev,noatime,discard,journal_checksum,journal_async_commit,noauto_da_alloc,data=ordered 0 0
+
+/dev/block/platform/13540000.dwmmc0/by-name/PERSDATA /persdata/absolute ext4 rw,seclabel,nosuid,nodev,relatime,data=ordered 0 0
+
+tmpfs /storage tmpfs rw,seclabel,relatime,size=712740k,nr_inodes=150802,mode=755,gid=1000 0 0
+
+/data/knox/tmp_sdcard /mnt/knox sdcardfs rw,seclabel,nosuid,nodev,relatime,mask=0077 0 0
+
+/data/knox/sdcard /mnt/knox/default/knox-emulated sdcardfs rw,seclabel,nosuid,nodev,relatime,low_uid=1000,low_gid=1000,gid=1015,multi_user,mask=0006 0 0
+
+/data/knox/sdcard /mnt/knox/read/knox-emulated sdcardfs rw,seclabel,nosuid,nodev,relatime,low_uid=1000,low_gid=1000,gid=9997,multi_user,mask=0027 0 0
+
+/data/knox/sdcard /mnt/knox/write/knox-emulated sdcardfs rw,seclabel,nosuid,nodev,relatime,low_uid=1000,low_gid=1000,gid=9997,multi_user,mask=0007 0 0
+
+/data/knox/secure_fs/enc_media /mnt/shell/enc_media sdcardfs rw,seclabel,nosuid,nodev,relatime,low_uid=1000,low_gid=1000,gid=9997,multi_user,reserved=20MB 0 0
+
+/data/media /mnt/runtime/default/emulated sdcardfs rw,seclabel,nosuid,nodev,noexec,relatime,low_uid=1023,low_gid=1023,gid=1015,multi_user,mask=0006,reserved=20MB 0 0
+
+/data/media /storage/emulated sdcardfs rw,seclabel,nosuid,nodev,noexec,relatime,low_uid=1023,low_gid=1023,gid=1015,multi_user,mask=0006,reserved=20MB 0 0
+
+/data/media /mnt/runtime/read/emulated sdcardfs rw,seclabel,nosuid,nodev,noexec,relatime,low_uid=1023,low_gid=1023,gid=9997,multi_user,mask=0027,reserved=20MB 0 0
+
+/data/media /mnt/runtime/write/emulated sdcardfs rw,seclabel,nosuid,nodev,noexec,relatime,low_uid=1023,low_gid=1023,gid=9997,multi_user,mask=0007,reserved=20MB 0 0
+
+/data/knox/secure_fs/enc_user /data/enc_user ecryptfs rw,seclabel,nodev,relatime,ecryptfs_fnek_sig=68d153b3e77864c9,ecryptfs_sig=68d153b3e77864c9,userid=0,sdp_enabled,partition_id=0,ecryptfs_cipher=aes,ecryptfs_key_bytes=32,ecryptfs_passthrough,base=,label= 0 0
+
+/mnt/shell/enc_media /mnt/shell/enc_emulated ecryptfs rw,seclabel,nodev,relatime,ecryptfs_fnek_sig=68d153b3e77864c9,ecryptfs_sig=68d153b3e77864c9,userid=0,sdp_enabled,partition_id=1,ecryptfs_cipher=aes,ecryptfs_key_bytes=32,ecryptfs_passthrough,base=,label= 0 0
+
+/dev/block/vold/public:179,33 /mnt/media_rw/56C2-A183 exfat rw,dirsync,nosuid,nodev,noexec,noatime,nodiratime,uid=1023,gid=1023,fmask=0007,dmask=0007,allow_utime=0020,codepage=cp437,iocharset=utf8,namecase=0,errors=remount-ro 0 0
+
+/dev/block/vold/public:179,33 /mnt/secure/asec exfat rw,dirsync,nosuid,nodev,noexec,noatime,nodiratime,uid=1023,gid=1023,fmask=0007,dmask=0007,allow_utime=0020,codepage=cp437,iocharset=utf8,namecase=0,errors=remount-ro 0 0
+
+/mnt/media_rw/56C2-A183 /mnt/runtime/default/56C2-A183 sdcardfs rw,seclabel,nosuid,nodev,noexec,relatime,low_uid=1023,low_gid=1023,gid=1015,mask=0006 0 0
+
+/mnt/media_rw/56C2-A183 /storage/56C2-A183 sdcardfs rw,seclabel,nosuid,nodev,noexec,relatime,low_uid=1023,low_gid=1023,gid=1015,mask=0006 0 0
+
+/mnt/media_rw/56C2-A183 /mnt/runtime/read/56C2-A183 sdcardfs rw,seclabel,nosuid,nodev,noexec,relatime,low_uid=1023,low_gid=1023,gid=9997,mask=0022 0 0
+
+/mnt/media_rw/56C2-A183 /mnt/runtime/write/56C2-A183 sdcardfs rw,seclabel,nosuid,nodev,noexec,relatime,low_uid=1023,low_gid=1023,gid=9997,mask=0022 0 0
+
+
+================================================================================
+END OF AUDIT REPORT
+================================================================================

@@ -1,0 +1,258 @@
+================================================================================
+ANDROID SECURITY AUDIT REPORT
+Device ID: 52030d9842d7a3bd
+Timestamp: 02/18/2026 19:28:07
+================================================================================
+
+================================================================================
+1. SECURITY-RELATED BUILD PROPS
+Command: adb shell "cat /system/build.prop 2>&1 | grep -i security"
+================================================================================
+ro.build.version.security_patch=2017-07-01
+
+security.mdpp.mass=skmm
+
+ro.security.vpnpp.ver=1.4
+
+ro.security.vpnpp.release=6.1
+
+ro.security.icd.flagmode=multi
+
+security.ASKS.policy_version=000000
+
+
+================================================================================
+2. DEBUG-RELATED BUILD PROPS
+Command: adb shell "cat /system/build.prop 2>&1 | grep -i debug"
+================================================================================
+debug.hwui.render_dirty_regions=false
+
+
+================================================================================
+3. SECURE BOOT PROPS
+Command: adb shell "cat /system/build.prop 2>&1 | grep -i ro.secure"
+================================================================================
+ro.securestorage.support=true
+
+
+================================================================================
+4. ADB ENABLED STATUS
+Command: adb shell settings get global adb_enabled
+================================================================================
+1
+
+
+================================================================================
+5. DEVELOPER OPTIONS ENABLED
+Command: adb shell settings get global development_settings_enabled
+================================================================================
+1
+
+
+================================================================================
+6. LOCK SCREEN TIMEOUT
+Command: adb shell settings get secure lock_screen_lock_after_timeout
+================================================================================
+600000
+
+
+================================================================================
+7. STAY AWAKE WHILE PLUGGED IN
+Command: adb shell settings get global stay_on_while_plugged_in
+================================================================================
+3
+
+
+================================================================================
+8. LOCK SCREEN OWNER INFO ENABLED
+Command: adb shell settings get secure lock_screen_owner_info_enabled
+================================================================================
+Error while accessing settings provider
+
+android.os.DeadObjectException
+
+	at android.os.BinderProxy.transactNative(Native Method)
+
+	at android.os.BinderProxy.transact(Binder.java:503)
+
+	at android.app.ActivityManagerProxy.getContentProviderExternal(ActivityManagerNative.java:4262)
+
+	at com.android.commands.settings.SettingsCmd.run(SettingsCmd.java:141)
+
+	at com.android.commands.settings.SettingsCmd.main(SettingsCmd.java:63)
+
+	at com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)
+
+	at com.android.internal.os.RuntimeInit.main(RuntimeInit.java:257)
+
+
+================================================================================
+9. DEVICE PROVISIONED
+Command: adb shell settings get global device_provisioned
+================================================================================
+Error while accessing settings provider
+
+java.lang.NullPointerException: Attempt to invoke interface method 'android.app.IActivityManager$ContentProviderHolder android.app.IActivityManager.getContentProviderExternal(java.lang.String, int, android.os.IBinder)' on a null object reference
+
+	at com.android.commands.settings.SettingsCmd.run(SettingsCmd.java:141)
+
+	at com.android.commands.settings.SettingsCmd.main(SettingsCmd.java:63)
+
+	at com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)
+
+	at com.android.internal.os.RuntimeInit.main(RuntimeInit.java:257)
+
+
+================================================================================
+10. ANDROID ID
+Command: adb shell settings get secure android_id
+================================================================================
+Error while accessing settings provider
+
+java.lang.NullPointerException: Attempt to invoke interface method 'android.app.IActivityManager$ContentProviderHolder android.app.IActivityManager.getContentProviderExternal(java.lang.String, int, android.os.IBinder)' on a null object reference
+
+	at com.android.commands.settings.SettingsCmd.run(SettingsCmd.java:141)
+
+	at com.android.commands.settings.SettingsCmd.main(SettingsCmd.java:63)
+
+	at com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)
+
+	at com.android.internal.os.RuntimeInit.main(RuntimeInit.java:257)
+
+
+================================================================================
+11. AUTO TIME SYNC
+Command: adb shell settings get global auto_time
+================================================================================
+Error while accessing settings provider
+
+java.lang.NullPointerException: Attempt to invoke interface method 'android.app.IActivityManager$ContentProviderHolder android.app.IActivityManager.getContentProviderExternal(java.lang.String, int, android.os.IBinder)' on a null object reference
+
+	at com.android.commands.settings.SettingsCmd.run(SettingsCmd.java:141)
+
+	at com.android.commands.settings.SettingsCmd.main(SettingsCmd.java:63)
+
+	at com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)
+
+	at com.android.internal.os.RuntimeInit.main(RuntimeInit.java:257)
+
+
+================================================================================
+12. BACKUP SETTINGS
+Command: adb shell "getprop | grep -i backup"
+================================================================================
+
+================================================================================
+13. BACKUP ENABLED
+Command: adb shell settings get secure backup_enabled
+================================================================================
+Error while accessing settings provider
+
+java.lang.NullPointerException: Attempt to invoke interface method 'android.app.IActivityManager$ContentProviderHolder android.app.IActivityManager.getContentProviderExternal(java.lang.String, int, android.os.IBinder)' on a null object reference
+
+	at com.android.commands.settings.SettingsCmd.run(SettingsCmd.java:141)
+
+	at com.android.commands.settings.SettingsCmd.main(SettingsCmd.java:63)
+
+	at com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)
+
+	at com.android.internal.os.RuntimeInit.main(RuntimeInit.java:257)
+
+
+================================================================================
+14. BACKUP TRANSPORT
+Command: adb shell settings get secure backup_transport
+================================================================================
+Error while accessing settings provider
+
+java.lang.NullPointerException: Attempt to invoke interface method 'android.app.IActivityManager$ContentProviderHolder android.app.IActivityManager.getContentProviderExternal(java.lang.String, int, android.os.IBinder)' on a null object reference
+
+	at com.android.commands.settings.SettingsCmd.run(SettingsCmd.java:141)
+
+	at com.android.commands.settings.SettingsCmd.main(SettingsCmd.java:63)
+
+	at com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)
+
+	at com.android.internal.os.RuntimeInit.main(RuntimeInit.java:257)
+
+
+================================================================================
+15. ENCRYPTION PROPERTIES
+Command: adb shell "getprop | grep -i encrypt"
+================================================================================
+[ro.crypto.state]: [unencrypted]
+
+[ro.sec.fle.encryption]: [true]
+
+[sec.fle.encryption.status]: [Dec NewFile IncludeMedia]
+
+
+================================================================================
+16. VERIFIED BOOT PROPERTIES
+Command: adb shell "getprop | grep -i verify"
+================================================================================
+
+================================================================================
+17. SELINUX PROPERTIES
+Command: adb shell "getprop | grep -i selinux"
+================================================================================
+[ro.boot.selinux]: [enforcing]
+
+[ro.build.selinux]: [1]
+
+[ro.build.selinux.enforce]: [1]
+
+[selinux.policy_version]: [SEPF_SECMOBILE_6.0.1_0035]
+
+[selinux.reload_policy]: [1]
+
+
+================================================================================
+18. PACKAGE VERIFIER ENABLED
+Command: adb shell settings get global package_verifier_enable
+================================================================================
+Error while accessing settings provider
+
+java.lang.NullPointerException: Attempt to invoke interface method 'android.app.IActivityManager$ContentProviderHolder android.app.IActivityManager.getContentProviderExternal(java.lang.String, int, android.os.IBinder)' on a null object reference
+
+	at com.android.commands.settings.SettingsCmd.run(SettingsCmd.java:141)
+
+	at com.android.commands.settings.SettingsCmd.main(SettingsCmd.java:63)
+
+	at com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)
+
+	at com.android.internal.os.RuntimeInit.main(RuntimeInit.java:257)
+
+
+================================================================================
+19. USB PROPERTIES
+Command: adb shell "getprop | grep -i usb"
+================================================================================
+[persist.sys.usb.config]: [acm,dm]
+
+[persist.sys.usb.q_config]: [acm,dm,adb]
+
+[sys.usb.config]: [acm,dm,adb]
+
+[sys.usb.configfs]: [0]
+
+[sys.usb.state]: [acm,dm,adb]
+
+
+================================================================================
+20. SCREEN OFF TIMEOUT
+Command: adb shell settings get system screen_off_timeout
+================================================================================
+Error while accessing settings provider
+
+java.lang.NullPointerException: Attempt to invoke interface method 'android.app.IActivityManager$ContentProviderHolder android.app.IActivityManager.getContentProviderExternal(java.lang.String, int, android.os.IBinder)' on a null object reference
+
+	at com.android.commands.settings.SettingsCmd.run(SettingsCmd.java:141)
+
+	at com.android.commands.settings.SettingsCmd.main(SettingsCmd.java:63)
+
+	at com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)
+
+	at com.android.internal.os.RuntimeInit.main(RuntimeInit.java:257)
+
+

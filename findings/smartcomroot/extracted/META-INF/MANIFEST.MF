@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+
+Name: SEC-INF/buildinfo.xml
+SHA1-Digest: GeiRr7x3rB/SGsF//XmvLaYZDr4=
+
+Name: AndroidManifest.xml
+SHA1-Digest: EygFvP01K1KDyEq4pD/3OV6kijw=
+
+Name: SEC-INF/buildConfirm.crt
+SHA1-Digest: rzhOt9eAouxefH7GQUAHHm1HIuI=
+
+Name: res/layout/details.xml
+SHA1-Digest: 4fPwUiGMg0ZeYU8vONhdzt+MD+s=
+
+Name: res/drawable/icon.qmg
+SHA1-Digest: ipY+yLL+1Z1RfsMhppozhIR2ATc=
+
+Name: resources.arsc
+SHA1-Digest: yOd4qiENqk8mq/drbK1hY5rf96Q=
+

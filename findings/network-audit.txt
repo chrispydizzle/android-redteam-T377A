@@ -1,0 +1,759 @@
+========================================
+ANDROID NETWORK SECURITY AUDIT REPORT
+========================================
+Device ID: 52030d9842d7a3bd
+Audit Date: 2026-02-18 19:27:58
+========================================
+
+----------------------------------------
+Network Interfaces (ifconfig)
+----------------------------------------
+wlan0     Link encap:Ethernet  HWaddr BC:76:5E:57:44:ED
+
+          inet addr:192.168.1.104  Bcast:192.168.1.255  Mask:255.255.255.0 
+
+          inet6 addr: fe80::be76:5eff:fe57:44ed/64 Scope: Link
+
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+
+          RX packets:1958 errors:0 dropped:0 overruns:0 frame:0 
+
+          TX packets:1595 errors:0 dropped:0 overruns:0 carrier:0 
+
+          collisions:0 txqueuelen:1000 
+
+          RX bytes:1780908 TX bytes:375184 
+
+
+
+p2p0      Link encap:Ethernet  HWaddr BE:76:5E:57:44:ED
+
+          inet6 addr: fe80::bc76:5eff:fe57:44ed/64 Scope: Link
+
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0 
+
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0 
+
+          collisions:0 txqueuelen:1000 
+
+          RX bytes:0 TX bytes:0 
+
+
+
+lo        Link encap:Local Loopback  
+
+          inet addr:127.0.0.1  Mask:255.0.0.0 
+
+          inet6 addr: ::1/128 Scope: Host
+
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+
+          RX packets:22 errors:0 dropped:0 overruns:0 frame:0 
+
+          TX packets:22 errors:0 dropped:0 overruns:0 carrier:0 
+
+          collisions:0 txqueuelen:0 
+
+          RX bytes:1100 TX bytes:1100 
+
+
+
+
+
+----------------------------------------
+Listening Ports (netstat)
+----------------------------------------
+(Not all processes could be identified, non-owned process info will not be shown, you would have to be root to see it all.)
+
+Active Internet connections (only servers)
+
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program Name
+
+
+
+----------------------------------------
+All Connections (netstat)
+----------------------------------------
+(Not all processes could be identified, non-owned process info will not be shown, you would have to be root to see it all.)
+
+Active Internet connections (servers and established)
+
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program Name
+
+tcp        0      0 192.168.1.104:49952     142.250.72.10:443       ESTABLISHED -
+
+tcp        0      0 192.168.1.104:60104     142.250.217.10:443      ESTABLISHED -
+
+tcp        0      0 192.168.1.104:60095     142.250.217.10:443      ESTABLISHED -
+
+tcp        0      0 192.168.1.104:53694     216.239.32.223:443      ESTABLISHED -
+
+tcp        0      0 192.168.1.104:54891     142.251.210.36:443      ESTABLISHED -
+
+tcp        0      0 192.168.1.104:35069     142.250.80.110:443      ESTABLISHED -
+
+tcp        0      0 192.168.1.104:45497     142.250.191.2:443       TIME_WAIT   -
+
+tcp      976      0 192.168.1.104:37336     142.250.217.142:443     ESTABLISHED -
+
+tcp        0      0 192.168.1.104:46372     142.251.40.238:443      ESTABLISHED -
+
+tcp        0      0 192.168.1.104:60105     142.250.217.10:443      ESTABLISHED -
+
+tcp        0      0 192.168.1.104:34307     142.251.210.42:443      ESTABLISHED -
+
+tcp        0      0 192.168.1.104:35852     142.250.80.98:443       ESTABLISHED -
+
+tcp        0      0 ::ffff:192.168.1.104:57957 ::ffff:142.250.217.3:443 TIME_WAIT   -
+
+tcp        0      0 ::ffff:192.168.1.104:60933 ::ffff:31.13.71.1:443   ESTABLISHED -
+
+tcp        0      0 ::ffff:192.168.1.104:36191 ::ffff:142.250.217.3:443 ESTABLISHED -
+
+tcp        0      0 ::ffff:192.168.1.104:54464 ::ffff:142.251.45.170:443 TIME_WAIT   -
+
+tcp        0      0 ::ffff:192.168.1.104:39903 ::ffff:142.250.217.3:443 ESTABLISHED -
+
+tcp        0      0 ::ffff:192.168.1.104:36959 ::ffff:104.18.66.57:443 ESTABLISHED -
+
+tcp        0      0 ::ffff:192.168.1.104:37760 ::ffff:107.178.254.148:443 ESTABLISHED -
+
+tcp        0      0 ::ffff:192.168.1.104:40006 ::ffff:104.18.66.57:443 ESTABLISHED -
+
+tcp        0      0 ::ffff:192.168.1.104:58258 ::ffff:142.251.210.42:443 ESTABLISHED -
+
+tcp        0      0 ::ffff:192.168.1.104:51912 ::ffff:23.33.46.38:80   ESTABLISHED -
+
+tcp        0      0 ::ffff:192.168.1.104:51255 ::ffff:142.251.163.188:5228 ESTABLISHED -
+
+tcp        0      0 ::ffff:192.168.1.104:54779 ::ffff:142.250.217.138:443 ESTABLISHED -
+
+udp        0      0 192.168.1.104:35925     142.250.217.142:443     ESTABLISHED -
+
+udp        0      0 192.168.1.104:49781     142.250.80.110:443      ESTABLISHED -
+
+udp        0      0 192.168.1.104:45175     142.251.210.42:443      ESTABLISHED -
+
+udp    80832      0 192.168.1.104:50296     142.250.217.10:443      ESTABLISHED -
+
+udp        0      0 192.168.1.104:51403     142.250.80.110:443      ESTABLISHED -
+
+udp        0      0 192.168.1.104:41224     142.250.217.10:443      ESTABLISHED -
+
+udp        0      0 192.168.1.104:42849     142.251.45.170:443      ESTABLISHED -
+
+udp        0      0 192.168.1.104:51555     142.251.40.238:443      ESTABLISHED -
+
+udp        0      0 192.168.1.104:59259     142.250.217.10:443      ESTABLISHED -
+
+udp        0      0 192.168.1.104:47535     142.251.210.36:443      ESTABLISHED -
+
+udp        0      0 192.168.1.104:43540     142.250.188.2:443       ESTABLISHED -
+
+udp        0      0 192.168.1.104:35879     142.250.80.98:443       ESTABLISHED -
+
+udp        0      0 192.168.1.104:34895     142.251.40.142:443      ESTABLISHED -
+
+udp        0      0 192.168.1.104:55379     142.251.40.142:443      ESTABLISHED -
+
+udp        0      0 :::5228                 :::*                                -
+
+raw        0      0 :::58                   :::*                    7           -
+
+Active UNIX domain sockets (servers and established)
+
+Proto RefCnt Flags       Type       State         I-Node PID/Program Name    Path
+
+unix  2      [ ]         DGRAM                      9799 -                   /data/misc/wifi/sockets/wpa_ctrl_2757-1
+
+unix  2      [ ]         DGRAM                      9800 -                   /data/misc/wifi/sockets/wpa_ctrl_2757-2
+
+unix  2      [ ACC ]     STREAM     LISTENING       7940 -                   /dev/socket/adbd
+
+unix  2      [ ]         DGRAM                      8036 -                   /data/misc/wifi/sockets/wlan0
+
+unix  2      [ ACC ]     STREAM     LISTENING       8542 -                   @DeviceRootKeyService
+
+unix  2      [ ]         DGRAM                      7177 -                   /dev/socket/logdw
+
+unix  2      [ ACC ]     SEQPACKET  LISTENING       7180 -                   /dev/socket/logdr
+
+unix  2      [ ACC ]     STREAM     LISTENING       6414 -                   @imsd
+
+unix  2      [ ACC ]     STREAM     LISTENING       7182 -                   /dev/socket/logd
+
+unix  2      [ ACC ]     STREAM     LISTENING       6284 -                   /data/.socket_stream
+
+unix  2      [ ACC ]     STREAM     LISTENING       2233 -                   /data/.npswifi_stream
+
+unix  2      [ ACC ]     STREAM     LISTENING       2235 -                   /data/.diag_stream
+
+unix  2      [ ACC ]     STREAM     LISTENING       2230 -                   /data/.diagsocket_stream
+
+unix  2      [ ACC ]     STREAM     LISTENING       6290 -                   /data/.mtp_stream
+
+unix  2      [ ACC ]     SEQPACKET  LISTENING       7581 -                   /data/TMAudioSocketClient
+
+unix  2      [ ACC ]     SEQPACKET  LISTENING       7579 -                   /data/TMAudioSocketServer
+
+unix  2      [ ACC ]     STREAM     LISTENING       9766 -                   @jdwp-control
+
+unix  2      [ ACC ]     STREAM     LISTENING       2256 -                   @FactoryClientSend
+
+unix  2      [ ACC ]     STREAM     LISTENING       7229 -                   @mcdaemon
+
+unix  2      [ ACC ]     STREAM     LISTENING       2237 -                   @diag_mycmc_app2cp
+
+unix  2      [ ACC ]     STREAM     LISTENING      13673 -                   @/data/misc/bluedroid/.a2dp_ctrl
+
+unix  2      [ ACC ]     STREAM     LISTENING       6261 -                   /dev/socket/installd
+
+unix  2      [ ACC ]     STREAM     LISTENING       3453 -                   /dev/socket/dir_enc_report
+
+unix  2      [ ACC ]     STREAM     LISTENING       3456 -                   /dev/socket/ppm
+
+unix  2      [ ACC ]     STREAM     LISTENING       2258 -                   @SatsService
+
+unix  2      [ ACC ]     STREAM     LISTENING       3458 -                   /dev/socket/epm
+
+unix  2      [ ]         STREAM                     6274 -                   /dev/socket/sme_socket
+
+unix  2      [ ACC ]     STREAM     LISTENING       3460 -                   /dev/socket/frigate
+
+unix  2      [ ACC ]     STREAM     LISTENING       6277 -                   /dev/socket/imsd
+
+unix  2      [ ACC ]     STREAM     LISTENING       3462 -                   /dev/socket/cryptd
+
+unix  2      [ ACC ]     STREAM     LISTENING       3464 -                   /dev/socket/vold
+
+unix  2      [ ACC ]     STREAM     LISTENING       2187 -                   /dev/socket/fwmarkd
+
+unix  2      [ ACC ]     STREAM     LISTENING       2190 -                   /dev/socket/mdns
+
+unix  2      [ ACC ]     STREAM     LISTENING       2192 -                   /dev/socket/dnsproxyd
+
+unix  2      [ ACC ]     STREAM     LISTENING       2197 -                   /dev/socket/netd
+
+unix  2      [ ACC ]     SEQPACKET  LISTENING       3481 -                   /dev/socket/lmkd
+
+unix  2      [ ACC ]     STREAM     LISTENING       2699 -                   @knoxVpnFdTransfer
+
+unix  2      [ ACC ]     STREAM     LISTENING       6299 -                   /dev/socket/cs_socket/cs_socket
+
+unix  2      [ ACC ]     STREAM     LISTENING       3548 -                   @android:debuggerd
+
+unix  2      [ ACC ]     STREAM     LISTENING      10331 -                   /data/system/ndebugsocket
+
+unix  2      [ ACC ]     STREAM     LISTENING       2255 -                   @FactoryClientRecv
+
+unix  2      [ ]         STREAM                     3509 -                   /dev/socket/rild-cas
+
+unix  2      [ ACC ]     STREAM     LISTENING       3512 -                   /dev/socket/rild-debug
+
+unix  2      [ ACC ]     STREAM     LISTENING       3514 -                   /dev/socket/sap_uim_socket1
+
+unix  2      [ ACC ]     STREAM     LISTENING       3516 -                   /dev/socket/rild
+
+unix  2      [ ACC ]     STREAM     LISTENING       7431 -                   @Multiclient
+
+unix  2      [ ACC ]     STREAM     LISTENING       3529 -                   /dev/socket/zygote
+
+unix  2      [ ACC ]     STREAM     LISTENING       3538 -                   /dev/socket/sdp
+
+unix  2      [ ACC ]     STREAM     LISTENING       3285 -                   /dev/socket/property_service
+
+unix  4      [ ]         DGRAM                      7956 -                   /dev/socket/wpa_wlan0
+
+unix  2      [ ACC ]     STREAM     LISTENING      13674 -                   @/data/misc/bluedroid/.a2dp_sink_ctrl
+
+unix  2      [ ACC ]     STREAM     LISTENING       2257 -                   @ATDMultiClient
+
+unix  2      [ ACC ]     STREAM     LISTENING       3577 -                   /dev/.secure_storage/ssd_socket
+
+unix  3      [ ]         STREAM     CONNECTED       3283 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      37631 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      37632 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       9576 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       9240 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       4068 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      37627 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       9764 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      14659 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      18175 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      14758 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       9765 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      10955 -                   /dev/socket/adbd
+
+unix  3      [ ]         SEQPACKET  CONNECTED      38555 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       9767 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      12718 -                   @Multiclient
+
+unix  3      [ ]         SEQPACKET  CONNECTED       9458 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       9562 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       9768 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      12819 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED       9547 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED       3606 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      37513 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       9439 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       3596 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       9323 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       9564 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       3579 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      39336 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED       9772 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       6451 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      13742 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      11245 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      15700 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       8355 -                   /data/.socket_stream
+
+unix  3      [ ]         SEQPACKET  CONNECTED      10320 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       8662 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       2250 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      13863 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED       7969 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED       3001 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED       9820 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       2245 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       8569 -                   /dev/socket/dir_enc_report
+
+unix  3      [ ]         STREAM     CONNECTED      14364 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       6453 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       9835 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED       8565 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      11792 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      13672 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      11121 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED       7973 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      11576 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       8566 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      11790 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      11104 -                   @BTHostPowerCtrl
+
+unix  3      [ ]         SEQPACKET  CONNECTED      14369 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED       9139 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       7885 -                   /dev/socket/vold
+
+unix  3      [ ]         SEQPACKET  CONNECTED      11575 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      14374 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED       9137 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      15470 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       6285 -                   /data/.socket_stream
+
+unix  3      [ ]         SEQPACKET  CONNECTED       8003 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED       7880 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      13362 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       7566 -                   @Multiclient
+
+unix  3      [ ]         SEQPACKET  CONNECTED      11510 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      13360 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED       7788 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      13383 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED       7912 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      14016 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      11974 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       8544 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       2319 -                   @Multiclient
+
+unix  3      [ ]         STREAM     CONNECTED      14372 -                   @imsd
+
+unix  3      [ ]         STREAM     CONNECTED       7934 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED       2941 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      13864 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      11341 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      10480 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      11509 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      16426 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      13533 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      10722 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       8354 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      37628 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       8632 -                   /dev/socket/sdp
+
+unix  3      [ ]         STREAM     CONNECTED       3284 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       8307 -                   /dev/socket/epm
+
+unix  3      [ ]         STREAM     CONNECTED      40410 -                   @mcdaemon
+
+unix  3      [ ]         STREAM     CONNECTED       4007 -                   /dev/socket/installd
+
+unix  3      [ ]         SEQPACKET  CONNECTED      37514 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      38556 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      14658 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       8638 -                   /dev/socket/netd
+
+unix  3      [ ]         STREAM     CONNECTED       3628 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       3629 -                   @mcdaemon
+
+unix  3      [ ]         STREAM     CONNECTED      38620 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      12405 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      14757 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED       9459 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      12717 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       8631 -                   /dev/socket/zygote
+
+unix  3      [ ]         SEQPACKET  CONNECTED       3607 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED       9546 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       3597 -                   @mcdaemon
+
+unix  3      [ ]         SEQPACKET  CONNECTED      18174 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      39335 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       9440 -                   @SatsService
+
+unix  3      [ ]         STREAM     CONNECTED       9327 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      12818 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       3580 -                   @mcdaemon
+
+unix  3      [ ]         STREAM     CONNECTED       9322 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      13860 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED       9773 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      36494 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       8661 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      11246 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       2251 -                   @mcdaemon
+
+unix  3      [ ]         SEQPACKET  CONNECTED      15701 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       8352 -                   @Multiclient
+
+unix  3      [ ]         STREAM     CONNECTED       2246 -                   @mcdaemon
+
+unix  3      [ ]         STREAM     CONNECTED       6324 -                   /data/.socket_stream
+
+unix  3      [ ]         SEQPACKET  CONNECTED      13861 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED       3002 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED       9821 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED       7968 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       2321 -                   @Multiclient
+
+unix  3      [ ]         STREAM     CONNECTED      13743 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      14363 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      13671 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       7979 -                   @mcdaemon
+
+unix  3      [ ]         SEQPACKET  CONNECTED       7972 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED       8564 -                   
+
+unix  2      [ ]         STREAM                    11812 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       8568 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      36495 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      10321 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       8567 -                   /dev/socket/cryptd
+
+unix  3      [ ]         STREAM     CONNECTED      13540 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      11789 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      11122 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      11791 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      14373 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       7884 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      15476 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      10479 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED       9138 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED       8002 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      13361 -                   /dev/socket/imsd
+
+unix  3      [ ]         SEQPACKET  CONNECTED       7879 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      15475 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED       8520 -                   /dev/socket/lmkd
+
+unix  3      [ ]         SEQPACKET  CONNECTED      14368 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED       9140 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       6289 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      15469 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      16425 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      14371 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       2524 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED       7787 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      13384 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      11973 -                   
+
+unix  3      [ ]         STREAM     CONNECTED       2317 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      14015 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      13363 -                   /dev/socket/rild
+
+unix  3      [ ]         SEQPACKET  CONNECTED       7913 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      13534 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      11342 -                   
+
+unix  3      [ ]         SEQPACKET  CONNECTED      10721 -                   
+
+unix  3      [ ]         STREAM     CONNECTED      10259 -                   /dev/socket/mdns
+
+unix  3      [ ]         STREAM     CONNECTED       7565 -                   /data/.socket_stream
+
+
+
+----------------------------------------
+Firewall Rules (iptables)
+----------------------------------------
+iptables v1.4.20: can't initialize iptables table `filter': Permission denied (you must be root)
+
+Perhaps iptables or your kernel needs to be upgraded.
+
+
+
+----------------------------------------
+DNS Configuration
+----------------------------------------
+/system/bin/sh: cat: /etc/resolv.conf: No such file or directory
+
+
+
+----------------------------------------
+DNS Server 1
+----------------------------------------
+192.168.1.13
+
+
+
+----------------------------------------
+DNS Server 2
+----------------------------------------
+
+
+
+
+----------------------------------------
+WiFi Interface
+----------------------------------------
+wlan0
+
+
+
+----------------------------------------
+WiFi Status
+----------------------------------------
+ERROR: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+
+----------------------------------------
+Connectivity Info
+----------------------------------------
+ERROR: The term 'head' is not recognized as a name of a cmdlet, function, script file, or executable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+
+----------------------------------------
+TCP Connections
+----------------------------------------
+  sl  local_address rem_address   st tx_queue rx_queue tr tm->when retrnsmt   uid  timeout inode                                                     
+
+   0: 6801A8C0:C320 0A48FA8E:01BB 01 00000000:00000000 00:00000000 00000000 10094        0 32154 1 00000000 20 4 26 10 -1                            
+
+   1: 6801A8C0:EAC8 0AD9FA8E:01BB 01 00000000:00000000 00:00000000 00000000 10008        0 40788 1 00000000 20 4 32 10 -1                            
+
+   2: 6801A8C0:EABF 0AD9FA8E:01BB 01 00000000:00000000 00:00000000 00000000 10008        0 21666 1 00000000 21 4 32 10 -1                            
+
+   3: 6801A8C0:D1BE DF20EFD8:01BB 01 00000000:00000000 00:00000000 00000000 10050        0 46118 1 00000000 21 4 19 10 -1                            
+
+   4: 6801A8C0:D66B 24D2FB8E:01BB 01 00000000:00000000 00:00000000 00000000 10050        0 18691 1 00000000 21 4 28 10 -1                            
+
+   5: 6801A8C0:88FD 6E50FA8E:01BB 01 00000000:00000000 00:00000000 00000000 10008        0 20916 1 00000000 20 4 28 10 -1                            
+
+   6: 6801A8C0:B1B9 02BFFA8E:01BB 06 00000000:00000000 03:00001671 00000000     0        0 0 3 00000000                                              
+
+   7: 6801A8C0:91D8 8ED9FA8E:01BB 01 00000000:000003D0 00:00000000 00000000 10008        0 27333 1 00000000 21 4 32 10 -1                            
+
+   8: 6801A8C0:B524 EE28FB8E:01BB 01 00000000:00000000 00:00000000 00000000 10032        0 31682 1 00000000 21 4 10 11 -1                            
+
+   9: 6801A8C0:EAC9 0AD9FA8E:01BB 01 00000000:00000000 00:00000000 00000000 10008        0 45068 1 00000000 20 4 32 10 -1                            
+
+  10: 6801A8C0:8603 2AD2FB8E:01BB 01 00000000:00000000 00:00000000 00000000 10008        0 37331 1 00000000 20 4 32 10 -1                            
+
+  11: 6801A8C0:8C0C 6250FA8E:01BB 01 00000000:00000000 00:00000000 00000000 10008        0 29927 1 00000000 21 4 28 10 -1                            
+
+
+
+----------------------------------------
+UDP Connections
+----------------------------------------
+  sl  local_address rem_address   st tx_queue rx_queue tr tm->when retrnsmt   uid  timeout inode ref pointer drops             
+
+    1: 6801A8C0:8C55 8ED9FA8E:01BB 01 00000000:00000000 00:00000000 00000000 10008        0 28816 2 00000000 0                 
+
+   33: 6801A8C0:C275 6E50FA8E:01BB 01 00000000:00000000 00:00000000 00000000 10008        0 20910 2 00000000 0                 
+
+   35: 6801A8C0:B077 2AD2FB8E:01BB 01 00000000:00000000 00:00000000 00000000 10008        0 37328 2 00000000 0                 
+
+   36: 6801A8C0:C478 0AD9FA8E:01BB 01 00000000:00000000 00:00000000 00000000 10008        0 44092 2 00000000 0                 
+
+  119: 6801A8C0:C8CB 6E50FA8E:01BB 01 00000000:00000000 00:00000000 00000000 10008        0 21822 2 00000000 0                 
+
+  180: 6801A8C0:A108 0AD9FA8E:01BB 01 00000000:00000000 00:00000000 00000000 10008        0 20861 2 00000000 0                 
+
+  269: 6801A8C0:A761 AA2DFB8E:01BB 01 00000000:00000000 00:00000000 00000000 10032        0 24262 2 00000000 0                 
+
+  271: 6801A8C0:C963 EE28FB8E:01BB 01 00000000:00000000 00:00000000 00000000 10032        0 44056 2 00000000 0                 
+
+  295: 6801A8C0:E77B 0AD9FA8E:01BB 01 00000000:00000000 00:00000000 00000000 10008        0 45064 2 00000000 0                 
+
+  347: 6801A8C0:B9AF 24D2FB8E:01BB 01 00000000:00000000 00:00000000 00000000 10050        0 16943 2 00000000 0                 
+
+  448: 6801A8C0:AA14 02BCFA8E:01BB 01 00000000:00000000 00:00000000 00000000 10008        0 44703 2 00000000 0                 
+
+  467: 6801A8C0:8C27 6250FA8E:01BB 01 00000000:00000000 00:00000000 00000000 10008        0 31010 2 00000000 0                 
+
+  507: 6801A8C0:884F 8E28FB8E:01BB 01 00000000:00000000 00:00000000 00000000 10032        0 19234 2 00000000 0                 
+
+  511: 6801A8C0:D853 8E28FB8E:01BB 01 00000000:00000000 00:00000000 00000000 10032        0 17572 2 00000000 0                 
+
+
+
+----------------------------------------
+Mobile IP
+----------------------------------------
+
+
+
+
+----------------------------------------
+Routing Table
+----------------------------------------
+default via 192.168.1.13 dev wlan0  metric 310 
+
+192.168.1.0/24 dev wlan0  proto kernel  scope link  src 192.168.1.104  metric 310 
+
+
+
