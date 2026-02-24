@@ -1,0 +1,20 @@
+02-23 10:00:34.040 24829 24918 W dex2oat : Compilation of void com.android.server.pm.DefaultPermissionGrantPolicy.grantDefaultSystemHandlerPermissions(int) took 169.539ms
+
+02-23 10:00:34.370 24829 24829 W dex2oat : Compilation of void com.android.server.pm.PersonaManagerService$PersonaHandler.handleMessage(android.os.Message) took 204.785ms
+
+02-23 10:00:34.655 24829 24918 W dex2oat : Compilation of android.content.pm.PersonaInfo com.android.server.pm.PersonaManagerService.readUser(int, int) took 127.444ms
+
+02-23 10:00:35.190 24829 24917 W dex2oat : Compilation of void com.android.server.pm.PackageManagerService.<init>(android.content.Context, com.android.server.pm.Installer, boolean, boolean) took 1.102s
+
+02-23 10:00:35.765 24829 24917 W dex2oat : Compilation of void com.android.server.pm.PackageManagerService.installPackageLI(com.android.server.pm.PackageManagerService$InstallArgs, com.android.server.pm.PackageManagerService$PackageInstalledInfo) took 129.693ms
+
+02-23 10:00:35.920 24829 24916 W dex2oat : Compilation of void com.android.server.power.PowerManagerService.dumpInternal(java.io.PrintWriter) took 179.132ms
+
+02-23 10:00:36.265 24829 24917 W dex2oat : Compilation of android.content.pm.PackageParser$Package com.android.server.pm.PackageManagerService.scanPackageDirtyLI(android.content.pm.PackageParser$Package, int, int, long, android.os.UserHandle) took 285.671ms
+
+02-23 10:00:37.530 24829 24917 W dex2oat : Compilation of void com.android.server.wm.WindowManagerService.performLayoutAndPlaceSurfacesLockedInner(boolean) took 108.672ms
+
+02-23 10:00:38.735 24829 24917 W dex2oat : No verified method for method calling String.<init>: java.lang.String java.io.ByteArrayOutputStream.toString(java.lang.String)
+
+02-23 10:00:38.745 24829 24917 W dex2oat : No verified method for method calling String.<init>: java.lang.String java.io.ByteArrayOutputStream.toString(java.lang.String)
+

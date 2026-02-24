@@ -1,0 +1,2412 @@
+[  409.999823]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  409.999925]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  409.999971]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.000017]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 1
+
+[  410.000061]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 8
+
+[  410.000171]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command -1241402891
+
+[  410.000186]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.000229]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.000280]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.000378]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.000441]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.000482]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.000523]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command 1215293221
+
+[  410.000537]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.000580]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.000622]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.000636]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.000899]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.000914]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.001092]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 5
+
+[  410.001144]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.001186]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 9
+
+[  410.001273]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.001313]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command -1948517703
+
+[  410.001327]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.001365]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 6
+
+[  410.001448]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.001503]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.001523]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.001669]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER ue6036cce no match
+
+[  410.001722]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.001768]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.001782]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.001821]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 7
+
+[  410.001866]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.001880]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.002182]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.002249]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.002270]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.002320]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.002366]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.002380]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.002547]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.002563]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.002657]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 6
+
+[  410.002708]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.002722]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.003171]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.003629]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 7
+
+[  410.003681]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.003725]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.003739]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.004360]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.004379]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.004509]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.004554]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command -102973825
+
+[  410.004572]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.004722]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 7
+
+[  410.004809]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.004854]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.004893]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.005083]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.005103]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.005352]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 7
+
+[  410.005450]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.005548]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.005633]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.005721]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.005783]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.005839]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.005993]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.006052]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.006101]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command 1937115794
+
+[  410.006116]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.006158]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.006200]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.006247]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u8f9455f1 no match
+
+[  410.006296]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  410.006360]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.006459]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 4
+
+[  410.006513]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 3
+
+[  410.006570]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.006585]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.006966]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.007081]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.007134]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.007188]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u3fa0b276 no match
+
+[  410.007239]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.007255]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.007469]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command -1684519013
+
+[  410.007487]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.007533]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 6
+
+[  410.007574]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.007637]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.007652]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.007848]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.007998]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.008090]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.008262]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.008319]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.008334]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.009094]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.009359]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.009378]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.009498]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER ufa31cdfb no match
+
+[  410.009571]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 3
+
+[  410.009664]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u8efdf9f0 no match
+
+[  410.009712]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.009854]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.009932]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 6
+
+[  410.010055]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.010126]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 6
+
+[  410.010164]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u0ad87ad7 no match
+
+[  410.010203]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  410.010243]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  410.010289]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.010347]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.010388]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.010428]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 1
+
+[  410.010490]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.010540]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 4
+
+[  410.010620]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.010672]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 2
+
+[  410.010759]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 2
+
+[  410.010812]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.010855]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command -1403274599
+
+[  410.010874]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.010927]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.010944]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.011086]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.011270]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 6
+
+[  410.011313]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 2
+
+[  410.011359]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 6
+
+[  410.011429]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.011499]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.011513]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.011736]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.011956]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.012017]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 6
+
+[  410.012067]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.012205]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.012260]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.012312]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u20f4ed31 no match
+
+[  410.012367]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.012414]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 7
+
+[  410.012498]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.012592]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  410.012644]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.012698]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 2
+
+[  410.012755]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.012771]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.012829]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.012916]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  410.012971]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER uac539335 no match
+
+[  410.013023]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 9
+
+[  410.013103]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.013157]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.013172]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.013308]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.013323]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.013479]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 9
+
+[  410.013561]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.013576]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.013671]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.013686]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.014230]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.014744]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.014764]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.015037]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.015112]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.015126]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.015212]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.015228]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.015502]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command -999399840
+
+[  410.015519]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.015574]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER ua86db1e5 no match
+
+[  410.015627]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.015642]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.015868]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER uefc75415 no match
+
+[  410.015957]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.016006]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command -193041574
+
+[  410.016020]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.016108]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.016214]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.016267]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER ueb618810 no match
+
+[  410.016368]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.016384]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.016433]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.016450]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.016508]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.016522]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.016784]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.016804]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.017180]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command -1706929217
+
+[  410.017213]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.017467]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.017617]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.017633]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.017804]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.018031]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.018049]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.018360]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 6
+
+[  410.018523]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.018546]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.018663]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.018683]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.018802]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.018872]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.018981]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.019038]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  410.019102]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u33247c2c no match
+
+[  410.019205]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.019265]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.019337]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.019392]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  410.019452]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 6
+
+[  410.019522]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.019607]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 2
+
+[  410.019690]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u1361fd27 no match
+
+[  410.019770]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u89795ff2 no match
+
+[  410.019851]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.019902]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  410.019972]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 5
+
+[  410.020018]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.020075]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.020090]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.020182]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.020203]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.020383]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.020594]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.020612]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.021190]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.021257]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.021368]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 5
+
+[  410.021616]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.021783]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 4
+
+[  410.021827]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 4
+
+[  410.021913]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.021929]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.022092]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.022108]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.022257]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.022327]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  410.022380]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 1
+
+[  410.022451]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.022496]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.022540]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  410.022644]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.022690]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.022734]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.022749]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.022887]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 7
+
+[  410.022949]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.022963]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.023195]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command 1367703156
+
+[  410.023212]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.023258]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.023299]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.023340]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 3
+
+[  410.023383]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.023397]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.023927]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.023947]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.024145]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.024161]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.024387]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 3
+
+[  410.024572]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.024612]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 7
+
+[  410.024663]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 1
+
+[  410.024720]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.024761]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 3
+
+[  410.024800]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.024839]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 5
+
+[  410.024880]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.024951]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.024998]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.025013]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.025114]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.025129]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.025586]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.025605]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.025733]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.025823]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command 1337572889
+
+[  410.025838]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.025932]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 4
+
+[  410.026015]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.026072]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command 939647211
+
+[  410.026086]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.026124]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.026165]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 6
+
+[  410.026259]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.026299]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.026337]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 8
+
+[  410.026377]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 8
+
+[  410.026424]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 3
+
+[  410.026522]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.026563]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  410.026624]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command 854585780
+
+[  410.026639]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.026691]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.026729]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.026769]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.026782]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.026851]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.026865]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.026955]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 9
+
+[  410.027019]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.027032]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.027098]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.027112]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.027321]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.027336]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.027398]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.027412]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.027521]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.027535]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.027795]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u5ac1ca4a no match
+
+[  410.027836]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.027894]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u263c993b no match
+
+[  410.027930]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.027967]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.028004]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.028041]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u5f6f4a78 no match
+
+[  410.028078]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 6
+
+[  410.028176]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.028190]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.028261]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 2
+
+[  410.028300]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.028338]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.028396]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 3
+
+[  410.028805]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.028869]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.028919]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 3
+
+[  410.028961]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 5
+
+[  410.029005]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.029019]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.029398]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.029636]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.029652]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.029788]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.029803]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.029999]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.030160]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.030175]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.030273]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.030289]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.030386]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.030400]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.030496]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.030511]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.030932]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.030988]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.031121]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.031164]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.031243]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.031288]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 5
+
+[  410.031333]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.031419]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.031490]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.031532]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 9
+
+[  410.031569]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.031636]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 3
+
+[  410.031740]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.031755]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.032000]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.032019]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.032327]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.032510]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.032561]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.032576]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.041929]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command -1307134031
+
+[  410.041956]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.042061]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.042118]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 2
+
+[  410.042210]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.042281]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.042630]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 8
+
+[  410.042795]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.042861]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command 656551759
+
+[  410.042877]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.042999]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 8
+
+[  410.043056]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command 1883235615
+
+[  410.043070]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.043143]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.043207]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 3
+
+[  410.043572]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 8
+
+[  410.043649]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.043667]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.043724]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.043831]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.043898]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.043915]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.044104]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.044648]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.044798]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER ub820eb20 no match
+
+[  410.044872]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.044889]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.044949]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command -116765320
+
+[  410.044965]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.045052]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command -463247070
+
+[  410.045067]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.045127]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 5
+
+[  410.045204]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command -868764268
+
+[  410.045220]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.045456]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.045550]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u933997a6 no match
+
+[  410.045679]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.045757]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  410.045818]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.045834]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.045985]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.046047]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER ud1ac4d96 no match
+
+[  410.046133]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.046179]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  410.046255]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command 1039814917
+
+[  410.046271]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.046361]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u7f6c89a9 no match
+
+[  410.046451]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.046544]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.046740]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.046863]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.046915]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u467bbb85 no match
+
+[  410.047013]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 5
+
+[  410.047093]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.047108]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.047173]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.047392]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.047410]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.047470]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.047484]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.047604]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.047874]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.047893]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.048544]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.048638]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.048844]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.048862]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.048969]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.048987]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.049118]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 1
+
+[  410.049166]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command 1209571529
+
+[  410.049181]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.049226]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 6
+
+[  410.049320]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.049365]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 1
+
+[  410.049407]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.049453]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.049467]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.050722]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.050797]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command -2101217491
+
+[  410.050813]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.050869]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.050920]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 2
+
+[  410.050964]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.051041]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.051088]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER ua38ff408 no match
+
+[  410.051141]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.051211]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 6
+
+[  410.051259]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u167b78b9 no match
+
+[  410.051310]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.051445]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command -1711617279
+
+[  410.051460]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.051515]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 3
+
+[  410.051638]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER ua02d9bbb no match
+
+[  410.051723]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.051775]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.051821]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.051866]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.051969]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER ue1aa6560 no match
+
+[  410.059044]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command -1143076066
+
+[  410.059078]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.060084]  [2:    binder_fuzz: 8935] [c2] binder: 8935:8935 got transaction to invalid handle
+
+[  410.060108]  [2:    binder_fuzz: 8935] [c2] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.060587]  [2:    binder_fuzz: 8935] [c2] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.060712]  [2:    binder_fuzz: 8935] [c2] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.060773]  [2:    binder_fuzz: 8935] [c2] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.061124]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 6
+
+[  410.061229]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.061286]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.061387]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.061444]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 1
+
+[  410.061500]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 9
+
+[  410.061552]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.061601]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.061686]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.061736]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  410.061835]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.061852]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.061913]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.062041]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.062173]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.062190]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.062334]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.062462]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.062504]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.062545]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.062661]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.062768]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.062825]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.062867]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.062908]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.062958]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.062974]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.063065]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command 1901027881
+
+[  410.063079]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.063123]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u0772fb32 no match
+
+[  410.063165]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER ucbc3fa13 no match
+
+[  410.063203]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.063241]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.063254]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.063521]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.063537]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.063872]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.063911]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  410.063977]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.063991]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.064029]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.064076]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.064202]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  410.064260]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.064297]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u4e11aba7 no match
+
+[  410.064332]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u22187983 no match
+
+[  410.064366]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.064399]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.064432]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.064481]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.064553]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.064659]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.064697]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.064736]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.064749]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.064833]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 5
+
+[  410.064933]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 1
+
+[  410.065007]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.065049]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.065091]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER ud1e16e92 no match
+
+[  410.065130]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.065166]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.065179]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.065279]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.065292]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.065340]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.065354]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.065482]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.065541]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 6
+
+[  410.065646]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.065681]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.065754]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 3
+
+[  410.065788]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.065825]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.065838]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.065912]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command -2073163445
+
+[  410.065926]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.066025]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 9
+
+[  410.066063]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.066167]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u172f2584 no match
+
+[  410.066208]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 1
+
+[  410.066289]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.066328]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.066341]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.066816]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.066832]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.066960]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.066974]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.067064]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.067078]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.067143]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.067156]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.067370]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 3
+
+[  410.067411]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.067451]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command -1246099286
+
+[  410.067464]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.067502]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.067516]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.067835]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.067851]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.068287]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command 911373415
+
+[  410.068305]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.068367]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.070302]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.070403]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.070533]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER uf4bcda90 no match
+
+[  410.070588]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.070672]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u96d15cbe no match
+
+[  410.070718]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.070786]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.070915]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u47482b9d no match
+
+[  410.070964]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command 1832557728
+
+[  410.070981]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.071033]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER ufb6ece58 no match
+
+[  410.071077]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.071122]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.071141]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.071467]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.071485]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.071824]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.072120]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.072137]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.072809]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 7
+
+[  410.072877]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.072939]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  410.073030]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.073049]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.073320]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.073340]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.073818]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.073938]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.073954]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.074005]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.074055]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.074154]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command 1173084234
+
+[  410.074172]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.074270]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.074284]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.074328]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.074342]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.074492]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.074538]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.074579]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 6
+
+[  410.074722]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.074738]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.074934]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.074950]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.075054]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.075069]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.075126]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.075140]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.075286]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.075393]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.075409]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.075607]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.075662]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command 42228647
+
+[  410.075679]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.075754]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.075823]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 4
+
+[  410.075866]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.075963]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.076008]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command -1116665050
+
+[  410.076022]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.076073]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  410.076136]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.076151]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.076298]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.076314]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.076429]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.076469]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.076509]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 7
+
+[  410.076547]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.076583]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  410.076637]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.076693]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.076778]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.076792]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.076993]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 8
+
+[  410.077115]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.077155]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.077169]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.077523]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.077567]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.077620]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.077634]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.077674]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.077715]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 6
+
+[  410.077779]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 1
+
+[  410.078215]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.078235]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.078385]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.078723]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 9
+
+[  410.078769]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 7
+
+[  410.078869]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 3
+
+[  410.079228]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u8e96f37e no match
+
+[  410.079305]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.079320]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.079398]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.079448]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u91c7e565 no match
+
+[  410.079488]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  410.079528]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 4
+
+[  410.079590]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 3
+
+[  410.079688]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.079729]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.079769]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 2
+
+[  410.079869]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command 2331853
+
+[  410.079885]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.079947]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.080017]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.080075]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 1
+
+[  410.080136]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u58517177 no match
+
+[  410.080216]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.080254]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.080303]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command 1216295498
+
+[  410.080318]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.080391]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  410.080461]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.080475]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.080515]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 4
+
+[  410.080605]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER uebfce037 no match
+
+[  410.080647]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command -1970577069
+
+[  410.080661]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.080732]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 4
+
+[  410.080776]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.080791]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.080956]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 9
+
+[  410.081005]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 3
+
+[  410.081054]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.081070]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.081130]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.081181]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.081195]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.081461]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.081555]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.081597]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 9
+
+[  410.081641]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.081654]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.081778]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.081793]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.081869]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.082038]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.082053]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.082736]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.082757]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.082935]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.082983]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.082996]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.083338]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.083531]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.083574]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER uc01ae590 no match
+
+[  410.083647]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.083691]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 1
+
+[  410.083732]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.083770]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.083849]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.083864]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.083908]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.083921]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.084248]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.084306]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.084426]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.084471]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.084539]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.084553]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.084628]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.084642]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.084694]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.084928]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.084945]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.084987]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.085056]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.085071]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.085134]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.085149]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.085227]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 9
+
+[  410.085267]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command -586309250
+
+[  410.085281]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.085406]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 2
+
+[  410.085452]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command 72630578
+
+[  410.085467]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.085557]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.085621]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.085744]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.085826]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.085899]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.085940]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.086002]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.086129]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.086196]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u8dd9d06f no match
+
+[  410.086234]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.086311]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command 1743734561
+
+[  410.086325]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.086461]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.086548]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.086562]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.086637]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.086675]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.086726]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.086796]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u6231f5d5 no match
+
+[  410.086860]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER uc5bcbee8 no match
+
+[  410.086898]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 4
+
+[  410.086988]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.087032]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 3
+
+[  410.087137]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.087151]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.087224]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.087272]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.087286]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.087343]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 8
+
+[  410.087381]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 7
+
+[  410.087438]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.087560]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.087576]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.087681]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.087724]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.087870]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u36835f17 no match
+
+[  410.087914]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 3
+
+[  410.087977]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.087991]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.088136]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.088356]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.088878]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 9
+
+[  410.088937]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.088952]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.089023]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.089069]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 4
+
+[  410.089117]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.089131]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.089521]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 7
+
+[  410.089624]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.089669]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.089683]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.089785]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.089842]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.089894]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.089915]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.090090]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.090106]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.090304]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 4
+
+[  410.090405]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 3
+
+[  410.090445]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.090482]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.090517]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.090615]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.090666]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 2
+
+[  410.090762]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.090778]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.090833]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.090850]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.090894]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.090938]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.091006]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.091048]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.091085]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.091125]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.091196]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u30f7064c no match
+
+[  410.091238]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.091280]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 8
+
+[  410.091342]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.091380]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.091393]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.091483]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.091657]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.091973]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u4c4e9b05 no match
+
+[  410.092028]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.092130]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.092144]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.092539]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.092557]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.092665]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.092680]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.093032]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.093050]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.093127]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.093142]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.093324]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 5
+
+[  410.093370]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.097565]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.097590]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.097701]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  410.097784]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.097800]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.097846]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command -1429555013
+
+[  410.097864]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.097977]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.097992]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.098041]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u91d66610 no match
+
+[  410.098119]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 1
+
+[  410.098262]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 2
+
+[  410.098322]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.098471]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 8
+
+[  410.098542]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 1
+
+[  410.098586]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.098600]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.098680]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.098806]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.098944]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.098984]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.099046]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.099084]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u4cd9afaa no match
+
+[  410.099120]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.099167]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.099257]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.099328]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.099341]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.099464]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.099732]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.099781]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.099796]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.100045]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.100148]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command 671547898
+
+[  410.100163]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.100226]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.100264]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.100507]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 4
+
+[  410.100562]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u73299d6a no match
+
+[  410.100611]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.100625]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.100720]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 7
+
+[  410.100766]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.100804]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.100844]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.100861]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.101110]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 5
+
+[  410.101153]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.101193]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.101230]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u2e354cf1 no match
+
+[  410.101279]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.101407]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 3
+
+[  410.101464]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 8
+
+[  410.101499]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.101566]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.101604]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command 1522887488
+
+[  410.101618]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.101655]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.101726]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.101764]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.101801]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 4
+
+[  410.101891]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command 1187413567
+
+[  410.101905]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.101966]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.102018]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 6
+
+[  410.102088]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u2b5eb99c no match
+
+[  410.102134]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.102195]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.102233]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.102268]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.102306]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command 146292794
+
+[  410.102320]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.102359]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 3
+
+[  410.102397]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.102411]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.102533]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 5
+
+[  410.102574]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.102660]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 7
+
+[  410.102704]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.102746]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.102759]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.103006]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command 56302644
+
+[  410.103022]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.103066]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 2
+
+[  410.103170]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 6
+
+[  410.103307]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.103351]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.103365]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.103963]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 7
+
+[  410.104161]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command -1249339197
+
+[  410.104180]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.104235]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.104296]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.104353]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command 1523880100
+
+[  410.104369]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  410.104418]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u6d7c6d68 no match
+
+[  410.104562]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.104665]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.104713]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.104790]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.104859]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.105050]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.105070]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.105304]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.105362]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.105376]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.105429]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.105470]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.105484]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.105788]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.105834]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.105947]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.106000]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.106015]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.106077]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.106143]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 4
+
+[  410.106187]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.106201]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.106300]  [1:    binder_fuzz: 8935] [c1] binder: BINDER_SET_CONTEXT_MGR already set
+
+[  410.106315]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40046207 bec8563c returned -16
+
+[  410.106583]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.107122]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.107219]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 9
+
+[  410.107275]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 5
+
+[  410.107335]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl 40086203 bec8563c returned -22
+
+[  410.109421]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  410.109518]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 5
+
+[  410.109674]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 6
+
+[  410.109825]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 got transaction to invalid handle
+
+[  410.109843]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 transaction failed 29201, size 0-0
+
+[  410.110075]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u572a654c no match
+
+[  410.110193]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.110238]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.110307]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.110394]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 8
+
+[  410.110444]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER ueb9489f4 no match
+
+[  410.110486]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.110528]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.110574]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 refcount change on invalid ref 9
+
+[  410.110633]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 BC_FREE_BUFFER u  (null) no match
+
+[  410.110687]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ERROR: BC_REGISTER_LOOPER called without request
+
+[  410.110736]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 unknown command 51380391
+
+[  410.110751]  [1:    binder_fuzz: 8935] [c1] binder: 8935:8935 ioctl c0186201 bec85574 returned -22
+
+[  411.085775]  [3:    kworker/3:0:   25] [c3] [SX9500]: sx9500_get_data - cm=257952,uf=269,av=256,df=0,Of=2157 (0)
+
+[  411.874794]  [1:ConnectivitySer: 3034] [c1] binder: 2769:3034 transaction failed 29189, size 320-0
+
+[  412.141035]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x448, ocv = 4281
+
+[  412.147370]  [0:    kworker/0:3: 2997] [c0] sm5703_test_read: 0x4 = 0xbe, 0x5 = 0xff, 0x6 = 0xf3, 0x7 = 0xff, 0x8 = 0x08, 0x9 = 0x08, 0xa = 0x07, 0xb = 0x00, 0xc = 0x55, 0xd = 0x07, 0xe = 0x03, 0xf = 0x07, 0x10 = 0x16, 0x11 = 0x30, 0x12 = 0xf8, 0x13 = 0x08, 0x60 = 0x03, 0x6b = 0x20, 0x66 = 0x00, 
+
+[  412.148342]  [0:    kworker/0:3: 2997] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(289), Temp-ADC(1854)
+
+[  412.149359]  [0:    kworker/0:3: 2997] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(289), Temp-ADC(1854)
+
+[  412.149396]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[  412.149419]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[  412.150561]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x2a70, temperature = 424
+
+[  412.150848]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x448, ocv = 4281
+
+[  412.150881]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 424, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 289
+
+[  412.151392]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6224, soc = 981
+
+[  412.151624]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[  412.151868]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[  412.152285]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[  412.152589]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[  412.152891]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[  412.153761]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[  412.154025]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[  412.154396]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[  412.154765]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[  412.155023]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[  412.155270]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[  412.155517]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[  412.156849]  [0:    kworker/0:3: 2997] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[  412.157915]  [0:    kworker/0:3: 2997] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[  412.158934]  [0:    kworker/0:3: 2997] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[  412.159995]  [0:    kworker/0:3: 2997] [c0] 0x85=0x8199, 0x86=0x003f, 0x87=0x4e84, 0x28=0x0364 
+
+[  412.160019]  [0:    kworker/0:3: 2997] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[  412.160041]  [0:    kworker/0:3: 2997] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4253mV),Inow(-195mA),Imax(450mA),SOC(100%),Tbat(289),Tchg(0),is_hc_usb(0)
+
+[  412.160089]  [0:    kworker/0:3: 2997] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[  412.160407]  [0:    kworker/0:3: 2997] [c0] sm5703_get_charging_health : is_charging = 1, cable_type = 4, is_current_reduced = 0
+
+[  412.160601]  [0:    kworker/0:3: 2997] [c0] sm5703_get_charging_health: SM5703_CNTL, nCHG : 0x55, 0
+
+[  412.160617]  [0:    kworker/0:3: 2997] [c0] sm5703_get_charging_health : vbus_status = 32
+
+[  412.160628]  [0:    kworker/0:3: 2997] [c0] sm5703_get_charging_health : Health : 1
+
+[  412.160686]  [0:    kworker/0:3: 2997] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Charging), mode(Normal), Health(Good), Cable(4), level(100%)
+
+[  412.160822]  [0:    kworker/0:3: 2997] [c0] sec_chg_get_property: slow-charging mode
+
+[  412.165021]  [1:        healthd: 2177] [c1] sec_chg_get_property: slow-charging mode
+
+[  412.165350]  [1:        healthd: 2177] [c1] sec_bat_show_attrs: waterproof event
+
+[  412.165426]  [1:        healthd: 2177] [c1] sec_bat_show_attrs: waterproof event
+
+[  412.165631]  [1:        healthd: 2177] [c1] healthd: battery l=100 v=4253 t=28.9 h=2 st=3 c=0 o=4 ca=-194 ct=2 ps=0 chg=u 2026-02-23 18:53:53.886910745 UTC
+
+[  412.165675]  [1:        healthd: 2177] [c1] healthd: battery l=100 v=4253 t=28.9 h=2 st=3 c=0 o=4 ca=-194 ct=2 ps=0 chg=u 2026-02-23 18:53:53.886910745 UTC hv=0 sdc=0 sec=0 chg=u
+
+[  412.165700]  [1:        healthd: 2177] [c1] healthd-android: healthd_mode_android_battery_update
+
+[  412.165722]  [1:        healthd: 2177] [c1] BatteryPropertiesRegistrar: notifyListeners : start
+
+[  412.165748]  [1:        healthd: 2177] [c1] IBatteryPropertiesListener : batteryPropertiesChanged!
+
+[  412.165748]  [1:        healthd: 2177] : BatteryPropertiesRegistrar: notifyListeners : done
+
+[  412.167070]  [3:       Binder_7: 3509] [c3] logger: !@BatteryListener : batteryPropertiesChanged!
+
+[  412.805592] I[0:ex.file.manager: 8699] [c0] [BT] update_host_wake_locked host_wake is deasserted. release wakelock in 1s
+
+[  412.871850]  [3:    lowpool[22]: 7217] [c3] binder: 4556:7217 transaction failed 29189, size 160-0
+
+[  415.743290]  [1:       Binder_4: 8437] [c1] usb: state_show buf=CONFIGURED
+
+[  418.053512] I[0:pool-24-thread-: 9077] [c0] [BT] update_host_wake_locked host_wake is deasserted. release wakelock in 1s
+
+[  419.793727]  [2:   kworker/u8:4: 1325] [c2] [SENSOR] k2hh_work_func: x = -559, y = -694, z = 8022 (ra:0)
+
+[  422.162254]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x448, ocv = 4281
+
+[  422.166759]  [0:    kworker/0:3: 2997] [c0] sm5703_test_read: 0x4 = 0xbe, 0x5 = 0xff, 0x6 = 0xf3, 0x7 = 0xff, 0x8 = 0x08, 0x9 = 0x08, 0xa = 0x07, 0xb = 0x00, 0xc = 0x55, 0xd = 0x07, 0xe = 0x03, 0xf = 0x07, 0x10 = 0x16, 0x11 = 0x30, 0x12 = 0xf8, 0x13 = 0x08, 0x60 = 0x03, 0x6b = 0x20, 0x66 = 0x00, 
+
+[  422.167658]  [0:    kworker/0:3: 2997] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(289), Temp-ADC(1856)
+
+[  422.168380]  [0:    kworker/0:3: 2997] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(289), Temp-ADC(1856)
+
+[  422.168431]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[  422.168454]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[  422.169228]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x2a70, temperature = 424
+
+[  422.169441]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x448, ocv = 4281
+
+[  422.169464]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 424, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 289
+
+[  422.169835]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6218, soc = 980
+
+[  422.170045]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[  422.170255]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[  422.170467]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[  422.170677]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[  422.170888]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[  422.171098]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[  422.171309]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[  422.171519]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[  422.171730]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[  422.171943]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[  422.172154]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[  422.172364]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[  422.173448]  [0:    kworker/0:3: 2997] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[  422.174287]  [0:    kworker/0:3: 2997] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[  422.175117]  [0:    kworker/0:3: 2997] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[  422.175945]  [0:    kworker/0:3: 2997] [c0] 0x85=0x0024, 0x86=0x001c, 0x87=0x4e82, 0x28=0x0458 
+
+[  422.175961]  [0:    kworker/0:3: 2997] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[  422.175980]  [0:    kworker/0:3: 2997] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4281mV),Inow(-7mA),Imax(450mA),SOC(100%),Tbat(289),Tchg(0),is_hc_usb(0)
+
+[  422.175995]  [0:    kworker/0:3: 2997] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[  422.176201]  [0:    kworker/0:3: 2997] [c0] sm5703_get_charging_health : is_charging = 1, cable_type = 4, is_current_reduced = 0
+
+[  422.176393]  [0:    kworker/0:3: 2997] [c0] sm5703_get_charging_health: SM5703_CNTL, nCHG : 0x55, 0
+
+[  422.176405]  [0:    kworker/0:3: 2997] [c0] sm5703_get_charging_health : vbus_status = 32
+
+[  422.176415]  [0:    kworker/0:3: 2997] [c0] sm5703_get_charging_health : Health : 1
+
+[  422.176435]  [0:    kworker/0:3: 2997] [c0] sec-battery battery.31: sec_bat_time_management: Charging Time : 421 secs
+
+[  422.176452]  [0:    kworker/0:3: 2997] [c0] sec-battery battery.31: sec_bat_temperature: HLT(800) HLR(750) HT(550), HR(500), LT(-50), LR(0)
+
+[  422.176647]  [0:    kworker/0:3: 2997] [c0] sec_bat_swelling_check: status(1), swell_mode(0:0), cv(0x10f4), temp(289)
+
+[  422.176661]  [0:    kworker/0:3: 2997] [c0] sec_bat_check_fullcharged : full_check_type(2)
+
+[  422.176675]  [0:    kworker/0:3: 2997] [c0] sec-battery battery.31: sec_bat_fullcharged_check: Charging Mode : Normal
+
+[  422.176691]  [0:    kworker/0:3: 2997] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Charging), mode(Normal), Health(Good), Cable(4), level(100%)
+
+[  422.176754]  [0:    kworker/0:3: 2997] [c0] sec_chg_get_property: slow-charging mode
+
+[  422.180578]  [2:        healthd: 2177] [c2] sec_chg_get_property: slow-charging mode
+
+[  422.180846]  [2:        healthd: 2177] [c2] sec_bat_show_attrs: waterproof event
+
+[  422.180907]  [2:        healthd: 2177] [c2] sec_bat_show_attrs: waterproof event
+
+[  422.181068]  [2:        healthd: 2177] [c2] healthd: battery l=100 v=4281 t=28.9 h=2 st=3 c=0 o=4 ca=-6 ct=2 ps=0 chg=u 2026-02-23 18:54:03.902360438 UTC
+
+[  422.181101]  [2:        healthd: 2177] [c2] healthd: battery l=100 v=4281 t=28.9 h=2 st=3 c=0 o=4 ca=-6 ct=2 ps=0 chg=u 2026-02-23 18:54:03.902360438 UTC hv=0 sdc=0 sec=0 chg=u
+
+[  422.181124]  [2:        healthd: 2177] [c2] healthd-android: healthd_mode_android_battery_update
+
+[  422.181145]  [2:        healthd: 2177] [c2] BatteryPropertiesRegistrar: notifyListeners : start
+
+[  422.181168]  [2:        healthd: 2177] [c2] IBatteryPropertiesListener : batteryPropertiesChanged!
+
+[  422.181168]  [2:        healthd: 2177] : BatteryPropertiesRegistrar: notifyListeners : done
+
+[  422.238609]  [3:    kworker/3:0:   25] [c3] [VIB] sec_vib_log_show [0.000 : 0.000] off
+
+[  422.396415]  [1:    lowpool[22]: 7217] [c1] binder: 4556:7217 transaction failed 29189, size 160-0
+
+[  422.556540] I[0:      swapper/0:    0] [c0] [BT] update_host_wake_locked host_wake is deasserted. release wakelock in 1s
+
+[  425.765442]  [1:       watchdog: 3344] [c1] logger: !@Sync 9 [02-23 10:54:07.486]
+
+[  427.940750] I[0:      swapper/0:    0] [c0] [BT] update_host_wake_locked host_wake is deasserted. release wakelock in 1s
+
+[  431.518546]  [0:    kworker/0:3: 2997] [c0] muic_print_reg_log:e(0)0 13(1)0 14(0)0 15(0)0 1b(0)0 1d(3)0 20(4)0 21(0)0 24(4)0 3a(0)0 2(1f)0 2(1e)1 2(1e)0 2(1e)0 3(0)0 4(0)0 a(4)0 b(0)0 15(0)0 1d(3)0 7(1f)0 13(1)0 13(25)1 13(25)0 13(25)0 
+
+[  431.520468]  [0:    kworker/0:3: 2997] [c0] muic_print_reg_dump:CT:1e IM1:dc IM2:0 MS1:25 MS2:0 ADC:1f DT1:4 DT2:0 DT3:0 RS1:3
+
+[  432.178490]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x448, ocv = 4281
+
+[  432.182977]  [0:    kworker/0:3: 2997] [c0] sm5703_test_read: 0x4 = 0xbe, 0x5 = 0xff, 0x6 = 0xf3, 0x7 = 0xff, 0x8 = 0x08, 0x9 = 0x08, 0xa = 0x07, 0xb = 0x00, 0xc = 0x55, 0xd = 0x07, 0xe = 0x03, 0xf = 0x07, 0x10 = 0x16, 0x11 = 0x30, 0x12 = 0xf8, 0x13 = 0x08, 0x60 = 0x03, 0x6b = 0x20, 0x66 = 0x00, 
+
+[  432.183895]  [0:    kworker/0:3: 2997] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(289), Temp-ADC(1857)
+
+[  432.184621]  [0:    kworker/0:3: 2997] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(289), Temp-ADC(1857)
+
+[  432.184642]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[  432.184662]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[  432.185448]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x2a60, temperature = 423
+
+[  432.185665]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x448, ocv = 4281
+
+[  432.185689]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 423, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7e85, bat_temp = 289
+
+[  432.186069]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6218, soc = 980
+
+[  432.186284]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[  432.186500]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[  432.186722]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[  432.186942]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[  432.187157]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[  432.187372]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[  432.187584]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[  432.187798]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[  432.188012]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[  432.188227]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[  432.188443]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[  432.188660]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[  432.189467]  [0:    kworker/0:3: 2997] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[  432.190276]  [0:    kworker/0:3: 2997] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[  432.191081]  [0:    kworker/0:3: 2997] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[  432.191885]  [0:    kworker/0:3: 2997] [c0] 0x85=0x0066, 0x86=0x0030, 0x87=0x4e82, 0x28=0x06cc 
+
+[  432.191901]  [0:    kworker/0:3: 2997] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[  432.191918]  [0:    kworker/0:3: 2997] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4289mV),Inow(39mA),Imax(450mA),SOC(100%),Tbat(289),Tchg(0),is_hc_usb(0)
+
+[  432.191933]  [0:    kworker/0:3: 2997] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[  432.192125]  [0:    kworker/0:3: 2997] [c0] sm5703_get_charging_health : is_charging = 1, cable_type = 4, is_current_reduced = 0
+
+[  432.192313]  [0:    kworker/0:3: 2997] [c0] sm5703_get_charging_health: SM5703_CNTL, nCHG : 0x55, 0
+
+[  432.192325]  [0:    kworker/0:3: 2997] [c0] sm5703_get_charging_health : vbus_status = 32
+
+[  432.192336]  [0:    kworker/0:3: 2997] [c0] sm5703_get_charging_health : Health : 1
+
+[  432.192355]  [0:    kworker/0:3: 2997] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Charging), mode(Normal), Health(Good), Cable(4), level(100%)
+
+[  432.192418]  [0:    kworker/0:3: 2997] [c0] sec_chg_get_property: slow-charging mode
+
+[  432.194773]  [1:        healthd: 2177] [c1] sec_chg_get_property: slow-charging mode
+
+[  432.195027]  [1:        healthd: 2177] [c1] sec_bat_show_attrs: waterproof event
+
+[  432.195086]  [1:        healthd: 2177] [c1] sec_bat_show_attrs: waterproof event
+
+[  432.195241]  [1:        healthd: 2177] [c1] healthd: battery l=100 v=4289 t=28.9 h=2 st=3 c=0 o=4 ca=38 ct=2 ps=0 chg=u 2026-02-23 18:54:13.916538708 UTC
+
+[  432.195278]  [1:        healthd: 2177] [c1] healthd: battery l=100 v=4289 t=28.9 h=2 st=3 c=0 o=4 ca=38 ct=2 ps=0 chg=u 2026-02-23 18:54:13.916538708 UTC hv=0 sdc=0 sec=0 chg=u
+
+[  432.195301]  [1:        healthd: 2177] [c1] healthd-android: healthd_mode_android_battery_update
+
+[  432.195322]  [1:        healthd: 2177] [c1] BatteryPropertiesRegistrar: notifyListeners : start
+
+[  432.195346]  [1:        healthd: 2177] [c1] IBatteryPropertiesListener : batteryPropertiesChanged!
+
+[  432.195346]  [1:        healthd: 2177] : BatteryPropertiesRegistrar: notifyListeners : done
+
+[  432.880773] I[0:      swapper/0:    0] [c0] [BT] update_host_wake_locked host_wake is deasserted. release wakelock in 1s
+
+[  433.034034]  [1:       Binder_E: 3861] [c1] logger: !@BatteryListener : batteryPropertiesChanged!
+
+[  433.041449]  [3:       Binder_2: 2783] [c3] logger: !@BatteryListener : batteryPropertiesChanged!
+
+[  433.088095] I[3:        kswapd0:  666] [c3] mif: LNK-TX(12): fc eb 0c 00 08 00 37 00 07 01 02 01
+
+[  433.090444] I[0:id.gms.unstable: 8220] [c0] mif: LNK-RX(24): fc eb 15 00 11 00 3c 37 07 01 02 01 00 00 00 00 ...
+
+[  433.498024]  [2:       Binder_A: 3832] [c2] [SENSOR] k2hh_set_odr: change odr 3
+
+[  433.499204]  [2:       Binder_A: 3832] [c2] [SENSOR] k2hh_set_mode: change mode 0
+
+[  433.500477]  [2:       Binder_A: 3832] [c2] [SENSOR] k2hh_set_mode: change mode 1
+
+[  433.500500]  [2:       Binder_A: 3832] [c2] [SENSOR] k2hh_delay_store: poll_delay = 66667000
+
+[  434.860595]  [0:   kworker/u8:3: 1314] [c0] [SENSOR] k2hh_work_func: x = -553, y = -683, z = 8010 (ra:0)
+
+[  437.588008] I[0:      swapper/0:    0] [c0] [BT] update_host_wake_locked host_wake is deasserted. release wakelock in 1s
+
+[  438.128934] I[0:AppLovinSdk:sha: 9198] [c0] [BT] update_host_wake_locked host_wake is deasserted. release wakelock in 1s
+
+[  442.085685]  [3:    kworker/3:0:   25] [c3] [SX9500]: sx9500_get_data - cm=257949,uf=262,av=256,df=0,Of=2157 (0)
+
+[  442.194490]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x448, ocv = 4281
+
+[  442.199562]  [0:    kworker/0:3: 2997] [c0] sm5703_test_read: 0x4 = 0xbe, 0x5 = 0xff, 0x6 = 0xf3, 0x7 = 0xff, 0x8 = 0x08, 0x9 = 0x08, 0xa = 0x07, 0xb = 0x00, 0xc = 0x55, 0xd = 0x07, 0xe = 0x03, 0xf = 0x07, 0x10 = 0x16, 0x11 = 0x30, 0x12 = 0xf8, 0x13 = 0x08, 0x60 = 0x03, 0x6b = 0x20, 0x66 = 0x00, 
+
+[  442.200589]  [0:    kworker/0:3: 2997] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(289), Temp-ADC(1854)
+
+[  442.201374]  [0:    kworker/0:3: 2997] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(289), Temp-ADC(1855)
+
+[  442.201407]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[  442.201430]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[  442.202414]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x2a60, temperature = 423
+
+[  442.202823]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x448, ocv = 4281
+
+[  442.202855]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 423, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 289
+
+[  442.203519]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6218, soc = 980
+
+[  442.203776]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[  442.204085]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[  442.204323]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[  442.204566]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[  442.204901]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[  442.205154]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[  442.205452]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[  442.205691]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[  442.205933]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[  442.206169]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[  442.206399]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[  442.206728]  [0:    kworker/0:3: 2997] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[  442.207993]  [0:    kworker/0:3: 2997] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[  442.209101]  [0:    kworker/0:3: 2997] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[  442.210161]  [0:    kworker/0:3: 2997] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[  442.211043]  [0:    kworker/0:3: 2997] [c0] 0x85=0x806a, 0x86=0x001e, 0x87=0x4e82, 0x28=0x04c4 
+
+[  442.211063]  [0:    kworker/0:3: 2997] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[  442.211085]  [0:    kworker/0:3: 2997] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4269mV),Inow(-70mA),Imax(450mA),SOC(100%),Tbat(289),Tchg(0),is_hc_usb(0)
+
+[  442.211100]  [0:    kworker/0:3: 2997] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[  442.211291]  [0:    kworker/0:3: 2997] [c0] sm5703_get_charging_health : is_charging = 1, cable_type = 4, is_current_reduced = 0
+
+[  442.211471]  [0:    kworker/0:3: 2997] [c0] sm5703_get_charging_health: SM5703_CNTL, nCHG : 0x55, 0
+
+[  442.211485]  [0:    kworker/0:3: 2997] [c0] sm5703_get_charging_health : vbus_status = 32
+
+[  442.211496]  [0:    kworker/0:3: 2997] [c0] sm5703_get_charging_health : Health : 1
+
+[  442.211516]  [0:    kworker/0:3: 2997] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Charging), mode(Normal), Health(Good), Cable(4), level(100%)
+
+[  442.211587]  [0:    kworker/0:3: 2997] [c0] sec_chg_get_property: slow-charging mode
+
+[  442.215817]  [1:        healthd: 2177] [c1] sec_chg_get_property: slow-charging mode
+
+[  442.216160]  [1:        healthd: 2177] [c1] sec_bat_show_attrs: waterproof event
+
+[  442.216235]  [1:        healthd: 2177] [c1] sec_bat_show_attrs: waterproof event
+
+[  442.216537]  [1:        healthd: 2177] [c1] healthd: battery l=100 v=4269 t=28.9 h=2 st=3 c=0 o=4 ca=-70 ct=2 ps=0 chg=u 2026-02-23 18:54:23.937801516 UTC
+
+[  442.216581]  [1:        healthd: 2177] [c1] healthd: battery l=100 v=4269 t=28.9 h=2 st=3 c=0 o=4 ca=-70 ct=2 ps=0 chg=u 2026-02-23 18:54:23.937801516 UTC hv=0 sdc=0 sec=0 chg=u
+
+[  442.216605]  [1:        healthd: 2177] [c1] healthd-android: healthd_mode_android_battery_update
+
+[  442.216630]  [1:        healthd: 2177] [c1] BatteryPropertiesRegistrar: notifyListeners : start
+
+[  442.216654]  [1:        healthd: 2177] [c1] IBatteryPropertiesListener : batteryPropertiesChanged!
+
+[  442.216654]  [1:        healthd: 2177] : BatteryPropertiesRegistrar: notifyListeners : done
+
+[  442.217876]  [3:       Binder_4: 3128] [c3] logger: !@BatteryListener : batteryPropertiesChanged!
+

@@ -1,0 +1,2314 @@
+[ 1433.118555]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 unknown command 16307501
+
+[ 1433.118569]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl c0186201 beb47574 returned -22
+
+[ 1433.118654]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.118668]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.119043]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.119286]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.119431]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 4
+
+[ 1433.119470]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.119525]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 1
+
+[ 1433.119582]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.119619]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u2f52eaaa no match
+
+[ 1433.119656]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u8746513c no match
+
+[ 1433.119722]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.119757]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.119771]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.119937]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.119951]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.120178]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.120215]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.120229]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.120295]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.120362]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.120479]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.120493]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.120600]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.120758]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.121199]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.121474]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.121594]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.121630]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.121643]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.121701]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 unknown command -601454547
+
+[ 1433.121715]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl c0186201 beb47574 returned -22
+
+[ 1433.121752]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.121793]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 5
+
+[ 1433.121851]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.121889]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 6
+
+[ 1433.121958]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.121971]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.122120]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.122156]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.122329]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.122469]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER uf9eef356 no match
+
+[ 1433.122507]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.122574]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.122610]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[ 1433.122667]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[ 1433.122806]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.122959]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 2
+
+[ 1433.122996]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[ 1433.123072]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[ 1433.123160]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 0
+
+[ 1433.123228]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[ 1433.123316]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.123418]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.123569]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.123638]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 unknown command 1377461703
+
+[ 1433.123653]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl c0186201 beb47574 returned -22
+
+[ 1433.123782]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.123827]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.123841]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.124060]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.124295]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 2
+
+[ 1433.124364]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29189, size 0-0
+
+[ 1433.124648]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.124876]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.125087]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.125362]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.125464]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u03afd184 no match
+
+[ 1433.125508]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 5
+
+[ 1433.125545]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.125615]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.125629]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.125946]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.125988]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.126026]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.126062]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 2
+
+[ 1433.126100]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 unknown command -1748221751
+
+[ 1433.126114]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl c0186201 beb47574 returned -22
+
+[ 1433.126152]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.126166]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.126507]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.126981]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.127034]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.127076]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u8b846624 no match
+
+[ 1433.127180]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[ 1433.127297]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.127405]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 7
+
+[ 1433.127444]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[ 1433.127485]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.127525]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u447d40d7 no match
+
+[ 1433.127567]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 0
+
+[ 1433.127630]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 9
+
+[ 1433.127715]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.127810]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 0
+
+[ 1433.127849]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 6
+
+[ 1433.127889]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.127904]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.128076]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.128135]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 7
+
+[ 1433.128172]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.128211]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 8
+
+[ 1433.128248]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.128307]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.128321]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.128402]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.128439]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER ue6db0de2 no match
+
+[ 1433.128507]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u6e438894 no match
+
+[ 1433.128565]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.128693]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.128923]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.128938]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.129050]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u7c66f958 no match
+
+[ 1433.129144]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[ 1433.129191]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.129253]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 5
+
+[ 1433.129292]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.129305]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.129388]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.129862]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 6
+
+[ 1433.129933]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 2
+
+[ 1433.129972]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.129985]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.130438]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.130454]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.130624]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.131009]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.131108]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.131205]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.131293]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u375c9fd4 no match
+
+[ 1433.131361]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.131401]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.131415]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.131955]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.132187]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 8
+
+[ 1433.132229]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER ub98ea1d9 no match
+
+[ 1433.132268]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u2ce08d1a no match
+
+[ 1433.132304]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 5
+
+[ 1433.132342]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 4
+
+[ 1433.132398]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[ 1433.132543]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.132559]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.132609]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.132973]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.133561]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.133603]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 unknown command 357856569
+
+[ 1433.133616]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl c0186201 beb47574 returned -22
+
+[ 1433.133737]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 unknown command 1935197126
+
+[ 1433.133753]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl c0186201 beb47574 returned -22
+
+[ 1433.133800]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 4
+
+[ 1433.133839]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.133878]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 3
+
+[ 1433.133917]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.133957]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29189, size 0-0
+
+[ 1433.134070]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 7
+
+[ 1433.134108]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.134148]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.134161]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.134372]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.134451]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.134488]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.134524]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 8
+
+[ 1433.134584]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.134621]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.134657]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.134693]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.134739]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.134775]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.134860]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.134958]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.135000]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 9
+
+[ 1433.135039]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u75317475 no match
+
+[ 1433.135087]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.135126]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.135139]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.136200]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.136508]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.136527]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.136777]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.137299]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.137339]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.137377]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 1
+
+[ 1433.137445]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.137524]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.137594]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.137630]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.137687]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.137724]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.137831]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.137879]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.137937]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.137951]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.138381]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.138418]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.138453]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.138491]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 4
+
+[ 1433.138530]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u702c3469 no match
+
+[ 1433.138589]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u9afba7eb no match
+
+[ 1433.138627]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u3c3af054 no match
+
+[ 1433.138666]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 5
+
+[ 1433.138840]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.139007]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.139060]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.139103]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 4
+
+[ 1433.139182]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.139272]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.139287]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.139896]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.140206]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.140270]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER ue3ac8182 no match
+
+[ 1433.140353]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 unknown command -555527058
+
+[ 1433.140368]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl c0186201 beb47574 returned -22
+
+[ 1433.140405]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 3
+
+[ 1433.140484]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[ 1433.140542]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.140580]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.140619]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.140633]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.140944]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.141119]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.141373]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 0
+
+[ 1433.141412]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 5
+
+[ 1433.141469]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[ 1433.141508]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER ufa095341 no match
+
+[ 1433.141567]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[ 1433.141604]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 4
+
+[ 1433.141696]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 unknown command -2035096313
+
+[ 1433.141710]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl c0186201 beb47574 returned -22
+
+[ 1433.141785]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 7
+
+[ 1433.141826]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.141864]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.141939]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 unknown command 1433709384
+
+[ 1433.141954]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl c0186201 beb47574 returned -22
+
+[ 1433.142000]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[ 1433.142042]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.142056]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.142113]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.142263]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.142790]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.142876]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.142942]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 unknown command 2013991600
+
+[ 1433.142956]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl c0186201 beb47574 returned -22
+
+[ 1433.142995]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.143035]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 unknown command 1207112301
+
+[ 1433.143049]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl c0186201 beb47574 returned -22
+
+[ 1433.143162]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[ 1433.143243]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 5
+
+[ 1433.143286]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 6
+
+[ 1433.143443]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u1d354b9b no match
+
+[ 1433.143495]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u5732c7d7 no match
+
+[ 1433.143541]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[ 1433.143582]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[ 1433.143624]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 unknown command -1802630201
+
+[ 1433.143640]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl c0186201 beb47574 returned -22
+
+[ 1433.143771]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[ 1433.143830]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[ 1433.143903]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.143975]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 6
+
+[ 1433.144028]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.144085]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.144136]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29189, size 0-0
+
+[ 1433.144328]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29189, size 0-0
+
+[ 1433.144915]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 3
+
+[ 1433.145007]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.145053]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 2
+
+[ 1433.145161]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.145207]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.145249]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 4
+
+[ 1433.145292]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.145346]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.145392]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 unknown command 982400379
+
+[ 1433.145407]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl c0186201 beb47574 returned -22
+
+[ 1433.145454]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 unknown command -354692864
+
+[ 1433.145468]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl c0186201 beb47574 returned -22
+
+[ 1433.145512]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[ 1433.145556]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 3
+
+[ 1433.145625]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.145639]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.145911]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.146076]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.146408]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 7
+
+[ 1433.146455]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.146497]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 unknown command -770423776
+
+[ 1433.146512]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl c0186201 beb47574 returned -22
+
+[ 1433.146593]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.146609]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.146793]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.147193]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u82c02079 no match
+
+[ 1433.147233]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.147315]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.147355]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.147395]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.147409]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.147512]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.147714]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.147752]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.147790]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 2
+
+[ 1433.147829]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 1
+
+[ 1433.147877]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.147913]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.147949]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.147990]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29189, size 0-0
+
+[ 1433.148113]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29189, size 0-0
+
+[ 1433.148161]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.148241]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 7
+
+[ 1433.148279]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.148315]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.148387]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER ua5cf8537 no match
+
+[ 1433.148425]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.148482]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 5
+
+[ 1433.148520]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.148534]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.148623]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.148662]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.148754]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.148914]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.149079]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 unknown command 1199479262
+
+[ 1433.149096]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl c0186201 beb47574 returned -22
+
+[ 1433.149240]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u1bea20c8 no match
+
+[ 1433.149296]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.149402]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 5
+
+[ 1433.149463]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 5
+
+[ 1433.149625]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.149826]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.149898]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.149990]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.150080]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 unknown command 1178291983
+
+[ 1433.150094]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl c0186201 beb47574 returned -22
+
+[ 1433.150131]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.150221]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.150290]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.150327]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 0
+
+[ 1433.150364]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 0
+
+[ 1433.150431]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.150500]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.150562]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u0395db4c no match
+
+[ 1433.150621]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.150747]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.150813]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 0
+
+[ 1433.150915]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[ 1433.150982]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[ 1433.151021]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[ 1433.151061]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[ 1433.151100]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 0
+
+[ 1433.151275]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.151337]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 6
+
+[ 1433.151376]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.151414]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.151475]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[ 1433.151575]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 unknown command 371767954
+
+[ 1433.151591]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl c0186201 beb47574 returned -22
+
+[ 1433.151722]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 unknown command -637583098
+
+[ 1433.151739]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl c0186201 beb47574 returned -22
+
+[ 1433.151782]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.151878]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.151992]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.152045]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.152121]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.152160]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.152338]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.152479]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 unknown command -267998819
+
+[ 1433.152496]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl c0186201 beb47574 returned -22
+
+[ 1433.152626]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.152643]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.152800]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.152961]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.153005]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.153020]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.153167]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.153542]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.153832]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.153952]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.153992]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.154032]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 5
+
+[ 1433.154099]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u5ca789ca no match
+
+[ 1433.154165]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.154181]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.154323]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.154338]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.154615]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 2
+
+[ 1433.154661]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.154676]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.154774]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.154993]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.155009]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.155057]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.155262]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.155609]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.155654]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29189, size 0-0
+
+[ 1433.155840]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.155970]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.156013]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u6e49f48d no match
+
+[ 1433.156052]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.156113]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 unknown command -991949491
+
+[ 1433.156127]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl c0186201 beb47574 returned -22
+
+[ 1433.156184]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.156224]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 4
+
+[ 1433.156282]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.156319]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 9
+
+[ 1433.156357]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.156370]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.156601]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.156931]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.157123]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.157161]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.157210]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.157247]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 4
+
+[ 1433.157303]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 1
+
+[ 1433.157371]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.157408]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.157467]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.157587]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 9
+
+[ 1433.157666]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 unknown command -1427154997
+
+[ 1433.157681]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl c0186201 beb47574 returned -22
+
+[ 1433.157830]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.157868]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.157905]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[ 1433.157943]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.157958]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.158070]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.158106]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.158155]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.158217]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 7
+
+[ 1433.158259]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29189, size 0-0
+
+[ 1433.158412]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.159032]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u6e6b055c no match
+
+[ 1433.159088]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 7
+
+[ 1433.159135]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 unknown command 1262932304
+
+[ 1433.159150]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl c0186201 beb47574 returned -22
+
+[ 1433.159195]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.159210]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.159523]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.159539]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.159650]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40086203 beb4763c returned -22
+
+[ 1433.159900]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 4
+
+[ 1433.159952]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 BC_FREE_BUFFER u  (null) no match
+
+[ 1433.159997]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 3
+
+[ 1433.160164]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.160405]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.160486]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.160502]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.160714]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.160756]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 2
+
+[ 1433.160796]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 1
+
+[ 1433.160836]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.160907]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 unknown command -943256032
+
+[ 1433.160921]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl c0186201 beb47574 returned -22
+
+[ 1433.161006]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29189, size 0-0
+
+[ 1433.161078]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.161209]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ioctl 40046207 beb4763c returned -13
+
+[ 1433.161403]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 ERROR: BC_REGISTER_LOOPER called without request
+
+[ 1433.161477]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 6
+
+[ 1433.161525]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 refcount change on invalid ref 4
+
+[ 1433.161568]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.161583]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.161960]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 got transaction to invalid handle
+
+[ 1433.161978]  [2:    binder_fuzz:18164] [c2] binder: 18164:18164 transaction failed 29201, size 0-0
+
+[ 1433.257988]  [2:   kworker/u8:2: 1130] [c2] binder: release 11559:11570 transaction 422007 in, still active
+
+[ 1433.258013]  [2:   kworker/u8:2: 1130] [c2] binder: send failed reply for transaction 422007, target dead
+
+[ 1433.493808]  [3:            cbd:18177] [c3] mif: mif_disable_irq: cp_wdt(#511) is disabled <ss310ap_boot_on>
+
+[ 1433.493837]  [3:            cbd:18177] [c3] mif: mif_enable_irq: cp_fail(#50) is enabled <ss310ap_boot_on>
+
+[ 1433.493850]  [3:            cbd:18177] [c3] mif: ss310ap_boot_on: cp_status=1
+
+[ 1433.493860]  [3:            cbd:18177] [c3] mif: ss310ap_boot_on: ---
+
+[ 1433.493931]  [3:            cbd:18177] [c3] mif: misc_ioctl: umts_boot0: IOCTL_MODEM_DL_START
+
+[ 1433.493948]  [3:            cbd:18177] [c3] mif: shmem_start_download: shmem: magic == 0x424F4F54
+
+[ 1433.493961]  [3:            cbd:18177] [c3] mif: ss310ap_modem_boot_confirm: ap_status=1
+
+[ 1433.496196]  [3:            cbd:18177] [c3] mif: cbd: std_udl_req_resp: OK!! resp 0xA00D == exp
+
+[ 1433.497082]  [3:            cbd:18177] [c3] mif: cbd: std_udl_req_resp: OK!! resp 0xAF00 == exp
+
+[ 1433.497140]  [3:            cbd:18177] [c3] mif: misc_ioctl: umts_boot0: IOCTL_MODEM_BOOT_OFF
+
+[ 1433.497154]  [3:            cbd:18177] [c3] mif: ss310ap_boot_off: +++
+
+[ 1433.778838]  [2:   AsyncTask #4:14438] [c2] alarm_release: clear alarm, pending 0
+
+[ 1433.778862]  [2:   AsyncTask #4:14438] [c2] alarm_release: clear alarm, pending 0
+
+[ 1433.843451]  [3: surfaceflinger:18179] [c3] binder: 18179:18179 transaction failed 29189, size 0-0
+
+[ 1433.888961]  [0:   AsyncTask #4:14438] [c0] MobiCore mcd: closed by PID(14438), name(AsyncTask #4)
+
+[ 1433.897494]  [3:         mc_log: 2201] [c3] MobiCore mcd: 104| SMGNT send MSG_CLOSE_TRUSTLET for thread a01 to IPCH
+
+[ 1433.901556]  [3:         mc_log: 2201] [c3] MobiCore mcd: 103|BroadCast loop send Event to 202 (UUID=02010000-0000-0000-0000-000000005000) (server 0/7 status is 00000001)
+
+[ 1433.904982]  [3:         mc_log: 2201] [c3] MobiCore mcd: 103|BroadCast loop send Event to 302 (UUID=ffffffff-0000-0000-0000-000000000002) (server 1/7 status is 00000001)
+
+[ 1433.909034]  [3:         mc_log: 2201] [c3] MobiCore mcd: 103|BroadCast loop send Event to 402 (UUID=ffffffff-0000-0000-0000-000000000001) (server 2/7 status is 00000001)
+
+[ 1433.909076]  [3:         mc_log: 2201] [c3] MobiCore mcd: 103|BroadCast loop send Event to 501 (UUID=ffffffff-d000-0000-0000-00000000000a) (server 3/7 status is 00000001)
+
+[ 1433.911477]  [0:         mc_log: 2201] [c0] MobiCore mcd: 103|BroadCast loop send Event to 602 (UUID=ffffffff-d000-0000-0000-000000000016) (server 4/7 status is 00000001)
+
+[ 1433.913859]  [0:         mc_log: 2201] [c0] MobiCore mcd: 103|BroadCast loop send Event to 802 (UUID=07050500-0000-0000-0000-000000000000) (server 5/7 status is 00000001)
+
+[ 1433.917937]  [0:         mc_log: 2201] [c0] MobiCore mcd: 103|BroadCast loop send Event to 702 (UUID=ffffffff-d000-0000-0000-000000000004) (server 6/7 status is 00000001)
+
+[ 1433.917965]  [0:         mc_log: 2201] [c0] MobiCore mcd: 103|BroadCast loop done
+
+[ 1433.917981]  [0:         mc_log: 2201] [c0] MobiCore mcd: 104| SMGNT smgntCloseSession done
+
+[ 1434.031116]  [0:           imsd:18207] [c0] binder: 18178:18207 transaction failed 29189, size 0-0
+
+[ 1434.177386]  [0:   kworker/u8:1:17242] [c0] [SENSOR] k2hh_work_func: x = 1302, y = -1737, z = 7811 (ra:0)
+
+[ 1434.472493]  [0:   kworker/0:2H:12159] [c0] mif: cmd_phone_start_handler: shmem: CP_START <- ss308ap (ss308ap.state:BOOTING cp_boot_done:0)
+
+[ 1434.472522]  [0:   kworker/0:2H:12159] [c0] mif: rild_ready: shmem: umts_ipc0.opened=0, umts_rfs0.opened=0
+
+[ 1434.472622]  [1:            cbd:18177] [c1] mif: mif_enable_irq: cp_wdt(#511) is enabled <ss310ap_boot_off>
+
+[ 1434.472639]  [1:            cbd:18177] [c1] mif: io_dev_modem_state_changed: ss308ap->state changed (BOOTING -> ONLINE)
+
+[ 1434.472649]  [1:            cbd:18177] [c1] mif: ss310ap_boot_off: ---
+
+[ 1434.472665]  [1:            cbd:18177] [c1] mif: mif_disable_irq: cp_fail(#50) is disabled <ss310ap_boot_off>
+
+[ 1434.472703]  [1:            cbd:18177] [c1] mif: misc_release: umts_boot0 (opened 1) by cbd
+
+[ 1434.498550]  [1:            cbd:18177] [c1] mif: cbd: boot_wake_lock: /sys/power/wake_unlock/ss310
+
+[ 1434.498624]  [1:            cbd:18177] [c1] mif: cbd: main: Boot up process done!!!
+
+[ 1434.498662]  [1:            cbd:18177] [c1] mif: cbd: status_loop: CP status_loop start (modem = 13)
+
+[ 1434.499048]  [1:            cbd:18177] [c1] mif: misc_open: umts_boot0 (opened 2) by cbd
+
+[ 1434.501199]  [1:            cbd:18177] [c1] mif: cbd: status_loop: Wait event from modem 13
+
+[ 1434.572554] I[0:      swapper/0:    0] [c0] mif: cmd_phone_start_handler: shmem: CP_START <- ss308ap (ss308ap.state:ONLINE cp_boot_done:0)
+
+[ 1434.572578] I[0:      swapper/0:    0] [c0] mif: rild_ready: shmem: umts_ipc0.opened=0, umts_rfs0.opened=0
+
+[ 1434.581531]  [0:           rild:18180] [c0] mif: misc_release: umts_boot0 (opened 1) by rild
+
+[ 1434.582022]  [0:           rild:18180] [c0] mif: shmem_init_comm: umts_rfs0 is not opened yet
+
+[ 1434.582037]  [0:           rild:18180] [c0] mif: misc_open: umts_ipc0 (opened 1) by rild
+
+[ 1434.582076]  [0:           rild:18180] [c0] mif: shmem_init_comm: shmem: umts_rfs0->INIT_END->ss308ap
+
+[ 1434.582090]  [0:           rild:18180] [c0] mif: misc_open: umts_rfs0 (opened 1) by rild
+
+[ 1434.843677]  [0: surfaceflinger:18179] [c0] binder: 18179:18179 transaction failed 29189, size 0-0
+
+[ 1434.984180]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x449, ocv = 4285
+
+[ 1434.988721]  [0:    kworker/0:3:17399] [c0] sm5703_test_read: 0x4 = 0xbe, 0x5 = 0xff, 0x6 = 0xf3, 0x7 = 0xff, 0x8 = 0x08, 0x9 = 0x08, 0xa = 0x07, 0xb = 0x00, 0xc = 0x55, 0xd = 0x07, 0xe = 0x03, 0xf = 0x07, 0x10 = 0x16, 0x11 = 0x30, 0x12 = 0xf8, 0x13 = 0x08, 0x60 = 0x03, 0x6b = 0x20, 0x66 = 0x00, 
+
+[ 1434.989653]  [0:    kworker/0:3:17399] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(287), Temp-ADC(1862)
+
+[ 1434.990391]  [0:    kworker/0:3:17399] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(287), Temp-ADC(1862)
+
+[ 1434.990411]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 1434.990433]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 1434.991245]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x29b0, temperature = 416
+
+[ 1434.991469]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x449, ocv = 4285
+
+[ 1434.991495]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 416, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 287
+
+[ 1434.991885]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6264, soc = 983
+
+[ 1434.992105]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 1434.992325]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 1434.992545]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 1434.992764]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 1434.992980]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 1434.993203]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 1434.993422]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 1434.993643]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 1434.993884]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 1434.994112]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 1434.994334]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 1434.994555]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 1434.995374]  [0:    kworker/0:3:17399] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 1434.996191]  [0:    kworker/0:3:17399] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 1434.997018]  [0:    kworker/0:3:17399] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 1434.997843]  [0:    kworker/0:3:17399] [c0] 0x85=0x0024, 0x86=0x0047, 0x87=0x4eb8, 0x28=0x0290 
+
+[ 1434.997862]  [0:    kworker/0:3:17399] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[ 1434.997882]  [0:    kworker/0:3:17399] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4281mV),Inow(-74mA),Imax(450mA),SOC(100%),Tbat(287),Tchg(0),is_hc_usb(0)
+
+[ 1434.997897]  [0:    kworker/0:3:17399] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[ 1434.998098]  [0:    kworker/0:3:17399] [c0] sm5703_get_charging_health : is_charging = 1, cable_type = 4, is_current_reduced = 0
+
+[ 1434.998286]  [0:    kworker/0:3:17399] [c0] sm5703_get_charging_health: SM5703_CNTL, nCHG : 0x55, 0
+
+[ 1434.998298]  [0:    kworker/0:3:17399] [c0] sm5703_get_charging_health : vbus_status = 32
+
+[ 1434.998309]  [0:    kworker/0:3:17399] [c0] sm5703_get_charging_health : Health : 1
+
+[ 1434.998326]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 1434.998344]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 1434.999185]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x29b0, temperature = 416
+
+[ 1434.999414]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x449, ocv = 4285
+
+[ 1434.999438]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 416, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 287
+
+[ 1434.999827]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6264, soc = 983
+
+[ 1435.000051]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 1435.000270]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 1435.000491]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 1435.000712]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 1435.000933]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 1435.001151]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 1435.001371]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 1435.001590]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 1435.001809]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 1435.002029]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 1435.002247]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 1435.002465]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 1435.003282]  [0:    kworker/0:3:17399] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 1435.004170]  [0:    kworker/0:3:17399] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 1435.004995]  [0:    kworker/0:3:17399] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 1435.005815]  [0:    kworker/0:3:17399] [c0] 0x85=0x0024, 0x86=0x0047, 0x87=0x4eb8, 0x28=0x0290 
+
+[ 1435.005842]  [0:    kworker/0:3:17399] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Full), mode(Additional), Health(Good), Cable(4), level(100%)
+
+[ 1435.005922]  [0:    kworker/0:3:17399] [c0] sec_chg_get_property: slow-charging mode
+
+[ 1435.031345]  [0:           imsd:18207] [c0] binder: 18178:18207 transaction failed 29189, size 0-0
+
+[ 1435.274235] I[0:      swapper/0:    0] [c0] mif: LNK-RX(32): fc eb 1d 00 19 00 00 00 13 05 03 0f 00 0d 0a 41 ...
+
+[ 1435.274348] I[0:      swapper/0:    0] [c0] mif: LNK-RX(12): fc eb 0c 00 08 00 01 00 01 01 03 aa
+
+[ 1435.274399] I[0:      swapper/0:    0] [c0] mif: LNK-RX(16): fc eb 0d 00 09 00 02 00 0d 0f 03 06 00 00 00 00
+
+[ 1435.394755] I[0:      swapper/0:    0] [c0] mif: LNK-RX(24): fc eb 16 00 12 00 03 00 05 0c 03 0a 98 10 42 20 ...
+
+[ 1435.395650] I[0:           rild:18213] [c0] mif: LNK-RX(12): fc eb 0c 00 08 00 04 00 05 07 03 02
+
+[ 1435.843922]  [0: surfaceflinger:18179] [c0] binder: 18179:18179 transaction failed 29189, size 0-0
+
+[ 1436.031579]  [0:           imsd:18207] [c0] binder: 18178:18207 transaction failed 29189, size 0-0
+
+[ 1436.418343]  [1:        healthd:18222] [c1] binder: 18222:18222 transaction failed 29189, size 0-0
+
+[ 1436.870424]  [0: surfaceflinger:18179] [c0] decon_blank ++ blank_mode : 0
+
+[ 1436.870432]  [0: surfaceflinger:18179] [c0] decon-int UNBLANK mode: 0type (0: DSI)
+
+[ 1436.870467]  [0: surfaceflinger:18179] [c0] decon_enable: 0
+
+[ 1436.870472]  [0: surfaceflinger:18179] [c0] decon already enabled
+
+[ 1436.870476]  [0: surfaceflinger:18179] [c0] decon_blank -- blank_mode : 0
+
+[ 1436.870527]  [0: surfaceflinger:18179] [c0] dsim_panel_set_brightness: platform BL : 104 panel BL reg : 104
+
+[ 1436.884529]  [0: surfaceflinger:18179] [c0] fb_notifier_callback: 0
+
+[ 1436.884538]  [0: surfaceflinger:18179] [c0] MDD : s6d7aa0_displayon_late was called
+
+[ 1436.938809]  [0: surfaceflinger:18179] [c0] dsim_panel_set_brightness: platform BL : 104 panel BL reg : 104
+
+[ 1436.965370]  [0: surfaceflinger:18179] [c0] mdnie mdnie: fb_notifier_callback: 0
+
+[ 1437.033838]  [0: surfaceflinger:18179] [c0] mdnie mdnie: UI
+
+[ 1437.033849]  [0: surfaceflinger:18179] [c0] LCD is on
+
+[ 1437.432729]  [1:        healthd:18222] [c1] healthd: initial Capacity max: '973'
+
+[ 1437.432881]  [1:        healthd:18222] [c1] sec-battery battery.31: sec_bat_store_attrs: BATT_CAPACITY_MAX(973)
+
+[ 1437.432906]  [1:        healthd:18222] [c1] sm5703-fuelgauge 7-0071: sm5703_fg_set_property: capacity_max changed, 973 -> 973
+
+[ 1437.432924]  [1:        healthd:18222] [c1] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 1437.432946]  [1:        healthd:18222] [c1] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 1437.439457]  [1:        healthd:18222] [c1] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x29b0, temperature = 416
+
+[ 1437.439691]  [1:        healthd:18222] [c1] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x449, ocv = 4285
+
+[ 1437.439725]  [1:        healthd:18222] [c1] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 416, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 287
+
+[ 1437.440123]  [1:        healthd:18222] [c1] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6264, soc = 983
+
+[ 1437.440353]  [1:        healthd:18222] [c1] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 1437.440602]  [1:        healthd:18222] [c1] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 1437.440852]  [1:        healthd:18222] [c1] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 1437.441076]  [1:        healthd:18222] [c1] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 1437.441294]  [1:        healthd:18222] [c1] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 1437.441520]  [1:        healthd:18222] [c1] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 1437.441756]  [1:        healthd:18222] [c1] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 1437.441978]  [1:        healthd:18222] [c1] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 1437.442212]  [1:        healthd:18222] [c1] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 1437.442436]  [1:        healthd:18222] [c1] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 1437.442691]  [1:        healthd:18222] [c1] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 1437.442911]  [1:        healthd:18222] [c1] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 1437.443797]  [1:        healthd:18222] [c1] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 1437.444677]  [1:        healthd:18222] [c1] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 1437.445515]  [1:        healthd:18222] [c1] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 1437.446370]  [1:        healthd:18222] [c1] 0x85=0x006b, 0x86=0x0139, 0x87=0x4eb8, 0x28=0x054c 
+
+[ 1437.446645]  [1:        healthd:18222] [c1] healthd: batteryPogoOnlnePath not found
+
+[ 1437.448326]  [1:    kworker/1:1:12662] [c1] sec_chg_get_property: slow-charging mode
+
+[ 1437.451582]  [1:        healthd:18222] [c1] sec_chg_get_property: slow-charging mode
+
+[ 1437.451888]  [1:        healthd:18222] [c1] sec_bat_show_attrs: waterproof event
+
+[ 1437.451957]  [1:        healthd:18222] [c1] sec_bat_show_attrs: waterproof event
+
+[ 1437.454823]  [1:        healthd:18222] [c1] healthd: battery l=100 v=4281 t=28.7 h=2 st=3 c=0 o=4 ca=-74 ct=2 ps=0 chg=u 2026-02-23 18:45:51.849495785 UTC
+
+[ 1437.454878]  [1:        healthd:18222] [c1] healthd: battery l=100 v=4281 t=28.7 h=2 st=3 c=0 o=4 ca=-74 ct=2 ps=0 chg=u 2026-02-23 18:45:51.849495785 UTC hv=0 sdc=0 sec=0 chg=u
+
+[ 1437.454905]  [1:        healthd:18222] [c1] healthd-android: healthd_mode_android_battery_update
+
+[ 1437.454929]  [1:        healthd:18222] [c1] BatteryPropertiesRegistrar: notifyListeners : start
+
+[ 1437.454950]  [1:        healthd:18222] [c1] BatteryPropertiesRegistrar: notifyListeners : done
+
+[ 1438.045021]  [3:  BootAnimation:18287] [c3] logger: !@BootAnimation : Could not open '/sys/bus/w1/devices/w1_bus_master1/w1_master_check_model'
+
+[ 1438.047105]  [3:  BootAnimation:18287] [c3] logger: !@BootAnimation : [Encryption info]crypt_state = unencrypted, crypt_input_window = 0, crypt_type = 0
+
+[ 1438.051460]  [3:  BootAnimation:18287] [c3] logger: !@BootAnimation : createSurface RGB565
+
+[ 1438.067949]  [2:  BootAnimation:18287] [c2] logger: !@BootAnimation : Could not open '/sys/devices/w1_bus_master1/w1_master_verify_mac'
+
+[ 1438.068040]  [2:  BootAnimation:18287] [c2] logger: !@BootAnimation : Could not open '/sys/devices/w1_bus_master1/w1_master_check_id'
+
+[ 1438.068077]  [2:  BootAnimation:18287] [c2] logger: !@BootAnimation : BootAnimData_STATUS = 0x3
+
+[ 1438.142273]  [3:           init:    1] [c3] init: property_set("ro.setupwizard.mode", "DISABLED") failed
+
+[ 1438.142846]  [3:           init:    1] [c3] init: property_set("ro.com.google.clientidbase.ms", "android-att-us") failed
+
+[ 1438.143324]  [3:           init:    1] [c3] init: property_set("ro.com.google.clientidbase.am", "android-att-us") failed
+
+[ 1438.143894]  [3:           init:    1] [c3] init: property_set("ro.com.google.clientidbase.gmm", "android-samsung") failed
+
+[ 1438.144387]  [3:           init:    1] [c3] init: property_set("ro.com.google.clientidbase.yt", "android-samsung") failed
+
+[ 1438.626163]  [3:           main:18229] [c3] logger: !@Boot: Begin of preload()
+
+[ 1441.064131]  [3:           main:18229] [c3] logger: !@Boot: End of preload()
+
+[ 1441.303112]  [1:  system_server:18436] [c1] logger: !@Boot: Entered the Android system server!
+
+[ 1442.768962]  [3:  system_server:18436] [c3] logger: !@Selected wakeup count
+
+[ 1442.768962]  [3:  system_server:18436] 
+
+[ 1442.809235]  [1:  system_server:18436] [c1] logger: !@ USE_STATIC_LIGHTS_HAL
+
+[ 1442.809235]  [1:  system_server:18436] 
+
+[ 1442.809302]  [1:  system_server:18436] [c1] logger: !@ lights hal name : Samsung lights Module
+
+[ 1442.809302]  [1:  system_server:18436] 
+
+[ 1442.809351]  [1:  system_server:18436] [c1] logger: !@ initialize_fds : g_lights_file_paths[0][0] : /sys/class/leds/lcd-backlight/brightness 
+
+[ 1442.809351]  [1:  system_server:18436] 
+
+[ 1442.809443]  [1:  system_server:18436] [c1] logger: !@ initialize_fds : g_lights_fds Open error! : [2]
+
+[ 1442.809443]  [1:  system_server:18436] 
+
+[ 1442.809483]  [1:  system_server:18436] [c1] logger: !@ initialize_fds : g_lights_file_paths[0][1] : /sys/class/backlight/panel/brightness 
+
+[ 1442.809483]  [1:  system_server:18436] 
+
+[ 1442.810176]  [1:  system_server:18436] [c1] logger: !@ initialize_fds : FOUND! : 0x37
+
+[ 1442.810176]  [1:  system_server:18436] 
+
+[ 1442.810241]  [1:  system_server:18436] [c1] logger: !@ initialize_fds : g_lights_file_paths[1][0] : /sys/class/backlight/panel_1/brightness 
+
+[ 1442.810241]  [1:  system_server:18436] 
+
+[ 1442.810328]  [1:  system_server:18436] [c1] logger: !@ initialize_fds : g_lights_fds Open error! : [2]
+
+[ 1442.810328]  [1:  system_server:18436] 
+
+[ 1442.810368]  [1:  system_server:18436] [c1] logger: !@ initialize_fds : g_lights_file_paths[1][1] : (null) 
+
+[ 1442.810368]  [1:  system_server:18436] 
+
+[ 1442.810406]  [1:  system_server:18436] [c1] logger: !@ initialize_fds : g_lights_file_paths[2][0] : /sys/class/sec/sec_touchkey/brightness 
+
+[ 1442.810406]  [1:  system_server:18436] 
+
+[ 1442.811008]  [1:  system_server:18436] [c1] logger: !@ initialize_fds : FOUND! : 0x24
+
+[ 1442.811008]  [1:  system_server:18436] 
+
+[ 1442.811064]  [1:  system_server:18436] [c1] logger: !@ initialize_fds : g_lights_file_paths[3][0] : /sys/class/sec/sec_touchkey2/brightness 
+
+[ 1442.811064]  [1:  system_server:18436] 
+
+[ 1442.811142]  [1:  system_server:18436] [c1] logger: !@ initialize_fds : g_lights_fds Open error! : [2]
+
+[ 1442.811142]  [1:  system_server:18436] 
+
+[ 1442.811184]  [1:  system_server:18436] [c1] logger: !@ initialize_fds : g_lights_file_paths[3][1] : (null) 
+
+[ 1442.811184]  [1:  system_server:18436] 
+
+[ 1442.811222]  [1:  system_server:18436] [c1] logger: !@ initialize_fds : g_lights_file_paths[4][0] : /sys/class/sec/sec_keypad/brightness 
+
+[ 1442.811222]  [1:  system_server:18436] 
+
+[ 1442.811280]  [1:  system_server:18436] [c1] logger: !@ initialize_fds : g_lights_fds Open error! : [2]
+
+[ 1442.811280]  [1:  system_server:18436] 
+
+[ 1442.811317]  [1:  system_server:18436] [c1] logger: !@ initialize_fds : g_lights_file_paths[4][1] : /sys/class/leds/keyboard-backlight/brightness 
+
+[ 1442.811317]  [1:  system_server:18436] 
+
+[ 1442.811375]  [1:  system_server:18436] [c1] logger: !@ initialize_fds : g_lights_fds Open error! : [2]
+
+[ 1442.811375]  [1:  system_server:18436] 
+
+[ 1442.811409]  [1:  system_server:18436] [c1] logger: !@ initialize_fds : g_lights_file_paths[4][2] : (null) 
+
+[ 1442.811409]  [1:  system_server:18436] 
+
+[ 1442.811445]  [1:  system_server:18436] [c1] logger: !@ initialize_fds : g_lights_file_paths[5][0] : /sys/class/sec/led/led_pattern 
+
+[ 1442.811445]  [1:  system_server:18436] 
+
+[ 1442.811502]  [1:  system_server:18436] [c1] logger: !@ initialize_fds : g_lights_fds Open error! : [2]
+
+[ 1442.811502]  [1:  system_server:18436] 
+
+[ 1442.811538]  [1:  system_server:18436] [c1] logger: !@ initialize_fds : g_lights_file_paths[5][1] : (null) 
+
+[ 1442.811538]  [1:  system_server:18436] 
+
+[ 1442.811573]  [1:  system_server:18436] [c1] logger: !@ initialize_fds : g_lights_file_paths[6][0] : /sys/class/sec/led/led_blink 
+
+[ 1442.811573]  [1:  system_server:18436] 
+
+[ 1442.811628]  [1:  system_server:18436] [c1] logger: !@ initialize_fds : g_lights_fds Open error! : [2]
+
+[ 1442.811628]  [1:  system_server:18436] 
+
+[ 1442.811665]  [1:  system_server:18436] [c1] logger: !@ initialize_fds : g_lights_file_paths[6][1] : (null) 
+
+[ 1442.811665]  [1:  system_server:18436] 
+
+[ 1442.874423]  [0:  system_server:18552] [c0] logger: !@suspend_thread_func: read wakeup_count
+
+[ 1442.874423]  [0:  system_server:18552] 
+
+[ 1442.920994]  [0:  system_server:18436] [c0] logger: !@Boot: Start PackageManagerService
+
+[ 1444.958986]  [2:    kworker/2:1:11749] [c2] [VIB] sec_vib_log_show [0.000 : 0.000] off
+
+[ 1445.014742]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x449, ocv = 4285
+
+[ 1445.019976]  [0:    kworker/0:3:17399] [c0] sm5703_test_read: 0x4 = 0xbe, 0x5 = 0xff, 0x6 = 0xf3, 0x7 = 0xff, 0x8 = 0x08, 0x9 = 0x08, 0xa = 0x07, 0xb = 0x00, 0xc = 0x55, 0xd = 0x07, 0xe = 0x03, 0xf = 0x07, 0x10 = 0x16, 0x11 = 0x30, 0x12 = 0xf8, 0x13 = 0x08, 0x60 = 0x03, 0x6b = 0x20, 0x66 = 0x00, 
+
+[ 1445.021418]  [0:    kworker/0:3:17399] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(288), Temp-ADC(1859)
+
+[ 1445.022180]  [0:    kworker/0:3:17399] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(288), Temp-ADC(1860)
+
+[ 1445.022209]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 1445.022232]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 1445.023226]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x29b0, temperature = 416
+
+[ 1445.023470]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x449, ocv = 4285
+
+[ 1445.023505]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 416, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 288
+
+[ 1445.023957]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6264, soc = 983
+
+[ 1445.024343]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 1445.024699]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 1445.024944]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 1445.025179]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 1445.025408]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 1445.025622]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 1445.025835]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 1445.026064]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 1445.026331]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 1445.026691]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 1445.026961]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 1445.027192]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 1445.028181]  [0:    kworker/0:3:17399] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 1445.029124]  [0:    kworker/0:3:17399] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 1445.030209]  [0:    kworker/0:3:17399] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 1445.031552]  [0:    kworker/0:3:17399] [c0] 0x85=0x80b8, 0x86=0x003c, 0x87=0x4eb8, 0x28=0x0398 
+
+[ 1445.031650]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 1445.031673]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 1445.032829]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x29b0, temperature = 416
+
+[ 1445.033291]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x449, ocv = 4285
+
+[ 1445.033330]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 416, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 288
+
+[ 1445.033861]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6264, soc = 983
+
+[ 1445.034116]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 1445.034361]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 1445.034585]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 1445.034810]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 1445.035135]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 1445.035415]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 1445.035642]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 1445.035875]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 1445.036104]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 1445.036342]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 1445.036575]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 1445.036807]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 1445.038099]  [0:    kworker/0:3:17399] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 1445.039064]  [0:    kworker/0:3:17399] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 1445.040125]  [0:    kworker/0:3:17399] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 1445.043383]  [0:    kworker/0:3:17399] [c0] 0x85=0x80b8, 0x86=0x003c, 0x87=0x4eb8, 0x28=0x0398 
+
+[ 1445.043411]  [0:    kworker/0:3:17399] [c0] sm5703_fg_calculate_dynamic_scale: raw soc (983)
+
+[ 1445.043423]  [0:    kworker/0:3:17399] sm5703_fg_calculate_dynamic_scale: 973 is used for capacity_max, capacity(100)
+
+[ 1445.043440]  [0:    kworker/0:3:17399] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[ 1445.043478]  [0:    kworker/0:3:17399] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4273mV),Inow(-89mA),Imax(450mA),SOC(100%),Tbat(288),Tchg(0),is_hc_usb(0)
+
+[ 1445.043497]  [0:    kworker/0:3:17399] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[ 1445.043842]  [0:    kworker/0:3:17399] [c0] sm5703_get_charging_health : is_charging = 1, cable_type = 4, is_current_reduced = 0
+
+[ 1445.045189]  [0:    kworker/0:3:17399] [c0] sm5703_get_charging_health: SM5703_CNTL, nCHG : 0x55, 0
+
+[ 1445.045277]  [0:    kworker/0:3:17399] [c0] sm5703_get_charging_health : vbus_status = 32
+
+[ 1445.045289]  [0:    kworker/0:3:17399] [c0] sm5703_get_charging_health : Health : 1
+
+[ 1445.045323]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 1445.045349]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 1445.047058]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x29b0, temperature = 416
+
+[ 1445.047304]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x449, ocv = 4285
+
+[ 1445.047340]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 416, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 288
+
+[ 1445.047978]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6264, soc = 983
+
+[ 1445.048220]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 1445.048638]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 1445.049032]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 1445.049368]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 1445.049615]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 1445.049838]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 1445.050056]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 1445.050443]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 1445.050728]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 1445.051023]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 1445.051329]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 1445.051941]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 1445.055066]  [0:    kworker/0:3:17399] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 1445.056524]  [0:    kworker/0:3:17399] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 1445.058279]  [0:    kworker/0:3:17399] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 1445.059227]  [0:    kworker/0:3:17399] [c0] 0x85=0x80b8, 0x86=0x003c, 0x87=0x4eb8, 0x28=0x0398 
+
+[ 1445.059260]  [0:    kworker/0:3:17399] [c0] sec-battery battery.31: sec_bat_time_management: Charging Time : 633 secs
+
+[ 1445.059278]  [0:    kworker/0:3:17399] [c0] sec-battery battery.31: sec_bat_temperature: HLT(800) HLR(750) HT(550), HR(500), LT(-50), LR(0)
+
+[ 1445.059826]  [0:    kworker/0:3:17399] [c0] sec_bat_swelling_check: status(4), swell_mode(0:0), cv(0x10f4), temp(288)
+
+[ 1445.059845]  [0:    kworker/0:3:17399] [c0] sec_bat_check_fullcharged : full_check_type(2)
+
+[ 1445.059864]  [0:    kworker/0:3:17399] [c0] sec-battery battery.31: sec_bat_fullcharged_check: Charging Mode : Re-Charging
+
+[ 1445.059882]  [0:    kworker/0:3:17399] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Full), mode(Additional), Health(Good), Cable(4), level(100%)
+
+[ 1445.059958]  [0:    kworker/0:3:17399] [c0] sec_chg_get_property: slow-charging mode
+
+[ 1445.064946]  [1:        healthd:18222] [c1] sec_chg_get_property: slow-charging mode
+
+[ 1445.066909]  [1:        healthd:18222] [c1] sec_bat_show_attrs: waterproof event
+
+[ 1445.066989]  [1:        healthd:18222] [c1] sec_bat_show_attrs: waterproof event
+
+[ 1445.067191]  [1:        healthd:18222] [c1] healthd: battery l=100 v=4273 t=28.8 h=2 st=3 c=0 o=4 ca=-88 ct=2 ps=0 chg=u 2026-02-23 18:45:59.464542978 UTC
+
+[ 1445.067230]  [1:        healthd:18222] [c1] healthd: battery l=100 v=4273 t=28.8 h=2 st=3 c=0 o=4 ca=-88 ct=2 ps=0 chg=u 2026-02-23 18:45:59.464542978 UTC hv=0 sdc=0 sec=0 chg=u
+
+[ 1445.067255]  [1:        healthd:18222] [c1] healthd-android: healthd_mode_android_battery_update
+
+[ 1445.067278]  [1:        healthd:18222] [c1] BatteryPropertiesRegistrar: notifyListeners : start
+
+[ 1445.067300]  [1:        healthd:18222] [c1] BatteryPropertiesRegistrar: notifyListeners : done
+
+[ 1449.244113]  [0:   kworker/u8:1:17242] [c0] [SENSOR] k2hh_work_func: x = 1315, y = -1750, z = 7811 (ra:0)
+
+[ 1451.281538]  [0:        dhd_dpc: 2172] [c0] DHCP[wlan0] - DISCOVER [RX] [REQUEST]
+
+[ 1451.281720]  [0:        dhd_dpc: 2172] [c0] DHCP[wlan0] - REQUEST [RX] [REQUEST]
+
+[ 1454.243817]  [0:    kworker/0:3:17399] [c0] muic_print_reg_log:e(0)0 13(1)0 14(0)0 15(0)0 1b(0)0 1d(3)0 20(4)0 21(0)0 24(4)0 3a(0)0 2(1f)0 2(1e)1 2(1e)0 2(1e)0 3(0)0 4(0)0 a(4)0 b(0)0 15(0)0 1d(3)0 7(1f)0 13(1)0 13(25)1 13(25)0 13(25)0 
+
+[ 1454.246048]  [0:    kworker/0:3:17399] [c0] muic_print_reg_dump:CT:1e IM1:dc IM2:0 MS1:25 MS2:0 ADC:1f DT1:4 DT2:0 DT3:0 RS1:3
+
+[ 1455.061429]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x449, ocv = 4285
+
+[ 1455.065845]  [0:    kworker/0:3:17399] [c0] sm5703_test_read: 0x4 = 0xbe, 0x5 = 0xff, 0x6 = 0xf3, 0x7 = 0xff, 0x8 = 0x08, 0x9 = 0x08, 0xa = 0x07, 0xb = 0x00, 0xc = 0x55, 0xd = 0x07, 0xe = 0x03, 0xf = 0x07, 0x10 = 0x16, 0x11 = 0x30, 0x12 = 0xf8, 0x13 = 0x08, 0x60 = 0x03, 0x6b = 0x20, 0x66 = 0x00, 
+
+[ 1455.066775]  [0:    kworker/0:3:17399] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(288), Temp-ADC(1860)
+
+[ 1455.067489]  [0:    kworker/0:3:17399] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(288), Temp-ADC(1861)
+
+[ 1455.067513]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 1455.067535]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 1455.068375]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x29b0, temperature = 416
+
+[ 1455.068666]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x449, ocv = 4285
+
+[ 1455.068738]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 416, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7e85, bat_temp = 288
+
+[ 1455.069129]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6264, soc = 983
+
+[ 1455.069492]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 1455.069720]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 1455.069941]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 1455.070168]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 1455.070387]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 1455.070601]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 1455.070811]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 1455.071021]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 1455.071231]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 1455.071439]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 1455.071648]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 1455.071858]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 1455.072647]  [0:    kworker/0:3:17399] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 1455.073442]  [0:    kworker/0:3:17399] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 1455.074255]  [0:    kworker/0:3:17399] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 1455.075058]  [0:    kworker/0:3:17399] [c0] 0x85=0x0031, 0x86=0x8013, 0x87=0x4eb8, 0x28=0x05c0 
+
+[ 1455.075077]  [0:    kworker/0:3:17399] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[ 1455.075097]  [0:    kworker/0:3:17399] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4285mV),Inow(46mA),Imax(450mA),SOC(100%),Tbat(288),Tchg(0),is_hc_usb(0)
+
+[ 1455.075112]  [0:    kworker/0:3:17399] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[ 1455.075305]  [0:    kworker/0:3:17399] [c0] sm5703_get_charging_health : is_charging = 1, cable_type = 4, is_current_reduced = 0
+
+[ 1455.075493]  [0:    kworker/0:3:17399] [c0] sm5703_get_charging_health: SM5703_CNTL, nCHG : 0x55, 0
+
+[ 1455.075506]  [0:    kworker/0:3:17399] [c0] sm5703_get_charging_health : vbus_status = 32
+
+[ 1455.075517]  [0:    kworker/0:3:17399] [c0] sm5703_get_charging_health : Health : 1
+
+[ 1455.075538]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 1455.075561]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 1455.076343]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x29b0, temperature = 416
+
+[ 1455.076559]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x449, ocv = 4285
+
+[ 1455.076584]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 416, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7e85, bat_temp = 288
+
+[ 1455.076957]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6264, soc = 983
+
+[ 1455.077169]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 1455.077379]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 1455.077591]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 1455.077801]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 1455.078012]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 1455.078221]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 1455.078432]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 1455.078642]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 1455.078878]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 1455.079094]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 1455.079312]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 1455.079529]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 1455.080364]  [0:    kworker/0:3:17399] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 1455.081252]  [0:    kworker/0:3:17399] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 1455.082071]  [0:    kworker/0:3:17399] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 1455.082871]  [0:    kworker/0:3:17399] [c0] 0x85=0x0031, 0x86=0x8013, 0x87=0x4eb8, 0x28=0x05c0 
+
+[ 1455.082899]  [0:    kworker/0:3:17399] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Full), mode(Additional), Health(Good), Cable(4), level(100%)
+
+[ 1455.082978]  [0:    kworker/0:3:17399] [c0] sec_chg_get_property: slow-charging mode
+
+[ 1455.085054]  [3:        healthd:18222] [c3] sec_chg_get_property: slow-charging mode
+
+[ 1455.085444]  [3:        healthd:18222] [c3] sec_bat_show_attrs: waterproof event
+
+[ 1455.085516]  [3:        healthd:18222] [c3] sec_bat_show_attrs: waterproof event
+
+[ 1455.085708]  [3:        healthd:18222] [c3] healthd: battery l=100 v=4285 t=28.8 h=2 st=3 c=0 o=4 ca=46 ct=2 ps=0 chg=u 2026-02-23 18:46:09.483050632 UTC
+
+[ 1455.085744]  [3:        healthd:18222] [c3] healthd: battery l=100 v=4285 t=28.8 h=2 st=3 c=0 o=4 ca=46 ct=2 ps=0 chg=u 2026-02-23 18:46:09.483050632 UTC hv=0 sdc=0 sec=0 chg=u
+
+[ 1455.085767]  [3:        healthd:18222] [c3] healthd-android: healthd_mode_android_battery_update
+
+[ 1455.085788]  [3:        healthd:18222] [c3] BatteryPropertiesRegistrar: notifyListeners : start
+
+[ 1455.085808]  [3:        healthd:18222] [c3] BatteryPropertiesRegistrar: notifyListeners : done
+
+[ 1455.160971]  [1:    kworker/1:1:12662] [c1] [SX9500]: sx9500_get_data - cm=252478,uf=5974,av=1434,df=283,Of=2092 (1)
+
+[ 1457.009051]  [0:          pkgld: 2929] [c0] sdcardfs: inotify event: 00000400
+
+[ 1457.009070]  [1:          pkgld: 2930] [c1] sdcardfs: inotify event: 00000400
+
+[ 1457.009085]  [3:          pkgld: 2928] [c3] sdcardfs: inotify event: 00000400
+
+[ 1457.009096]  [0:          pkgld: 2927] [c0] sdcardfs: inotify event: 00000400
+
+[ 1457.009106]  [1:          pkgld:12371] [c1] sdcardfs: inotify event: 00000400
+
+[ 1457.009132]  [2:          pkgld: 2931] [c2] sdcardfs: inotify event: 00000400
+
+[ 1457.009144]  [0:          pkgld:11801] [c0] sdcardfs: inotify event: 00000400
+
+[ 1457.009165]  [0:          pkgld:11800] [c0] sdcardfs: inotify event: 00000400
+
+[ 1457.009190]  [0:          pkgld:12373] [c0] sdcardfs: inotify event: 00000400
+
+[ 1457.009197]  [3:          pkgld:11799] [c3] sdcardfs: inotify event: 00000400
+
+[ 1457.009207]  [3:          pkgld:11799] [c3] sdcardfs: inotify event: 00008000
+
+[ 1457.009217]  [1:          pkgld:12371] [c1] sdcardfs: inotify event: 00008000
+
+[ 1457.009232]  [0:          pkgld:12373] [c0] sdcardfs: inotify event: 00008000
+
+[ 1457.010140]  [3:          pkgld:11799] [c3] sdcardfs: read_package_list
+
+[ 1457.010146]  [1:          pkgld:12371] [c1] sdcardfs: read_package_list
+
+[ 1457.010152]  [0:          pkgld:12373] [c0] sdcardfs: read_package_list
+
+[ 1457.012070]  [0:          pkgld:11801] [c0] sdcardfs: inotify event: 00008000
+
+[ 1457.012076]  [3:          pkgld:12370] [c3] sdcardfs: inotify event: 00000400
+
+[ 1457.012081]  [3:          pkgld:12370] [c3] sdcardfs: inotify event: 00008000
+
+[ 1457.012108]  [3:          pkgld:12370] [c3] sdcardfs: read_package_list
+
+[ 1457.012121]  [1:          pkgld: 2930] [c1] sdcardfs: inotify event: 00008000
+
+[ 1457.012125]  [0:          pkgld:11801] [c0] sdcardfs: read_package_list
+
+[ 1457.012140]  [1:          pkgld: 2930] [c1] sdcardfs: read_package_list
+
+[ 1457.013920]  [2:          pkgld: 2931] [c2] sdcardfs: inotify event: 00008000
+
+[ 1457.013959]  [2:          pkgld: 2931] [c2] sdcardfs: read_package_list
+
+[ 1457.014051]  [0:          pkgld: 2927] [c0] sdcardfs: inotify event: 00008000
+
+[ 1457.014068]  [3:          pkgld: 2928] [c3] sdcardfs: inotify event: 00008000
+
+[ 1457.014082]  [0:          pkgld: 2927] [c0] sdcardfs: read_package_list
+
+[ 1457.014093]  [3:          pkgld: 2928] [c3] sdcardfs: read_package_list
+
+[ 1457.015891]  [1:          pkgld: 2929] [c1] sdcardfs: inotify event: 00008000
+
+[ 1457.015908]  [0:          pkgld:11800] [c0] sdcardfs: inotify event: 00008000
+
+[ 1457.015931]  [1:          pkgld: 2929] [c1] sdcardfs: read_package_list
+
+[ 1457.015935]  [0:          pkgld:11800] [c0] sdcardfs: read_package_list
+
+[ 1457.202114]  [2:  system_server:18436] [c2] logger: !@Boot: End PackageManagerService
+
+[ 1457.229827]  [2:  system_server:18436] [c2] [SX9500]: sx9500_enable_store - new_value = 1 old_value = 1
+
+[ 1457.230439]  [2:  system_server:18436] [c2] [SX9500]: sx9500_enable_store - new_value = 0 old_value = 1
+
+[ 1457.230464]  [2:  system_server:18436] [c2] [SX9500]: sx9500_set_enable - disable
+
+[ 1457.230484]  [2:  system_server:18436] [c2] wake disabled for irq 530
+
+[ 1457.242633]  [2:  system_server:18436] [c2] logger: !@Battery capacity = 280000
+
+[ 1457.252282]  [3:        healthd:18222] [c3] BatteryPropertiesRegistrar: registerListener : start
+
+[ 1457.254630]  [3:        healthd:18222] [c3] sec_chg_get_property: slow-charging mode
+
+[ 1457.254967]  [3:        healthd:18222] [c3] sec_bat_show_attrs: waterproof event
+
+[ 1457.255046]  [3:        healthd:18222] [c3] sec_bat_show_attrs: waterproof event
+
+[ 1457.255262]  [3:        healthd:18222] [c3] healthd: battery l=100 v=4285 t=28.8 h=2 st=3 c=0 o=4 ca=46 ct=2 ps=0 chg=u 2026-02-23 18:46:11.652603940 UTC
+
+[ 1457.255305]  [3:        healthd:18222] [c3] healthd: battery l=100 v=4285 t=28.8 h=2 st=3 c=0 o=4 ca=46 ct=2 ps=0 chg=u 2026-02-23 18:46:11.652603940 UTC hv=0 sdc=0 sec=0 chg=u
+
+[ 1457.255335]  [3:        healthd:18222] [c3] healthd-android: healthd_mode_android_battery_update
+
+[ 1457.255362]  [3:        healthd:18222] [c3] BatteryPropertiesRegistrar: notifyListeners : start
+
+[ 1457.255391]  [3:        healthd:18222] [c3] IBatteryPropertiesListener : batteryPropertiesChanged!
+
+[ 1457.255391]  [3:        healthd:18222] : BatteryPropertiesRegistrar: notifyListeners : done
+
+[ 1457.256441]  [3:        healthd:18222] [c3] BatteryPropertiesRegistrar: registerListener : done
+
+[ 1457.256734]  [2:       Binder_2:18452] [c2] logger: !@BatteryListener : batteryPropertiesChanged!
+
+[ 1457.577540]  [3:           init:    1] [c3] init: property_set("ro.security.reactive.version", "2.0.9") failed
+
+[ 1457.724188]  [3:  system_server:18436] [c3] [VIB] sec_vib_enable : value 0
+
+[ 1457.820257]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|TL_TZ_KEYSTORE: Starting
+
+[ 1457.823852]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|TL_TZ_KEYSTORE: Got a message!
+
+[ 1457.824313]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|TZ_KEYSTORE: we got a command
+
+[ 1457.828829]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|TZ_KEYSTORE: process_cmd: CMD_TZ_KEYSTORE_init:
+
+[ 1457.828854]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|TIMA trustlet:  get_sec_TIMA_address tima_sec_mem_addr : 7F500000
+
+[ 1457.828867]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|TIMA trustlet: warranty okay 13
+
+[ 1457.828880]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|TZ_COMMON: tamper_fuse_good - process_init, msr_size: 0
+
+[ 1457.828893]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|TIMA trustlet: Reading golden measurement
+
+[ 1457.828906]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|TIMA trustlet: Measurement size is : 160
+
+[ 1457.828919]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|TZ_COMMON: Read boot time measurement
+
+[ 1457.832280]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|TZ_COMMON: compare measurements from boot and golden_msrs
+
+[ 1457.832307]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|TZ_COMMON: Measurements match, now check for license nad kap fuse status
+
+[ 1457.832320]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|TIMA trustlet: Reading knox license status
+
+[ 1457.832332]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|read license status is: 1
+
+[ 1457.832344]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|low security mode
+
+[ 1457.832381]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|TZ_COMMON: Measurements match - Initialization complete
+
+[ 1457.832395]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|Trustlet TL_TZ_KEYSTORE: sendmsg->header.id = 0x00000001
+
+[ 1457.832409]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|Trustlet TL_TZ_KEYSTORE: respmsg->header.id = 0x80000001
+
+[ 1457.832423]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|Trustlet TL_TZ_KEYSTORE: respmsg->header.status = 0x00000000
+
+[ 1457.832436]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|TL_TZ_KEYSTORE: Returning = 0x00000000
+
+[ 1457.835187]  [0:         mc_log: 2201] [c0] MobiCore mcd: 104| SMGNT send MSG_CLOSE_TRUSTLET for thread a01 to IPCH
+
+[ 1457.837755]  [0:         mc_log: 2201] [c0] MobiCore mcd: 103|BroadCast loop send Event to 202 (UUID=02010000-0000-0000-0000-000000005000) (server 0/7 status is 00000001)
+
+[ 1457.839471]  [0:         mc_log: 2201] [c0] MobiCore mcd: 103|BroadCast loop send Event to 302 (UUID=ffffffff-0000-0000-0000-000000000002) (server 1/7 status is 00000001)
+
+[ 1457.842788]  [0:         mc_log: 2201] [c0] MobiCore mcd: 103|BroadCast loop send Event to 402 (UUID=ffffffff-0000-0000-0000-000000000001) (server 2/7 status is 00000001)
+
+[ 1457.842820]  [0:         mc_log: 2201] [c0] MobiCore mcd: 103|BroadCast loop send Event to 501 (UUID=ffffffff-d000-0000-0000-00000000000a) (server 3/7 status is 00000001)
+
+[ 1457.848784]  [0:         mc_log: 2201] [c0] MobiCore mcd: 103|BroadCast loop send Event to 602 (UUID=ffffffff-d000-0000-0000-000000000016) (server 4/7 status is 00000001)
+
+[ 1457.848813]  [0:         mc_log: 2201] [c0] MobiCore mcd: 103|BroadCast loop send Event to 802 (UUID=07050500-0000-0000-0000-000000000000) (server 5/7 status is 00000001)
+
+[ 1457.848833]  [0:         mc_log: 2201] [c0] MobiCore mcd: 103|BroadCast loop send Event to 702 (UUID=ffffffff-d000-0000-0000-000000000004) (server 6/7 status is 00000001)
+
+[ 1457.848845]  [0:         mc_log: 2201] [c0] MobiCore mcd: 103|BroadCast loop done
+
+[ 1457.850462]  [2:         mc_log: 2201] [c2] MobiCore mcd: 104| SMGNT smgntCloseSession done
+
+[ 1457.861026]  [1:  system_server:18436] [c1] MobiCore mcd: closed by PID(18436), name(system_server)
+
+[ 1457.871701]  [2:         mc_log: 2201] [c2] MobiCore mcd: a01|ICCC:Trustlet ICCC::Starting
+
+[ 1457.873090]  [3:         mc_log: 2201] [c3] MobiCore mcd: a01|TL ICCC: we got a command: 1
+
+[ 1457.873110]  [3:         mc_log: 2201] [c3] MobiCore mcd: a01|ICCC :CMD_ICCC_INIT is success
+
+[ 1457.877627]  [3:         mc_log: 2201] [c3] MobiCore mcd: a01|TL ICCC: we got a command: 2
+
+[ 1457.877655]  [3:         mc_log: 2201] [c3] MobiCore mcd: a01|ICCC :case ICCC_SAVEDATA_TA
+
+[ 1457.877669]  [3:         mc_log: 2201] [c3] MobiCore mcd: a01|ICCC : In save data, type = ff200001 , value = 0 
+
+[ 1457.877684]  [3:         mc_log: 2201] [c3] MobiCore mcd: a01|ICCC:  get_sec_TIMA_address tima_sec_mem_addr : 7F500000
+
+[ 1457.877695]  [3:         mc_log: 2201] [c3] MobiCore mcd: a01|iccc: ICCC_save_data@#
+
+[ 1457.877708]  [3:         mc_log: 2201] [c3] MobiCore mcd: a01|ICCC Magic Got is  = fffd , ret is = 0 
+
+[ 1457.877720]  [3:         mc_log: 2201] [c3] MobiCore mcd: a01|ICCC : iccc lock is 3 
+
+[ 1457.877733]  [3:         mc_log: 2201] [c3] MobiCore mcd: a01| ICCC : only one write is allowed on this type
+
+[ 1457.877746]  [3:         mc_log: 2201] [c3] MobiCore mcd: a01| ICCC: Iccc_SaveData_TA failed with ret = 4 
+
+[ 1457.883855]  [0:         mc_log: 2201] [c0] MobiCore mcd: 104| SMGNT send MSG_CLOSE_TRUSTLET for thread a01 to IPCH
+
+[ 1457.883893]  [0:         mc_log: 2201] [c0] MobiCore mcd: 103|BroadCast loop send Event to 202 (UUID=02010000-0000-0000-0000-000000005000) (server 0/7 status is 00000001)
+
+[ 1457.883915]  [0:         mc_log: 2201] [c0] MobiCore mcd: 103|BroadCast loop send Event to 302 (UUID=ffffffff-0000-0000-0000-000000000002) (server 1/7 status is 00000001)
+
+[ 1457.888801]  [0:         mc_log: 2201] [c0] MobiCore mcd: 103|BroadCast loop send Event to 402 (UUID=ffffffff-0000-0000-0000-000000000001) (server 2/7 status is 00000001)
+
+[ 1457.888835]  [0:         mc_log: 2201] [c0] MobiCore mcd: 103|BroadCast loop send Event to 501 (UUID=ffffffff-d000-0000-0000-00000000000a) (server 3/7 status is 00000001)
+
+[ 1457.888856]  [0:         mc_log: 2201] [c0] MobiCore mcd: 103|BroadCast loop send Event to 602 (UUID=ffffffff-d000-0000-0000-000000000016) (server 4/7 status is 00000001)
+
+[ 1457.892241]  [0:         mc_log: 2201] [c0] MobiCore mcd: 103|BroadCast loop send Event to 802 (UUID=07050500-0000-0000-0000-000000000000) (server 5/7 status is 00000001)
+
+[ 1457.892264]  [0:         mc_log: 2201] [c0] MobiCore mcd: 103|BroadCast loop send Event to 702 (UUID=ffffffff-d000-0000-0000-000000000004) (server 6/7 status is 00000001)
+
+[ 1457.892276]  [0:         mc_log: 2201] [c0] MobiCore mcd: 103|BroadCast loop done
+
+[ 1457.893812]  [0:         mc_log: 2201] [c0] MobiCore mcd: 104| SMGNT smgntCloseSession done
+
+[ 1457.904656]  [1:  system_server:18436] [c1] MobiCore mcd: closed by PID(18436), name(system_server)
+
+[ 1458.308192]  [1:    InputReader:18684] [c1] logger: !@Ignoring sensor_device, nodeNumber: 4, deviceName: grip_sensor_wifi
+
+[ 1458.308192]  [1:    InputReader:18684] 
+
+[ 1458.308387]  [1:    InputReader:18684] [c1] logger: !@Ignoring sensor_device, nodeNumber: 3, deviceName: grip_sensor
+
+[ 1458.308387]  [1:    InputReader:18684] 
+
+[ 1458.308534]  [1:    InputReader:18684] [c1] logger: !@Ignoring sensor_device, nodeNumber: 2, deviceName: accelerometer_sensor
+
+[ 1458.308534]  [1:    InputReader:18684] 
+
+[ 1458.417968]  [1:    InputReader:18684] [c1] logger: !@Could not open sysfs for EdgeScreen
+
+[ 1458.440049]  [3:           lmkd: 2180] [c3] lowmemorykiller: lowmem_shrink: convert oom_adj to oom_score_adj:
+
+[ 1458.440070]  [3:           lmkd: 2180] [c3] lowmemorykiller: oom_adj 0 => oom_score_adj 0
+
+[ 1458.440081]  [3:           lmkd: 2180] [c3] lowmemorykiller: oom_adj 1 => oom_score_adj 58
+
+[ 1458.440091]  [3:           lmkd: 2180] [c3] lowmemorykiller: oom_adj 2 => oom_score_adj 117
+
+[ 1458.440102]  [3:           lmkd: 2180] [c3] lowmemorykiller: oom_adj 3 => oom_score_adj 176
+
+[ 1458.440112]  [3:           lmkd: 2180] [c3] lowmemorykiller: oom_adj 9 => oom_score_adj 529
+
+[ 1458.440123]  [3:           lmkd: 2180] [c3] lowmemorykiller: oom_adj 15 => oom_score_adj 1000
+
+[ 1458.569835]  [3:  system_server:18436] [c3] logger: !@Boot: performEnableScreen
+
+[ 1459.207162]  [2:          pkgld: 2929] [c2] sdcardfs: inotify event: 00000400
+
+[ 1459.207169]  [0:          pkgld: 2931] [c0] sdcardfs: inotify event: 00000400
+
+[ 1459.207175]  [3:          pkgld: 2928] [c3] sdcardfs: inotify event: 00000400
+
+[ 1459.207209]  [0:          pkgld: 2927] [c0] sdcardfs: inotify event: 00000400
+
+[ 1459.207222]  [1:          pkgld: 2930] [c1] sdcardfs: inotify event: 00000400
+
+[ 1459.207228]  [3:          pkgld:12371] [c3] sdcardfs: inotify event: 00000400
+
+[ 1459.207261]  [2:          pkgld:11801] [c2] sdcardfs: inotify event: 00000400
+
+[ 1459.207266]  [0:          pkgld:11800] [c0] sdcardfs: inotify event: 00000400
+
+[ 1459.207272]  [3:          pkgld:11799] [c3] sdcardfs: inotify event: 00000400
+
+[ 1459.207305]  [0:          pkgld:12370] [c0] sdcardfs: inotify event: 00000400
+
+[ 1459.207322]  [2:          pkgld:12373] [c2] sdcardfs: inotify event: 00000400
+
+[ 1459.207334]  [0:          pkgld:12370] [c0] sdcardfs: inotify event: 00008000
+
+[ 1459.207338]  [2:          pkgld:12373] [c2] sdcardfs: inotify event: 00008000
+
+[ 1459.207343]  [3:          pkgld:11799] [c3] sdcardfs: inotify event: 00008000
+
+[ 1459.207373]  [3:          pkgld:11799] [c3] sdcardfs: read_package_list
+
+[ 1459.207377]  [2:          pkgld:12373] [c2] sdcardfs: read_package_list
+
+[ 1459.207382]  [0:          pkgld:12370] [c0] sdcardfs: read_package_list
+
+[ 1459.209437]  [3:          pkgld:11801] [c3] sdcardfs: inotify event: 00008000
+
+[ 1459.209444]  [0:          pkgld:11800] [c0] sdcardfs: inotify event: 00008000
+
+[ 1459.209479]  [0:          pkgld:11800] [c0] sdcardfs: read_package_list
+
+[ 1459.209483]  [3:          pkgld:11801] [c3] sdcardfs: read_package_list
+
+[ 1459.211403]  [0:          pkgld:12371] [c0] sdcardfs: inotify event: 00008000
+
+[ 1459.211418]  [1:          pkgld: 2930] [c1] sdcardfs: inotify event: 00008000
+
+[ 1459.211445]  [2:          pkgld: 2927] [c2] sdcardfs: inotify event: 00008000
+
+[ 1459.211450]  [0:          pkgld:12371] [c0] sdcardfs: read_package_list
+
+[ 1459.211454]  [1:          pkgld: 2930] [c1] sdcardfs: read_package_list
+
+[ 1459.211460]  [3:          pkgld: 2928] [c3] sdcardfs: inotify event: 00008000
+
+[ 1459.211481]  [3:          pkgld: 2928] [c3] sdcardfs: read_package_list
+
+[ 1459.211540]  [2:          pkgld: 2927] [c2] sdcardfs: read_package_list
+
+[ 1459.213394]  [0:          pkgld: 2931] [c0] sdcardfs: inotify event: 00008000
+
+[ 1459.213400]  [3:          pkgld: 2929] [c3] sdcardfs: inotify event: 00008000
+
+[ 1459.213426]  [3:          pkgld: 2929] [c3] sdcardfs: read_package_list
+
+[ 1459.213437]  [0:          pkgld: 2931] [c0] sdcardfs: read_package_list
+
+[ 1463.747423]  [2:       Binder_1:18656] [c2] logger: !@ SecCameraCoreManager created: pid=18226, cameraId=0
+
+[ 1463.754517]  [0:       Binder_1:18656] [c0] [@][0][SS1:V] fimc_is_ssx_video_open
+
+[ 1463.755112]  [0:       Binder_1:18656] [c0] [@][SEN:D:0] fimc_is_sensor_runtime_resume():0
+
+[ 1463.755146]  [0:       Binder_1:18656] [c0] [@][RSC] rsctype : 0, rsccount : 1
+
+[ 1463.755161]  [0:       Binder_1:18656] [c0] [@][0][SEN:D] fimc_is_sensor_open():0
+
+[ 1463.756665]  [0:       Binder_1:18656] [c0] [@]SOC_SENSOR!
+
+[ 1463.756686]  [0:       Binder_1:18656] [@][ERR]camera_rear_sensorid_show:153:fimc_is_sec_run_fw_sel is fail(-22)
+
+[ 1463.756994]  [0:       Binder_1:18656] [c0] camera rear: camera_rear_sensorid_show: E
+
+[ 1463.758812]  [3:       Binder_1:18656] [@] pin_ctrl(act(1), pin(79), val(0), nm((null))
+
+[ 1463.758910]  [3:       Binder_1:18656] [c3] [@] pin_ctrl(act(5), pin(0), val(1), nm(VDDIO_1.8V_CAM)
+
+[ 1463.759129]  [3:       Binder_1:18656] [c3] [@] pin_ctrl(act(5), pin(0), val(1), nm(VDD_CAM_SENSOR_A2P8)
+
+[ 1463.759148]  [3:       Binder_1:18656] [c3] [@] pin_ctrl(act(5), pin(0), val(1), nm(VDDAF_2.8V_CAM)
+
+[ 1463.759162]  [3:       Binder_1:18656] [c3] [@] pin_ctrl(act(4), pin(0), val(0), nm(pin)
+
+[ 1463.759176]  [3:       Binder_1:18656] [c3] [@] pin_ctrl(act(5), pin(0), val(1), nm(VDDD_1.2V_CAM)
+
+[ 1463.759190]  [3:       Binder_1:18656] [c3] [@] pin_ctrl(act(1), pin(99), val(1), nm((null))
+
+[ 1463.759204]  [3:       Binder_1:18656] [c3] [@] pin_ctrl(act(1), pin(79), val(1), nm((null))
+
+[ 1463.762951]  [3:       Binder_1:18656] [c3] sm5703-regulator VDDAF_2.8V_CAM sm5703_regulator_is_enabled ret (0)
+
+[ 1463.763467]  [0:       Binder_1:18656] [c0] sm5703-regulator VDDAF_2.8V_CAM sm5703_regulator_is_enabled ret (0)
+
+[ 1463.763491]  [0:       Binder_1:18656] [c0] sm5703-regulator Enable regulator VDDAF_2.8V_CAM
+
+[ 1463.763919]  [2:       Binder_1:18656] [c2] sm5703-regulator VDDAF_2.8V_CAM sm5703_regulator_enable ret (0)
+
+[ 1463.766597]  [2:       Binder_1:18656] sm5703-regulator VDDD_1.2V_CAM sm5703_regulator_is_enabled ret (0)
+
+[ 1463.766941]  [2:       Binder_1:18656] [c2] sm5703-regulator VDDD_1.2V_CAM sm5703_regulator_is_enabled ret (0)
+
+[ 1463.766963]  [2:       Binder_1:18656] [c2] sm5703-regulator Enable regulator VDDD_1.2V_CAM
+
+[ 1463.767328]  [0:       Binder_1:18656] [c2] sm5703-regulator VDDD_1.2V_CAM sm5703_regulator_enable ret (0)
+
+[ 1463.770620]  [0:       Binder_1:18656] [4EC] sensor_4ec_init start
+
+[ 1463.770646]  [0:       Binder_1:18656] [c0] [4EC] sensor_4ec_init : Sensor Version 0x1414
+
+[ 1463.770658]  [0:       Binder_1:18656] [c0] [4EC] sensor_4ec_init : setfile_index 0
+
+[ 1463.771709]  [0:       Binder_1:18656] [c0] [4EC] sensor_4ec_init : pid 0x4EC0
+
+[ 1463.772552]  [0:       Binder_1:18656] [c0] [4EC] sensor_4ec_init : revision 0x0011
+
+[ 1463.772568]  [0:       Binder_1:18656] [c0] [4EC] sensor_4ec_init : Module vendor ID 0x0C03
+
+[ 1463.783764]  [0:       Binder_1:18656] [c0] [4EC] sensor_4ec_apply_set : E, setting_name : s5k4ecgx_init_reg1
+
+[ 1463.784418]  [0:       Binder_1:18656] [c0] [4EC] sensor_4ec_apply_set : use delay (10 ms) in I2C Write 
+
+[ 1463.798916]  [0:       Binder_1:18656] [c0] [4EC] sensor_4ec_init : start reg 2 bursts
+
+[ 1463.799052]  [0:       Binder_1:18656] [c0] [4EC] sensor_4ec_init : finished creating table
+
+[ 1463.799072]  [0:       Binder_1:18656] [c0] [4EC] sensor_4ec_init : first regset = ea724000, last regset = ea724540, count = 168
+
+[ 1463.799086]  [0:       Binder_1:18656] [c0] [4EC] sensor_4ec_init : regset_data = ea71f000, end = ea72bb10, dst_ptr = ea720bf2
+
+[ 1463.799097]  [0:       Binder_1:18656] [c0] [4EC] sensor_4ec_init : start writing init reg 2 bursts
+
+[ 1463.987305]  [0:       Binder_1:18656] [c0] [4EC] sensor_4ec_init : finished writing init reg 2 bursts
+
+[ 1463.987375]  [0:       Binder_1:18656] [c0] [4EC] sensor_4ec_apply_set : E, setting_name : s5k4ecgx_Effect_Normal
+
+[ 1463.987992]  [0:       Binder_1:18656] [c0] [4EC] sensor_4ec_apply_set : E, setting_name : s5k4ecgx_EV_Default
+
+[ 1463.989068]  [0:       Binder_1:18656] [c0] [4EC] sensor_4ec_apply_set : E, setting_name : s5k4ecgx_ISO_Auto
+
+[ 1463.991638]  [0:       Binder_1:18656] [c0] [4EC] sensor_4ec_apply_set : E, setting_name : s5k4ecgx_Metering_Center
+
+[ 1463.997361]  [0:       Binder_1:18656] [c0] [4EC] sensor_4ec_apply_set : E, setting_name : s5k4ecgx_Scene_Default
+
+[ 1464.023249]  [0:       Binder_1:18656] [c0] [4EC] sensor_4ec_apply_set : E, setting_name : s5k4ecgx_AE_Lock_Off
+
+[ 1464.023905]  [0:       Binder_1:18656] [c0] [4EC] sensor_4ec_apply_set : E, setting_name : s5k4ecgx_AWB_Lock_Off
+
+[ 1464.024541]  [0:       Binder_1:18656] [c0] [4EC] sensor_4ec_apply_set : E, setting_name : s5k4ecgx_WB_Auto
+
+[ 1464.025177]  [0:       Binder_1:18656] [c0] [4EC] sensor_4ec_apply_set : E, setting_name : s5k4ecgx_FPS_Auto
+
+[ 1464.027509]  [0:       Binder_1:18656] [c0] [4EC] sensor_4ec_apply_set : E, setting_name : s5k4ecgx_Flash_init
+
+[ 1464.037619]  [0:       Binder_1:18656] [c0] [4EC] [MOD:D:57] sensor_4ec_init(0)
+
+[ 1464.037640]  [0:       Binder_1:18656] [c0] [@][0][SEN:D] fimc_is_sensor_s_input(57, 2):0
+
+[ 1464.037670]  [0:    kworker/0:3:17399] [c0] [4EC] sensor_4ec_s_focus_mode( 0 ) E
+
+[ 1464.037683]  [0:    kworker/0:3:17399] [c0] [4EC] sensor_4ec_apply_set : E, setting_name : s5k4ecgx_AF_Normal_mode_1
+
+[ 1464.138818]  [0:    kworker/0:3:17399] [c0] [4EC] sensor_4ec_apply_set : E, setting_name : s5k4ecgx_AF_Normal_mode_2
+
+[ 1464.243761]  [0:    kworker/0:3:17399] [c0] [4EC] sensor_4ec_apply_set : E, setting_name : s5k4ecgx_AF_Normal_mode_3
+
+[ 1464.310862]  [0:   kworker/u8:2: 1130] [c0] [SENSOR] k2hh_work_func: x = 1345, y = -1741, z = 7798 (ra:0)
+
+[ 1464.348881]  [2:       Binder_1:18656] [c2] [4EC] sensor_4ec_s_power_off: 1
+
+[ 1464.348905]  [2:       Binder_1:18656] [c2] [4EC] sensor_4ec_apply_set : E, setting_name : s5k4ecgx_AF_Normal_mode_1
+
+[ 1464.349592]  [0:       Binder_1:18656] [c0] [4EC] sensor_4ec_apply_set : E, setting_name : s5k4ecgx_AF_Normal_mode_2
+
+[ 1464.351141]  [0:       Binder_1:18656] [c0] [4EC] sensor_4ec_get_frame_duration: frame_duration_ms = 101 ms
+
+[ 1464.351160]  [0:       Binder_1:18656] [c0] [4EC] sensor_4ec_auto_focus_softlanding: softlanding delay = 221 ms
+
+[ 1464.578893]  [0:       Binder_1:18656] [c0] [@][0][WRN]already back stop
+
+[ 1464.578915]  [0:       Binder_1:18656] [c0] [@][0][BAK:D] fimc_is_sensor_back_stop(0)
+
+[ 1464.578926]  [0:       Binder_1:18656] [c0] [@][0][WRN]already front stop
+
+[ 1464.578937]  [0:       Binder_1:18656] [c0] [@][0][FRT:D] fimc_is_sensor_front_stop(0)
+
+[ 1464.579002]  [0:       Binder_1:18656] [c0] [@] pin_ctrl(act(1), pin(79), val(0), nm((null))
+
+[ 1464.579014]  [0:       Binder_1:18656] [c0] [@] pin_ctrl(act(4), pin(0), val(1), nm(pin)
+
+[ 1464.579026]  [0:       Binder_1:18656] [c0] [@] pin_ctrl(act(1), pin(99), val(0), nm((null))
+
+[ 1464.579037]  [0:       Binder_1:18656] [c0] [@] pin_ctrl(act(5), pin(0), val(0), nm(VDDIO_1.8V_CAM)
+
+[ 1464.579048]  [0:       Binder_1:18656] [c0] [@] pin_ctrl(act(5), pin(0), val(0), nm(VDD_CAM_SENSOR_A2P8)
+
+[ 1464.579059]  [0:       Binder_1:18656] [c0] [@] pin_ctrl(act(5), pin(0), val(0), nm(VDDAF_2.8V_CAM)
+
+[ 1464.579070]  [0:       Binder_1:18656] [c0] [@] pin_ctrl(act(5), pin(0), val(0), nm(VDDD_1.2V_CAM)
+
+[ 1464.580541]  [0:       Binder_1:18656] [c0] sm5703-regulator VDDAF_2.8V_CAM sm5703_regulator_is_enabled ret (1)
+
+[ 1464.580558]  [0:       Binder_1:18656] [c0] sm5703-regulator Disable regulator VDDAF_2.8V_CAM
+
+[ 1464.580837]  [0:       Binder_1:18656] [c0] sm5703-regulator sm5703_regulator_disable ret (0)
+
+[ 1464.581081]  [0:       Binder_1:18656] sm5703-regulator VDDD_1.2V_CAM sm5703_regulator_is_enabled ret (1)
+
+[ 1464.581095]  [0:       Binder_1:18656] [c0] sm5703-regulator Disable regulator VDDD_1.2V_CAM
+
+[ 1464.581365]  [0:       Binder_1:18656] [c0] sm5703-regulator sm5703_regulator_disable ret (0)
+
+[ 1464.581882]  [0:       Binder_1:18656] [@][SEN:D:0] fimc_is_sensor_runtime_suspend():0
+
+[ 1464.581988]  [0:       Binder_1:18656] [c0] [@][RSC] rsctype : 0, rsccount : 0
+
+[ 1464.582002]  [0:       Binder_1:18656] [c0] [@][0][SEN:D] fimc_is_sensor_close():0
+
+[ 1464.582021]  [0:       Binder_1:18656] [c0] [@][0][SS0:V] fimc_is_ssx_video_close(0):0
+
+[ 1465.084421]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x449, ocv = 4285
+
+[ 1465.088742]  [0:    kworker/0:3:17399] [c0] sm5703_test_read: 0x4 = 0xbe, 0x5 = 0xff, 0x6 = 0xf3, 0x7 = 0xff, 0x8 = 0x08, 0x9 = 0x08, 0xa = 0x07, 0xb = 0x00, 0xc = 0x55, 0xd = 0x07, 0xe = 0x03, 0xf = 0x07, 0x10 = 0x16, 0x11 = 0x30, 0x12 = 0xf8, 0x13 = 0x08, 0x60 = 0x03, 0x6b = 0x20, 0x66 = 0x00, 
+
+[ 1465.089610]  [0:    kworker/0:3:17399] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(288), Temp-ADC(1860)
+
+[ 1465.090307]  [0:    kworker/0:3:17399] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(288), Temp-ADC(1859)
+
+[ 1465.090328]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 1465.090349]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 1465.091118]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x2970, temperature = 414
+
+[ 1465.091328]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x449, ocv = 4285
+
+[ 1465.091352]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 414, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 288
+
+[ 1465.091718]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6264, soc = 983
+
+[ 1465.091926]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 1465.092136]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 1465.092344]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 1465.092553]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 1465.092765]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 1465.092981]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 1465.093199]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 1465.093420]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 1465.093662]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 1465.093998]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 1465.094222]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 1465.094440]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 1465.095252]  [0:    kworker/0:3:17399] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 1465.096066]  [0:    kworker/0:3:17399] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 1465.096876]  [0:    kworker/0:3:17399] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 1465.097688]  [0:    kworker/0:3:17399] [c0] 0x85=0x005b, 0x86=0x0064, 0x87=0x4eb8, 0x28=0x0800 
+
+[ 1465.097705]  [0:    kworker/0:3:17399] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[ 1465.097724]  [0:    kworker/0:3:17399] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4292mV),Inow(-31mA),Imax(450mA),SOC(100%),Tbat(288),Tchg(0),is_hc_usb(0)
+
+[ 1465.097738]  [0:    kworker/0:3:17399] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[ 1465.097938]  [0:    kworker/0:3:17399] [c0] sm5703_get_charging_health : is_charging = 1, cable_type = 4, is_current_reduced = 0
+
+[ 1465.098126]  [0:    kworker/0:3:17399] [c0] sm5703_get_charging_health: SM5703_CNTL, nCHG : 0x55, 0
+
+[ 1465.098138]  [0:    kworker/0:3:17399] [c0] sm5703_get_charging_health : vbus_status = 32
+
+[ 1465.098148]  [0:    kworker/0:3:17399] [c0] sm5703_get_charging_health : Health : 1
+
+[ 1465.098166]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 1465.098185]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 1465.098981]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x2970, temperature = 414
+
+[ 1465.099201]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x449, ocv = 4285
+
+[ 1465.099224]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 414, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 288
+
+[ 1465.099603]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6264, soc = 983
+
+[ 1465.099822]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 1465.100037]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 1465.100253]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 1465.100467]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 1465.100682]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 1465.100899]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 1465.101114]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 1465.101330]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 1465.101547]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 1465.101765]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 1465.101982]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 1465.102206]  [0:    kworker/0:3:17399] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 1465.103023]  [0:    kworker/0:3:17399] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 1465.103840]  [0:    kworker/0:3:17399] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 1465.104655]  [0:    kworker/0:3:17399] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 1465.105449]  [0:    kworker/0:3:17399] [c0] 0x85=0x005b, 0x86=0x0064, 0x87=0x4eb8, 0x28=0x0800 
+
+[ 1465.105473]  [0:    kworker/0:3:17399] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Full), mode(Additional), Health(Good), Cable(4), level(100%)
+
+[ 1465.105547]  [0:    kworker/0:3:17399] [c0] sec_chg_get_property: slow-charging mode
+
+[ 1465.107995]  [3:        healthd:18222] [c3] sec_chg_get_property: slow-charging mode
+
+[ 1465.108251]  [3:        healthd:18222] [c3] sec_bat_show_attrs: waterproof event
+
+[ 1465.108308]  [3:        healthd:18222] [c3] sec_bat_show_attrs: waterproof event
+
+[ 1465.108464]  [3:        healthd:18222] [c3] healthd: battery l=100 v=4292 t=28.8 h=2 st=3 c=0 o=4 ca=-30 ct=2 ps=0 chg=u 2026-02-23 18:46:19.505823671 UTC
+
+[ 1465.108496]  [3:        healthd:18222] [c3] healthd: battery l=100 v=4292 t=28.8 h=2 st=3 c=0 o=4 ca=-30 ct=2 ps=0 chg=u 2026-02-23 18:46:19.505823671 UTC hv=0 sdc=0 sec=0 chg=u
+
+[ 1465.108519]  [3:        healthd:18222] [c3] healthd-android: healthd_mode_android_battery_update
+
+[ 1465.108541]  [3:        healthd:18222] [c3] BatteryPropertiesRegistrar: notifyListeners : start
+
+[ 1465.108563]  [3:        healthd:18222] [c3] IBatteryPropertiesListener : batteryPropertiesChanged!
+
+[ 1465.108563]  [3:        healthd:18222] : BatteryPropertiesRegistrar: notifyListeners : done
+
+[ 1465.108913]  [2:       Binder_1:18451] [c2] logger: !@BatteryListener : batteryPropertiesChanged!
+

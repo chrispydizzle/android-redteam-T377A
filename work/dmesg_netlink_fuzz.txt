@@ -1,0 +1,2410 @@
+[24031.757770]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[24031.758899]  [0:    kworker/0:3:17641] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[24031.760006]  [0:    kworker/0:3:17641] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[24031.761108]  [0:    kworker/0:3:17641] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[24031.762211]  [0:    kworker/0:3:17641] [c0] 0x85=0x0003, 0x86=0x0021, 0x87=0x4f54, 0x28=0xe000 
+
+[24031.762265]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[24031.762314]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[24031.763387]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x1ce0, temperature = 288
+
+[24031.763730]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[24031.763795]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 288, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7785, bat_temp = 231
+
+[24031.764292]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6320, soc = 991
+
+[24031.764582]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[24031.764868]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[24031.765156]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[24031.765442]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[24031.765730]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[24031.766016]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[24031.766303]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[24031.766591]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[24031.766880]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[24031.767167]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[24031.767455]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[24031.767743]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[24031.768828]  [0:    kworker/0:3:17641] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[24031.769906]  [0:    kworker/0:3:17641] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[24031.770982]  [0:    kworker/0:3:17641] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[24031.772056]  [0:    kworker/0:3:17641] [c0] 0x85=0x0003, 0x86=0x0021, 0x87=0x4f54, 0x28=0xe000 
+
+[24031.772092]  [0:    kworker/0:3:17641] [c0] sm5703_fg_calculate_dynamic_scale: raw soc (991)
+
+[24031.772118]  [0:    kworker/0:3:17641] sm5703_fg_calculate_dynamic_scale: 981 is used for capacity_max, capacity(100)
+
+[24031.772154]  [0:    kworker/0:3:17641] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[24031.772205]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4304mV),Inow(-15mA),Imax(450mA),SOC(100%),Tbat(231),Tchg(0),is_hc_usb(0)
+
+[24031.772247]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[24031.772300]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_temperature: HLT(800) HLR(750) HT(550), HR(500), LT(-50), LR(0)
+
+[24031.772592]  [0:    kworker/0:3:17641] [c0] sec_bat_swelling_check: status(4), swell_mode(0:1), cv(0x10f4), temp(231)
+
+[24031.772647]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Full), mode(None), Health(Good), Cable(4), level(100%)
+
+[24031.779962]  [0:        healthd: 2177] [c0] sec_bat_show_attrs: waterproof event
+
+[24031.780110]  [0:        healthd: 2177] [c0] sec_bat_show_attrs: waterproof event
+
+[24031.780457]  [0:        healthd: 2177] [c0] healthd: battery l=100 v=4304 t=23.1 h=2 st=3 c=0 o=4 ca=-14 ct=0 ps=0 chg=u 2026-02-24 01:27:33.501693730 UTC
+
+[24031.780536]  [0:        healthd: 2177] [c0] healthd: battery l=100 v=4304 t=23.1 h=2 st=3 c=0 o=4 ca=-14 ct=0 ps=0 chg=u 2026-02-24 01:27:33.501693730 UTC hv=0 sdc=0 sec=0 chg=u
+
+[24031.780592]  [0:        healthd: 2177] [c0] healthd-android: healthd_mode_android_battery_update
+
+[24031.780643]  [0:        healthd: 2177] [c0] BatteryPropertiesRegistrar: notifyListeners : start
+
+[24031.781764]  [0:       Binder_E: 3861] logger: !@BatteryListener : batteryPropertiesChanged!
+
+[24031.780697]  [0:        healthd: 2177] [c0] IBatteryPropertiesListener : batteryPropertiesChanged!
+
+[24031.780697]  [0:        healthd: 2177] : [c0] BatteryPropertiesRegistrar: notifyListeners : done
+
+[24031.871298]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24031.875055]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24031.878550]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24031.981486]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24031.982879]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24031.986005]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24031.987244]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24031.990304]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24031.991508]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24032.890048]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24032.892195]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24032.894149]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24032.996271]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24032.997619]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24033.000764]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24033.002019]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24033.005015]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24033.006239]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24034.504263] I[0:      swapper/0:    0] [c0] mif: LNK-TX(12): fc eb 0c 00 08 00 02 00 07 01 02 01
+
+[24034.506949] I[0:      swapper/0:    0] [c0] mif: LNK-RX(24): fc eb 15 00 11 00 05 02 07 01 02 01 00 00 00 00 ...
+
+[24035.306891]  [0:    kworker/0:3:17641] [c0] [SX9500]: sx9500_get_data - cm=259548,uf=24507,av=2701,df=1362,Of=2092 (1)
+
+[24036.930780]  [0:       watchdog: 3344] [c0] logger: !@Sync 796 [02-23 17:27:38.651]
+
+[24040.405054]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24040.407168]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24040.409120]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24040.511254]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24040.512641]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24040.516123]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24040.517350]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24040.520520]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24040.521748]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24040.720133]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24040.722555]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24040.724784]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24040.826539]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24040.827938]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24040.831105]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24040.832348]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24040.835354]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24040.836583]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24041.940207]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24041.942610]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24041.944846]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24042.046367]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24042.047754]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24042.050939]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24042.052181]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24042.054934]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24042.056156]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24042.155142]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24042.157564]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24042.159809]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24042.261407]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24042.262788]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24042.266976]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24042.270916]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24049.070273]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24049.072745]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24049.074996]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24049.176368]  [3:    migration/3:   23] [c3] migrate_irqs: 2 callbacks suppressed
+
+[24049.176386]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24049.177767]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24049.180955]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24049.182187]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24049.185078]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24049.186296]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24050.085213]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24050.087669]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24050.089933]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24050.191318]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24050.192696]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24050.197860]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24050.199225]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24050.202239]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24050.203576]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24054.543381] I[0:      swapper/0:    0] [c0] mif: LNK-TX(12): fc eb 0c 00 08 00 03 00 07 01 02 01
+
+[24054.546133] I[0:      swapper/0:    0] [c0] mif: LNK-RX(24): fc eb 15 00 11 00 06 03 07 01 02 01 00 00 00 00 ...
+
+[24061.776944]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[24061.783238]  [0:    kworker/0:3:17641] [c0] sm5703_test_read: 0x4 = 0xbe, 0x5 = 0xff, 0x6 = 0xf3, 0x7 = 0xff, 0x8 = 0x00, 0x9 = 0x08, 0xa = 0x04, 0xb = 0x00, 0xc = 0x55, 0xd = 0x07, 0xe = 0x03, 0xf = 0x07, 0x10 = 0x16, 0x11 = 0x30, 0x12 = 0xf8, 0x13 = 0x08, 0x60 = 0x03, 0x6b = 0x20, 0x66 = 0x00, 
+
+[24061.784503]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(231), Temp-ADC(2103)
+
+[24061.785461]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(231), Temp-ADC(2103)
+
+[24061.785515]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[24061.785571]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[24061.786660]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x1cf0, temperature = 289
+
+[24061.786980]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[24061.787048]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 289, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7785, bat_temp = 231
+
+[24061.787596]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6320, soc = 991
+
+[24061.787913]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[24061.788230]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[24061.788552]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[24061.788871]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[24061.789188]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[24061.789504]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[24061.789821]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[24061.790138]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[24061.790455]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[24061.790772]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[24061.791089]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[24061.791408]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[24061.792513]  [0:    kworker/0:3:17641] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[24061.793639]  [0:    kworker/0:3:17641] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[24061.794743]  [0:    kworker/0:3:17641] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[24061.795836]  [0:    kworker/0:3:17641] [c0] 0x85=0x0004, 0x86=0x001e, 0x87=0x4f54, 0x28=0xe000 
+
+[24061.795889]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[24061.795937]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[24061.797009]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x1cf0, temperature = 289
+
+[24061.797329]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[24061.797394]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 289, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7785, bat_temp = 231
+
+[24061.797934]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6320, soc = 991
+
+[24061.798252]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[24061.798576]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[24061.798894]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[24061.799212]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[24061.799529]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[24061.799846]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[24061.800162]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[24061.800480]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[24061.800795]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[24061.801112]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[24061.801431]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[24061.801748]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[24061.802856]  [0:    kworker/0:3:17641] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[24061.803972]  [0:    kworker/0:3:17641] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[24061.804990]  [0:    kworker/0:3:17641] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[24061.806007]  [0:    kworker/0:3:17641] [c0] 0x85=0x0004, 0x86=0x001e, 0x87=0x4f54, 0x28=0xe000 
+
+[24061.806043]  [0:    kworker/0:3:17641] [c0] sm5703_fg_calculate_dynamic_scale: raw soc (991)
+
+[24061.806069]  [0:    kworker/0:3:17641] sm5703_fg_calculate_dynamic_scale: 981 is used for capacity_max, capacity(100)
+
+[24061.806105]  [0:    kworker/0:3:17641] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[24061.806156]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4304mV),Inow(-15mA),Imax(450mA),SOC(100%),Tbat(231),Tchg(0),is_hc_usb(0)
+
+[24061.806198]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[24061.806252]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_temperature: HLT(800) HLR(750) HT(550), HR(500), LT(-50), LR(0)
+
+[24061.806543]  [0:    kworker/0:3:17641] [c0] sec_bat_swelling_check: status(4), swell_mode(0:1), cv(0x10f4), temp(231)
+
+[24061.806597]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Full), mode(None), Health(Good), Cable(4), level(100%)
+
+[24061.814523]  [0:        healthd: 2177] [c0] sec_bat_show_attrs: waterproof event
+
+[24061.814710]  [0:        healthd: 2177] [c0] sec_bat_show_attrs: waterproof event
+
+[24061.815138]  [0:        healthd: 2177] [c0] healthd: battery l=100 v=4304 t=23.1 h=2 st=3 c=0 o=4 ca=-14 ct=0 ps=0 chg=u 2026-02-24 01:28:03.536352116 UTC
+
+[24061.815236]  [0:        healthd: 2177] [c0] healthd: battery l=100 v=4304 t=23.1 h=2 st=3 c=0 o=4 ca=-14 ct=0 ps=0 chg=u 2026-02-24 01:28:03.536352116 UTC hv=0 sdc=0 sec=0 chg=u
+
+[24061.815304]  [0:        healthd: 2177] [c0] healthd-android: healthd_mode_android_battery_update
+
+[24061.815368]  [0:        healthd: 2177] [c0] BatteryPropertiesRegistrar: notifyListeners : start
+
+[24061.816029]  [0:       Binder_2: 2783] logger: !@BatteryListener : batteryPropertiesChanged!
+
+[24061.815436]  [0:        healthd: 2177] [c0] IBatteryPropertiesListener : batteryPropertiesChanged!
+
+[24061.815436]  [0:        healthd: 2177] : [c0] BatteryPropertiesRegistrar: notifyListeners : done
+
+[24062.415222]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24062.417632]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24062.419887]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24062.521103]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24062.522498]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24062.525970]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24062.527224]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24062.530198]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24062.531419]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24065.118908]  [0:    kworker/0:3:17641] [c0] [VIB] sec_vib_log_show [0.000 : 0.000] off
+
+[24066.306866]  [0:    kworker/0:3:17641] [c0] [SX9500]: sx9500_get_data - cm=259549,uf=24509,av=2701,df=1363,Of=2092 (1)
+
+[24066.932150]  [0:       watchdog: 3344] [c0] logger: !@Sync 797 [02-23 17:28:08.652]
+
+[24068.130256]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24068.133083]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24068.135728]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24068.836203]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24068.837599]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24068.842133]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24068.843573]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24068.846891]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24068.848140]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24069.250077]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24069.252249]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24069.254215]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24069.356418]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24069.357808]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24069.360776]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24069.362014]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24069.364604]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24069.365836]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24073.265193]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24073.267646]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24073.269899]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24073.471563]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24073.472957]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24073.476162]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24073.477405]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24073.480452]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24073.481679]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24073.580749]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24073.585211]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24073.587572]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24074.091358]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24074.092750]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24074.096485]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24074.097768]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24074.101551]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24074.103093]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24074.398729]  [0:    kworker/0:3:17641] [c0] muic_print_reg_log:e(0)0 13(1)0 14(0)0 15(0)0 1b(0)0 1d(3)0 20(4)0 21(0)0 24(4)0 3a(0)0 2(1f)0 2(1e)1 2(1e)0 2(1e)0 3(0)0 4(0)0 a(4)0 b(0)0 15(0)0 1d(3)0 7(1f)0 13(1)0 13(25)1 13(25)0 13(25)0 
+
+[24074.401448]  [0:    kworker/0:3:17641] [c0] muic_print_reg_dump:CT:1e IM1:dc IM2:0 MS1:25 MS2:0 ADC:1f DT1:4 DT2:0 DT3:0 RS1:3
+
+[24074.586427] I[0:      swapper/0:    0] [c0] mif: LNK-TX(12): fc eb 0c 00 08 00 04 00 07 01 02 01
+
+[24074.589224] I[0:      swapper/0:    0] [c0] mif: LNK-RX(24): fc eb 15 00 11 00 07 04 07 01 02 01 00 00 00 00 ...
+
+[24077.205087]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24077.207454]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24077.209413]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24077.310356]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24077.311286]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24077.313524]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24077.314342]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24077.316083]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24077.316855]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24078.215272]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24078.217741]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24078.220024]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24078.321486]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24078.322882]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24078.325876]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24078.327148]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24078.329817]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24078.331034]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24081.130214]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24081.132733]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24081.135370]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24081.541308]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24081.542700]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24081.546524]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24081.547793]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24081.551061]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24081.552322]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24091.255144]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24091.257395]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24091.259569]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24091.561257]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24091.562625]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24091.566221]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24091.567484]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24091.570551]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24091.571790]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24091.809822]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[24091.816072]  [0:    kworker/0:3:17641] [c0] sm5703_test_read: 0x4 = 0xbe, 0x5 = 0xff, 0x6 = 0xf3, 0x7 = 0xff, 0x8 = 0x00, 0x9 = 0x08, 0xa = 0x04, 0xb = 0x00, 0xc = 0x55, 0xd = 0x07, 0xe = 0x03, 0xf = 0x07, 0x10 = 0x16, 0x11 = 0x30, 0x12 = 0xf8, 0x13 = 0x08, 0x60 = 0x03, 0x6b = 0x20, 0x66 = 0x00, 
+
+[24091.817263]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(232), Temp-ADC(2101)
+
+[24091.818198]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(232), Temp-ADC(2102)
+
+[24091.818252]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[24091.818309]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[24091.819337]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x1d00, temperature = 290
+
+[24091.819642]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[24091.819709]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 290, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7f85, bat_temp = 232
+
+[24091.820663]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6320, soc = 991
+
+[24091.820979]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[24091.821290]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[24091.821601]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[24091.821910]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[24091.822219]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[24091.822529]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[24091.822838]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[24091.823146]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[24091.823465]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[24091.823774]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[24091.824087]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[24091.824396]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[24091.825466]  [0:    kworker/0:3:17641] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[24091.826538]  [0:    kworker/0:3:17641] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[24091.827614]  [0:    kworker/0:3:17641] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[24091.828758]  [0:    kworker/0:3:17641] [c0] 0x85=0x0004, 0x86=0x001a, 0x87=0x4f54, 0x28=0xe000 
+
+[24091.828815]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[24091.828865]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[24091.829907]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x1d00, temperature = 290
+
+[24091.830219]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[24091.830285]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 290, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7f85, bat_temp = 232
+
+[24091.830811]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6320, soc = 991
+
+[24091.831123]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[24091.831433]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[24091.831743]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[24091.832051]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[24091.832361]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[24091.832669]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[24091.832979]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[24091.833289]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[24091.833628]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[24091.833936]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[24091.834245]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[24091.834553]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[24091.835627]  [0:    kworker/0:3:17641] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[24091.836695]  [0:    kworker/0:3:17641] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[24091.837765]  [0:    kworker/0:3:17641] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[24091.838825]  [0:    kworker/0:3:17641] [c0] 0x85=0x0004, 0x86=0x001a, 0x87=0x4f54, 0x28=0xe000 
+
+[24091.838862]  [0:    kworker/0:3:17641] [c0] sm5703_fg_calculate_dynamic_scale: raw soc (991)
+
+[24091.838888]  [0:    kworker/0:3:17641] sm5703_fg_calculate_dynamic_scale: 981 is used for capacity_max, capacity(100)
+
+[24091.838924]  [0:    kworker/0:3:17641] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[24091.838975]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4304mV),Inow(0mA),Imax(450mA),SOC(100%),Tbat(232),Tchg(0),is_hc_usb(0)
+
+[24091.839017]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[24091.839071]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_temperature: HLT(800) HLR(750) HT(550), HR(500), LT(-50), LR(0)
+
+[24091.839357]  [0:    kworker/0:3:17641] [c0] sec_bat_swelling_check: status(4), swell_mode(0:1), cv(0x10f4), temp(232)
+
+[24091.839410]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Full), mode(None), Health(Good), Cable(4), level(100%)
+
+[24091.846401]  [0:        healthd: 2177] [c0] sec_bat_show_attrs: waterproof event
+
+[24091.846549]  [0:        healthd: 2177] [c0] sec_bat_show_attrs: waterproof event
+
+[24091.846892]  [0:        healthd: 2177] [c0] healthd: battery l=100 v=4304 t=23.2 h=2 st=3 c=0 o=4 ca=0 ct=0 ps=0 chg=u 2026-02-24 01:28:33.568126964 UTC
+
+[24091.846971]  [0:        healthd: 2177] [c0] healthd: battery l=100 v=4304 t=23.2 h=2 st=3 c=0 o=4 ca=0 ct=0 ps=0 chg=u 2026-02-24 01:28:33.568126964 UTC hv=0 sdc=0 sec=0 chg=u
+
+[24091.847026]  [0:        healthd: 2177] [c0] healthd-android: healthd_mode_android_battery_update
+
+[24091.847078]  [0:        healthd: 2177] [c0] BatteryPropertiesRegistrar: notifyListeners : start
+
+[24091.849463]  [0:       Binder_3: 3022] logger: !@BatteryListener : batteryPropertiesChanged!
+
+[24091.871091]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24091.847131]  [0:        healthd: 2177] [c0] IBatteryPropertiesListener : batteryPropertiesChanged!
+
+[24091.847131]  [0:        healthd: 2177] : [c0] BatteryPropertiesRegistrar: notifyListeners : done
+
+[24091.874077]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24091.878078]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24091.981226]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24091.982617]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24091.986069]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24091.987331]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24091.990168]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24091.991407]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24093.290214]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24093.292638]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24093.294895]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24093.396362]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24093.397738]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24093.400901]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24093.402141]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24093.405137]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24093.406366]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24094.608511] I[0:      swapper/0:    0] [c0] mif: LNK-TX(12): fc eb 0c 00 08 00 05 00 07 01 02 01
+
+[24094.611236] I[0:      swapper/0:    0] [c0] mif: LNK-RX(24): fc eb 15 00 11 00 08 05 07 01 02 01 00 00 00 00 ...
+
+[24096.933675]  [0:       watchdog: 3344] [c0] logger: !@Sync 798 [02-23 17:28:38.654]
+
+[24097.306848]  [0:    kworker/0:3:17641] [c0] [SX9500]: sx9500_get_data - cm=259548,uf=24506,av=2701,df=1362,Of=2092 (1)
+
+[24104.805794]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24104.808042]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24104.810320]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24104.911387]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24104.912771]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24104.915919]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24104.917166]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24104.920316]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24104.921542]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24110.121283]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24110.125006]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24110.128502]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24110.231511]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24110.232897]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24110.235989]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24110.237226]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24110.240338]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24110.241541]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24114.643511] I[0:      swapper/0:    0] [c0] mif: LNK-TX(12): fc eb 0c 00 08 00 06 00 07 01 02 01
+
+[24114.646259] I[0:      swapper/0:    0] [c0] mif: LNK-RX(24): fc eb 15 00 11 00 09 06 07 01 02 01 00 00 00 00 ...
+
+[24121.843292]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[24121.849720]  [0:    kworker/0:3:17641] [c0] sm5703_test_read: 0x4 = 0xbe, 0x5 = 0xff, 0x6 = 0xf3, 0x7 = 0xff, 0x8 = 0x00, 0x9 = 0x08, 0xa = 0x04, 0xb = 0x00, 0xc = 0x55, 0xd = 0x07, 0xe = 0x03, 0xf = 0x07, 0x10 = 0x16, 0x11 = 0x30, 0x12 = 0xf8, 0x13 = 0x08, 0x60 = 0x03, 0x6b = 0x20, 0x66 = 0x00, 
+
+[24121.850914]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(232), Temp-ADC(2100)
+
+[24121.851853]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(232), Temp-ADC(2100)
+
+[24121.851908]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[24121.851964]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[24121.853027]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x1cf0, temperature = 289
+
+[24121.853340]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[24121.853407]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 289, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7785, bat_temp = 232
+
+[24121.853987]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6320, soc = 991
+
+[24121.854299]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[24121.854601]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[24121.854910]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[24121.855223]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[24121.855532]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[24121.855842]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[24121.856155]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[24121.856465]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[24121.856775]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[24121.857086]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[24121.857397]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[24121.857708]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[24121.858799]  [0:    kworker/0:3:17641] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[24121.859833]  [0:    kworker/0:3:17641] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[24121.860867]  [0:    kworker/0:3:17641] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[24121.861905]  [0:    kworker/0:3:17641] [c0] 0x85=0x0004, 0x86=0x0015, 0x87=0x4f54, 0x28=0xe000 
+
+[24121.861961]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[24121.862009]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[24121.863013]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x1cf0, temperature = 289
+
+[24121.863338]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[24121.863403]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 289, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7785, bat_temp = 232
+
+[24121.863997]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6320, soc = 991
+
+[24121.864314]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[24121.864633]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[24121.864949]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[24121.865266]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[24121.865586]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[24121.865905]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[24121.866223]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[24121.866542]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[24121.866859]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[24121.867177]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[24121.867495]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[24121.867814]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[24121.868971]  [0:    kworker/0:3:17641] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[24121.870081]  [0:    kworker/0:3:17641] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[24121.871183]  [0:    kworker/0:3:17641] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[24121.872286]  [0:    kworker/0:3:17641] [c0] 0x85=0x0004, 0x86=0x0015, 0x87=0x4f54, 0x28=0xe000 
+
+[24121.872323]  [0:    kworker/0:3:17641] [c0] sm5703_fg_calculate_dynamic_scale: raw soc (991)
+
+[24121.872349]  [0:    kworker/0:3:17641] sm5703_fg_calculate_dynamic_scale: 981 is used for capacity_max, capacity(100)
+
+[24121.872384]  [0:    kworker/0:3:17641] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[24121.872436]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4304mV),Inow(-11mA),Imax(450mA),SOC(100%),Tbat(232),Tchg(0),is_hc_usb(0)
+
+[24121.872477]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[24121.872531]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_temperature: HLT(800) HLR(750) HT(550), HR(500), LT(-50), LR(0)
+
+[24121.872832]  [0:    kworker/0:3:17641] [c0] sec_bat_swelling_check: status(4), swell_mode(0:1), cv(0x10f4), temp(232)
+
+[24121.872886]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Full), mode(None), Health(Good), Cable(4), level(100%)
+
+[24121.880175]  [0:        healthd: 2177] [c0] sec_bat_show_attrs: waterproof event
+
+[24121.880322]  [0:        healthd: 2177] [c0] sec_bat_show_attrs: waterproof event
+
+[24121.880670]  [0:        healthd: 2177] [c0] healthd: battery l=100 v=4304 t=23.2 h=2 st=3 c=0 o=4 ca=-10 ct=0 ps=0 chg=u 2026-02-24 01:29:03.601906889 UTC
+
+[24121.880748]  [0:        healthd: 2177] [c0] healthd: battery l=100 v=4304 t=23.2 h=2 st=3 c=0 o=4 ca=-10 ct=0 ps=0 chg=u 2026-02-24 01:29:03.601906889 UTC hv=0 sdc=0 sec=0 chg=u
+
+[24121.880803]  [0:        healthd: 2177] [c0] healthd-android: healthd_mode_android_battery_update
+
+[24121.880855]  [0:        healthd: 2177] [c0] BatteryPropertiesRegistrar: notifyListeners : start
+
+[24121.881954]  [0:       Binder_5: 3421] logger: !@BatteryListener : batteryPropertiesChanged!
+
+[24121.880909]  [0:        healthd: 2177] [c0] IBatteryPropertiesListener : batteryPropertiesChanged!
+
+[24121.880909]  [0:        healthd: 2177] : [c0] BatteryPropertiesRegistrar: notifyListeners : done
+
+[24121.940499]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24121.942896]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24121.945264]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24122.046327]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24122.047720]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24122.050845]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24122.052096]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24122.054638]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24122.055856]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24125.278925]  [0:    kworker/0:3:17641] [c0] [VIB] sec_vib_log_show [0.000 : 0.000] off
+
+[24126.935068]  [0:       watchdog: 3344] [c0] logger: !@Sync 799 [02-23 17:29:08.655]
+
+[24128.306902]  [0:    kworker/0:3:17641] [c0] [SX9500]: sx9500_get_data - cm=259550,uf=24513,av=2701,df=1363,Of=2092 (1)
+
+[24133.756285]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24133.760172]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24133.763754]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24133.866046]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24133.867444]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24133.870792]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24133.872010]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24133.875075]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24133.876327]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24134.558700]  [0:    kworker/0:3:17641] [c0] muic_print_reg_log:e(0)0 13(1)0 14(0)0 15(0)0 1b(0)0 1d(3)0 20(4)0 21(0)0 24(4)0 3a(0)0 2(1f)0 2(1e)1 2(1e)0 2(1e)0 3(0)0 4(0)0 a(4)0 b(0)0 15(0)0 1d(3)0 7(1f)0 13(1)0 13(25)1 13(25)0 13(25)0 
+
+[24134.561430]  [0:    kworker/0:3:17641] [c0] muic_print_reg_dump:CT:1e IM1:dc IM2:0 MS1:25 MS2:0 ADC:1f DT1:4 DT2:0 DT3:0 RS1:3
+
+[24134.675698] I[0:      swapper/0:    0] [c0] mif: LNK-TX(12): fc eb 0c 00 08 00 07 00 07 01 02 01
+
+[24134.678389] I[0:      swapper/0:    0] [c0] mif: LNK-RX(24): fc eb 15 00 11 00 0a 07 07 01 02 01 00 00 00 00 ...
+
+[24137.275098]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24137.277547]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24137.279510]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24137.380851]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24137.381937]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24137.385840]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24137.386812]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24137.389525]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24137.390494]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24146.290248]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24146.292670]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24146.294946]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24146.396054]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24146.397439]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24146.400859]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24146.402113]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24146.407340]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24146.408684]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24146.710806]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24146.712975]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24146.720805]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24146.821621]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24146.823007]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24146.826547]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24146.827776]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24146.830864]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24146.832099]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24151.875518]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[24151.881621]  [0:    kworker/0:3:17641] [c0] sm5703_test_read: 0x4 = 0xbe, 0x5 = 0xff, 0x6 = 0xf3, 0x7 = 0xff, 0x8 = 0x00, 0x9 = 0x08, 0xa = 0x04, 0xb = 0x00, 0xc = 0x55, 0xd = 0x07, 0xe = 0x03, 0xf = 0x07, 0x10 = 0x16, 0x11 = 0x30, 0x12 = 0xf8, 0x13 = 0x08, 0x60 = 0x03, 0x6b = 0x20, 0x66 = 0x00, 
+
+[24151.882814]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(232), Temp-ADC(2099)
+
+[24151.883746]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(232), Temp-ADC(2101)
+
+[24151.883802]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[24151.883858]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[24151.884875]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x1cf0, temperature = 289
+
+[24151.885176]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[24151.885243]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 289, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7785, bat_temp = 232
+
+[24151.886075]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6320, soc = 991
+
+[24151.886401]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[24151.886723]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[24151.887041]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[24151.887357]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[24151.887676]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[24151.887994]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[24151.888310]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[24151.888654]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[24151.888972]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[24151.889289]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[24151.889607]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[24151.889925]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[24151.891024]  [0:    kworker/0:3:17641] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[24151.892126]  [0:    kworker/0:3:17641] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[24151.893226]  [0:    kworker/0:3:17641] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[24151.894343]  [0:    kworker/0:3:17641] [c0] 0x85=0x0004, 0x86=0x0010, 0x87=0x4f54, 0x28=0xe000 
+
+[24151.894398]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[24151.894448]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[24151.895521]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x1cf0, temperature = 289
+
+[24151.895839]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[24151.895905]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 289, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7785, bat_temp = 232
+
+[24151.896448]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6320, soc = 991
+
+[24151.896764]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[24151.897082]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[24151.897398]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[24151.897706]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[24151.898023]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[24151.898342]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[24151.898688]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[24151.899006]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[24151.899326]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[24151.899643]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[24151.899959]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[24151.900277]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[24151.901381]  [0:    kworker/0:3:17641] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[24151.902482]  [0:    kworker/0:3:17641] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[24151.903591]  [0:    kworker/0:3:17641] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[24151.904694]  [0:    kworker/0:3:17641] [c0] 0x85=0x0004, 0x86=0x0010, 0x87=0x4f54, 0x28=0xe000 
+
+[24151.904731]  [0:    kworker/0:3:17641] [c0] sm5703_fg_calculate_dynamic_scale: raw soc (991)
+
+[24151.904757]  [0:    kworker/0:3:17641] sm5703_fg_calculate_dynamic_scale: 981 is used for capacity_max, capacity(100)
+
+[24151.904792]  [0:    kworker/0:3:17641] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[24151.904844]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4304mV),Inow(-3mA),Imax(450mA),SOC(100%),Tbat(232),Tchg(0),is_hc_usb(0)
+
+[24151.904885]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[24151.904939]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_temperature: HLT(800) HLR(750) HT(550), HR(500), LT(-50), LR(0)
+
+[24151.905249]  [0:    kworker/0:3:17641] [c0] sec_bat_swelling_check: status(4), swell_mode(0:1), cv(0x10f4), temp(232)
+
+[24151.905302]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Full), mode(None), Health(Good), Cable(4), level(100%)
+
+[24151.912103]  [0:        healthd: 2177] [c0] sec_bat_show_attrs: waterproof event
+
+[24151.912290]  [0:        healthd: 2177] [c0] sec_bat_show_attrs: waterproof event
+
+[24151.912711]  [0:        healthd: 2177] [c0] healthd: battery l=100 v=4304 t=23.2 h=2 st=3 c=0 o=4 ca=-2 ct=0 ps=0 chg=u 2026-02-24 01:29:33.633926583 UTC
+
+[24151.912809]  [0:        healthd: 2177] [c0] healthd: battery l=100 v=4304 t=23.2 h=2 st=3 c=0 o=4 ca=-2 ct=0 ps=0 chg=u 2026-02-24 01:29:33.633926583 UTC hv=0 sdc=0 sec=0 chg=u
+
+[24151.912877]  [0:        healthd: 2177] [c0] healthd-android: healthd_mode_android_battery_update
+
+[24151.912941]  [0:        healthd: 2177] [c0] BatteryPropertiesRegistrar: notifyListeners : start
+
+[24151.914302]  [0:       Binder_A: 3832] logger: !@BatteryListener : batteryPropertiesChanged!
+
+[24151.930267]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24151.913007]  [0:        healthd: 2177] [c0] IBatteryPropertiesListener : batteryPropertiesChanged!
+
+[24151.913007]  [0:        healthd: 2177] : [c0] BatteryPropertiesRegistrar: notifyListeners : done
+
+[24151.933512]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24151.937889]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24152.041188]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24152.042581]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24152.045907]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24152.047167]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24152.050357]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24152.051593]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24154.698026] I[0:      swapper/0:    0] [c0] mif: LNK-TX(12): fc eb 0c 00 08 00 08 00 07 01 02 01
+
+[24154.700756] I[0:      swapper/0:    0] [c0] mif: LNK-RX(24): fc eb 15 00 11 00 0b 08 07 01 02 01 00 00 00 00 ...
+
+[24156.936474]  [0:       watchdog: 3344] [c0] logger: !@Sync 800 [02-23 17:29:38.657]
+
+[24158.350226]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24158.352725]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24158.355427]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24158.455896]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24158.456912]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24158.459443]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24158.460338]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24158.464464]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24158.468537]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24159.306882]  [0:    kworker/0:3:17641] [c0] [SX9500]: sx9500_get_data - cm=259552,uf=24516,av=2701,df=1363,Of=2092 (1)
+
+[24164.353934]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.355829]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.357552]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.365269]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.368224]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.370107]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24164.372541]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.372976]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.373602]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.374321]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.375148]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.375339]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24164.376196]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.376925]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.377204]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.377688]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.378296]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.378742]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.379281]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.379529]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.380319]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.380864]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.381131]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.381612]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.382079]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.382496]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.383526]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.384143]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.384475]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.384885]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.385071]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24164.385100]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.385304]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.385503]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.385980]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.386197]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.386743]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.387049]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.387358]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.387660]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.387942]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.388213]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.388454]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.388699]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.388886]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.389101]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.389384]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.389581]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.389970]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.390174]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.390473]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.391073]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.391271]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.392106]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.392378]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.392832]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.393050]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.393244]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.393898]  [1:   netlink_fuzz:23438] [c1] netlink: 1768 bytes leftover after parsing attributes.
+
+[24164.394310]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.394657]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.395026]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.395454]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.395686]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.396006]  [1:   netlink_fuzz:23438] [c1] netlink: 1916 bytes leftover after parsing attributes.
+
+[24164.396921]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.397397]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.398731]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.398948]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.399679]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.399866]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.400590]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.400848]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.401450]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.401675]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.401886]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.402085]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.402450]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.402651]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.402861]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.403077]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.403523]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.404815]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.405740]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.405951]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.406138]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.406343]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.406605]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.406913]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.407308]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.407493]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.407820]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.408036]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.409650]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.410327]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.410521]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.411661]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.411872]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.412077]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.412317]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.412534]  [1:   netlink_fuzz:23438] [c1] netlink: 264 bytes leftover after parsing attributes.
+
+[24164.413134]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.414071]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.414949]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.415168]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.415716]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.416474]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.417071]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.417338]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.417798]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.418386]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.418910]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.419185]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.419966]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.421236]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.421585]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.421807]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.422498]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.423785]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.424235]  [1:   netlink_fuzz:23438] [c1] netlink: 1240 bytes leftover after parsing attributes.
+
+[24164.424856]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.425842]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.426115]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.426325]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.427608]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.427857]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.428072]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.428322]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.429399]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.429715]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.429937]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.432050]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.432428]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.432730]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.434852]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.435270]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.435708]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.436667]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.437475]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.438282]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.439248]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.439474]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.440642]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.441826]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.442366]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.442591]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.443196]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.443639]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.443876]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.444104]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.444533]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.444892]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.445123]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.445450]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.445989]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.446890]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.447135]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.447384]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.447703]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.447984]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.449146]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.449513]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.449724]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.450821]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.451029]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.451408]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.451837]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.453068]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.455188]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.455589]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.455854]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.456246]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.456902]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.457728]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.458730]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.459239]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.459495]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.459945]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.460511]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.461207]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.461724]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.462379]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.462574]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.462826]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.463175]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.463702]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.463929]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.464184]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.465660]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.466086]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.466298]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.466489]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.466970]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.467433]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.467762]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.468499]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.469025]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.469966]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.470408]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.471465]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.472058]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.472349]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.472832]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.473170]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.473528]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.474150]  [1:   netlink_fuzz:23438] [c1] netlink: 76 bytes leftover after parsing attributes.
+
+[24164.474407]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.475437]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.475651]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.476546]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.476790]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.477508]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.479227]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.479479]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.481086]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.481751]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.482918]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.483153]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.483374]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.483647]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.484302]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.484510]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.484812]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.485433]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.486337]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.486752]  [1:   netlink_fuzz:23438] [c1] netlink: 832 bytes leftover after parsing attributes.
+
+[24164.487086]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.487336]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.488344]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.488713]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.489217]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.489457]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.489837]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.491075]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.491441]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.492399]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.493286]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.493556]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.493784]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.494941]  [1:   netlink_fuzz:23438] [c1] netlink: 1268 bytes leftover after parsing attributes.
+
+[24164.495157]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.495569]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.496210]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.496856]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.497368]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.498658]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.500286]  [1:   netlink_fuzz:23438] [c1] netlink: 1808 bytes leftover after parsing attributes.
+
+[24164.500504]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.500728]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.501811]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.503177]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.503444]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.503693]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.504273]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.505680]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.506004]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.506350]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.506594]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.506828]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.507120]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.507319]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.507717]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.508056]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.508890]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.509401]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.509990]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.511174]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.511374]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.511893]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.512633]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.512941]  [1:   netlink_fuzz:23438] [c1] netlink: 1216 bytes leftover after parsing attributes.
+
+[24164.513182]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.514204]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.514451]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.514774]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.514984]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.515812]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.517839]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.518506]  [1:   netlink_fuzz:23438] [c1] netlink: 588 bytes leftover after parsing attributes.
+
+[24164.520384]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.520589]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.521229]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.521458]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.521697]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.521924]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.522984]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.523338]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.523731]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.524439]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.525349]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.525706]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.525902]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.526094]  [1:   netlink_fuzz:23438] [c1] netlink: 332 bytes leftover after parsing attributes.
+
+[24164.526470]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.526913]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.527750]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.529073]  [1:   netlink_fuzz:23438] [c1] netlink: 1804 bytes leftover after parsing attributes.
+
+[24164.529320]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.529743]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.530196]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.530631]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.530839]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.531485]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.531834]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.532151]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.532362]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.532897]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.533559]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.533830]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.534319]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.534587]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.534917]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.535939]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.536176]  [1:   netlink_fuzz:23438] [c1] netlink: 1804 bytes leftover after parsing attributes.
+
+[24164.536632]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.537191]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.538351]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.539485]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.540075]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.540721]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.540960]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.541860]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.542598]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.542796]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.543031]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.544126]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.544333]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.544562]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.544971]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.545163]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.545470]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.545673]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.545863]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.546534]  [1:   netlink_fuzz:23438] [c1] netlink: 1348 bytes leftover after parsing attributes.
+
+[24164.547082]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.547570]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.548073]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.548311]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.549227]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.549606]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.551312]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.551691]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.551905]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.552124]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.552371]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.552810]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.553010]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.553226]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.553774]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.553970]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.554229]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.555406]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.556107]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.556343]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.556640]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.557490]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.558387]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.560285]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.563849]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.564463]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.565098]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.565395]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.565908]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.567714]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.568015]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.568260]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.569089]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.569285]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.570003]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.570203]  [1:   netlink_fuzz:23438] [c1] netlink: 648 bytes leftover after parsing attributes.
+
+[24164.570564]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.570903]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.571114]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.571501]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.572310]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.572669]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.572944]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.573145]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.573469]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.573684]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.573956]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.575556]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.577366]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.577874]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.578067]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.578321]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.578764]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.578975]  [1:   netlink_fuzz:23438] [c1] netlink: 1936 bytes leftover after parsing attributes.
+
+[24164.579632]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.580027]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.580987]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.582166]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.588039]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.590678]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.592353]  [1:   netlink_fuzz:23438] [c1] netlink: 1348 bytes leftover after parsing attributes.
+
+[24164.593697]  [1:   netlink_fuzz:23438] [c1] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.598968]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.599188]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.602487]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.602723]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.602909]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.604095]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.604595]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.604785]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.605478]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.605870]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.606215]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.606454]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.606642]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.606924]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.607111]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.607503]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.608117]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.608452]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.608981]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.609273]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.609949]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.610804]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.611010]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.611581]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.611995]  [0:   netlink_fuzz:23438] [c0] netlink: 1424 bytes leftover after parsing attributes.
+
+[24164.613153]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.613633]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.613875]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.614147]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.615539]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.615810]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.616714]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.617049]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.617821]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.618186]  [0:   netlink_fuzz:23438] [c0] netlink: 944 bytes leftover after parsing attributes.
+
+[24164.618566]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.618773]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.618959]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.619159]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.619515]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.619726]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.620258]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.620771]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.621117]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.621467]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.622341]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.622599]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.625188]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.626276]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.626657]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.627268]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.627567]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.628211]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.629007]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.629207]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.629679]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.630150]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.630493]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.630781]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.631161]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.632083]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.632304]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.634055]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.634440]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.635487]  [0:   netlink_fuzz:23438] [c0] netlink: 872 bytes leftover after parsing attributes.
+
+[24164.635786]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.637121]  [0:   netlink_fuzz:23438] [c0] netlink: 1804 bytes leftover after parsing attributes.
+
+[24164.640048]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.640591]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.641262]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.644401]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.645009]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.646714]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.647082]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.647363]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.648681]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.648939]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.649400]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.649864]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.650087]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.650816]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.651971]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.652735]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.653307]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.654003]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.657240]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.657772]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.658134]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.660478]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.660670]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.660886]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.662275]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.662483]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.662705]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24164.663157]  [0:   netlink_fuzz:23438] [c0] netlink: 2016 bytes leftover after parsing attributes.
+
+[24165.486160]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24165.487554]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24165.491436]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24165.492723]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24165.496408]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24165.497662]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24169.601379]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24169.605195]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24169.608718]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24169.711423]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24169.712815]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24169.715938]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24169.717179]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24169.720073]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24169.721297]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24170.120227]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24170.122702]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24170.124976]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24170.226482]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24170.227869]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24170.230978]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24170.232233]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24170.235238]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24170.236474]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24172.835122]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24172.845151]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24172.855185]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24173.056348]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24173.057799]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24173.061479]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24173.062831]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24173.066007]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24173.067372]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24173.170096]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24173.176204]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24173.178296]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24174.732134] I[0:      swapper/0:    0] [c0] mif: LNK-TX(12): fc eb 0c 00 08 00 09 00 07 01 02 01
+
+[24174.734732] I[0:      swapper/0:    0] [c0] mif: LNK-RX(24): fc eb 15 00 11 00 0c 09 07 01 02 01 00 00 00 00 ...
+
+[24176.990700]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24176.991454]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24176.993429]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24176.994110]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24176.995547]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24176.996218]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24177.095131]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24177.097735]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24177.102626]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24177.201335]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24177.202722]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24177.205763]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24177.207021]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24177.210132]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24177.211360]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24181.907433]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[24181.913760]  [0:    kworker/0:3:17641] [c0] sm5703_test_read: 0x4 = 0xbe, 0x5 = 0xff, 0x6 = 0xf3, 0x7 = 0xff, 0x8 = 0x00, 0x9 = 0x08, 0xa = 0x04, 0xb = 0x00, 0xc = 0x55, 0xd = 0x07, 0xe = 0x03, 0xf = 0x07, 0x10 = 0x16, 0x11 = 0x30, 0x12 = 0xf8, 0x13 = 0x08, 0x60 = 0x03, 0x6b = 0x20, 0x66 = 0x00, 
+
+[24181.914938]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(233), Temp-ADC(2098)
+
+[24181.915879]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(233), Temp-ADC(2098)
+
+[24181.915933]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[24181.915989]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[24181.917045]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x1d00, temperature = 290
+
+[24181.917357]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[24181.917423]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 290, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7f85, bat_temp = 233
+
+[24181.917952]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6320, soc = 991
+
+[24181.918262]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[24181.918579]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[24181.918889]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[24181.919200]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[24181.919508]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[24181.919819]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[24181.920130]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[24181.920439]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[24181.920748]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[24181.921057]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[24181.921368]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[24181.921676]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[24181.922748]  [0:    kworker/0:3:17641] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[24181.923830]  [0:    kworker/0:3:17641] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[24181.924898]  [0:    kworker/0:3:17641] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[24181.925966]  [0:    kworker/0:3:17641] [c0] 0x85=0x0004, 0x86=0x001a, 0x87=0x4f54, 0x28=0xe000 
+
+[24181.926019]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[24181.926068]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[24181.927109]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x1d00, temperature = 290
+
+[24181.927423]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[24181.927487]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 290, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7f85, bat_temp = 233
+
+[24181.928015]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6320, soc = 991
+
+[24181.928324]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[24181.928674]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[24181.928984]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[24181.929297]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[24181.929607]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[24181.929916]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[24181.930224]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[24181.930535]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[24181.930849]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[24181.931159]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[24181.931468]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[24181.931779]  [0:    kworker/0:3:17641] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[24181.932849]  [0:    kworker/0:3:17641] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[24181.933968]  [0:    kworker/0:3:17641] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[24181.935040]  [0:    kworker/0:3:17641] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[24181.936109]  [0:    kworker/0:3:17641] [c0] 0x85=0x0004, 0x86=0x001a, 0x87=0x4f54, 0x28=0xe000 
+
+[24181.936146]  [0:    kworker/0:3:17641] [c0] sm5703_fg_calculate_dynamic_scale: raw soc (991)
+
+[24181.936172]  [0:    kworker/0:3:17641] sm5703_fg_calculate_dynamic_scale: 981 is used for capacity_max, capacity(100)
+
+[24181.936207]  [0:    kworker/0:3:17641] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[24181.936259]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4304mV),Inow(0mA),Imax(450mA),SOC(100%),Tbat(233),Tchg(0),is_hc_usb(0)
+
+[24181.936300]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[24181.936355]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_temperature: HLT(800) HLR(750) HT(550), HR(500), LT(-50), LR(0)
+
+[24181.936646]  [0:    kworker/0:3:17641] [c0] sec_bat_swelling_check: status(4), swell_mode(0:1), cv(0x10f4), temp(233)
+
+[24181.936700]  [0:    kworker/0:3:17641] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Full), mode(None), Health(Good), Cable(4), level(100%)
+
+[24181.945248]  [0:        healthd: 2177] [c0] sec_bat_show_attrs: waterproof event
+
+[24181.945396]  [0:        healthd: 2177] [c0] sec_bat_show_attrs: waterproof event
+
+[24181.945738]  [0:        healthd: 2177] [c0] healthd: battery l=100 v=4304 t=23.3 h=2 st=3 c=0 o=4 ca=0 ct=0 ps=0 chg=u 2026-02-24 01:30:03.666974354 UTC
+
+[24181.945815]  [0:        healthd: 2177] [c0] healthd: battery l=100 v=4304 t=23.3 h=2 st=3 c=0 o=4 ca=0 ct=0 ps=0 chg=u 2026-02-24 01:30:03.666974354 UTC hv=0 sdc=0 sec=0 chg=u
+
+[24181.945869]  [0:        healthd: 2177] [c0] healthd-android: healthd_mode_android_battery_update
+
+[24181.945920]  [0:        healthd: 2177] [c0] BatteryPropertiesRegistrar: notifyListeners : start
+
+[24181.948795]  [0:       Binder_D: 3859] logger: !@BatteryListener : batteryPropertiesChanged!
+
+[24181.945974]  [0:        healthd: 2177] [c0] IBatteryPropertiesListener : batteryPropertiesChanged!
+
+[24181.945974]  [0:        healthd: 2177] : [c0] BatteryPropertiesRegistrar: notifyListeners : done
+
+[24182.010219]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24182.012623]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+
+[24182.014879]  [3:      swapper/3:    0] [c3] CPU3: Booted secondary processor
+
+[24182.116340]  [3:    migration/3:   23] [c3] IRQ141 no longer affine to CPU3
+
+[24182.117728]  [0: thread_hotplug: 1417] [c0] CPU3: shutdown
+
+[24182.120876]  [2:    migration/2:   18] [c2] IRQ140 no longer affine to CPU2
+
+[24182.122120]  [0: thread_hotplug: 1417] [c0] CPU2: shutdown
+
+[24182.125235]  [1:    migration/1:   13] [c1] IRQ139 no longer affine to CPU1
+
+[24182.126450]  [0: thread_hotplug: 1417] [c0] CPU1: shutdown
+
+[24185.025381]  [1:      swapper/1:    0] [c1] CPU1: Booted secondary processor
+
+[24185.027523]  [2:      swapper/2:    0] [c2] CPU2: Booted secondary processor
+

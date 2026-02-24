@@ -1,0 +1,2336 @@
+[  998.966959]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  998.967002]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  998.967094]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 9
+
+[  998.967184]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  998.967243]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.967329]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.967468]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  998.967568]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  998.967610]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command 610516938
+
+[  998.967624]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  998.967666]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  998.967709]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  998.967752]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 4
+
+[  998.967803]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  998.967884]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  998.967951]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  998.967993]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  998.968079]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  998.968133]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 1
+
+[  998.968180]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29189, size 0-0
+
+[  998.968332]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  998.968621]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  998.968862]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER uc3e46c98 no match
+
+[  998.968927]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  998.969002]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 6
+
+[  998.969048]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command -343123015
+
+[  998.969062]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  998.969127]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 2
+
+[  998.969170]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u73e14bc0 no match
+
+[  998.969216]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.969293]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command 1637311626
+
+[  998.969309]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  998.969353]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command 587281323
+
+[  998.969367]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  998.969461]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  998.969561]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 1
+
+[  998.969605]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 4
+
+[  998.969650]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 7
+
+[  998.969718]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  998.969776]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  998.969819]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  998.969887]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  998.969933]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 4
+
+[  998.970039]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.970148]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  998.970202]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.970253]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  998.970393]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  998.970621]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER ube55aa1f no match
+
+[  998.970690]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  998.970770]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.970825]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 6
+
+[  998.970917]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.971075]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u605b0e83 no match
+
+[  998.971275]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  998.971469]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.971551]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29189, size 0-0
+
+[  998.971632]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  998.971714]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  998.971759]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.971773]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.971991]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  998.972505]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  998.972603]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER uf29a4750 no match
+
+[  998.972723]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  998.972926]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  998.973006]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER udfd98cb8 no match
+
+[  998.973054]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.973068]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.973246]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command -1693828928
+
+[  998.973263]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  998.973345]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.973392]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  998.973433]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.973447]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.973662]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  998.973816]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 5
+
+[  998.973926]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 7
+
+[  998.973974]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 7
+
+[  998.974076]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.974092]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.974335]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  998.974697]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  998.974911]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 9
+
+[  998.975005]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.975060]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.975111]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.975126]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.975362]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  998.975770]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  998.976139]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.976191]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command 832280573
+
+[  998.976206]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  998.976271]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.976286]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.976592]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 8
+
+[  998.976732]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.976789]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 4
+
+[  998.976893]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.976948]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  998.977034]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  998.977087]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.977103]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.977254]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  998.977636]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.977806]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  998.978033]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.978130]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.978191]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command 963762554
+
+[  998.978207]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  998.978302]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 4
+
+[  998.978375]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  998.978573]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.978842]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  998.979087]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.979106]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.979434]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  998.979814]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  998.979897]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.979941]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.980116]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  998.980307]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 5
+
+[  998.980354]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.980431]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.980446]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.980543]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  998.980649]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 5
+
+[  998.980693]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.980769]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  998.980902]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u9d3dc0e0 no match
+
+[  998.980944]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command -333780553
+
+[  998.980958]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  998.981091]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.981210]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  998.981400]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 3
+
+[  998.981450]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.981493]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.981508]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.981622]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  998.981716]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.981756]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.981827]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  998.982031]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 0
+
+[  998.982076]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 1
+
+[  998.982119]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 5
+
+[  998.982242]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  998.982576]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.982637]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.982726]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command 538493561
+
+[  998.982743]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  998.982908]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.982925]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.983205]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.983254]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.983268]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.983665]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  998.984226]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  998.984304]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.984378]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29189, size 0-0
+
+[  998.984533]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  998.984576]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  998.984617]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  998.984659]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 7
+
+[  998.984702]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER ud71d1ab9 no match
+
+[  998.984787]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  998.984850]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  998.984911]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  998.984953]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  998.985018]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  998.985061]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 1
+
+[  998.985101]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  998.985177]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command -1458476395
+
+[  998.985192]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  998.985245]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  998.985313]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  998.985356]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29189, size 0-0
+
+[  998.985587]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  998.985878]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  998.986148]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 9
+
+[  998.986305]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.986320]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.986441]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.986456]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.986556]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  998.986685]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.986811]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 3
+
+[  998.986948]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  998.986995]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.987009]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.987329]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.987345]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.987415]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 4
+
+[  998.987460]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  998.987502]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.987545]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.987647]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  998.987692]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.987706]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.987858]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.987901]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 4
+
+[  998.987946]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u041a760f no match
+
+[  998.988022]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.988037]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.988234]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  998.988467]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29189, size 0-0
+
+[  998.988569]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 7
+
+[  998.988614]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.988658]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u9e4511c7 no match
+
+[  998.988863]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.988880]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.988953]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command 193062456
+
+[  998.988969]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  998.989012]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.989026]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.989189]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  998.989379]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  998.989597]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.989645]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.989685]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.989727]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 6
+
+[  998.989817]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.989832]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.989978]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  998.990241]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.990289]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.990303]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.990602]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  998.990782]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 9
+
+[  998.990995]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.991050]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 5
+
+[  998.991115]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 8
+
+[  998.991216]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command 52132019
+
+[  998.991232]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  998.991275]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.991317]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 0
+
+[  998.991427]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.991442]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.991583]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER uf2dc3ffd no match
+
+[  998.991662]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 8
+
+[  998.991701]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 3
+
+[  998.991740]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 0
+
+[  998.991863]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  998.992063]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.992079]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.992273]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER ub3759c95 no match
+
+[  998.992342]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 5
+
+[  998.992423]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29189, size 0-0
+
+[  998.992540]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.992628]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.992643]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.992855]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.992871]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.993010]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.993054]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.993096]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.993215]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.993255]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 6
+
+[  998.993371]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.993437]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command 135097117
+
+[  998.993452]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  998.993495]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 1
+
+[  998.993538]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.993613]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.993827]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 4
+
+[  998.993887]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.993937]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.993983]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.994073]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u435f4801 no match
+
+[  998.994115]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.994207]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER ua13f057c no match
+
+[  998.994255]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 7
+
+[  998.994379]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 2
+
+[  998.994464]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.994480]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.994871]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 6
+
+[  998.994920]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER uefb9b62e no match
+
+[  998.994963]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.995016]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  998.995071]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  998.995120]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.995134]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.995346]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  998.995755]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 2
+
+[  998.995816]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.995862]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command 1001557573
+
+[  998.995878]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  998.995962]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command 1045474712
+
+[  998.995977]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  998.996023]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 2
+
+[  998.996134]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 2
+
+[  998.996317]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  998.996607]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.996760]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29189, size 0-0
+
+[  998.997120]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 3
+
+[  998.997208]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  998.997259]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.997274]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.997636]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  998.997761]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  998.997919]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  998.998118]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  998.998174]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 5
+
+[  998.998223]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 4
+
+[  998.998335]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 3
+
+[  998.998393]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  998.998524]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 0
+
+[  998.998571]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.998642]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command 84968077
+
+[  998.998658]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  998.998812]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  998.998829]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  998.999043]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 5
+
+[  998.999196]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  998.999433]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command 1056412796
+
+[  998.999453]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  998.999502]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 7
+
+[  998.999543]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.999590]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command 554530171
+
+[  998.999604]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  998.999649]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  998.999843]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.000089]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.000160]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 7
+
+[  999.000215]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 0
+
+[  999.000267]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  999.000328]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  999.000407]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.000450]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.000525]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 4
+
+[  999.000595]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 0
+
+[  999.000640]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  999.000683]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.000698]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.000769]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.000835]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.000877]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 5
+
+[  999.000921]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.000972]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.001126]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.001327]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.001344]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.001504]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.001796]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 7
+
+[  999.001853]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.001872]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.002293]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.002563]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  999.002610]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.002661]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  999.002777]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.002978]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29189, size 0-0
+
+[  999.003242]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.003536]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.003622]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.003638]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.003793]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  999.003973]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  999.004025]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.004070]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.004153]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.004288]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.004497]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u9c14b5b3 no match
+
+[  999.004553]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 0
+
+[  999.004620]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.004734]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.005007]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.005065]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.005081]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.005198]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.005214]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.005451]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.005502]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command 846758828
+
+[  999.005516]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  999.005562]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u5c61156c no match
+
+[  999.005608]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 0
+
+[  999.005716]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.005779]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  999.005826]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 5
+
+[  999.006008]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.006209]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.006265]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.006336]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.006380]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.006426]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 1
+
+[  999.006543]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 6
+
+[  999.006595]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.006612]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.006806]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.007175]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  999.007338]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.007383]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.007476]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  999.007522]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.007615]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command 490149585
+
+[  999.007630]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  999.007700]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  999.007742]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  999.007783]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.007797]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.008053]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  999.008234]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 3
+
+[  999.008291]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  999.008337]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 6
+
+[  999.008381]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  999.008449]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  999.008518]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.008533]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.008614]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.008656]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.008750]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command -2124246461
+
+[  999.008765]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  999.008883]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.008991]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.009005]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.009290]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.009306]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.010161]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.010227]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  999.010283]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  999.010338]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.010360]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.010664]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.010682]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.011483]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 0
+
+[  999.011545]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.011604]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 8
+
+[  999.011660]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 4
+
+[  999.011809]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.012015]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.012111]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  999.012175]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 8
+
+[  999.012304]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.012454]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.012724]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29189, size 0-0
+
+[  999.012809]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  999.012925]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.012942]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.013403]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.013425]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.013497]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  999.014118]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.014571]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 9
+
+[  999.014626]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 5
+
+[  999.014692]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.014736]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command 744410102
+
+[  999.014751]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  999.014825]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.014951]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.015248]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u2952e8e0 no match
+
+[  999.015298]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 4
+
+[  999.015339]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.015380]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.015442]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.015509]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u09b3ed43 no match
+
+[  999.015552]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command -1815557837
+
+[  999.015567]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  999.015663]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.015703]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  999.015747]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29189, size 0-0
+
+[  999.016039]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.016055]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.016226]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 9
+
+[  999.016409]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  999.016508]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.016553]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  999.016663]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.016763]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command -214629842
+
+[  999.016778]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  999.016844]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  999.016884]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.016975]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 5
+
+[  999.017020]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.017033]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.017151]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.017192]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  999.017271]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 6
+
+[  999.017313]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 0
+
+[  999.017355]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  999.017396]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 4
+
+[  999.017481]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.017522]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.017563]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.017577]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.017757]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.018182]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  999.018262]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  999.018524]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.018932]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command 28614147
+
+[  999.018950]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  999.019080]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 7
+
+[  999.019238]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.019424]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 4
+
+[  999.019502]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  999.019546]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u90494601 no match
+
+[  999.019612]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command -115004872
+
+[  999.019627]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  999.019743]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.019928]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  999.019969]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  999.020076]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 4
+
+[  999.020232]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  999.020377]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.020601]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29189, size 0-0
+
+[  999.020713]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 8
+
+[  999.020755]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.020768]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.020892]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.020986]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.021031]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  999.021074]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 8
+
+[  999.021118]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u2704bbbb no match
+
+[  999.021181]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u62056d00 no match
+
+[  999.021225]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.021239]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.021458]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  999.021678]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER uba74be79 no match
+
+[  999.021782]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER ub95a657c no match
+
+[  999.021826]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.021950]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.022126]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command -1898920507
+
+[  999.022143]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  999.022186]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  999.022229]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u013cb640 no match
+
+[  999.022275]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29189, size 0-0
+
+[  999.022689]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u16d71c26 no match
+
+[  999.022744]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  999.022813]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 2
+
+[  999.022859]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29189, size 0-0
+
+[  999.023049]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  999.023116]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.023159]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  999.023199]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command 2071978456
+
+[  999.023214]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  999.023265]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  999.023413]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command -743760788
+
+[  999.023429]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  999.023588]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  999.023652]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.023692]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command -663799318
+
+[  999.023736]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  999.023799]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.023991]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 1
+
+[  999.024069]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.024116]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 4
+
+[  999.024229]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command 1552345202
+
+[  999.024245]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  999.024299]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER ub5a30a9d no match
+
+[  999.024349]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 8
+
+[  999.024417]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  999.024517]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.024604]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  999.024652]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 5
+
+[  999.024700]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.024715]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.024951]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.025281]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  999.025342]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.025399]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 4
+
+[  999.025496]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 unknown command -919926671
+
+[  999.025513]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl c0186201 bed82574 returned -22
+
+[  999.025609]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.025661]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.025712]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.025727]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.025944]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.025993]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  999.026037]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.026051]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.026196]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 8
+
+[  999.026248]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.026294]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.026309]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.026465]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  999.026746]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  999.026913]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.027160]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  999.027270]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.027322]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  999.027412]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called after BC_ENTER_LOOPER
+
+[  999.027465]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.027480]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.027624]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.028160]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.028218]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 9
+
+[  999.028265]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 refcount change on invalid ref 7
+
+[  999.028309]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.028324]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.028522]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.029009]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.029302]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  999.029361]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.029506]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.029717]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  999.029897]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40046207 bed8263c returned -13
+
+[  999.030111]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 BC_FREE_BUFFER u  (null) no match
+
+[  999.030179]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  999.030234]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.030249]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.030498]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.030557]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_ENTER_LOOPER called after BC_REGISTER_LOOPER
+
+[  999.030712]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.030813]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.030893]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.030911]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.031090]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.031107]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.031200]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ioctl 40086203 bed8263c returned -22
+
+[  999.031298]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.031343]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.031434]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 ERROR: BC_REGISTER_LOOPER called without request
+
+[  999.031476]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 got transaction to invalid handle
+
+[  999.031490]  [1:    binder_fuzz:11134] [c1] binder: 11134:11134 transaction failed 29201, size 0-0
+
+[  999.352398]  [0: surfaceflinger:11145] [c0] binder: 11145:11145 transaction failed 29189, size 0-0
+
+[  999.393806]  [3:            cbd: 2208] [c3] mif: misc_release: umts_boot0 (opened 0) by cbd
+
+[  999.394925]  [0:    kworker/0:1: 8789] [c0] mif: misc_release: umts_rfs0 (opened 0) by kworker/0:1
+
+[  999.395001]  [0:    kworker/0:1: 8789] [c0] mif: misc_release: umts_ipc0 (opened 0) by kworker/0:1
+
+[  999.428110]  [1:            cbd:11240] [c1] mif: cbd: check_debug_level: debug level=0, cp_debug=0
+
+[  999.429995]  [1:            cbd:11240] [c1] muic-universal:muic_show_attached_dev attached_dev:1
+
+[  999.430072]  [1:            cbd:11240] [c1] mif: cbd: check_factory_log_path: log path - /sdcard/log
+
+[  999.430113]  [1:            cbd:11240] [c1] mif: cbd: main: Start CP Boot Daemon (CBD)
+
+[  999.430250]  [1:            cbd:11240] [c1] mif: cbd: main: SS310 modem
+
+[  999.430306]  [1:            cbd:11240] [c1] mif: cbd: main: partition number : platform/13540000.dwmmc0/by-name/RADIO
+
+[  999.430341]  [1:            cbd:11240] [c1] mif: cbd: main: partition path : /dev/block/platform/13540000.dwmmc0/by-name/RADIO
+
+[  999.431429]  [1:            cbd:11240] [c1] mif: cbd: main: Modem type = 13
+
+[  999.431462]  [1:            cbd:11240] [c1] mif: cbd: main: Boot link = 9
+
+[  999.431481]  [1:            cbd:11240] [c1] mif: cbd: main: Main link = 9
+
+[  999.431735]  [1:            cbd:11240] [c1] mif: cbd: start_shannon310_boot: CP boot device = /dev/umts_boot0
+
+[  999.431787]  [1:            cbd:11240] [c1] mif: cbd: start_shannon310_boot: CP binary file = /dev/block/platform/13540000.dwmmc0/by-name/RADIO
+
+[  999.431824]  [1:            cbd:11240] [c1] mif: cbd: start_shannon310_boot: CP NV file = /efs/nv_data.bin
+
+[  999.431854]  [1:            cbd:11240] [c1] mif: cbd: start_shannon310_boot: BOOT link SHMEM
+
+[  999.431893]  [1:            cbd:11240] [c1] mif: cbd: start_shannon310_boot: MAIN link SHMEM
+
+[  999.431943]  [1:            cbd:11240] [c1] mif: cbd: start_shannon310_boot: NV validation done
+
+[  999.432558]  [1:            cbd:11240] [c1] mif: cbd: boot_wake_lock: /sys/power/wake_lock/ss310
+
+[  999.433183]  [1:            cbd:11240] [c1] mif: misc_open: umts_boot0 (opened 1) by cbd
+
+[  999.433245]  [1:            cbd:11240] [c1] mif: cbd: std_boot_prepare_args: DEV(/dev/umts_boot0) opened (fd 8)
+
+[  999.433939]  [1:            cbd:11240] [c1] mif: cbd: prepare_boot_args: BIN(/dev/block/platform/13540000.dwmmc0/by-name/RADIO) opened (fd 10)
+
+[  999.435769]  [1:            cbd:11240] [c1] mif: cbd: prepare_boot_args: toc[0].name = TOC, b_off=0, m_off=0, size=512
+
+[  999.435851]  [1:            cbd:11240] [c1] mif: cbd: prepare_boot_args: toc[1].name = BOOT, b_off=512, m_off=1073741824, size=6996
+
+[  999.435890]  [1:            cbd:11240] [c1] mif: cbd: prepare_boot_args: toc[2].name = MAIN, b_off=7520, m_off=1073807360, size=33262956
+
+[  999.435926]  [1:            cbd:11240] [c1] mif: cbd: prepare_boot_args: toc[3].name = NV, b_off=0, m_off=1150287872, size=1048576
+
+[  999.437482]  [1:            cbd:11240] [c1] mif: cbd: prepare_boot_args: NV(/efs/nv_data.bin) opened (fd 11)
+
+[  999.437533]  [1:            cbd:11240] [c1] mif: cbd: build_std_dload_control: stage=0, b_off=512, b_size=6996
+
+[  999.437568]  [1:            cbd:11240] [c1] mif: cbd: build_std_dload_control: stage=1, b_off=7520, b_size=33262956
+
+[  999.437605]  [1:            cbd:11240] [c1] mif: cbd: build_std_dload_control: stage=2, b_off=0, b_size=1048576
+
+[  999.437659]  [1:            cbd:11240] [c1] mif: misc_ioctl: umts_boot0: IOCTL_MODEM_RESET
+
+[  999.437677]  [1:            cbd:11240] [c1] mif: ss310ap_reset: +++
+
+[  999.437694]  [1:            cbd:11240] [c1] mif: modem_notify_event: event notify (1) ++
+
+[  999.437713]  [1:            cbd:11240] [c1] mif: modem_notify_event: event notify (1) --
+
+[  999.437736]  [1:            cbd:11240] [c1] mif: ss310ap_reset: CP aleady Power on, try reset
+
+[  999.437746]  [1:            cbd:11240] [c1] exynos_cp_reset
+
+[  999.437764]  [1:            cbd:11240] [c1] exynos_cp_dvs_ctrl: enable(1), value(0x00000001 / 0x00000000 / 0x00000000 /  0x00000020)
+
+[  999.437776]  [1:            cbd:11240] [c1] exynos_sys_powerdown_conf_cp: mode[1]
+
+[  999.437967]  [1:            cbd:11240] [c1] mif: ss310ap_reset: ---
+
+[  999.438038]  [1:            cbd:11240] [c1] mif: misc_ioctl: umts_boot0: IOCTL_SECURITY_REQUEST
+
+[  999.438056]  [1:            cbd:11240] [c1] mif: shmem_security_request: mode=2, size=0, addr=0
+
+[  999.473793]  [1:            cbd:11240] [c1] mif: shmem_security_request: shmem: return_value=0
+
+[  999.473907]  [1:            cbd:11240] [c1] mif: cbd: shannon310_boot_xmit_bin: stage=0(0), b_off=512, m_off=0, b_size=6996, mode=0
+
+[  999.474822]  [1:            cbd:11240] [c1] mif: cbd: shannon310_boot_xmit_bin: 0 stage complelte
+
+[  999.474874]  [1:            cbd:11240] [c1] mif: cbd: shannon310_boot_xmit_bin: stage=1(1), b_off=7520, m_off=65536, b_size=33262956, mode=0
+
+[  999.833763]  [1:            cbd:11240] [c1] mif: cbd: shannon310_boot_xmit_bin: 1 stage complelte
+
+[  999.833990]  [1:            cbd:11240] [c1] mif: cbd: shannon310_boot_xmit_bin: stage=2(2), b_off=0, m_off=76546048, b_size=1048576, mode=0
+
+[  999.841858]  [1:            cbd:11240] [c1] mif: cbd: shannon310_boot_xmit_bin: 2 stage complelte
+
+[  999.841922]  [1:            cbd:11240] [c1] mif: misc_ioctl: umts_boot0: IOCTL_SECURITY_REQUEST
+
+[  999.841938]  [1:            cbd:11240] [c1] mif: shmem_security_request: mode=0, size=6996, addr=33262956
+
+[ 1000.009234]  [1:            cbd:11240] [c1] mif: shmem_security_request: shmem: return_value=0
+
+[ 1000.009303]  [1:            cbd:11240] [c1] mif: misc_ioctl: umts_boot0: IOCTL_MODEM_ON
+
+[ 1000.009316]  [1:            cbd:11240] [c1] mif: ss310ap_on: +++
+
+[ 1000.009327]  [1:            cbd:11240] [c1] mif: ss310ap_on: cp_active:1 cp_status:0
+
+[ 1000.009338]  [1:            cbd:11240] [c1] exynos-snapshot: item - log_kevents is enabled
+
+[ 1000.009415]  [1:            cbd:11240] [c1] mif: get_ds_detect: gpio_ds_det: Invalid gpio
+
+[ 1000.009428]  [1:            cbd:11240] [c1] mif: init_mailbox_regs: sys_rev:5, ds_det:0 (0x5)
+
+[ 1000.009445]  [1:            cbd:11240] [c1] mif: ss310ap_on: CP aleady Power on, Just start!
+
+[ 1000.009456]  [1:            cbd:11240] [c1] exynos_cp_release
+
+[ 1000.009473]  [1:            cbd:11240] [c1] exynos_cp_dvs_ctrl: enable(1), value(0x00000001 / 0x00000000 / 0x00000000 /  0x00000020)
+
+[ 1000.009494]  [1:            cbd:11240] [c1] exynos_cp_release, cp_ctrl[0x00000000] -> [0x00000008]
+
+[ 1000.195350]  [0:           rild:11269] [c0] mif: store_waketime: multipdp: waketime = 0 ms
+
+[ 1000.195373]  [0:           rild:11269] [c0] mif: store_waketime: rmnet0: waketime = 0 ms
+
+[ 1000.195384]  [0:           rild:11269] [c0] mif: store_waketime: rmnet1: waketime = 0 ms
+
+[ 1000.195395]  [0:           rild:11269] [c0] mif: store_waketime: rmnet2: waketime = 0 ms
+
+[ 1000.195407]  [0:           rild:11269] [c0] mif: store_waketime: rmnet3: waketime = 0 ms
+
+[ 1000.204023]  [0:   AsyncTask #1: 3893] [c0] alarm_release: clear alarm, pending 0
+
+[ 1000.204045]  [0:   AsyncTask #1: 3893] [c0] alarm_release: clear alarm, pending 0
+
+[ 1000.239639]  [0:           rild:11269] [c0] mif: misc_open: umts_boot0 (opened 2) by rild
+
+[ 1000.313868]  [2:            cbd:11240] [c2] mif: ss310ap_on: change_mr_reset -> 0
+
+[ 1000.313895]  [2:            cbd:11240] [c2] mif: ss310ap_on: ---
+
+[ 1000.313976]  [2:            cbd:11240] [c2] mif: misc_ioctl: umts_boot0: IOCTL_MODEM_BOOT_ON
+
+[ 1000.313993]  [2:            cbd:11240] [c2] mif: ss310ap_boot_on: +++
+
+[ 1000.314017]  [2:            cbd:11240] [c2] mif: io_dev_modem_state_changed: ss308ap->state changed (OFFLINE -> BOOTING)
+
+[ 1000.352597]  [0: surfaceflinger:11145] [c0] binder: 11145:11145 transaction failed 29189, size 0-0
+
+[ 1000.360122]  [3:           imsd:11292] [c3] binder: 11242:11292 transaction failed 29189, size 0-0
+
+[ 1000.418877]  [2:         mc_log: 2201] [c2] MobiCore mcd: 104| SMGNT send MSG_CLOSE_TRUSTLET for thread a01 to IPCH
+
+[ 1000.418908]  [2:         mc_log: 2201] [c2] MobiCore mcd: 103|BroadCast loop send Event to 202 (UUID=02010000-0000-0000-0000-000000005000) (server 0/7 status is 00000001)
+
+[ 1000.423841]  [2:         mc_log: 2201] [c2] MobiCore mcd: 103|BroadCast loop send Event to 302 (UUID=ffffffff-0000-0000-0000-000000000002) (server 1/7 status is 00000001)
+
+[ 1000.423872]  [2:         mc_log: 2201] [c2] MobiCore mcd: 103|BroadCast loop send Event to 402 (UUID=ffffffff-0000-0000-0000-000000000001) (server 2/7 status is 00000001)
+
+[ 1000.423893]  [0:   AsyncTask #1: 3893] [c0] MobiCore mcd: closed by PID(3893), name(AsyncTask #1)
+
+[ 1000.423900]  [2:         mc_log: 2201] [c2] MobiCore mcd: 103|BroadCast loop send Event to 501 (UUID=ffffffff-d000-0000-0000-00000000000a) (server 3/7 status is 00000001)
+
+[ 1000.438947]  [2:         mc_log: 2201] [c2] MobiCore mcd: 103|BroadCast loop send Event to 602 (UUID=ffffffff-d000-0000-0000-000000000016) (server 4/7 status is 00000001)
+
+[ 1000.438978]  [2:         mc_log: 2201] [c2] MobiCore mcd: 103|BroadCast loop send Event to 802 (UUID=07050500-0000-0000-0000-000000000000) (server 5/7 status is 00000001)
+
+[ 1000.439808]  [0:           rild:11269] [c0] mif: misc_release: umts_boot0 (opened 1) by rild
+
+[ 1000.439878]  [0:           rild:11269] [c0] mif: misc_open: umts_boot0 (opened 2) by rild
+
+[ 1000.443803]  [2:         mc_log: 2201] [c2] MobiCore mcd: 103|BroadCast loop send Event to 702 (UUID=ffffffff-d000-0000-0000-000000000004) (server 6/7 status is 00000001)
+
+[ 1000.443826]  [2:         mc_log: 2201] [c2] MobiCore mcd: 103|BroadCast loop done
+
+[ 1000.443839]  [2:         mc_log: 2201] [c2] MobiCore mcd: 104| SMGNT smgntCloseSession done
+
+[ 1000.737656]  [1:    mediaserver:11142] [c1] binder: 11142:11142 transaction failed 29189, size 0-0
+
+[ 1001.034977]  [1:            cbd:11240] [c1] mif: mif_disable_irq: cp_wdt(#511) is disabled <ss310ap_boot_on>
+
+[ 1001.035015]  [1:            cbd:11240] [c1] mif: mif_enable_irq: cp_fail(#50) is enabled <ss310ap_boot_on>
+
+[ 1001.035030]  [1:            cbd:11240] [c1] mif: ss310ap_boot_on: cp_status=1
+
+[ 1001.035046]  [1:            cbd:11240] [c1] mif: ss310ap_boot_on: ---
+
+[ 1001.035123]  [1:            cbd:11240] [c1] mif: misc_ioctl: umts_boot0: IOCTL_MODEM_DL_START
+
+[ 1001.035141]  [1:            cbd:11240] [c1] mif: shmem_start_download: shmem: magic == 0x424F4F54
+
+[ 1001.035154]  [1:            cbd:11240] [c1] mif: ss310ap_modem_boot_confirm: ap_status=1
+
+[ 1001.037293]  [1:            cbd:11240] [c1] mif: cbd: std_udl_req_resp: OK!! resp 0xA00D == exp
+
+[ 1001.037958]  [1:            cbd:11240] [c1] mif: cbd: std_udl_req_resp: OK!! resp 0xAF00 == exp
+
+[ 1001.038007]  [1:            cbd:11240] [c1] mif: misc_ioctl: umts_boot0: IOCTL_MODEM_BOOT_OFF
+
+[ 1001.038020]  [1:            cbd:11240] [c1] mif: ss310ap_boot_off: +++
+
+[ 1001.352864]  [0: surfaceflinger:11145] [c0] binder: 11145:11145 transaction failed 29189, size 0-0
+
+[ 1001.360773]  [3:           imsd:11292] [c3] binder: 11242:11292 transaction failed 29189, size 0-0
+
+[ 1001.557859]  [3:        healthd:11365] [c3] binder: 11365:11365 transaction failed 29189, size 0-0
+
+[ 1001.975280]  [0:   kworker/0:1H: 2129] [c0] mif: cmd_phone_start_handler: shmem: CP_START <- ss308ap (ss308ap.state:BOOTING cp_boot_done:0)
+
+[ 1001.975307]  [0:   kworker/0:1H: 2129] [c0] mif: rild_ready: shmem: umts_ipc0.opened=0, umts_rfs0.opened=0
+
+[ 1001.975385]  [2:            cbd:11240] [c2] mif: mif_enable_irq: cp_wdt(#511) is enabled <ss310ap_boot_off>
+
+[ 1001.975403]  [2:            cbd:11240] [c2] mif: io_dev_modem_state_changed: ss308ap->state changed (BOOTING -> ONLINE)
+
+[ 1001.975414]  [2:            cbd:11240] [c2] mif: ss310ap_boot_off: ---
+
+[ 1001.975432]  [2:            cbd:11240] [c2] mif: mif_disable_irq: cp_fail(#50) is disabled <ss310ap_boot_off>
+
+[ 1001.975466]  [2:            cbd:11240] [c2] mif: misc_release: umts_boot0 (opened 1) by cbd
+
+[ 1002.001170]  [2:            cbd:11240] [c2] mif: cbd: boot_wake_lock: /sys/power/wake_unlock/ss310
+
+[ 1002.001240]  [2:            cbd:11240] [c2] mif: cbd: main: Boot up process done!!!
+
+[ 1002.001278]  [2:            cbd:11240] [c2] mif: cbd: status_loop: CP status_loop start (modem = 13)
+
+[ 1002.001323]  [2:            cbd:11240] [c2] mif: misc_open: umts_boot0 (opened 2) by cbd
+
+[ 1002.004069]  [2:            cbd:11240] [c2] mif: cbd: status_loop: Wait event from modem 13
+
+[ 1002.041088]  [3:           rild:11269] [c3] mif: misc_release: umts_boot0 (opened 1) by rild
+
+[ 1002.041624]  [3:           rild:11269] [c3] mif: shmem_init_comm: umts_rfs0 is not opened yet
+
+[ 1002.041642]  [3:           rild:11269] [c3] mif: misc_open: umts_ipc0 (opened 1) by rild
+
+[ 1002.041684]  [3:           rild:11269] [c3] mif: shmem_init_comm: shmem: umts_rfs0->INIT_END->ss308ap
+
+[ 1002.041697]  [3:           rild:11269] [c3] mif: misc_open: umts_rfs0 (opened 1) by rild
+
+[ 1002.381906]  [2: surfaceflinger:11145] [c2] decon_blank ++ blank_mode : 0
+
+[ 1002.381914]  [2: surfaceflinger:11145] [c2] decon-int UNBLANK mode: 0type (0: DSI)
+
+[ 1002.381919]  [2: surfaceflinger:11145] [c2] decon_enable: 0
+
+[ 1002.381924]  [2: surfaceflinger:11145] [c2] decon already enabled
+
+[ 1002.381928]  [2: surfaceflinger:11145] [c2] decon_blank -- blank_mode : 0
+
+[ 1002.381967]  [2: surfaceflinger:11145] [c2] dsim_panel_set_brightness: platform BL : 13 panel BL reg : 13
+
+[ 1002.390676]  [2: surfaceflinger:11145] [c2] fb_notifier_callback: 0
+
+[ 1002.390687]  [2: surfaceflinger:11145] [c2] MDD : s6d7aa0_displayon_late was called
+
+[ 1002.448814]  [2: surfaceflinger:11145] [c2] dsim_panel_set_brightness: platform BL : 13 panel BL reg : 13
+
+[ 1002.471882]  [2: surfaceflinger:11145] [c2] mdnie mdnie: fb_notifier_callback: 0
+
+[ 1002.556594]  [2: surfaceflinger:11145] [c2] mdnie mdnie: UI
+
+[ 1002.556605]  [2: surfaceflinger:11145] [c2] LCD is on
+
+[ 1002.574547]  [3:        healthd:11365] [c3] healthd: initial Capacity max: '974'
+
+[ 1002.574721]  [3:        healthd:11365] [c3] sec-battery battery.31: sec_bat_store_attrs: BATT_CAPACITY_MAX(974)
+
+[ 1002.574748]  [3:        healthd:11365] [c3] sm5703-fuelgauge 7-0071: sm5703_fg_set_property: capacity_max changed, 974 -> 974
+
+[ 1002.574766]  [3:        healthd:11365] [c3] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 1002.574788]  [3:        healthd:11365] [c3] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 1002.584269]  [3:        healthd:11365] [c3] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x2740, temperature = 392
+
+[ 1002.584488]  [3:        healthd:11365] [c3] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x449, ocv = 4285
+
+[ 1002.584522]  [3:        healthd:11365] [c3] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 392, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7e85, bat_temp = 281
+
+[ 1002.584908]  [3:        healthd:11365] [c3] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x627c, soc = 984
+
+[ 1002.585115]  [3:        healthd:11365] [c3] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 1002.585323]  [3:        healthd:11365] [c3] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 1002.585530]  [3:        healthd:11365] [c3] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 1002.585736]  [3:        healthd:11365] [c3] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 1002.585941]  [3:        healthd:11365] [c3] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 1002.586148]  [3:        healthd:11365] [c3] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 1002.586355]  [3:        healthd:11365] [c3] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 1002.586559]  [3:        healthd:11365] [c3] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 1002.586765]  [3:        healthd:11365] [c3] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 1002.586970]  [3:        healthd:11365] [c3] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 1002.587174]  [3:        healthd:11365] [c3] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 1002.587379]  [3:        healthd:11365] [c3] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 1002.588184]  [3:        healthd:11365] [c3] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 1002.589022]  [3:        healthd:11365] [c3] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 1002.589855]  [0:        healthd:11365] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 1002.590696]  [0:        healthd:11365] [c0] 0x85=0x008b, 0x86=0x006c, 0x87=0x4ed2, 0x28=0x0be4 
+
+[ 1002.590978]  [0:        healthd:11365] [c0] healthd: batteryPogoOnlnePath not found
+
+[ 1002.592702]  [0:    kworker/0:1: 8789] [c0] sec_chg_get_property: slow-charging mode
+
+[ 1002.596186]  [0:        healthd:11365] [c0] sec_chg_get_property: slow-charging mode
+
+[ 1002.596463]  [0:        healthd:11365] [c0] sec_bat_show_attrs: waterproof event
+
+[ 1002.596525]  [0:        healthd:11365] [c0] sec_bat_show_attrs: waterproof event
+
+[ 1002.599105]  [0:        healthd:11365] [c0] healthd: battery l=100 v=4332 t=28.1 h=2 st=3 c=0 o=4 ca=198 ct=2 ps=0 chg=u 2026-02-23 18:38:36.982492278 UTC
+
+[ 1002.599152]  [0:        healthd:11365] [c0] healthd: battery l=100 v=4332 t=28.1 h=2 st=3 c=0 o=4 ca=198 ct=2 ps=0 chg=u 2026-02-23 18:38:36.982492278 UTC hv=0 sdc=0 sec=0 chg=u
+
+[ 1002.599176]  [0:        healthd:11365] [c0] healthd-android: healthd_mode_android_battery_update
+
+[ 1002.599199]  [0:        healthd:11365] [c0] BatteryPropertiesRegistrar: notifyListeners : start
+
+[ 1002.599220]  [0:        healthd:11365] [c0] BatteryPropertiesRegistrar: notifyListeners : done
+
+[ 1002.676738] I[0:  bootanimation:11424] [c0] mif: LNK-RX(32): fc eb 1d 00 19 00 00 00 13 05 03 0f 00 0d 0a 41 ...
+
+[ 1002.676809] I[0:  bootanimation:11424] [c0] mif: LNK-RX(12): fc eb 0c 00 08 00 01 00 01 01 03 ff
+
+[ 1002.676829] I[0:  bootanimation:11424] [c0] mif: LNK-RX(16): fc eb 0d 00 09 00 02 00 0d 0f 03 06 00 00 00 00
+
+[ 1002.895608] I[0:           adbd: 3098] [c0] mif: LNK-RX(24): fc eb 16 00 12 00 03 00 05 0c 03 0a 98 10 42 20 ...
+
+[ 1002.896591] I[0:           rild:11282] [c0] mif: LNK-RX(12): fc eb 0c 00 08 00 04 00 05 07 03 02
+
+[ 1002.897878]  [1:           init:    1] [c1] init: property_set("ro.setupwizard.mode", "DISABLED") failed
+
+[ 1002.898502]  [1:           init:    1] [c1] init: property_set("ro.com.google.clientidbase.ms", "android-att-us") failed
+
+[ 1002.904597]  [1:           init:    1] [c1] init: property_set("ro.com.google.clientidbase.am", "android-att-us") failed
+
+[ 1002.905289]  [1:           init:    1] [c1] init: property_set("ro.com.google.clientidbase.gmm", "android-samsung") failed
+
+[ 1002.905916]  [1:           init:    1] [c1] init: property_set("ro.com.google.clientidbase.yt", "android-samsung") failed
+
+[ 1003.376235]  [2:           main:11370] [c2] logger: !@Boot: Begin of preload()
+
+[ 1003.462177]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x449, ocv = 4285
+
+[ 1003.467160]  [0:    kworker/0:1: 8789] [c0] sm5703_test_read: 0x4 = 0xbe, 0x5 = 0xff, 0x6 = 0xf3, 0x7 = 0xff, 0x8 = 0x08, 0x9 = 0x08, 0xa = 0x07, 0xb = 0x00, 0xc = 0x55, 0xd = 0x07, 0xe = 0x03, 0xf = 0x07, 0x10 = 0x16, 0x11 = 0x30, 0x12 = 0xf8, 0x13 = 0x08, 0x60 = 0x03, 0x6b = 0x20, 0x66 = 0x00, 
+
+[ 1003.468095]  [0:    kworker/0:1: 8789] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(284), Temp-ADC(1878)
+
+[ 1003.468907]  [0:    kworker/0:1: 8789] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(284), Temp-ADC(1877)
+
+[ 1003.468940]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 1003.468963]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 1003.469771]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x2740, temperature = 392
+
+[ 1003.469999]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x449, ocv = 4285
+
+[ 1003.470033]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 392, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7e85, bat_temp = 284
+
+[ 1003.470424]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x627c, soc = 984
+
+[ 1003.470657]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 1003.470874]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 1003.471084]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 1003.471307]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 1003.471527]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 1003.471741]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 1003.471954]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 1003.472171]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 1003.472380]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 1003.472589]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 1003.472797]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 1003.473023]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 1003.473892]  [0:    kworker/0:1: 8789] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 1003.474719]  [0:    kworker/0:1: 8789] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 1003.475553]  [0:    kworker/0:1: 8789] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 1003.476425]  [0:    kworker/0:1: 8789] [c0] 0x85=0x009e, 0x86=0x006c, 0x87=0x4ed2, 0x28=0x0be4 
+
+[ 1003.476454]  [0:    kworker/0:1: 8789] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[ 1003.476484]  [0:    kworker/0:1: 8789] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4308mV),Inow(42mA),Imax(450mA),SOC(100%),Tbat(284),Tchg(0),is_hc_usb(0)
+
+[ 1003.476501]  [0:    kworker/0:1: 8789] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[ 1003.476717]  [0:    kworker/0:1: 8789] [c0] sm5703_get_charging_health : is_charging = 1, cable_type = 4, is_current_reduced = 0
+
+[ 1003.476917]  [0:    kworker/0:1: 8789] [c0] sm5703_get_charging_health: SM5703_CNTL, nCHG : 0x55, 0
+
+[ 1003.476933]  [0:    kworker/0:1: 8789] [c0] sm5703_get_charging_health : vbus_status = 32
+
+[ 1003.476944]  [0:    kworker/0:1: 8789] [c0] sm5703_get_charging_health : Health : 1
+
+[ 1003.476970]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 1003.476993]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 1003.477800]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x2740, temperature = 392
+
+[ 1003.478035]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x449, ocv = 4285
+
+[ 1003.478070]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 392, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7e85, bat_temp = 284
+
+[ 1003.478448]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x627c, soc = 984
+
+[ 1003.478664]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 1003.478944]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 1003.479198]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 1003.479422]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 1003.479638]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 1003.479853]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 1003.480067]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 1003.480278]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 1003.480490]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 1003.480702]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 1003.480914]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 1003.481125]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 1003.481920]  [0:    kworker/0:1: 8789] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 1003.482703]  [0:    kworker/0:1: 8789] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 1003.483492]  [0:    kworker/0:1: 8789] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 1003.484382]  [0:    kworker/0:1: 8789] [c0] 0x85=0x009e, 0x86=0x006c, 0x87=0x4ed2, 0x28=0x0be4 
+
+[ 1003.484423]  [0:    kworker/0:1: 8789] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Full), mode(Additional), Health(Good), Cable(4), level(100%)
+
+[ 1003.484537]  [0:    kworker/0:1: 8789] [c0] sec_chg_get_property: slow-charging mode
+
+[ 1003.487009]  [0:        healthd:11365] [c0] sec_chg_get_property: slow-charging mode
+
+[ 1003.487324]  [0:        healthd:11365] [c0] sec_bat_show_attrs: waterproof event
+
+[ 1003.487394]  [0:        healthd:11365] [c0] sec_bat_show_attrs: waterproof event
+
+[ 1003.487583]  [0:        healthd:11365] [c0] healthd: battery l=100 v=4308 t=28.4 h=2 st=3 c=0 o=4 ca=42 ct=2 ps=0 chg=u 2026-02-23 18:38:37.873363663 UTC
+
+[ 1003.487618]  [0:        healthd:11365] [c0] healthd: battery l=100 v=4308 t=28.4 h=2 st=3 c=0 o=4 ca=42 ct=2 ps=0 chg=u 2026-02-23 18:38:37.873363663 UTC hv=0 sdc=0 sec=0 chg=u
+
+[ 1003.487647]  [0:        healthd:11365] [c0] healthd-android: healthd_mode_android_battery_update
+
+[ 1003.487677]  [0:        healthd:11365] [c0] BatteryPropertiesRegistrar: notifyListeners : start
+
+[ 1003.487700]  [0:        healthd:11365] [c0] BatteryPropertiesRegistrar: notifyListeners : done
+
+[ 1003.781890]  [1:  BootAnimation:11486] [c1] logger: !@BootAnimation : Could not open '/sys/bus/w1/devices/w1_bus_master1/w1_master_check_model'
+
+[ 1003.783945]  [1:  BootAnimation:11486] [c1] logger: !@BootAnimation : [Encryption info]crypt_state = unencrypted, crypt_input_window = 0, crypt_type = 0
+
+[ 1003.802548]  [1:  BootAnimation:11486] [c1] logger: !@BootAnimation : createSurface RGB565
+
+[ 1003.820698]  [0:  BootAnimation:11486] [c0] logger: !@BootAnimation : Could not open '/sys/devices/w1_bus_master1/w1_master_verify_mac'
+
+[ 1003.820807]  [0:  BootAnimation:11486] [c0] logger: !@BootAnimation : Could not open '/sys/devices/w1_bus_master1/w1_master_check_id'
+
+[ 1003.820850]  [0:  BootAnimation:11486] [c0] logger: !@BootAnimation : BootAnimData_STATUS = 0x3
+
+[ 1004.120987]  [1:    kworker/1:0:11075] [c1] [SX9500]: sx9500_get_data - cm=259910,uf=682,av=703,df=-2,Of=2209 (0)
+
+[ 1005.511349]  [3:           main:11370] [c3] logger: !@Boot: End of preload()
+
+[ 1005.700886]  [1:  system_server:11559] [c1] logger: !@Boot: Entered the Android system server!
+
+[ 1007.041653]  [3:  system_server:11559] [c3] logger: !@Selected wakeup count
+
+[ 1007.041653]  [3:  system_server:11559] 
+
+[ 1007.071164]  [1:  system_server:11559] [c1] logger: !@ USE_STATIC_LIGHTS_HAL
+
+[ 1007.071164]  [1:  system_server:11559] 
+
+[ 1007.071226]  [1:  system_server:11559] [c1] logger: !@ lights hal name : Samsung lights Module
+
+[ 1007.071226]  [1:  system_server:11559] 
+
+[ 1007.071276]  [1:  system_server:11559] [c1] logger: !@ initialize_fds : g_lights_file_paths[0][0] : /sys/class/leds/lcd-backlight/brightness 
+
+[ 1007.071276]  [1:  system_server:11559] 
+
+[ 1007.071371]  [1:  system_server:11559] [c1] logger: !@ initialize_fds : g_lights_fds Open error! : [2]
+
+[ 1007.071371]  [1:  system_server:11559] 
+
+[ 1007.071416]  [1:  system_server:11559] [c1] logger: !@ initialize_fds : g_lights_file_paths[0][1] : /sys/class/backlight/panel/brightness 
+
+[ 1007.071416]  [1:  system_server:11559] 
+
+[ 1007.072124]  [1:  system_server:11559] [c1] logger: !@ initialize_fds : FOUND! : 0x2e
+
+[ 1007.072124]  [1:  system_server:11559] 
+
+[ 1007.072186]  [1:  system_server:11559] [c1] logger: !@ initialize_fds : g_lights_file_paths[1][0] : /sys/class/backlight/panel_1/brightness 
+
+[ 1007.072186]  [1:  system_server:11559] 
+
+[ 1007.072270]  [1:  system_server:11559] [c1] logger: !@ initialize_fds : g_lights_fds Open error! : [2]
+
+[ 1007.072270]  [1:  system_server:11559] 
+
+[ 1007.072334]  [1:  system_server:11559] [c1] logger: !@ initialize_fds : g_lights_file_paths[1][1] : (null) 
+
+[ 1007.072334]  [1:  system_server:11559] 
+
+[ 1007.072379]  [1:  system_server:11559] [c1] logger: !@ initialize_fds : g_lights_file_paths[2][0] : /sys/class/sec/sec_touchkey/brightness 
+
+[ 1007.072379]  [1:  system_server:11559] 
+
+[ 1007.072902]  [1:  system_server:11559] [c1] logger: !@ initialize_fds : FOUND! : 0x37
+
+[ 1007.072902]  [1:  system_server:11559] 
+
+[ 1007.072959]  [1:  system_server:11559] [c1] logger: !@ initialize_fds : g_lights_file_paths[3][0] : /sys/class/sec/sec_touchkey2/brightness 
+
+[ 1007.072959]  [1:  system_server:11559] 
+
+[ 1007.073039]  [1:  system_server:11559] [c1] logger: !@ initialize_fds : g_lights_fds Open error! : [2]
+
+[ 1007.073039]  [1:  system_server:11559] 
+
+[ 1007.073083]  [1:  system_server:11559] [c1] logger: !@ initialize_fds : g_lights_file_paths[3][1] : (null) 
+
+[ 1007.073083]  [1:  system_server:11559] 
+
+[ 1007.073126]  [1:  system_server:11559] [c1] logger: !@ initialize_fds : g_lights_file_paths[4][0] : /sys/class/sec/sec_keypad/brightness 
+
+[ 1007.073126]  [1:  system_server:11559] 
+
+[ 1007.073189]  [1:  system_server:11559] [c1] logger: !@ initialize_fds : g_lights_fds Open error! : [2]
+
+[ 1007.073189]  [1:  system_server:11559] 
+
+[ 1007.073232]  [1:  system_server:11559] [c1] logger: !@ initialize_fds : g_lights_file_paths[4][1] : /sys/class/leds/keyboard-backlight/brightness 
+
+[ 1007.073232]  [1:  system_server:11559] 
+
+[ 1007.073295]  [1:  system_server:11559] [c1] logger: !@ initialize_fds : g_lights_fds Open error! : [2]
+
+[ 1007.073295]  [1:  system_server:11559] 
+
+[ 1007.073336]  [1:  system_server:11559] [c1] logger: !@ initialize_fds : g_lights_file_paths[4][2] : (null) 
+
+[ 1007.073336]  [1:  system_server:11559] 
+
+[ 1007.073377]  [1:  system_server:11559] [c1] logger: !@ initialize_fds : g_lights_file_paths[5][0] : /sys/class/sec/led/led_pattern 
+
+[ 1007.073377]  [1:  system_server:11559] 
+
+[ 1007.073436]  [1:  system_server:11559] [c1] logger: !@ initialize_fds : g_lights_fds Open error! : [2]
+
+[ 1007.073436]  [1:  system_server:11559] 
+
+[ 1007.073476]  [1:  system_server:11559] [c1] logger: !@ initialize_fds : g_lights_file_paths[5][1] : (null) 
+
+[ 1007.073476]  [1:  system_server:11559] 
+
+[ 1007.073518]  [1:  system_server:11559] [c1] logger: !@ initialize_fds : g_lights_file_paths[6][0] : /sys/class/sec/led/led_blink 
+
+[ 1007.073518]  [1:  system_server:11559] 
+
+[ 1007.073576]  [1:  system_server:11559] [c1] logger: !@ initialize_fds : g_lights_fds Open error! : [2]
+
+[ 1007.073576]  [1:  system_server:11559] 
+
+[ 1007.073616]  [1:  system_server:11559] [c1] logger: !@ initialize_fds : g_lights_file_paths[6][1] : (null) 
+
+[ 1007.073616]  [1:  system_server:11559] 
+
+[ 1007.141878]  [3:  system_server:11604] [c3] logger: !@suspend_thread_func: read wakeup_count
+
+[ 1007.141878]  [3:  system_server:11604] 
+
+[ 1007.180920]  [3:  system_server:11559] [c3] logger: !@Boot: Start PackageManagerService
+
+[ 1013.442895]  [0:   kworker/u8:2: 1130] [c0] [SENSOR] k2hh_work_func: x = -651, y = -532, z = 8006 (ra:0)
+
+[ 1013.486107]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x449, ocv = 4285
+
+[ 1013.490985]  [0:    kworker/0:1: 8789] [c0] sm5703_test_read: 0x4 = 0xbe, 0x5 = 0xff, 0x6 = 0xf3, 0x7 = 0xff, 0x8 = 0x08, 0x9 = 0x08, 0xa = 0x07, 0xb = 0x00, 0xc = 0x55, 0xd = 0x07, 0xe = 0x03, 0xf = 0x07, 0x10 = 0x16, 0x11 = 0x30, 0x12 = 0xf8, 0x13 = 0x08, 0x60 = 0x03, 0x6b = 0x20, 0x66 = 0x00, 
+
+[ 1013.491978]  [0:    kworker/0:1: 8789] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(281), Temp-ADC(1890)
+
+[ 1013.492784]  [0:    kworker/0:1: 8789] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(281), Temp-ADC(1889)
+
+[ 1013.492811]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 1013.492838]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 1013.493777]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x2740, temperature = 392
+
+[ 1013.494026]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x449, ocv = 4285
+
+[ 1013.494060]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 392, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7e85, bat_temp = 281
+
+[ 1013.494491]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x627c, soc = 984
+
+[ 1013.494741]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 1013.494983]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 1013.495226]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 1013.495466]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 1013.495700]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 1013.495939]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 1013.496178]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 1013.496414]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 1013.496651]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 1013.496889]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 1013.497125]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 1013.497365]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 1013.498266]  [0:    kworker/0:1: 8789] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 1013.499193]  [0:    kworker/0:1: 8789] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 1013.500097]  [0:    kworker/0:1: 8789] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 1013.501022]  [0:    kworker/0:1: 8789] [c0] 0x85=0x00ca, 0x86=0x8044, 0x87=0x4ed2, 0x28=0x0bac 
+
+[ 1013.501048]  [0:    kworker/0:1: 8789] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[ 1013.501073]  [0:    kworker/0:1: 8789] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4316mV),Inow(121mA),Imax(450mA),SOC(100%),Tbat(281),Tchg(0),is_hc_usb(0)
+
+[ 1013.501093]  [0:    kworker/0:1: 8789] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[ 1013.501316]  [0:    kworker/0:1: 8789] [c0] sm5703_get_charging_health : is_charging = 1, cable_type = 4, is_current_reduced = 0
+
+[ 1013.501537]  [0:    kworker/0:1: 8789] [c0] sm5703_get_charging_health: SM5703_CNTL, nCHG : 0x55, 0
+
+[ 1013.501553]  [0:    kworker/0:1: 8789] [c0] sm5703_get_charging_health : vbus_status = 32
+
+[ 1013.501567]  [0:    kworker/0:1: 8789] [c0] sm5703_get_charging_health : Health : 1
+
+[ 1013.501592]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 1013.501618]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 1013.502518]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x2740, temperature = 392
+
+[ 1013.503026]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x449, ocv = 4285
+
+[ 1013.503066]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 392, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7e85, bat_temp = 281
+
+[ 1013.503466]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x627c, soc = 984
+
+[ 1013.503759]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 1013.504007]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 1013.504249]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 1013.504575]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 1013.504790]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 1013.505005]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 1013.505247]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 1013.505478]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 1013.505718]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 1013.505942]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 1013.506157]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 1013.506370]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 1013.507168]  [0:    kworker/0:1: 8789] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 1013.508008]  [0:    kworker/0:1: 8789] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 1013.508830]  [0:    kworker/0:1: 8789] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 1013.509669]  [0:    kworker/0:1: 8789] [c0] 0x85=0x00ca, 0x86=0x8044, 0x87=0x4ed2, 0x28=0x0bac 
+
+[ 1013.509706]  [0:    kworker/0:1: 8789] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Full), mode(Additional), Health(Good), Cable(4), level(100%)
+
+[ 1013.509804]  [0:    kworker/0:1: 8789] [c0] sec_chg_get_property: slow-charging mode
+
+[ 1013.512683]  [3:        healthd:11365] [c3] sec_chg_get_property: slow-charging mode
+
+[ 1013.512966]  [3:        healthd:11365] [c3] sec_bat_show_attrs: waterproof event
+
+[ 1013.513032]  [3:        healthd:11365] [c3] sec_bat_show_attrs: waterproof event
+
+[ 1013.513213]  [3:        healthd:11365] [c3] healthd: battery l=100 v=4316 t=28.1 h=2 st=3 c=0 o=4 ca=120 ct=2 ps=0 chg=u 2026-02-23 18:38:47.898984740 UTC
+
+[ 1013.513260]  [3:        healthd:11365] [c3] healthd: battery l=100 v=4316 t=28.1 h=2 st=3 c=0 o=4 ca=120 ct=2 ps=0 chg=u 2026-02-23 18:38:47.898984740 UTC hv=0 sdc=0 sec=0 chg=u
+
+[ 1013.513287]  [3:        healthd:11365] [c3] healthd-android: healthd_mode_android_battery_update
+
+[ 1013.513311]  [3:        healthd:11365] [c3] BatteryPropertiesRegistrar: notifyListeners : start
+
+[ 1013.513334]  [3:        healthd:11365] [c3] BatteryPropertiesRegistrar: notifyListeners : done
+
+[ 1023.511269]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44a, ocv = 4289
+
+[ 1023.515733]  [0:    kworker/0:1: 8789] [c0] sm5703_test_read: 0x4 = 0xbe, 0x5 = 0xff, 0x6 = 0xf3, 0x7 = 0xff, 0x8 = 0x08, 0x9 = 0x08, 0xa = 0x07, 0xb = 0x00, 0xc = 0x55, 0xd = 0x07, 0xe = 0x03, 0xf = 0x07, 0x10 = 0x16, 0x11 = 0x30, 0x12 = 0xf8, 0x13 = 0x08, 0x60 = 0x03, 0x6b = 0x20, 0x66 = 0x00, 
+
+[ 1023.516625]  [0:    kworker/0:1: 8789] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(282), Temp-ADC(1884)
+
+[ 1023.517344]  [0:    kworker/0:1: 8789] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(282), Temp-ADC(1884)
+
+[ 1023.517368]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 1023.517390]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 1023.518262]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x2750, temperature = 393
+
+[ 1023.518485]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44a, ocv = 4289
+
+[ 1023.518514]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 393, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7e85, bat_temp = 282
+
+[ 1023.518974]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6288, soc = 985
+
+[ 1023.519195]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 1023.519412]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 1023.519626]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 1023.519842]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 1023.520057]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 1023.520270]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 1023.520487]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 1023.520700]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 1023.520911]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 1023.521123]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 1023.521345]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 1023.521565]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 1023.522370]  [0:    kworker/0:1: 8789] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 1023.523198]  [0:    kworker/0:1: 8789] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 1023.524032]  [0:    kworker/0:1: 8789] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 1023.524867]  [0:    kworker/0:1: 8789] [c0] 0x85=0x0112, 0x86=0x0008, 0x87=0x4ed4, 0x28=0x09a4 
+
+[ 1023.524900]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 1023.524922]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 1023.525725]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x2750, temperature = 393
+
+[ 1023.525946]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44a, ocv = 4289
+
+[ 1023.525974]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 393, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7e85, bat_temp = 282
+
+[ 1023.526349]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6288, soc = 985
+
+[ 1023.526565]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 1023.526782]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 1023.526998]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 1023.527213]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 1023.527426]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 1023.527640]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 1023.527859]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 1023.528081]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 1023.528304]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 1023.528520]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 1023.528769]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 1023.528993]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 1023.529796]  [0:    kworker/0:1: 8789] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 1023.530597]  [0:    kworker/0:1: 8789] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 1023.531402]  [0:    kworker/0:1: 8789] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 1023.532210]  [0:    kworker/0:1: 8789] [c0] 0x85=0x0112, 0x86=0x0008, 0x87=0x4ed4, 0x28=0x09a4 
+
+[ 1023.532226]  [0:    kworker/0:1: 8789] [c0] sm5703_fg_calculate_dynamic_scale: raw soc (985)
+
+[ 1023.532235]  [0:    kworker/0:1: 8789] sm5703_fg_calculate_dynamic_scale: 975 is used for capacity_max, capacity(100)
+
+[ 1023.532249]  [0:    kworker/0:1: 8789] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[ 1023.532268]  [0:    kworker/0:1: 8789] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4320mV),Inow(167mA),Imax(450mA),SOC(100%),Tbat(282),Tchg(0),is_hc_usb(0)
+
+[ 1023.532284]  [0:    kworker/0:1: 8789] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[ 1023.532484]  [0:    kworker/0:1: 8789] [c0] sm5703_get_charging_health : is_charging = 1, cable_type = 4, is_current_reduced = 0
+
+[ 1023.532668]  [0:    kworker/0:1: 8789] [c0] sm5703_get_charging_health: SM5703_CNTL, nCHG : 0x55, 0
+
+[ 1023.532680]  [0:    kworker/0:1: 8789] [c0] sm5703_get_charging_health : vbus_status = 32
+
+[ 1023.532691]  [0:    kworker/0:1: 8789] [c0] sm5703_get_charging_health : Health : 1
+
+[ 1023.532711]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 1023.532730]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 1023.533517]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x2750, temperature = 393
+
+[ 1023.533766]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44a, ocv = 4289
+
+[ 1023.533794]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 393, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7e85, bat_temp = 282
+
+[ 1023.534184]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x6288, soc = 985
+
+[ 1023.534400]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 1023.534617]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 1023.534832]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 1023.535046]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 1023.535263]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 1023.535479]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 1023.535694]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 1023.535910]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 1023.536122]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 1023.536337]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 1023.536552]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 1023.536775]  [0:    kworker/0:1: 8789] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 1023.537587]  [0:    kworker/0:1: 8789] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 1023.538392]  [0:    kworker/0:1: 8789] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 1023.539230]  [0:    kworker/0:1: 8789] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 1023.540138]  [0:    kworker/0:1: 8789] [c0] 0x85=0x0112, 0x86=0x0008, 0x87=0x4ed4, 0x28=0x09a4 
+
+[ 1023.540168]  [0:    kworker/0:1: 8789] [c0] sec-battery battery.31: sec_bat_time_management: Charging Time : 211 secs
+
+[ 1023.540186]  [0:    kworker/0:1: 8789] [c0] sec-battery battery.31: sec_bat_temperature: HLT(800) HLR(750) HT(550), HR(500), LT(-50), LR(0)
+
+[ 1023.540404]  [0:    kworker/0:1: 8789] [c0] sec_bat_swelling_check: status(4), swell_mode(0:0), cv(0x10f4), temp(282)
+
+[ 1023.540421]  [0:    kworker/0:1: 8789] [c0] sec_bat_check_fullcharged : full_check_type(2)
+
+[ 1023.540437]  [0:    kworker/0:1: 8789] [c0] sec-battery battery.31: sec_bat_fullcharged_check: Charging Mode : Re-Charging
+
+[ 1023.540454]  [0:    kworker/0:1: 8789] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Full), mode(Additional), Health(Good), Cable(4), level(100%)
+
+[ 1023.540521]  [0:    kworker/0:1: 8789] [c0] sec_chg_get_property: slow-charging mode
+
+[ 1023.542614]  [2:        healthd:11365] [c2] sec_chg_get_property: slow-charging mode
+
+[ 1023.542837]  [2:        healthd:11365] [c2] healthd: capacity_max 975, old_capacity_max 974
+
+[ 1023.544950]  [2:        healthd:11365] [c2] sec_bat_show_attrs: waterproof event
+
+[ 1023.545024]  [2:        healthd:11365] [c2] sec_bat_show_attrs: waterproof event
+
+[ 1023.545221]  [2:        healthd:11365] [c2] healthd: battery l=100 v=4320 t=28.2 h=2 st=3 c=0 o=4 ca=166 ct=2 ps=0 chg=u 2026-02-23 18:38:57.930990395 UTC
+
+[ 1023.545255]  [2:        healthd:11365] [c2] healthd: battery l=100 v=4320 t=28.2 h=2 st=3 c=0 o=4 ca=166 ct=2 ps=0 chg=u 2026-02-23 18:38:57.930990395 UTC hv=0 sdc=0 sec=0 chg=u
+
+[ 1023.545279]  [2:        healthd:11365] [c2] healthd-android: healthd_mode_android_battery_update
+
+[ 1023.545301]  [2:        healthd:11365] [c2] BatteryPropertiesRegistrar: notifyListeners : start
+
+[ 1023.545321]  [2:        healthd:11365] [c2] BatteryPropertiesRegistrar: notifyListeners : done
+
+[ 1023.838962]  [2:    kworker/2:0:11068] [c2] [VIB] sec_vib_log_show [0.000 : 0.000] off
+
+[ 1024.961976]  [2:          pkgld: 3151] [c2] sdcardfs: inotify event: 00000400
+
+[ 1024.961984]  [0:          pkgld: 3616] [c0] sdcardfs: inotify event: 00000400
+
+[ 1024.961990]  [1:          pkgld: 2931] [c1] sdcardfs: inotify event: 00000400
+
+[ 1024.962007]  [3:          pkgld: 2929] [c3] sdcardfs: inotify event: 00000400
+
+[ 1024.962023]  [0:          pkgld: 3153] [c0] sdcardfs: inotify event: 00000400
+
+[ 1024.962038]  [1:          pkgld: 2930] [c1] sdcardfs: inotify event: 00000400
+
+[ 1024.962048]  [3:          pkgld: 2927] [c3] sdcardfs: inotify event: 00000400
+
+[ 1024.962053]  [0:          pkgld: 2928] [c0] sdcardfs: inotify event: 00000400
+
+[ 1024.962067]  [1:          pkgld: 3620] [c1] sdcardfs: inotify event: 00000400
+
+[ 1024.962099]  [3:          pkgld: 3618] [c3] sdcardfs: inotify event: 00000400
+
+[ 1024.962110]  [0:          pkgld: 3162] [c0] sdcardfs: inotify event: 00000400
+
+[ 1024.962119]  [0:          pkgld: 3162] [c0] sdcardfs: inotify event: 00008000
+
+[ 1024.962129]  [1:          pkgld: 3620] [c1] sdcardfs: inotify event: 00008000
+
+[ 1024.962144]  [3:          pkgld: 3618] [c3] sdcardfs: inotify event: 00008000
+
+[ 1024.963053]  [0:          pkgld: 3162] [c0] sdcardfs: read_package_list
+
+[ 1024.963060]  [1:          pkgld: 3620] [c1] sdcardfs: read_package_list
+
+[ 1024.963065]  [3:          pkgld: 3618] [c3] sdcardfs: read_package_list
+
+[ 1024.963994]  [2:          pkgld: 3151] [c2] sdcardfs: inotify event: 00008000
+
+[ 1024.964034]  [2:          pkgld: 3151] [c2] sdcardfs: read_package_list
+
+[ 1024.965035]  [3:          pkgld: 2927] [c3] sdcardfs: inotify event: 00008000
+
+[ 1024.965042]  [0:          pkgld: 3153] [c0] sdcardfs: inotify event: 00008000
+
+[ 1024.965055]  [1:          pkgld: 2930] [c1] sdcardfs: inotify event: 00008000
+
+[ 1024.965070]  [0:          pkgld: 3153] [c0] sdcardfs: read_package_list
+
+[ 1024.965079]  [1:          pkgld: 2930] [c1] sdcardfs: read_package_list
+
+[ 1024.965104]  [3:          pkgld: 2927] [c3] sdcardfs: read_package_list
+
+[ 1024.966943]  [1:          pkgld: 2931] [c1] sdcardfs: inotify event: 00008000
+
+[ 1024.966951]  [3:          pkgld: 2929] [c3] sdcardfs: inotify event: 00008000
+
+[ 1024.966957]  [0:          pkgld: 2928] [c0] sdcardfs: inotify event: 00008000
+
+[ 1024.966983]  [0:          pkgld: 2928] [c0] sdcardfs: read_package_list
+
+[ 1024.966987]  [3:          pkgld: 2929] [c3] sdcardfs: read_package_list
+
+[ 1024.967007]  [1:          pkgld: 2931] [c1] sdcardfs: read_package_list
+
+[ 1024.969018]  [1:          pkgld: 3616] [c1] sdcardfs: inotify event: 00008000
+
+[ 1024.969083]  [1:          pkgld: 3616] [c1] sdcardfs: read_package_list
+
+[ 1025.197058]  [2:  system_server:11559] [c2] logger: !@Boot: End PackageManagerService
+
+[ 1025.223876]  [2:  system_server:11559] [c2] [SX9500]: sx9500_enable_store - new_value = 1 old_value = 1
+
+[ 1025.224414]  [2:  system_server:11559] [c2] [SX9500]: sx9500_enable_store - new_value = 0 old_value = 1
+
+[ 1025.224431]  [2:  system_server:11559] [c2] [SX9500]: sx9500_set_enable - disable
+
+[ 1025.224449]  [2:  system_server:11559] [c2] wake disabled for irq 530
+
+[ 1025.233869]  [2:  system_server:11559] [c2] logger: !@Battery capacity = 280000
+
+[ 1025.241774]  [3:        healthd:11365] [c3] BatteryPropertiesRegistrar: registerListener : start
+
+[ 1025.244016]  [3:        healthd:11365] [c3] sec_chg_get_property: slow-charging mode
+
+[ 1025.244266]  [3:        healthd:11365] [c3] sec_bat_show_attrs: waterproof event
+
+[ 1025.244323]  [3:        healthd:11365] [c3] sec_bat_show_attrs: waterproof event
+
+[ 1025.244471]  [3:        healthd:11365] [c3] healthd: battery l=100 v=4320 t=28.2 h=2 st=3 c=0 o=4 ca=166 ct=2 ps=0 chg=u 2026-02-23 18:38:59.630261433 UTC
+
+[ 1025.244502]  [3:        healthd:11365] [c3] healthd: battery l=100 v=4320 t=28.2 h=2 st=3 c=0 o=4 ca=166 ct=2 ps=0 chg=u 2026-02-23 18:38:59.630261433 UTC hv=0 sdc=0 sec=0 chg=u
+
+[ 1025.244525]  [3:        healthd:11365] [c3] healthd-android: healthd_mode_android_battery_update
+
+[ 1025.244546]  [3:        healthd:11365] [c3] BatteryPropertiesRegistrar: notifyListeners : start
+
+[ 1025.244568]  [3:        healthd:11365] [c3] IBatteryPropertiesListener : batteryPropertiesChanged!
+
+[ 1025.244568]  [3:        healthd:11365] : BatteryPropertiesRegistrar: notifyListeners : done
+
+[ 1025.245287]  [3:        healthd:11365] [c3] BatteryPropertiesRegistrar: registerListener : done
+
+[ 1025.245546]  [0:       Binder_2:11570] [c0] logger: !@BatteryListener : batteryPropertiesChanged!
+
+[ 1025.576735]  [2:           init:    1] [c2] init: property_set("ro.security.reactive.version", "2.0.9") failed
+
+[ 1025.737313]  [0:  system_server:11559] [c0] [VIB] sec_vib_enable : value 0
+
+[ 1025.848850]  [3:         mc_log: 2201] [c3] MobiCore mcd: a01|TL_TZ_KEYSTORE: Starting
+
+[ 1025.853834]  [2:         mc_log: 2201] [c2] MobiCore mcd: a01|TL_TZ_KEYSTORE: Got a message!
+
+[ 1025.853858]  [2:         mc_log: 2201] [c2] MobiCore mcd: a01|TZ_KEYSTORE: we got a command
+
+[ 1025.858938]  [2:         mc_log: 2201] [c2] MobiCore mcd: a01|TZ_KEYSTORE: process_cmd: CMD_TZ_KEYSTORE_init:
+
+[ 1025.858973]  [2:         mc_log: 2201] [c2] MobiCore mcd: a01|TIMA trustlet:  get_sec_TIMA_address tima_sec_mem_addr : 7F500000
+
+[ 1025.858987]  [2:         mc_log: 2201] [c2] MobiCore mcd: a01|TIMA trustlet: warranty okay 13
+
+[ 1025.859002]  [2:         mc_log: 2201] [c2] MobiCore mcd: a01|TZ_COMMON: tamper_fuse_good - process_init, msr_size: 0
+
+[ 1025.859015]  [2:         mc_log: 2201] [c2] MobiCore mcd: a01|TIMA trustlet: Reading golden measurement
+
+[ 1025.859028]  [2:         mc_log: 2201] [c2] MobiCore mcd: a01|TIMA trustlet: Measurement size is : 160
+
+[ 1025.859041]  [2:         mc_log: 2201] [c2] MobiCore mcd: a01|TZ_COMMON: Read boot time measurement
+
+[ 1025.877051]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|TZ_COMMON: compare measurements from boot and golden_msrs
+
+[ 1025.877079]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|TZ_COMMON: Measurements match, now check for license nad kap fuse status
+
+[ 1025.877093]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|TIMA trustlet: Reading knox license status
+
+[ 1025.877105]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|read license status is: 1
+
+[ 1025.877117]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|low security mode
+
+[ 1025.877131]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|TZ_COMMON: Measurements match - Initialization complete
+
+[ 1025.877145]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|Trustlet TL_TZ_KEYSTORE: sendmsg->header.id = 0x00000001
+
+[ 1025.877159]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|Trustlet TL_TZ_KEYSTORE: respmsg->header.id = 0x80000001
+
+[ 1025.877173]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|Trustlet TL_TZ_KEYSTORE: respmsg->header.status = 0x00000000
+
+[ 1025.877186]  [0:         mc_log: 2201] [c0] MobiCore mcd: a01|TL_TZ_KEYSTORE: Returning = 0x00000000
+
+[ 1025.880405]  [0:         mc_log: 2201] [c0] MobiCore mcd: 104| SMGNT send MSG_CLOSE_TRUSTLET for thread a01 to IPCH
+
+[ 1025.882153]  [0:         mc_log: 2201] [c0] MobiCore mcd: 103|BroadCast loop send Event to 202 (UUID=02010000-0000-0000-0000-000000005000) (server 0/7 status is 00000001)
+
+[ 1025.886136]  [0:         mc_log: 2201] [c0] MobiCore mcd: 103|BroadCast loop send Event to 302 (UUID=ffffffff-0000-0000-0000-000000000002) (server 1/7 status is 00000001)
+
+[ 1025.890841]  [2:         mc_log: 2201] [c2] MobiCore mcd: 103|BroadCast loop send Event to 402 (UUID=ffffffff-0000-0000-0000-000000000001) (server 2/7 status is 00000001)
+
+[ 1025.893802]  [0:         mc_log: 2201] [c0] MobiCore mcd: 103|BroadCast loop send Event to 501 (UUID=ffffffff-d000-0000-0000-00000000000a) (server 3/7 status is 00000001)
+
+[ 1025.896981]  [0:         mc_log: 2201] [c0] MobiCore mcd: 103|BroadCast loop send Event to 602 (UUID=ffffffff-d000-0000-0000-000000000016) (server 4/7 status is 00000001)
+
+[ 1025.897007]  [0:         mc_log: 2201] [c0] MobiCore mcd: 103|BroadCast loop send Event to 802 (UUID=07050500-0000-0000-0000-000000000000) (server 5/7 status is 00000001)
+
+[ 1025.898839]  [0:         mc_log: 2201] [c0] MobiCore mcd: 103|BroadCast loop send Event to 702 (UUID=ffffffff-d000-0000-0000-000000000004) (server 6/7 status is 00000001)
+
+[ 1025.900825]  [2:         mc_log: 2201] [c2] MobiCore mcd: 103|BroadCast loop done
+
+[ 1025.900846]  [2:         mc_log: 2201] [c2] MobiCore mcd: 104| SMGNT smgntCloseSession done
+
+[ 1025.912188]  [1:  system_server:11559] [c1] MobiCore mcd: closed by PID(11559), name(system_server)
+

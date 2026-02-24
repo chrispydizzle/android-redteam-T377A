@@ -1,0 +1,818 @@
+binder state:
+
+dead nodes:
+
+  node 267824: uaaee5e80 caaec49c0 hs 1 hw 1 ls 0 lw 0 is 1 iw 1 proc 12486
+
+  node 266656: u  (null) c  (null) hs 1 hw 1 ls 0 lw 0 is 4 iw 4 proc 12479 12486 12481 12477
+
+  node 242119: u  (null) c  (null) hs 1 hw 1 ls 0 lw 0 is 1 iw 1 proc 11445
+
+  node 1: u  (null) c  (null) hs 1 hw 1 ls 0 lw 0 is 4 iw 4 proc 3012 2936 2186 2213
+
+proc 20471
+
+  thread 20471: l 00
+
+proc 13029
+
+  thread 13029: l 00
+
+  thread 13050: l 12
+
+  thread 13051: l 11
+
+proc 12479
+
+  thread 12479: l 12
+
+  thread 12514: l 12
+
+  ref 266690: desc 0 dead node 266656 s 1 w 1 d 00000000
+
+proc 12486
+
+  thread 12486: l 00
+
+  thread 12488: l 12
+
+  thread 12490: l 11
+
+  thread 12500: l 00
+
+  thread 12501: l 00
+
+  thread 12502: l 00
+
+  thread 12503: l 00
+
+  thread 12937: l 11
+
+  thread 13028: l 11
+
+  ref 266673: desc 0 dead node 266656 s 1 w 1 d 00000000
+
+  ref 267835: desc 2 dead node 267824 s 1 w 1 d 00000000
+
+proc 12481
+
+  thread 12481: l 12
+
+  ref 266666: desc 0 dead node 266656 s 1 w 1 d 00000000
+
+proc 12477
+
+  thread 12477: l 02
+
+  ref 266659: desc 0 dead node 266656 s 1 w 1 d 00000000
+
+proc 11437
+
+  thread 11463: l 00
+
+proc 11445
+
+  thread 11445: l 12
+
+  thread 11470: l 00
+
+  thread 11473: l 12
+
+  ref 242122: desc 0 dead node 242119 s 1 w 1 d 00000000
+
+  buffer 248877: 00000000 size 4:0 delivered
+
+proc 3012
+
+  thread 3012: l 12
+
+  thread 3014: l 12
+
+  ref 25836: desc 0 dead node 1 s 1 w 1 d 00000000
+
+proc 2936
+
+  thread 2936: l 12
+
+  thread 2940: l 12
+
+  thread 3331: l 11
+
+  ref 1869: desc 0 dead node 1 s 1 w 1 d 00000000
+
+proc 2186
+
+  thread 2186: l 00
+
+  ref 318: desc 0 dead node 1 s 1 w 1 d 00000000
+
+proc 2213
+
+  thread 2213: l 12
+
+  ref 11: desc 0 dead node 1 s 1 w 1 d 00000000
+
+binder stats:
+
+BC_TRANSACTION: 166976
+
+BC_REPLY: 104205
+
+BC_ACQUIRE_RESULT: 3
+
+BC_FREE_BUFFER: 269438
+
+BC_INCREFS: 15957
+
+BC_ACQUIRE: 16270
+
+BC_RELEASE: 9735
+
+BC_DECREFS: 9722
+
+BC_INCREFS_DONE: 10011
+
+BC_ACQUIRE_DONE: 10010
+
+BC_ATTEMPT_ACQUIRE: 4
+
+BC_REGISTER_LOOPER: 4088
+
+BC_ENTER_LOOPER: 1482
+
+BC_EXIT_LOOPER: 1185
+
+BC_REQUEST_DEATH_NOTIFICATION: 4009
+
+BC_CLEAR_DEATH_NOTIFICATION: 3017
+
+BC_DEAD_BINDER_DONE: 597
+
+BR_TRANSACTION: 163401
+
+BR_REPLY: 104079
+
+BR_DEAD_REPLY: 1120
+
+BR_TRANSACTION_COMPLETE: 267615
+
+BR_INCREFS: 10030
+
+BR_ACQUIRE: 10030
+
+BR_RELEASE: 6023
+
+BR_DECREFS: 6021
+
+BR_SPAWN_LOOPER: 492
+
+BR_DEAD_BINDER: 591
+
+BR_CLEAR_DEATH_NOTIFICATION_DONE: 3010
+
+BR_FAILED_REPLY: 277
+
+proc: active 12 total 346
+
+thread: active 28 total 7507
+
+node: active 4 total 10035
+
+ref: active 10 total 15497
+
+death: active 0 total 4002
+
+transaction: active 0 total 267621
+
+transaction_complete: active 0 total 267621
+
+proc 20471
+
+  threads: 1
+
+  requested threads: 0+0/15
+
+  ready threads 0
+
+  free async space 520192
+
+  nodes: 0
+
+  refs: 0 s 0 w 0
+
+  buffers: 0
+
+  pending transactions: 0
+
+  BC_TRANSACTION: 6
+
+  BR_DEAD_REPLY: 6
+
+proc 13029
+
+  threads: 3
+
+  requested threads: 0+1/15
+
+  ready threads 2
+
+  free async space 520192
+
+  nodes: 0
+
+  refs: 0 s 0 w 0
+
+  buffers: 0
+
+  pending transactions: 0
+
+  BC_TRANSACTION: 496
+
+  BC_REGISTER_LOOPER: 1
+
+  BC_ENTER_LOOPER: 1
+
+  BR_DEAD_REPLY: 496
+
+  BR_SPAWN_LOOPER: 1
+
+proc 12479
+
+  threads: 2
+
+  requested threads: 0+0/15
+
+  ready threads 2
+
+  free async space 520192
+
+  nodes: 0
+
+  refs: 1 s 1 w 1
+
+  buffers: 0
+
+  pending transactions: 0
+
+  BC_TRANSACTION: 2
+
+  BC_FREE_BUFFER: 2
+
+  BC_INCREFS: 1
+
+  BC_ACQUIRE: 1
+
+  BC_INCREFS_DONE: 1
+
+  BC_ACQUIRE_DONE: 1
+
+  BC_ENTER_LOOPER: 2
+
+  BR_REPLY: 2
+
+  BR_TRANSACTION_COMPLETE: 2
+
+  BR_INCREFS: 1
+
+  BR_ACQUIRE: 1
+
+  BR_RELEASE: 1
+
+  BR_DECREFS: 1
+
+proc 12486
+
+  threads: 9
+
+  requested threads: 0+3/4
+
+  ready threads 4
+
+  free async space 520192
+
+  nodes: 0
+
+  refs: 2 s 2 w 2
+
+  buffers: 0
+
+  pending transactions: 0
+
+  BC_TRANSACTION: 6215
+
+  BC_REPLY: 6719
+
+  BC_FREE_BUFFER: 12846
+
+  BC_INCREFS: 5
+
+  BC_ACQUIRE: 5
+
+  BC_RELEASE: 3
+
+  BC_DECREFS: 3
+
+  BC_INCREFS_DONE: 21
+
+  BC_ACQUIRE_DONE: 21
+
+  BC_REGISTER_LOOPER: 3
+
+  BC_ENTER_LOOPER: 1
+
+  BC_REQUEST_DEATH_NOTIFICATION: 3
+
+  BC_CLEAR_DEATH_NOTIFICATION: 3
+
+  BC_DEAD_BINDER_DONE: 2
+
+  BR_TRANSACTION: 12607
+
+  BR_REPLY: 239
+
+  BR_DEAD_REPLY: 2
+
+  BR_TRANSACTION_COMPLETE: 12932
+
+  BR_INCREFS: 21
+
+  BR_ACQUIRE: 21
+
+  BR_RELEASE: 21
+
+  BR_DECREFS: 21
+
+  BR_SPAWN_LOOPER: 3
+
+  BR_DEAD_BINDER: 2
+
+  BR_CLEAR_DEATH_NOTIFICATION_DONE: 3
+
+proc 12481
+
+  threads: 1
+
+  requested threads: 1+0/15
+
+  ready threads 1
+
+  free async space 520192
+
+  nodes: 0
+
+  refs: 1 s 1 w 1
+
+  buffers: 0
+
+  pending transactions: 0
+
+  BC_TRANSACTION: 2
+
+  BC_FREE_BUFFER: 2
+
+  BC_INCREFS: 1
+
+  BC_ACQUIRE: 1
+
+  BC_INCREFS_DONE: 1
+
+  BC_ACQUIRE_DONE: 1
+
+  BC_ENTER_LOOPER: 1
+
+  BR_REPLY: 2
+
+  BR_TRANSACTION_COMPLETE: 2
+
+  BR_INCREFS: 1
+
+  BR_ACQUIRE: 1
+
+  BR_RELEASE: 1
+
+  BR_DECREFS: 1
+
+  BR_SPAWN_LOOPER: 1
+
+proc 12477
+
+  threads: 1
+
+  requested threads: 0+0/0
+
+  ready threads 0
+
+  free async space 520192
+
+  nodes: 0
+
+  refs: 1 s 1 w 1
+
+  buffers: 0
+
+  pending transactions: 0
+
+  BC_TRANSACTION: 16
+
+  BC_REPLY: 1
+
+  BC_FREE_BUFFER: 3
+
+  BC_INCREFS: 2
+
+  BC_ACQUIRE: 2
+
+  BC_RELEASE: 1
+
+  BC_DECREFS: 1
+
+  BC_INCREFS_DONE: 1
+
+  BC_ACQUIRE_DONE: 1
+
+  BC_ENTER_LOOPER: 1
+
+  BC_REQUEST_DEATH_NOTIFICATION: 1
+
+  BC_CLEAR_DEATH_NOTIFICATION: 1
+
+  BC_DEAD_BINDER_DONE: 1
+
+  BR_TRANSACTION: 1
+
+  BR_REPLY: 2
+
+  BR_TRANSACTION_COMPLETE: 17
+
+  BR_INCREFS: 1
+
+  BR_ACQUIRE: 1
+
+  BR_RELEASE: 1
+
+  BR_DECREFS: 1
+
+  BR_DEAD_BINDER: 1
+
+  BR_CLEAR_DEATH_NOTIFICATION_DONE: 1
+
+proc 11437
+
+  threads: 1
+
+  requested threads: 0+0/15
+
+  ready threads 0
+
+  free async space 520192
+
+  nodes: 0
+
+  refs: 0 s 0 w 0
+
+  buffers: 0
+
+  pending transactions: 0
+
+proc 11445
+
+  threads: 3
+
+  requested threads: 0+0/15
+
+  ready threads 2
+
+  free async space 520192
+
+  nodes: 0
+
+  refs: 1 s 1 w 1
+
+  buffers: 1
+
+  pending transactions: 0
+
+  BC_TRANSACTION: 59
+
+  BC_FREE_BUFFER: 55
+
+  BC_INCREFS: 1
+
+  BC_ACQUIRE: 1
+
+  BC_ENTER_LOOPER: 2
+
+  BR_REPLY: 56
+
+  BR_DEAD_REPLY: 3
+
+  BR_TRANSACTION_COMPLETE: 56
+
+proc 3012
+
+  threads: 2
+
+  requested threads: 0+0/15
+
+  ready threads 2
+
+  free async space 520192
+
+  nodes: 0
+
+  refs: 1 s 1 w 1
+
+  buffers: 0
+
+  pending transactions: 0
+
+  BC_TRANSACTION: 2
+
+  BC_FREE_BUFFER: 2
+
+  BC_INCREFS: 1
+
+  BC_ACQUIRE: 1
+
+  BC_INCREFS_DONE: 1
+
+  BC_ACQUIRE_DONE: 1
+
+  BC_ENTER_LOOPER: 2
+
+  BR_REPLY: 2
+
+  BR_TRANSACTION_COMPLETE: 2
+
+  BR_INCREFS: 1
+
+  BR_ACQUIRE: 1
+
+  BR_RELEASE: 1
+
+  BR_DECREFS: 1
+
+proc 2936
+
+  threads: 3
+
+  requested threads: 0+1/15
+
+  ready threads 3
+
+  free async space 520192
+
+  nodes: 0
+
+  refs: 1 s 1 w 1
+
+  buffers: 0
+
+  pending transactions: 0
+
+  BC_TRANSACTION: 2
+
+  BC_REPLY: 18
+
+  BC_FREE_BUFFER: 20
+
+  BC_INCREFS: 1
+
+  BC_ACQUIRE: 1
+
+  BC_INCREFS_DONE: 1
+
+  BC_ACQUIRE_DONE: 1
+
+  BC_REGISTER_LOOPER: 1
+
+  BC_ENTER_LOOPER: 2
+
+  BR_TRANSACTION: 18
+
+  BR_REPLY: 2
+
+  BR_TRANSACTION_COMPLETE: 20
+
+  BR_INCREFS: 1
+
+  BR_ACQUIRE: 1
+
+  BR_RELEASE: 1
+
+  BR_DECREFS: 1
+
+  BR_SPAWN_LOOPER: 1
+
+proc 2186
+
+  threads: 1
+
+  requested threads: 0+0/15
+
+  ready threads 0
+
+  free async space 520192
+
+  nodes: 0
+
+  refs: 1 s 1 w 1
+
+  buffers: 0
+
+  pending transactions: 0
+
+  BC_TRANSACTION: 1448
+
+  BC_FREE_BUFFER: 1446
+
+  BC_INCREFS: 847
+
+  BC_ACQUIRE: 847
+
+  BC_RELEASE: 846
+
+  BC_DECREFS: 846
+
+  BR_REPLY: 1446
+
+  BR_DEAD_REPLY: 1
+
+  BR_TRANSACTION_COMPLETE: 1446
+
+  BR_FAILED_REPLY: 1
+
+proc 2213
+
+  threads: 1
+
+  requested threads: 1+0/15
+
+  ready threads 1
+
+  free async space 520192
+
+  nodes: 0
+
+  refs: 1 s 1 w 1
+
+  buffers: 0
+
+  pending transactions: 0
+
+  BC_TRANSACTION: 2
+
+  BC_FREE_BUFFER: 2
+
+  BC_INCREFS: 1
+
+  BC_ACQUIRE: 1
+
+  BC_INCREFS_DONE: 1
+
+  BC_ACQUIRE_DONE: 1
+
+  BC_ENTER_LOOPER: 1
+
+  BR_REPLY: 2
+
+  BR_TRANSACTION_COMPLETE: 2
+
+  BR_INCREFS: 1
+
+  BR_ACQUIRE: 1
+
+  BR_RELEASE: 1
+
+  BR_DECREFS: 1
+
+  BR_SPAWN_LOOPER: 1
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20065:20065 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20065:20065 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20065:20065 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20065:20065 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20065:20065 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20065:20065 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20065:20065 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20065:20065 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20246:20246 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20246:20246 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20471:20471 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20471:20471 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20471:20471 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20471:20471 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20471:20471 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20471:20471 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20065:20065 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20065:20065 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20065:20065 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20065:20065 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20065:20065 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20065:20065 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20065:20065 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20065:20065 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20246:20246 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20246:20246 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20471:20471 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20471:20471 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20471:20471 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20471:20471 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20471:20471 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 13029:13029 to 0:0 node 0 handle 0 size 0:0
+
+0: call  from 20471:20471 to 0:0 node 0 handle 0 size 0:0
+

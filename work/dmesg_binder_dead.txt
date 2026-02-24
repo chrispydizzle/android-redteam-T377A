@@ -1,0 +1,1982 @@
+[ 2253.408026]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 2253.408264]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 2253.409144]  [0:    kworker/0:3:11079] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 2253.409988]  [0:    kworker/0:3:11079] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 2253.410847]  [0:    kworker/0:3:11079] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 2253.411720]  [0:    kworker/0:3:11079] [c0] 0x85=0x0002, 0x86=0x0092, 0x87=0x4f24, 0x28=0x2d9c 
+
+[ 2253.411746]  [0:    kworker/0:3:11079] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[ 2253.411768]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4285mV),Inow(-70mA),Imax(450mA),SOC(100%),Tbat(272),Tchg(0),is_hc_usb(0)
+
+[ 2253.411783]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[ 2253.412001]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : is_charging = 1, cable_type = 4, is_current_reduced = 0
+
+[ 2253.412195]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health: SM5703_CNTL, nCHG : 0x55, 0
+
+[ 2253.412210]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : vbus_status = 32
+
+[ 2253.412221]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : Health : 1
+
+[ 2253.412246]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 2253.412268]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 2253.413109]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x27d0, temperature = 398
+
+[ 2253.413359]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2253.413395]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 398, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 272
+
+[ 2253.413818]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x62ec, soc = 989
+
+[ 2253.414055]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 2253.414284]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 2253.414511]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 2253.414742]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 2253.414970]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 2253.415202]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 2253.415431]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 2253.415657]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 2253.415889]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 2253.416129]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 2253.416361]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 2253.416592]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 2253.417444]  [0:    kworker/0:3:11079] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 2253.418284]  [0:    kworker/0:3:11079] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 2253.419115]  [0:    kworker/0:3:11079] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 2253.419915]  [0:    kworker/0:3:11079] [c0] 0x85=0x0002, 0x86=0x0092, 0x87=0x4f24, 0x28=0x2d9c 
+
+[ 2253.419949]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Full), mode(Normal), Health(Good), Cable(4), level(100%)
+
+[ 2253.420047]  [0:    kworker/0:3:11079] [c0] sec_chg_get_property: slow-charging mode
+
+[ 2253.422503]  [0:        healthd:12477] [c0] sec_chg_get_property: slow-charging mode
+
+[ 2253.422842]  [0:        healthd:12477] [c0] sec_bat_show_attrs: waterproof event
+
+[ 2253.422915]  [0:        healthd:12477] [c0] sec_bat_show_attrs: waterproof event
+
+[ 2253.423115]  [0:        healthd:12477] [c0] healthd: battery l=100 v=4285 t=27.2 h=2 st=3 c=0 o=4 ca=-70 ct=2 ps=0 chg=u 2026-02-23 17:53:28.941360663 UTC
+
+[ 2253.423154]  [0:        healthd:12477] [c0] healthd: battery l=100 v=4285 t=27.2 h=2 st=3 c=0 o=4 ca=-70 ct=2 ps=0 chg=u 2026-02-23 17:53:28.941360663 UTC hv=0 sdc=0 sec=0 chg=u
+
+[ 2253.423178]  [0:        healthd:12477] [c0] healthd-android: healthd_mode_android_battery_update
+
+[ 2253.423201]  [0:        healthd:12477] [c0] BatteryPropertiesRegistrar: notifyListeners : start
+
+[ 2253.423222]  [0:        healthd:12477] [c0] BatteryPropertiesRegistrar: notifyListeners : done
+
+[ 2253.945732]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2254.016507]  [3:    mediaserver:18863] [c3] binder: 18863:18863 transaction failed 29189, size 0-0
+
+[ 2254.945967]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2255.016736]  [3:    mediaserver:18863] [c3] binder: 18863:18863 transaction failed 29189, size 0-0
+
+[ 2255.946184]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2256.016961]  [3:    mediaserver:18863] [c3] binder: 18863:18863 transaction failed 29189, size 0-0
+
+[ 2256.946517]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2257.017274]  [3:    mediaserver:18863] [c3] binder: 18863:18863 transaction failed 29189, size 0-0
+
+[ 2257.946761]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2258.017513]  [3:    mediaserver:18863] [c3] binder: 18863:18863 transaction failed 29189, size 0-0
+
+[ 2258.220094]  [1:           main:19256] [c1] binder: 19256:19256 transaction failed 29189, size 0-0
+
+[ 2258.510741]  [1:  system_server:19015] [c1] logger: !@Boot: Entered the Android system server!
+
+[ 2258.792969]  [0:  system_server:19015] [c0] binder: 19015:19015 transaction failed 29189, size 0-0
+
+[ 2258.830356]  [1:  system_server:19015] [c1] binder: 19015:19015 transaction failed 29189, size 0-0
+
+[ 2258.946978]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2259.947217]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2260.200434]  [2:           init:    1] [c2] init: property_set("ro.setupwizard.mode", "DISABLED") failed
+
+[ 2260.200949]  [2:           init:    1] [c2] init: property_set("ro.com.google.clientidbase.ms", "android-att-us") failed
+
+[ 2260.201691]  [1:           init:    1] [c1] init: property_set("ro.com.google.clientidbase.am", "android-att-us") failed
+
+[ 2260.202425]  [1:           init:    1] [c1] init: property_set("ro.com.google.clientidbase.gmm", "android-samsung") failed
+
+[ 2260.202826]  [1:           init:    1] [c1] init: property_set("ro.com.google.clientidbase.yt", "android-samsung") failed
+
+[ 2260.947445]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2261.264399]  [0:           main:19278] [c0] logger: !@Boot: Begin of preload()
+
+[ 2261.947686]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2262.131295]  [3:    mediaserver:19279] [c3] binder: 19279:19279 transaction failed 29189, size 0-0
+
+[ 2262.198475]  [3:           main:19329] [c3] binder: 19329:19329 transaction failed 29189, size 0-0
+
+[ 2262.947901]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2263.048589]  [2:           main:19278] [c2] logger: !@Boot: End of preload()
+
+[ 2263.131534]  [3:    mediaserver:19279] [c3] binder: 19279:19279 transaction failed 29189, size 0-0
+
+[ 2263.421619]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2263.427651]  [0:    kworker/0:3:11079] [c0] sm5703_test_read: 0x4 = 0xbe, 0x5 = 0xff, 0x6 = 0xf3, 0x7 = 0xff, 0x8 = 0x08, 0x9 = 0x08, 0xa = 0x07, 0xb = 0x00, 0xc = 0x55, 0xd = 0x07, 0xe = 0x03, 0xf = 0x07, 0x10 = 0x16, 0x11 = 0x30, 0x12 = 0xf8, 0x13 = 0x08, 0x60 = 0x03, 0x6b = 0x20, 0x66 = 0x00, 
+
+[ 2263.428600]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(272), Temp-ADC(1929)
+
+[ 2263.429332]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(271), Temp-ADC(1931)
+
+[ 2263.429360]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 2263.429382]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 2263.430160]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x27e0, temperature = 398
+
+[ 2263.430370]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2263.430398]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 398, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7e85, bat_temp = 272
+
+[ 2263.430769]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x62ec, soc = 989
+
+[ 2263.430976]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 2263.431187]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 2263.431402]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 2263.431609]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 2263.431812]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 2263.432021]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 2263.432231]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 2263.432437]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 2263.432657]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 2263.432873]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 2263.433083]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 2263.433296]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 2263.434100]  [0:    kworker/0:3:11079] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 2263.434898]  [0:    kworker/0:3:11079] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 2263.435686]  [0:    kworker/0:3:11079] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 2263.436454]  [0:    kworker/0:3:11079] [c0] 0x85=0x0011, 0x86=0x0014, 0x87=0x4f24, 0x28=0x32c0 
+
+[ 2263.436485]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 2263.436507]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 2263.437237]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x27e0, temperature = 398
+
+[ 2263.437456]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2263.437483]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 398, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7e85, bat_temp = 272
+
+[ 2263.437836]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x62ec, soc = 989
+
+[ 2263.438040]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 2263.438245]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 2263.438448]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 2263.438689]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 2263.438909]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 2263.439112]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 2263.439313]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 2263.439518]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 2263.439723]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 2263.439922]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 2263.440124]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 2263.440338]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 2263.441099]  [0:    kworker/0:3:11079] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 2263.441862]  [0:    kworker/0:3:11079] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 2263.442613]  [0:    kworker/0:3:11079] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 2263.443369]  [0:    kworker/0:3:11079] [c0] 0x85=0x0011, 0x86=0x0014, 0x87=0x4f24, 0x28=0x32c0 
+
+[ 2263.443383]  [0:    kworker/0:3:11079] [c0] sm5703_fg_calculate_dynamic_scale: raw soc (989)
+
+[ 2263.443393]  [0:    kworker/0:3:11079] sm5703_fg_calculate_dynamic_scale: 979 is used for capacity_max, capacity(100)
+
+[ 2263.443408]  [0:    kworker/0:3:11079] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[ 2263.443430]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4296mV),Inow(0mA),Imax(450mA),SOC(100%),Tbat(272),Tchg(0),is_hc_usb(0)
+
+[ 2263.443445]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[ 2263.443779]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : is_charging = 1, cable_type = 4, is_current_reduced = 0
+
+[ 2263.443953]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health: SM5703_CNTL, nCHG : 0x55, 0
+
+[ 2263.443965]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : vbus_status = 32
+
+[ 2263.443976]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : Health : 1
+
+[ 2263.443997]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 2263.444018]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 2263.444772]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x27e0, temperature = 398
+
+[ 2263.444983]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2263.445011]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 398, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7e85, bat_temp = 272
+
+[ 2263.445366]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x62ec, soc = 989
+
+[ 2263.445584]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 2263.445803]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 2263.446019]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 2263.446222]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 2263.446427]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 2263.446628]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 2263.446829]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 2263.447034]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 2263.447237]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 2263.447439]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 2263.447643]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 2263.447843]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 2263.448629]  [0:    kworker/0:3:11079] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 2263.449409]  [0:    kworker/0:3:11079] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 2263.450164]  [0:    kworker/0:3:11079] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 2263.450937]  [0:    kworker/0:3:11079] [c0] 0x85=0x0011, 0x86=0x0014, 0x87=0x4f24, 0x28=0x32c0 
+
+[ 2263.450966]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_time_management: Charging Time : 662 secs
+
+[ 2263.450983]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_temperature: HLT(800) HLR(750) HT(550), HR(500), LT(-50), LR(0)
+
+[ 2263.451174]  [0:    kworker/0:3:11079] [c0] sec_bat_swelling_check: status(4), swell_mode(0:0), cv(0x10f4), temp(272)
+
+[ 2263.451189]  [0:    kworker/0:3:11079] [c0] sec_bat_check_fullcharged : full_check_type(2)
+
+[ 2263.451203]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_fullcharged_check: Charging Mode : Re-Charging
+
+[ 2263.451220]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Full), mode(Normal), Health(Good), Cable(4), level(100%)
+
+[ 2263.451285]  [0:    kworker/0:3:11079] [c0] sec_chg_get_property: slow-charging mode
+
+[ 2263.454070]  [3:        healthd:12477] [c3] sec_chg_get_property: slow-charging mode
+
+[ 2263.454360]  [3:        healthd:12477] [c3] sec_bat_show_attrs: waterproof event
+
+[ 2263.454430]  [3:        healthd:12477] [c3] sec_bat_show_attrs: waterproof event
+
+[ 2263.454637]  [3:        healthd:12477] [c3] healthd: battery l=100 v=4296 t=27.2 h=2 st=3 c=0 o=4 ca=0 ct=2 ps=0 chg=u 2026-02-23 17:53:38.972883433 UTC
+
+[ 2263.454680]  [3:        healthd:12477] [c3] healthd: battery l=100 v=4296 t=27.2 h=2 st=3 c=0 o=4 ca=0 ct=2 ps=0 chg=u 2026-02-23 17:53:38.972883433 UTC hv=0 sdc=0 sec=0 chg=u
+
+[ 2263.454705]  [3:        healthd:12477] [c3] healthd-android: healthd_mode_android_battery_update
+
+[ 2263.454728]  [3:        healthd:12477] [c3] BatteryPropertiesRegistrar: notifyListeners : start
+
+[ 2263.454756]  [3:        healthd:12477] [c3] BatteryPropertiesRegistrar: notifyListeners : done
+
+[ 2263.948100]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2264.131809]  [0:    mediaserver:19279] [c0] binder: 19279:19279 transaction failed 29189, size 0-0
+
+[ 2264.948301]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2265.132032]  [0:    mediaserver:19279] [c0] binder: 19279:19279 transaction failed 29189, size 0-0
+
+[ 2265.948519]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2266.132270]  [0:    mediaserver:19279] [c0] binder: 19279:19279 transaction failed 29189, size 0-0
+
+[ 2266.874153]  [0:   kworker/u8:0:15363] [c0] [SENSOR] k2hh_work_func: x = 456, y = 179, z = 8031 (ra:0)
+
+[ 2266.948752]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2267.132500]  [0:    mediaserver:19279] [c0] binder: 19279:19279 transaction failed 29189, size 0-0
+
+[ 2267.948961]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2268.132706]  [0:    mediaserver:19279] [c0] binder: 19279:19279 transaction failed 29189, size 0-0
+
+[ 2268.949204]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2269.132955]  [0:    mediaserver:19279] [c0] binder: 19279:19279 transaction failed 29189, size 0-0
+
+[ 2269.949454]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2270.133221]  [0:    mediaserver:19279] [c0] binder: 19279:19279 transaction failed 29189, size 0-0
+
+[ 2270.949703]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2271.133482]  [0:    mediaserver:19279] [c0] binder: 19279:19279 transaction failed 29189, size 0-0
+
+[ 2271.498924]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2271.949969]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2272.133769]  [0:    mediaserver:19279] [c0] binder: 19279:19279 transaction failed 29189, size 0-0
+
+[ 2272.499172]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2272.950248]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2273.134007]  [0:    mediaserver:19279] [c0] binder: 19279:19279 transaction failed 29189, size 0-0
+
+[ 2273.452845]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2273.457410]  [0:    kworker/0:3:11079] [c0] sm5703_test_read: 0x4 = 0xbe, 0x5 = 0xff, 0x6 = 0xf3, 0x7 = 0xff, 0x8 = 0x08, 0x9 = 0x08, 0xa = 0x07, 0xb = 0x00, 0xc = 0x55, 0xd = 0x07, 0xe = 0x03, 0xf = 0x07, 0x10 = 0x16, 0x11 = 0x30, 0x12 = 0xf8, 0x13 = 0x08, 0x60 = 0x03, 0x6b = 0x20, 0x66 = 0x00, 
+
+[ 2273.458362]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(273), Temp-ADC(1925)
+
+[ 2273.459221]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(273), Temp-ADC(1925)
+
+[ 2273.459256]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 2273.459280]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 2273.460132]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x27e0, temperature = 398
+
+[ 2273.460369]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2273.460406]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 398, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 273
+
+[ 2273.460799]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x62ec, soc = 989
+
+[ 2273.461033]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 2273.461263]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 2273.461489]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 2273.461716]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 2273.461959]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 2273.462179]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 2273.462403]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 2273.462635]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 2273.462860]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 2273.463089]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 2273.463311]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 2273.463579]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 2273.464408]  [0:    kworker/0:3:11079] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 2273.465235]  [0:    kworker/0:3:11079] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 2273.466074]  [0:    kworker/0:3:11079] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 2273.466908]  [0:    kworker/0:3:11079] [c0] 0x85=0x0000, 0x86=0x009f, 0x87=0x4f24, 0x28=0x34d4 
+
+[ 2273.466932]  [0:    kworker/0:3:11079] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[ 2273.466954]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4285mV),Inow(-70mA),Imax(450mA),SOC(100%),Tbat(273),Tchg(0),is_hc_usb(0)
+
+[ 2273.466969]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[ 2273.467176]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : is_charging = 1, cable_type = 4, is_current_reduced = 0
+
+[ 2273.467360]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health: SM5703_CNTL, nCHG : 0x55, 0
+
+[ 2273.467374]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : vbus_status = 32
+
+[ 2273.467385]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : Health : 1
+
+[ 2273.467409]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 2273.467431]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 2273.468240]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x27e0, temperature = 398
+
+[ 2273.468481]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2273.468519]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 398, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 273
+
+[ 2273.468966]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x62ec, soc = 989
+
+[ 2273.469191]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 2273.469425]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 2273.469654]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 2273.469894]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 2273.470121]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 2273.470354]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 2273.470585]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 2273.470819]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 2273.471045]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 2273.471270]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 2273.471499]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 2273.471742]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 2273.472569]  [0:    kworker/0:3:11079] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 2273.473491]  [0:    kworker/0:3:11079] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 2273.474430]  [0:    kworker/0:3:11079] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 2273.475273]  [0:    kworker/0:3:11079] [c0] 0x85=0x0000, 0x86=0x009f, 0x87=0x4f24, 0x28=0x34d4 
+
+[ 2273.475307]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Full), mode(Normal), Health(Good), Cable(4), level(100%)
+
+[ 2273.475399]  [0:    kworker/0:3:11079] [c0] sec_chg_get_property: slow-charging mode
+
+[ 2273.477891]  [3:        healthd:12477] [c3] sec_chg_get_property: slow-charging mode
+
+[ 2273.478219]  [3:        healthd:12477] [c3] sec_bat_show_attrs: waterproof event
+
+[ 2273.478300]  [3:        healthd:12477] [c3] sec_bat_show_attrs: waterproof event
+
+[ 2273.478499]  [3:        healthd:12477] [c3] healthd: battery l=100 v=4285 t=27.3 h=2 st=3 c=0 o=4 ca=-70 ct=2 ps=0 chg=u 2026-02-23 17:53:48.996748356 UTC
+
+[ 2273.478622]  [3:        healthd:12477] [c3] healthd: battery l=100 v=4285 t=27.3 h=2 st=3 c=0 o=4 ca=-70 ct=2 ps=0 chg=u 2026-02-23 17:53:48.996748356 UTC hv=0 sdc=0 sec=0 chg=u
+
+[ 2273.478652]  [3:        healthd:12477] [c3] healthd-android: healthd_mode_android_battery_update
+
+[ 2273.478676]  [3:        healthd:12477] [c3] BatteryPropertiesRegistrar: notifyListeners : start
+
+[ 2273.478697]  [3:        healthd:12477] [c3] BatteryPropertiesRegistrar: notifyListeners : done
+
+[ 2273.499418]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2273.950505]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2274.134244]  [0:    mediaserver:19279] [c0] binder: 19279:19279 transaction failed 29189, size 0-0
+
+[ 2274.499670]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2274.950767]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2275.134496]  [0:    mediaserver:19279] [c0] binder: 19279:19279 transaction failed 29189, size 0-0
+
+[ 2275.499920]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2275.951032]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2276.134754]  [0:    mediaserver:19279] [c0] binder: 19279:19279 transaction failed 29189, size 0-0
+
+[ 2276.500196]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2276.951291]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2277.134976]  [0:    mediaserver:19279] [c0] binder: 19279:19279 transaction failed 29189, size 0-0
+
+[ 2277.500458]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2277.951569]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2278.135238]  [0:    mediaserver:19279] [c0] binder: 19279:19279 transaction failed 29189, size 0-0
+
+[ 2278.500717]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2278.951819]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2279.135490]  [0:    mediaserver:19279] [c0] binder: 19279:19279 transaction failed 29189, size 0-0
+
+[ 2279.500998]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2279.952076]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2280.135754]  [0:    mediaserver:19279] [c0] binder: 19279:19279 transaction failed 29189, size 0-0
+
+[ 2280.501265]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2280.952339]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2281.136030]  [0:    mediaserver:19279] [c0] binder: 19279:19279 transaction failed 29189, size 0-0
+
+[ 2281.501533]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2281.940982]  [0:   kworker/u8:0:15363] [c0] [SENSOR] k2hh_work_func: x = 237, y = 16, z = 8001 (ra:0)
+
+[ 2281.952585]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2282.136299]  [0:    mediaserver:19279] [c0] binder: 19279:19279 transaction failed 29189, size 0-0
+
+[ 2282.501795]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2282.952843]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2283.136559]  [0:    mediaserver:19279] [c0] binder: 19279:19279 transaction failed 29189, size 0-0
+
+[ 2283.476932]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2283.481568]  [0:    kworker/0:3:11079] [c0] sm5703_test_read: 0x4 = 0xbe, 0x5 = 0xff, 0x6 = 0xf3, 0x7 = 0xff, 0x8 = 0x08, 0x9 = 0x08, 0xa = 0x07, 0xb = 0x00, 0xc = 0x55, 0xd = 0x07, 0xe = 0x03, 0xf = 0x07, 0x10 = 0x16, 0x11 = 0x30, 0x12 = 0xf8, 0x13 = 0x08, 0x60 = 0x03, 0x6b = 0x20, 0x66 = 0x00, 
+
+[ 2283.482562]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(273), Temp-ADC(1924)
+
+[ 2283.483374]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(273), Temp-ADC(1924)
+
+[ 2283.483411]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 2283.483434]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 2283.484306]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x27f0, temperature = 399
+
+[ 2283.484540]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2283.484574]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 399, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 273
+
+[ 2283.484974]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x62ec, soc = 989
+
+[ 2283.485203]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 2283.485445]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 2283.485681]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 2283.485912]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 2283.486136]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 2283.486359]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 2283.486599]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 2283.486823]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 2283.487057]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 2283.487284]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 2283.487508]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 2283.487729]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 2283.488604]  [0:    kworker/0:3:11079] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 2283.489457]  [0:    kworker/0:3:11079] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 2283.490316]  [0:    kworker/0:3:11079] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 2283.491159]  [0:    kworker/0:3:11079] [c0] 0x85=0x0003, 0x86=0x0090, 0x87=0x4f24, 0x28=0x3070 
+
+[ 2283.491183]  [0:    kworker/0:3:11079] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[ 2283.491206]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4285mV),Inow(-66mA),Imax(450mA),SOC(100%),Tbat(273),Tchg(0),is_hc_usb(0)
+
+[ 2283.491221]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[ 2283.491442]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : is_charging = 1, cable_type = 4, is_current_reduced = 0
+
+[ 2283.491645]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health: SM5703_CNTL, nCHG : 0x55, 0
+
+[ 2283.491660]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : vbus_status = 32
+
+[ 2283.491672]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : Health : 1
+
+[ 2283.491697]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 2283.491719]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 2283.492550]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x27f0, temperature = 399
+
+[ 2283.492779]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2283.492813]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 399, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 273
+
+[ 2283.493206]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x62ec, soc = 989
+
+[ 2283.493436]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 2283.493701]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 2283.493917]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 2283.494143]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 2283.494365]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 2283.494583]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 2283.494801]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 2283.495037]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 2283.495271]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 2283.495501]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 2283.495730]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 2283.495952]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 2283.496789]  [0:    kworker/0:3:11079] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 2283.497630]  [0:    kworker/0:3:11079] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 2283.498477]  [0:    kworker/0:3:11079] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 2283.499360]  [0:    kworker/0:3:11079] [c0] 0x85=0x0003, 0x86=0x0090, 0x87=0x4f24, 0x28=0x3070 
+
+[ 2283.499397]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Full), mode(Normal), Health(Good), Cable(4), level(100%)
+
+[ 2283.499492]  [0:    kworker/0:3:11079] [c0] sec_chg_get_property: slow-charging mode
+
+[ 2283.501817]  [3:        healthd:12477] [c3] sec_chg_get_property: slow-charging mode
+
+[ 2283.502031]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2283.502138]  [3:        healthd:12477] [c3] sec_bat_show_attrs: waterproof event
+
+[ 2283.502213]  [3:        healthd:12477] [c3] sec_bat_show_attrs: waterproof event
+
+[ 2283.502419]  [3:        healthd:12477] [c3] healthd: battery l=100 v=4285 t=27.3 h=2 st=3 c=0 o=4 ca=-66 ct=2 ps=0 chg=u 2026-02-23 17:53:59.020669241 UTC
+
+[ 2283.502458]  [3:        healthd:12477] [c3] healthd: battery l=100 v=4285 t=27.3 h=2 st=3 c=0 o=4 ca=-66 ct=2 ps=0 chg=u 2026-02-23 17:53:59.020669241 UTC hv=0 sdc=0 sec=0 chg=u
+
+[ 2283.502483]  [3:        healthd:12477] [c3] healthd-android: healthd_mode_android_battery_update
+
+[ 2283.502505]  [3:        healthd:12477] [c3] BatteryPropertiesRegistrar: notifyListeners : start
+
+[ 2283.502526]  [3:        healthd:12477] [c3] BatteryPropertiesRegistrar: notifyListeners : done
+
+[ 2283.953114]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2284.136816]  [0:    mediaserver:19279] [c0] binder: 19279:19279 transaction failed 29189, size 0-0
+
+[ 2284.502283]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2284.953377]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2285.137090]  [0:    mediaserver:19279] [c0] binder: 19279:19279 transaction failed 29189, size 0-0
+
+[ 2285.502610]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2285.953615]  [0:  bootanimation:13029] [c0] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2286.137395]  [0:    mediaserver:19279] [c0] binder: 19279:19279 transaction failed 29189, size 0-0
+
+[ 2286.502878]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2286.953859]  [0:  bootanimation:13029] [c0] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2287.137592]  [0:    mediaserver:19279] [c0] binder: 19279:19279 transaction failed 29189, size 0-0
+
+[ 2287.151128]  [2:  system_server:19464] [c2] logger: !@Boot: Entered the Android system server!
+
+[ 2287.198785]  [0:    kworker/0:3:11079] [c0] [VIB] sec_vib_log_show [1301.139 : 1301.240] off
+
+[ 2287.431190]  [0:  system_server:19464] [c0] binder: 19464:19464 transaction failed 29189, size 0-0
+
+[ 2287.469920]  [2:  system_server:19464] [c2] binder: 19464:19464 transaction failed 29189, size 0-0
+
+[ 2287.503105]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2287.954077]  [0:  bootanimation:13029] [c0] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2288.503327]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2288.779208]  [2:           init:    1] [c2] init: property_set("ro.setupwizard.mode", "DISABLED") failed
+
+[ 2288.780115]  [2:           init:    1] [c2] init: property_set("ro.com.google.clientidbase.ms", "android-att-us") failed
+
+[ 2288.780904]  [0:           init:    1] [c0] init: property_set("ro.com.google.clientidbase.am", "android-att-us") failed
+
+[ 2288.781801]  [0:           init:    1] [c0] init: property_set("ro.com.google.clientidbase.gmm", "android-samsung") failed
+
+[ 2288.782589]  [0:           init:    1] [c0] init: property_set("ro.com.google.clientidbase.yt", "android-samsung") failed
+
+[ 2288.954284]  [0:  bootanimation:13029] [c0] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2289.503526]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2289.708483]  [1:           main:19676] [c1] logger: !@Boot: Begin of preload()
+
+[ 2289.954474]  [0:  bootanimation:13029] [c0] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2290.503762]  [3:        dumpsys:19660] [c3] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2290.571857]  [2:    mediaserver:19679] [c2] binder: 19679:19679 transaction failed 29189, size 0-0
+
+[ 2290.954688]  [2:  bootanimation:13029] [c2] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2291.462200]  [1:           main:19676] [c1] logger: !@Boot: End of preload()
+
+[ 2291.503949]  [0:        dumpsys:19660] [c0] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2291.572123]  [2:    mediaserver:19679] [c2] binder: 19679:19679 transaction failed 29189, size 0-0
+
+[ 2291.954928]  [2:  bootanimation:13029] [c2] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2292.504192]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2292.572361]  [2:    mediaserver:19679] [c2] binder: 19679:19679 transaction failed 29189, size 0-0
+
+[ 2292.955192]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2293.501034]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2293.504382]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2293.505708]  [0:    kworker/0:3:11079] [c0] sm5703_test_read: 0x4 = 0xbe, 0x5 = 0xff, 0x6 = 0xf3, 0x7 = 0xff, 0x8 = 0x08, 0x9 = 0x08, 0xa = 0x07, 0xb = 0x00, 0xc = 0x55, 0xd = 0x07, 0xe = 0x03, 0xf = 0x07, 0x10 = 0x16, 0x11 = 0x30, 0x12 = 0xf8, 0x13 = 0x08, 0x60 = 0x03, 0x6b = 0x20, 0x66 = 0x00, 
+
+[ 2293.506630]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(273), Temp-ADC(1923)
+
+[ 2293.507402]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(273), Temp-ADC(1923)
+
+[ 2293.507434]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 2293.507455]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 2293.508234]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x27f0, temperature = 399
+
+[ 2293.508459]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2293.508493]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 399, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 273
+
+[ 2293.508935]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x62ec, soc = 989
+
+[ 2293.509151]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 2293.509372]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 2293.509590]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 2293.509810]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 2293.510032]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 2293.510258]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 2293.510473]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 2293.510692]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 2293.510907]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 2293.511131]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 2293.511351]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 2293.511570]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 2293.512392]  [0:    kworker/0:3:11079] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 2293.513206]  [0:    kworker/0:3:11079] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 2293.514079]  [0:    kworker/0:3:11079] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 2293.514925]  [0:    kworker/0:3:11079] [c0] 0x85=0x0009, 0x86=0x002a, 0x87=0x4f24, 0x28=0x30c8 
+
+[ 2293.514961]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 2293.514984]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 2293.515806]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x27f0, temperature = 399
+
+[ 2293.516053]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2293.516088]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 399, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 273
+
+[ 2293.516504]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x62ec, soc = 989
+
+[ 2293.516747]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 2293.516994]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 2293.517227]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 2293.517469]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 2293.517709]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 2293.517932]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 2293.518175]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 2293.518403]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 2293.518671]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 2293.518897]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 2293.519132]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 2293.519357]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 2293.520229]  [0:    kworker/0:3:11079] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 2293.521083]  [0:    kworker/0:3:11079] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 2293.521930]  [0:    kworker/0:3:11079] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 2293.522772]  [0:    kworker/0:3:11079] [c0] 0x85=0x0009, 0x86=0x002a, 0x87=0x4f24, 0x28=0x30c8 
+
+[ 2293.522792]  [0:    kworker/0:3:11079] [c0] sm5703_fg_calculate_dynamic_scale: raw soc (989)
+
+[ 2293.522802]  [0:    kworker/0:3:11079] sm5703_fg_calculate_dynamic_scale: 979 is used for capacity_max, capacity(100)
+
+[ 2293.522817]  [0:    kworker/0:3:11079] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[ 2293.522839]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4289mV),Inow(-54mA),Imax(450mA),SOC(100%),Tbat(273),Tchg(0),is_hc_usb(0)
+
+[ 2293.522853]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[ 2293.523055]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : is_charging = 1, cable_type = 4, is_current_reduced = 0
+
+[ 2293.523245]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health: SM5703_CNTL, nCHG : 0x55, 0
+
+[ 2293.523259]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : vbus_status = 32
+
+[ 2293.523270]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : Health : 1
+
+[ 2293.523293]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 2293.523315]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 2293.524152]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x27f0, temperature = 399
+
+[ 2293.524383]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2293.524420]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 399, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 273
+
+[ 2293.524815]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x62ec, soc = 989
+
+[ 2293.525061]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 2293.525297]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 2293.525528]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 2293.525762]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 2293.525982]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 2293.526208]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 2293.526433]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 2293.526652]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 2293.526883]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 2293.527118]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 2293.527349]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 2293.527572]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 2293.528409]  [0:    kworker/0:3:11079] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 2293.529277]  [0:    kworker/0:3:11079] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 2293.530143]  [0:    kworker/0:3:11079] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 2293.531004]  [0:    kworker/0:3:11079] [c0] 0x85=0x0009, 0x86=0x002a, 0x87=0x4f24, 0x28=0x30c8 
+
+[ 2293.531037]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_time_management: Charging Time : 692 secs
+
+[ 2293.531089]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_temperature: HLT(800) HLR(750) HT(550), HR(500), LT(-50), LR(0)
+
+[ 2293.531298]  [0:    kworker/0:3:11079] [c0] sec_bat_swelling_check: status(4), swell_mode(0:0), cv(0x10f4), temp(273)
+
+[ 2293.531315]  [0:    kworker/0:3:11079] [c0] sec_bat_check_fullcharged : full_check_type(2)
+
+[ 2293.531331]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_fullcharged_check: Charging Mode : Re-Charging
+
+[ 2293.531353]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Full), mode(Normal), Health(Good), Cable(4), level(100%)
+
+[ 2293.531445]  [0:    kworker/0:3:11079] [c0] sec_chg_get_property: slow-charging mode
+
+[ 2293.534355]  [3:        healthd:12477] [c3] sec_chg_get_property: slow-charging mode
+
+[ 2293.534698]  [3:        healthd:12477] [c3] sec_bat_show_attrs: waterproof event
+
+[ 2293.534767]  [3:        healthd:12477] [c3] sec_bat_show_attrs: waterproof event
+
+[ 2293.534965]  [3:        healthd:12477] [c3] healthd: battery l=100 v=4289 t=27.3 h=2 st=3 c=0 o=4 ca=-54 ct=2 ps=0 chg=u 2026-02-23 17:54:09.053220165 UTC
+
+[ 2293.535002]  [3:        healthd:12477] [c3] healthd: battery l=100 v=4289 t=27.3 h=2 st=3 c=0 o=4 ca=-54 ct=2 ps=0 chg=u 2026-02-23 17:54:09.053220165 UTC hv=0 sdc=0 sec=0 chg=u
+
+[ 2293.535025]  [3:        healthd:12477] [c3] healthd-android: healthd_mode_android_battery_update
+
+[ 2293.535047]  [3:        healthd:12477] [c3] BatteryPropertiesRegistrar: notifyListeners : start
+
+[ 2293.535068]  [3:        healthd:12477] [c3] BatteryPropertiesRegistrar: notifyListeners : done
+
+[ 2293.572578]  [2:    mediaserver:19679] [c2] binder: 19679:19679 transaction failed 29189, size 0-0
+
+[ 2293.955414]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2294.504613]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2294.572805]  [2:    mediaserver:19679] [c2] binder: 19679:19679 transaction failed 29189, size 0-0
+
+[ 2294.955641]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2295.504832]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2295.573040]  [2:    mediaserver:19679] [c2] binder: 19679:19679 transaction failed 29189, size 0-0
+
+[ 2295.955866]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2296.478637]  [0:    kworker/0:3:11079] [c0] muic_print_reg_log:7(1f)0 13(25)0 13(1)1 13(1)0 13(1)0 13(1)0 3(1)0 4(0)0 3(0)0 a(4)0 b(0)0 15(0)0 1d(2)0 7(1f)0 13(1)0 13(25)1 13(25)0 13(25)0 3(0)0 4(80)0 a(4)0 b(0)0 15(0)0 1d(3)0 7(1f)0 
+
+[ 2296.480297]  [0:    kworker/0:3:11079] [c0] muic_print_reg_dump:CT:1e IM1:dc IM2:0 MS1:25 MS2:0 ADC:1f DT1:4 DT2:0 DT3:0 RS1:3
+
+[ 2296.505053]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2296.573241]  [2:    mediaserver:19679] [c2] binder: 19679:19679 transaction failed 29189, size 0-0
+
+[ 2296.956059]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2297.007704]  [3:   kworker/u8:0:15363] [c3] [SENSOR] k2hh_work_func: x = 210, y = -25, z = 8060 (ra:0)
+
+[ 2297.505316]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2297.573506]  [2:    mediaserver:19679] [c2] binder: 19679:19679 transaction failed 29189, size 0-0
+
+[ 2297.956313]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2298.505573]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2298.573778]  [2:    mediaserver:19679] [c2] binder: 19679:19679 transaction failed 29189, size 0-0
+
+[ 2298.956575]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2299.505862]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2299.574014]  [2:    mediaserver:19679] [c2] binder: 19679:19679 transaction failed 29189, size 0-0
+
+[ 2299.956847]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2300.506132]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2300.574285]  [2:    mediaserver:19679] [c2] binder: 19679:19679 transaction failed 29189, size 0-0
+
+[ 2300.957115]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2301.506399]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2301.574530]  [2:    mediaserver:19679] [c2] binder: 19679:19679 transaction failed 29189, size 0-0
+
+[ 2301.957394]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2302.506662]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2302.574778]  [2:    mediaserver:19679] [c2] binder: 19679:19679 transaction failed 29189, size 0-0
+
+[ 2302.957671]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2303.506889]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2303.533048]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2303.537666]  [0:    kworker/0:3:11079] [c0] sm5703_test_read: 0x4 = 0xbe, 0x5 = 0xff, 0x6 = 0xf3, 0x7 = 0xff, 0x8 = 0x08, 0x9 = 0x08, 0xa = 0x07, 0xb = 0x00, 0xc = 0x55, 0xd = 0x07, 0xe = 0x03, 0xf = 0x07, 0x10 = 0x16, 0x11 = 0x30, 0x12 = 0xf8, 0x13 = 0x08, 0x60 = 0x03, 0x6b = 0x20, 0x66 = 0x00, 
+
+[ 2303.538735]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(274), Temp-ADC(1921)
+
+[ 2303.539556]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(274), Temp-ADC(1921)
+
+[ 2303.539651]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 2303.539676]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 2303.540556]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x27f0, temperature = 399
+
+[ 2303.540802]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2303.540854]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 399, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 274
+
+[ 2303.541275]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x62ec, soc = 989
+
+[ 2303.541521]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 2303.541750]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 2303.541978]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 2303.542209]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 2303.542437]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 2303.542668]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 2303.542895]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 2303.543127]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 2303.543352]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 2303.543612]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 2303.543835]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 2303.544066]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 2303.544896]  [0:    kworker/0:3:11079] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 2303.545734]  [0:    kworker/0:3:11079] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 2303.546591]  [0:    kworker/0:3:11079] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 2303.547431]  [0:    kworker/0:3:11079] [c0] 0x85=0x0004, 0x86=0x00ba, 0x87=0x4f24, 0x28=0x2fc4 
+
+[ 2303.547455]  [0:    kworker/0:3:11079] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[ 2303.547479]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4285mV),Inow(-74mA),Imax(450mA),SOC(100%),Tbat(274),Tchg(0),is_hc_usb(0)
+
+[ 2303.547494]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[ 2303.547702]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : is_charging = 1, cable_type = 4, is_current_reduced = 0
+
+[ 2303.547890]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health: SM5703_CNTL, nCHG : 0x55, 0
+
+[ 2303.547904]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : vbus_status = 32
+
+[ 2303.547915]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : Health : 1
+
+[ 2303.547937]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 2303.547960]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 2303.548819]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x27f0, temperature = 399
+
+[ 2303.549052]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2303.549088]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 399, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 274
+
+[ 2303.549474]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x62ec, soc = 989
+
+[ 2303.549699]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 2303.549923]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 2303.550147]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 2303.550379]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 2303.550622]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 2303.550879]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 2303.551114]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 2303.551349]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 2303.551582]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 2303.551810]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 2303.552037]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 2303.552260]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 2303.553070]  [0:    kworker/0:3:11079] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 2303.553887]  [0:    kworker/0:3:11079] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 2303.554712]  [0:    kworker/0:3:11079] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 2303.555540]  [0:    kworker/0:3:11079] [c0] 0x85=0x0004, 0x86=0x00ba, 0x87=0x4f24, 0x28=0x2fc4 
+
+[ 2303.555572]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Full), mode(Normal), Health(Good), Cable(4), level(100%)
+
+[ 2303.555662]  [0:    kworker/0:3:11079] [c0] sec_chg_get_property: slow-charging mode
+
+[ 2303.557810]  [3:        healthd:12477] [c3] sec_chg_get_property: slow-charging mode
+
+[ 2303.558084]  [3:        healthd:12477] [c3] sec_bat_show_attrs: waterproof event
+
+[ 2303.558148]  [3:        healthd:12477] [c3] sec_bat_show_attrs: waterproof event
+
+[ 2303.558329]  [3:        healthd:12477] [c3] healthd: battery l=100 v=4285 t=27.4 h=2 st=3 c=0 o=4 ca=-74 ct=2 ps=0 chg=u 2026-02-23 17:54:19.076583820 UTC
+
+[ 2303.558369]  [3:        healthd:12477] [c3] healthd: battery l=100 v=4285 t=27.4 h=2 st=3 c=0 o=4 ca=-74 ct=2 ps=0 chg=u 2026-02-23 17:54:19.076583820 UTC hv=0 sdc=0 sec=0 chg=u
+
+[ 2303.558394]  [3:        healthd:12477] [c3] healthd-android: healthd_mode_android_battery_update
+
+[ 2303.558416]  [3:        healthd:12477] [c3] BatteryPropertiesRegistrar: notifyListeners : start
+
+[ 2303.558436]  [3:        healthd:12477] [c3] BatteryPropertiesRegistrar: notifyListeners : done
+
+[ 2303.575015]  [2:    mediaserver:19679] [c2] binder: 19679:19679 transaction failed 29189, size 0-0
+
+[ 2303.957932]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2304.507167]  [2:        dumpsys:19660] [c2] binder: 19660:19660 transaction failed 29189, size 0-0
+
+[ 2304.575266]  [2:    mediaserver:19679] [c2] binder: 19679:19679 transaction failed 29189, size 0-0
+
+[ 2304.958194]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2305.575535]  [2:    mediaserver:19679] [c2] binder: 19679:19679 transaction failed 29189, size 0-0
+
+[ 2305.958468]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2306.575808]  [2:    mediaserver:19679] [c2] binder: 19679:19679 transaction failed 29189, size 0-0
+
+[ 2306.958711]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2307.576069]  [2:    mediaserver:19679] [c2] binder: 19679:19679 transaction failed 29189, size 0-0
+
+[ 2307.958943]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2308.576337]  [2:    mediaserver:19679] [c2] binder: 19679:19679 transaction failed 29189, size 0-0
+
+[ 2308.959196]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2309.576601]  [2:    mediaserver:19679] [c2] binder: 19679:19679 transaction failed 29189, size 0-0
+
+[ 2309.959451]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2310.576874]  [2:    mediaserver:19679] [c2] binder: 19679:19679 transaction failed 29189, size 0-0
+
+[ 2310.959714]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2311.577180]  [2:    mediaserver:19679] [c2] binder: 19679:19679 transaction failed 29189, size 0-0
+
+[ 2311.959993]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2312.074452]  [0:   kworker/u8:2: 1129] [c0] [SENSOR] k2hh_work_func: x = -101, y = -64, z = 8046 (ra:0)
+
+[ 2312.577445]  [2:    mediaserver:19679] [c2] binder: 19679:19679 transaction failed 29189, size 0-0
+
+[ 2312.960265]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2313.557195]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2313.561822]  [0:    kworker/0:3:11079] [c0] sm5703_test_read: 0x4 = 0xbe, 0x5 = 0xff, 0x6 = 0xf3, 0x7 = 0xff, 0x8 = 0x08, 0x9 = 0x08, 0xa = 0x07, 0xb = 0x00, 0xc = 0x55, 0xd = 0x07, 0xe = 0x03, 0xf = 0x07, 0x10 = 0x16, 0x11 = 0x30, 0x12 = 0xf8, 0x13 = 0x08, 0x60 = 0x03, 0x6b = 0x20, 0x66 = 0x00, 
+
+[ 2313.562798]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(274), Temp-ADC(1920)
+
+[ 2313.563621]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(274), Temp-ADC(1920)
+
+[ 2313.563656]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 2313.563680]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 2313.564533]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x2810, temperature = 400
+
+[ 2313.564767]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2313.564803]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 400, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 274
+
+[ 2313.565196]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x62ec, soc = 989
+
+[ 2313.565424]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 2313.565654]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 2313.565885]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 2313.566118]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 2313.566350]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 2313.566576]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 2313.566804]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 2313.567030]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 2313.567258]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 2313.567490]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 2313.567719]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 2313.567953]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 2313.568858]  [0:    kworker/0:3:11079] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 2313.569720]  [0:    kworker/0:3:11079] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 2313.570575]  [0:    kworker/0:3:11079] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 2313.571451]  [0:    kworker/0:3:11079] [c0] 0x85=0x0001, 0x86=0x008f, 0x87=0x4f24, 0x28=0x2eb8 
+
+[ 2313.571477]  [0:    kworker/0:3:11079] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[ 2313.571500]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4285mV),Inow(-66mA),Imax(450mA),SOC(100%),Tbat(274),Tchg(0),is_hc_usb(0)
+
+[ 2313.571515]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[ 2313.571724]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : is_charging = 1, cable_type = 4, is_current_reduced = 0
+
+[ 2313.571919]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health: SM5703_CNTL, nCHG : 0x55, 0
+
+[ 2313.571934]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : vbus_status = 32
+
+[ 2313.571945]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : Health : 1
+
+[ 2313.571968]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 2313.571991]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 2313.572842]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x2810, temperature = 400
+
+[ 2313.573082]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2313.573116]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 400, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 274
+
+[ 2313.573516]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x62ec, soc = 989
+
+[ 2313.573797]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 2313.574024]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 2313.574255]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 2313.574488]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 2313.574718]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 2313.574941]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 2313.575177]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 2313.575400]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 2313.575629]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 2313.575859]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 2313.576092]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 2313.576319]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 2313.577160]  [0:    kworker/0:3:11079] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 2313.577664]  [2:    mediaserver:19679] [c2] binder: 19679:19679 transaction failed 29189, size 0-0
+
+[ 2313.578030]  [0:    kworker/0:3:11079] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 2313.578919]  [0:    kworker/0:3:11079] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 2313.579777]  [0:    kworker/0:3:11079] [c0] 0x85=0x0001, 0x86=0x008f, 0x87=0x4f24, 0x28=0x2eb8 
+
+[ 2313.579811]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Full), mode(Normal), Health(Good), Cable(4), level(100%)
+
+[ 2313.579899]  [0:    kworker/0:3:11079] [c0] sec_chg_get_property: slow-charging mode
+
+[ 2313.582302]  [3:        healthd:12477] [c3] sec_chg_get_property: slow-charging mode
+
+[ 2313.582636]  [3:        healthd:12477] [c3] sec_bat_show_attrs: waterproof event
+
+[ 2313.582710]  [3:        healthd:12477] [c3] sec_bat_show_attrs: waterproof event
+
+[ 2313.582895]  [3:        healthd:12477] [c3] healthd: battery l=100 v=4285 t=27.4 h=2 st=3 c=0 o=4 ca=-66 ct=2 ps=0 chg=u 2026-02-23 17:54:29.101148474 UTC
+
+[ 2313.582933]  [3:        healthd:12477] [c3] healthd: battery l=100 v=4285 t=27.4 h=2 st=3 c=0 o=4 ca=-66 ct=2 ps=0 chg=u 2026-02-23 17:54:29.101148474 UTC hv=0 sdc=0 sec=0 chg=u
+
+[ 2313.582957]  [3:        healthd:12477] [c3] healthd-android: healthd_mode_android_battery_update
+
+[ 2313.582979]  [3:        healthd:12477] [c3] BatteryPropertiesRegistrar: notifyListeners : start
+
+[ 2313.583001]  [3:        healthd:12477] [c3] BatteryPropertiesRegistrar: notifyListeners : done
+
+[ 2313.960589]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2314.577967]  [2:    mediaserver:19679] [c2] binder: 19679:19679 transaction failed 29189, size 0-0
+
+[ 2314.960855]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2315.578253]  [2:    mediaserver:19679] [c2] binder: 19679:19679 transaction failed 29189, size 0-0
+
+[ 2315.587958]  [0:  system_server:19868] [c0] logger: !@Boot: Entered the Android system server!
+
+[ 2315.877908]  [3:  system_server:19868] [c3] binder: 19868:19868 transaction failed 29189, size 0-0
+
+[ 2315.918278]  [0:  system_server:19868] [c0] binder: 19868:19868 transaction failed 29189, size 0-0
+
+[ 2315.961116]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2316.961349]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2317.240271]  [1:           init:    1] [c1] init: property_set("ro.setupwizard.mode", "DISABLED") failed
+
+[ 2317.240983]  [1:           init:    1] [c1] init: property_set("ro.com.google.clientidbase.ms", "android-att-us") failed
+
+[ 2317.241335]  [1:           init:    1] [c1] init: property_set("ro.com.google.clientidbase.am", "android-att-us") failed
+
+[ 2317.241677]  [1:           init:    1] [c1] init: property_set("ro.com.google.clientidbase.gmm", "android-samsung") failed
+
+[ 2317.242005]  [1:           init:    1] [c1] init: property_set("ro.com.google.clientidbase.yt", "android-samsung") failed
+
+[ 2317.961558]  [3:  bootanimation:13029] [c3] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2318.069127]  [0:           main:20062] [c0] logger: !@Boot: Begin of preload()
+
+[ 2318.961857]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2319.061439]  [2:    mediaserver:20065] [c2] binder: 20065:20065 transaction failed 29189, size 0-0
+
+[ 2319.819484]  [1:           main:20062] [c1] logger: !@Boot: End of preload()
+
+[ 2319.962235]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2320.061683]  [2:    mediaserver:20065] [c2] binder: 20065:20065 transaction failed 29189, size 0-0
+
+[ 2320.962511]  [2:  bootanimation:13029] [c2] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2321.061913]  [2:    mediaserver:20065] [c2] binder: 20065:20065 transaction failed 29189, size 0-0
+
+[ 2321.962719]  [2:  bootanimation:13029] [c2] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2322.062152]  [2:    mediaserver:20065] [c2] binder: 20065:20065 transaction failed 29189, size 0-0
+
+[ 2322.962944]  [2:  bootanimation:13029] [c2] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2323.062389]  [2:    mediaserver:20065] [c2] binder: 20065:20065 transaction failed 29189, size 0-0
+
+[ 2323.581334]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2323.585622]  [0:    kworker/0:3:11079] [c0] sm5703_test_read: 0x4 = 0xbe, 0x5 = 0xff, 0x6 = 0xf3, 0x7 = 0xff, 0x8 = 0x08, 0x9 = 0x08, 0xa = 0x07, 0xb = 0x00, 0xc = 0x55, 0xd = 0x07, 0xe = 0x03, 0xf = 0x07, 0x10 = 0x16, 0x11 = 0x30, 0x12 = 0xf8, 0x13 = 0x08, 0x60 = 0x03, 0x6b = 0x20, 0x66 = 0x00, 
+
+[ 2323.586515]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(274), Temp-ADC(1919)
+
+[ 2323.587257]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(274), Temp-ADC(1919)
+
+[ 2323.587283]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 2323.587304]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 2323.588081]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x2810, temperature = 400
+
+[ 2323.588301]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2323.588328]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 400, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 274
+
+[ 2323.588722]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x62ec, soc = 989
+
+[ 2323.588943]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 2323.589161]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 2323.589379]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 2323.589595]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 2323.589810]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 2323.590023]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 2323.590235]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 2323.590449]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 2323.590658]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 2323.590868]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 2323.591103]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 2323.591320]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 2323.592110]  [0:    kworker/0:3:11079] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 2323.592896]  [0:    kworker/0:3:11079] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 2323.593719]  [0:    kworker/0:3:11079] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 2323.594493]  [0:    kworker/0:3:11079] [c0] 0x85=0x0005, 0x86=0x008a, 0x87=0x4f24, 0x28=0x326c 
+
+[ 2323.594525]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 2323.594548]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 2323.595293]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x2810, temperature = 400
+
+[ 2323.595513]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2323.595543]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 400, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 274
+
+[ 2323.595913]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x62ec, soc = 989
+
+[ 2323.596125]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 2323.596339]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 2323.596556]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 2323.596767]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 2323.596971]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 2323.597179]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 2323.597396]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 2323.597605]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 2323.597816]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 2323.598026]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 2323.598237]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 2323.598445]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 2323.599254]  [0:    kworker/0:3:11079] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 2323.600038]  [0:    kworker/0:3:11079] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 2323.600839]  [0:    kworker/0:3:11079] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 2323.601624]  [0:    kworker/0:3:11079] [c0] 0x85=0x0005, 0x86=0x008a, 0x87=0x4f24, 0x28=0x326c 
+
+[ 2323.601641]  [0:    kworker/0:3:11079] [c0] sm5703_fg_calculate_dynamic_scale: raw soc (989)
+
+[ 2323.601650]  [0:    kworker/0:3:11079] sm5703_fg_calculate_dynamic_scale: 979 is used for capacity_max, capacity(100)
+
+[ 2323.601665]  [0:    kworker/0:3:11079] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[ 2323.601686]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4285mV),Inow(-58mA),Imax(450mA),SOC(100%),Tbat(274),Tchg(0),is_hc_usb(0)
+
+[ 2323.601701]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[ 2323.601901]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : is_charging = 1, cable_type = 4, is_current_reduced = 0
+
+[ 2323.602080]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health: SM5703_CNTL, nCHG : 0x55, 0
+
+[ 2323.602093]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : vbus_status = 32
+
+[ 2323.602103]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : Health : 1
+
+[ 2323.602125]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 2323.602146]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 2323.602915]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x2810, temperature = 400
+
+[ 2323.603131]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2323.603160]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 400, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 274
+
+[ 2323.603580]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x62ec, soc = 989
+
+[ 2323.603799]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 2323.604016]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 2323.604230]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 2323.604444]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 2323.604657]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 2323.604868]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 2323.605081]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 2323.605298]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 2323.605510]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 2323.605720]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 2323.605927]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 2323.606137]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 2323.606969]  [0:    kworker/0:3:11079] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 2323.607813]  [0:    kworker/0:3:11079] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 2323.608663]  [0:    kworker/0:3:11079] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 2323.609474]  [0:    kworker/0:3:11079] [c0] 0x85=0x0005, 0x86=0x008a, 0x87=0x4f24, 0x28=0x326c 
+
+[ 2323.609506]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_time_management: Charging Time : 722 secs
+
+[ 2323.609524]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_temperature: HLT(800) HLR(750) HT(550), HR(500), LT(-50), LR(0)
+
+[ 2323.609727]  [0:    kworker/0:3:11079] [c0] sec_bat_swelling_check: status(4), swell_mode(0:0), cv(0x10f4), temp(274)
+
+[ 2323.609743]  [0:    kworker/0:3:11079] [c0] sec_bat_check_fullcharged : full_check_type(2)
+
+[ 2323.609758]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_fullcharged_check: Charging Mode : Re-Charging
+
+[ 2323.609775]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Full), mode(Normal), Health(Good), Cable(4), level(100%)
+
+[ 2323.609846]  [0:    kworker/0:3:11079] [c0] sec_chg_get_property: slow-charging mode
+
+[ 2323.612020]  [3:        healthd:12477] [c3] sec_chg_get_property: slow-charging mode
+
+[ 2323.612306]  [3:        healthd:12477] [c3] sec_bat_show_attrs: waterproof event
+
+[ 2323.612376]  [3:        healthd:12477] [c3] sec_bat_show_attrs: waterproof event
+
+[ 2323.612548]  [3:        healthd:12477] [c3] healthd: battery l=100 v=4285 t=27.4 h=2 st=3 c=0 o=4 ca=-58 ct=2 ps=0 chg=u 2026-02-23 17:54:39.130806167 UTC
+
+[ 2323.612584]  [3:        healthd:12477] [c3] healthd: battery l=100 v=4285 t=27.4 h=2 st=3 c=0 o=4 ca=-58 ct=2 ps=0 chg=u 2026-02-23 17:54:39.130806167 UTC hv=0 sdc=0 sec=0 chg=u
+
+[ 2323.612608]  [3:        healthd:12477] [c3] healthd-android: healthd_mode_android_battery_update
+
+[ 2323.612629]  [3:        healthd:12477] [c3] BatteryPropertiesRegistrar: notifyListeners : start
+
+[ 2323.612650]  [3:        healthd:12477] [c3] BatteryPropertiesRegistrar: notifyListeners : done
+
+[ 2323.963173]  [2:  bootanimation:13029] [c2] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2324.062623]  [2:    mediaserver:20065] [c2] binder: 20065:20065 transaction failed 29189, size 0-0
+
+[ 2324.963429]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2325.062837]  [2:    mediaserver:20065] [c2] binder: 20065:20065 transaction failed 29189, size 0-0
+
+[ 2325.963688]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2326.063099]  [2:    mediaserver:20065] [c2] binder: 20065:20065 transaction failed 29189, size 0-0
+
+[ 2326.963922]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2327.063401]  [2:    mediaserver:20065] [c2] binder: 20065:20065 transaction failed 29189, size 0-0
+
+[ 2327.141179]  [3:   kworker/u8:2: 1129] [c3] [SENSOR] k2hh_work_func: x = -49, y = -77, z = 7965 (ra:0)
+
+[ 2327.964168]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2328.063670]  [2:    mediaserver:20065] [c2] binder: 20065:20065 transaction failed 29189, size 0-0
+
+[ 2328.964416]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2329.063904]  [2:    mediaserver:20065] [c2] binder: 20065:20065 transaction failed 29189, size 0-0
+
+[ 2329.964667]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2330.064154]  [2:    mediaserver:20065] [c2] binder: 20065:20065 transaction failed 29189, size 0-0
+
+[ 2330.964918]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2331.064408]  [2:    mediaserver:20065] [c2] binder: 20065:20065 transaction failed 29189, size 0-0
+
+[ 2331.965173]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2332.064655]  [2:    mediaserver:20065] [c2] binder: 20065:20065 transaction failed 29189, size 0-0
+
+[ 2332.965432]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2333.064912]  [2:    mediaserver:20065] [c2] binder: 20065:20065 transaction failed 29189, size 0-0
+
+[ 2333.611370]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2333.615888]  [0:    kworker/0:3:11079] [c0] sm5703_test_read: 0x4 = 0xbe, 0x5 = 0xff, 0x6 = 0xf3, 0x7 = 0xff, 0x8 = 0x08, 0x9 = 0x08, 0xa = 0x07, 0xb = 0x00, 0xc = 0x55, 0xd = 0x07, 0xe = 0x03, 0xf = 0x07, 0x10 = 0x16, 0x11 = 0x30, 0x12 = 0xf8, 0x13 = 0x08, 0x60 = 0x03, 0x6b = 0x20, 0x66 = 0x00, 
+
+[ 2333.616860]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(275), Temp-ADC(1917)
+
+[ 2333.617641]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(274), Temp-ADC(1918)
+
+[ 2333.617671]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 2333.617694]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 2333.618513]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x2810, temperature = 400
+
+[ 2333.618783]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2333.618818]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 400, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 275
+
+[ 2333.619211]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x62ec, soc = 989
+
+[ 2333.619430]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 2333.619646]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 2333.619872]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 2333.620087]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 2333.620310]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 2333.620527]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 2333.620763]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 2333.620988]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 2333.621205]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 2333.621426]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 2333.621665]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 2333.621911]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 2333.622763]  [0:    kworker/0:3:11079] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 2333.623659]  [0:    kworker/0:3:11079] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 2333.624502]  [0:    kworker/0:3:11079] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 2333.625449]  [0:    kworker/0:3:11079] [c0] 0x85=0x0002, 0x86=0x0095, 0x87=0x4f24, 0x28=0x2f68 
+
+[ 2333.625474]  [0:    kworker/0:3:11079] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[ 2333.625497]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4285mV),Inow(-74mA),Imax(450mA),SOC(100%),Tbat(275),Tchg(0),is_hc_usb(0)
+
+[ 2333.625513]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[ 2333.625721]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : is_charging = 1, cable_type = 4, is_current_reduced = 0
+
+[ 2333.625912]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health: SM5703_CNTL, nCHG : 0x55, 0
+
+[ 2333.625928]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : vbus_status = 32
+
+[ 2333.625940]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : Health : 1
+
+[ 2333.625971]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 2333.625995]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 2333.628705]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x2810, temperature = 400
+
+[ 2333.628954]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2333.628992]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 400, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 275
+
+[ 2333.629383]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x62ec, soc = 989
+
+[ 2333.629618]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 2333.629852]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 2333.630082]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 2333.630309]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 2333.630531]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 2333.630757]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 2333.630981]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 2333.631217]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 2333.631451]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 2333.631672]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 2333.631890]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 2333.632102]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 2333.632946]  [0:    kworker/0:3:11079] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 2333.633814]  [0:    kworker/0:3:11079] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 2333.634656]  [0:    kworker/0:3:11079] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 2333.635477]  [0:    kworker/0:3:11079] [c0] 0x85=0x0002, 0x86=0x0095, 0x87=0x4f24, 0x28=0x2f68 
+
+[ 2333.635511]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Full), mode(Normal), Health(Good), Cable(4), level(100%)
+
+[ 2333.635606]  [0:    kworker/0:3:11079] [c0] sec_chg_get_property: slow-charging mode
+
+[ 2333.638029]  [3:        healthd:12477] [c3] sec_chg_get_property: slow-charging mode
+
+[ 2333.638362]  [3:        healthd:12477] [c3] sec_bat_show_attrs: waterproof event
+
+[ 2333.638436]  [3:        healthd:12477] [c3] sec_bat_show_attrs: waterproof event
+
+[ 2333.638745]  [3:        healthd:12477] [c3] healthd: battery l=100 v=4285 t=27.5 h=2 st=3 c=0 o=4 ca=-74 ct=2 ps=0 chg=u 2026-02-23 17:54:49.156996744 UTC
+
+[ 2333.638786]  [3:        healthd:12477] [c3] healthd: battery l=100 v=4285 t=27.5 h=2 st=3 c=0 o=4 ca=-74 ct=2 ps=0 chg=u 2026-02-23 17:54:49.156996744 UTC hv=0 sdc=0 sec=0 chg=u
+
+[ 2333.638811]  [3:        healthd:12477] [c3] healthd-android: healthd_mode_android_battery_update
+
+[ 2333.638834]  [3:        healthd:12477] [c3] BatteryPropertiesRegistrar: notifyListeners : start
+
+[ 2333.638856]  [3:        healthd:12477] [c3] BatteryPropertiesRegistrar: notifyListeners : done
+
+[ 2333.965696]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2334.065168]  [2:    mediaserver:20065] [c2] binder: 20065:20065 transaction failed 29189, size 0-0
+
+[ 2334.965961]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2335.065433]  [2:    mediaserver:20065] [c2] binder: 20065:20065 transaction failed 29189, size 0-0
+
+[ 2335.966221]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2336.065678]  [2:    mediaserver:20065] [c2] binder: 20065:20065 transaction failed 29189, size 0-0
+
+[ 2336.966478]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2337.065951]  [2:    mediaserver:20065] [c2] binder: 20065:20065 transaction failed 29189, size 0-0
+
+[ 2337.966764]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2338.066204]  [2:    mediaserver:20065] [c2] binder: 20065:20065 transaction failed 29189, size 0-0
+
+[ 2338.967027]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2339.066463]  [2:    mediaserver:20065] [c2] binder: 20065:20065 transaction failed 29189, size 0-0
+
+[ 2339.967270]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2340.066721]  [2:    mediaserver:20065] [c2] binder: 20065:20065 transaction failed 29189, size 0-0
+
+[ 2340.967533]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2341.066984]  [2:    mediaserver:20065] [c2] binder: 20065:20065 transaction failed 29189, size 0-0
+
+[ 2341.967810]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2342.067243]  [2:    mediaserver:20065] [c2] binder: 20065:20065 transaction failed 29189, size 0-0
+
+[ 2342.207908]  [3:   kworker/u8:2: 1129] [c3] [SENSOR] k2hh_work_func: x = -99, y = -16, z = 8026 (ra:0)
+
+[ 2342.968113]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2343.067568]  [2:    mediaserver:20065] [c2] binder: 20065:20065 transaction failed 29189, size 0-0
+
+[ 2343.637592]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2343.642563]  [0:    kworker/0:3:11079] [c0] sm5703_test_read: 0x4 = 0xbe, 0x5 = 0xff, 0x6 = 0xf3, 0x7 = 0xff, 0x8 = 0x08, 0x9 = 0x08, 0xa = 0x07, 0xb = 0x00, 0xc = 0x55, 0xd = 0x07, 0xe = 0x03, 0xf = 0x07, 0x10 = 0x16, 0x11 = 0x30, 0x12 = 0xf8, 0x13 = 0x08, 0x60 = 0x03, 0x6b = 0x20, 0x66 = 0x00, 
+
+[ 2343.643587]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(270), Temp-ADC(1938)
+
+[ 2343.644391]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_temperature_by_adc: Temp(269), Temp-ADC(1943)
+
+[ 2343.644421]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 2343.644454]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 2343.645355]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x2830, temperature = 401
+
+[ 2343.645609]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2343.645644]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 401, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 270
+
+[ 2343.646083]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x62ec, soc = 989
+
+[ 2343.646335]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 2343.646589]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 2343.646840]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 2343.647091]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 2343.647342]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 2343.647594]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 2343.647845]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 2343.648097]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 2343.648349]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 2343.648604]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 2343.648878]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 2343.649632]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 2343.650494]  [0:    kworker/0:3:11079] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 2343.651414]  [0:    kworker/0:3:11079] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 2343.652333]  [0:    kworker/0:3:11079] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 2343.653252]  [0:    kworker/0:3:11079] [c0] 0x85=0x001d, 0x86=0x800f, 0x87=0x4f24, 0x28=0x2f64 
+
+[ 2343.653276]  [0:    kworker/0:3:11079] [c0] sec_bat_get_battery_info : sw_self_discharging (0)
+
+[ 2343.653305]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_get_battery_info:Vnow(4304mV),Inow(-35mA),Imax(450mA),SOC(100%),Tbat(270),Tchg(0),is_hc_usb(0)
+
+[ 2343.653328]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_battery_cable_check: Battery Connected
+
+[ 2343.653680]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : is_charging = 1, cable_type = 4, is_current_reduced = 0
+
+[ 2343.654007]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health: SM5703_CNTL, nCHG : 0x55, 0
+
+[ 2343.654025]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : vbus_status = 32
+
+[ 2343.654042]  [0:    kworker/0:3:11079] [c0] sm5703_get_charging_health : Health : 1
+
+[ 2343.654380]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: iocv_error_count (0)
+
+[ 2343.654406]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: fg_vbatocv_check: mode change to mix RS auto mode
+
+[ 2343.655250]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_temperature: read = 0x2830, temperature = 401
+
+[ 2343.655483]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_ocv: read = 0x44b, ocv = 4292
+
+[ 2343.655510]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: fg_get_soc : temp_std = 25, temperature = 401, temp_offset = 10, temp_offset_cal = 0x1, curr_cal = 0x7685, bat_temp = 270
+
+[ 2343.655915]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_get_soc: read = 0x62ec, soc = 989
+
+[ 2343.656146]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x30 = 0x11d0 
+
+[ 2343.656376]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x31 = 0x113d 
+
+[ 2343.656607]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x32 = 0x10b2 
+
+[ 2343.656839]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x33 = 0x102e 
+
+[ 2343.657070]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x34 = 0xfb0 
+
+[ 2343.657301]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x35 = 0xf38 
+
+[ 2343.657532]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x36 = 0xec5 
+
+[ 2343.657763]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x37 = 0xe57 
+
+[ 2343.657994]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x40 = 0xdee 
+
+[ 2343.658226]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x41 = 0x183b 
+
+[ 2343.658456]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x42 = 0x1849 
+
+[ 2343.658691]  [0:    kworker/0:3:11079] [c0] sm5703-fuelgauge 7-0071: sm5703_fg_test_read: sm5703 FG 0x43 = 0x14f7 
+
+[ 2343.659504]  [0:    kworker/0:3:11079] [c0] 0xAC=0x208e, 0xAD=0x20a6, 0xAE=0x2270, 0xAF=0x2399 
+
+[ 2343.660992]  [0:    kworker/0:3:11079] [c0] 0xBC=0x208e, 0xBD=0x20a6, 0xBE=0x2270, 0xBF=0x2399 
+
+[ 2343.661806]  [0:    kworker/0:3:11079] [c0] 0xCC=0x1e7a, 0xCD=0x1f7a, 0xCE=0x2800, 0xCF=0x281e 
+
+[ 2343.662618]  [0:    kworker/0:3:11079] [c0] 0x85=0x001d, 0x86=0x800f, 0x87=0x4f24, 0x28=0x2f64 
+
+[ 2343.662644]  [0:    kworker/0:3:11079] [c0] sec-battery battery.31: sec_bat_monitor_work: Status(Full), mode(Normal), Health(Good), Cable(4), level(100%)
+
+[ 2343.662724]  [0:    kworker/0:3:11079] [c0] sec_chg_get_property: slow-charging mode
+
+[ 2343.665121]  [2:        healthd:12477] [c2] sec_chg_get_property: slow-charging mode
+
+[ 2343.665438]  [2:        healthd:12477] [c2] sec_bat_show_attrs: waterproof event
+
+[ 2343.665510]  [2:        healthd:12477] [c2] sec_bat_show_attrs: waterproof event
+
+[ 2343.665700]  [2:        healthd:12477] [c2] healthd: battery l=100 v=4304 t=27.0 h=2 st=3 c=0 o=4 ca=-34 ct=2 ps=0 chg=u 2026-02-23 17:54:59.183945976 UTC
+
+[ 2343.665743]  [2:        healthd:12477] [c2] healthd: battery l=100 v=4304 t=27.0 h=2 st=3 c=0 o=4 ca=-34 ct=2 ps=0 chg=u 2026-02-23 17:54:59.183945976 UTC hv=0 sdc=0 sec=0 chg=u
+
+[ 2343.665773]  [2:        healthd:12477] [c2] healthd-android: healthd_mode_android_battery_update
+
+[ 2343.665799]  [2:        healthd:12477] [c2] BatteryPropertiesRegistrar: notifyListeners : start
+
+[ 2343.665825]  [2:        healthd:12477] [c2] BatteryPropertiesRegistrar: notifyListeners : done
+
+[ 2343.867185]  [1:  system_server:20246] [c1] logger: !@Boot: Entered the Android system server!
+
+[ 2343.968308]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2344.067786]  [2:    mediaserver:20065] [c2] binder: 20065:20065 transaction failed 29189, size 0-0
+
+[ 2344.134980]  [0:  system_server:20246] [c0] binder: 20246:20246 transaction failed 29189, size 0-0
+
+[ 2344.175085]  [2:  system_server:20246] [c2] binder: 20246:20246 transaction failed 29189, size 0-0
+
+[ 2344.968521]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2345.484752]  [1:           init:    1] [c1] init: property_set("ro.setupwizard.mode", "DISABLED") failed
+
+[ 2345.485482]  [1:           init:    1] [c1] init: property_set("ro.com.google.clientidbase.ms", "android-att-us") failed
+
+[ 2345.486251]  [1:           init:    1] [c1] init: property_set("ro.com.google.clientidbase.am", "android-att-us") failed
+
+[ 2345.486876]  [1:           init:    1] [c1] init: property_set("ro.com.google.clientidbase.gmm", "android-samsung") failed
+
+[ 2345.487697]  [1:           init:    1] [c1] init: property_set("ro.com.google.clientidbase.yt", "android-samsung") failed
+
+[ 2345.968748]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2346.385777]  [3:           main:20468] [c3] logger: !@Boot: Begin of preload()
+
+[ 2346.968950]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2347.279621]  [1:    mediaserver:20471] [c1] binder: 20471:20471 transaction failed 29189, size 0-0
+
+[ 2347.363826]  [0:    kworker/0:3:11079] [c0] [VIB] sec_vib_log_show [1301.139 : 1301.240] off
+
+[ 2347.969241]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2348.138313]  [3:           main:20468] [c3] logger: !@Boot: End of preload()
+
+[ 2348.279846]  [3:    mediaserver:20471] [c3] binder: 20471:20471 transaction failed 29189, size 0-0
+
+[ 2348.969461]  [1:  bootanimation:13029] [c1] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2349.280066]  [3:    mediaserver:20471] [c3] binder: 20471:20471 transaction failed 29189, size 0-0
+
+[ 2349.969673]  [2:  bootanimation:13029] [c2] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2350.280284]  [3:    mediaserver:20471] [c3] binder: 20471:20471 transaction failed 29189, size 0-0
+
+[ 2350.969880]  [2:  bootanimation:13029] [c2] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2351.280492]  [3:    mediaserver:20471] [c3] binder: 20471:20471 transaction failed 29189, size 0-0
+
+[ 2351.970080]  [2:  bootanimation:13029] [c2] binder: 13029:13029 transaction failed 29189, size 0-0
+
+[ 2352.280712]  [3:    mediaserver:20471] [c3] binder: 20471:20471 transaction failed 29189, size 0-0
+
