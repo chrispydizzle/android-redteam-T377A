@@ -59,6 +59,19 @@ ioctl(fd, ION_IOC_ALLOC, &a);  // → kernel crash
 
 ---
 
+### 🔴 CRITICAL: Multithreaded Race Condition Crash (DoS)
+
+**Severity**: Critical
+**Impact**: Denial of Service (kernel panic/reboot)
+**Description**: Running the multithreaded fuzzer (`ion_fuzz_multithreaded`) with 8 concurrent threads targeting *only* the "safe" heaps (0, 1, 4) caused an immediate device crash and reboot.
+**Analysis**:
+- This indicates a race condition in the ION driver's handle management or list processing.
+- Since the fuzzer explicitly avoided the known-bad heap bit 2, this is a distinct vulnerability from the heap bit 2 crash.
+- Likely candidates:
+  - `ion_handle_get_by_id` vs `ion_free` race (Use-After-Free).
+  - List corruption in `ion_buffer_destroy`.
+  - Locking issues in `ion_share_dma_buf_fd`.
+
 ### ⚠️ WARNING: Kernel WARN in __ion_alloc (ion.c:784)
 
 **Severity**: Medium  

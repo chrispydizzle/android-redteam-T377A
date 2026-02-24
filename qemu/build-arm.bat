@@ -71,7 +71,7 @@ for /f "delims=" %%i in ('wsl -d Ubuntu-22.04 -- wslpath -a "%WINDIR_%"') do set
 echo [*] Compiling with arm-linux-gnueabi-gcc (static PIE)...
 
 REM --- Compile: static, PIE, ARM32 ---
-wsl -d Ubuntu-22.04 -- bash -c "arm-linux-gnueabi-gcc -o '%WSL_DIR%/%OUT%' '%WSL_SRC%' -static -pie -fPIE -march=armv7-a -mfloat-abi=soft -O2 -Wall 2>&1"
+wsl -d Ubuntu-22.04 -- bash -c "arm-linux-gnueabi-gcc -o '%WSL_DIR%/%OUT%' '%WSL_SRC%' -static -pie -fPIE -march=armv7-a -mfloat-abi=soft -O2 -Wall -pthread 2>&1"
 if errorlevel 1 (
     echo [!] Compilation failed. Check errors above.
     exit /b 1

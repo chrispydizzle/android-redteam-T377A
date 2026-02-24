@@ -1,0 +1,161 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                    SAMSUNG SERVICE MODE APPS - QUICK CARD                     ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ APP 1: RilServiceModeApp                                                    │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ Package:   com.sec.android.RilServiceModeApp                               │
+│ Location:  /system/priv-app/ServiceModeApp_RIL                             │
+│ UID:       1001 (android.uid.phone)                                        │
+│ Version:   6.0.1                                                           │
+│                                                                             │
+│ TOP THREATS:                                                               │
+│ 🔴 TerminalMode - Shell/command interface                                 │
+│ 🔴 ViewApnInfo - Modify APN (MITM all data)                              │
+│ 🔴 NandFlashHeaderRead - File system access                              │
+│ 🔴 SecKeyStringBroadcastReceiver - Dial code listener                    │
+│                                                                             │
+│ MAIN ACTIVITIES:                                                           │
+│ • ServiceModeApp (default)                                                 │
+│ • GcfModeSettings                                                          │
+│ • ViewRilLog                                                               │
+│ • Sec_Ril_Dump                                                             │
+│ • CallDropLogView                                                          │
+│ • TestApnSettings                                                          │
+│                                                                             │
+│ PERMISSIONS: 80+ granted (all at CRITICAL level)                          │
+│ • WRITE_APN_SETTINGS                                                       │
+│ • MODIFY_PHONE_STATE                                                       │
+│ • WRITE_SECURE_SETTINGS                                                    │
+│ • MOUNT_UNMOUNT_FILESYSTEMS                                               │
+│                                                                             │
+│ LAUNCH:                                                                    │
+│ adb shell am start -n com.sec.android.RilServiceModeApp/.ServiceModeApp  │
+│ Dial: *#0829# (Modem debug)                                               │
+│ Dial: *#9900# (Dump)                                                      │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ APP 2: servicemodeapp                                                       │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ Package:   com.sec.android.app.servicemodeapp                             │
+│ Location:  /system/priv-app/serviceModeApp_FB                             │
+│ UID:       1000 (android.uid.system) ⚠️ HIGHEST                          │
+│ Version:   6.0.1                                                           │
+│                                                                             │
+│ TOP THREATS:                                                               │
+│ 🔴 AutoAnswer - Auto-answer all calls (SURVEILLANCE)                     │
+│ 🔴 Factory Reset (no UI!) - Wipe device silently                         │
+│ 🔴 USBPathSwitch - Enable/disable ADB mode                               │
+│ 🔴 Modem PhoneUtil variants - Direct modem access                        │
+│                                                                             │
+│ MAIN ACTIVITIES:                                                           │
+│ • PhoneUtil_ESC (Qualcomm MDM9x35 modem)                                  │
+│ • AutoAnswer ⚠️⚠️⚠️                                                       │
+│ • USBPathSwitch ⚠️⚠️⚠️                                                    │
+│ • ShowIMEI                                                                 │
+│ • WifiInfoActivity                                                         │
+│ • PhoneUtil_MDM9x15 (Qualcomm MDM9x15)                                    │
+│ • PhoneUtil_Bcom (Broadcom modem)                                         │
+│ • SetPortUartUsbMSM8960 (UART/USB control)                                │
+│                                                                             │
+│ PERMISSIONS: 100+ granted                                                 │
+│ • MASTER_CLEAR (factory reset)                                            │
+│ • CHANGE_COMPONENT_ENABLED_STATE (disable security)                      │
+│ • HARDWARE_TEST                                                            │
+│ • NFC                                                                      │
+│ • BLUETOOTH_ADMIN                                                          │
+│ • MODIFY_AUDIO_SETTINGS                                                    │
+│                                                                             │
+│ BROADCASTS:                                                                │
+│ ✓ com.samsung.intent.action.SEC_FACTORY_RESET_WITHOUT_FACTORY_UI         │
+│ ✓ android_secret_code                                                      │
+│ ✓ BOOT_COMPLETED                                                           │
+│                                                                             │
+│ LAUNCH:                                                                    │
+│ adb shell am start -n com.sec.android.app.servicemodeapp/.AutoAnswer     │
+│ adb shell am broadcast -a \                                                │
+│   com.samsung.intent.action.SEC_FACTORY_RESET_WITHOUT_FACTORY_UI \       │
+│   com.sec.android.app.servicemodeapp                                      │
+│ Dial: *#0842# (USB debug)                                                  │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ CRITICAL ATTACK CHAIN                                                       │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ 1. ENABLE AUTO-ANSWER                                                     │
+│    └─ adb shell am start -n \                                             │
+│         com.sec.android.app.servicemodeapp/.AutoAnswer                    │
+│                                                                             │
+│ 2. MODIFY APN (MITM data)                                                 │
+│    └─ adb shell am start -n \                                             │
+│         com.sec.android.RilServiceModeApp/.ViewApnInfo                    │
+│                                                                             │
+│ 3. DISABLE SECURITY APPS                                                  │
+│    └─ CHANGE_COMPONENT_ENABLED_STATE permission                          │
+│       → Disable Play Protect, Knox, MDM                                    │
+│                                                                             │
+│ 4. INSTALL BACKDOOR                                                       │
+│    └─ INSTALL_PACKAGES permission                                         │
+│       → Install malware silently                                           │
+│                                                                             │
+│ 5. PERSIST ACROSS REBOOTS                                                │
+│    └─ MOUNT_UNMOUNT_FILESYSTEMS                                          │
+│       → Mount /system RW, install to /system/priv-app                     │
+│                                                                             │
+│ RESULT: Full device compromise, no user awareness                         │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ DEFENSE ACTIONS                                                             │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ DISABLE DANGEROUS RECEIVERS:                                              │
+│ adb shell pm disable \                                                     │
+│   com.sec.android.RilServiceModeApp/.SecKeyStringBroadcastReceiver       │
+│ adb shell pm disable \                                                     │
+│   com.sec.android.app.servicemodeapp/.ServiceModeAppBroadcastReceiver    │
+│                                                                             │
+│ DISABLE APPS ENTIRELY:                                                    │
+│ adb shell pm disable com.sec.android.RilServiceModeApp                   │
+│ adb shell pm disable com.sec.android.app.servicemodeapp                  │
+│                                                                             │
+│ MONITOR ACTIVITY:                                                         │
+│ adb logcat | grep -E "(PhoneUtil|AutoAnswer|USBPath|APN|FACTORY_RESET)"  │
+│                                                                             │
+│ VERIFY DISABLED STATE:                                                    │
+│ adb shell dumpsys package com.sec.android.app.servicemodeapp \           │
+│   | grep enabled                                                           │
+│                                                                             │
+│ LOCK APN SETTINGS:                                                        │
+│ adb shell settings put global allow_user_preferred_apn 0                 │
+│                                                                             │
+│ BLOCK FACTORY RESET BROADCAST:                                           │
+│ (Requires SELinux modification or broadcast restriction)                  │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ THREAT SUMMARY                                                              │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ Impact:    🔴 CRITICAL (Full device compromise)                           │
+│ Effort:    🟢 TRIVIAL (Click, dial, or ADB command)                       │
+│ Detection: 🟡 MEDIUM (Requires active monitoring)                         │
+│                                                                             │
+│ Affected Components:                                                       │
+│ • Communications (calls, SMS) - Full surveillance capability             │
+│ • Data (all network traffic) - MITM via APN hijacking                    │
+│ • Storage (files, apps) - Read/write via mount access                    │
+│ • Security (anti-malware, VPN) - Disable via component state             │
+│ • System (bootloader, firmware) - Modify via file system access          │
+│                                                                             │
+│ Single Point of Failure: Dial codes are unprotected                       │
+│ (No permission check, no user confirmation)                               │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+EOF Report Generated: 2026-02-24 11:32:42

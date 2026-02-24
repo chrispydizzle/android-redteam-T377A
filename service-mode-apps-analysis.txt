@@ -1,0 +1,243 @@
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                    SAMSUNG SERVICE MODE APPS ANALYSIS REPORT                   ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+## 1. com.sec.android.RilServiceModeApp (ServiceModeApp_RIL)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📦 PACKAGE INFO:
+  • Package Name: com.sec.android.RilServiceModeApp
+  • Location: /system/priv-app/ServiceModeApp_RIL
+  • Version: 6.0.1 (versionCode: 23, targetSdk: 23)
+  • User ID: 1001 (android.uid.phone shared user)
+  • Privileges: PRIVILEGED, SYSTEM
+  • Signatures: Samsung system certificate [9b8a46f]
+
+📝 MAIN ACTIVITIES (Exported - Launchable via Intent):
+  1. ServiceModeApp ← PRIMARY ENTRY POINT
+  2. GcfModeSettings
+  3. ClatConfiguration
+  4. Sec_Ril_Dump
+  5. CallDropLogView
+  6. SetupWizardSkip
+  7. ViewApnInfo
+  8. NandFlashHeaderRead
+  9. ViewRilLog
+  10. TerminalMode ⚠️ (Terminal-like functionality)
+  11. Svc_Dbg_Dump
+  12. TestApnSettings
+  13. com.marvell.logtools.logSettings.LogToolsMainReceiver
+
+🔔 BROADCAST RECEIVERS (Exported):
+  • android_secret_code → SecKeyStringBroadcastReceiver
+    - Listens for secret code sequences (dial *#<code>#)
+  • com.samsung.intent.action.IMS_CALL_DROP → CallDropBroadcastReceiver
+  • com.samsung.intent.action.CALL_DROP → CallDropBroadcastReceiver
+
+🔐 DECLARED PERMISSIONS (Privileged):
+  • com.sec.android.app.servicemodeapp.permission.KEYSTRING
+    - Protection Level: signature|privileged (requires system signature)
+
+🚀 CRITICAL REQUESTED PERMISSIONS (Selection):
+  ✓ WRITE_SETTINGS - Modify system settings
+  ✓ WRITE_SECURE_SETTINGS - Modify secure settings
+  ✓ MOUNT_UNMOUNT_FILESYSTEMS - File system access
+  ✓ MODIFY_PHONE_STATE - Control phone/modem state
+  ✓ WRITE_APN_SETTINGS - Modify APN configuration
+  ✓ CALL_PHONE - Make phone calls
+  ✓ CLEAR_APP_USER_DATA - Clear any app's data
+  ✓ DEVICE_POWER - Control device power
+  ✓ READ_LOGS - Access system logs
+  ✓ WRITE_EXTERNAL_STORAGE - Modify /sdcard
+  ✓ CHANGE_NETWORK_STATE - Modify network state
+  ✓ MASTER_CLEAR - Factory reset
+  ✓ SHUTDOWN - Shut down device
+  ✓ DUMP - Access dumpsys (system diagnostics)
+  ✓ MASTER_CLEAR - Device reset
+  ✓ CALL_PRIVILEGED - Make privileged calls
+  ✓ BROADCAST_SMS - Send SMS broadcasts
+  ✓ MANAGE_USERS - User account management
+  ✓ SET_TIME - Set system time
+  ✓ INTERACT_ACROSS_USERS_FULL - Cross-user access
+  ✓ BROADCAST_STICKY - Persistent broadcasts
+  ✓ BLUETOOTH_ADMIN - Bluetooth control
+  ✓ MANAGE_ACCOUNTS - Account management
+  ✓ INSTALL_PACKAGES - Install apps
+  ✓ READ_PRIVILEGED_PHONE_STATE
+  
+All permissions are GRANTED with no restrictions.
+
+⚠️ ATTACK SURFACE:
+  • Secret code listener - Can trigger via dial pad
+  • TerminalMode activity suggests shell/command interface
+  • Direct modem/RIL access
+  • APN/network configuration access
+  • Log viewing capabilities
+  • System-level settings modification
+
+
+## 2. com.sec.android.app.servicemodeapp (serviceModeApp_FB)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📦 PACKAGE INFO:
+  • Package Name: com.sec.android.app.servicemodeapp
+  • Location: /system/priv-app/serviceModeApp_FB
+  • Version: 6.0.1 (versionCode: 23, targetSdk: 23)
+  • User ID: 1000 (android.uid.system shared user)
+  • Privileges: PRIVILEGED, SYSTEM
+  • Signatures: Samsung system certificate [9b8a46f]
+
+📝 MAIN ACTIVITIES (Exported - Launchable via Intent):
+  1. PhoneUtil_ESC ← Qualcomm MDM9x35 modem debug
+  2. AutoAnswer ⚠️ (Auto-answer calls)
+  3. PhoneUtil_Bcom ← Broadcom modem
+  4. CPDebugLevel
+  5. ResetTotalCallTime
+  6. PhoneUtil_MarvellVIA ← Marvell VIA modem
+  7. PhoneUtil_TD ← TD-SCDMA modem
+  8. PhoneUtil_SGLTE ← Single Radio Voice Call Continuity
+  9. PhoneUtil (Generic)
+  10. USBPathSwitch ⚠️ (USB mode switching)
+  11. ShowIMEI (Display IMEI)
+  12. USBSettings ⚠️ (USB configuration)
+  13. DebugLevel
+  14. WifiInfoActivity
+  15. RTN_View (Return/Reset?)
+  16. PhoneUtil_MDM9x15 ← Qualcomm MDM9x15 modem
+  17. SetPortUartUsbMSM8960 ← MSM8960 modem UART/USB config
+  18. PhoneUtil_Prevail2SPR
+  19. SetPortUartUSBCTCModel ← UART/USB configuration
+  20. SysDumpReceiver
+
+🔔 BROADCAST RECEIVERS (Exported):
+  • android_secret_code → ServiceModeAppBroadcastReceiver
+    - Listens for secret codes (dial *#<code>#)
+  • com.samsung.intent.action.SEC_FACTORY_RESET_WITHOUT_FACTORY_UI → ServiceModeAppBroadcastReceiver
+    - Allows factory reset without UI! ⚠️⚠️⚠️
+  • com.samsung.intent.WIFIINFO → WifiInfoBroadcastReceiver
+  • com.sec.android.app.servicemodeapp.NOTIDUMP_OFF → ServiceModeAppBroadcastReceiver
+  • com.sec.FTAT_DUMP → FTATDumpReceiver
+  • android.intent.action.BOOT_COMPLETED → ServiceModeAppBroadcastReceiver
+  • com.samsung.systemui.power.action.LOW_BATTERY_DUMP → FTATDumpReceiver
+
+🔐 DECLARED PERMISSIONS (Privileged):
+  • com.sec.android.app.servicemodeapp.permission.KEYSTRING
+    - Protection Level: signature|privileged
+
+🚀 CRITICAL REQUESTED PERMISSIONS (Selection):
+  ✓ WRITE_SETTINGS - Modify system settings
+  ✓ WRITE_SECURE_SETTINGS - Modify secure settings
+  ✓ MOUNT_UNMOUNT_FILESYSTEMS - File system access
+  ✓ MODIFY_PHONE_STATE - Control phone/modem state
+  ✓ WRITE_APN_SETTINGS - Modify APN configuration
+  ✓ CALL_PHONE - Make phone calls
+  ✓ CLEAR_APP_USER_DATA - Clear app data
+  ✓ DEVICE_POWER - Control power
+  ✓ READ_LOGS - Access logs
+  ✓ WRITE_EXTERNAL_STORAGE - Modify storage
+  ✓ CHANGE_NETWORK_STATE - Network control
+  ✓ MASTER_CLEAR - Factory reset ⚠️
+  ✓ RECEIVE_BOOT_COMPLETED - Run at startup
+  ✓ HARDWARE_TEST - Hardware testing
+  ✓ NFC - NFC control
+  ✓ VIBRATE
+  ✓ BLUETOOTH_ADMIN - Bluetooth control
+  ✓ MODIFY_AUDIO_SETTINGS - Audio control
+  ✓ READ_PHONE_STATE
+  ✓ READ_CONTACTS
+  ✓ WRITE_CONTACTS
+  ✓ WRITE_MEDIA_STORAGE - Modify media storage
+  ✓ READ_EXTERNAL_STORAGE
+  ✓ READ_LOGS
+  ✓ INSTALL_PACKAGES - Install apps
+  ✓ CHANGE_COMPONENT_ENABLED_STATE - Enable/disable components
+  ✓ BROADCAST_SMS - Send SMS
+  ✓ CALL_PRIVILEGED - Privileged calls
+  ✓ MANAGE_ACCOUNTS - Account control
+  ✓ MANAGE_USERS - User management
+  ✓ SHUTDOWN - Device shutdown
+  ✓ SET_TIME - Set time/date
+  
+All permissions are GRANTED with no restrictions.
+
+⚠️ CRITICAL VULNERABILITIES/ATTACK SURFACE:
+  • AutoAnswer activity - Can answer incoming calls automatically
+  • USBPathSwitch + USBSettings - Modify USB behavior (ADB mode, MTP, etc)
+  • UART/USB port switching for modem communication
+  • Factory reset without UI dialog via broadcast
+  • Secret code listener at *#<code>#
+  • FTAT dump (Full Test Analysis and Troubleshooting) - extensive diagnostics
+  • Modem-specific PhoneUtil variants suggest deep modem access
+  • BOOT_COMPLETED receiver - Persists across reboots
+
+
+## EXPLOITATION SUMMARY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔓 LAUNCH METHODS:
+
+1. Via Dial Code (Secret Codes):
+   - Dial: *#<CODE>#
+   - Received by: SecKeyStringBroadcastReceiver (both apps)
+   - No user interaction needed for intent dispatch
+
+2. Via Explicit Intent:
+   am start -n com.sec.android.RilServiceModeApp/.ServiceModeApp
+   am start -n com.sec.android.app.servicemodeapp/.PhoneUtil_ESC
+   am start -n com.sec.android.app.servicemodeapp/.AutoAnswer
+
+3. Via Broadcast Intent:
+   adb shell am broadcast -a com.samsung.intent.action.SEC_FACTORY_RESET_WITHOUT_FACTORY_UI \
+     com.sec.android.app.servicemodeapp
+   ⚠️ FACTORY RESET WITHOUT CONFIRMATION!
+
+4. Via Permission-less Broadcast Receiver:
+   - Broadcast to android_secret_code scheme
+   - ServiceModeAppBroadcastReceiver catches it
+   - Can trigger various functions
+
+🎯 HIGH-IMPACT CAPABILITIES:
+
+From RilServiceModeApp:
+  • Access to RIL (Radio Interface Layer) logs and diagnostics
+  • Modify APN (Access Point Name) settings
+  • Call state manipulation
+  • NandFlash diagnostics/manipulation
+  • Terminal mode (potential shell access)
+  • System log reading
+
+From servicemodeapp:
+  • AUTO-ANSWER incoming calls
+  • Factory reset (without UI!)
+  • USB mode switching (enable/disable ADB)
+  • IMEI manipulation/viewing
+  • Modem-specific configuration (Qualcomm, Broadcom, Marvell)
+  • Audio/Network/Power control
+
+🔑 KEY PERMISSIONS ENABLING ATTACKS:
+  • MODIFY_PHONE_STATE - Manipulate call state
+  • MASTER_CLEAR - Factory reset device
+  • WRITE_APN_SETTINGS - Redirect data to attacker
+  • CHANGE_COMPONENT_ENABLED_STATE - Enable/disable security components
+  • CHANGE_NETWORK_STATE - Modify network connectivity
+  • SHUTDOWN - Force device offline
+  • BLUETOOTH_ADMIN - Control BT (sidechannel exfil)
+
+
+## DETECTION & MITIGATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Detection:
+  ✓ Monitor for secret code dials (*#*#<code>#*#*)
+  ✓ Monitor APN settings changes
+  ✓ Log system-wide broadcasts
+  ✓ Track USB mode changes
+  ✓ Monitor factory reset commands
+  ✓ Alert on TerminalMode/PhoneUtil activity starts
+
+Mitigation:
+  • Disable secret code dial handling (if possible)
+  • Use MDM to restrict APN modifications
+  • Disable USB debugging on production devices
+  • Restrict broadcast receivers (adb shell pm disable)
+  • Monitor for unauthorized app launches

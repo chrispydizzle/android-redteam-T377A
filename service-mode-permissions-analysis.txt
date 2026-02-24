@@ -1,0 +1,287 @@
+╔════════════════════════════════════════════════════════════════════════════════╗
+║          SERVICE MODE APPS - DETAILED PERMISSIONS BREAKDOWN                   ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+## PERMISSION MATRIX
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Permission Name                          | RilServiceModeApp | servicemodeapp | Threat Level
+─────────────────────────────────────────┼──────────────────┼────────────────┼──────────────
+WRITE_SETTINGS                           |        ✓          |       ✓        | CRITICAL
+WRITE_SECURE_SETTINGS                    |        ✓          |       ✓        | CRITICAL
+MOUNT_UNMOUNT_FILESYSTEMS                |        ✓          |       ✓        | CRITICAL
+MODIFY_PHONE_STATE                       |        ✓          |       ✓        | CRITICAL
+WRITE_APN_SETTINGS                       |        ✓          |       ✓        | CRITICAL
+MASTER_CLEAR                             |        ✓          |       ✓        | CRITICAL
+CHANGE_CONFIGURATION                     |        ✓          |       ✓        | CRITICAL
+READ_PRIVILEGED_PHONE_STATE              |        ✓          |       ✓        | HIGH
+CHANGE_COMPONENT_ENABLED_STATE           |        ✓          |       ✓        | HIGH
+CHANGE_NETWORK_STATE                     |        ✓          |       ✓        | HIGH
+SHUTDOWN                                 |        ✓          |       ✓        | HIGH
+CALL_PHONE                               |        ✓          |       ✓        | HIGH
+CALL_PRIVILEGED                          |        ✓          |       ✓        | HIGH
+MODIFY_AUDIO_SETTINGS                    |        ✗          |       ✓        | MEDIUM
+DEVICE_POWER                             |        ✓          |       ✓        | MEDIUM
+READ_LOGS                                |        ✓          |       ✓        | MEDIUM
+WRITE_EXTERNAL_STORAGE                   |        ✓          |       ✓        | MEDIUM
+READ_EXTERNAL_STORAGE                    |        ✓          |       ✓        | MEDIUM
+INSTALL_PACKAGES                         |        ✓          |       ✓        | MEDIUM
+MANAGE_ACCOUNTS                          |        ✓          |       ✓        | MEDIUM
+MANAGE_USERS                             |        ✓          |       ✓        | MEDIUM
+CLEAR_APP_USER_DATA                      |        ✓          |       ✓        | MEDIUM
+ACCESS_NETWORK_STATE                     |        ✓          |       ✓        | LOW
+INTERNET                                 |        ✓          |       ✓        | LOW
+BROADCAST_SMS                            |        ✓          |       ✓        | HIGH
+WRITE_CONTACTS                           |        ✗          |       ✓        | MEDIUM
+READ_CONTACTS                            |        ✗          |       ✓        | MEDIUM
+NFC                                      |        ✗          |       ✓        | MEDIUM
+HARDWARE_TEST                            |        ✗          |       ✓        | MEDIUM
+BLUETOOTH_ADMIN                          |        ✓          |       ✓        | MEDIUM
+
+
+## CRITICAL PERMISSION DETAILS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔴 MASTER_CLEAR
+  ├─ What it does: Factory reset the entire device
+  ├─ Granted to: Both RilServiceModeApp and servicemodeapp
+  ├─ Risk: Can erase all user data without confirmation
+  ├─ Abuse: com.samsung.intent.action.SEC_FACTORY_RESET_WITHOUT_FACTORY_UI broadcast
+  └─ Mitigation: Disable broadcast receiver, monitor factory reset calls
+
+🔴 MODIFY_PHONE_STATE
+  ├─ What it does: Control phone/modem state, answer/end calls, set call forwarding
+  ├─ Related to: android.permission.CALL_PHONE (make calls), CALL_PRIVILEGED
+  ├─ Risk: Full call control, can redirect calls, conference calls
+  ├─ Abuse: Can listen to any call, activate/deactivate call forwarding to attacker
+  └─ Impact: Intercept all communications
+
+🔴 WRITE_APN_SETTINGS
+  ├─ What it does: Modify Access Point Names (APN) for data connectivity
+  ├─ Granted to: Both apps via RilServiceModeApp activities
+  ├─ Risk: Redirect all mobile data through attacker's infrastructure
+  ├─ Abuse: MITM attacks on 3G/4G data, SMS theft, email interception
+  ├─ Example victims: Banking apps, messaging, email, social media
+  └─ Detection: Monitor APN database changes at /data/misc/apn/apns-conf.xml
+
+🔴 WRITE_SECURE_SETTINGS
+  ├─ What it does: Modify secure system settings (airplane mode, 5G, network selection)
+  ├─ Granted to: Both apps
+  ├─ Risk: Disable network connectivity, disable WiFi, disable Bluetooth
+  ├─ Abuse: Force device to use specific network (3G instead of 4G for interception)
+  └─ Related to: CHANGE_NETWORK_STATE, CHANGE_CONFIGURATION
+
+🔴 CHANGE_COMPONENT_ENABLED_STATE
+  ├─ What it does: Enable/disable any application component
+  ├─ Risk: Disable security apps (anti-malware, VPN, MDM), enable malware
+  ├─ Abuse: Disable Google Play Protect, knox, Samsung security components
+  ├─ Example: pm disable com.android.internal.protips (disable warnings)
+  └─ Impact: Disarm all device security in seconds
+
+🔴 SHUTDOWN
+  ├─ What it does: Force device shutdown/restart
+  ├─ Risk: Causes denial of service, forces reboot into insecure state
+  ├─ Abuse: Trigger boot-time attacks, disable secure boot verification
+  └─ Impact: Device unusable, loss of control
+
+🔴 MOUNT_UNMOUNT_FILESYSTEMS
+  ├─ What it does: Mount/unmount /system, /data, SD card partitions
+  ├─ Risk: Access/modify system files directly, bypass app sandboxing
+  ├─ Abuse: Modify system apk files, inject code into system apps
+  ├─ Example: Modify /system/app/SystemUI.apk to steal everything
+  └─ Impact: Full device compromise, invisible malware
+
+🟠 CHANGE_CONFIGURATION
+  ├─ What it does: Change system locale, language, UI layout
+  ├─ Risk: Change to attacker-controlled input method, keyboard
+  ├─ Abuse: Replace keyboard with keylogger, screenshot logger
+  └─ Impact: Capture all user input
+
+🟠 READ_PRIVILEGED_PHONE_STATE
+  ├─ What it does: Read phone state, call details, IMSI, IMEI, subscription info
+  ├─ Risk: Extract device identity, phone number, subscriber data
+  ├─ Abuse: Phone number enumeration, identity theft, SIM card info
+  └─ Impact: Device fingerprinting, targeted attacks
+
+🟠 INSTALL_PACKAGES
+  ├─ What it does: Install APK files programmatically
+  ├─ Granted to: Both apps
+  ├─ Risk: Install malware without user consent
+  ├─ Abuse: Silent installation of spyware, rootkit apps
+  └─ Detection: Monitor /data/app directory and pm install command
+
+🟠 BROADCAST_SMS
+  ├─ What it does: Send SMS broadcasts
+  ├─ Risk: Trigger system SMS broadcasts, intercept SMS delivery
+  ├─ Abuse: Cause device to process malicious SMS without notification
+  └─ Related: SEND_SMS (not granted, but BROADCAST_SMS is more dangerous)
+
+🟠 CALL_PRIVILEGED
+  ├─ What it does: Make emergency and privileged calls
+  ├─ Risk: Bypass normal call restrictions, call any number
+  ├─ Abuse: Make calls to premium numbers, call emergency services, SWAT
+  └─ Impact: Financial theft, emergency abuse
+
+
+## PERMISSION ESCALATION CHAINS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CHAIN 1: From App Crash → Full Device Control
+  Step 1: CHANGE_COMPONENT_ENABLED_STATE
+           └─ Disable com.sec.android.app.servicemodeapp
+  Step 2: INSTALL_PACKAGES
+           └─ Install malicious app as system app via /system partition
+  Step 3: MOUNT_UNMOUNT_FILESYSTEMS
+           └─ Mount /system as RW
+           └─ Install backdoor in /system/priv-app
+  Step 4: Device now has persistent system-level malware
+
+CHAIN 2: Data Exfiltration
+  Step 1: WRITE_APN_SETTINGS
+           └─ Modify APN to point to attacker.com
+  Step 2: CHANGE_NETWORK_STATE
+           └─ Force device to use modified APN
+  Step 3: Now all data flows through attacker
+           ├─ Banking credentials captured
+           ├─ Messages/emails read
+           ├─ Authentication tokens stolen
+           └─ 2FA codes intercepted
+
+CHAIN 3: Silent Surveillance
+  Step 1: MODIFY_PHONE_STATE + CALL_PHONE
+           └─ Programmatically answer all calls
+  Step 2: MODIFY_AUDIO_SETTINGS
+           └─ Disable microphone, enable speaker
+  Step 3: READ_EXTERNAL_STORAGE + INSTALL_PACKAGES
+           └─ Deploy recording service to /system
+  Step 4: Call microphone hijacked, all communications recorded
+
+CHAIN 4: Device Lockdown
+  Step 1: MASTER_CLEAR
+           └─ Factory reset to known state
+  Step 2: MOUNT_UNMOUNT_FILESYSTEMS
+           └─ Mount /system RW, install custom ROM
+  Step 3: CHANGE_COMPONENT_ENABLED_STATE
+           └─ Disable all user-facing security
+  Step 4: Device is now fully attacker-controlled
+
+
+## BROADCAST RECEIVERS & INTENT FILTERS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+RilServiceModeApp Broadcasts:
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ ACTION: android_secret_code                                                 │
+│ HANDLER: com.sec.android.RilServiceModeApp/.SecKeyStringBroadcastReceiver  │
+│ ACCESSIBILITY: Public (no permission required to send)                      │
+│ TRIGGERED BY: Dial pad input *#<code>#                                     │
+│ PURPOSE: Intercept secret code sequences for service menus                  │
+│ RISK: No user confirmation, immediate action                               │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+servicemodeapp Broadcasts:
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ ACTION: android_secret_code                                                 │
+│ HANDLER: com.sec.android.app.servicemodeapp/.ServiceModeAppBroadcastReceiver
+│ ACCESSIBILITY: Public (dial *#<code>#)                                     │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ ACTION: com.samsung.intent.action.SEC_FACTORY_RESET_WITHOUT_FACTORY_UI    │
+│ HANDLER: ServiceModeAppBroadcastReceiver                                    │
+│ ACCESSIBILITY: Requires MASTER_CLEAR + privileged app status               │
+│ RISK: ⚠️⚠️⚠️ Factory resets WITHOUT confirmation dialog                   │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ ACTION: com.samsung.intent.action.CALL_DROP                                 │
+│ HANDLER: CallDropBroadcastReceiver                                          │
+│ PURPOSE: Log call drops for diagnostics                                     │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ ACTION: com.samsung.intent.WIFIINFO                                         │
+│ HANDLER: WifiInfoBroadcastReceiver                                          │
+│ PURPOSE: Collect WiFi information                                           │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ ACTION: com.sec.FTAT_DUMP                                                   │
+│ HANDLER: FTATDumpReceiver                                                   │
+│ PURPOSE: Full Test Analysis & Troubleshooting dump                         │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ ACTION: android.intent.action.BOOT_COMPLETED                                │
+│ HANDLER: ServiceModeAppBroadcastReceiver                                    │
+│ RISK: Runs on every device boot, can execute persistent code               │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ ACTION: com.samsung.systemui.power.action.LOW_BATTERY_DUMP                 │
+│ HANDLER: FTATDumpReceiver                                                   │
+│ PURPOSE: Dump device state on low battery                                   │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+## SHARED USER ELEVATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+RilServiceModeApp:
+  Shared User: android.uid.phone (UID 1001)
+  Shared With:
+    • com.android.phone (Phone app)
+    • com.android.internal.telephony (Telephony system service)
+    • Any other app using android.uid.phone
+  Implication: Can access data/cache of phone-related apps
+
+servicemodeapp:
+  Shared User: android.uid.system (UID 1000)
+  Shared With:
+    • framework-res.apk
+    • android.system.ui.* (System UI)
+    • Most system services
+  Implication: Can access ALL system app data (highest privilege)
+
+
+## MANIFEST EXPORTED COMPONENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+From dumpsys analysis, the following are EXPORTED (no android:exported="false"):
+
+RilServiceModeApp:
+  • All 13 Activities (including TerminalMode) ← CRITICAL
+  • SecKeyStringBroadcastReceiver
+  • CallDropBroadcastReceiver
+
+servicemodeapp:
+  • All 20 Activities (including AutoAnswer, USBPathSwitch) ← CRITICAL
+  • ServiceModeAppBroadcastReceiver
+  • WifiInfoBroadcastReceiver
+  • FTATDumpReceiver
+
+EXPORTED = Can be launched by ANY app without declaring specific permissions
+
+
+## DEFENSE CHECKLIST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+□ Disable both service mode apps:
+  pm disable com.sec.android.RilServiceModeApp
+  pm disable com.sec.android.app.servicemodeapp
+
+□ Disable individual broadcast receivers:
+  pm disable com.sec.android.RilServiceModeApp/.SecKeyStringBroadcastReceiver
+  pm disable com.sec.android.app.servicemodeapp/.ServiceModeAppBroadcastReceiver
+
+□ Block secret code handling at system level:
+  settings put secure secret_codes_enabled 0
+
+□ Lock down APN modifications:
+  settings put global allow_user_preferred_apn 0
+
+□ Monitor for component enable/disable:
+  adb logcat | grep "change enabled"
+
+□ Monitor for factory reset attempts:
+  adb logcat | grep -i "factory reset"
+
+□ Monitor for USB path switching:
+  adb logcat | grep -i "usb.*path\|usb.*switch"
+
+□ Lock down privileged broadcasts:
+  Restrict who can send SEC_FACTORY_RESET_WITHOUT_FACTORY_UI
+
+□ Audit file system mounts:
+  mount | grep "/system"
+
+□ Monitor system partition modifications:
+  stat -c "%a %A" /system/*
