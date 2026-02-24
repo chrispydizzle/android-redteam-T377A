@@ -17,7 +17,7 @@ This report consolidates the findings from a comprehensive security assessment o
 
 ### Overall Risk: 🔴 CRITICAL
 
-The device has **4 critical vulnerabilities** (2 kernel DoS + 2 service-layer privilege issues), **12 high-severity information disclosure/access control weaknesses**, and **multiple medium-severity issues**. The device is 8+ years behind on security patches, exposing it to numerous known CVEs including BlueBorne (remote code execution via Bluetooth).
+The device has **4 critical vulnerabilities** (2 kernel DoS + 2 service-layer privilege issues), **13 high-severity information disclosure/access control weaknesses**, and **multiple medium-severity issues**. The device is 8+ years behind on security patches, exposing it to numerous known CVEs including BlueBorne (remote code execution via Bluetooth). **Root (UID 0) is not achievable** via any tested software vector, but shell already has extensive non-root capabilities enabling surveillance, data theft, and system disruption.
 
 ### Key Metrics
 
@@ -26,11 +26,12 @@ The device has **4 critical vulnerabilities** (2 kernel DoS + 2 service-layer pr
 | Total kernel fuzzing operations | 368,066+ |
 | Kernel surfaces fuzzed | 9 (4 drivers, 3 sockets, alarm, ftrace) |
 | Critical vulnerabilities found | 4 (ION crash, binder DoS, pm grant, pm create-user) |
-| High-severity findings | 12 |
+| High-severity findings | 13 |
 | Medium-severity findings | 8 |
 | Low-severity findings | 2 |
-| Binder services enumerated | 164 |
-| Privilege escalation paths tested | 20+ |
+| Binder services enumerated | 164 (75+ respond to method calls) |
+| Privilege escalation paths tested | 30+ (all blocked) |
+| Shell system permissions | 70+ pre-granted |
 | Known unpatched CVEs | 10+ critical |
 
 ---
@@ -89,23 +90,30 @@ The device has **4 critical vulnerabilities** (2 kernel DoS + 2 service-layer pr
 - **trace buffer clearable**: shell can erase trace evidence (`echo > trace`)
 - Impact: process enumeration, timing side-channels, forensic evidence tampering
 
-#### H-3: Contacts Readable Without Permission
+#### H-3: Contacts Readable AND Writable Without Permission
 
 - `content://contacts/people` returns all contacts from shell — no `READ_CONTACTS` check
+- `content insert` creates new contacts — confirmed injection of "TestAudit" contact
+- Enables phishing via fake contact injection
 
 #### H-4: System Settings Writable from Shell
 
 - `settings put global/secure` works — can toggle airplane mode, developer settings, etc.
 
-#### H-5: IMEI Exposed via Binder
+#### H-5: IMEI + ICCID + IMSI Exposed via Binder
 
-- `service call iphonesubinfo 1` returns full IMEI (hardware identifier)
+- `service call iphonesubinfo 1` returns full IMEI: 353608074799027
+- `service call isub 1` returns ICCID: 89014103272009572724 + SIM name
+- `service call iphonesubinfo 7` returns partial IMSI
+- `settings get secure android_id` returns device ID
 
-#### H-6: Screen Capture and Input Injection
+#### H-6: Screen Capture, Input Injection, and Hardware Keylogging
 
 - `screencap` captures display, `input keyevent/tap/swipe` controls device remotely
+- Shell is in `input` group — can read raw `/dev/input/event*` (touchscreen, accelerometer, gpio keys)
+- Enables real-time hardware keylogging of all touch events
 
-#### H-7: 164 Binder Services Callable
+#### H-7: 164 Binder Services Callable (75+ Respond to Method Calls)
 
 - Most system services respond to shell-initiated binder calls
 - WiFi config, telephony, package manager, backup, bluetooth all accessible
@@ -134,7 +142,15 @@ The device has **4 critical vulnerabilities** (2 kernel DoS + 2 service-layer pr
 - Shell can weaken system-wide permission enforcement
 - Silent success — no error or confirmation required
 
-#### H-12: Known Unpatched CVEs (Remote)
+#### H-12: Shell Has 70+ Pre-Granted System Permissions
+
+- INSTALL_PACKAGES, DELETE_PACKAGES, MANAGE_DEVICE_ADMINS, CREATE_USERS
+- GRANT_RUNTIME_PERMISSIONS, REVOKE_RUNTIME_PERMISSIONS, INTERACT_ACROSS_USERS_FULL
+- BACKUP, WRITE_SECURE_SETTINGS, DISABLE_KEYGUARD, DEVICE_POWER, MODIFY_PHONE_STATE
+- These are manifest-declared permissions, not runtime grants — they provide near-system-level control
+- **Details**: [Service & AM/PM Analysis](findings/service-am-pm-analysis.md)
+
+#### H-13: Known Unpatched CVEs (Remote)
 
 - BlueBorne (CVE-2017-0781/0782/0783/0785): Remote code execution via Bluetooth
 - KRACK (CVE-2017-13077 et al): WPA2 key reinstallation
@@ -287,24 +303,56 @@ BLOCKED: /dev/mobicore-user (SELinux), /data/data (DAC),
 
 ## 6. Privilege Escalation Assessment
 
-### Paths Tested (20+)
+### Paths Tested (30+)
 
 All tested from shell (UID 2000, `u:r:shell:s0`):
 
 | Path | Result | Blocked By |
 |------|--------|------------|
 | Dirty COW (CVE-2016-5195) | ❌ | Kernel patched (post-Oct 2016) |
-| psneuter / run-as abuse | ❌ | SELinux + PIE |
+| psneuter / run-as abuse | ❌ | SELinux + PIE + capability check |
 | zergRush | ❌ | Kernel too new |
-| SUID binary abuse | ❌ | No SUID binaries |
+| SUID binary abuse | ❌ | No SUID binaries found (full scan) |
 | /data nosuid mount | ❌ | Mount flags |
-| /system remount | ❌ | dm-verity + ro mount |
+| /system remount | ❌ | dm-verity + SELinux |
 | SmartcomRoot exploitation | ❌ | APN methods only, no shellExec |
-| Binder context manager steal | ❌ | SELinux denies |
+| Binder context manager steal | ❌ | SELinux denies BINDER_SET_CONTEXT_MGR |
 | Knox/TIMA bypass | ❌ | Keystore permission enforced |
 | Kernel module loading | ❌ | No modular kernel |
+| `setenforce 0` | ❌ | Permission denied (kernel enforcement) |
+| `runcon u:r:su:s0` | ❌ | su domain not in policy (Invalid argument) |
+| `runcon u:r:system_server:s0` | Context changes, UID stays 2000 | DAC prevents privesc |
+| `/sbin/su` | ❌ | Exists but SELinux denies access |
+| `dpm set-device-owner` | ❌ | Samsung MDM_PROXY_ADMIN_INTERNAL check |
+| `dpm set-profile-owner` | ❌ | Same Samsung MDM check |
+| Overlay mount on /system | ❌ | Permission denied |
+| `setprop ro.debuggable 1` | ❌ | ro.* properties immutable |
+| All /proc/sys writes | ❌ | Permission denied (18 entries tested) |
+| pm self-grant (READ_SMS etc.) | ❌ | Package must declare permission in manifest |
+| ION heap crash → code exec | ❌ | Crash is uncontrolled kernel panic |
+| Binder death → race exploit | ❌ | SELinux still enforced during crash-loop |
 
-**Verdict**: Root from ADB shell is not achievable through software-only methods on this device in its current configuration. The combination of SELinux Enforcing, dm-verity, no SUID binaries, nosuid /data mount, and locked bootloader creates a strong defense-in-depth.
+### What Shell CAN Do (Non-Root Capabilities)
+
+Despite not achieving root, shell (UID 2000) has **extensive non-root power**:
+
+| Capability | Impact |
+|------------|--------|
+| 70+ system permissions | Near-system-level control |
+| `pm grant` to any app | Turn any app into surveillance tool |
+| `pm create-user` | Persistent backdoor accounts |
+| `pm uninstall` system apps | Remove system packages |
+| `am force-stop` / `am kill-all` | Kill any process |
+| Write contacts | Inject fake contacts for phishing |
+| Read /dev/input/event* | Hardware keylogger (touch, keys) |
+| Read WiFi/IMEI/ICCID | Full device+network intelligence |
+| Ftrace sched_switch | Full process enumeration |
+| ION crash | Kernel DoS (hard reboot required) |
+| Binder handle 0 | System-wide IPC freeze DoS |
+
+**Verdict**: Root (UID 0) from ADB shell is **not achievable** through any tested software vector. The device's defense-in-depth (SELinux Enforcing + dm-verity + no SUID + nosuid mounts + locked bootloader + Samsung Knox MDM) prevents privilege escalation to root. However, shell already has extensive capabilities that enable surveillance, data theft, system disruption, and persistence without root.
+
+- **Details**: [Service & AM/PM Analysis](findings/service-am-pm-analysis.md)
 
 ---
 
