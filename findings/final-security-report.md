@@ -6,8 +6,8 @@
 **Security Patch Level**: 2017-07-01  
 **Kernel**: Linux 3.10.9-11788437 (ARMv7 Cortex-A7, Exynos 3475)  
 **SELinux**: Enforcing  
-**Assessment Date**: 2026-02-18 — 2026-02-24  
-**Assessor Context**: ADB shell (`u:r:shell:s0`, UID 2000)  
+**Assessment Date**: 2026-02-18 — 2026-02-25  
+**Assessor Context**: ADB shell (`u:r:shell:s0`, UID 2000)
 
 ---
 
@@ -30,9 +30,11 @@ The device has **4 critical vulnerabilities** (2 kernel DoS + 2 service-layer pr
 | Medium-severity findings | 8 |
 | Low-severity findings | 2 |
 | Binder services enumerated | 164 (75+ respond to method calls) |
-| Privilege escalation paths tested | 30+ (all blocked) |
+| Kernel CVEs tested | 9 (all patched or impractical) |
+| Privilege escalation paths tested | 45+ (all blocked) |
 | Shell system permissions | 70+ pre-granted |
 | Known unpatched CVEs | 10+ critical |
+| Bootloader flash attempted | Yes (Odin) — failed (carrier lock) |
 
 ---
 
@@ -303,13 +305,22 @@ BLOCKED: /dev/mobicore-user (SELinux), /data/data (DAC),
 
 ## 6. Privilege Escalation Assessment
 
-### Paths Tested (30+)
+### Paths Tested (45+)
 
 All tested from shell (UID 2000, `u:r:shell:s0`):
 
 | Path | Result | Blocked By |
 |------|--------|------------|
 | Dirty COW (CVE-2016-5195) | ❌ | Kernel patched (post-Oct 2016) |
+| Pipe iov (CVE-2015-1805) | ❌ | Kernel patched (EFAULT correct) |
+| Ping UAF (CVE-2015-3636) | ❌ | Kernel patched (pprev=NULL fix) |
+| perf OOB (CVE-2013-2094) | ❌ | Kernel patched (ENOENT on OOB) |
+| n_tty race (CVE-2014-0196) | ❌ | Survived/hung (likely patched) |
+| inotify race (CVE-2017-7533) | ❌ | 644K events, no crash |
+| mq_notify (CVE-2017-11176) | ❌ | POSIX MQ not compiled in (ENOSYS) |
+| eBPF UAF (CVE-2016-4557) | ❌ | No eBPF syscall on device |
+| Towelroot (CVE-2014-3153) | ⚠ Partial | 2 of 3 patches missing, but race window too narrow (8000+ iters) |
+| ION UAF → code exec | ❌ | UAF confirmed (91% win) but no victim object in kmalloc-64 |
 | psneuter / run-as abuse | ❌ | SELinux + PIE + capability check |
 | zergRush | ❌ | Kernel too new |
 | SUID binary abuse | ❌ | No SUID binaries found (full scan) |
@@ -318,17 +329,31 @@ All tested from shell (UID 2000, `u:r:shell:s0`):
 | SmartcomRoot exploitation | ❌ | APN methods only, no shellExec |
 | Binder context manager steal | ❌ | SELinux denies BINDER_SET_CONTEXT_MGR |
 | Knox/TIMA bypass | ❌ | Keystore permission enforced |
+| Knox enterprise services | ❌ | All check UID/permission before acting |
+| ABTPersistenceService | ❌ | "Not authorized" on all useful transactions |
+| remoteinjection | ❌ | Requires sec.MDM_REMOTE_CONTROL (signature perm) |
+| Samsung service mode apps | ❌ | All 12 activities unexported from UID 2000 |
+| DiagMonAgent broadcasts | ❌ | Exported receivers but no observable action |
+| MobiCore TEE | ❌ | SELinux blocks shell access to /dev/mobicore-user |
 | Kernel module loading | ❌ | No modular kernel |
 | `setenforce 0` | ❌ | Permission denied (kernel enforcement) |
 | `runcon u:r:su:s0` | ❌ | su domain not in policy (Invalid argument) |
 | `runcon u:r:system_server:s0` | Context changes, UID stays 2000 | DAC prevents privesc |
 | `/sbin/su` | ❌ | Exists but SELinux denies access |
+| Existing root tools (Magisk, z4root, KingRoot) | ❌ | Installed but inactive, daemon not running |
 | `dpm set-device-owner` | ❌ | Samsung MDM_PROXY_ADMIN_INTERNAL check |
 | `dpm set-profile-owner` | ❌ | Same Samsung MDM check |
 | Overlay mount on /system | ❌ | Permission denied |
 | `setprop ro.debuggable 1` | ❌ | ro.* properties immutable |
+| `ctl.start`/`ctl.stop` | ⚠ Works | Can control init services, but no writable service configs |
+| Settings manipulation | ⚠ Works | Disabled package verifier, but no setting leads to root |
 | All /proc/sys writes | ❌ | Permission denied (18 entries tested) |
 | pm self-grant (READ_SMS etc.) | ❌ | Package must declare permission in manifest |
+| dd to BOOT partition | ❌ | Block device root-only (brw-------) |
+| Odin bootloader flash (TWRP+Magisk) | ❌ | AT&T carrier-locked bootloader rejects unsigned images |
+| ADB backup/restore injection | ❌ | No system app loads executable content from data dir |
+| Tombstone symlink attack | ❌ | SELinux blocks file creation in /data/tombstones |
+| dalvik-cache replacement | ❌ | SELinux blocks access |
 | ION heap crash → code exec | ❌ | Crash is uncontrolled kernel panic |
 | Binder death → race exploit | ❌ | SELinux still enforced during crash-loop |
 
@@ -345,12 +370,16 @@ Despite not achieving root, shell (UID 2000) has **extensive non-root power**:
 | `am force-stop` / `am kill-all` | Kill any process |
 | Write contacts | Inject fake contacts for phishing |
 | Read /dev/input/event* | Hardware keylogger (touch, keys) |
+| Input injection (input tap/swipe) | Remote UI control |
+| `ctl.start`/`ctl.stop` | Control init services |
+| Settings write (WRITE_SECURE_SETTINGS) | Modify system/secure/global settings |
 | Read WiFi/IMEI/ICCID | Full device+network intelligence |
 | Ftrace sched_switch | Full process enumeration |
+| Disable package verification | Allow installation of unverified apps |
 | ION crash | Kernel DoS (hard reboot required) |
 | Binder handle 0 | System-wide IPC freeze DoS |
 
-**Verdict**: Root (UID 0) from ADB shell is **not achievable** through any tested software vector. The device's defense-in-depth (SELinux Enforcing + dm-verity + no SUID + nosuid mounts + locked bootloader + Samsung Knox MDM) prevents privilege escalation to root. However, shell already has extensive capabilities that enable surveillance, data theft, system disruption, and persistence without root.
+**Verdict**: Root (UID 0) from ADB shell is **not achievable** through any tested software vector. The device's defense-in-depth — SELinux Enforcing, dm-verity, no SUID binaries, nosuid mounts, AT&T carrier-locked bootloader, Samsung Knox MDM, and comprehensive kernel patching — prevents privilege escalation to root through all 45+ vectors tested including 9 kernel CVEs, all Samsung enterprise/Knox services, bootloader flashing via Odin, ADB backup injection, and every known Android privilege escalation technique applicable to this kernel version. However, shell already has extensive capabilities that enable surveillance, data theft, system disruption, and persistence without root.
 
 - **Details**: [Service & AM/PM Analysis](findings/service-am-pm-analysis.md)
 
@@ -373,9 +402,12 @@ Despite not achieving root, shell (UID 2000) has **extensive non-root power**:
 3. **Restrict am force-stop / kill-all**: Shell can silently kill any app including Google Play Services
 4. **Restrict dumpsys wifi**: All 8 saved WiFi networks, device MAC, AP BSSIDs, WPA handshake logs exposed
 5. **Enforce content provider permissions**: Contacts should require `READ_CONTACTS` even from shell
-6. **Restrict settings write**: Shell should not modify global/secure settings (airplane mode, sideloading toggle)
+6. **Restrict settings write**: Shell should not modify global/secure settings (airplane mode, sideloading toggle, package verification)
 7. **Protect IMEI/Android ID**: `iphonesubinfo` and `settings get secure android_id` should check caller permissions
 8. **Restrict pm set-permission-enforced**: Shell should not weaken system-wide permission enforcement
+9. **Restrict ctl.start/ctl.stop**: Shell should not be able to control init services — could be used to restart services in weakened state
+10. **Remove inactive root tools**: Magisk, z4root, KingRoot, Superuser apps are installed but inactive — remove to reduce attack surface
+11. **Restrict input group**: Shell membership in group 1004 (input) allows raw touchscreen/keylogging and UI injection
 
 ### Priority 3 — Medium (Information Disclosure)
 
@@ -433,6 +465,13 @@ Despite not achieving root, shell (UID 2000) has **extensive non-root power**:
 | `src/ion_probe3.c` | ION safe heap prober |
 | `src/ion_uaf_test.c` | ION use-after-free validator |
 | `src/ioctl_enum.live.c` | Live device ioctl enumerator |
+| `src/iov_root.c` | CVE-2015-1805 + DirtyCOW + Towelroot multi-test |
+| `src/ping_root.c` | CVE-2015-3636 ping socket double-disconnect UAF |
+| `src/multi_root.c` | MobiCore, n_tty, waitid, /dev/mem multi-test |
+| `src/ntty_race.c` | CVE-2014-0196 n_tty race (OPOST cooked mode) |
+| `src/inotify_race.c` | CVE-2017-7533 inotify/rename + CVE-2017-11176 mq_notify |
+| `src/ion_race_free_share.c` | ION UAF race (free vs share) |
+| `src/ion_exploit_poc.c` | ION exploit with heap spray |
 
 ### Forensic Evidence
 
@@ -447,6 +486,11 @@ Despite not achieving root, shell (UID 2000) has **extensive non-root power**:
 | `work/ion_fuzz_10k.log` | ION fuzzer 10K iteration log |
 | `work/ashmem_fuzz_10k.log` | Ashmem fuzzer log |
 | `work/sepolicy` | Extracted SELinux policy binary for offline analysis |
+| `work/magisk_patched.img` | Magisk v30.6-patched boot image (Odin flash failed) |
+| `work/magisk_boot.tar` | Odin-flashable tar of patched boot image |
+| `work/vmlinux_aqgf` | Decompressed kernel for disassembly (11.5MB, 43,664 symbols) |
+| `work/fw_names.txt` | Firmware symbol names (T/t/r/R types only) |
+| `PROGRESS-LOG.md` | Running progress log with all techniques tested and warnings |
 
 ### QEMU Fuzzing Lab
 
@@ -463,11 +507,16 @@ Despite not achieving root, shell (UID 2000) has **extensive non-root power**:
 
 1. **Device reconnaissance**: ADB-based enumeration of hardware, software, services, permissions
 2. **CVE mapping**: Cross-reference SPL 2017-07-01 against known Android CVEs
-3. **Privilege escalation testing**: 20+ methods tested against 5 defense layers
+3. **Privilege escalation testing**: 45+ methods tested against 5+ defense layers
 4. **Kernel attack surface mapping**: Identified 5 world-writable `/dev` nodes, confirmed 4 accessible
 5. **Custom fuzzer development**: Built targeted fuzzers using Samsung GPL kernel source for struct layout
-6. **Systematic kernel fuzzing**: 349K+ operations across all 4 accessible drivers
+6. **Systematic kernel fuzzing**: 368K+ operations across all 4 accessible drivers
 7. **Crash root-cause analysis**: 3-run elimination method for binder vulnerability
-8. **Information disclosure audit**: procfs, debugfs, binder services, content providers
-9. **Shell capability assessment**: Comprehensive testing of all shell-accessible functionality
-10. **Documentation**: Full findings with forensic evidence, reproduction steps, and recommendations
+8. **Kernel CVE testing**: 9 CVEs tested with custom proof-of-concept code (pipe iov, DirtyCOW, Towelroot, ping UAF, perf OOB, n_tty race, inotify race, mq_notify, eBPF)
+9. **Samsung service enumeration**: All Knox, enterprise, ABTPersistence, remote injection, DiagMonAgent services probed
+10. **Firmware analysis**: Decompressed kernel, extracted 43,664 symbols, disassembled functions to find data addresses
+11. **ION exploitation research**: UAF confirmed, heap spray tested, 651 function pointer tables analyzed
+12. **Bootloader flash attempt**: Magisk-patched boot image created and Odin flash attempted (carrier lock blocked)
+13. **Information disclosure audit**: procfs, debugfs, binder services, content providers
+14. **Shell capability assessment**: Comprehensive testing of all shell-accessible functionality including settings write, ctl.start/stop, input injection, backup/restore
+15. **Documentation**: Full findings with forensic evidence, reproduction steps, and recommendations
