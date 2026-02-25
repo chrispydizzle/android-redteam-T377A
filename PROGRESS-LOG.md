@@ -206,8 +206,6 @@ Auto-pushes to /data/local/tmp/ via ADB.
 ## Binaries on Device (/data/local/tmp/)
 ### ⚠ DO NOT RUN
 - `adbd_root` — **CRASHES DEVICE** (hangs then disconnects)
-- `su-v1`, `su-v2` — non-PIE, rejected
-- `rageagainstthecage` — non-PIE, rejected
 
 ### Safe to Run
 - All `src/`-compiled binaries (iov_root, ping_root, multi_root, exploit_test, etc.)
@@ -588,6 +586,158 @@ From an installed APK (or ADB shell + APK):
 4. **Media access**: Camera, Microphone, Location tracking
 5. **Communications**: Read SMS, Contacts, Call logs
 6. **Input injection**: Touch/keystroke injection for UI automation
-7. **Kernel DoS**: ION heap crash or Binder context manager death
+7. **Kernel DoS**: ION heap crash or Binder context manager death or tee() deadlock (NEW)
 8. **Native code execution**: From app sandbox (untrusted_app domain)
 9. **Persistence**: Boot receiver for auto-start, device admin prevents uninstall
+
+## Session 7 — Zero-Day Race Condition Fuzzing (2026-02-25)
+
+### ZERO-DAY FOUND: tee() ABBA Deadlock (Kernel DoS)
+
+**Severity: Medium (Denial of Service from unprivileged userspace)**
+
+Two confirmed deadlock scenarios in the tee() syscall on kernel 3.10.9:
+
+**Scenario A: SPLICE_F_NONBLOCK ignored**
+- `tee(full_pipe_rfd, full_pipe_wfd, 65536, SPLICE_F_NONBLOCK)` deadlocks
+- SPLICE_F_NONBLOCK should cause immediate EAGAIN return but is IGNORED
+- Root cause: `link_pipe()` acquires pipe mutex BEFORE checking NONBLOCK flag
+- Killed by SIGALRM after 20 seconds (confirmed hang)
+
+**Scenario B: Circular tee deadlock**
+- Two threads: tee(p1→p2) and tee(p2→p1) concurrently
+- Classic ABBA lock ordering: Thread A holds p1 mutex, waits p2; Thread B holds p2, waits p1
+- Deadlock confirmed via pthread_timedjoin_np timeout
+- Deadlock PROPAGATES to other processes via shared pipe fds (Test 4 of pipe_uaf_exploit)
+
+**Exploitation investigation:**
+- ABBA deadlock + SIGKILL: 17% slab anomaly rate over 100 iterations
+- kmalloc-128 accumulated +90 objects (investigated, found to be SLUB caching noise)
+- Shared pipe read/tee/splice after child SIGKILL: 0 data corruption in 150 tests
+- Pipe reference counting is CORRECT — no UAF possible through shared pipes
+- splice() also deadlocks in same pattern (confirmed in deep_race_fuzz test 6)
+- **Verdict: Kernel DoS only, NOT exploitable for code execution**
+
+### Phase 1: mmap/ioctl Race Testing — CLEAN
+- **src/mmap_ioctl_race.c** — 6 tests:
+  - ION mmap vs ION_IOC_FREE: 56K+ ops, 0 crashes
+  - Binder mmap vs BINDER_WRITE_READ: 52K+ ops, 0 crashes
+  - close+ioctl concurrent on ION/binder: 200K+ ops, 0 crashes
+  - ION triple race (mmap+ioctl+close): 75M+ ops, 0 crashes
+  - fork+shared ION handle: 0 crashes
+  - madvise+ION mmap: 0 crashes
+- dmesg: clean throughout
+
+### Phase 2: splice/TTY/epoll Race Testing — Found tee() Hang
+- **src/splice_tty_race.c** — 8 tests:
+  - splice+close race: clean
+  - **tee race: HUNG (killed by SIGALRM)** ← initial discovery
+  - vmsplice+munmap: clean
+  - TTY ldisc switch: only N_TTY available (N_SLIP etc return EINVAL/EPERM)
+  - pty close race: clean
+  - epoll ADD/DEL race: 2.9M ops, clean
+  - nested epoll: clean
+  - splice from socket: EOPNOTSUPP
+
+### Phase 3: Deep Race Fuzzing — Confirmed tee Deadlock
+- **src/deep_race_fuzz.c** — 8 tests:
+  - **tee(full→full) deadlock: CONFIRMED** (SPLICE_F_NONBLOCK ignored)
+  - **Circular tee deadlock: CONFIRMED** (ABBA lock ordering bug)
+  - sendfile /proc: works, ION share fd returns ESPIPE
+  - writev FASTIOV boundary: properly handled (EINVAL/EFAULT)
+  - dup2 vs ioctl: 1.3M ops, clean
+  - ION_IOC_CUSTOM: ALL 32 commands fail (Samsung doesn't implement)
+  - Signal during ION: 0 EINTR (auto-restart), clean
+  - fcntl race: clean
+
+### Phase 4: tee Deadlock Exploitation Research — DoS Only
+- **src/tee_deadlock_exploit.c** — 6 tests:
+  - SIGKILL cleanup: 1/50 slab anomalies (noise)
+  - ABBA deadlock: CONFIRMED from threads
+  - tee+close race: 0 anomalies
+  - tee+fork: SIGALRM killed (deadlock hit)
+  - Mass deadlock+kill: 0 slab leaks after 20 kills
+  - splice deadlock: CONFIRMED
+
+- **src/tee_abba_kill.c** — 100-iteration ABBA + SIGKILL statistical analysis:
+  - 17% anomaly rate, but kmalloc-64 highly volatile (±300)
+  - kmalloc-128 +90 cumulative (SLUB caching noise)
+  - NOT a real slab leak
+
+- **src/pipe_uaf_exploit.c** — 6 shared-pipe UAF tests:
+  - Shared pipe read after ABBA SIGKILL: **0 corruption in 50 iterations**
+  - Parent tee() after child kill: **0 anomalies**
+  - Parent splice() after child kill: **0 anomalies**
+  - Concurrent splice during deadlock: **HUNG** (deadlock propagates!)
+  - Pipe reference counting is CORRECT, no UAF
+
+### Phase 5: BPF Filter Cleanup Race Fuzzing — No UAF
+- **src/bpf_filter_race.c** — 7 tests targeting kmalloc-256:
+  - SO_ATTACH + close race: 2000/2000 setsockopt wins (no race)
+  - SO_DETACH + recv race: 0 anomalies
+  - Dual SO_ATTACH: both always succeed, k256 leaks detected BUT...
+  - Tight attach/detach: 50K+ ops, +85 k256 after close
+  - fork + detach: clean
+  - sendmsg + detach: clean
+  - Mass lifecycle: +184 over 10K cycles
+
+- **src/k256_leak_confirm.c** — Precision leak confirmation:
+  - **50K sequential attach/detach: NON-MONOTONIC** (7 increasing, 11 decreasing)
+  - After SLUB cache flush + 500ms: only +29 from 50K cycles
+  - **Verdict: SLUB per-CPU caching noise, NOT a real leak**
+
+### Phase 6: Additional Zero-Day Surface Testing — ALL CLEAN
+- **src/k256_leak_confirm.c** additional tests:
+  - recvmsg MSG_ERRQUEUE + close: 0 anomalies in 2000 iterations
+  - mprotect + page fault race: 0 unexpected crashes
+  - PR_SET_NAME from 4 threads: 0 corruption
+  - signalfd + signal delivery race: 0 anomalies
+  - dup2 + read/write race: 0 anomalies
+  - POSIX timer create/delete race: 0 anomalies
+
+- **src/inotify_rename_race.c** — CVE-2017-7533 + surface probes:
+  - CVE-2017-7533 (inotify + rename): 558K events, 56K renames, **0 crashes in 4 rounds**
+  - AF_PACKET socket: **EPERM** (blocked by SELinux/capabilities)
+  - /dev/mobicore-user: **EACCES** (blocked by SELinux)
+  - sendfile /proc/self/mem + mmap race: 0 crashes
+  - futex LOCK_PI + munmap race: 0 anomalies
+  - futex CMP_REQUEUE edge cases: 0 anomalies
+
+### CVE-2019-2215 Re-Analysis — Confirmed BLOCKED
+- Existing BPF spray exploit (src/cve_2019_2215_bpf.c) tested 48 offsets: 0 crashes
+- close(epfd) → list_del is self-referential (single wait entry points to itself)
+- wake_up never triggered (BINDER_THREAD_EXIT removes thread from proc tree)
+- UIO_FASTIOV=32 blocks iovec trigger (writev ≤32 uses stack, ≥33 → k512 not k256)
+- No alternative trigger mechanism identified
+- **CVE-2019-2215 is UNPATCHED but UNEXPLOITABLE on this specific device**
+
+### Session 7 Summary
+
+| Category | Tests Run | Total Ops | Crashes | Bugs Found |
+|----------|-----------|-----------|---------|------------|
+| mmap/ioctl races | 6 | 225M+ | 0 | 0 |
+| splice/tee races | 8 | 2.9M+ | 0 | **2 (deadlock)** |
+| Deep race conditions | 8 | 1.3M+ | 0 | **1 (deadlock confirm)** |
+| tee exploitation | 6+6+6 | 400+ iterations | 0 | DoS only |
+| BPF filter races | 7 | 16K+ cycles | 0 | 0 (noise) |
+| Additional surfaces | 6 | 5000+ | 0 | 0 |
+| CVE-2017-7533 | 4 rounds | 558K events | 0 | 0 |
+| Other CVEs/surfaces | 6 | 2600+ | 0 | 0 |
+| **TOTAL** | **~60 tests** | **~230M ops** | **0** | **1 zero-day (DoS)** |
+
+### Remaining Active Leads (Unchanged)
+1. **BlueBorne** (CVE-2017-0781/0782) — BT proximity required
+2. **DM port** — COM9, Shannon 308, no auth, needs Samsung DIAG tools
+3. **Factory sockets** — @FactoryClientSend/Recv, unexplored
+4. **DRParser keystrings** — /sdcard/keystrings_EFS.xml exploitation post-root
+
+### Source Files Created This Session
+- `src/mmap_ioctl_race.c` — mmap/ioctl race fuzzer (6 tests)
+- `src/splice_tty_race.c` — splice/TTY/epoll race fuzzer (8 tests)
+- `src/deep_race_fuzz.c` — deep race condition fuzzer (8 tests)
+- `src/tee_deadlock_exploit.c` — tee deadlock exploitation research (6 tests)
+- `src/tee_abba_kill.c` — ABBA deadlock + SIGKILL slab analysis (100 iterations)
+- `src/pipe_uaf_exploit.c` — shared pipe ABBA UAF attempt (6 tests)
+- `src/bpf_filter_race.c` — BPF sk_filter cleanup race fuzzer (7 tests)
+- `src/k256_leak_confirm.c` — k256 leak confirmation + surface fuzzer (8 tests)
+- `src/inotify_rename_race.c` — CVE-2017-7533 + AF_PACKET + mobicore + futex (6 tests)
