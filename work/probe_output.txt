@@ -1,0 +1,176 @@
+02-25 00:08:11.759 25563 25563 I RedTeamProbe: === PROBE ENVIRONMENT ===
+
+02-25 00:08:11.759 25563 25563 I RedTeamProbe: UID: 10168
+
+02-25 00:08:11.759 25563 25563 I RedTeamProbe: PID: 25563
+
+02-25 00:08:11.759 25563 25563 I RedTeamProbe: Package: com.redteam.probe
+
+02-25 00:08:11.824 25563 25563 I RedTeamProbe: id ├óΓÇáΓÇÖ uid=10168(u0_a168) gid=10168(u0_a168) groups=10168(u0_a168),3001(net_bt_admin),3002(net_bt),3003(inet),9997(everybody),50168(all_a168) context=u:r:untrusted_app:s0:c512,c768
+
+02-25 00:08:11.854 25563 25563 I RedTeamProbe: cat /proc/self/attr/current ├óΓÇáΓÇÖ u:r:untrusted_app:s0:c512,c768
+
+02-25 00:08:11.924 25563 25563 I RedTeamProbe: getenforce ├óΓÇáΓÇÖ Enforcing
+
+02-25 00:08:11.924 25563 25563 I RedTeamProbe: === FILE ACCESS TESTS ===
+
+02-25 00:08:11.924 25563 25563 I RedTeamProbe: READ /data/system/packages.xml ├óΓÇáΓÇÖ /data/system/packages.xml: open failed: EACCES (Permission denied)
+
+02-25 00:08:11.929 25563 25563 I RedTeamProbe: READ /data/misc/wifi/wpa_supplicant.conf ├óΓÇáΓÇÖ /data/misc/wifi/wpa_supplicant.conf: open failed: EACCES (Permission denied)
+
+02-25 00:08:11.929 25563 25563 I RedTeamProbe: READ /data/misc/adb/adb_keys ├óΓÇáΓÇÖ /data/misc/adb/adb_keys: open failed: EACCES (Permission denied)
+
+02-25 00:08:11.929 25563 25563 I RedTeamProbe: READ /data/system/locksettings.db ├óΓÇáΓÇÖ /data/system/locksettings.db: open failed: EACCES (Permission denied)
+
+02-25 00:08:11.934 25563 25563 I RedTeamProbe: READ /data/system/users/0.xml ├óΓÇáΓÇÖ /data/system/users/0.xml: open failed: EACCES (Permission denied)
+
+02-25 00:08:11.934 25563 25563 I RedTeamProbe: READ /data/dalvik-cache/ ├óΓÇáΓÇÖ DIR(null entries)
+
+02-25 00:08:11.939 25563 25563 I RedTeamProbe: READ /data/data/com.android.providers.settings/databases/settings.db ├óΓÇáΓÇÖ /data/data/com.android.providers.settings/databases/settings.db: open failed: EACCES (Permission denied)
+
+02-25 00:08:11.939 25563 25563 I RedTeamProbe: READ /data/data/com.android.providers.contacts/databases/contacts2.db ├óΓÇáΓÇÖ /data/data/com.android.providers.contacts/databases/contacts2.db: open failed: EACCES (Permission denied)
+
+02-25 00:08:11.939 25563 25563 I RedTeamProbe: READ /proc/1/maps ├óΓÇáΓÇÖ read failed: EACCES (Permission denied)
+
+02-25 00:08:11.944 25563 25563 I RedTeamProbe: READ /sys/fs/selinux/policy ├óΓÇáΓÇÖ /sys/fs/selinux/policy: open failed: EACCES (Permission denied)
+
+02-25 00:08:11.944 25563 25563 I RedTeamProbe: READ /dev/mobicore-user ├óΓÇáΓÇÖ /dev/mobicore-user: open failed: EACCES (Permission denied)
+
+02-25 00:08:11.944 25563 25563 I RedTeamProbe: === WRITE ACCESS TESTS ===
+
+02-25 00:08:11.944 25563 25563 I RedTeamProbe: WRITE /data/local/tmp/probe_write_test ├óΓÇáΓÇÖ /data/local/tmp/probe_write_test: open failed: EACCES (Permission denied)
+
+02-25 00:08:11.944 25563 25563 I RedTeamProbe: WRITE /system/probe_test ├óΓÇáΓÇÖ /system/probe_test: open failed: EROFS (Read-only file system)
+
+02-25 00:08:11.944 25563 25563 I RedTeamProbe: WRITE /data/system/probe_test ├óΓÇáΓÇÖ /data/system/probe_test: open failed: EACCES (Permission denied)
+
+02-25 00:08:11.944 25563 25563 I RedTeamProbe: === NETWORK TESTS ===
+
+02-25 00:08:11.954 25563 25563 I RedTeamProbe: BIND :80 ├óΓÇáΓÇÖ bind failed: EACCES (Permission denied)
+
+02-25 00:08:11.954 25563 25563 I RedTeamProbe: BIND :443 ├óΓÇáΓÇÖ bind failed: EACCES (Permission denied)
+
+02-25 00:08:11.954 25563 25563 I RedTeamProbe: BIND :8080 ├óΓÇáΓÇÖ OK
+
+02-25 00:08:11.954 25563 25563 I RedTeamProbe: === CONTENT PROVIDER TESTS ===
+
+02-25 00:08:11.964 25563 25563 I RedTeamProbe: Settings.Secure: 117 rows
+
+02-25 00:08:11.999 25563 25563 I RedTeamProbe: Contacts: 4 rows
+
+02-25 00:08:12.049 25563 25563 I RedTeamProbe: SMS: 0 rows
+
+02-25 00:08:12.054 25563 25563 I RedTeamProbe: === PROC ACCESS ===
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: ls /proc/1/ ├óΓÇáΓÇÖ attr
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: auxv
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: cgroup
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: clear_refs
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: cmdline
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: comm
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: coredump_filter
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: cwd
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: environ
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: exe
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: fd
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: fdinfo
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: limits
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: loginuid
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: maps
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: mem
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: mountinfo
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: mounts
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: mountstats
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: net
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: ns
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: oom_adj
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: oom_score
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: oom_score_adj
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: pagemap
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: personality
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: root
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: sched
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: sessionid
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: smaps
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: smaps_simple
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: stack
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: stat
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: statm
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: status
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: syscall
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: task
+
+02-25 00:08:12.124 25563 25563 I RedTeamProbe: wchan
+
+02-25 00:08:12.184 25563 25563 I RedTeamProbe: cat /proc/self/status | head -5 ├óΓÇáΓÇÖ Name:	sh
+
+02-25 00:08:12.184 25563 25563 I RedTeamProbe: State:	R (running)
+
+02-25 00:08:12.184 25563 25563 I RedTeamProbe: Tgid:	25683
+
+02-25 00:08:12.184 25563 25563 I RedTeamProbe: Pid:	25683
+
+02-25 00:08:12.184 25563 25563 I RedTeamProbe: PPid:	25682
+
+02-25 00:08:12.239 25563 25563 I RedTeamProbe: cat /proc/self/maps | head -5 ├óΓÇáΓÇÖ b6d40000-b6e00000 rw-p 00000000 00:00 0 
+
+02-25 00:08:12.239 25563 25563 I RedTeamProbe: b6e02000-b6e06000 r-xp 00000000 103:0c 2066      /system/lib/libnetd_client.so
+
+02-25 00:08:12.239 25563 25563 I RedTeamProbe: b6e06000-b6e07000 r--p 00003000 103:0c 2066      /system/lib/libnetd_client.so
+
+02-25 00:08:12.239 25563 25563 I RedTeamProbe: b6e07000-b6e08000 rw-p 00004000 103:0c 2066      /system/lib/libnetd_client.so
+
+02-25 00:08:12.239 25563 25563 I RedTeamProbe: b6e08000-b6e28000 r--s 00000000 00:0d 2180       /dev/__properties__
+
+02-25 00:08:12.239 25563 25563 I RedTeamProbe: === SOCKET ACCESS ===
+
+02-25 00:08:12.244 25563 25563 I RedTeamProbe: READ /dev/socket/netd ├óΓÇáΓÇÖ /dev/socket/netd: open failed: EACCES (Permission denied)
+
+02-25 00:08:12.244 25563 25563 I RedTeamProbe: READ /dev/socket/zygote ├óΓÇáΓÇÖ /dev/socket/zygote: open failed: EACCES (Permission denied)
+
+02-25 00:08:12.244 25563 25563 I RedTeamProbe: READ /dev/socket/installd ├óΓÇáΓÇÖ /dev/socket/installd: open failed: EACCES (Permission denied)
+
+02-25 00:08:12.244 25563 25563 I RedTeamProbe: === NATIVE EXEC ===
+
+02-25 00:08:12.299 25563 25563 I RedTeamProbe: /data/local/tmp/exploit_test --help 2>&1 || echo 'not available' ├óΓÇáΓÇÖ /system/bin/sh: /data/local/tmp/exploit_test: can't execute: Permission denied
+
+02-25 00:08:12.299 25563 25563 I RedTeamProbe: not available
+
+02-25 00:08:12.299 25563 25563 I RedTeamProbe: === PROBE COMPLETE ===
+

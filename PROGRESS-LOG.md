@@ -321,3 +321,110 @@ The device demonstrates strong defense-in-depth:
 3. **No debug surfaces**: No /dev/mem, no eBPF, no SUID binaries
 4. **Carrier bootloader lock**: Prevents hardware-level modification despite OEM unlock setting
 5. **Samsung Knox**: Service-level permission checks on all enterprise APIs
+
+---
+
+## Session 4 — App-Context Escalation & Exhaustive Probing (2026-02-25)
+
+### Custom APK Probe (com.redteam.probe)
+Built and installed a custom APK with maximum attack surface:
+- **Device Admin**: Activated via `dpm set-active-admin` — NO UI confirmation required!
+- **Accessibility Service**: Enabled via `settings put secure enabled_accessibility_services` — BOUND and active
+- **Notification Listener**: Enabled via `settings put secure enabled_notification_listeners` — Active
+- **16 dangerous permissions**: All granted via `pm grant` (Camera, Mic, SMS, Location, Contacts, Phone, Calendar, Storage, Sensors)
+- **Components**: ProbeActivity, CommandReceiver, ProbeAccessibility, ProbeNotificationListener, ProbeProvider, BootReceiver
+
+### App-Context Capabilities Confirmed
+Running as UID 10168, u:r:untrusted_app:s0:c512,c768:
+- ✅ Open /dev/ion, /dev/binder, /dev/ashmem, /dev/mali0, /dev/ptmx
+- ✅ ION UAF race works from app context (race win confirmed!)
+- ✅ Execute native ARM binaries from app data dir (/data/data/com.redteam.probe/)
+- ✅ mprotect RWX (can create executable memory)
+- ✅ Read /proc/self/maps (library layout visible)
+- ✅ Read accessibility window events (captures all app changes)
+- ✅ Read ContentProviders (SMS, Contacts, Settings)
+- ✅ Bind non-privileged network ports
+- ✅ Read /sys/kernel/debug/tracing/
+- ❌ No capabilities (CapBnd = 0x0)
+- ❌ No Seccomp (good for exploitation attempts)
+- ❌ Cannot read dmesg, /proc/slabinfo (LESS access than shell)
+- ❌ Cannot write /data/local/tmp or execute binaries there
+- ❌ Cannot read /data/system/, /proc/1/maps
+
+### Device Owner — BLOCKED
+- Removed TestAuditUser (`pm remove-user 10` → Success)
+- `dpm set-device-owner` → "Not allowed because there are already some accounts" (Google account)
+- `dpm set-profile-owner` → Same error
+- **Requires factory reset to clear accounts (destructive)**
+
+### Privilege Escalation Probe (priv_probe.c) — All Blocked
+Tested from BOTH shell and app contexts — identical results:
+- **AF_PACKET**: EPERM (no CAP_NET_RAW) → CVE-2017-7308 NOT usable
+- **User namespaces**: EINVAL (CONFIG_USER_NS not compiled) → Cannot gain capabilities
+- **Keyring (add_key)**: EPERM (SELinux blocks) → CVE-2016-0728 NOT usable
+- **BPF**: ENOSYS (not compiled) → No eBPF exploits possible
+- **perf_event_open**: E2BIG (struct size) — perf_event_paranoid=1
+- **/proc/self/pagemap**: EPERM → Physmap technique NOT usable
+- **mprotect RWX**: WORKS (but no kernel trigger to jump to it)
+- **/dev/kmem, /dev/mem**: DO NOT EXIST
+
+### CVE-2017-7533 (inotify/rename race) — SURVIVED
+- 665K+ events processed across 15 seconds, no crash → **PATCHED or race too narrow**
+
+### CVE-2017-11176 (mq_notify) — NOT AVAILABLE
+- POSIX MQ returns ENOSYS → kernel lacks CONFIG_POSIX_MQUEUE
+
+### Samsung Service Mode App — ALL ACTIVITIES REQUIRE KEYSTRING
+- com.sec.android.app.servicemodeapp has 20+ activities
+- ALL require `com.sec.android.app.servicemodeapp.permission.KEYSTRING` (signature|privileged)
+- Includes: SysDump, DebugLevel, USBSettings, PhoneUtil, etc.
+- Secret codes via broadcast: no observable effect
+- **Cannot access any service mode functionality from shell or app**
+
+### Boot/Block Device Access — BLOCKED
+- BOOT partition: /dev/block/mmcblk0p10 (brw------- root root)
+- RECOVERY: /dev/block/mmcblk0p11
+- SYSTEM: /dev/block/mmcblk0p20
+- ALL block devices root-only, SELinux enforcing
+- **Cannot read or write boot/system partitions**
+
+### Kernel Sysctl Writes — ALL BLOCKED
+- core_pattern, hotplug, sysrq: SELinux denies all writes from shell/app
+- Even reading core_pattern blocked by SELinux
+
+---
+
+## UPDATED FINAL ASSESSMENT (Session 4)
+
+**Root is NOT achievable on this device via any software-only method.**
+
+### Total Attack Surface Tested: 55+ Vectors
+
+| Category | Vectors Tested | Result |
+|----------|---------------|--------|
+| Kernel CVEs | 10 (DirtyCOW, pipe_iov, futex, ping, perf, n_tty, ION, inotify, mq_notify, BPF) | All PATCHED or N/A |
+| ION UAF | Race confirmed 91% win rate, 6+ spray techniques | No code exec trigger |
+| Binder | 72K+ fuzz ops, service fuzzing, context manager | DoS only |
+| Mali GPU | 29K+ fuzz ops, 24 func IDs | 0 crashes |
+| Ashmem | 100K+ fuzz ops | 0 crashes |
+| Samsung Knox | 8+ services probed | All secured |
+| Samsung Service Mode | 20+ activities | All require KEYSTRING |
+| Bootloader | Odin flash attempted | AT&T carrier locked |
+| Boot/Block Devices | Direct write attempted | Root-only |
+| Kernel Sysctls | core_pattern, sysrq, etc. | SELinux blocks |
+| Capabilities | AF_PACKET, namespaces, BPF, keyring, pagemap | All blocked |
+| SUID/Capabilities | Full filesystem scan | None found |
+| Settings/Properties | WRITE_SECURE_SETTINGS, setprop | No escalation path |
+| App-Context Escalation | Device admin, accessibility, 16 permissions | Powerful surveillance, no root |
+
+### What IS Achievable (Non-Root Compromise)
+From an installed APK (or ADB shell + APK):
+1. **Full device surveillance**: Accessibility service reads ALL screen content including passwords
+2. **Notification interception**: Notification listener captures ALL notifications (OTP codes, messages)
+3. **Device admin control**: Lock screen, reset password, wipe device — NO user confirmation
+4. **Media access**: Camera, Microphone, Location tracking
+5. **Communications**: Read SMS, Contacts, Call logs
+6. **Input injection**: Touch/keystroke injection for UI automation
+7. **Kernel DoS**: ION heap crash or Binder context manager death
+8. **Native code execution**: From app sandbox (untrusted_app domain)
+9. **Persistence**: Boot receiver for auto-start, device admin prevents uninstall
