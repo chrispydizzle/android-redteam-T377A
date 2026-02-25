@@ -1,5 +1,5 @@
 # Samsung Service Mode Apps - Security Analysis
-
+In calc, use (+30012012732+
 ## Executive Summary
 
 Two privileged Samsung system apps expose extreme attack surface with **ZERO user confirmation required** for many dangerous operations:

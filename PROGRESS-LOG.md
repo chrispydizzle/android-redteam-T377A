@@ -183,6 +183,23 @@ Auto-pushes to /data/local/tmp/ via ADB.
 | ntty_race.c | CVE-2014-0196 n_tty race | Hung, likely patched |
 | ion_race_free_share.c | ION UAF race exploit | UAF confirmed, no code exec |
 | ion_exploit_poc.c | ION exploit with spray | Spray works, no trigger |
+| mali_verify_bugs.c | Definitive Mali false positive proof | ALL ops return header.id=3 |
+| mali_free_check.c | Cross-ctx free result checking | Returned result=3, not freed |
+| mali_import_probe.c | MEM_IMPORT exhaustive probe | Completely DISABLED |
+| binder_uaf.c | CVE-2019-2215 basic detection | Trigger works, no crash |
+| binder_uaf2.c | Binder exploit + slab ID | binder_thread in kmalloc-512 (WRONG) |
+| binder_slab_trace.c | Per-operation slab diffs | binder_thread in kmalloc-256 |
+| binder_slab_full.c | Full slabinfo diff 50 binders | Definitive: kmalloc-256 |
+| slab_readv_test.c | readv iov slab verification | UIO_FASTIOV=32 (stack buffer!) |
+| binder_uaf_diag.c | readv reclaim diagnostic | No corruption (wrong approach) |
+| binder_uaf_diag2.c | Same-thread reclaim test | No corruption (FASTIOV=32) |
+| binder_uaf_lite.c | Lightweight reclaim test | No corruption (FASTIOV=32) |
+| binder_uaf_k256.c | kmalloc-256 exhaust+reclaim | Device hung (too many threads) |
+| binder_mass_uaf.c | Mass UAF + spray survey | Built, not yet run |
+| cve_2019_2215.c | Full exploit attempt v1 | Wrong slab (targeted 512) |
+| heap_primitives.c | Spray primitive survey | setxattr works, msgsnd blocked |
+| slab_hunt.c | Comprehensive slab monitor | Identified all cache sizes |
+| ion_slab_probe.c | ION handle slab ID | kmalloc-64 confirmed |
 
 ---
 
@@ -305,7 +322,79 @@ Auto-pushes to /data/local/tmp/ via ADB.
 
 ## FINAL ASSESSMENT
 
-**Root is NOT achievable from ADB shell on this device.**
+**CVE-2019-2215 (binder UAF) is confirmed UNPATCHED.** Exploitation blocked by
+Samsung's UIO_FASTIOV=32 preventing standard iovec spray. Alternative kmalloc-256
+spray needed.
+
+### Session 5 — CVE-2019-2215 + Mali Re-Verification (2026-02-25)
+
+#### ⚠ Mali r7p0-03rel0 — ALL "VULNERABILITIES" ARE FALSE POSITIVES ⚠
+
+**CRITICAL CORRECTION:** The Mali "vulnerabilities" reported in Session 4 are ALL false
+positives. The Mali UK (User-Kernel) interface returns success/failure in `header.id`
+field (0=success, 3=MALI_ERROR_INVALID_PARAMETER), NOT in ioctl return value or 
+`header.ret`. All prior testing only checked `ioctl()` return (always 0 for dispatched
+requests). Definitive re-verification (mali_verify_bugs.c) shows:
+
+- Cross-context free: **REJECTED** (header.id=3)
+- Same-context double-free: **REJECTED** (header.id=3)
+- FLAGS_CHANGE with any flags: **REJECTED** (header.id=3)
+- MEM_COMMIT integer overflow: **REJECTED** (header.id=3)
+- MEM_IMPORT (all types/flags/sizes): **COMPLETELY DISABLED** (header.id=3)
+- **None of these operations actually execute.** The driver correctly validates all inputs.
+
+#### CVE-2019-2215 (Binder UAF) — CONFIRMED UNPATCHED ✓
+
+- Kernel 3.10.9 with patch level 2017-07 → patched in Sep 2019 → VULNERABLE
+- BINDER_THREAD_EXIT frees binder_thread while epoll retains dangling wait_queue ref
+- **binder_thread is in kmalloc-256** (verified: 50 THREAD_EXIT freed -53 from kmalloc-256)
+- epoll_ctl DEL accesses freed memory (completes without crash)
+
+**BPF Filter Spray — RECLAMATION CONFIRMED:**
+- SO_ATTACH_FILTER with 22-26 BPF instructions allocates persistently in kmalloc-256
+- Verified: 50 UAFs + 100 BPF sprays → ALL 100 reused freed slots (+0 net change)
+- Cross-allocation confirmed: BPF and binder share same slab pages
+- BPF instruction content is fully controllable
+
+**EXPLOITATION BLOCKED — Two independent mitigations:**
+1. **UIO_FASTIOV=32** — Samsung increased from standard 8, blocking the iovec spray technique
+   - readv/writev with ≤32 iovecs uses kernel stack buffer (no kmalloc)
+   - iovcnt=33+ → kmalloc-512 (wrong cache for kmalloc-256 target)
+   - This blocks the standard CVE-2019-2215 arbitrary kernel r/w primitive
+2. **No wake_up trigger path** — epoll cleanup (close/DEL) only calls list_del, never wake_up
+   - list_del writes pointer values into the reclaimed BPF data (self-referential)
+   - Cannot redirect function pointers: wake_up (which calls entry->func) is never triggered
+   - Thread removed from proc->threads rbtree, so no binder work dispatched to it
+   - Tested 6 trigger methods × 48 offsets (288 combinations): ZERO crashes
+
+**Additional spray primitive testing (all negative for kmalloc-256):**
+- userfaultfd: ENOSYS (kernel compiled without CONFIG_USERFAULTFD)
+- socketpair+sendmsg: skb data → kmalloc-512+ (shared_info overhead)
+- signalfd, eventfd, timerfd, ashmem, inotify: ALL +0 for kmalloc-256
+- AF_NETLINK: +46 in kmalloc-256 but SELinux blocks (EACCES)
+- Pipes (all sizes), epoll items, ptmx, mali0, ion: ALL +0 for kmalloc-256
+
+**Conclusion: CVE-2019-2215 is present but NOT EXPLOITABLE on this Samsung build
+due to kernel-level mitigations (UIO_FASTIOV=32) that block all known exploitation
+techniques. The vulnerability exists but is effectively neutralized.**
+
+#### Slab Cache Layout (definitive)
+- **kmalloc-64**: ION handles, Mali tracking, pipe_buffer[2], buffer_head
+- **kmalloc-128**: binder metadata (+20 for 50 opens)
+- **kmalloc-192**: ION buffers, binder metadata (+20 for 50 opens)
+- **kmalloc-256**: **binder_thread** (+1 per thread, -53 for 50 THREAD_EXIT)
+- **kmalloc-512**: readv iov array (for iovcnt 33-64)
+
+#### pipe_buffer in kmalloc-64 (CONFIRMED, from Session 4)
+- F_SETPIPE_SZ(2*PAGE_SIZE) → pipe_buffer[2] in kmalloc-64
+- pipe_buffer.ops = function pointer table (valid from Session 4)
+- +490 kmalloc-64 objects for 200 pipes
+
+#### Boot Ramdisk Audit — No Exploitable Services
+- Extracted and analyzed all 17 RC files from boot.img
+- flash_recovery: runs install-recovery.sh as root but from /system (read-only)
+- Platform signing key: Samsung's own (not AOSP test key)
+- No writable-path service definitions found
 
 All practical attack vectors have been exhausted:
 - 9 kernel CVEs tested: all patched or impractical
@@ -394,28 +483,44 @@ Tested from BOTH shell and app contexts — identical results:
 
 ---
 
-## UPDATED FINAL ASSESSMENT (Session 4)
+## UPDATED FINAL ASSESSMENT (Session 5)
 
-**Root is NOT achievable on this device via any software-only method.**
+**CVE-2019-2215 is CONFIRMED UNPATCHED — exploitation partially blocked by Samsung-specific
+kernel configuration (UIO_FASTIOV=32). Alternative spray primitives being investigated.**
 
-### Total Attack Surface Tested: 55+ Vectors
+**Mali GPU vulnerabilities reported in Session 4 are ALL FALSE POSITIVES — corrected.**
+
+### Total Attack Surface Tested: 60+ Vectors
 
 | Category | Vectors Tested | Result |
 |----------|---------------|--------|
-| Kernel CVEs | 10 (DirtyCOW, pipe_iov, futex, ping, perf, n_tty, ION, inotify, mq_notify, BPF) | All PATCHED or N/A |
+| Kernel CVEs | 11 (DirtyCOW, pipe_iov, futex, ping, perf, n_tty, ION, inotify, mq_notify, BPF, **CVE-2019-2215**) | 10 patched/N/A, **1 UNPATCHED** |
+| CVE-2019-2215 | Binder UAF trigger, slab identification, spray attempts | UAF confirmed, spray blocked by FASTIOV=32 |
 | ION UAF | Race confirmed 91% win rate, 6+ spray techniques | No code exec trigger |
 | Binder | 72K+ fuzz ops, service fuzzing, context manager | DoS only |
-| Mali GPU | 29K+ fuzz ops, 24 func IDs | 0 crashes |
+| Mali GPU | 29K+ fuzz ops, 24 func IDs, **5 ops re-verified** | 0 real vulns (ALL false positives) |
 | Ashmem | 100K+ fuzz ops | 0 crashes |
 | Samsung Knox | 8+ services probed | All secured |
 | Samsung Service Mode | 20+ activities | All require KEYSTRING |
 | Bootloader | Odin flash attempted | AT&T carrier locked |
 | Boot/Block Devices | Direct write attempted | Root-only |
+| Boot Ramdisk | 17 RC files audited | No exploitable services |
 | Kernel Sysctls | core_pattern, sysrq, etc. | SELinux blocks |
 | Capabilities | AF_PACKET, namespaces, BPF, keyring, pagemap | All blocked |
 | SUID/Capabilities | Full filesystem scan | None found |
 | Settings/Properties | WRITE_SECURE_SETTINGS, setprop | No escalation path |
 | App-Context Escalation | Device admin, accessibility, 16 permissions | Powerful surveillance, no root |
+
+### Remaining Active Lead
+**CVE-2019-2215**: EXHAUSTED. All alternative kmalloc-256 spray primitives tested:
+- BPF socket filter → RECLAIMS freed slot ✓ but list_del can't trigger code execution
+- userfaultfd → ENOSYS (not compiled)
+- socketpair/sendmsg → wrong slab (kmalloc-512+)
+- signalfd, eventfd, timerfd, ashmem, inotify → +0 for kmalloc-256
+- AF_NETLINK → SELinux blocks
+- 6 trigger methods × 48 offsets = 288 combinations tested → ZERO crashes/ZERO root
+
+**The vulnerability exists but is effectively mitigated by Samsung's kernel configuration.**
 
 ### What IS Achievable (Non-Root Compromise)
 From an installed APK (or ADB shell + APK):

@@ -1,0 +1,21 @@
+on boot
+
+# tdmb
+    chown system system /dev/tdmb
+    chmod 0660 /dev/tdmb
+
+on fs
+
+# tdmb
+service dmb /system/bin/dmbserver
+    class main
+    user media
+    group system radio inet misc audio camera graphics net_bt net_bt_admin sdcard_rw sdcard_r shell media_rw
+
+# IMS 6.0 for IMS
+service imsd /system/bin/imsd
+    class main
+    socket imsd stream 0660 system system
+    socket sme_socket stream 0660 system system
+    user root
+    group system radio net_raw inet net_admin
