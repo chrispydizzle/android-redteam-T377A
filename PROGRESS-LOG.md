@@ -816,9 +816,76 @@ Blocked surfaces:
 |--------|:---:|:---:|:---:|---|
 | ION (kmalloc-64) | ✅ 91% race | ✅ socketpair | ❌ BLOCKED | No fn-ptr victim in k64 |
 | Binder (kmalloc-256) | ✅ thread freed | ✅ BPF 26-insn | ❌ BLOCKED | Samsung whead=NULL fix |
-| Mali GPU | ⬜ Not tested | ⬜ N/A | ⬜ **NEXT TARGET** | /dev/mali0 accessible! |
+| Mali GPU | ⬜ Not tested | ⬜ N/A | ⬜ Races clean | Standard dispatch robust |
+| **Mali Vendor Dispatch** | ✅ **CRASH** | N/A | 🔴 **KERNEL PANIC** | Wild pointer deref! |
 
 ### Next Steps
-1. **Mali GPU exploitation** — /dev/mali0 is accessible, huge attack surface (memory management, JIT, job submission)
-2. **Kernel binary reverse engineering** — disassemble Mali driver, find ioctl handlers
-3. **NL_SELINUX analysis** — audit event info leak, potential policy influence
+1. **Exploit Mali vendor dispatch** — control the wild pointer for code execution
+2. **Kernel binary RE** — find gpu_vendor_dispatch, understand the pointer handling
+3. **Heap spray at low address** — mmap_min_addr=32768, place fake struct at 0x8000+
+
+## Session 8b — Mali Samsung Vendor Dispatch Kernel Panic (ZERO-DAY)
+
+### Discovery
+
+While running mali_race_exploit.c (targeted race condition fuzzer), the device kernel-panicked
+5 times during testing. Root cause analysis revealed a Samsung-specific vulnerability in the
+Mali GPU driver's vendor dispatch path.
+
+### The Vulnerability
+
+Samsung's Mali r7p0 driver registers TWO ioctl dispatch paths on `/dev/mali0`:
+- Standard kbase: magic `'M'` (0x4D) — properly validates user pointers
+- Samsung vendor: magic `0x80` — **DOES NOT validate user pointers for MEM_IMPORT**
+
+When MEM_IMPORT (func 513) is called via vendor dispatch with a 48-byte struct,
+the `phandle` field is dereferenced **directly as a kernel pointer** instead of
+being treated as a user-space pointer. This causes:
+
+```
+PC is at _raw_spin_lock_irqsave+0x30/0x6c
+LR is at down+0x18/0x54
+```
+
+→ Kernel tries to acquire a semaphore at the address specified by `phandle`,
+which is a small integer (the fd number) → wild pointer → PANIC.
+
+### Crash Reproduction (100% reliable)
+
+```c
+ioctl(mali_fd, _IOC(3, 0x80, 0, 48), buf_with_nonzero_phandle);
+// Instant kernel panic
+```
+
+### Key Evidence
+
+| Test | Magic | phandle | Result |
+|------|-------|---------|--------|
+| Correct import (magic 'M') | 'M' | pointer | result=3 (safe) |
+| Correct import (magic 'M') | 'M' | raw fd | result=3 (safe) |
+| Vendor import, zeroed | 0x80 | 0 | result=3 (safe) |
+| **Vendor import, non-zero** | **0x80** | **raw fd** | **KERNEL PANIC** |
+
+- Crashed device 5 times during investigation
+- ION alloc/share is irrelevant — any non-zero phandle value crashes
+- Standard Mali operations (alloc, free, flags_change) all clean
+- Mali race conditions (8 targeted tests) showed 0 bugs
+
+### Exploitation Path
+
+1. **DoS**: Confirmed. Single ioctl from unprivileged shell.
+2. **Controlled pointer**: phandle value directly becomes a kernel pointer
+   - mmap_min_addr=32768, so we can potentially map at 0x8000
+   - Place fake struct file with controlled semaphore/spinlock
+   - After down() returns, the import code continues with attacker-controlled state
+3. **No KASLR**: Kernel text is at known addresses
+4. **No PXN**: Can potentially execute userspace code in kernel mode
+
+### Files Created
+- `findings/mali-vendor-dispatch-vuln.md` — Full vulnerability writeup
+- `src/mali_race_exploit.c` — Original race fuzzer (discovered the crash)
+- `src/mali_vendor_crash.c` — Systematic analysis tool
+- `src/mali_import_safe.c` — Step-by-step isolation
+- `src/mali_import_v2.c` — Control test (correct path)
+- `src/mali_import_crash.c` — Crash reproducer
+- `src/mali_import_min.c` — Minimal reproducer
