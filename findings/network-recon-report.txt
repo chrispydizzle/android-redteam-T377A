@@ -1,0 +1,410 @@
+================================================================================
+  NETWORK RECONNAISSANCE REPORT — Samsung SM-T377A (AT&T)
+  Device: 52030d9842d7a3bd | Android 6.0.1 | Kernel 3.10.9-11788437
+  Date: 2025-02-25 (device clock: 2026-02-25)
+================================================================================
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. NETWORK INTERFACES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Interface    State    Type        IPv4              IPv6                          MAC
+─────────── ──────── ─────────── ───────────────── ───────────────────────────── ─────────────────
+lo           UP       Loopback    127.0.0.1/8       ::1/128                       00:00:00:00:00:00
+wlan0        UP       WiFi        192.168.1.104/24  fe80::be76:5eff:fe57:44ed/64  bc:76:5e:57:44:ed
+p2p0         DORMANT  WiFi-Direct (none)            fe80::bc76:5eff:fe57:44ed/64  be:76:5e:57:44:ed
+umts_dm0     DOWN     PPP/Modem   (none)            (none)                        (none)
+rmnet0       DOWN     PPP/Cell    (none)            (none)                        (none)
+rmnet1       DOWN     PPP/Cell    (none)            (none)                        (none)
+rmnet2       DOWN     PPP/Cell    (none)            (none)                        (none)
+rmnet3       DOWN     PPP/Cell    (none)            (none)                        (none)
+sit0         DOWN     SIT-tunnel  (none)            (none)                        0.0.0.0
+ip6tnl0      DOWN     IPv6-tunnel (none)            (none)                        ::
+
+WiFi Signal: link=70, level=-27dBm, noise=-256 (EXCELLENT)
+NOTE: p2p0 MAC differs from wlan0 by 1 bit (locally-administered bit set) — standard behavior.
+NOTE: 4 cellular interfaces (rmnet0-3) all DOWN — device on WiFi only.
+NOTE: umts_dm0 = AT&T diagnostic modem interface.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2. ROUTING & ARP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+IPv4 Routes:
+  default via 192.168.1.13 dev wlan0 metric 310
+  192.168.1.0/24 dev wlan0 proto kernel scope link src 192.168.1.104 metric 310
+
+IPv6 Routes: (none — no IPv6 routing configured)
+
+ARP Table:
+  192.168.1.13  → 10:0c:6b:5e:7d:fd  (DEFAULT GATEWAY)
+  192.168.1.15  → 10:0c:6b:5e:07:ba  (peer device — similar OUI, likely same vendor)
+
+NOTE: Gateway 10:0c:6b:5e:* OUI = likely Ubiquiti or similar consumer router.
+NOTE: Only 2 ARP entries — small local network.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+3. LISTENING PORTS & ACTIVE CONNECTIONS (decoded from /proc/net)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+== LISTENING ==
+
+Proto  Local Address        Port   UID    Service
+────── ──────────────────── ────── ────── ─────────────────────
+UDP6   :::                  5228   10008  Google Cloud Messaging (GCM/FCM push)
+RAW6   :::                  58     1014   ICMPv6 (UID=radio)
+
+*** NO TCP LISTENING PORTS — device does not accept inbound TCP connections ***
+
+== ESTABLISHED TCP ==
+
+#  Local                        Remote                       State       UID    Service
+── ──────────────────────────── ──────────────────────────── ─────────── ────── ──────────────────
+1  192.168.1.104:56287          216.239.32.223:443           CLOSE_WAIT  10008  Google (HTTPS)
+2  192.168.1.104:45448          142.251.210.42:443           CLOSE_WAIT  10008  Google (HTTPS)
+3  192.168.1.104:40411          142.251.45.174:443           CLOSE_WAIT  10008  Google (HTTPS)
+4  192.168.1.104:45446          142.251.210.42:443           CLOSE_WAIT  10008  Google (HTTPS)
+5  192.168.1.104:32924          142.250.217.138:443          CLOSE_WAIT  10008  Google (HTTPS)
+6  ::ffff:192.168.1.104:33821   ::ffff:142.250.31.188:5228   ESTABLISHED 10008  GCM Push (TCP)
+7  ::ffff:192.168.1.104:47007   ::ffff:34.250.239.64:5229    ESTABLISHED 10025  GCM Alt Push (TCP)
+
+NOTE: 5 TCP connections in CLOSE_WAIT — server closed, client hasn't reaped.
+      All to Google servers on port 443.
+NOTE: 2 ESTABLISHED connections on GCM ports 5228/5229 — push notification channels.
+NOTE: UID 10008 = com.google.android.gms (Google Play Services)
+NOTE: UID 10025 = likely another Google app (GMS core or related)
+
+== ESTABLISHED UDP (QUIC/HTTP3 to Google) ==
+
+#   Local                    Remote                   UID    Service
+─── ──────────────────────── ──────────────────────── ────── ────────────────────
+1   192.168.1.104:58976      216.239.32.223:443       10008  Google QUIC
+2   192.168.1.104:38028      142.251.210.42:443       10008  Google QUIC
+3   192.168.1.104:40598      142.250.217.10:443       10008  Google QUIC
+4   192.168.1.104:51879      142.251.45.174:443       10008  Google QUIC
+5   192.168.1.104:43690      142.250.65.78:443        10008  Google QUIC
+6   192.168.1.104:51908      216.239.32.223:443       10008  Google QUIC
+7   192.168.1.104:58614      142.250.190.238:443      10008  Google QUIC
+8   192.168.1.104:34561      142.250.217.138:443      10008  Google QUIC
+9   192.168.1.104:56078      142.251.210.42:443       10008  Google QUIC
+10  192.168.1.104:37662      142.250.217.10:443       10008  Google QUIC
+11  192.168.1.104:49951      142.251.210.42:443       10008  Google QUIC
+12  192.168.1.104:44857      142.250.65.78:443        10008  Google QUIC
+13  192.168.1.104:45884      142.250.65.78:443        10032  Google QUIC (diff UID!)
+14  192.168.1.104:48482      216.239.32.223:443       10008  Google QUIC
+15  192.168.1.104:57207      216.239.32.223:443       10008  Google QUIC
+16  192.168.1.104:34732      142.251.210.42:443       10008  Google QUIC
+17  192.168.1.104:54810      216.239.32.223:443       10008  Google QUIC
+18  192.168.1.104:58944      216.239.32.223:443       10008  Google QUIC
+
+NOTE: 18 active QUIC streams — heavy Google Play Services activity.
+NOTE: UID 10032 on entry #13 — different app (possibly Samsung or AT&T app).
+NOTE: All outbound — NO inbound UDP beyond the GCM listener.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+4. BLUETOOTH ADAPTER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Adapter:          Broadcom BCM43454 (combo WiFi+BT chip)
+BT Address:       BC:76:5E:57:44:EC
+BT Name:          SAMSUNG-SM-T377A
+Enabled:          false (currently OFF)
+State:            15 (BLE scanning mode — passive BLE scans active despite "off")
+Firmware:         bcm43454_V0100.0131.hcd
+Addr Path:        /efs/bluetooth/bt_addr
+Device Node:      /dev/uhid (crw-rw---- system:net_bt_stack, major=10 minor=239)
+Bonded Devices:   (none)
+PAN Tethering:    false
+hciconfig:        Not available (BT adapter not fully active)
+debugfs features: Not readable (likely permission denied or adapter off)
+
+GATT Activity (despite BT "off"):
+  - com.samsung.android.beaconmanager — Custom scan, 30s cumulative, 7 calls
+  - com.google.android.gms.persistent — LowPower scan, 7s cumulative, 9 calls
+
+GATT Client Map:
+  - App ID: 5, UUID: e425aca9-3c49-42e3-aab6-7bc6668a48ed
+  - 0 active connections
+
+BTSNOOP log: 78,187 bytes captured (binary base64-encoded in dumpsys output)
+
+KEY FINDING: BLE scanning is active even with Bluetooth "disabled" — Samsung's
+             beaconmanager and Google GMS are performing passive BLE scans.
+             This is a privacy concern and potential attack surface.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+5. FIREWALL RULES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+iptables (IPv4):   *** EMPTY — NO RULES ***
+ip6tables (IPv6):  *** EMPTY — NO RULES ***
+nf_conntrack:      *** EMPTY — NO CONNECTION TRACKING ***
+Raw IPv4 sockets:  (none)
+Raw IPv6 sockets:  ICMPv6 only (protocol 58, UID 1014/radio)
+
+CRITICAL FINDING: The device has NO firewall rules whatsoever.
+  - No INPUT chain rules
+  - No OUTPUT chain rules
+  - No FORWARD chain rules
+  - No connection tracking
+  This means ALL inbound traffic to any listening service is unrestricted.
+  The device relies entirely on not having listening TCP ports for protection.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+6. UNIX DOMAIN SOCKETS — DETAILED ANALYSIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+== WORLD-WRITABLE SOCKETS (accessible from ADB shell) ==
+
+Path                          Permissions  Owner:Group    Type     Notes
+───────────────────────────── ──────────── ────────────── ──────── ──────────────────────
+/dev/socket/logd              srw-rw-rw-   logd:logd      STREAM   Log daemon control
+/dev/socket/logdr             srw-rw-rw-   logd:logd      SEQPACK  Log reader
+/dev/socket/logdw             s-w--w--w-   logd:logd      DGRAM    Log writer (write-only)
+/dev/socket/property_service  srw-rw-rw-   root:root      STREAM   *** SYSTEM PROPERTIES ***
+
+CRITICAL: /dev/socket/property_service is world-readable/writable.
+  This is the Android property service — controls system-wide settings.
+  From ADB shell, we can query (and potentially set) system properties.
+
+== HIGH-VALUE SYSTEM SOCKETS ==
+
+Path                               Owner:Group         Type     Access     Attack Interest
+────────────────────────────────── ─────────────────── ──────── ────────── ────────────────
+/dev/socket/rild                   root:radio          STREAM   rw-rw----  Baseband/RIL ★★★
+/dev/socket/rild-debug             radio:system        STREAM   rw-rw----  RIL debug ★★★
+/dev/socket/rild-cas               root:root           STREAM   rw-------  RIL CAS ★★
+/dev/socket/zygote                 root:system         STREAM   rw-rw----  App spawner ★★★★★
+/dev/socket/adbd                   system:system       STREAM   rw-rw----  ADB daemon ★★★
+/dev/socket/netd                   root:system         STREAM   rw-rw----  Network daemon ★★★
+/dev/socket/vold                   root:mount          STREAM   rw-rw----  Volume daemon ★★★
+/dev/socket/installd               system:system       STREAM   rw-------  Package install ★★★★
+/dev/socket/cryptd                 root:mount          STREAM   rw-rw----  Encryption ★★★
+/dev/socket/property_service       root:root           STREAM   rw-rw-rw-  Sys props ★★★★★
+/dev/socket/dnsproxyd              root:inet           STREAM   rw-rw----  DNS proxy ★★
+/dev/socket/fwmarkd                root:inet           STREAM   rw-rw----  FW marking ★★
+/dev/socket/lmkd                   root:system         SEQPACK  rw-rw----  LMK daemon ★★
+/dev/socket/wpa_wlan0              wifi:wifi           DGRAM    rw-rw----  WPA supplicant ★★★
+/dev/socket/sdp                    system:system       STREAM   rw-rw----  Samsung SDP ★★
+
+== SAMSUNG-SPECIFIC SOCKETS ==
+
+Path/Name                          Type       Notes
+────────────────────────────────── ────────── ──────────────────────────────────
+/dev/socket/ppm                    STREAM     Power Policy Manager
+/dev/socket/epm                    STREAM     Enterprise Policy Manager
+/dev/socket/frigate                STREAM     Samsung Frigate (unknown service)
+/dev/socket/imsd                   STREAM     IMS Daemon (VoLTE)
+/dev/socket/sme_socket             STREAM     Samsung Management Engine
+/dev/socket/dir_enc_report         STREAM     Directory Encryption reporting
+/dev/socket/sap_uim_socket1       STREAM     SIM Access Profile
+/dev/socket/cs_socket/cs_socket   STREAM     Call Setup socket
+/dev/.secure_storage/ssd_socket   STREAM     Samsung Secure Storage Daemon
+
+== ABSTRACT NAMESPACE SOCKETS (@ prefix) ==
+
+Name                    Notes
+─────────────────────── ──────────────────────────────────────────
+@DeviceRootKeyService   Samsung TIMA device root key ★★★★
+@mcdaemon               Trustonic MobiCore/TEE daemon ★★★★★
+@jdwp-control           Java Debug Wire Protocol ★★★★★
+@android:debuggerd      Native crash debugger ★★★
+@knoxVpnFdTransfer      Knox VPN FD passing ★★★
+@SatsService            Samsung ATS (testing) ★★
+@ATDMultiClient         AT&T Diagnostics ★★
+@FactoryClientSend      Factory test client (send) ★★★
+@FactoryClientRecv      Factory test client (recv) ★★★
+@Multiclient            Multi-client IPC hub ★★
+@diag_mycmc_app2cp      CMC diagnostics (app→CP) ★★
+@imsd                   IMS daemon abstract ★
+@BTHostPowerCtrl        BT host power control ★
+
+== DATA PARTITION SOCKETS ==
+
+Path                                         Type     Notes
+──────────────────────────────────────────── ──────── ─────────────────────
+/data/.socket_stream                         STREAM   Samsung data stream (4 instances!)
+/data/.mtp_stream                            STREAM   MTP file transfer
+/data/.diag_stream                           STREAM   Diagnostics stream
+/data/.diagsocket_stream                     STREAM   Diagnostics socket
+/data/.npswifi_stream                        STREAM   NPS WiFi stream
+/data/TMAudioSocketClient                    SEQPACK  TM Audio client
+/data/TMAudioSocketServer                    SEQPACK  TM Audio server
+/data/system/ndebugsocket                    STREAM   Debug socket
+/data/misc/wifi/sockets/wpa_ctrl_2775-3      DGRAM    WPA ctrl (PID 2775)
+/data/misc/wifi/sockets/wpa_ctrl_2775-4      DGRAM    WPA ctrl (PID 2775)
+/data/misc/wifi/sockets/wlan0                DGRAM    WLAN0 control
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+7. WIFI DETAILS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+WiFi:              ENABLED (connected)
+WiFi P2P:          ENABLED (InactiveState — not connected but available)
+Multicast:         DISABLED
+Stay-awake:        Conditions = 3 (AC + USB + Wireless charging)
+Idle Mode:         false
+
+WPA Supplicant PID: 2775 (3 control sockets open)
+WiFi controller: cycling between DeviceActiveState and ApStaDisabledState
+
+NOTE: WiFi Direct (P2P) is enabled but inactive — can be triggered remotely
+      if we can reach the p2p0 interface or trigger via intent.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+8. KERNEL & SYSTEM INFO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Kernel:     Linux 3.10.9-11788437
+Compiled:   Wed Jul 5 19:41:07 KST 2017
+Compiler:   GCC 4.8
+Config:     SMP PREEMPT
+Build host: dpi@SWDG4707
+
+/proc/net/ entries available:
+  Standard: tcp, tcp6, udp, udp6, raw, raw6, unix, arp, route, wireless
+  Netfilter: nf_conntrack, nf_conntrack_expect, ip_conntrack, ip_conntrack_expect
+  Extended: xt_qtaguid, xt_quota (Android traffic tagging)
+  IPv6: anycast6, if_inet6, igmp6, ip6_flowlabel, ipv6_route, mcfilter6
+  Other: netlink, packet, pfkey, phonet, pnresource, sockstat, sockstat6
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+9. INTERESTING / UNUSUAL FINDINGS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[HIGH] BLE Scanning While "Off"
+  Bluetooth reports enabled=false, yet BLE scanning is active:
+  - Samsung beaconmanager: 7 scan invocations (30s cumulative)
+  - Google GMS: 9 scan invocations (7s cumulative)
+  State 15 = BLE_TURNING_OFF or passive scan mode.
+  → Device is trackable via BLE even with BT "off"
+
+[HIGH] No Firewall Rules
+  Zero iptables/ip6tables rules. No netfilter conntrack.
+  → Any service that binds a port is completely exposed on LAN.
+
+[HIGH] JDWP Control Socket Active
+  @jdwp-control is LISTENING — Java Debug Wire Protocol is active.
+  → On a debug-enabled build, this allows attaching debuggers to any app.
+  → Can enumerate debuggable apps and potentially inject code.
+
+[HIGH] MobiCore/TEE Daemon Accessible
+  @mcdaemon has MULTIPLE connected instances (7+ connections).
+  → Trustonic TEE daemon is actively servicing requests.
+  → If we can inject commands, we reach the Secure World.
+
+[HIGH] Factory Test Sockets Active
+  @FactoryClientSend, @FactoryClientRecv are LISTENING.
+  → Factory/diagnostic functionality exposed at runtime.
+  → May allow triggering hardware tests or accessing hidden functions.
+
+[MEDIUM] DeviceRootKeyService
+  @DeviceRootKeyService is LISTENING.
+  → Samsung TIMA root key management service.
+  → Interface to device attestation/root detection.
+
+[MEDIUM] Knox VPN FD Transfer
+  @knoxVpnFdTransfer is LISTENING.
+  → Can potentially inject or intercept VPN file descriptors.
+
+[MEDIUM] 5 Stale CLOSE_WAIT TCP Connections
+  All to Google on port 443 with 130 bytes in recv buffer.
+  → Application not properly closing connections.
+  → Indicates GMS may be in a degraded state.
+
+[MEDIUM] AT&T Diagnostic Sockets
+  @ATDMultiClient, umts_dm0 interface, @diag_mycmc_app2cp
+  → AT&T carrier diagnostic infrastructure present and partially active.
+
+[LOW] 4x /data/.socket_stream Instances
+  Samsung's custom IPC stream has 4 connected pairs.
+  → Unusual multiplicity — may indicate stuck connections.
+
+[LOW] Property Service World-Writable
+  Standard Android behavior, but combined with ADB shell access,
+  allows querying all system properties (some may leak info).
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+10. ATTACK SURFACE ASSESSMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+NETWORK ATTACK SURFACE (from LAN):
+  ┌─────────────────────────────────────────────────────────────────┐
+  │ Exposure: MINIMAL (no TCP listeners, 1 UDP listener on 5228)   │
+  │ However: NO FIREWALL means any future listener is wide open.   │
+  │ WiFi Direct (p2p0) is UP and could be activated.               │
+  └─────────────────────────────────────────────────────────────────┘
+
+LOCAL ATTACK SURFACE (from ADB shell):
+  ┌─────────────────────────────────────────────────────────────────┐
+  │ Exposure: VERY HIGH                                            │
+  │                                                                │
+  │ Priority Targets for Privilege Escalation:                     │
+  │                                                                │
+  │ 1. @jdwp-control                                               │
+  │    → Attach to debuggable apps, inspect/modify runtime state.  │
+  │    → If system_server is debuggable: GAME OVER.                │
+  │                                                                │
+  │ 2. @mcdaemon (Trustonic MobiCore TEE)                          │
+  │    → 7+ active connections; rich IPC surface to Secure World.  │
+  │    → Known vulns in MobiCore on older Samsung devices.         │
+  │    → Potential path to TrustZone compromise.                   │
+  │                                                                │
+  │ 3. /dev/socket/zygote                                          │
+  │    → Process spawning — if writable, can fork privileged proc. │
+  │    → Requires system/root group membership.                    │
+  │                                                                │
+  │ 4. /dev/socket/rild + rild-debug                               │
+  │    → Baseband interface. AT command injection potential.        │
+  │    → rild-debug explicitly for debug — may have weaker checks. │
+  │                                                                │
+  │ 5. /dev/socket/vold + cryptd                                   │
+  │    → Volume/encryption management.                             │
+  │    → Can trigger mount operations, key derivation.             │
+  │                                                                │
+  │ 6. /dev/socket/installd                                        │
+  │    → Package installation daemon.                              │
+  │    → If reachable: install/modify apps with system privilege.  │
+  │                                                                │
+  │ 7. /dev/socket/netd                                            │
+  │    → Network configuration daemon.                             │
+  │    → Can modify routing, firewall rules, tethering.            │
+  │                                                                │
+  │ 8. @DeviceRootKeyService                                       │
+  │    → Root key management — tampering could bypass attestation. │
+  │                                                                │
+  │ 9. @FactoryClientSend/Recv                                     │
+  │    → Factory test interface — hidden hardware/software funcs.  │
+  │                                                                │
+  │ 10. /dev/.secure_storage/ssd_socket                            │
+  │    → Samsung Secure Storage — credential/key storage.          │
+  └─────────────────────────────────────────────────────────────────┘
+
+BLUETOOTH ATTACK SURFACE:
+  ┌─────────────────────────────────────────────────────────────────┐
+  │ Adapter: Broadcom BCM43454 (shared die with WiFi)              │
+  │ Firmware: V0100.0131 — CHECK for known Broadpwn/BrakTooth      │
+  │ BLE scanning active despite BT "off"                           │
+  │ UHID device accessible (system:net_bt_stack)                   │
+  │ @BTHostPowerCtrl socket available                              │
+  │                                                                │
+  │ Potential: If BT can be enabled via properties/intents,        │
+  │ the BCM43454 firmware is old enough to be vulnerable to        │
+  │ multiple known Broadcom BT/WiFi exploits.                      │
+  └─────────────────────────────────────────────────────────────────┘
+
+RECOMMENDED NEXT STEPS:
+  1. Probe @jdwp-control — enumerate debuggable processes
+  2. Test @mcdaemon — attempt MobiCore TEE communication
+  3. Check /dev/socket/rild-debug — try AT command injection
+  4. Enumerate writable /data/ sockets — test Samsung IPC
+  5. Query property_service for sensitive properties
+  6. Research BCM43454 V0100.0131 firmware vulnerabilities
+  7. Test @FactoryClientSend/Recv for hidden factory commands
+  8. Investigate xt_qtaguid for traffic attribution/manipulation
+  9. Check if WiFi Direct can be activated for rogue AP attacks
+  10. Analyze BTSNOOP log (78KB) for BLE scan targets/history
+
+================================================================================
+  END OF NETWORK RECONNAISSANCE REPORT
+================================================================================
