@@ -511,16 +511,74 @@ kernel configuration (UIO_FASTIOV=32). Alternative spray primitives being invest
 | Settings/Properties | WRITE_SECURE_SETTINGS, setprop | No escalation path |
 | App-Context Escalation | Device admin, accessibility, 16 permissions | Powerful surveillance, no root |
 
-### Remaining Active Lead
-**CVE-2019-2215**: EXHAUSTED. All alternative kmalloc-256 spray primitives tested:
-- BPF socket filter → RECLAIMS freed slot ✓ but list_del can't trigger code execution
-- userfaultfd → ENOSYS (not compiled)
-- socketpair/sendmsg → wrong slab (kmalloc-512+)
-- signalfd, eventfd, timerfd, ashmem, inotify → +0 for kmalloc-256
-- AF_NETLINK → SELinux blocks
-- 6 trigger methods × 48 offsets = 288 combinations tested → ZERO crashes/ZERO root
+---
 
-**The vulnerability exists but is effectively mitigated by Samsung's kernel configuration.**
+## Session 6 — Network Recon, DRParser, ION v3, BlueBorne (2026-02-25)
+
+### Network Reconnaissance
+- **Zero TCP listening ports**, zero iptables/ip6tables firewall rules
+- 18 active QUIC streams + 2 GCM push connections, all to Google
+- Rich UNIX socket surface from shell: jdwp-control, mcdaemon (7+ connections),
+  FactoryClientSend/Recv, DeviceRootKeyService, property_service (world-rw)
+- WiFi: wlan0 at 192.168.1.104/24, p2p0 (WiFi Direct) enabled but dormant
+- **BLE scanning active even with BT "off"**: Samsung beaconmanager + Google GMS
+
+### DRParser (com.sec.android.app.parser) — UID 1000 System App
+- **AT_COMMAND, QCOM_DIAG, INSTALL_PACKAGES, MASTER_CLEAR** permissions
+- **DM port on COM9** (VID_04E8&PID_685D) — Shannon 308 modem, DIAG-daemon running
+- UART switch present (`uart_sel=AP, uart_en=0`) but requires root to toggle
+- RSA private key in APK assets (keystring encryption reversible)
+- Keystring XML loadable from /sdcard — potential custom keystring injection
+- **Post-root goldmine; pre-root: no direct help for escalation**
+
+### Bluetooth / BlueBorne Assessment
+- **Bluedroid stack**, BCM43454 firmware V0100.0131
+- Security patch 2017-07-01 **predates BlueBorne (Sep 2017) = VULNERABLE**
+- BT enabled via `settings put global bluetooth_on 1` from ADB
+- Bonded Pixel 3 XL found; BLE always-scan enabled
+- Nexmon WiFi monitor mode tool already installed
+- **CVE-2017-0781/0782/0783/0785 likely exploitable** (needs BT proximity)
+
+### ION UAF v3 — Exploitation Exhausted
+- close(ion_fd) vs SHARE race: 0/50 (close is synchronous, mutex serialized)
+- Double-SHARE: 50/50 (ION handles concurrent refs properly)
+- Spray+destroy: 0/20 crashes (rbtree properly cleaned before kfree)
+- **ION driver's mutex prevents handle UAF exploitation**
+- ion_handle removed from rbtree before kfree; no ioctl path dereferences freed slot
+
+### Other Probes
+- **MobiCore TEE**: /dev/mobicore-user is crw-rw-rw- but SELinux blocks shell→mobicore-user_device
+- **JDWP**: Active but ro.debuggable=0; only user apps exposed, no system processes
+- **RIL/modem**: 7 umts_* devices, all DAC+SELinux blocked from shell
+- **Audio sockets**: Abstract namespace, SELinux blocked
+
+### Remaining Active Leads
+1. **BlueBorne** (CVE-2017-0781/0782) — Bluetooth stack RCE, device unpatched.
+   Requires BT proximity. Would give bluetooth/system UID code execution.
+2. **DM port from host** — COM9, Shannon SIPC protocol. Needs Samsung DIAG tools
+   (e.g., EFS Professional, libsamsung-ipc). No authentication required.
+3. **@FactoryClientSend/Recv sockets** — Samsung factory test interface, unexplored.
+4. **Custom keystrings via /sdcard** — DRParser loads from /mnt/sdcard/keystrings_EFS.xml
+
+### Assessment Update
+
+| Category | Vectors Tested | Result |
+|----------|---------------|--------|
+| Kernel CVEs | 11 (DirtyCOW, pipe_iov, futex, ping, perf, n_tty, ION, inotify, mq_notify, BPF, CVE-2019-2215) | 10 patched/N/A, 1 UNPATCHED (blocked) |
+| CVE-2019-2215 | Binder UAF, 6 triggers, 48 offsets, BPF spray | UAF confirmed, FASTIOV=32 blocks exploit |
+| ION UAF | Race 100% reliable, 3 exploit variants, mutex analysis | No code exec (mutex serialized) |
+| Binder | 72K+ fuzz ops, service fuzzing, context manager | DoS only |
+| Mali GPU | 29K+ fuzz ops, 5 ops re-verified | ALL false positives |
+| Network | Full recon, UNIX sockets, firewall audit | Rich surface, no listeners |
+| Bluetooth | Stack version, BlueBorne assessment, BLE scan | **LIKELY VULNERABLE** to BlueBorne |
+| DRParser | Permissions, DM port, UART, EFS, keystrings | **POST-ROOT goldmine** |
+| JDWP | Debug socket probe, process audit | Dead end (ro.debuggable=0) |
+| MobiCore TEE | World-writable dev, SELinux check | SELinux blocks shell |
+| Ashmem | 100K+ fuzz ops | 0 crashes |
+| Samsung Knox | 8+ services probed | All secured |
+| Samsung Service Mode | 20+ activities | All require KEYSTRING |
+| Bootloader | Odin flash attempted | AT&T carrier locked |
+| SUID/Capabilities | Full filesystem scan | None found |
 
 ### What IS Achievable (Non-Root Compromise)
 From an installed APK (or ADB shell + APK):
