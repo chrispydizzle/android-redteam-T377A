@@ -889,3 +889,138 @@ ioctl(mali_fd, _IOC(3, 0x80, 0, 48), buf_with_nonzero_phandle);
 - `src/mali_import_v2.c` — Control test (correct path)
 - `src/mali_import_crash.c` — Crash reproducer
 - `src/mali_import_min.c` — Minimal reproducer
+
+## ⚠ Session 9 — MAJOR CORRECTIONS & Exhaustive Fuzzing (2026-02-25)
+
+### 🔴 CRITICAL CORRECTION: "Mali Vendor Dispatch Vulnerability" is FALSE
+
+**The "zero-day" reported in Session 8b was caused by a BUG IN OUR TEST CODE, not a kernel vulnerability.**
+
+Root cause: `ion_alloc_fd()` used `uint64_t` fields for an ARM32 struct that uses `size_t` (4 bytes):
+```c
+// WRONG (was in all test code before fix):
+struct { uint64_t len; uint64_t align; uint32_t heap; uint32_t flags; int32_t fd; } // 28 bytes
+// Kernel reads only 20 bytes → heap_id_mask gets 0x1000 (bit 12) instead of 0x01 (bit 0)!
+
+// CORRECT for ARM32:
+struct { uint32_t len, align, heap_id_mask, flags, handle; } // 20 bytes, needs ION_IOC_SHARE for fd
+```
+
+**What actually happened:**
+1. ION_IOC_ALLOC with misaligned struct → heap_id_mask=0x1000 (bit 12)
+2. Bit 12 = Samsung TrustZone/secure heap → kernel crash at `down()` semaphore
+3. `ion_alloc_fd()` returned -1 (handle field at wrong offset)
+4. Mali MEM_IMPORT was called with fd=-1 → it returned error (not crash)
+5. The CRASH was from the ION allocation, NOT from Mali
+
+**Proof that magic byte is irrelevant:**
+- Kernel source analysis: `kbase_ioctl()` at line 1401 of `mali_kbase_core_linux.c` only uses `_IOC_SIZE(cmd)` — magic byte is COMPLETELY IGNORED
+- `mali_safe_probe.c` test 1 (magic 'M') and test 7 (magic 0x80) produce IDENTICAL results with correct ION struct
+- All dispatch goes through `kbase_dispatch()` regardless of magic
+
+**ION heap crash confirmed (DoS only):**
+- `ion_heap_crash_test.c`: heap bit 0 (0x01) OK, bit 1 (0x02) OK, bit 2 (0x04) CRASHES kernel
+- Crash signature matches: PC at `_raw_spin_lock_irqsave`, LR at `down()`
+- This is a Samsung ION secure heap DoS, NOT a Mali vulnerability
+- **No code execution possible — the semaphore address is fixed kernel state**
+
+### 🔴 CRITICAL CORRECTION: CVE-2019-2215 BPF Spray Was Invalid
+
+**All previous BPF spray tests used invalid BPF opcode (code=0xFFFF), causing setsockopt to silently fail. The spray was EMPTY in every test.**
+
+Fixed in `cve_2019_2215_hang.c`:
+- Changed `code=0xFFFF` to `code=0x04` (BPF_ALU_ADD_K — valid opcode, non-zero)
+- Added setsockopt return value validation (confirmed: `setsockopt=0 errno=0`)
+- With VALID BPF spray: **0 hangs in 20 trials (main test), 0/25 offset sweep**
+- **Samsung DEFINITIVELY patched the UAF cleanup (nullifies whead before kfree)**
+
+### CVE-2019-2215 — DEFINITIVELY CLOSED
+
+| Test | Trigger | Trials | Hangs | Conclusion |
+|------|---------|--------|-------|------------|
+| Test 1 (main) | BC_TRANSACTION | 20 | 0 | Samsung patched |
+| Test 2 (baseline) | No transaction | 5 | 0 | Expected clean |
+| Test 3 (reply) | BC_REPLY error | 10 | 0 | Samsung patched |
+| Test 4 (sweep) | All 25 offsets | 25 | 0 | No UAF at ANY offset |
+
+### Mali GPU Driver Race Fuzzing — ALL CLEAN
+
+With CORRECT ION struct, Mali MEM_IMPORT now WORKS (previously appeared broken):
+
+| Test | Description | Trials | Anomalies |
+|------|-------------|--------|-----------|
+| Test 1 | close(mali_fd) vs concurrent ioctl | 200 | 0 |
+| Test 2 | MEM_FREE vs MEM_QUERY race | 200 | 0 |
+| Test 3 | Mali mmap vs MEM_FREE race | 200 | 0 |
+| Test 4 | Rapid MEM_ALLOC + MEM_FREE | 100 | 0 |
+| Test 5 | Double MEM_FREE (same gpu_va) | 50 | 0 |
+| Test 6 | Import + Free race (threads) | 100 | 0 |
+| Test 7 | Multi-context import + close | 100 | 0 |
+| Test 8 | Alloc + mmap + immediate close | 200 | 0 |
+| **Total** | | **1150** | **0** |
+
+### PTMX/TTY Race Fuzzing — ALL CLEAN
+
+| Test | Description | Trials | Anomalies |
+|------|-------------|--------|-----------|
+| Test 1 | TIOCSETD + concurrent I/O | 100 | 0 |
+| Test 2 | Close master + slave I/O | 200 | 0 |
+| Test 3 | TIOCSTI + ldisc change | 100 | 0 |
+| Test 4 | Rapid open/close | 50 | 0 |
+| Test 5 | VHANGUP + I/O | 100 | 0 |
+| Test 6 | Termios changes + I/O | 100 | 0 |
+| Test 7 | Multi-thread chaos | 50 | 0 |
+| **Total** | | **700** | **0** |
+
+### Samsung Deep Probe Results
+
+| Probe | Result |
+|-------|--------|
+| ION_IOC_CUSTOM (all commands) | ENOTTY (errno=25) — not implemented |
+| Ftrace buffer_size_kb overflow | INT_MAX accepted (capped at 4194303), ENOMEM for huge values |
+| /proc/self/mem write | Works for COW pages (expected), NOT Dirty COW |
+| madvise DONTNEED + read race | Benign on anonymous mappings |
+| Netlink RTM_GETLINK | Works (3192 bytes interface data received) |
+| Netlink RTM_NEWROUTE | Needs investigation (response received) |
+| mremap to 0xBEF00000 | WORKS (near kernel boundary) |
+| ION mremap | EFAULT (not supported) |
+| Samsung DECON debugfs | Readable, no address leak |
+| dma_buf debugfs | 28 objects listed, no kernel addresses |
+| Mali debugfs quirks | Readable (-rw-r--r--) but NOT writable by shell |
+| ION custom + FREE race | 0/100 anomalies (ION_IOC_CUSTOM not implemented) |
+
+### Updated Exploitation Status
+
+| Target | UAF | Spray | Exploitable | Block Reason |
+|--------|:---:|:---:|:---:|---|
+| ION (kmalloc-64) | ✅ 91% | ✅ socketpair | ❌ | No fn-ptr victim in k64 |
+| Binder (kmalloc-256) | ✅ freed | ✅ BPF 26-insn | ❌ | **Samsung whead=NULL fix (CONFIRMED)** |
+| Mali vendor dispatch | ❌ DEBUNKED | N/A | ❌ | Was ION struct bug, not Mali |
+| Mali driver races | ❌ Clean | N/A | ❌ | Proper locking in 1150 trials |
+| PTMX/TTY races | ❌ Clean | N/A | ❌ | No race found in 700 trials |
+| ION heap DoS | ✅ bit 2,12 | N/A | DoS only | Fixed semaphore, not controllable |
+
+### Source Files Created/Modified This Session
+- `src/mali_safe_probe.c` — **FIXED** ION struct (uint64_t → uint32_t) + ION_IOC_SHARE
+- `src/ion_heap_crash_test.c` — ION heap bit crash testing (confirmed bit 2 crashes)
+- `src/cve_2019_2215_hang.c` — **FIXED** BPF spray (code=0xFFFF → 0x04) + validation
+- `src/mali_race_fuzz.c` — Mali GPU race fuzzer (8 tests)
+- `src/ptmx_race_fuzz.c` — PTMX/TTY race fuzzer (7 tests)
+- `src/samsung_deep_probe.c` — Samsung-specific deep probing (8 tests)
+
+### FINAL ASSESSMENT (Updated Session 9)
+
+**All kernel exploitation paths are exhausted on this device.**
+
+Total attack surface coverage across all sessions:
+- **11 CVEs** tested: all patched, blocked, or N/A
+- **2 confirmed UAFs** (ION + binder): both exploitation-blocked
+- **5 race fuzzers** covering Mali, PTMX, ION, binder, splice: **0 exploitable bugs in 233M+ operations**
+- **1 zero-day** found: tee() ABBA deadlock (DoS only)
+- **1 false positive** corrected: Mali vendor dispatch (was ION struct bug)
+
+**Remaining viable paths (non-kernel):**
+1. **BlueBorne** (CVE-2017-0781/0782) — BT stack RCE, requires BT proximity
+2. **DM port exploitation** — COM9, Shannon 308 modem, no authentication
+3. **Factory sockets** — @FactoryClientSend/Recv, protocol unknown
+4. **DRParser keystrings** — /sdcard/keystrings_EFS.xml (post-root value)

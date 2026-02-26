@@ -1,6 +1,47 @@
-# Mali Samsung Vendor Dispatch Vulnerability
+# ⚠ DEBUNKED — Mali Samsung Vendor Dispatch Vulnerability
 
-## Summary
+## ⚠⚠⚠ THIS FINDING IS INCORRECT ⚠⚠⚠
+
+**The "vulnerability" described below was caused by a bug in our test code (wrong ION allocation struct for ARM32), NOT by a kernel bug.**
+
+### What Actually Happened
+
+1. `ion_alloc_fd()` used `uint64_t` fields on ARM32 where `size_t` is 4 bytes
+2. The misaligned struct caused `heap_id_mask` to receive value 0x1000 (bit 12) instead of 0x01
+3. Bit 12 maps to a Samsung TrustZone/secure heap that crashes during allocation
+4. The crash occurred in ION_IOC_ALLOC, BEFORE any Mali operation ran
+5. Mali MEM_IMPORT was called with fd=-1 and returned error safely
+
+### Why Magic Byte Is Irrelevant
+
+Kernel source analysis (`kbase_ioctl()` in `mali_kbase_core_linux.c`):
+- Only `_IOC_SIZE(cmd)` is extracted from the ioctl command
+- The magic byte (`_IOC_TYPE`) is NEVER checked
+- Both `_IOC(3, 'M', 0, 48)` and `_IOC(3, 0x80, 0, 48)` produce size=48
+- ALL dispatch goes through `kbase_dispatch()` regardless of magic
+
+### Verified With Correct Code
+
+After fixing `ion_alloc_fd()` to use correct ARM32 struct:
+- Test 1 (magic 'M', correct import): **SUCCESS** (result_id=0)
+- Test 7 (magic 0x80, correct import): **SUCCESS** (result_id=0) — identical behavior
+- Tests 2-6,8-9 (various phandle values): **ERROR** (result_id=3) — safe rejection
+
+### The Real Bug
+
+The ION heap DoS (heap bits 2 and 12 crash kernel) IS a real bug, but:
+- It's in the ION driver, not Mali
+- It's DoS only (fixed semaphore in TrustZone path)
+- The crash address is not controllable
+- No code execution possible
+
+---
+
+## ~~Original (Incorrect) Finding Below~~
+
+~~The following analysis was based on the wrong ION struct bug and is kept for reference only.~~
+
+## ~~Summary~~
 
 A kernel panic vulnerability exists in Samsung's vendor extension to the Mali r7p0 GPU driver on the SM-T377A (kernel 3.10.9-11788437, SPL 2017-07-01). An unprivileged user (UID 2000, shell) can trigger a kernel panic by sending a MEM_IMPORT ioctl via the Samsung vendor dispatch path (magic 0x80 instead of standard 'M'/0x4D).
 

