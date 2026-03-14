@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SM-T377A — Research Heatmap</title>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<style>
+  :root {
+    --bg:#0d1117; --surface:#161b22; --border:#30363d;
+    --text:#c9d1d9; --muted:#8b949e; --accent:#58a6ff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif}
+
+  .page{max-width:1200px;margin:0 auto;padding:32px 24px}
+  h1{font-size:20px;font-weight:600;color:#f0f6fc;margin-bottom:4px}
+  .subtitle{color:var(--muted);font-size:13px;margin-bottom:28px}
+
+  .section{margin-bottom:40px}
+  .section h2{font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:16px}
+
+  svg text{fill:var(--muted);font-family:inherit}
+  .cell{stroke:var(--bg);stroke-width:2;cursor:pointer;transition:opacity .15s}
+  .cell:hover{opacity:1!important;stroke:#f0f6fc;stroke-width:2}
+
+  .row-label,.col-label{font-size:11px;fill:var(--text)}
+  .col-label{text-anchor:start}
+
+  .tooltip{
+    position:absolute;display:none;padding:10px 14px;
+    background:#1c2128;border:1px solid var(--border);border-radius:6px;
+    pointer-events:none;box-shadow:0 8px 24px rgba(0,0,0,.5);font-size:12px;z-index:100;
+    max-width:280px;line-height:1.5;
+  }
+  .tooltip strong{color:#f0f6fc}
+
+  .color-legend{display:flex;align-items:center;gap:4px;margin-top:12px;font-size:11px;color:var(--muted)}
+  .color-legend .swatch{width:20px;height:14px;border-radius:2px}
+
+  .timeline-row{display:flex;gap:12px;margin-bottom:24px}
+  .session-card{
+    flex:1;background:var(--surface);border:1px solid var(--border);border-radius:8px;
+    padding:14px;font-size:12px;min-width:0;
+  }
+  .session-card .num{font-size:22px;font-weight:700;color:#f0f6fc;line-height:1}
+  .session-card .lbl{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+
+  .strip-chart{margin-top:32px}
+  .strip-dot{opacity:.75;cursor:pointer;transition:all .15s}
+  .strip-dot:hover{opacity:1;r:8}
+</style>
+</head>
+<body>
+
+<div class="page">
+  <h1>📊 Research Coverage Heatmap</h1>
+  <div class="subtitle">Session × Attack Surface intensity matrix · Impact strip chart · SM-T377A</div>
+
+  <div class="timeline-row" id="session-cards"></div>
+
+  <div class="section">
+    <h2>Session × Category — Max Impact Heatmap</h2>
+    <div id="heatmap"></div>
+    <div class="color-legend" id="heatmap-legend"></div>
+  </div>
+
+  <div class="section">
+    <h2>Impact Strip Chart — Every Finding by Category</h2>
+    <div id="strip-chart"></div>
+  </div>
+</div>
+
+<div class="tooltip" id="tooltip"></div>
+
+<script>
+const findings = [
+  {id:"dirty-cow",name:"Dirty COW",session:1,category:"Kernel CVE",severity:"PATCHED",impact:0,date:"2026-02-25"},
+  {id:"pipe-iov",name:"pipe iov",session:1,category:"Kernel CVE",severity:"PATCHED",impact:0,date:"2026-02-25"},
+  {id:"towelroot",name:"Towelroot",session:1,category:"Kernel CVE",severity:"PATCHED",impact:0,date:"2026-02-25"},
+  {id:"ping-uaf",name:"Ping UAF",session:1,category:"Kernel CVE",severity:"PATCHED",impact:0,date:"2026-02-25"},
+  {id:"perf-oob",name:"perf OOB",session:1,category:"Kernel CVE",severity:"PATCHED",impact:0,date:"2026-02-25"},
+  {id:"ntty-race",name:"n_tty race",session:1,category:"Kernel CVE",severity:"PATCHED",impact:1,date:"2026-02-25"},
+  {id:"keyring",name:"Keyring overflow",session:1,category:"Kernel CVE",severity:"BLOCKED",impact:1,date:"2026-02-25"},
+  {id:"inotify",name:"inotify race",session:1,category:"Kernel CVE",severity:"PATCHED",impact:0,date:"2026-02-25"},
+  {id:"mq-notify",name:"mq_notify",session:1,category:"Kernel CVE",severity:"N/A",impact:0,date:"2026-02-25"},
+  {id:"device-owner",name:"Device Owner",session:4,category:"APK Agent",severity:"HIGH",impact:7,date:"2026-02-25"},
+  {id:"pm-grant",name:"pm grant abuse",session:4,category:"Services",severity:"HIGH",impact:6,date:"2026-02-25"},
+  {id:"am-abuse",name:"AM/PM abuse",session:4,category:"Services",severity:"HIGH",impact:5,date:"2026-02-25"},
+  {id:"accessibility",name:"Accessibility UI",session:4,category:"APK Agent",severity:"HIGH",impact:6,date:"2026-02-25"},
+  {id:"binder-uaf",name:"Binder UAF 2215",session:5,category:"Binder",severity:"CRITICAL",impact:8,date:"2026-02-25"},
+  {id:"mali-false",name:"Mali false positive",session:5,category:"Mali GPU",severity:"LOW",impact:1,date:"2026-02-25"},
+  {id:"drparser",name:"DRParser goldmine",session:6,category:"Services",severity:"MEDIUM",impact:5,date:"2026-02-25"},
+  {id:"wifi-intel",name:"WiFi intel leak",session:6,category:"Info Disclosure",severity:"MEDIUM",impact:4,date:"2026-02-25"},
+  {id:"info-disc",name:"debugfs/dmesg leak",session:6,category:"Info Disclosure",severity:"MEDIUM",impact:5,date:"2026-02-25"},
+  {id:"tee-deadlock",name:"tee() deadlock",session:7,category:"Kernel Fuzzing",severity:"MEDIUM",impact:4,date:"2026-02-25"},
+  {id:"binder-fix",name:"Samsung binder fix",session:8,category:"Binder",severity:"BLOCKED",impact:3,date:"2026-02-25"},
+  {id:"ion-uaf",name:"ION UAF 91%",session:9,category:"ION Heap",severity:"HIGH",impact:6,date:"2026-02-25"},
+  {id:"ion-dos",name:"ION heap DoS",session:9,category:"ION Heap",severity:"HIGH",impact:5,date:"2026-02-25"},
+  {id:"binder-dos",name:"Binder ctx DoS",session:9,category:"Binder",severity:"HIGH",impact:5,date:"2026-02-25"},
+  {id:"smartcomroot",name:"SmartcomRoot",session:10,category:"Services",severity:"MEDIUM",impact:4,date:"2026-02-26"},
+  {id:"tima-leak",name:"TIMA addr leak",session:10,category:"Info Disclosure",severity:"HIGH",impact:7,date:"2026-02-26"},
+  {id:"dm-port",name:"DM port AT",session:10,category:"Modem/AT",severity:"HIGH",impact:6,date:"2026-02-26"},
+  {id:"netlink",name:"NETLINK_ROUTE",session:10,category:"Kernel Fuzzing",severity:"LOW",impact:2,date:"2026-02-26"},
+  {id:"data-log",name:"/data/log write",session:10,category:"Info Disclosure",severity:"LOW",impact:2,date:"2026-02-26"},
+  {id:"selinux-dead",name:"SELinux dead end",session:11,category:"SELinux",severity:"BLOCKED",impact:0,date:"2026-02-27"},
+  {id:"bt-domain",name:"BT domain value",session:11,category:"Bluetooth",severity:"MEDIUM",impact:5,date:"2026-02-27"},
+  {id:"perf-event",name:"perf_event",session:12,category:"Kernel CVE",severity:"MEDIUM",impact:3,date:"2026-02-27"},
+  {id:"timerfd",name:"timerfd reachable",session:12,category:"Kernel CVE",severity:"MEDIUM",impact:4,date:"2026-02-27"},
+  {id:"dccp",name:"DCCP blocked",session:12,category:"Kernel CVE",severity:"BLOCKED",impact:1,date:"2026-02-27"},
+  {id:"slabinfo",name:"slabinfo readable",session:12,category:"Info Disclosure",severity:"MEDIUM",impact:4,date:"2026-02-27"},
+  {id:"perf-6786",name:"perf 6786 patched",session:12,category:"Kernel CVE",severity:"PATCHED",impact:0,date:"2026-02-27"},
+  {id:"perf-6001",name:"perf 6001 patched",session:12,category:"Kernel CVE",severity:"PATCHED",impact:0,date:"2026-02-27"},
+  {id:"factory",name:"Factory broadcast",session:12,category:"Services",severity:"LOW",impact:2,date:"2026-02-27"},
+  {id:"bluborne-efs",name:"BlueBorne EFS",session:13,category:"Bluetooth",severity:"CRITICAL",impact:10,date:"2026-03-03"},
+  {id:"bluborne-bnep",name:"BNEP channel",session:13,category:"Bluetooth",severity:"HIGH",impact:6,date:"2026-03-03"},
+  {id:"bluborne-crash",name:"BT daemon crash",session:13,category:"Bluetooth",severity:"HIGH",impact:5,date:"2026-03-03"},
+  {id:"kallsyms",name:"43K symbols",session:13,category:"Info Disclosure",severity:"MEDIUM",impact:5,date:"2026-03-03"},
+  {id:"sysdump",name:"SysDump bypass",session:13,category:"Services",severity:"HIGH",impact:7,date:"2026-03-03"},
+];
+
+const sessions = [1,3,4,5,6,7,8,9,10,11,12,13];
+const sessionLabels = {
+  1:"S1-2 Recon",3:"S3 Services",4:"S4 APK",5:"S5 Binder/Mali",
+  6:"S6 Network",7:"S7 Fuzzing",8:"S8 Binder Deep",9:"S9 Corrections",
+  10:"S10 Deep Recon",11:"S11 SELinux",12:"S12 Surface",13:"S13 BlueBorne"
+};
+const categories = ["Kernel CVE","Binder","Bluetooth","ION Heap","Mali GPU","Services","Info Disclosure","Kernel Fuzzing","SELinux","Modem/AT","APK Agent"];
+
+const sevColor = {CRITICAL:"#f85149",HIGH:"#d29922",MEDIUM:"#3fb950",LOW:"#8b949e",PATCHED:"#484f58",BLOCKED:"#484f58","N/A":"#30363d"};
+const catColor = d3.scaleOrdinal()
+  .domain(categories)
+  .range(["#f85149","#d29922","#58a6ff","#3fb950","#bc8cff","#f0883e","#79c0ff","#56d364","#8b949e","#ff7b72","#d2a8ff"]);
+
+const impactColor = d3.scaleSequential()
+  .domain([0, 10])
+  .interpolator(t => {
+    if (t === 0) return "#161b22";
+    return d3.interpolateYlOrRd(0.15 + t * 0.85);
+  });
+
+const tooltip = d3.select("#tooltip");
+
+// ═══════════════════════════════════════════════════
+// SESSION SUMMARY CARDS
+// ═══════════════════════════════════════════════════
+
+const cardContainer = d3.select("#session-cards");
+const sessionStats = sessions.map(s => {
+  const sf = findings.filter(f => f.session === s);
+  return { session: s, count: sf.length, maxImpact: d3.max(sf, f => f.impact) || 0 };
+});
+// Only show sessions with findings
+sessionStats.filter(s => s.count > 0).forEach(s => {
+  const card = cardContainer.append("div").attr("class", "session-card");
+  card.append("div").attr("class", "num").style("color", impactColor(s.maxImpact)).text(s.count);
+  card.append("div").attr("class", "lbl").text(sessionLabels[s.session] || `S${s.session}`);
+});
+
+// ═══════════════════════════════════════════════════
+// HEATMAP
+// ═══════════════════════════════════════════════════
+
+function drawHeatmap() {
+  const container = d3.select("#heatmap");
+  const fullWidth = container.node().getBoundingClientRect().width;
+  const margin = { top: 120, right: 20, bottom: 20, left: 110 };
+  const cellSize = Math.min(50, (fullWidth - margin.left - margin.right) / categories.length);
+  const rowHeight = 32;
+  const width = margin.left + cellSize * categories.length + margin.right;
+  const height = margin.top + rowHeight * sessions.length + margin.bottom;
+
+  const svg = container.append("svg").attr("width", width).attr("height", height);
+  const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+  // Build matrix
+  const matrix = sessions.map(s => {
+    return categories.map(c => {
+      const cell = findings.filter(f => f.session === s && f.category === c);
+      return {
+        session: s, category: c,
+        maxImpact: d3.max(cell, f => f.impact) || -1,
+        count: cell.length,
+        findings: cell
+      };
+    });
+  });
+
+  // Column headers
+  g.selectAll(".col-label")
+    .data(categories)
+    .join("text")
+    .attr("class", "col-label")
+    .attr("x", (d, i) => i * cellSize + cellSize / 2)
+    .attr("y", -8)
+    .attr("transform", (d, i) => `rotate(-50, ${i * cellSize + cellSize / 2}, -8)`)
+    .style("font-size", "10px")
+    .text(d => d);
+
+  // Row groups
+  const rows = g.selectAll(".row")
+    .data(matrix)
+    .join("g")
+    .attr("class", "row")
+    .attr("transform", (d, i) => `translate(0, ${i * rowHeight})`);
+
+  // Row labels
+  rows.append("text")
+    .attr("class", "row-label")
+    .attr("x", -8)
+    .attr("y", rowHeight / 2)
+    .attr("dy", "0.35em")
+    .attr("text-anchor", "end")
+    .style("font-size", "10px")
+    .text((d, i) => sessionLabels[sessions[i]] || `S${sessions[i]}`);
+
+  // Cells
+  rows.selectAll(".cell")
+    .data(d => d)
+    .join("rect")
+    .attr("class", "cell")
+    .attr("x", (d, i) => i * cellSize + 1)
+    .attr("y", 1)
+    .attr("width", cellSize - 2)
+    .attr("height", rowHeight - 2)
+    .attr("rx", 3)
+    .attr("fill", d => d.maxImpact < 0 ? "#0d1117" : impactColor(d.maxImpact))
+    .attr("opacity", d => d.maxImpact < 0 ? 0.3 : 0.85)
+    .on("mouseover", function(event, d) {
+      if (d.count === 0) return;
+      d3.select(this).attr("opacity", 1);
+      tooltip.style("display", "block")
+        .style("left", (event.pageX + 12) + "px")
+        .style("top", (event.pageY - 12) + "px")
+        .html(`
+          <strong>${sessionLabels[d.session]} × ${d.category}</strong><br/>
+          Findings: ${d.count} · Max Impact: ${d.maxImpact}/10<br/>
+          ${d.findings.map(f => `<span style="color:${sevColor[f.severity]}">●</span> ${f.name} (${f.impact})`).join('<br/>')}
+        `);
+    })
+    .on("mousemove", function(event) {
+      tooltip.style("left", (event.pageX + 12) + "px").style("top", (event.pageY - 12) + "px");
+    })
+    .on("mouseout", function(event, d) {
+      d3.select(this).attr("opacity", d.maxImpact < 0 ? 0.3 : 0.85);
+      tooltip.style("display", "none");
+    });
+
+  // Count labels in cells
+  rows.selectAll(".count-label")
+    .data(d => d)
+    .join("text")
+    .attr("x", (d, i) => i * cellSize + cellSize / 2)
+    .attr("y", rowHeight / 2)
+    .attr("dy", "0.35em")
+    .attr("text-anchor", "middle")
+    .style("font-size", "10px")
+    .style("font-weight", "600")
+    .style("fill", d => d.maxImpact >= 6 ? "#0d1117" : d.count > 0 ? "var(--text)" : "transparent")
+    .style("pointer-events", "none")
+    .text(d => d.count > 0 ? d.count : "");
+
+  // Legend
+  const legend = d3.select("#heatmap-legend");
+  legend.append("span").text("Impact: ");
+  [0, 2, 4, 6, 8, 10].forEach(v => {
+    legend.append("div").attr("class", "swatch").style("background", impactColor(v));
+  });
+  legend.append("span").text("0 → 10");
+  legend.append("span").style("margin-left", "16px").text("Empty cells = no findings in that session/category");
+}
+
+// ═══════════════════════════════════════════════════
+// STRIP CHART — Beeswarm-ish dot plot
+// ═══════════════════════════════════════════════════
+
+function drawStrip() {
+  const container = d3.select("#strip-chart");
+  const fullWidth = container.node().getBoundingClientRect().width;
+  const margin = { top: 10, right: 30, bottom: 30, left: 110 };
+  const rowH = 28;
+  const height = margin.top + rowH * categories.length + margin.bottom;
+  const iw = fullWidth - margin.left - margin.right;
+
+  const svg = container.append("svg").attr("width", fullWidth).attr("height", height);
+  const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+  const yScale = d3.scaleBand().domain(categories).range([0, rowH * categories.length]).padding(0.2);
+  const xScale = d3.scaleLinear().domain([0, 10]).range([0, iw]);
+
+  // Grid
+  g.append("g").style("opacity", 0.15)
+    .call(d3.axisBottom(xScale).tickSize(rowH * categories.length).tickFormat(""))
+    .select(".domain").remove();
+
+  // Axis
+  g.append("g")
+    .attr("transform", `translate(0,${rowH * categories.length})`)
+    .call(d3.axisBottom(xScale).ticks(10))
+    .append("text")
+    .attr("x", iw / 2).attr("y", 28)
+    .attr("text-anchor", "middle")
+    .style("font-size", "11px")
+    .text("Impact Score");
+
+  // Row labels
+  g.selectAll(".row-label")
+    .data(categories)
+    .join("text")
+    .attr("class", "row-label")
+    .attr("x", -8)
+    .attr("y", d => yScale(d) + yScale.bandwidth() / 2)
+    .attr("dy", "0.35em")
+    .attr("text-anchor", "end")
+    .style("font-size", "11px")
+    .text(d => d);
+
+  // Row backgrounds
+  g.selectAll(".row-bg")
+    .data(categories)
+    .join("rect")
+    .attr("x", 0).attr("width", iw)
+    .attr("y", d => yScale(d))
+    .attr("height", yScale.bandwidth())
+    .attr("fill", (d, i) => i % 2 === 0 ? "rgba(255,255,255,0.02)" : "transparent")
+    .attr("rx", 3);
+
+  // Dots with jitter
+  const jitterY = d3.randomNormal(0, 2);
+  g.selectAll(".strip-dot")
+    .data(findings)
+    .join("circle")
+    .attr("class", "strip-dot")
+    .attr("cx", d => xScale(d.impact))
+    .attr("cy", d => yScale(d.category) + yScale.bandwidth() / 2 + jitterY())
+    .attr("r", 5)
+    .attr("fill", d => sevColor[d.severity])
+    .attr("stroke", d => d.severity === "CRITICAL" ? "#ff4444" : "rgba(255,255,255,0.1)")
+    .attr("stroke-width", d => d.severity === "CRITICAL" ? 2 : 0.5)
+    .on("mouseover", function(event, d) {
+      d3.select(this).attr("r", 8);
+      tooltip.style("display", "block")
+        .style("left", (event.pageX + 10) + "px")
+        .style("top", (event.pageY - 10) + "px")
+        .html(`<strong>${d.name}</strong><br/>
+          <span style="color:${sevColor[d.severity]}">${d.severity}</span> · Impact ${d.impact}/10<br/>
+          Session ${d.session} · ${d.category}`);
+    })
+    .on("mousemove", function(event) {
+      tooltip.style("left", (event.pageX + 10) + "px").style("top", (event.pageY - 10) + "px");
+    })
+    .on("mouseout", function() {
+      d3.select(this).attr("r", 5);
+      tooltip.style("display", "none");
+    });
+}
+
+drawHeatmap();
+drawStrip();
+</script>
+</body>
+</html>

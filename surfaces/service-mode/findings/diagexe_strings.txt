@@ -1,0 +1,1191 @@
+
+Strings v2.54 - Search for ANSI and Unicode strings in binary images.
+Copyright (C) 1999-2021 Mark Russinovich
+Sysinternals - www.sysinternals.com
+
+ELF
+pLb
+/system/bin/linker
+Android
+GNU
+__libc_init
+LIBC
+libc.so
+__cxa_atexit
+__snprintf_chk
+__register_atfork
+dladdr
+libdl.so
+__android_log_print
+open
+__errno
+sleep
+memset
+tcgetattr
+cfmakeraw
+tcsetattr
+close
+__stack_chk_fail
+__stack_chk_guard
+pipe
+read
+strstr
+pthread_create
+write
+perror
+__FD_SET_chk
+select
+__FD_ISSET_chk
+strncmp
+property_get
+printf
+vprintf
+fopen
+fprintf
+vfprintf
+fclose
+__sprintf_chk
+strcpy
+__strcat_chk
+__strlen_chk
+exit
+chdir
+mkdir
+signal
+prctl
+setuid
+capset
+usleep
+__FD_CLR_chk
+socket
+connect
+strerror
+abort
+stderr
+unlink
+bind
+listen
+accept
+recvfrom
+fread
+atoi
+gettimeofday
+localtime
+strftime
+strlcpy
+sprintf
+memcpy
+remove
+access
+property_set
+time
+clock_gettime
+mktime
+ftell
+__strcpy_chk
+fwrite
+send
+strcmp
+rename
+__memcpy_chk
+__aeabi_memcpy
+LIBC_PRIVATE
+__aeabi_memset
+__gnu_Unwind_Find_exidx
+_edata
+__bss_start
+_end
+libcutils.so
+libc++.so
+libm.so
+2K0
+ /JyDzD
+ }D)F
+ )F
+ x@
+ 'J'KyDzD{D
+"F#F
+OKOL{D
+h|D$h
+h x
+ KJLKyDzD{D
+(!x
+hIFRF+F
+ ;J+FyDzD
+!$"
+D@F
+8hAF
+'x7
+ 1JyDzD
+BF!
+ #JyDzD
+JyDzD;h
+r|D$h(F#hG
+~HxD
+|L|D$h!x0
+ zJyDzD
+ yJyDzD
+wHxJ
+DxDzD
+h3FmI
+ mJ
+yDzD
+')F/pO
+cIdJ
+ yDzD
+^K{D
+"x2
+ [JyDzD
+'x7
+ TJyDzD
+!xA
+ RJRKyDzD{D
+!PJ
+FxDzD
+!x1
+ KJyDzD
+ 8pB
+ GJGKyDzD{D
+ x0
+ CJyDzD
+ :JyDzD
+'xg
+ 7JyDzD
+!x!
+ QFZF
+K{D
+KyDzD{D
+L|D hC
+HxD
+2~D6h
+!3h=
+`(F
+|D$h
+!xA
+KyDzD{D
+&x^
+DyDzD
+D(F~D
+I{DzDxDyD
+3 +
+&x&
+HxD
+#x3
+JyDzD
+#x3
+JyDzD
+YFO
+r(F
+h)F
+ x0
+JyDzD
+#x3
+JyDzD
+KyDzD{D
+"HF
+!0FO
+!xA
+ xJyKyDzD{D
+!xD
+h[FpI
+ pJ
+yDzD
+#1F3pO
+hI0FyD
+eH1FxD
+%x5
+ aJyDzD
+_HxD
+ZIHF
+"yD
+ QJyDzD
+"x:
+ NJCFyDzD
+ x8
+ KJ+FyDzD
+ )FBF
+`0F
+y0F
+ ,h
+!K-
+F{D
+IyD
+I3F
+ yDzD
+XFAF*F
+HxD
+KyDzD{D
+FzD
+N\"|D$hhF~D#h
+HiF2FxD
+hF1F
+"xD
+IhF
+"yD
+IhF
+"yD
+"xD
+OK-
+FNH
+hxD
+ JJyDzD
+HMHO
+D}D
+!P"O
+!KF
+(F9FP"
+P"QF(F
+P!(F
+"@D
+J+FyDzD
+L|D&x6
+JyDzD
+K{D
+JyDzD
+ x0
+JyDzD
+M|D F
+(}D-h
+JyDzD
+JyDzD
++xK
+JyDzD#F
+hxD
+ pGP}
+K{D
+ppG
+K{D
+xpG
+K{D
+ppG
+K{D
+xpG
+I{Dp
+F]X,h
+$,`
+MZY
+X3x
+JyDzD
+H,`
+X4`
+JyDzD
+$ Fp
+KyDzD{D
+FzD
+ pG2Ks
+h1M
+x}D-h:
+ /JyDzD+h
+'I'J
+ yDzD
+$Nn"
+!~D6h0F
+IyD
+1F(h
+#xs
+I#F
+ yDzD
+ xP
+JyDzD
+2}D-h
+!+h
+`HF
+|D$h
+!x1
+JyDzD
+"@F
+h+F
+JyDzD
+!@F
+'YF&
+|PF
+FXF
+(FAF
+#xS
+yDzD
+xIxJ
+ yDzD/
+{n"
+ sJyDzD
+qIrOrKsJsHyD
+D{DzDxD
+&xN
+hIiJ
+ yDzD
+1 )
+@FQF
+QF:F;F
+!xA
+ VJWKyDzD{D
+RISJ
+ yDzD
+@FQF
+9FO
+rHF
+@FIFO
+ BJyDzD4
+"x*
+~wE
+IF:F
+#x+
+0)h
+H|D$h
+I#hyDxD
+!hF
+!+F
+FhF
+HxD
+J3FyDzD
+0F$h
+BK-
+h=L>H
+DxD|D
+3 +
+"0F9F
+|D$h"x"
+ x8
+hIF
+ RF
+#x+
+ YFzD
+0F9F
+=0F)FO
+I3F
+yDzD
+J;F
+yDzD
+(F9F
+!\"|D$h
+F0F#h
+"(F
+H1F
+JxDzD
+F(F+
+!zD
+"yD
+I8F2F+FyD
+ 'h
+I{DyD
+J{DzD
+XBXApG
+HzDxD
+`pG
+Ld%*F0F|D
+K*F!h0F{D
+J hzD
+!`p
+0OO
+|D$h
+!RF
+F#h(F
+D?hp
+DzD
+%RF
+6(F
+AF(FRF
+I;xyD
+yDzD
+8x8
+J+FyDzD
+KyDzD{D
+!|D F
+ FO
+@xD
+2|D
+D{DyD}D
+0 (O
+2Fx
+AFO
+McY
+D+h
+H&X2x"
+ QFJF
+ (`FF
+DzD
+{DyD}D
+H'X>x
+JyDzD
+*qy
+IeX*x
+JyDzD
+0~+
+Y3x
+JyDzD
+I`X
+JyDzD
+IcX
+pIBh
+5.D
+Y>x6
+ cJyDzD
+0=xY
+ UJyDzD
+D~D
+ 2`8x0
+ MJyDzD
+Fd!HF
+DQF
+hw 
+nw 
+Rw 
+fz@
+Vz@
+`z@
+HFQF
+h>0F
+Hd"1FxD
+ :x{D
+J3FyDzD
+IxDyD
+NXF
+F0`8x0
+JyDzD
+zy6hT
+D "
+0+F
+ +F
+=x5
+JyDzD
+yDzD
+D{D
+D9x
+JyDzD
+0?x
+ yJyDzD
+D0h
+'7`
+X)x
+ gJyDzD
+!aNO
+ _JyDzD
+AFT
+P(h
+MI;FMJ
+yDzD
+GIzDyD+h
+np 
+@p 
+`t@
+8t@
+Nw@
+Bs 
+pr 
+Fz@
+\m 
+FCL|D$h#x[
+&AI
+ AJ
+DyDzD
+ yD
+=I@FyD
+:JO
+%0@F
+F x
+hQF
+ ZF
+ %J3FyDzD
+&x^
+ "I"J
+DyDzDY
+$x4
+JyDzD
+DyD
+dl 
+F~D6h3xK
+JyDzD
+M}DU
+J9FzD
+J}D{DxDyDzD
+JAFzD
+~(5
+AFJF
+PK-
+3xK
+J#F
+yDzD
+@F!F
+JyDzD
+JyDzD
+5x%
+}D-h
+yJzD
+z|uI
+#(`yD0x
+#nI
+ nJyDzD
+DlM
+ }D
+h`)
+DzD
+DzD
+XF)F"F
+7xg
+>NO
+4>I
+ >J~D
+yDzD3h
+F1x
+'p5I
+5J&xyD
+ .I.J
+DyDzDZ
+lm@
+@m@
+\h 
+:h 
+F{D
+JzD
+JzD
+Bg 
+`0h
+`(FO
+'x_
+8yDzD{D
+ yDzD
+yn'
+z~D:F
+!HF
+1F*
+IF:F
+ yDzDO
+ yDzD<
+"xB
+'yDzD
+D~DxD
+'zD
+$x\
+ yDzD
+1 )
+PFIF
+IF:F;F
+PFIF
+9FO
+R(F
+)FO
+RPF
+F8F
+#xC
+(F1F
+DyD~D
+`0`
+D{D
+`ox
+&x^
+6yDzD{D
+ yDzD
+d&yDzD
+@&yDzD
+(&yDzD
+DyD
+#xC
+%yDzD
+DzD
+D0`
+'xG
+%yDzD
+DyD
+!d"CF8F
+!d"CF
+8FaF
+!x1
+ 3F
+zs)F2FxD
+#xC
+%yDzD
+2F)FO
+zsxD
+"xB
+$yDzD
+2FO
+zsxD
+8x@
+$yDzD
+ xH
+$3FyDzD
+H$yDzD
+)F2F
+"xB
+$$yDzD
+ xX
+$3F
+zDyD
+!7h
+d!HF
+IHFyD
+yHF
+HIFd"xD
+"!xxD
+JKFyDzD
+IxDyD
+F"x[
+JyDzD
+DzD
+03F
+  "
+H9FxD
+!xD
+&x6
+JyDzD
+HxD
+HxD
+D!x
+#rxyD
+xzD
+1FPF
+yDzD
+I;F
+yDzD
+!d"xD
+0>h
+Vd 
+Nc 
+<k@
+:o@
+&k@
+nf@
+Tj@
+.j@
+t` 
+ ` 
+~c 
+@g@
+6c 
+(^ 
+Q{D
+1|D$h
+h x
+KyDzD{D
+D~D{DG
+"x"
+KyDzD{D
+ yDzD
+JyDzD
+KxD}D~D{D
+1 )O
+03F
+!xA
+KyDzD{D
+ yDzD
+ x 
+h1F
+ x0
+ mJyDzD
+&x6
+ `JyDzD
+1#x
+ [JyDzD
+ x0
+ VJyDzD
+ NJSFyDzD
+JHxD
+IIO
+"yD
+ #x
+ DJyDzD
+#x;
+ AJSFyDzD
+%x5
+3FzD
+0FQF
+ =h
+@h@
+Jh@
+nf@
+,f@
+"f@
+F3L
+F|D$h#x
+ 0J;FyDzD
+ ,JyDzD
+DIF(F
+!x8
+ QFZF
+JyDzD
+HxD
+JyDzD
+F)FBF
+HxD
+jd@
+5J6HzD
+hxD
+ 0JyDzD
+F=`
+("x
+ 'JyDzD
+ $JyDzD
+!}D8F
+$)F
+9Fn"}D(h
+HxD
+(h!F
+HxD
+ F3h
+>c@
+JyDzD
+FxDzD
+r F
+F!#
+IIk
+ " F
+" F
+" F
+GFo
+B F
+B F
+(F1F
+(F"F
+JyD
+q(F"F
+2h F)F
+JyD
+q F
+:l:
+h)F
+)F@h
+JyD
+ pG
+FaF
+F(F
+`)F0F
+(F1F
+d*F
+hF!F
+F(F
+"i(FO
+(Fo
+(FIF
+d*F
+ e8F
+JyD
+jFO
+1(F
+ a(F
+mmF
+F(F
+(F!F
+JyD
+H{D
+#DbF
+KxD
+2"`@"``
+F0h
+h0F
+0h)F
+h0F
+G `
+F h
+h F
+ h)F2F
+i F
+%Bk F
+G(Fp
+F0h
+FBi0F
+0h)F
+i0F
+F8h
+FBi8F
+8h1F*FCF
+i8F
+hJj!F
+Gah
+CpG-
+IzD
+,dp
+ldp
+qDPp
+IzD
+"p(O
+CpG-
+IzD
+Fp(
+qEPO
+qEPO
+qEPO
+qDP
+IzD
+!Bk F
+ ho
+i F
+ Fo
+JyD
+0F)F
+F hO
+h F
+ F)F
+HyD
+L@X!D
+rFcF
+Fbh^h
+(F)FP
+7CO
+F0N
+*~D
+(J)NzDV
+u9D
+!(F
+IzD
+IzD
+%F}
+'Dl
+1a)
+#xD
+rllllllllllllllllllllllllllllllllllllllllllllllll
+DpG
+"(.4:@FLRX^djnrvz~
+IxD
+IxD
+IxD
+IxD
+IxD}
+IxDy
+IxDu
+IxDq
+IxDm
+IxDi
+IxDe
+IxDa
+{H|IxD]
+wHxIxDY
+sHtIxDU
+oHpIxDQ
+kHlIxDM
+xDG
+xDA
+xD;
+xD5
+xD/
+xD)
+xD#
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+{H|IxD
+wHxIxD
+sHtIxD
+oHpIxD
+kHlIxD
+gHhIxD
+cHdIxD
+_H`IxD
+[H\IxD
+WHXIxD
+SHTIxD
+OHPIxD
+KHLIxD
+GHHIxD
+CHDIxD}
+__usb_monitor_thread
+dr_usb_deinit
+dr_usb_launch_monitor_thread
+dr_massstorage_launch_monitor_thread
+dr_usb_cancel_monitor_thread
+Diag
+/dev/ttyGS1
+Opening of the USB File failed fd is %d & errno is %d
+USB Interface is open with 0x%x
+getattr error
+tcsetattr error
+USB interface is now configured for usb_fd = 0x%x
+Pipe Created sucessfully  
+Pipe Creation failed  
+/sys/class/sec/switch/usb_sel
+Opening of the usb select file failed fd is %d & errno is %d
+read error: errno is %d
+PDA
+Initialise USB and start the thread 
+THREAD LAUNCH 
+DeInitialise USB and remove the thread 
+cancelling the thread 
+written in pipe %d bytes  
+[dr_usb_cancel_monitor_thread] usb_fd id was -1 *********** 
+[dr_usb_cancel_monitor_thread]thread id was 0 *********** 
+Close error: 
+USB monitor thread launched, usb_fd= 0x%x
+Before the usb select 
+select error: 
+After the usb select 
+ read from pipe so we will exit exit the thread after select 
+read length is less then zero
+read length is zero
+/sys/class/sec/switch/usb_state
+DrReadUsbStatus File Open failed
+open failed()
+USB_STATE_CONFIGURED
+read length is more then USB_BUF_MAX-1
+read usb data[len:%d]
+read usb data message:%s
+write [%d] bytes of data to USB fd[%d]
+write() failed 
+ro.debug_level
+0x4f4c
+0x494d
+0x4948
+DR_NORMAL
+DR_ERROR
+DR_FATAL
+DR_EXCEPTION
+...
+[%s] [%s] [Ln : %04d] --> 
+/tmp/dr_message.txt
+[%s] [%04d]
++dr_log_hexdump()
+%03d: 
+%02x 
+   
+-dr_log_hexdump()
+Term signal received
+USB device closed
+/data/slog
+Directory Creating Fail: %s
+Directory Created: %s
+Already Exists: 
+Main entered
+----------myCMC Phone App Enabled----------
+----------myCMC Phone App Disabled----------
+[myCMC_app_cancel_monitor_thread] myCMC_rcv_fd id was -1 *********** 
+[myCMC_app_cancel_monitor_thread]thread id was 0 *********** 
+g_myCMC_send_fd %d
+socket error:%d
+diag_mycmc_cp2app
+g_myCMC_send_fd connect error:%d  --  ERROR: %s
+myCMC_send_local_sock_init: SUCCESS
+Opening of the App Socket failed fd is %d & errno is %d
+diag_mycmc_app2cp
+ERROR connecting/binding rcv  socket%d  %d
+listen error:%d
+__myCMC_app_monitor_thread local socket server init before while loop
+accept error:%d
+select error:%d
+The connection is closed by peer
+----------myCMC_app_monitor_thread --Read from myCMC APP : Len= [%d] ----------
+---myCMC_app_enabled : %d
+nread > BUF_MAX
+/data/silentlog_size
+Log size factor : %d 
+Before the VIA Modem Read select 
+select error: inside VIA modem thread
+After the VIA Modem Read select 
+Read failed for fd = %d, rc = %d
+Read %d chars from VIA_SMD Modem file fd = %d
+ Message: %s
+ril.model_id
+NONE
+%Y%m%d_%H%M%S
+00000000_000000
+/sdcard/log/cp/%s_%s.sdm
+Add queue : %s  queue_end: %d queue_begin:%d -----
+----------File Del String is gsvfileno : %s  ----------
+/sdcard/log/
+/sdcard/log/cp/
+select error: inside LTE modem thread
+Buffer Thread Locked  = %d
+SAVESILENTLOG-- Convert to Sdm--DM_MSG_START_FLAG(0x7F) is not found. 
+msg_len > DR_SMD_XFER_BUF_SIZE-2 
+SAVESILENTLOG-- Convert to Sdm-- DM_MSG_END_FLAG(0x7E) is not found. 
+dev.silentlog.on
+received silent modem log : property set on
+----------DoFileOperation-----scount= %d
+----------File Rotation Locked-----rlockcount= %d
+----------DoFileOperationThread-----
+----------File String is  : %s  ----------
+mktime: %lu(%lX)
+----------Opening tmpsbuff_file2 Fail-----
+    sount = [%d] , rcvoffset = [%d]  
+----------Buffer Swicthed to Second OnE --buff2use==2-----
+----------Buffer Swicthed to First OnE --buff2use==1-----
+----------current buffer 1, silent_buf2 cleared-----
+----------current buffer 2, silent_buf1 cleared-----
+Using Local Socket -- send failed for g_myCMC_send_fd = %d, rc = %d
+  %s
+----------Sent to  g_myCMC_send_fd : %d Len=[%d] data:%02x  ----------
+%s_init start 
+/dev/umts_dm0
+smd Interface(%s) open failed errno is %d %d
+smd Interface is open with 0x%x
+Sending data to SMD%d: Len = [%d]
+ buffer = [%s]
+Sending data to PST: Len = [%d]
+ buffer = [%s]
++dr_dm_write() : DM_MSG_START_FLAG(0x7F) is not found. 
++dr_dm_write() : DM_MSG_END_FLAG(0x7E) is not found. 
+LL: %llu(%llX)
+Write failed for fd = %d, rc = %d
+Wrote %d chars to SMD%d PORT fd=%d ch = %x
+/data/.diag_stream
+bind error:%d
+myCMC_send_sock_init() error:
+Read %d chars from SilentLog App.  fd = %d  Message: %s
+nread > MAXBUF-1
+----------Profile Sending from File----------
+silent modem log : property set off
+xfer_buf3 : 0x1C
+/data/slog/sbuff%d.tmp
+----------File [%d] Renamed Status = [%d] ---------
+----------Profile Saved Packet [1]----------
+----------Profile Saved Packet [2]----------
+----------Profile Saved Packet [3]----------
+----------Read from DM PHONE APP Usman : Len= [%d] ----------
+----------is_silent_log_enable() == Disabled......Silent Log Stop All Functions ..... ----------
+chagne the way of logging by young
+----------Read from dr_dm_rcvkey_event: Len= [%d] data : %02x ----------
+----------Sending to  sockfdsendkey : Len=[%d] data:%02x %02x %02x  %02x  ----------
+sendto failed for sockfdsendkey = %d, rc = %d
+  %s
+----------Sent to  sockfdsendkey : Len=[%d] data:%02x  ----------
+Waiting for InputEventApp connection
+accept error %d 
+InputEventApp connection established!
+******* Received data notification *******
+Connection with pst closed
+closed InputEventApp Connection
+dr_pst_disconnect
+Closing socket
+close returned %d
+close error: 
+path changed to default
+received %d bytes
+message:%s
+Sending data to InputEventApp : Len = [%d]
+Sending data to InputEventApp : NULL == buf || 0 == len
+diag diag_pst_write(): skip <CR><LF> in prefix string
+Sending data to PST socket
+client_sock to InputEventApp is %d
+send to PST failed: 
+connect InputEventApp
+sock create error
+sock create success
+/data/.diagsocket_stream
+bind error: 
+listen error: 
+dr_drs_launch
+void _Unwind_Resume(_Unwind_Exception *)
+external/libcxxabi/src/Unwind/Unwind-EHABI.cpp
+_Unwind_Resume() can't return
+_Unwind_VRS_Result _Unwind_VRS_Set(_Unwind_Context *, _Unwind_VRS_RegClass, uint32_t, _Unwind_VRS_DataRepresentation, void *)
+unsupported register class
+_Unwind_VRS_Result _Unwind_VRS_Pop(_Unwind_Context *, _Unwind_VRS_RegClass, uint32_t, _Unwind_VRS_DataRepresentation)
+_Unwind_Reason_Code unwind_phase2(unw_context_t *, _Unwind_Exception *, bool)
+during phase1 personality function said it would stop here, but now in phase2 it did not stop here
+libunwind: %s %s:%d - %s
+_Unwind_VRS_Result _Unwind_VRS_Get_Internal(_Unwind_Context *, _Unwind_VRS_RegClass, uint32_t, _Unwind_VRS_DataRepresentation, void *)
+external/libcxxabi/src/Unwind/UnwindCursor.hpp
+uint32_t libunwind::Registers_arm::getRegister(int)
+external/libcxxabi/src/Unwind/Registers.hpp
+unsupported arm register
+void libunwind::Registers_arm::setRegister(int, uint32_t)
+unw_fpreg_t libunwind::Registers_arm::getFloatRegister(int)
+Unknown ARM float register
+void libunwind::Registers_arm::setFloatRegister(int, unw_fpreg_t)
+bool libunwind::UnwindCursor<libunwind::LocalAddressSpace, libunwind::Registers_arm>::getInfoFromEHABISection(pint_t, const libunwind::UnwindInfoSections &) [A = libunwind::LocalAddressSpace, R = libunwind::Registers_arm]
+unknown personality routine
+index inlined table detected but pr function requires extra words
+r10
+r11
+r12
+s10
+s11
+s12
+s13
+s14
+s15
+s16
+s17
+s18
+s19
+s20
+s21
+s22
+s23
+s24
+s25
+s26
+s27
+s28
+s29
+s30
+s31
+d10
+d11
+d12
+d13
+d14
+d15
+d16
+d17
+d18
+d19
+d20
+d21
+d22
+d23
+d24
+d25
+d26
+d27
+d28
+d29
+d30
+d31
+unknown register
+dr_read_usb_status
+sendStopReqToCP
+dr_usb_init
+switchUser
+myCMC_app_launch_monitor_thread
+__myCMC_app_monitor_thread
+restore_logging_dir
+server_init
+__pst_monitor_thread
+Ver 0.9.39
+/dev/umts_dm0
+/dev/cdma_rmnet5
+GCC: (GNU) 4.9.x-google 20140827 (prerelease)
+clang version 3.6 
+GNU
+gold 1.11
+aeabi
+ARM v7
+.shstrtab
+.interp
+.note.android.ident
+.note.gnu.build-id
+.dynsym
+.dynstr
+.gnu.hash
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.text
+.ARM.exidx
+.ARM.extab
+.rodata
+.data.rel.ro.local
+.preinit_array
+.init_array
+.fini_array
+.dynamic
+.got
+.data
+.bss
+.comment
+.note.gnu.gold-version
+.ARM.attributes
+R4@

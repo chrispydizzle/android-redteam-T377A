@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SM-T377A — Repo Explorer</title>
+<style>
+  :root {
+    --bg:#0d1117; --sidebar:#0d1117; --editor:#161b22; --border:#21262d;
+    --text:#c9d1d9; --muted:#8b949e; --bright:#f0f6fc; --accent:#58a6ff;
+    --tree-hover:#1c2128; --tree-sel:#1f2a37;
+    --dir:#8b949e; --file-c:#f97583; --file-py:#3572a5; --file-md:#083fa1;
+    --file-java:#b07219; --file-sh:#89e051; --file-txt:#8b949e;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;display:flex;flex-direction:column;height:100vh;overflow:hidden}
+
+  /* ── TOP BAR ── */
+  .topbar{
+    height:40px;background:#010409;border-bottom:1px solid var(--border);
+    display:flex;align-items:center;padding:0 12px;gap:12px;flex-shrink:0;
+  }
+  .topbar .logo{font-size:14px;font-weight:700;color:var(--bright)}
+  .topbar .breadcrumb{font-size:12px;color:var(--muted);flex:1;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+  .topbar .breadcrumb span{cursor:pointer;color:var(--accent)}
+  .topbar .breadcrumb span:hover{text-decoration:underline}
+
+  .search-box{
+    width:280px;height:26px;background:#0d1117;border:1px solid var(--border);
+    border-radius:6px;padding:0 8px;color:var(--text);font-size:12px;font-family:inherit;
+    outline:none;transition:border .15s;
+  }
+  .search-box:focus{border-color:var(--accent)}
+  .search-box::placeholder{color:var(--muted)}
+
+  .stat-pill{font-size:10px;color:var(--muted);background:#161b22;padding:2px 8px;border-radius:10px;white-space:nowrap}
+  .stat-pill.pii{background:rgba(255,77,77,.12);color:#ff4d4d}
+
+  .pii-toggle{
+    display:flex;align-items:center;gap:5px;cursor:pointer;padding:3px 10px;border-radius:14px;
+    border:1px solid var(--border);font-size:11px;background:transparent;color:var(--muted);
+    transition:all .2s;font-family:inherit;white-space:nowrap;
+  }
+  .pii-toggle:hover{border-color:#ff4d4d}
+  .pii-toggle.active{background:rgba(255,77,77,.12);border-color:#ff4d4d;color:#ff4d4d}
+  .pii-toggle .dot{width:7px;height:7px;border-radius:50%;background:var(--muted);transition:all .2s}
+  .pii-toggle.active .dot{background:#ff4d4d;box-shadow:0 0 6px #ff4d4d}
+
+  .tree-pii-badge{margin-left:auto;font-size:9px;padding:0 5px;border-radius:6px;background:rgba(255,77,77,.15);color:#ff4d4d;font-weight:600;flex-shrink:0}
+  .tree-item.pii-file{background:rgba(255,77,77,.04)}
+  .tree-item.pii-dimmed{opacity:.25}
+
+  .pii-hl{background:rgba(255,77,77,.2);border-bottom:2px solid #ff4d4d;padding:0 2px;border-radius:2px}
+
+  /* ── MAIN LAYOUT ── */
+  .main{display:flex;flex:1;overflow:hidden}
+
+  /* ── SIDEBAR / TREE ── */
+  .sidebar{
+    width:300px;min-width:200px;max-width:500px;background:var(--sidebar);
+    border-right:1px solid var(--border);display:flex;flex-direction:column;
+    overflow:hidden;flex-shrink:0;
+  }
+  .sidebar-header{
+    padding:8px 12px;border-bottom:1px solid var(--border);font-size:11px;
+    color:var(--muted);text-transform:uppercase;letter-spacing:.5px;font-weight:600;
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .tree-container{flex:1;overflow-y:auto;overflow-x:hidden;padding:4px 0}
+
+  .tree-item{
+    display:flex;align-items:center;padding:2px 8px 2px 0;
+    cursor:pointer;font-size:13px;white-space:nowrap;
+    transition:background .1s;user-select:none;height:26px;
+  }
+  .tree-item:hover{background:var(--tree-hover)}
+  .tree-item.selected{background:var(--tree-sel)}
+
+  .tree-indent{display:inline-block;width:16px;flex-shrink:0}
+  .tree-arrow{width:16px;text-align:center;font-size:10px;color:var(--muted);flex-shrink:0;transition:transform .15s}
+  .tree-arrow.open{transform:rotate(90deg)}
+  .tree-icon{width:20px;text-align:center;font-size:13px;flex-shrink:0;margin-right:4px}
+  .tree-name{overflow:hidden;text-overflow:ellipsis;color:var(--text)}
+  .tree-name.dir{color:var(--bright);font-weight:500}
+  .tree-size{margin-left:auto;font-size:10px;color:var(--muted);padding-left:8px;flex-shrink:0}
+  .tree-note{font-size:10px;color:var(--muted);font-style:italic;margin-left:4px}
+
+  /* ── RESIZE HANDLE ── */
+  .resize-handle{
+    width:4px;cursor:col-resize;background:transparent;flex-shrink:0;
+    transition:background .15s;
+  }
+  .resize-handle:hover,.resize-handle.active{background:var(--accent)}
+
+  /* ── EDITOR / PREVIEW ── */
+  .editor-pane{flex:1;display:flex;flex-direction:column;overflow:hidden;background:var(--editor)}
+
+  .editor-tabs{
+    display:flex;gap:0;border-bottom:1px solid var(--border);flex-shrink:0;
+    overflow-x:auto;background:#010409;
+  }
+  .tab{
+    padding:6px 14px;font-size:12px;color:var(--muted);cursor:pointer;
+    border-bottom:2px solid transparent;white-space:nowrap;display:flex;align-items:center;gap:6px;
+    transition:all .15s;
+  }
+  .tab:hover{color:var(--text);background:rgba(255,255,255,.03)}
+  .tab.active{color:var(--bright);border-bottom-color:var(--accent);background:var(--editor)}
+  .tab .close{font-size:14px;opacity:.5;cursor:pointer;line-height:1}
+  .tab .close:hover{opacity:1;color:var(--accent)}
+
+  .editor-content{flex:1;overflow:auto;padding:0}
+
+  .file-preview{padding:16px 20px;font-size:13px;line-height:1.6;white-space:pre-wrap;word-wrap:break-word;font-family:'SF Mono',Consolas,'Liberation Mono',Menlo,monospace;tab-size:4}
+  .file-preview .line-num{display:inline-block;width:48px;text-align:right;color:var(--muted);opacity:.5;margin-right:16px;user-select:none;font-size:12px}
+
+  /* Directory listing view */
+  .dir-listing{padding:16px 20px}
+  .dir-listing h2{font-size:16px;font-weight:600;color:var(--bright);margin-bottom:4px}
+  .dir-listing .path-text{font-size:12px;color:var(--muted);margin-bottom:16px;font-family:monospace}
+
+  .dir-table{width:100%;border-collapse:collapse;font-size:13px}
+  .dir-table th{text-align:left;font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.3px;padding:6px 12px;border-bottom:1px solid var(--border)}
+  .dir-table td{padding:5px 12px;border-bottom:1px solid rgba(33,38,45,.5);cursor:pointer}
+  .dir-table tr:hover td{background:var(--tree-hover)}
+  .dir-table .icon{width:24px;font-size:14px;text-align:center}
+  .dir-table .name-cell{color:var(--text)}
+  .dir-table .name-cell.is-dir{color:var(--accent);font-weight:500}
+  .dir-table .size-cell{text-align:right;color:var(--muted);font-size:12px;font-family:monospace}
+  .dir-table .ext-cell{color:var(--muted);font-size:11px}
+
+  /* Empty / welcome */
+  .welcome{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;color:var(--muted);text-align:center;padding:40px}
+  .welcome h2{font-size:20px;color:var(--bright);margin-bottom:8px}
+  .welcome p{font-size:13px;max-width:400px;line-height:1.6}
+  .welcome kbd{background:#21262d;padding:1px 6px;border-radius:4px;font-size:12px;border:1px solid var(--border)}
+
+  /* Search results */
+  .search-results{padding:12px 20px}
+  .search-results h3{font-size:13px;color:var(--muted);margin-bottom:12px}
+  .search-result{padding:6px 10px;cursor:pointer;border-radius:4px;font-size:12px;display:flex;align-items:center;gap:8px}
+  .search-result:hover{background:var(--tree-hover)}
+  .search-result .sr-icon{font-size:14px}
+  .search-result .sr-path{color:var(--accent)}
+  .search-result .sr-match{color:var(--muted);font-size:11px;margin-left:auto}
+
+  /* Scrollbar */
+  ::-webkit-scrollbar{width:8px;height:8px}
+  ::-webkit-scrollbar-track{background:transparent}
+  ::-webkit-scrollbar-thumb{background:#30363d;border-radius:4px}
+  ::-webkit-scrollbar-thumb:hover{background:#484f58}
+
+  /* Markdown-ish rendering */
+  .md-preview{padding:24px 32px;font-family:inherit;font-size:14px;line-height:1.7}
+  .md-preview h1,.md-preview h2,.md-preview h3{color:var(--bright);margin:20px 0 8px;font-weight:600;border-bottom:1px solid var(--border);padding-bottom:4px}
+  .md-preview h1{font-size:22px} .md-preview h2{font-size:18px} .md-preview h3{font-size:15px}
+  .md-preview p{margin:8px 0}
+  .md-preview code{background:#1c2128;padding:1px 5px;border-radius:3px;font-size:12px;font-family:'SF Mono',Consolas,monospace}
+  .md-preview pre{background:#0d1117;padding:12px 16px;border-radius:6px;overflow-x:auto;margin:12px 0;border:1px solid var(--border)}
+  .md-preview pre code{background:none;padding:0}
+  .md-preview table{border-collapse:collapse;margin:12px 0;width:100%}
+  .md-preview th,td{border:1px solid var(--border);padding:6px 10px;font-size:12px;text-align:left}
+  .md-preview th{background:#161b22;font-weight:600}
+  .md-preview blockquote{border-left:3px solid var(--accent);padding-left:12px;color:var(--muted);margin:12px 0}
+  .md-preview a{color:var(--accent)}
+  .md-preview ul,ol{padding-left:24px;margin:8px 0}
+  .md-preview li{margin:2px 0}
+  .md-preview strong{color:var(--bright)}
+  .md-preview hr{border:none;border-top:1px solid var(--border);margin:16px 0}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo">📂 SM-T377A</div>
+  <div class="breadcrumb" id="breadcrumb"></div>
+  <input class="search-box" id="search" placeholder="Search files… (Ctrl+P)" autocomplete="off">
+  <button class="pii-toggle" id="pii-toggle" title="Highlight files with PII"><span class="dot"></span>⚠ PII</button>
+  <div class="stat-pill" id="stats"></div>
+</div>
+
+<div class="main">
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span>Explorer</span>
+      <span id="tree-count"></span>
+    </div>
+    <div class="tree-container" id="tree-container"></div>
+  </div>
+  <div class="resize-handle" id="resize-handle"></div>
+  <div class="editor-pane">
+    <div class="editor-tabs" id="tabs"></div>
+    <div class="editor-content" id="editor-content">
+      <div class="welcome">
+        <h2>Welcome to the Repo Explorer</h2>
+        <p>Click any file in the tree to preview it. Click directories to drill down.<br/><br/>
+        <kbd>Ctrl+P</kbd> to search · <kbd>Esc</kbd> to clear · 859 files pre-loaded</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════
+// LOAD DATA (injected at build time or fetched)
+// ═══════════════════════════════════════════════════
+
+let TREE = [];
+let CONTENTS = {};
+let PII = {};
+let allFiles = []; // flat index for search
+let piiMode = false;
+
+async function loadData() {
+  try {
+    const [treeResp, contResp, piiResp] = await Promise.all([
+      fetch('_tree.json'),
+      fetch('_contents.json'),
+      fetch('_pii.json'),
+    ]);
+    TREE = await treeResp.json();
+    CONTENTS = await contResp.json();
+    PII = await piiResp.json();
+  } catch(e) {
+    console.error('Failed to load data:', e);
+    document.getElementById('editor-content').innerHTML = `
+      <div class="welcome">
+        <h2>\u26a0 Data files not found</h2>
+        <p>Make sure <code>_tree.json</code> and <code>_contents.json</code> are in the same directory as this HTML file.
+        <br/><br/>Run <code>python _scan_repo.py</code> to regenerate them.</p>
+      </div>`;
+    return;
+  }
+
+
+  // Build flat file index
+  function indexTree(nodes, parentPath) {
+    for (const node of nodes) {
+      allFiles.push(node);
+      if (node.t === 'd' && node.ch) {
+        indexTree(node.ch, node.p);
+      }
+    }
+  }
+  indexTree(TREE, '');
+
+  const piiFiles = Object.keys(PII).length;
+  const piiHits = Object.values(PII).reduce((s, v) => s + v.length, 0);
+  document.getElementById('stats').innerHTML =
+    `<span class="stat-pill">${allFiles.filter(f=>f.t==='f').length} files</span> ` +
+    (piiHits > 0 ? `<span class="stat-pill pii">${piiHits} PII in ${piiFiles} files</span>` : '');
+
+  renderTree(TREE, document.getElementById('tree-container'), 0);
+  navigateTo('', TREE);
+}
+
+// ═══════════════════════════════════════════════════
+// UTILITIES
+// ═══════════════════════════════════════════════════
+
+function formatSize(bytes) {
+  if (bytes === 0) return '0 B';
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1024*1024) return (bytes/1024).toFixed(1) + ' KB';
+  return (bytes/(1024*1024)).toFixed(1) + ' MB';
+}
+
+function getIcon(entry) {
+  if (entry.t === 'd') {
+    if (entry.note) return '📦';
+    return '📁';
+  }
+  const ext = entry.e || '';
+  const icons = {
+    '.c':'🔧','.h':'🔧','.py':'🐍','.java':'☕','.sh':'⚙️','.bat':'⚙️',
+    '.md':'📝','.txt':'📄','.log':'📋','.json':'{}','.xml':'📐',
+    '.html':'🌐','.css':'🎨','.js':'📜','.so':'🔗','.apk':'📱',
+    '.img':'💾','.bin':'💾','.tar':'📦','.gz':'📦','.zip':'📦',
+    '.odex':'⚡','.oat':'⚡','.dex':'⚡','.keystore':'🔑',
+    '.png':'🖼️','.jpg':'🖼️','.dat':'💿','.pit':'💿',
+  };
+  return icons[ext] || '📄';
+}
+
+function getLang(ext) {
+  const langs = {'.c':'c','.h':'c','.py':'python','.java':'java','.sh':'bash','.bat':'batch',
+    '.json':'json','.xml':'xml','.html':'html','.css':'css','.js':'javascript','.md':'markdown',
+    '.txt':'text','.log':'log','.rc':'config','.prop':'config','.te':'selinux','.mk':'makefile'};
+  return langs[ext] || 'text';
+}
+
+// ═══════════════════════════════════════════════════
+// TREE RENDERING
+// ═══════════════════════════════════════════════════
+
+const expandedDirs = new Set();
+
+function renderTree(nodes, container, depth) {
+  for (const node of nodes) {
+    const item = document.createElement('div');
+    item.className = 'tree-item';
+    item.dataset.path = node.p;
+
+    // Indentation
+    for (let i = 0; i < depth; i++) {
+      const indent = document.createElement('span');
+      indent.className = 'tree-indent';
+      item.appendChild(indent);
+    }
+
+    if (node.t === 'd') {
+      const arrow = document.createElement('span');
+      arrow.className = 'tree-arrow' + (expandedDirs.has(node.p) ? ' open' : '');
+      arrow.textContent = '▶';
+      item.appendChild(arrow);
+
+      const icon = document.createElement('span');
+      icon.className = 'tree-icon';
+      icon.textContent = getIcon(node);
+      item.appendChild(icon);
+
+      const name = document.createElement('span');
+      name.className = 'tree-name dir';
+      name.textContent = node.n;
+      item.appendChild(name);
+
+      if (node.note) {
+        const note = document.createElement('span');
+        note.className = 'tree-note';
+        note.textContent = `(${node.note})`;
+        item.appendChild(note);
+      }
+
+      item.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (expandedDirs.has(node.p)) {
+          expandedDirs.delete(node.p);
+        } else {
+          expandedDirs.add(node.p);
+        }
+        // Re-render tree
+        const tc = document.getElementById('tree-container');
+        tc.innerHTML = '';
+        renderTree(TREE, tc, 0);
+        // Show directory listing
+        navigateTo(node.p, node.ch || []);
+      });
+
+      container.appendChild(item);
+
+      // Render children if expanded
+      if (expandedDirs.has(node.p) && node.ch && node.ch.length > 0) {
+        renderTree(node.ch, container, depth + 1);
+      }
+    } else {
+      // File
+      const spacer = document.createElement('span');
+      spacer.className = 'tree-arrow';
+      spacer.textContent = '';
+      item.appendChild(spacer);
+
+      const icon = document.createElement('span');
+      icon.className = 'tree-icon';
+      icon.textContent = getIcon(node);
+      item.appendChild(icon);
+
+      const name = document.createElement('span');
+      name.className = 'tree-name';
+      name.textContent = node.n;
+      item.appendChild(name);
+
+      const size = document.createElement('span');
+      size.className = 'tree-size';
+      size.textContent = formatSize(node.s || 0);
+      item.appendChild(size);
+
+      // PII badge
+      const piiHits = PII[node.p];
+      if (piiHits && piiHits.length > 0) {
+        const badge = document.createElement('span');
+        badge.className = 'tree-pii-badge';
+        const hasCrit = piiHits.some(h => h.sev === 'CRITICAL');
+        badge.textContent = `⚠ ${piiHits.length}`;
+        if (hasCrit) badge.style.background = 'rgba(255,77,77,.25)';
+        item.appendChild(badge);
+        item.classList.add('pii-file');
+      } else if (piiMode) {
+        item.classList.add('pii-dimmed');
+      }
+
+      item.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openFile(node);
+      });
+
+      container.appendChild(item);
+    }
+  }
+}
+
+// ═══════════════════════════════════════════════════
+// TABS
+// ═══════════════════════════════════════════════════
+
+let openTabs = []; // {path, name, type}
+let activeTab = null;
+
+function openFile(node) {
+  const existing = openTabs.find(t => t.path === node.p);
+  if (!existing) {
+    openTabs.push({ path: node.p, name: node.n, type: 'file', ext: node.e });
+  }
+  activeTab = node.p;
+  renderTabs();
+  showFileContent(node);
+  updateBreadcrumb(node.p);
+
+  // Highlight in tree
+  document.querySelectorAll('.tree-item').forEach(el => {
+    el.classList.toggle('selected', el.dataset.path === node.p);
+  });
+}
+
+function navigateTo(path, children) {
+  const tabName = path ? path.split('/').pop() : 'Root';
+  const existing = openTabs.find(t => t.path === (path || '/'));
+  if (!existing) {
+    openTabs.push({ path: path || '/', name: tabName, type: 'dir' });
+  }
+  activeTab = path || '/';
+  renderTabs();
+  showDirListing(path, children);
+  updateBreadcrumb(path);
+}
+
+function renderTabs() {
+  const tabBar = document.getElementById('tabs');
+  tabBar.innerHTML = '';
+  openTabs.forEach(tab => {
+    const el = document.createElement('div');
+    el.className = 'tab' + (tab.path === activeTab ? ' active' : '');
+    el.innerHTML = `<span>${tab.type === 'dir' ? '📁' : getIcon(tab)} ${tab.name}</span><span class="close">×</span>`;
+    el.querySelector('.close').addEventListener('click', (e) => {
+      e.stopPropagation();
+      openTabs = openTabs.filter(t => t.path !== tab.path);
+      if (activeTab === tab.path) {
+        if (openTabs.length > 0) {
+          activeTab = openTabs[openTabs.length - 1].path;
+          const t = openTabs[openTabs.length - 1];
+          if (t.type === 'dir') {
+            const node = findNode(t.path === '/' ? '' : t.path);
+            navigateTo(t.path === '/' ? '' : t.path, node ? node.ch || [] : TREE);
+          } else {
+            const node = findNode(t.path);
+            if (node) openFile(node);
+          }
+        } else {
+          activeTab = null;
+          document.getElementById('editor-content').innerHTML = '<div class="welcome"><h2>No files open</h2><p>Click a file in the tree to preview it.</p></div>';
+        }
+      }
+      renderTabs();
+    });
+    el.addEventListener('click', () => {
+      activeTab = tab.path;
+      if (tab.type === 'dir') {
+        const node = findNode(tab.path === '/' ? '' : tab.path);
+        navigateTo(tab.path === '/' ? '' : tab.path, node ? node.ch || [] : TREE);
+      } else {
+        const node = findNode(tab.path);
+        if (node) openFile(node);
+      }
+      renderTabs();
+    });
+    tabBar.appendChild(el);
+  });
+}
+
+function findNode(path) {
+  if (!path || path === '/') return null;
+  const parts = path.split('/');
+  let nodes = TREE;
+  let found = null;
+  for (const part of parts) {
+    found = nodes.find(n => n.n === part);
+    if (!found) return null;
+    nodes = found.ch || [];
+  }
+  return found;
+}
+
+// ═══════════════════════════════════════════════════
+// CONTENT DISPLAY
+// ═══════════════════════════════════════════════════
+
+function showFileContent(node) {
+  const editor = document.getElementById('editor-content');
+  const content = CONTENTS[node.p];
+  const piiHits = PII[node.p] || [];
+
+  // Build PII line index
+  const piiByLine = {};
+  piiHits.forEach(h => {
+    if (!piiByLine[h.line]) piiByLine[h.line] = [];
+    piiByLine[h.line].push(h);
+  });
+
+  // PII summary header
+  let piiHeader = '';
+  if (piiHits.length > 0) {
+    const cats = [...new Set(piiHits.map(h => h.cat))];
+    const hasCrit = piiHits.some(h => h.sev === 'CRITICAL');
+    piiHeader = `<div style="padding:8px 20px;background:rgba(255,77,77,${hasCrit ? '.12' : '.06'});border-bottom:1px solid rgba(255,77,77,.2);font-size:12px;color:#ff4d4d">
+      ⚠ <strong>${piiHits.length} PII detection${piiHits.length > 1 ? 's' : ''}</strong>: ${cats.join(', ')}
+      ${piiHits.slice(0, 5).map(h => `<span style="margin-left:8px;font-size:10px;background:rgba(255,77,77,.15);padding:1px 6px;border-radius:3px">${h.cat}: ${h.masked} (line ${h.line})</span>`).join('')}
+      ${piiHits.length > 5 ? `<span style="margin-left:8px;font-size:10px;color:rgba(255,77,77,.6)">+${piiHits.length - 5} more</span>` : ''}
+    </div>`;
+  }
+
+  if (content !== undefined) {
+    if ((node.e || '') === '.md') {
+      editor.innerHTML = piiHeader + `<div class="md-preview">${renderMarkdown(content)}</div>`;
+    } else {
+      const lines = content.split('\n');
+      const lineHtml = lines.map((line, i) => {
+        const lineNo = i + 1;
+        const hits = piiByLine[lineNo];
+        let lineText = escapeHtml(line);
+        if (hits) {
+          lineText = `<span class="pii-hl" title="${hits.map(h => h.cat + ': ' + h.masked).join(', ')}">${lineText}</span>`;
+        }
+        return `<span class="line-num">${lineNo}</span>${lineText}`;
+      }).join('\n');
+      editor.innerHTML = piiHeader + `<div class="file-preview">${lineHtml}</div>`;
+
+      // Scroll to first PII line
+      if (piiHits.length > 0) {
+        setTimeout(() => {
+          const hlEl = editor.querySelector('.pii-hl');
+          if (hlEl) hlEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      }
+    }
+  } else {
+    const ext = node.e || '';
+    const binaryExts = ['.so','.apk','.img','.bin','.tar','.gz','.zip','.odex','.oat','.dex','.keystore','.pit','.png','.jpg','.md5'];
+    const isBinary = binaryExts.includes(ext);
+    editor.innerHTML = `
+      <div class="welcome">
+        <h2>${node.n}</h2>
+        <p>${isBinary ? '🔒 Binary file' : '📄 File content not pre-loaded'}<br/>
+        Size: ${formatSize(node.s || 0)}<br/>
+        Type: ${ext || 'unknown'}<br/><br/>
+        ${isBinary ? 'Binary files cannot be previewed in the browser.' : 'Re-run _scan_repo.py with a higher budget to include this file.'}</p>
+      </div>`;
+  }
+}
+
+function showDirListing(path, children) {
+  const editor = document.getElementById('editor-content');
+  const dirName = path ? path.split('/').pop() : 'android-redteam';
+  const pathDisplay = path || '/';
+
+  const dirs = children.filter(c => c.t === 'd').sort((a,b) => a.n.localeCompare(b.n));
+  const files = children.filter(c => c.t === 'f').sort((a,b) => a.n.localeCompare(b.n));
+
+  let html = `<div class="dir-listing">
+    <h2>${getIcon({t:'d'})} ${dirName}</h2>
+    <div class="path-text">${pathDisplay}</div>
+    <table class="dir-table">
+      <thead><tr><th class="icon"></th><th>Name</th><th style="text-align:right">Size</th><th>Type</th><th>PII</th></tr></thead>
+      <tbody>`;
+
+  // Parent dir
+  if (path) {
+    const parentPath = path.split('/').slice(0, -1).join('/');
+    html += `<tr data-action="parent" data-path="${parentPath}">
+      <td class="icon">⬆️</td><td class="name-cell is-dir">..</td><td></td><td></td><td></td></tr>`;
+  }
+
+  for (const d of dirs) {
+    const childCount = (d.ch || []).length;
+    // Count PII in this directory subtree
+    const dirPiiCount = Object.keys(PII).filter(p => p.startsWith(d.p + '/')).length;
+    html += `<tr data-action="dir" data-path="${d.p}">
+      <td class="icon">${getIcon(d)}</td>
+      <td class="name-cell is-dir">${d.n}${d.note ? ' <span style="color:var(--muted);font-size:11px;font-style:italic">(' + d.note + ')</span>' : ''}</td>
+      <td class="size-cell">${childCount} items</td>
+      <td class="ext-cell">Directory</td>
+      <td>${dirPiiCount > 0 ? `<span style="color:#ff4d4d;font-size:11px">⚠ ${dirPiiCount}</span>` : ''}</td></tr>`;
+  }
+
+  for (const f of files) {
+    const hasContent = CONTENTS[f.p] !== undefined;
+    const piiHits = PII[f.p] || [];
+    const piiCell = piiHits.length > 0
+      ? `<span style="color:${piiHits.some(h=>h.sev==='CRITICAL') ? '#ff4d4d' : '#ff9933'};font-size:11px;font-weight:600">⚠ ${piiHits.length}</span>`
+      : '';
+    const rowStyle = piiMode && piiHits.length === 0 ? ' style="opacity:0.25"' : piiHits.length > 0 ? ' style="background:rgba(255,77,77,0.03)"' : '';
+    html += `<tr data-action="file" data-path="${f.p}"${rowStyle}>
+      <td class="icon">${getIcon(f)}</td>
+      <td class="name-cell">${f.n}${hasContent ? '' : ' <span style="opacity:.4">●</span>'}</td>
+      <td class="size-cell">${formatSize(f.s || 0)}</td>
+      <td class="ext-cell">${f.e || '—'}</td>
+      <td>${piiCell}</td></tr>`;
+  }
+
+  html += `</tbody></table></div>`;
+  editor.innerHTML = html;
+
+  // Attach click handlers
+  editor.querySelectorAll('tr[data-action]').forEach(row => {
+    row.addEventListener('click', () => {
+      const action = row.dataset.action;
+      const p = row.dataset.path;
+      if (action === 'parent') {
+        const parentNode = p ? findNode(p) : null;
+        const parentChildren = parentNode ? parentNode.ch || [] : TREE;
+        // Expand parent in tree
+        if (p) expandedDirs.add(p);
+        const tc = document.getElementById('tree-container');
+        tc.innerHTML = '';
+        renderTree(TREE, tc, 0);
+        navigateTo(p, parentChildren);
+      } else if (action === 'dir') {
+        const node = findNode(p);
+        if (node) {
+          expandedDirs.add(p);
+          const tc = document.getElementById('tree-container');
+          tc.innerHTML = '';
+          renderTree(TREE, tc, 0);
+          navigateTo(p, node.ch || []);
+        }
+      } else if (action === 'file') {
+        const node = findNode(p);
+        if (node) openFile(node);
+      }
+    });
+  });
+}
+
+// ═══════════════════════════════════════════════════
+// BREADCRUMB
+// ═══════════════════════════════════════════════════
+
+function updateBreadcrumb(path) {
+  const bc = document.getElementById('breadcrumb');
+  if (!path || path === '/') {
+    bc.innerHTML = '<span data-path="">android-redteam</span>';
+  } else {
+    const parts = path.split('/');
+    let html = '<span data-path="">android-redteam</span>';
+    let cumPath = '';
+    for (const part of parts) {
+      cumPath = cumPath ? cumPath + '/' + part : part;
+      html += ` / <span data-path="${cumPath}">${part}</span>`;
+    }
+    bc.innerHTML = html;
+  }
+
+  bc.querySelectorAll('span').forEach(el => {
+    el.addEventListener('click', () => {
+      const p = el.dataset.path;
+      const node = p ? findNode(p) : null;
+      const children = node ? node.ch || [] : TREE;
+      if (p) expandedDirs.add(p);
+      const tc = document.getElementById('tree-container');
+      tc.innerHTML = '';
+      renderTree(TREE, tc, 0);
+      navigateTo(p, children);
+    });
+  });
+}
+
+// ═══════════════════════════════════════════════════
+// SEARCH
+// ═══════════════════════════════════════════════════
+
+const searchInput = document.getElementById('search');
+let searchTimeout;
+
+searchInput.addEventListener('input', () => {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(doSearch, 150);
+});
+
+searchInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    searchInput.value = '';
+    if (activeTab) {
+      const tab = openTabs.find(t => t.path === activeTab);
+      if (tab && tab.type === 'dir') {
+        const node = findNode(tab.path === '/' ? '' : tab.path);
+        navigateTo(tab.path === '/' ? '' : tab.path, node ? node.ch || [] : TREE);
+      }
+    }
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+    e.preventDefault();
+    searchInput.focus();
+    searchInput.select();
+  }
+});
+
+function doSearch() {
+  const q = searchInput.value.trim().toLowerCase();
+  if (!q) return;
+
+  const results = [];
+  const contentResults = [];
+
+  // File name matches
+  for (const f of allFiles) {
+    if (f.n.toLowerCase().includes(q) || f.p.toLowerCase().includes(q)) {
+      results.push({ node: f, type: 'name' });
+      if (results.length >= 50) break;
+    }
+  }
+
+  // Content matches (search loaded contents)
+  if (q.length >= 3) {
+    for (const [path, content] of Object.entries(CONTENTS)) {
+      if (content.toLowerCase().includes(q)) {
+        const node = findNode(path);
+        if (node) {
+          const idx = content.toLowerCase().indexOf(q);
+          const snippet = content.substring(Math.max(0, idx - 30), idx + q.length + 30).replace(/\n/g, ' ');
+          contentResults.push({ node, type: 'content', snippet });
+          if (contentResults.length >= 30) break;
+        }
+      }
+    }
+  }
+
+  const editor = document.getElementById('editor-content');
+  let html = `<div class="search-results">
+    <h3>Search results for "${escapeHtml(q)}" — ${results.length} name matches, ${contentResults.length} content matches</h3>`;
+
+  if (results.length > 0) {
+    html += '<div style="margin-bottom:16px">';
+    for (const r of results) {
+      const highlighted = r.node.p.replace(new RegExp(`(${escapeRegex(q)})`, 'gi'), '<strong style="color:var(--bright)">$1</strong>');
+      html += `<div class="search-result" data-path="${r.node.p}" data-type="${r.node.t}">
+        <span class="sr-icon">${getIcon(r.node)}</span>
+        <span class="sr-path">${highlighted}</span>
+        ${r.node.t === 'f' ? `<span class="sr-match">${formatSize(r.node.s || 0)}</span>` : ''}
+      </div>`;
+    }
+    html += '</div>';
+  }
+
+  if (contentResults.length > 0) {
+    html += '<h3 style="margin-top:16px">Content matches</h3>';
+    for (const r of contentResults) {
+      html += `<div class="search-result" data-path="${r.node.p}" data-type="f">
+        <span class="sr-icon">${getIcon(r.node)}</span>
+        <span class="sr-path">${r.node.p}</span>
+        <span class="sr-match" style="font-family:monospace;font-size:10px;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escapeHtml(r.snippet)}</span>
+      </div>`;
+    }
+  }
+
+  html += '</div>';
+  editor.innerHTML = html;
+
+  // Click handlers
+  editor.querySelectorAll('.search-result').forEach(el => {
+    el.addEventListener('click', () => {
+      const p = el.dataset.path;
+      const t = el.dataset.type;
+      searchInput.value = '';
+      if (t === 'd') {
+        const node = findNode(p);
+        if (node) {
+          expandedDirs.add(p);
+          const tc = document.getElementById('tree-container');
+          tc.innerHTML = '';
+          renderTree(TREE, tc, 0);
+          navigateTo(p, node.ch || []);
+        }
+      } else {
+        const node = findNode(p);
+        if (node) {
+          // Expand parents
+          const parts = p.split('/');
+          let cum = '';
+          for (let i = 0; i < parts.length - 1; i++) {
+            cum = cum ? cum + '/' + parts[i] : parts[i];
+            expandedDirs.add(cum);
+          }
+          const tc = document.getElementById('tree-container');
+          tc.innerHTML = '';
+          renderTree(TREE, tc, 0);
+          openFile(node);
+        }
+      }
+    });
+  });
+}
+
+function escapeRegex(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+function escapeHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+// ═══════════════════════════════════════════════════
+// SIMPLE MARKDOWN RENDERER
+// ═══════════════════════════════════════════════════
+
+function renderMarkdown(md) {
+  let html = escapeHtml(md);
+
+  // Code blocks
+  html = html.replace(/```(\w*)\n([\s\S]*?)```/g, (m, lang, code) => `<pre><code>${code.trim()}</code></pre>`);
+
+  // Inline code
+  html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+
+  // Headers
+  html = html.replace(/^### (.+)$/gm, '<h3>$1</h3>');
+  html = html.replace(/^## (.+)$/gm, '<h2>$1</h2>');
+  html = html.replace(/^# (.+)$/gm, '<h1>$1</h1>');
+
+  // Bold / italic
+  html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
+
+  // Blockquotes
+  html = html.replace(/^&gt; (.+)$/gm, '<blockquote>$1</blockquote>');
+
+  // Horizontal rules
+  html = html.replace(/^---$/gm, '<hr>');
+
+  // Links
+  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+
+  // Simple tables (pipe-delimited)
+  html = html.replace(/^(\|.+\|)\n(\|[-| :]+\|)\n((?:\|.+\|\n?)+)/gm, (match, header, sep, body) => {
+    const headers = header.split('|').filter(c => c.trim()).map(c => `<th>${c.trim()}</th>`).join('');
+    const rows = body.trim().split('\n').map(row => {
+      const cells = row.split('|').filter(c => c.trim()).map(c => `<td>${c.trim()}</td>`).join('');
+      return `<tr>${cells}</tr>`;
+    }).join('');
+    return `<table><thead><tr>${headers}</tr></thead><tbody>${rows}</tbody></table>`;
+  });
+
+  // Lists
+  html = html.replace(/^- (.+)$/gm, '<li>$1</li>');
+  html = html.replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>');
+
+  // Paragraphs (double newlines)
+  html = html.replace(/\n\n/g, '</p><p>');
+  html = '<p>' + html + '</p>';
+
+  // Clean up
+  html = html.replace(/<p><(h[123]|hr|pre|table|ul|ol|blockquote)/g, '<$1');
+  html = html.replace(/<\/(h[123]|hr|pre|table|ul|ol|blockquote)><\/p>/g, '</$1>');
+  html = html.replace(/<p><\/p>/g, '');
+
+  return html;
+}
+
+// ═══════════════════════════════════════════════════
+// RESIZE HANDLE
+// ═══════════════════════════════════════════════════
+
+const resizeHandle = document.getElementById('resize-handle');
+const sidebar = document.getElementById('sidebar');
+let isResizing = false;
+
+resizeHandle.addEventListener('mousedown', (e) => {
+  isResizing = true;
+  resizeHandle.classList.add('active');
+  document.body.style.cursor = 'col-resize';
+  e.preventDefault();
+});
+
+document.addEventListener('mousemove', (e) => {
+  if (!isResizing) return;
+  const newWidth = Math.max(200, Math.min(600, e.clientX));
+  sidebar.style.width = newWidth + 'px';
+});
+
+document.addEventListener('mouseup', () => {
+  isResizing = false;
+  resizeHandle.classList.remove('active');
+  document.body.style.cursor = '';
+});
+
+// ═══════════════════════════════════════════════════
+// PII TOGGLE
+// ═══════════════════════════════════════════════════
+
+document.getElementById('pii-toggle').addEventListener('click', function() {
+  piiMode = !piiMode;
+  this.classList.toggle('active', piiMode);
+  // Re-render tree with PII highlighting
+  const tc = document.getElementById('tree-container');
+  tc.innerHTML = '';
+  renderTree(TREE, tc, 0);
+  // Re-render current view
+  if (activeTab) {
+    const tab = openTabs.find(t => t.path === activeTab);
+    if (tab) {
+      if (tab.type === 'dir') {
+        const p = tab.path === '/' ? '' : tab.path;
+        const node = findNode(p);
+        navigateTo(p, node ? node.ch || [] : TREE);
+      } else {
+        // Re-render file preview to update PII highlights
+        const node = findNode(tab.path);
+        if (node) showFileContent(node);
+      }
+    }
+  }
+  // Show PII report when toggling on
+  if (piiMode) {
+    // Add a PII Report tab
+    const existing = openTabs.find(t => t.path === '__pii_report__');
+    if (!existing) {
+      openTabs.push({ path: '__pii_report__', name: '⚠ PII Report', type: 'pii' });
+    }
+    activeTab = '__pii_report__';
+    renderTabs();
+
+    const editor = document.getElementById('editor-content');
+    const piiFiles = Object.entries(PII).sort((a,b) => {
+      const aCrit = a[1].some(h => h.sev === 'CRITICAL') ? 0 : 1;
+      const bCrit = b[1].some(h => h.sev === 'CRITICAL') ? 0 : 1;
+      return aCrit - bCrit || b[1].length - a[1].length;
+    });
+    let html = '<div style="padding:24px 32px;font-family:inherit"><h2 style="color:#ff4d4d;font-size:18px;margin-bottom:16px">⚠ PII Detection Report</h2>';
+    html += `<p style="color:var(--muted);margin-bottom:20px">${Object.values(PII).reduce((s,v)=>s+v.length,0)} total detections across ${Object.keys(PII).length} files</p>`;
+    html += '<table style="width:100%;border-collapse:collapse;font-size:12px">';
+    html += '<tr style="border-bottom:1px solid var(--border)"><th style="text-align:left;padding:6px;color:var(--muted)">File</th><th style="text-align:center;padding:6px;color:var(--muted)">Hits</th><th style="text-align:left;padding:6px;color:var(--muted)">Categories</th><th style="text-align:left;padding:6px;color:var(--muted)">Severity</th></tr>';
+    for (const [path, hits] of piiFiles) {
+      const cats = [...new Set(hits.map(h => h.cat))].join(', ');
+      const maxSev = hits.some(h => h.sev === 'CRITICAL') ? 'CRITICAL' : hits.some(h => h.sev === 'HIGH') ? 'HIGH' : 'MEDIUM';
+      const sevColor = maxSev === 'CRITICAL' ? '#ff4d4d' : maxSev === 'HIGH' ? '#ff9933' : '#ffcc33';
+      html += `<tr style="border-bottom:1px solid rgba(48,54,61,0.5);cursor:pointer" data-pii-path="${path.replace(/"/g, '&quot;')}">`;
+      html += `<td style="padding:6px;color:var(--accent)">${path}</td>`;
+      html += `<td style="padding:6px;text-align:center;font-weight:600">${hits.length}</td>`;
+      html += `<td style="padding:6px;color:var(--muted);font-size:11px">${cats}</td>`;
+      html += `<td style="padding:6px;color:${sevColor};font-weight:600;font-size:11px">${maxSev}</td></tr>`;
+    }
+    html += '</table></div>';
+    editor.innerHTML = html;
+    // Attach click handlers via event delegation
+    editor.querySelectorAll('tr[data-pii-path]').forEach(row => {
+      row.addEventListener('click', () => {
+        const filePath = row.dataset.piiPath;
+        const node = findNode(filePath);
+        if (node) {
+          const parts = filePath.split('/');
+          let cum = '';
+          for (let i = 0; i < parts.length - 1; i++) {
+            cum = cum ? cum + '/' + parts[i] : parts[i];
+            expandedDirs.add(cum);
+          }
+          const tc = document.getElementById('tree-container');
+          tc.innerHTML = '';
+          renderTree(TREE, tc, 0);
+          openFile(node);
+        }
+      });
+      row.addEventListener('mouseover', () => { row.style.background = 'rgba(255,77,77,0.05)'; });
+      row.addEventListener('mouseout', () => { row.style.background = ''; });
+    });
+  }
+});
+
+// ═══════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════
+
+loadData();
+</script>
+</body>
+</html>

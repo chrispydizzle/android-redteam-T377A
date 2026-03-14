@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SM-T377A — 3D Attack Surface Analysis</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap');
+  :root {
+    --bg: #06080d;
+    --surface: #0e1420;
+    --surface2: #151d2e;
+    --border: #1e293b;
+    --accent: #38bdf8;
+    --accent2: #818cf8;
+    --green: #34d399;
+    --red: #f87171;
+    --orange: #fb923c;
+    --yellow: #fbbf24;
+    --pink: #f472b6;
+    --text: #e2e8f0;
+    --dim: #64748b;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Inter', system-ui, sans-serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:100%; height:100%; overflow:hidden; background:var(--bg); color:var(--text); font-family:var(--sans); }
+  #canvas-container { width:100%; height:100%; position:absolute; top:0; left:0; }
+  canvas { display:block; }
+
+  /* HUD overlay */
+  .hud { position:fixed; z-index:10; pointer-events:none; }
+  .hud-interactive { pointer-events:auto; }
+
+  .hud-top {
+    top:0; left:0; right:0; padding:1.2rem 2rem;
+    display:flex; justify-content:space-between; align-items:flex-start;
+    background: linear-gradient(180deg, rgba(6,8,13,0.92) 0%, transparent 100%);
+  }
+  .hud-title h1 {
+    font-family:var(--mono); font-size:1.1rem; font-weight:700;
+    background: linear-gradient(135deg, var(--accent), var(--accent2), var(--pink));
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+  }
+  .hud-title .sub { font-size:.7rem; color:var(--dim); font-family:var(--mono); margin-top:.2rem; }
+
+  .hud-stats {
+    display:flex; gap:1.2rem; align-items:center;
+  }
+  .hud-stat {
+    text-align:center; padding:.4rem .8rem;
+    background:rgba(14,20,32,.8); border:1px solid var(--border); border-radius:8px;
+  }
+  .hud-stat .num { font-family:var(--mono); font-size:1.2rem; font-weight:700; line-height:1; }
+  .hud-stat .lbl { font-size:.55rem; color:var(--dim); text-transform:uppercase; letter-spacing:.05em; margin-top:.15rem; }
+
+  /* Bottom legend */
+  .hud-bottom {
+    bottom:0; left:0; right:0; padding:1rem 2rem;
+    background: linear-gradient(0deg, rgba(6,8,13,0.92) 0%, transparent 100%);
+    display:flex; justify-content:space-between; align-items:flex-end;
+  }
+  .legend {
+    display:flex; gap:1rem; flex-wrap:wrap;
+  }
+  .legend-item {
+    display:flex; align-items:center; gap:.4rem; font-size:.65rem; font-family:var(--mono);
+  }
+  .legend-dot {
+    width:10px; height:10px; border-radius:50%;
+  }
+  .controls-hint {
+    font-size:.6rem; color:var(--dim); font-family:var(--mono); text-align:right;
+    line-height:1.6;
+  }
+
+  /* Side panel */
+  .side-panel {
+    position:fixed; top:80px; right:20px; width:340px; max-height:calc(100vh - 160px);
+    overflow-y:auto; z-index:20; pointer-events:auto;
+    background:rgba(14,20,32,.95); border:1px solid var(--border); border-radius:12px;
+    padding:0; opacity:0; transform:translateX(20px);
+    transition: opacity .3s ease, transform .3s ease;
+    scrollbar-width:thin; scrollbar-color: var(--border) transparent;
+  }
+  .side-panel.visible { opacity:1; transform:translateX(0); }
+  .side-panel-header {
+    padding:1rem 1.2rem; border-bottom:1px solid var(--border);
+    display:flex; align-items:center; justify-content:space-between;
+    position:sticky; top:0; background:rgba(14,20,32,.98); z-index:1; border-radius:12px 12px 0 0;
+  }
+  .side-panel-header h3 { font-family:var(--mono); font-size:.85rem; font-weight:600; }
+  .side-panel-close {
+    width:24px; height:24px; border-radius:6px; border:1px solid var(--border);
+    background:var(--surface2); color:var(--dim); cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    font-size:.7rem; font-family:var(--mono); transition: all .2s ease;
+  }
+  .side-panel-close:hover { border-color:var(--accent); color:var(--accent); }
+  .side-panel-body { padding:1rem 1.2rem; }
+  .sp-tag {
+    display:inline-block; padding:2px 8px; border-radius:4px;
+    font-family:var(--mono); font-size:.6rem; font-weight:500; margin:1px;
+  }
+  .sp-field { margin-bottom:.8rem; }
+  .sp-field-label { font-size:.6rem; color:var(--dim); text-transform:uppercase; letter-spacing:.05em; margin-bottom:.3rem; font-family:var(--mono); }
+  .sp-field-value { font-size:.75rem; line-height:1.5; }
+  .sp-field-value li { margin-bottom:.2rem; }
+  .sp-field-value ul { list-style:none; padding:0; }
+  .sp-field-value li::before { content:'›'; margin-right:.4rem; color:var(--accent); font-weight:700; }
+  .sp-gap-alert {
+    margin-top:.8rem; padding:.8rem; border-radius:8px;
+    background:rgba(251,191,36,.08); border:1px solid rgba(251,191,36,.2);
+  }
+  .sp-gap-alert h4 { font-size:.7rem; color:var(--yellow); font-family:var(--mono); margin-bottom:.4rem; }
+  .sp-gap-alert p { font-size:.7rem; color:var(--dim); line-height:1.5; }
+
+  /* Filter bar */
+  .filter-bar {
+    position:fixed; top:80px; left:20px; z-index:20; pointer-events:auto;
+    display:flex; flex-direction:column; gap:.4rem;
+  }
+  .filter-btn {
+    padding:.4rem .8rem; border-radius:6px; border:1px solid var(--border);
+    background:rgba(14,20,32,.85); color:var(--dim); cursor:pointer;
+    font-family:var(--mono); font-size:.6rem; text-align:left;
+    transition: all .2s ease; white-space:nowrap;
+  }
+  .filter-btn:hover, .filter-btn.active { border-color:var(--accent); color:var(--accent); background:rgba(56,189,248,.08); }
+  .filter-btn .fdot { display:inline-block; width:6px; height:6px; border-radius:50%; margin-right:.4rem; vertical-align:middle; }
+
+  /* Tooltip */
+  .tooltip {
+    position:fixed; z-index:30; pointer-events:none;
+    padding:.4rem .7rem; border-radius:6px;
+    background:rgba(14,20,32,.95); border:1px solid var(--border);
+    font-family:var(--mono); font-size:.65rem;
+    opacity:0; transition: opacity .15s ease;
+    max-width:260px;
+  }
+  .tooltip.visible { opacity:1; }
+  .tooltip .tt-name { font-weight:600; margin-bottom:.15rem; }
+  .tooltip .tt-status { color:var(--dim); }
+
+  /* Scanline */
+  .scanline {
+    position:fixed; top:0; left:0; right:0; height:2px; z-index:5;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    animation: scanDown 8s ease-in-out infinite;
+    opacity:.25; pointer-events:none;
+  }
+  @keyframes scanDown { 0%{top:-2px;opacity:0} 5%{opacity:.25} 95%{opacity:.25} 100%{top:100vh;opacity:0} }
+</style>
+</head>
+<body>
+<div id="canvas-container"></div>
+<div class="scanline"></div>
+
+<!-- HUD Top -->
+<div class="hud hud-top">
+  <div class="hud-title">
+    <h1>SM-T377A ⊘ 3D ATTACK SURFACE MAP</h1>
+    <div class="sub">Samsung Galaxy Tab E 8.0 · Exynos 3475 · Android 6.0.1 · Kernel 3.10.9</div>
+  </div>
+  <div class="hud-stats">
+    <div class="hud-stat"><div class="num" style="color:var(--red)">11</div><div class="lbl">CVEs Tested</div></div>
+    <div class="hud-stat"><div class="num" style="color:var(--orange)">3</div><div class="lbl">Live Vectors</div></div>
+    <div class="hud-stat"><div class="num" style="color:var(--green)">233M+</div><div class="lbl">Fuzz Ops</div></div>
+    <div class="hud-stat"><div class="num" style="color:var(--yellow)" id="gap-count">5</div><div class="lbl">Analysis Gaps</div></div>
+  </div>
+</div>
+
+<!-- Filter bar -->
+<div class="filter-bar hud-interactive" id="filter-bar">
+  <div class="filter-btn active" data-filter="all"><span class="fdot" style="background:#fff"></span>All Nodes</div>
+  <div class="filter-btn" data-filter="gap"><span class="fdot" style="background:var(--yellow)"></span>Gaps Only</div>
+  <div class="filter-btn" data-filter="live"><span class="fdot" style="background:var(--orange)"></span>Live Vectors</div>
+  <div class="filter-btn" data-filter="blocked"><span class="fdot" style="background:var(--red)"></span>Blocked</div>
+  <div class="filter-btn" data-filter="confirmed"><span class="fdot" style="background:var(--green)"></span>Confirmed Vuln</div>
+</div>
+
+<!-- Side panel -->
+<div class="side-panel" id="side-panel">
+  <div class="side-panel-header">
+    <h3 id="sp-title">—</h3>
+    <div class="side-panel-close hud-interactive" id="sp-close">✕</div>
+  </div>
+  <div class="side-panel-body" id="sp-body"></div>
+</div>
+
+<!-- Tooltip -->
+<div class="tooltip" id="tooltip">
+  <div class="tt-name" id="tt-name"></div>
+  <div class="tt-status" id="tt-status"></div>
+</div>
+
+<!-- Bottom legend -->
+<div class="hud hud-bottom">
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#f87171"></div>Blocked / Patched</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#fb923c"></div>Live Vector</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#34d399"></div>Confirmed Vuln (no exec)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#fbbf24"></div>Analysis Gap</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#818cf8"></div>Capability Achieved</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#64748b"></div>Dead End</div>
+    <div class="legend-item"><div class="legend-dot" style="background:radial-gradient(circle,#38bdf8,#818cf8)"></div>Target Core</div>
+  </div>
+  <div class="controls-hint">
+    Drag to orbit · Scroll to zoom · Click node for details<br>
+    Filter buttons on left · ESC to close panel
+  </div>
+</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.163.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.163.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+
+// ─── DATA MODEL ───────────────────────────────────────────────
+const COLORS = {
+  blocked:   0xf87171,
+  live:      0xfb923c,
+  confirmed: 0x34d399,
+  gap:       0xfbbf24,
+  achieved:  0x818cf8,
+  dead:      0x475569,
+  core:      0x38bdf8,
+};
+
+const CATEGORIES = {
+  kernel:   { label:'Kernel', ring:1, angle:0 },
+  driver:   { label:'Drivers', ring:1, angle:1 },
+  binder:   { label:'Binder/IPC', ring:1, angle:2 },
+  bt:       { label:'Bluetooth', ring:1, angle:3 },
+  net:      { label:'Network', ring:1, angle:4 },
+  selinux:  { label:'SELinux', ring:1, angle:5 },
+  hardware: { label:'Hardware', ring:2, angle:0.5 },
+  app:      { label:'App Layer', ring:2, angle:1.5 },
+  modem:    { label:'Modem/AT', ring:2, angle:2.5 },
+  samsung:  { label:'Samsung Specific', ring:2, angle:3.5 },
+  cve:      { label:'CVE Exploits', ring:2, angle:4.5 },
+  fuzz:     { label:'Fuzzing', ring:2, angle:5.5 },
+};
+
+// Nodes: { id, label, cat, status, size, detail }
+const nodes = [
+  // Core
+  { id:'target', label:'SM-T377A', cat:null, status:'core', size:2.0, pos:[0,0,0],
+    detail:{ summary:'Target Device', fields:[
+      { l:'SoC', v:'Exynos 3475 (ARMv7 Cortex-A7)' },
+      { l:'Kernel', v:'3.10.9-11788437 (2017-07-05)' },
+      { l:'Android', v:'6.0.1 Marshmallow' },
+      { l:'Security Patch', v:'2017-07-01 (UNPATCHED since)' },
+      { l:'Shell UID', v:'2000 (adb shell)' },
+    ]}},
+
+  // Kernel attack surface
+  { id:'kaslr', label:'No KASLR', cat:'kernel', status:'achieved', size:.8,
+    detail:{ summary:'KASLR absent — all kernel addresses static', fields:[
+      { l:'commit_creds', v:'0xC0054328' },
+      { l:'prepare_kernel_cred', v:'0xC00548E0' },
+      { l:'selinux_enforcing', v:'0xC0B7AD18' },
+    ]}},
+  { id:'no_pxn', label:'No PXN', cat:'kernel', status:'achieved', size:.7,
+    detail:{ summary:'No Privileged Execute Never — can run userspace code in kernel context', fields:[]}},
+  { id:'no_canary', label:'No Stack Canaries', cat:'kernel', status:'achieved', size:.7,
+    detail:{ summary:'No stack protector — direct PC control on any stack overflow', fields:[]}},
+  { id:'tima', label:'TIMA TrustZone', cat:'kernel', status:'blocked', size:1.0,
+    detail:{ summary:'Samsung TrustZone integrity monitor. Checks every 5 min.', fields:[
+      { l:'Detection', v:'Detects SELinux modification, kernel code tampering' },
+      { l:'Must neutralize', v:'Before or simultaneously with SELinux disable' },
+      { l:'Leaks', v:'Physical addresses via dmesg (TIMA paddr leak)' },
+    ]}},
+  { id:'slabinfo', label:'/proc/slabinfo', cat:'kernel', status:'achieved', size:.5,
+    detail:{ summary:'Readable — provides exact slab cache state for heap spray targeting', fields:[
+      { l:'kmalloc-64', v:'85,688 active / 91,648 total' },
+      { l:'kmalloc-256', v:'910 active / 1,264 total' },
+    ]}},
+
+  // Drivers
+  { id:'ion', label:'ION Driver', cat:'driver', status:'confirmed', size:1.2,
+    detail:{ summary:'ION UAF confirmed (91% race win). No code execution — blocked by mutex + no victim fn-ptr object in kmalloc-64.', fields:[
+      { l:'Race', v:'ION_IOC_FREE vs ION_IOC_SHARE → 91% win' },
+      { l:'Spray', v:'socketpair +1169 k64 per 200 ops' },
+      { l:'Blocked', v:'seq_operations is .rodata; msgsnd blocked by SELinux' },
+    ],
+    gaps:['No kmalloc-64 victim objects with callable fn-ptrs identified. Exhaustive audit of all k64 objects may reveal overlooked candidates.']}},
+
+  { id:'mali', label:'Mali T72x GPU', cat:'driver', status:'dead', size:1.0,
+    detail:{ summary:'r7p0 driver. 30K+ ops + 1150 race trials = 0 anomalies. sizeof check on all dispatch. Original crash was ION struct bug.', fields:[
+      { l:'Version', v:'r7p0 (not r5p0)' },
+      { l:'Dispatch', v:'_IOC(3,0x80,0,sizeof) — bounds-checked' },
+    ]}},
+
+  { id:'ashmem', label:'Ashmem', cat:'driver', status:'dead', size:.6,
+    detail:{ summary:'100K+ operations, 0 crashes', fields:[]}},
+
+  { id:'ptmx', label:'PTMX/TTY', cat:'driver', status:'dead', size:.6,
+    detail:{ summary:'7 tests, 700 trials, 0 crashes', fields:[]}},
+
+  { id:'alarm', label:'/dev/alarm', cat:'driver', status:'gap', size:.5,
+    detail:{ summary:'Read-only access confirmed. Android alarm device.', fields:[
+      { l:'Access', v:'RO from shell' },
+    ],
+    gaps:['Alarm driver ioctl surface not fuzzed. RTC-related ioctls may have edge cases. Low priority but unexamined.']}},
+
+  // Binder/IPC
+  { id:'binder_uaf', label:'Binder UAF (2019-2215)', cat:'binder', status:'confirmed', size:1.3,
+    detail:{ summary:'UAF confirmed but Samsung proprietary fix nullifies whead before kfree. 288 combinations tested → ZERO crashes.', fields:[
+      { l:'Object', v:'binder_thread 252B → kmalloc-256' },
+      { l:'BPF spray', v:'26-insn filter reclaims k256 (confirmed)' },
+      { l:'Samsung fix', v:'binder_free_thread nullifies eppoll_entry->whead' },
+    ],
+    gaps:['Binder UAF trigger via alternative wait_queue paths (not just epoll). Some binder_thread fields may be controllable via racing BC_REPLY.']}},
+
+  { id:'binder_svc', label:'Binder Services (330)', cat:'binder', status:'gap', size:1.0,
+    detail:{ summary:'330 services enumerated, ~15 deeply probed. Many Samsung-specific services untested.', fields:[
+      { l:'Probed', v:'SmartcomRoot, DLP, EngineeringMode, DeviceRootKey, ABTPersistence, TIMA' },
+      { l:'Untested', v:'persona (24 methods), gatekeeper, keystore, SEAMService' },
+    ],
+    gaps:['~315 binder services have NOT been deeply fuzzed. persona (24 methods), gatekeeper, keystore, Knox SEAMS could have type confusion or logic bugs exploitable via crafted Parcels.']}},
+
+  { id:'dnsproxyd', label:'dnsproxyd (netd)', cat:'binder', status:'dead', size:.7,
+    detail:{ summary:'FrameworkListener protocol reversed. Format strings, overflows all handled. netd survived all fuzzing.', fields:[
+      { l:'Owner', v:'root with ALL capabilities' },
+      { l:'Result', v:'401 error on all attack payloads' },
+    ]}},
+
+  // Bluetooth
+  { id:'blueborne', label:'BlueBorne L2CAP', cat:'bt', status:'live', size:1.5,
+    detail:{ summary:'CVE-2017-0782 UNPATCHED. l2cap_parse_conf_rsp stack overflow with ZERO input validation. buf[64] on kernel stack, no canaries, no KASLR.', fields:[
+      { l:'CVE', v:'CVE-2017-0782 (L2CAP conf_rsp overflow)' },
+      { l:'BT addr', v:'02:00:00:00:00:21' },
+      { l:'Domain', v:'bluetooth — has net_admin, packet_socket, tun_socket' },
+      { l:'Impact', v:'kernel code execution → root' },
+    ],
+    gaps:['Requires Bluetooth proximity. No PoC exploit written yet for this specific device/kernel. L2CAP CONF_PENDING path needs crafted payload with precise offsets for ARM32 ret2usr.']}},
+
+  { id:'bt_domain', label:'BT SELinux Domain', cat:'bt', status:'achieved', size:.7,
+    detail:{ summary:'52 allow rules. More kernel surface than shell — packet_socket, net_admin, tun_socket.', fields:[]}},
+
+  // Network
+  { id:'netlink', label:'Netlink Sockets', cat:'net', status:'gap', size:.6,
+    detail:{ summary:'NETLINK_ROUTE and NETLINK_SELINUX accessible. Netlink fuzzing minimal.', fields:[
+      { l:'Route', v:'Network routing tables readable' },
+      { l:'SELinux', v:'Audit events monitorable' },
+    ],
+    gaps:['Netlink message handling in kernel not fuzzed deeply. NETLINK_ROUTE message types (RTM_NEWROUTE, etc.) could trigger parsing bugs in netd or kernel.']}},
+
+  { id:'sockets', label:'Socket Surface', cat:'net', status:'dead', size:.6,
+    detail:{ summary:'21 filesystem sockets tested. Abstract sockets all SELinux-blocked. APK has FEWER socket permissions than shell.', fields:[]}},
+
+  // SELinux
+  { id:'selinux_policy', label:'SELinux Policy', cat:'selinux', status:'dead', size:1.0,
+    detail:{ summary:'10,896 of 29,594 avtab entries parsed. NO permissive types. NO transitions from shell. CONFIRMED DEAD END.', fields:[
+      { l:'Shell transitions', v:'Only runas (dead end)' },
+      { l:'su domain', v:'DOES NOT EXIST' },
+      { l:'rd_shell domain', v:'DOES NOT EXIST' },
+    ]}},
+
+  { id:'selinux_enforcing', label:'selinux_enforcing', cat:'selinux', status:'achieved', size:.6,
+    detail:{ summary:'Address confirmed: 0xC0B7AD18. Write requires kernel memory corruption + TIMA neutralization.', fields:[]}},
+
+  // Hardware
+  { id:'carrier_lock', label:'Carrier Lock (AT&T)', cat:'hardware', status:'blocked', size:1.0,
+    detail:{ summary:'AT&T carrier lock rejects ALL unsigned images. Bootloader flash via Odin impossible.', fields:[
+      { l:'OEM unlock', v:'Toggle ON but cosmetic' },
+      { l:'Knox warranty', v:'Fuse intact (warranty_bit=0)' },
+    ]}},
+
+  { id:'eub_mode', label:'EUB/BootROM', cat:'hardware', status:'gap', size:.7,
+    detail:{ summary:'Exynos 3475 DWC2 USB at 0x13500000. EUB activates on eMMC boot fail. exynos-usbdl overflow only works on 8890/8895.', fields:[
+      { l:'Entry methods', v:'eMMC CLK ground short, bootloader corruption' },
+    ],
+    gaps:['BootROM code not dumped or analyzed for Exynos 3475 specifically. BootROM USB handler vulnerabilities unknown. Requires hardware interaction (eMMC CLK test point).']}},
+
+  { id:'uart', label:'UART Debug Port', cat:'hardware', status:'gap', size:.6,
+    detail:{ summary:'JIG UART via 619kΩ resistor on USB ID pin. uart_en=0, uart_sel=AP. Requires root to toggle software side.', fields:[
+      { l:'MUIC', v:'SM5502 at I2C 0x25' },
+      { l:'Logic level', v:'1.8V (CRITICAL — 3.3V will damage)' },
+    ],
+    gaps:['Physical UART not attempted. Could provide kernel debug console output, early boot messages, possible interactive shell if console is active. Requires 619kΩ resistor + 1.8V adapter.']}},
+
+  // App layer
+  { id:'privesc_apk', label:'Privesc APK Agent', cat:'app', status:'achieved', size:1.0,
+    detail:{ summary:'com.privesc.agent: device owner + profile owner + accessibility. 31 permissions. Native code exec with RWX mprotect.', fields:[
+      { l:'UID', v:'10139 (untrusted_app)' },
+      { l:'Capabilities', v:'device admin, accessibility, WRITE_SECURE_SETTINGS, READ_LOGS, DUMP' },
+    ]}},
+
+  { id:'accessibility', label:'Accessibility Automation', cat:'app', status:'live', size:.9,
+    detail:{ summary:'Active accessibility service reads ALL screen content. Can automate privileged UI actions (SysDump, Settings, etc).', fields:[
+      { l:'Status', v:'Bound and active' },
+    ],
+    gaps:['Full UI automation workflow for privileged actions not implemented. Could automate SysDump OTP entry, system settings changes, or chain with secret code broadcasts.']}},
+
+  { id:'sysdump', label:'SysDump (*#9900#)', cat:'app', status:'gap', size:.8,
+    detail:{ summary:'30+ buttons including ramdump_mode, kernel_log, tcpdump. Some features require OTP. OTP algorithm (DJB2) is reversed.', fields:[
+      { l:'Launch', v:'APK → secret_code broadcast → SecretCodeIME → SysDump' },
+      { l:'OTP', v:'DJB2 hash of (key + YYMMmmDDHH) — solver exists' },
+    ],
+    gaps:['SysDump ramdump_mode, run_dump_all, and cp_popup_ui buttons not tested. ramdump_mode could enable kernel memory dump. OTP-protected features may unlock additional debug capabilities.']}},
+
+  { id:'drparser', label:'DRParser (Post-Root)', cat:'app', status:'blocked', size:.8,
+    detail:{ summary:'UID 1000 system app. Has AT_COMMAND, INSTALL_PACKAGES, MASTER_CLEAR. RSA key in APK assets. Goldmine IF root achieved.', fields:[
+      { l:'Keystring XML', v:'Loadable from /sdcard/ but must be RSA-encrypted' },
+    ]}},
+
+  // Modem/AT
+  { id:'dm_port', label:'DM Port (COM11)', cat:'modem', status:'live', size:1.1,
+    detail:{ summary:'Shannon 308 modem. 180 AT commands, no authentication. Direct modem control. Deeper protocol RE needed.', fields:[
+      { l:'Commands', v:'180 via AT+CLAC' },
+      { l:'Risk', v:'AT$ARMEE=1 → download mode, aggressive probing drops ADB' },
+    ],
+    gaps:['Shannon baseband binary protocol (non-AT framing) not explored. DIAG protocol could expose modem memory read/write. Baseband→AP escalation paths unknown.']}},
+
+  { id:'at_distributor', label:'at_distributor', cat:'modem', status:'blocked', size:.7,
+    detail:{ summary:'UID 1001, has CAP_SYS_ADMIN + SYS_BOOT + SYS_TIME. Abstract socket EACCES from both shell and app.', fields:[]}},
+
+  { id:'diagexe', label:'diagexe', cat:'modem', status:'blocked', size:.7,
+    detail:{ summary:'UID 1000, CAP_SYS_ADMIN + DAC_OVERRIDE. But only 8 SELinux allow rules — heavily jailed.', fields:[]}},
+
+  // Samsung specific
+  { id:'knox', label:'Samsung Knox', cat:'samsung', status:'blocked', size:.7,
+    detail:{ summary:'Knox warranty fuse intact. TIMA active. No bypass known.', fields:[]}},
+
+  { id:'mobicore', label:'MobiCore TEE', cat:'samsung', status:'blocked', size:.7,
+    detail:{ summary:'/dev/mobicore-user is world-RW on DAC but SELinux blocks from both shell and app.', fields:[]}},
+
+  { id:'factory_app', label:'Factory App', cat:'samsung', status:'blocked', size:.7,
+    detail:{ summary:'CSC_MODEM_SETTING broadcast accepted. UID 1000, has MASTER_CLEAR + INSTALL_PACKAGES. But KEYSTRING permission blocks handlers. COM11 routes to ddexe, not at_distributor.', fields:[]}},
+
+  { id:'otp_bypass', label:'OTP/SysDump Auth', cat:'samsung', status:'gap', size:.6,
+    detail:{ summary:'DJB2 hash algorithm reversed. Solver script exists. 6 minute offsets tried.', fields:[
+      { l:'Class', v:'LibOTPSecurity.OTPSecurity in serviceModeApp' },
+    ],
+    gaps:['OTP solver verified in isolation but not tested against live SysDump buttons that require auth. Some buttons may not require OTP or may have separate auth bypass.']}},
+
+  // CVEs
+  { id:'cve_dirtycow', label:'CVE-2016-5195 (Dirty COW)', cat:'cve', status:'blocked', size:.6,
+    detail:{ summary:'PATCHED. MAP_PRIVATE not modified after racing.', fields:[]}},
+  { id:'cve_futex', label:'CVE-2014-3153 (Towelroot)', cat:'cve', status:'blocked', size:.6,
+    detail:{ summary:'PATCHED. Samsung blanket-patched FUTEX_CMP_REQUEUE_PI.', fields:[]}},
+  { id:'cve_timerfd', label:'CVE-2017-10661 (timerfd)', cat:'cve', status:'gap', size:.8,
+    detail:{ summary:'timerfd + TFD_TIMER_CANCEL_ON_SET works. Race IS triggerable (~1200 clock changes/sec from timekeeping). But needs clock_settime for exploitation.', fields:[
+      { l:'Blocker', v:'CAP_SYS_TIME required for clock_settime' },
+      { l:'Workaround', v:'NTP sync trigger? APK with SET_TIME?' },
+    ],
+    gaps:['The automatic CLOCK_REALTIME adjustments (~1200/sec) could potentially be leveraged as the clock change trigger instead of explicit clock_settime. This race path needs deeper analysis with the actual timerfd cancel codepath.']}},
+
+  { id:'cve_perf', label:'CVE-2017-6001 (perf)', cat:'cve', status:'gap', size:.7,
+    detail:{ summary:'perf_event_open accessible (perf_harden settable). move_group surface reachable. NOT tested at scale.', fields:[
+      { l:'SET_OUTPUT (6786)', v:'PATCHED (7000 clean)' },
+      { l:'move_group (6001)', v:'Surface accessible, UNTESTED' },
+    ],
+    gaps:['CVE-2017-6001 perf move_group race has accessible surface but was NOT fuzz-tested at scale. Event groups + CPU pinning work. This is the most promising untested kernel race condition.']}},
+
+  // Fuzzing meta
+  { id:'fuzz_mmap', label:'mmap/ioctl Races', cat:'fuzz', status:'dead', size:.7,
+    detail:{ summary:'225M+ operations across 6 test variants. 0 crashes.', fields:[]}},
+  { id:'fuzz_splice', label:'splice/tee Races', cat:'fuzz', status:'confirmed', size:.7,
+    detail:{ summary:'2.9M+ ops. tee() ABBA deadlock found — DoS only, no memory corruption.', fields:[]}},
+  { id:'fuzz_bpf', label:'BPF Filter Races', cat:'fuzz', status:'dead', size:.5,
+    detail:{ summary:'16K+ cycles. SLUB noise only, not real leaks.', fields:[]}},
+];
+
+// Edges: [from, to, strength]
+const edges = [
+  ['target','kaslr',1], ['target','no_pxn',1], ['target','no_canary',1], ['target','tima',1],
+  ['target','selinux_policy',1], ['target','carrier_lock',1], ['target','privesc_apk',1],
+  ['kaslr','blueborne',.6], ['no_pxn','blueborne',.6], ['no_canary','blueborne',.6],
+  ['blueborne','bt_domain',.8],
+  ['ion','binder_uaf',.4], ['ion','mali',.3],
+  ['binder_uaf','binder_svc',.5],
+  ['dm_port','at_distributor',.5], ['dm_port','diagexe',.5],
+  ['privesc_apk','accessibility',.7], ['accessibility','sysdump',.5],
+  ['sysdump','otp_bypass',.6],
+  ['drparser','factory_app',.4],
+  ['tima','selinux_enforcing',.7], ['tima','knox',.5], ['tima','mobicore',.4],
+  ['cve_timerfd','ion',.3],
+  ['cve_perf','slabinfo',.3],
+  ['fuzz_splice','ion',.2],
+  ['target','dm_port',.8],
+  ['target','ion',.7], ['target','binder_uaf',.7],
+  ['carrier_lock','eub_mode',.5], ['carrier_lock','uart',.4],
+  ['netlink','dnsproxyd',.3],
+  ['sockets','dnsproxyd',.4],
+];
+
+// ─── SCENE SETUP ──────────────────────────────────────────────
+const container = document.getElementById('canvas-container');
+const scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2(0x06080d, 0.012);
+
+const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 500);
+camera.position.set(0, 18, 32);
+camera.lookAt(0, 0, 0);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.1;
+container.appendChild(renderer.domElement);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.05;
+controls.maxDistance = 80;
+controls.minDistance = 8;
+controls.maxPolarAngle = Math.PI * 0.85;
+
+// Bloom
+const composer = new EffectComposer(renderer);
+composer.addPass(new RenderPass(scene, camera));
+const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 0.6, 0.4, 0.85);
+composer.addPass(bloomPass);
+
+// Lights
+scene.add(new THREE.AmbientLight(0x1a2744, 0.6));
+const dirLight = new THREE.DirectionalLight(0x38bdf8, 0.3);
+dirLight.position.set(10, 20, 10);
+scene.add(dirLight);
+const ptLight = new THREE.PointLight(0x818cf8, 0.5, 60);
+ptLight.position.set(-8, 10, -8);
+scene.add(ptLight);
+
+// ─── GRID FLOOR ───────────────────────────────────────────────
+const gridGeo = new THREE.PlaneGeometry(120, 120, 60, 60);
+gridGeo.rotateX(-Math.PI / 2);
+const gridMat = new THREE.ShaderMaterial({
+  transparent: true,
+  uniforms: { uTime: { value: 0 } },
+  vertexShader: `
+    varying vec2 vUv;
+    varying vec3 vPos;
+    void main() {
+      vUv = uv;
+      vPos = position;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    }
+  `,
+  fragmentShader: `
+    varying vec2 vUv;
+    varying vec3 vPos;
+    uniform float uTime;
+    void main() {
+      vec2 grid = abs(fract(vPos.xz * 0.5) - 0.5);
+      float line = min(grid.x, grid.y);
+      float mask = 1.0 - smoothstep(0.01, 0.03, line);
+      float dist = length(vPos.xz);
+      float fade = 1.0 - smoothstep(10.0, 55.0, dist);
+      float pulse = 0.5 + 0.5 * sin(uTime * 0.3 - dist * 0.1);
+      gl_FragColor = vec4(0.22, 0.74, 0.97, mask * fade * pulse * 0.08);
+    }
+  `,
+});
+const gridMesh = new THREE.Mesh(gridGeo, gridMat);
+gridMesh.position.y = -4;
+scene.add(gridMesh);
+
+// ─── PARTICLE FIELD ───────────────────────────────────────────
+const particleCount = 800;
+const particleGeo = new THREE.BufferGeometry();
+const pPositions = new Float32Array(particleCount * 3);
+const pVelocities = new Float32Array(particleCount * 3);
+for (let i = 0; i < particleCount; i++) {
+  pPositions[i*3]   = (Math.random() - 0.5) * 100;
+  pPositions[i*3+1] = (Math.random() - 0.5) * 40 - 2;
+  pPositions[i*3+2] = (Math.random() - 0.5) * 100;
+  pVelocities[i*3]   = (Math.random() - 0.5) * 0.01;
+  pVelocities[i*3+1] = (Math.random() - 0.5) * 0.005;
+  pVelocities[i*3+2] = (Math.random() - 0.5) * 0.01;
+}
+particleGeo.setAttribute('position', new THREE.BufferAttribute(pPositions, 3));
+const particleMat = new THREE.PointsMaterial({ color: 0x38bdf8, size: 0.08, transparent: true, opacity: 0.3, sizeAttenuation: true });
+const particles = new THREE.Points(particleGeo, particleMat);
+scene.add(particles);
+
+// ─── BUILD NODES ──────────────────────────────────────────────
+const nodeGroup = new THREE.Group();
+scene.add(nodeGroup);
+const edgeGroup = new THREE.Group();
+scene.add(edgeGroup);
+const labelGroup = new THREE.Group();
+scene.add(labelGroup);
+
+const nodeMap = {};
+const meshToNode = new Map();
+
+// Position nodes
+function positionNodes() {
+  const catNodes = {};
+  nodes.forEach(n => {
+    if (!n.cat) return;
+    if (!catNodes[n.cat]) catNodes[n.cat] = [];
+    catNodes[n.cat].push(n);
+  });
+
+  Object.entries(catNodes).forEach(([catKey, catNodeList]) => {
+    const cat = CATEGORIES[catKey];
+    const baseRadius = cat.ring === 1 ? 12 : 20;
+    const baseAngle = (cat.angle / 6) * Math.PI * 2;
+
+    catNodeList.forEach((n, i) => {
+      const spread = catNodeList.length > 1 ? (i / (catNodeList.length - 1) - 0.5) * 0.4 : 0;
+      const angle = baseAngle + spread;
+      const r = baseRadius + (i % 3) * 2.5;
+      const y = (Math.random() - 0.5) * 3;
+      n.pos = [Math.cos(angle) * r, y, Math.sin(angle) * r];
+    });
+  });
+}
+positionNodes();
+
+// Create node meshes
+function createNodeMesh(node) {
+  const color = COLORS[node.status] || 0x64748b;
+  const s = node.size;
+
+  let geo;
+  switch(node.status) {
+    case 'core':
+      geo = new THREE.IcosahedronGeometry(s, 2);
+      break;
+    case 'live':
+      geo = new THREE.OctahedronGeometry(s, 0);
+      break;
+    case 'gap':
+      geo = new THREE.TetrahedronGeometry(s, 0);
+      break;
+    case 'confirmed':
+      geo = new THREE.DodecahedronGeometry(s, 0);
+      break;
+    case 'blocked':
+      geo = new THREE.BoxGeometry(s * 1.2, s * 1.2, s * 1.2);
+      break;
+    default:
+      geo = new THREE.SphereGeometry(s * 0.7, 12, 12);
+  }
+
+  const mat = new THREE.MeshPhysicalMaterial({
+    color,
+    emissive: color,
+    emissiveIntensity: node.status === 'core' ? 0.6 : node.status === 'live' ? 0.4 : node.status === 'gap' ? 0.35 : 0.2,
+    roughness: 0.3,
+    metalness: 0.5,
+    transparent: true,
+    opacity: 0.85,
+  });
+
+  const mesh = new THREE.Mesh(geo, mat);
+  mesh.position.set(...node.pos);
+  mesh.userData = { nodeId: node.id, baseY: node.pos[1], originalEmissive: mat.emissiveIntensity };
+
+  // Wireframe overlay
+  const wireMat = new THREE.MeshBasicMaterial({ color, wireframe: true, transparent: true, opacity: 0.15 });
+  const wireMesh = new THREE.Mesh(geo.clone(), wireMat);
+  wireMesh.scale.setScalar(1.15);
+  mesh.add(wireMesh);
+
+  // Glow ring for live/gap nodes
+  if (node.status === 'live' || node.status === 'gap' || node.status === 'core') {
+    const ringGeo = new THREE.RingGeometry(s * 1.3, s * 1.6, 32);
+    const ringMat = new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.12, side: THREE.DoubleSide });
+    const ring = new THREE.Mesh(ringGeo, ringMat);
+    ring.rotation.x = -Math.PI / 2;
+    mesh.add(ring);
+    mesh.userData.ring = ring;
+  }
+
+  nodeGroup.add(mesh);
+  nodeMap[node.id] = mesh;
+  meshToNode.set(mesh, node);
+  return mesh;
+}
+
+nodes.forEach(createNodeMesh);
+
+// ─── LABELS (Sprite) ──────────────────────────────────────────
+function createLabel(node) {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = 512; canvas.height = 64;
+  ctx.font = 'bold 28px "JetBrains Mono", monospace';
+  ctx.fillStyle = '#e2e8f0';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(node.label, 256, 32);
+
+  const tex = new THREE.CanvasTexture(canvas);
+  tex.minFilter = THREE.LinearFilter;
+  const spriteMat = new THREE.SpriteMaterial({ map: tex, transparent: true, opacity: 0.7 });
+  const sprite = new THREE.Sprite(spriteMat);
+  sprite.position.set(node.pos[0], node.pos[1] + node.size + 0.8, node.pos[2]);
+  sprite.scale.set(4, 0.5, 1);
+  sprite.userData = { nodeId: node.id };
+  labelGroup.add(sprite);
+  return sprite;
+}
+const labelMap = {};
+nodes.forEach(n => { labelMap[n.id] = createLabel(n); });
+
+// ─── EDGES ────────────────────────────────────────────────────
+const edgeMeshes = [];
+
+function buildEdges() {
+  edgeGroup.clear();
+  edgeMeshes.length = 0;
+
+  edges.forEach(([fromId, toId, strength]) => {
+    const fromNode = nodeMap[fromId];
+    const toNode = nodeMap[toId];
+    if (!fromNode || !toNode) return;
+
+    const points = [];
+    const fp = fromNode.position;
+    const tp = toNode.position;
+    const mid = new THREE.Vector3().lerpVectors(fp, tp, 0.5);
+    mid.y += 1 + strength;
+
+    const curve = new THREE.QuadraticBezierCurve3(fp.clone(), mid, tp.clone());
+    const cPoints = curve.getPoints(24);
+
+    const geo = new THREE.BufferGeometry().setFromPoints(cPoints);
+    const mat = new THREE.LineBasicMaterial({
+      color: 0x38bdf8,
+      transparent: true,
+      opacity: 0.06 + strength * 0.06,
+    });
+    const line = new THREE.Line(geo, mat);
+    line.userData = { fromId, toId };
+    edgeGroup.add(line);
+    edgeMeshes.push(line);
+  });
+}
+buildEdges();
+
+// ─── CATEGORY RINGS ───────────────────────────────────────────
+[12, 20].forEach(r => {
+  const ringGeo = new THREE.RingGeometry(r - 0.05, r + 0.05, 128);
+  const ringMat = new THREE.MeshBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.04, side: THREE.DoubleSide });
+  const ring = new THREE.Mesh(ringGeo, ringMat);
+  ring.rotation.x = -Math.PI / 2;
+  ring.position.y = -3.5;
+  scene.add(ring);
+});
+
+// ─── INTERACTION ──────────────────────────────────────────────
+const raycaster = new THREE.Raycaster();
+const mouse = new THREE.Vector2();
+let hoveredNode = null;
+let selectedNode = null;
+const tooltip = document.getElementById('tooltip');
+const sidePanel = document.getElementById('side-panel');
+const spTitle = document.getElementById('sp-title');
+const spBody = document.getElementById('sp-body');
+const spClose = document.getElementById('sp-close');
+
+function onMouseMove(e) {
+  mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+  mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+
+  raycaster.setFromCamera(mouse, camera);
+  const intersects = raycaster.intersectObjects(nodeGroup.children, false);
+
+  if (intersects.length > 0) {
+    const mesh = intersects[0].object;
+    const node = meshToNode.get(mesh);
+    if (node) {
+      hoveredNode = node;
+      container.style.cursor = 'pointer';
+      document.getElementById('tt-name').textContent = node.label;
+      const statusMap = { blocked:'⛔ Blocked/Patched', live:'🔥 Live Vector', confirmed:'✅ Confirmed Vuln', gap:'⚠ Analysis Gap', achieved:'🟣 Achieved', dead:'💀 Dead End', core:'🎯 Target' };
+      document.getElementById('tt-status').textContent = statusMap[node.status] || node.status;
+      tooltip.classList.add('visible');
+      tooltip.style.left = (e.clientX + 15) + 'px';
+      tooltip.style.top = (e.clientY - 10) + 'px';
+      return;
+    }
+  }
+  hoveredNode = null;
+  container.style.cursor = 'default';
+  tooltip.classList.remove('visible');
+}
+
+function onClick(e) {
+  if (!hoveredNode) return;
+  selectedNode = hoveredNode;
+  showDetail(selectedNode);
+}
+
+function showDetail(node) {
+  const d = node.detail;
+  spTitle.textContent = node.label;
+
+  let html = '';
+  const statusColors = { blocked:'#f87171', live:'#fb923c', confirmed:'#34d399', gap:'#fbbf24', achieved:'#818cf8', dead:'#475569', core:'#38bdf8' };
+  const statusLabels = { blocked:'Blocked', live:'Live Vector', confirmed:'Confirmed Vuln', gap:'Analysis Gap', achieved:'Achieved', dead:'Dead End', core:'Target' };
+  html += `<div style="margin-bottom:.8rem"><span class="sp-tag" style="background:${statusColors[node.status]}22;color:${statusColors[node.status]}">${statusLabels[node.status]}</span>`;
+  if (node.cat) html += ` <span class="sp-tag" style="background:rgba(56,189,248,.1);color:var(--accent)">${CATEGORIES[node.cat]?.label || node.cat}</span>`;
+  html += `</div>`;
+
+  html += `<div class="sp-field"><div class="sp-field-label">Summary</div><div class="sp-field-value">${d.summary}</div></div>`;
+
+  if (d.fields && d.fields.length) {
+    html += `<div class="sp-field"><div class="sp-field-label">Details</div><div class="sp-field-value"><ul>`;
+    d.fields.forEach(f => { html += `<li><strong style="color:var(--text)">${f.l}:</strong> ${f.v}</li>`; });
+    html += `</ul></div></div>`;
+  }
+
+  // Connected nodes
+  const connected = edges.filter(e => e[0] === node.id || e[1] === node.id)
+    .map(e => e[0] === node.id ? e[1] : e[0])
+    .map(id => nodes.find(n => n.id === id))
+    .filter(Boolean);
+  if (connected.length) {
+    html += `<div class="sp-field"><div class="sp-field-label">Connected To</div><div class="sp-field-value"><ul>`;
+    connected.forEach(cn => {
+      const c = statusColors[cn.status] || '#64748b';
+      html += `<li><span style="color:${c};font-weight:600">${cn.label}</span> <span style="color:var(--dim);font-size:.6rem">(${statusLabels[cn.status]})</span></li>`;
+    });
+    html += `</ul></div></div>`;
+  }
+
+  // Gap alert
+  if (d.gaps && d.gaps.length) {
+    d.gaps.forEach(g => {
+      html += `<div class="sp-gap-alert"><h4>⚠ ANALYSIS GAP</h4><p>${g}</p></div>`;
+    });
+  }
+
+  spBody.innerHTML = html;
+  sidePanel.classList.add('visible');
+
+  // Highlight connected edges
+  edgeMeshes.forEach(line => {
+    const connected = line.userData.fromId === node.id || line.userData.toId === node.id;
+    line.material.opacity = connected ? 0.35 : 0.04;
+    line.material.color.setHex(connected ? statusColors[node.status]?.replace('#','0x') || 0x38bdf8 : 0x38bdf8);
+  });
+}
+
+spClose.addEventListener('click', () => {
+  sidePanel.classList.remove('visible');
+  selectedNode = null;
+  edgeMeshes.forEach(l => { l.material.opacity = 0.06 + 0.06; l.material.color.setHex(0x38bdf8); });
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') spClose.click();
+});
+
+container.addEventListener('mousemove', onMouseMove);
+container.addEventListener('click', onClick);
+
+// ─── FILTERS ──────────────────────────────────────────────────
+let activeFilter = 'all';
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter = btn.dataset.filter;
+    applyFilter();
+  });
+});
+
+function applyFilter() {
+  nodes.forEach(node => {
+    const mesh = nodeMap[node.id];
+    const label = labelMap[node.id];
+    if (!mesh) return;
+
+    let visible = true;
+    if (activeFilter !== 'all') {
+      visible = node.status === activeFilter;
+    }
+
+    const targetOpacity = visible ? 0.85 : 0.05;
+    const targetEmissive = visible ? mesh.userData.originalEmissive : 0.02;
+    mesh.material.opacity = targetOpacity;
+    mesh.material.emissiveIntensity = targetEmissive;
+    if (label) label.material.opacity = visible ? 0.7 : 0.05;
+  });
+
+  edgeMeshes.forEach(line => {
+    if (activeFilter === 'all') {
+      line.material.opacity = 0.08;
+    } else {
+      const fromNode = nodes.find(n => n.id === line.userData.fromId);
+      const toNode = nodes.find(n => n.id === line.userData.toId);
+      const vis = (fromNode?.status === activeFilter) || (toNode?.status === activeFilter);
+      line.material.opacity = vis ? 0.2 : 0.02;
+    }
+  });
+}
+
+// ─── ANIMATION LOOP ───────────────────────────────────────────
+const clock = new THREE.Clock();
+
+function animate() {
+  requestAnimationFrame(animate);
+  const t = clock.getElapsedTime();
+
+  // Grid animation
+  gridMat.uniforms.uTime.value = t;
+
+  // Node animations
+  nodeGroup.children.forEach(mesh => {
+    const d = mesh.userData;
+    // Gentle float
+    mesh.position.y = d.baseY + Math.sin(t * 0.5 + mesh.position.x * 0.3) * 0.15;
+    // Slow rotation
+    mesh.rotation.y += 0.002;
+    mesh.rotation.x += 0.001;
+
+    // Pulse rings on live/gap
+    if (d.ring) {
+      d.ring.material.opacity = 0.06 + 0.06 * Math.sin(t * 2);
+      d.ring.rotation.z = t * 0.3;
+    }
+
+    // Hover effect
+    const node = meshToNode.get(mesh);
+    if (node === hoveredNode) {
+      mesh.material.emissiveIntensity = d.originalEmissive + 0.3;
+      mesh.scale.setScalar(1.15);
+    } else {
+      mesh.material.emissiveIntensity = mesh.material.opacity > 0.1 ? d.originalEmissive : 0.02;
+      mesh.scale.setScalar(1.0);
+    }
+  });
+
+  // Particle drift
+  const posArr = particles.geometry.attributes.position.array;
+  for (let i = 0; i < particleCount; i++) {
+    posArr[i*3]   += pVelocities[i*3];
+    posArr[i*3+1] += pVelocities[i*3+1];
+    posArr[i*3+2] += pVelocities[i*3+2];
+    if (Math.abs(posArr[i*3]) > 50) pVelocities[i*3] *= -1;
+    if (Math.abs(posArr[i*3+1]) > 20) pVelocities[i*3+1] *= -1;
+    if (Math.abs(posArr[i*3+2]) > 50) pVelocities[i*3+2] *= -1;
+  }
+  particles.geometry.attributes.position.needsUpdate = true;
+
+  controls.update();
+  composer.render();
+}
+
+animate();
+
+// ─── RESIZE ───────────────────────────────────────────────────
+window.addEventListener('resize', () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  composer.setSize(window.innerWidth, window.innerHeight);
+});
+</script>
+</body>
+</html>

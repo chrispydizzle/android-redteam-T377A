@@ -4,7 +4,7 @@
 
 **Audit Date:** 2026-02-18  
 **Auditor:** Automated Security Assessment  
-**Device ID:** `52030d9842d7a3bd`  
+**Device ID:** `0000000000000000`  
 **Scope:** Security posture assessment and hardening recommendations
 
 ---
@@ -55,29 +55,34 @@ A comprehensive security audit was performed on a **Samsung Galaxy Tab A (SM-T37
 ## 2. Network Configuration
 
 ### Interfaces
+
 | Interface | Status | IP Address | MAC Address |
 |-----------|--------|------------|-------------|
-| wlan0 | Active | 192.168.1.104 | BC:76:5E:57:44:ED |
+| wlan0 | Active | 192.168.1.104 | 02:00:00:00:00:11 |
 | p2p0 (WiFi Direct) | Up | Unconfigured | — |
 | lo (Loopback) | Active | 127.0.0.1 | — |
 
 ### Open Ports & Services
+
 - ✅ **No TCP ports listening** from user space — minimal attack surface
 - UDP port **5228** listening (Google Cloud Messaging / FCM)
 - Multiple Unix domain sockets for system IPC
 
 ### Active Connections
+
 - **30+ established connections**, predominantly HTTPS (port 443)
 - Destinations include Google infrastructure (142.250.x, 142.251.x, 216.239.x)
 - Connection to **Meta/Facebook** (31.13.71.1) detected
 - ⚠️ **One unencrypted HTTP connection** detected (23.33.46.38:80)
 
 ### Routing
+
 - Default gateway: 192.168.1.13 (local network)
 - No mobile/GPRS data active
 - No VPN tunnel established
 
 ### Assessment
+
 - ⚠️ Unencrypted HTTP traffic observed — potential data leakage
 - ⚠️ ADB daemon is network-accessible
 - Google and Meta telemetry active — data exfiltration risk if device handles sensitive info
@@ -96,6 +101,7 @@ A comprehensive security audit was performed on a **Samsung Galaxy Tab A (SM-T37
 ### Third-Party Applications of Note
 
 #### 🔴 Security/Penetration Testing Tools (13 packages)
+
 | Package | Purpose | Risk |
 |---------|---------|------|
 | Hijacker | WiFi attack tool | High |
@@ -113,9 +119,11 @@ A comprehensive security audit was performed on a **Samsung Galaxy Tab A (SM-T37
 | Gamma | Network scanner | Medium |
 
 #### 🟢 Legitimate Applications (5 packages)
+
 Google Tasks, Google Messages, Google Chromecast, AT&T Device Unlock, Pandora
 
 ### Assessment
+
 - ⚠️ Device is configured as a **penetration testing platform** with offensive security tooling
 - ⚠️ Root management tools (Magisk, Z4Root, Superuser) present — indicates device has been or can be rooted
 - ⚠️ WiFi exploitation tools (Hijacker, cSploit, Nexmon) represent significant risk if device is compromised
@@ -126,6 +134,7 @@ Google Tasks, Google Messages, Google Chromecast, AT&T Device Unlock, Pandora
 ## 4. Permissions & Access Controls
 
 ### Current ADB Context
+
 ```
 uid=2000(shell) gid=2000(shell)
 groups: shell, input, log, adb, sdcard_rw, sdcard_r, net_bt_admin, net_bt, inet, net_bw_stats
@@ -133,6 +142,7 @@ SELinux context: u:r:shell:s0
 ```
 
 ### SU Binary / Root Access
+
 | Location | Status |
 |----------|--------|
 | `/system/bin/su` | ❌ Not found |
@@ -155,6 +165,7 @@ SELinux context: u:r:shell:s0
 > **All files have world-readable, world-writable, world-executable permissions (777).** Any process on the device can read, modify, or execute these files.
 
 ### SUID Binaries
+
 - ✅ **None found** — no SUID privilege escalation vectors via filesystem
 
 ### Filesystem Mount Security
@@ -169,13 +180,16 @@ SELinux context: u:r:shell:s0
 | SD Card | `/storage/56C2-A183` | exfat→sdcardfs | **nosuid, nodev, noexec** | ✅ Properly restricted |
 
 ### Knox Containers
+
 - Samsung Knox encrypted storage is present (`ecryptfs` with AES-256)
 - Knox SD card mounts detected at `/mnt/knox/`
 
 ### World-Writable Files in `/system`
+
 - ✅ **None found**
 
 ### Assessment
+
 - 🔴 **Critical:** 8 world-writable executable files in `/data/local/tmp/` including known privilege escalation tools
 - 🔴 **Critical:** `su` binary available — root access can be trivially obtained
 - ✅ System partition is properly read-only
@@ -187,6 +201,7 @@ SELinux context: u:r:shell:s0
 ## 5. Running Services & Processes
 
 ### Process Summary
+
 - **Total processes:** 235
 - **Kernel threads:** ~170
 - **User-space daemons:** ~10 critical root services
@@ -221,6 +236,7 @@ SELinux context: u:r:shell:s0
 | `at_distributor` | Running | ⚠️ AT modem command distributor |
 
 ### Assessment
+
 - ⚠️ **ADB daemon running** — provides direct shell access over USB
 - ⚠️ **debuggerd running as root** — crash dump service, potential information leakage
 - ⚠️ **DIAG-daemon** — diagnostic interface could expose sensitive device data
@@ -264,16 +280,20 @@ SELinux context: u:r:shell:s0
 > ADB is included in the active USB configuration, providing persistent shell access.
 
 ### Screen Lock
+
 - **Lock timeout:** 600,000 ms (**10 minutes**) — too long
 - **Stay awake while plugged:** `3` (enabled on AC + USB) — device never locks when charging
 
 ### Additional Properties
+
 - **VPN Protection Module:** v1.4 (Samsung VPN PP)
 - **Secure Storage:** Supported (`ro.securestorage.support=true`)
 - **Security Policy (ASKS):** Version `000000` — may indicate unconfigured policy
 
 ### Settings Provider Issues
+
 Multiple `settings get` commands returned `DeadObjectException` and `NullPointerException`, suggesting:
+
 - Possible OS instability
 - ActivityManager service intermittent failures
 - Potential indicator of system compromise
@@ -315,6 +335,7 @@ All raw command output is preserved in the `findings/` directory:
 ---
 
 ### Tools Used
+
 | Tool | Version | Purpose |
 |------|---------|---------|
 | ADB (Android Debug Bridge) | System | Device interrogation and data collection |

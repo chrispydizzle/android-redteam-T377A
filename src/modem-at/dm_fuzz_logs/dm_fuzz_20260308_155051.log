@@ -1,0 +1,9 @@
+[15:50:51.376] DM Protocol Fuzzer - Samsung SM-T377A
+[15:50:51.376] Target: diagexe via COM11 @ 115200
+[15:50:51.376] Log: C:\InfoSec\android-redteam\src\modem-at\dm_fuzz_logs\dm_fuzz_20260308_155051.log
+[15:50:51.376] 
+[15:50:51.510] Initial diagexe PID: 2211
+[15:50:51.510] Serial error: could not open port 'COM11': FileNotFoundError(2, 'The system cannot find the file specified.', None, 2)
+[15:50:51.635] 
+Final diagexe PID: 2211, alive=True
+[15:50:51.635] Crash detected: False

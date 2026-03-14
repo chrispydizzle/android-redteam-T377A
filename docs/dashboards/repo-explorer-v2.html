@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SM-T377A — Repo Treemap + PII Scanner</title>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<style>
+  :root {
+    --bg:#0d1117;--surface:#161b22;--card:#1c2128;--border:#30363d;
+    --text:#c9d1d9;--muted:#8b949e;--bright:#f0f6fc;--accent:#58a6ff;
+    --crit:#ff4d4d;--high:#ff9933;--med:#ffcc33;--clean:#238636;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;display:flex;flex-direction:column;height:100vh;overflow:hidden}
+
+  /* TOP BAR */
+  .topbar{height:44px;background:#010409;border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 16px;gap:12px;flex-shrink:0}
+  .topbar .logo{font-size:14px;font-weight:700;color:var(--bright);white-space:nowrap}
+  .breadcrumb{font-size:12px;color:var(--muted);flex:1;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+  .breadcrumb span{cursor:pointer;color:var(--accent);padding:2px 4px;border-radius:3px}
+  .breadcrumb span:hover{background:rgba(88,166,255,.1)}
+  .breadcrumb .sep{color:var(--muted);cursor:default;padding:0 2px}
+
+  .pii-toggle{display:flex;align-items:center;gap:6px;cursor:pointer;padding:4px 12px;border-radius:16px;border:1px solid var(--border);font-size:12px;background:transparent;color:var(--muted);transition:all .2s;font-family:inherit;white-space:nowrap}
+  .pii-toggle:hover{border-color:var(--crit)}
+  .pii-toggle.active{background:rgba(255,77,77,.15);border-color:var(--crit);color:var(--crit)}
+  .pii-toggle .dot{width:8px;height:8px;border-radius:50%;background:var(--muted);transition:background .2s}
+  .pii-toggle.active .dot{background:var(--crit);box-shadow:0 0 6px var(--crit)}
+
+  .stat-pills{display:flex;gap:6px;align-items:center}
+  .pill{font-size:10px;padding:2px 8px;border-radius:10px;background:var(--surface);color:var(--muted);white-space:nowrap}
+  .pill.crit{background:rgba(255,77,77,.15);color:var(--crit)}
+
+  /* MAIN */
+  .main{display:flex;flex:1;overflow:hidden}
+
+  /* TREEMAP */
+  .treemap-pane{flex:1;overflow:hidden;position:relative}
+  #treemap{width:100%;height:100%}
+  .tm-cell{stroke:var(--bg);stroke-width:1.5px;cursor:pointer;transition:opacity .2s}
+  .tm-cell:hover{stroke:var(--bright);stroke-width:2px}
+  .tm-cell.pii-glow{stroke:var(--crit);stroke-width:2.5px;filter:drop-shadow(0 0 4px rgba(255,77,77,.5))}
+  .tm-cell.pii-high{stroke:var(--high);stroke-width:2px;filter:drop-shadow(0 0 3px rgba(255,153,51,.4))}
+  .tm-cell.pii-med{stroke:var(--med);stroke-width:2px}
+  .tm-cell.pii-dimmed{opacity:.12}
+  .tm-label{pointer-events:none;fill:rgba(255,255,255,.85);font-size:11px;font-weight:500;text-shadow:0 1px 3px rgba(0,0,0,.8)}
+  .tm-size-label{pointer-events:none;fill:rgba(255,255,255,.4);font-size:9px}
+  .tm-dir-label{pointer-events:all;font-size:13px;font-weight:700;fill:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:1px;cursor:pointer;text-shadow:0 1px 4px rgba(0,0,0,.8)}
+
+  /* SIDEBAR */
+  .sidebar{width:360px;background:var(--surface);border-left:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden;flex-shrink:0;transition:width .2s}
+  .sidebar.collapsed{width:0;border-left:none}
+  .sidebar-header{padding:10px 14px;border-bottom:1px solid var(--border);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;font-weight:600;display:flex;justify-content:space-between;align-items:center}
+  .sidebar-header .close-btn{cursor:pointer;font-size:16px;opacity:.5}
+  .sidebar-header .close-btn:hover{opacity:1;color:var(--accent)}
+
+  .sidebar-content{flex:1;overflow-y:auto;padding:0}
+
+  /* PII list */
+  .pii-section{padding:10px 14px;border-bottom:1px solid var(--border)}
+  .pii-section h3{font-size:12px;font-weight:600;color:var(--bright);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+  .pii-section h3 .count{font-size:10px;background:var(--card);padding:1px 6px;border-radius:8px;color:var(--muted)}
+  .pii-hit{padding:6px 8px;border-radius:4px;margin-bottom:4px;font-size:11px;cursor:pointer;transition:background .15s;border-left:3px solid transparent}
+  .pii-hit:hover{background:var(--card)}
+  .pii-hit.crit{border-left-color:var(--crit)}
+  .pii-hit.high{border-left-color:var(--high)}
+  .pii-hit.med{border-left-color:var(--med)}
+  .pii-hit .hit-cat{font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:.3px}
+  .pii-hit .hit-cat.crit{color:var(--crit)}
+  .pii-hit .hit-cat.high{color:var(--high)}
+  .pii-hit .hit-cat.med{color:var(--med)}
+  .pii-hit .hit-val{color:var(--bright);font-family:monospace;font-size:11px;background:rgba(255,77,77,.1);padding:0 4px;border-radius:2px;margin:2px 0;display:inline-block}
+  .pii-hit .hit-line{color:var(--muted);font-size:10px}
+
+  /* File preview */
+  .file-preview-panel{flex:1;overflow:auto;display:none}
+  .file-preview-panel.visible{display:block}
+  .preview-header{padding:10px 14px;border-bottom:1px solid var(--border);font-size:12px;color:var(--bright);font-weight:600;display:flex;justify-content:space-between}
+  .preview-body{padding:12px 14px;font-family:'SF Mono',Consolas,monospace;font-size:12px;line-height:1.6;white-space:pre-wrap;word-wrap:break-word}
+  .preview-body .line-num{display:inline-block;width:40px;text-align:right;color:var(--muted);opacity:.4;margin-right:12px;user-select:none}
+  .preview-body .pii-hl{background:rgba(255,77,77,.25);border-bottom:2px solid var(--crit);padding:0 2px;border-radius:2px}
+
+  .tooltip{position:absolute;display:none;padding:10px 14px;background:#1c2128;border:1px solid var(--border);border-radius:6px;pointer-events:none;box-shadow:0 8px 24px rgba(0,0,0,.5);font-size:12px;z-index:1000;max-width:320px;line-height:1.5}
+  .tooltip strong{color:var(--bright)}
+
+  .color-legend{position:absolute;bottom:12px;left:12px;display:flex;gap:8px;font-size:10px;color:var(--muted);background:rgba(13,17,23,.85);padding:6px 12px;border-radius:6px;border:1px solid var(--border);backdrop-filter:blur(8px);z-index:5}
+  .color-legend .swatch{width:12px;height:12px;border-radius:2px;display:inline-block;vertical-align:middle;margin-right:3px}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo">🗺️ RepoMap v2</div>
+  <div class="breadcrumb" id="breadcrumb"></div>
+  <button class="pii-toggle" id="pii-toggle" title="Toggle PII highlighting">
+    <span class="dot"></span> PII Scanner
+  </button>
+  <div class="stat-pills" id="stats"></div>
+</div>
+
+<div class="main">
+  <div class="treemap-pane">
+    <svg id="treemap"></svg>
+    <div class="color-legend" id="legend"></div>
+  </div>
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span id="sidebar-title">PII Detections</span>
+      <span class="close-btn" id="sidebar-close">×</span>
+    </div>
+    <div class="sidebar-content">
+      <div id="pii-list"></div>
+      <div class="file-preview-panel" id="file-preview">
+        <div class="preview-header">
+          <span id="preview-filename"></span>
+          <span style="cursor:pointer;color:var(--muted)" id="preview-close">✕ Close</span>
+        </div>
+        <div class="preview-body" id="preview-body"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tooltip" id="tooltip"></div>
+
+<script>
+// ═══════════════════════════════════════════════════
+// DATA LOADING
+// ═══════════════════════════════════════════════════
+
+let TREE = [], CONTENTS = {}, PII = {};
+let piiMode = false;
+
+async function loadData() {
+  const [t, c, p] = await Promise.all([
+    fetch('_tree.json').then(r => r.json()),
+    fetch('_contents.json').then(r => r.json()),
+    fetch('_pii.json').then(r => r.json()),
+  ]);
+  TREE = t; CONTENTS = c; PII = p;
+
+  const totalFiles = countFiles(TREE);
+  const piiFiles = Object.keys(PII).length;
+  const piiHits = Object.values(PII).reduce((s, v) => s + v.length, 0);
+  const critFiles = Object.values(PII).filter(v => v.some(h => h.sev === 'CRITICAL')).length;
+
+  document.getElementById('stats').innerHTML =
+    `<span class="pill">${totalFiles} files</span>` +
+    `<span class="pill crit">${piiHits} PII hits in ${piiFiles} files</span>` +
+    `<span class="pill crit">${critFiles} CRITICAL</span>`;
+
+  buildTreemap();
+  buildPiiList();
+}
+
+function countFiles(nodes) {
+  let n = 0;
+  for (const e of nodes) {
+    if (e.t === 'f') n++;
+    else if (e.ch) n += countFiles(e.ch);
+  }
+  return n;
+}
+
+// ═══════════════════════════════════════════════════
+// TREEMAP
+// ═══════════════════════════════════════════════════
+
+const dirColors = {
+  'src':'#58a6ff','findings':'#f0883e','work':'#bc8cff','docs':'#3fb950',
+  'device-data':'#79c0ff','compiled':'#8b949e','qemu':'#56d364','apk':'#d2a8ff',
+  'archive':'#484f58','exynos_src':'#6e7681','STATUS.md':'#f85149','README.md':'#3fb950',
+  'PROGRESS-LOG.md':'#d29922',
+};
+
+function getColor(path) {
+  if (!path) return '#3a4555';
+  const top = path.split('/')[0];
+  return dirColors[top] || '#3a4555';
+}
+
+function getPiiSeverity(path) {
+  if (!path) return null;
+  const hits = PII[path];
+  if (!hits) return null;
+  if (hits.some(h => h.sev === 'CRITICAL')) return 'CRITICAL';
+  if (hits.some(h => h.sev === 'HIGH')) return 'HIGH';
+  return 'MEDIUM';
+}
+
+function treeToHierarchy(nodes, name, parentPath) {
+  const children = [];
+  for (const node of nodes) {
+    if (node.t === 'd') {
+      if (node.ch && node.ch.length > 0) {
+        children.push(treeToHierarchy(node.ch, node.n, node.p));
+      } else {
+        children.push({ name: node.n, path: node.p, value: 500, ext: '', isDir: true });
+      }
+    } else if (node.t === 'f') {
+      // Cap file sizes: log-scale to prevent huge binaries from crushing everything
+      // A 3GB .tar.md5 and a 10KB .c file should differ ~10x, not 300000x
+      const raw = Math.max(node.s || 1, 100);
+      const capped = Math.pow(Math.log10(raw + 1), 3) * 200;
+      children.push({ name: node.n, path: node.p, value: capped, rawSize: node.s, ext: node.e });
+    }
+  }
+  return { name, path: parentPath || '', children };
+}
+
+let currentHierarchy = null;
+let currentPath = [];
+const tooltip = d3.select('#tooltip');
+
+function buildTreemap(rootNodes, pathStack) {
+  rootNodes = rootNodes || TREE;
+  pathStack = pathStack || [];
+  currentPath = pathStack;
+
+  const container = document.getElementById('treemap');
+  const width = container.parentElement.clientWidth;
+  const height = container.parentElement.clientHeight;
+
+  const svg = d3.select('#treemap')
+    .attr('width', width)
+    .attr('height', height);
+
+  svg.selectAll('*').remove();
+
+  const hierName = pathStack.length > 0 ? pathStack[pathStack.length - 1] : 'root';
+  const hierPath = pathStack.join('/');
+  const root = d3.hierarchy(treeToHierarchy(rootNodes, hierName, hierPath))
+    .sum(d => d.value || 0)
+    .sort((a, b) => b.value - a.value);
+
+  d3.treemap()
+    .size([width, height])
+    .tile(d3.treemapSquarify.ratio(1.2))
+    .paddingTop(d => d.depth === 0 ? 0 : 22)
+    .paddingInner(2)
+    .paddingOuter(2)
+    .round(true)
+    (root);
+
+  const leaves = root.leaves();
+
+  // Cell rectangles
+  svg.selectAll('.tm-cell')
+    .data(leaves)
+    .join('rect')
+    .attr('class', d => {
+      let cls = 'tm-cell';
+      if (piiMode) {
+        const sev = getPiiSeverity(d.data.path);
+        if (sev === 'CRITICAL') cls += ' pii-glow';
+        else if (sev === 'HIGH') cls += ' pii-high';
+        else if (sev === 'MEDIUM') cls += ' pii-med';
+        else cls += ' pii-dimmed';
+      }
+      return cls;
+    })
+    .attr('x', d => d.x0)
+    .attr('y', d => d.y0)
+    .attr('width', d => Math.max(0, d.x1 - d.x0))
+    .attr('height', d => Math.max(0, d.y1 - d.y0))
+    .attr('fill', d => {
+      if (piiMode) {
+        const sev = getPiiSeverity(d.data.path);
+        if (sev === 'CRITICAL') return '#4a1010';
+        if (sev === 'HIGH') return '#3a2810';
+        if (sev === 'MEDIUM') return '#2a2810';
+        if (!sev) return '#111318';
+      }
+      return getColor(d.data.path);
+    })
+    .attr('opacity', d => piiMode && !getPiiSeverity(d.data.path) ? 0.15 : 0.7)
+    .attr('rx', 2)
+    .on('mouseover', function(event, d) {
+      d3.select(this).attr('opacity', 1);
+      const piiSev = getPiiSeverity(d.data.path);
+      const piiHits = PII[d.data.path] || [];
+      let piiHtml = '';
+      if (piiHits.length > 0) {
+        const cats = [...new Set(piiHits.map(h => h.cat))];
+        piiHtml = `<br/><span style="color:var(--crit)">⚠ ${piiHits.length} PII hits: ${cats.join(', ')}</span>`;
+      }
+      tooltip.style('display', 'block')
+        .style('left', (event.pageX + 12) + 'px')
+        .style('top', (event.pageY - 12) + 'px')
+        .html(`<strong>${d.data.name}</strong><br/>
+          ${d.data.path || ''}<br/>
+          Size: ${formatSize(d.data.rawSize || d.data.value)}${d.data.ext ? ' · ' + d.data.ext : ''}${piiHtml}`);
+    })
+    .on('mousemove', function(event) {
+      tooltip.style('left', (event.pageX + 12) + 'px').style('top', (event.pageY - 12) + 'px');
+    })
+    .on('mouseout', function(event, d) {
+      d3.select(this).attr('opacity', piiMode && !getPiiSeverity(d.data.path) ? 0.15 : 0.7);
+      tooltip.style('display', 'none');
+    })
+    .on('click', function(event, d) {
+      openFilePreview(d.data.path, d.data.name);
+    });
+
+  // File name labels (only if cell is big enough)
+  svg.selectAll('.tm-label')
+    .data(leaves.filter(d => (d.x1 - d.x0) > 40 && (d.y1 - d.y0) > 14))
+    .join('text')
+    .attr('class', 'tm-label')
+    .attr('x', d => d.x0 + 4)
+    .attr('y', d => d.y0 + 12)
+    .text(d => {
+      const maxChars = Math.floor((d.x1 - d.x0 - 8) / 6.5);
+      return d.data.name.length > maxChars ? d.data.name.substring(0, maxChars - 1) + '…' : d.data.name;
+    })
+    .style('font-size', d => (d.y1 - d.y0) > 30 ? '11px' : '9px');
+
+  // Size labels
+  svg.selectAll('.tm-size-label')
+    .data(leaves.filter(d => (d.x1 - d.x0) > 50 && (d.y1 - d.y0) > 28))
+    .join('text')
+    .attr('class', 'tm-size-label')
+    .attr('x', d => d.x0 + 4)
+    .attr('y', d => d.y0 + 24)
+    .text(d => formatSize(d.data.value));
+
+  // PII indicator dots
+  if (piiMode) {
+    svg.selectAll('.pii-dot')
+      .data(leaves.filter(d => getPiiSeverity(d.data.path)))
+      .join('circle')
+      .attr('cx', d => d.x1 - 8)
+      .attr('cy', d => d.y0 + 8)
+      .attr('r', 4)
+      .attr('fill', d => {
+        const s = getPiiSeverity(d.data.path);
+        return s === 'CRITICAL' ? 'var(--crit)' : s === 'HIGH' ? 'var(--high)' : 'var(--med)';
+      })
+      .attr('pointer-events', 'none');
+  }
+
+  // Directory group labels (for depth 1)
+  const groups = root.children || [];
+  
+  // Clickable background for directory groups
+  svg.selectAll('.tm-dir-bg')
+    .data(groups.filter(d => (d.x1 - d.x0) > 30 && (d.y1 - d.y0) > 20))
+    .join('rect')
+    .attr('class', 'tm-dir-bg')
+    .attr('x', d => d.x0)
+    .attr('y', d => d.y0)
+    .attr('width', d => Math.max(0, d.x1 - d.x0))
+    .attr('height', 22)
+    .attr('fill', 'transparent')
+    .style('cursor', 'pointer')
+    .on('click', function(event, d) {
+      event.stopPropagation();
+      const dirNode = findTreeNode(d.data.name, pathStack.length === 0 ? TREE : findTreeChildren(pathStack));
+      if (dirNode && dirNode.ch) {
+        buildTreemap(dirNode.ch, [...pathStack, d.data.name]);
+      }
+    });
+
+  svg.selectAll('.tm-dir-label')
+    .data(groups.filter(d => (d.x1 - d.x0) > 40 && (d.y1 - d.y0) > 20))
+    .join('text')
+    .attr('class', 'tm-dir-label')
+    .attr('x', d => d.x0 + 4)
+    .attr('y', d => d.y0 + 16)
+    .text(d => d.data.name)
+    .style('cursor', 'pointer')
+    .style('pointer-events', 'all')
+    .on('click', function(event, d) {
+      event.stopPropagation();
+      const dirNode = findTreeNode(d.data.name, pathStack.length === 0 ? TREE : findTreeChildren(pathStack));
+      if (dirNode && dirNode.ch) {
+        buildTreemap(dirNode.ch, [...pathStack, d.data.name]);
+      }
+    });
+
+  updateBreadcrumb();
+  buildLegend();
+}
+
+function findTreeNode(name, nodes) {
+  for (const n of nodes) {
+    if (n.n === name) return n;
+  }
+  return null;
+}
+
+function findTreeChildren(pathStack) {
+  let nodes = TREE;
+  for (const part of pathStack) {
+    const found = nodes.find(n => n.n === part);
+    if (found && found.ch) nodes = found.ch;
+    else return [];
+  }
+  return nodes;
+}
+
+function updateBreadcrumb() {
+  const bc = document.getElementById('breadcrumb');
+  let html = '<span data-idx="-1">🏠 root</span>';
+  currentPath.forEach((part, i) => {
+    html += '<span class="sep">/</span>';
+    html += `<span data-idx="${i}">${part}</span>`;
+  });
+  bc.innerHTML = html;
+
+  bc.querySelectorAll('span[data-idx]').forEach(el => {
+    el.addEventListener('click', () => {
+      const idx = parseInt(el.dataset.idx);
+      if (idx < 0) {
+        buildTreemap(TREE, []);
+      } else {
+        const newPath = currentPath.slice(0, idx + 1);
+        buildTreemap(findTreeChildren(newPath), newPath);
+      }
+    });
+  });
+}
+
+function buildLegend() {
+  const legend = document.getElementById('legend');
+  const tops = [...new Set(TREE.map(n => n.n))].filter(n => dirColors[n]);
+  legend.innerHTML = tops.map(t =>
+    `<span><span class="swatch" style="background:${dirColors[t]}"></span>${t}</span>`
+  ).join('');
+  if (piiMode) {
+    legend.innerHTML += ' | <span><span class="swatch" style="background:var(--crit)"></span>CRITICAL PII</span>';
+    legend.innerHTML += '<span><span class="swatch" style="background:var(--high)"></span>HIGH</span>';
+    legend.innerHTML += '<span><span class="swatch" style="background:var(--med)"></span>MEDIUM</span>';
+  }
+}
+
+// ═══════════════════════════════════════════════════
+// PII SIDEBAR
+// ═══════════════════════════════════════════════════
+
+function buildPiiList() {
+  const container = document.getElementById('pii-list');
+  container.innerHTML = '';
+
+  // Group by severity
+  const bySev = { CRITICAL: [], HIGH: [], MEDIUM: [] };
+  for (const [filepath, hits] of Object.entries(PII)) {
+    const maxSev = hits.some(h => h.sev === 'CRITICAL') ? 'CRITICAL' : hits.some(h => h.sev === 'HIGH') ? 'HIGH' : 'MEDIUM';
+    bySev[maxSev].push({ path: filepath, hits });
+  }
+
+  for (const [sev, files] of Object.entries(bySev)) {
+    if (files.length === 0) continue;
+    const sevClass = sev === 'CRITICAL' ? 'crit' : sev === 'HIGH' ? 'high' : 'med';
+
+    const section = document.createElement('div');
+    section.className = 'pii-section';
+    section.innerHTML = `<h3><span style="color:var(--${sevClass})">●</span> ${sev} <span class="count">${files.length} files</span></h3>`;
+
+    for (const file of files.sort((a, b) => b.hits.length - a.hits.length)) {
+      const shortPath = file.path.length > 45 ? '…' + file.path.slice(-42) : file.path;
+      const cats = [...new Set(file.hits.map(h => h.cat))].join(', ');
+      const topHit = file.hits[0];
+
+      const hit = document.createElement('div');
+      hit.className = `pii-hit ${sevClass}`;
+      hit.innerHTML = `
+        <div style="display:flex;justify-content:space-between">
+          <span class="hit-cat ${sevClass}">${cats}</span>
+          <span class="hit-line">${file.hits.length} hits</span>
+        </div>
+        <div style="color:var(--text);font-size:11px;margin:2px 0">${shortPath}</div>
+        <div class="hit-val">${topHit.masked}</div>
+      `;
+      hit.addEventListener('click', () => openFilePreview(file.path, file.path.split('/').pop()));
+      section.appendChild(hit);
+    }
+    container.appendChild(section);
+  }
+}
+
+// ═══════════════════════════════════════════════════
+// FILE PREVIEW WITH PII HIGHLIGHTING
+// ═══════════════════════════════════════════════════
+
+function openFilePreview(path, name) {
+  const panel = document.getElementById('file-preview');
+  panel.classList.add('visible');
+  document.getElementById('preview-filename').textContent = path;
+  document.getElementById('sidebar-title').textContent = name;
+
+  const content = CONTENTS[path];
+  const piiHits = PII[path] || [];
+  const body = document.getElementById('preview-body');
+
+  if (!content) {
+    body.innerHTML = '<span style="color:var(--muted)">File content not available for preview.</span>';
+    return;
+  }
+
+  // Build line-by-line with PII highlighting
+  const piiByLine = {};
+  piiHits.forEach(h => {
+    if (!piiByLine[h.line]) piiByLine[h.line] = [];
+    piiByLine[h.line].push(h);
+  });
+
+  const lines = content.split('\n');
+  let html = '';
+  for (let i = 0; i < lines.length; i++) {
+    const lineNo = i + 1;
+    let lineText = escapeHtml(lines[i]);
+    const lineHits = piiByLine[lineNo];
+
+    if (lineHits) {
+      // Highlight PII values in this line
+      for (const hit of lineHits) {
+        const masked = escapeHtml(hit.masked);
+        // Try to find the masked pattern vicinity in the line
+        lineText = `<span class="pii-hl" title="${hit.cat}: ${masked}">${lineText}</span>`;
+      }
+    }
+
+    html += `<span class="line-num">${lineNo}</span>${lineText}\n`;
+  }
+
+  body.innerHTML = html;
+
+  // Scroll to first PII hit
+  if (piiHits.length > 0) {
+    const firstHitLine = piiHits[0].line;
+    const lineElements = body.querySelectorAll('.line-num');
+    if (lineElements[firstHitLine - 1]) {
+      lineElements[firstHitLine - 1].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+}
+
+document.getElementById('preview-close').addEventListener('click', () => {
+  document.getElementById('file-preview').classList.remove('visible');
+  document.getElementById('sidebar-title').textContent = 'PII Detections';
+});
+
+// ═══════════════════════════════════════════════════
+// PII TOGGLE
+// ═══════════════════════════════════════════════════
+
+document.getElementById('pii-toggle').addEventListener('click', function() {
+  piiMode = !piiMode;
+  this.classList.toggle('active', piiMode);
+  buildTreemap(currentPath.length === 0 ? TREE : findTreeChildren(currentPath), currentPath);
+});
+
+document.getElementById('sidebar-close').addEventListener('click', () => {
+  document.getElementById('sidebar').classList.toggle('collapsed');
+});
+
+// ═══════════════════════════════════════════════════
+// UTILS
+// ═══════════════════════════════════════════════════
+
+function formatSize(bytes) {
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1024*1024) return (bytes/1024).toFixed(1) + ' KB';
+  return (bytes/(1024*1024)).toFixed(1) + ' MB';
+}
+
+function escapeHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// Resize handler
+window.addEventListener('resize', () => {
+  buildTreemap(currentPath.length === 0 ? TREE : findTreeChildren(currentPath), currentPath);
+});
+
+// ═══════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════
+
+loadData();
+</script>
+</body>
+</html>

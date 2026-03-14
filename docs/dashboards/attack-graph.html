@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SM-T377A — Attack Graph</title>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<style>
+  :root {
+    --bg: #0a0e14; --surface: #131920; --border: #1e2a36;
+    --text: #b4c4d9; --muted: #5a6f85; --accent: #58a6ff;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:'SF Mono',Consolas,'Liberation Mono',Menlo,monospace; overflow:hidden; }
+
+  .hud-top {
+    position:fixed; top:0; left:0; right:0; z-index:10;
+    padding:16px 24px; display:flex; justify-content:space-between; align-items:flex-start;
+    pointer-events:none;
+  }
+  .hud-top > * { pointer-events:auto; }
+  .hud-title { font-size:13px; color:var(--muted); letter-spacing:1px; text-transform:uppercase; }
+  .hud-title span { color:#f0f6fc; font-weight:600; }
+
+  .hud-stats {
+    display:flex; gap:20px; font-size:11px; color:var(--muted);
+    background:rgba(13,19,26,0.85); padding:8px 16px; border-radius:6px;
+    border:1px solid var(--border); backdrop-filter:blur(8px);
+  }
+  .hud-stats .val { color:#f0f6fc; font-weight:700; font-size:14px; }
+
+  .controls {
+    position:fixed; bottom:20px; left:24px; z-index:10;
+    display:flex; gap:8px; flex-wrap:wrap;
+  }
+  .ctrl-btn {
+    background:rgba(13,19,26,0.85); border:1px solid var(--border);
+    color:var(--muted); padding:6px 14px; border-radius:20px; font-size:11px;
+    cursor:pointer; font-family:inherit; transition:all .15s;
+    backdrop-filter:blur(8px);
+  }
+  .ctrl-btn:hover { border-color:var(--accent); color:var(--accent); }
+  .ctrl-btn.active { background:var(--accent); border-color:var(--accent); color:#0a0e14; font-weight:600; }
+
+  .info-panel {
+    position:fixed; bottom:20px; right:24px; z-index:10;
+    width:320px; background:rgba(13,19,26,0.92); border:1px solid var(--border);
+    border-radius:8px; padding:16px; backdrop-filter:blur(12px);
+    font-size:12px; display:none;
+  }
+  .info-panel.visible { display:block; }
+  .info-panel h3 { font-size:14px; color:#f0f6fc; margin-bottom:8px; font-weight:600; }
+  .info-panel .severity-tag {
+    display:inline-block; padding:2px 8px; border-radius:4px;
+    font-size:10px; font-weight:700; text-transform:uppercase; margin-bottom:8px;
+  }
+  .info-panel .field { margin-bottom:4px; }
+  .info-panel .label { color:var(--muted); }
+  .info-panel .detail { color:var(--text); margin-top:8px; line-height:1.5; }
+
+  svg { cursor:grab; }
+  svg:active { cursor:grabbing; }
+
+  .link { stroke-opacity:0.15; }
+  .link.highlighted { stroke-opacity:0.6; }
+
+  .node-label {
+    font-size:9px; fill:var(--muted); pointer-events:none;
+    text-anchor:middle; dominant-baseline:central;
+  }
+
+  .glow { filter:url(#glow); }
+</style>
+</head>
+<body>
+
+<div class="hud-top">
+  <div>
+    <div class="hud-title"><span>Attack Graph</span> — SM-T377A Findings Network</div>
+  </div>
+  <div class="hud-stats">
+    <div><div class="val" id="node-count">0</div>nodes</div>
+    <div><div class="val" id="edge-count">0</div>edges</div>
+    <div><div class="val" id="cluster-count">0</div>clusters</div>
+  </div>
+</div>
+
+<div class="controls" id="controls"></div>
+
+<div class="info-panel" id="info-panel">
+  <h3 id="info-title"></h3>
+  <div id="info-body"></div>
+</div>
+
+<svg id="graph"></svg>
+
+<script>
+// ═══════════════════════════════════════════════════
+// DATA
+// ═══════════════════════════════════════════════════
+
+const findings = [
+  { id:"dirty-cow", name:"Dirty COW", session:1, category:"Kernel CVE", severity:"PATCHED", impact:0 },
+  { id:"pipe-iov", name:"pipe iov", session:1, category:"Kernel CVE", severity:"PATCHED", impact:0 },
+  { id:"towelroot", name:"Towelroot", session:1, category:"Kernel CVE", severity:"PATCHED", impact:0 },
+  { id:"ping-uaf", name:"Ping UAF", session:1, category:"Kernel CVE", severity:"PATCHED", impact:0 },
+  { id:"perf-oob", name:"perf OOB", session:1, category:"Kernel CVE", severity:"PATCHED", impact:0 },
+  { id:"ntty-race", name:"n_tty race", session:1, category:"Kernel CVE", severity:"PATCHED", impact:1 },
+  { id:"keyring", name:"Keyring overflow", session:1, category:"Kernel CVE", severity:"BLOCKED", impact:1 },
+  { id:"inotify", name:"inotify race", session:1, category:"Kernel CVE", severity:"PATCHED", impact:0 },
+  { id:"mq-notify", name:"mq_notify", session:1, category:"Kernel CVE", severity:"N/A", impact:0 },
+  { id:"device-owner", name:"Device Owner", session:4, category:"APK Agent", severity:"HIGH", impact:7 },
+  { id:"pm-grant", name:"pm grant abuse", session:4, category:"Services", severity:"HIGH", impact:6 },
+  { id:"am-abuse", name:"AM/PM abuse", session:4, category:"Services", severity:"HIGH", impact:5 },
+  { id:"accessibility", name:"Accessibility UI", session:4, category:"APK Agent", severity:"HIGH", impact:6 },
+  { id:"binder-uaf", name:"Binder UAF 2215", session:5, category:"Binder", severity:"CRITICAL", impact:8 },
+  { id:"mali-false", name:"Mali false positive", session:5, category:"Mali GPU", severity:"LOW", impact:1 },
+  { id:"drparser", name:"DRParser goldmine", session:6, category:"Services", severity:"MEDIUM", impact:5 },
+  { id:"wifi-intel", name:"WiFi intel leak", session:6, category:"Info Disclosure", severity:"MEDIUM", impact:4 },
+  { id:"info-disc", name:"debugfs/dmesg leak", session:6, category:"Info Disclosure", severity:"MEDIUM", impact:5 },
+  { id:"tee-deadlock", name:"tee() deadlock ☆", session:7, category:"Kernel Fuzzing", severity:"MEDIUM", impact:4 },
+  { id:"binder-fix", name:"Samsung binder fix", session:8, category:"Binder", severity:"BLOCKED", impact:3 },
+  { id:"ion-uaf", name:"ION UAF 91%", session:9, category:"ION Heap", severity:"HIGH", impact:6 },
+  { id:"ion-dos", name:"ION heap DoS", session:9, category:"ION Heap", severity:"HIGH", impact:5 },
+  { id:"binder-dos", name:"Binder ctx DoS", session:9, category:"Binder", severity:"HIGH", impact:5 },
+  { id:"smartcomroot", name:"SmartcomRoot AIDL", session:10, category:"Services", severity:"MEDIUM", impact:4 },
+  { id:"tima-leak", name:"TIMA addr leak", session:10, category:"Info Disclosure", severity:"HIGH", impact:7 },
+  { id:"dm-port", name:"DM port AT access", session:10, category:"Modem/AT", severity:"HIGH", impact:6 },
+  { id:"netlink", name:"NETLINK_ROUTE", session:10, category:"Kernel Fuzzing", severity:"LOW", impact:2 },
+  { id:"selinux-dead", name:"SELinux dead end", session:11, category:"SELinux", severity:"BLOCKED", impact:0 },
+  { id:"bt-domain", name:"BT domain value", session:11, category:"Bluetooth", severity:"MEDIUM", impact:5 },
+  { id:"perf-event", name:"perf_event access", session:12, category:"Kernel CVE", severity:"MEDIUM", impact:3 },
+  { id:"timerfd", name:"timerfd reachable", session:12, category:"Kernel CVE", severity:"MEDIUM", impact:4 },
+  { id:"dccp", name:"DCCP blocked", session:12, category:"Kernel CVE", severity:"BLOCKED", impact:1 },
+  { id:"slabinfo", name:"slabinfo readable", session:12, category:"Info Disclosure", severity:"MEDIUM", impact:4 },
+  { id:"perf-6786", name:"perf 6786 patched", session:12, category:"Kernel CVE", severity:"PATCHED", impact:0 },
+  { id:"perf-6001", name:"perf 6001 patched", session:12, category:"Kernel CVE", severity:"PATCHED", impact:0 },
+  { id:"bluborne-efs", name:"BlueBorne EFS ☆☆", session:13, category:"Bluetooth", severity:"CRITICAL", impact:10 },
+  { id:"bluborne-bnep", name:"BNEP channel open", session:13, category:"Bluetooth", severity:"HIGH", impact:6 },
+  { id:"bluborne-crash", name:"BT daemon crash", session:13, category:"Bluetooth", severity:"HIGH", impact:5 },
+  { id:"kallsyms", name:"43K symbols decoded", session:13, category:"Info Disclosure", severity:"MEDIUM", impact:5 },
+  { id:"sysdump-bypass", name:"SysDump OTP bypass", session:13, category:"Services", severity:"HIGH", impact:7 },
+];
+
+const sevColor = {
+  CRITICAL:"#ff4444", HIGH:"#ffaa22", MEDIUM:"#44bb66", LOW:"#556677",
+  PATCHED:"#2a3040", BLOCKED:"#2a3040", "N/A":"#1a2030"
+};
+
+const catColor = d3.scaleOrdinal()
+  .domain(["Kernel CVE","Binder","Bluetooth","ION Heap","Mali GPU","Services","Info Disclosure","Kernel Fuzzing","SELinux","Modem/AT","APK Agent"])
+  .range(["#f85149","#d29922","#58a6ff","#3fb950","#bc8cff","#f0883e","#79c0ff","#56d364","#8b949e","#ff7b72","#d2a8ff"]);
+
+// Build nodes and links
+const categories = [...new Set(findings.map(f => f.category))];
+
+// Category hub nodes
+const catNodes = categories.map(c => ({
+  id: "cat-" + c, name: c, type: "category",
+  severity: null, impact: 0, session: null, category: c,
+  radius: 20
+}));
+
+// Finding nodes
+const findingNodes = findings.map(f => ({
+  ...f, type: "finding",
+  radius: Math.max(4, f.impact * 1.8 + 3)
+}));
+
+const nodes = [...catNodes, ...findingNodes];
+
+// Links: finding → its category hub
+const links = [];
+findings.forEach(f => {
+  links.push({ source: f.id, target: "cat-" + f.category, type: "category" });
+});
+
+// Links: findings in same session (lightweight)
+const sessionGroups = d3.group(findings, f => f.session);
+sessionGroups.forEach((group, session) => {
+  for (let i = 0; i < group.length; i++) {
+    for (let j = i + 1; j < group.length; j++) {
+      if (group[i].category !== group[j].category) {
+        links.push({ source: group[i].id, target: group[j].id, type: "session" });
+      }
+    }
+  }
+});
+
+// Semantic links (findings that are related)
+const semanticLinks = [
+  ["binder-uaf", "binder-fix"], ["binder-uaf", "binder-dos"],
+  ["ion-uaf", "ion-dos"], ["ion-uaf", "slabinfo"],
+  ["bluborne-efs", "bluborne-bnep"], ["bluborne-efs", "bluborne-crash"],
+  ["bluborne-efs", "bt-domain"], ["bluborne-efs", "kallsyms"],
+  ["tima-leak", "kallsyms"], ["tima-leak", "info-disc"],
+  ["device-owner", "accessibility"], ["device-owner", "pm-grant"],
+  ["device-owner", "sysdump-bypass"], ["accessibility", "sysdump-bypass"],
+  ["drparser", "dm-port"], ["drparser", "sysdump-bypass"],
+  ["slabinfo", "ion-uaf"], ["slabinfo", "binder-uaf"],
+  ["tee-deadlock", "netlink"],
+];
+semanticLinks.forEach(([a, b]) => {
+  links.push({ source: a, target: b, type: "semantic" });
+});
+
+// ═══════════════════════════════════════════════════
+// FORCE SIMULATION
+// ═══════════════════════════════════════════════════
+
+const width = window.innerWidth;
+const height = window.innerHeight;
+
+const svg = d3.select("#graph")
+  .attr("width", width).attr("height", height);
+
+// Glow filter
+const defs = svg.append("defs");
+const filter = defs.append("filter").attr("id", "glow");
+filter.append("feGaussianBlur").attr("stdDeviation", "3").attr("result", "coloredBlur");
+const merge = filter.append("feMerge");
+merge.append("feMergeNode").attr("in", "coloredBlur");
+merge.append("feMergeNode").attr("in", "SourceGraphic");
+
+const g = svg.append("g");
+
+// Zoom
+svg.call(d3.zoom()
+  .scaleExtent([0.2, 5])
+  .on("zoom", e => g.attr("transform", e.transform))
+);
+
+const simulation = d3.forceSimulation(nodes)
+  .force("link", d3.forceLink(links).id(d => d.id).distance(d => {
+    if (d.type === "category") return 80;
+    if (d.type === "semantic") return 60;
+    return 120;
+  }).strength(d => {
+    if (d.type === "category") return 0.7;
+    if (d.type === "semantic") return 0.3;
+    return 0.05;
+  }))
+  .force("charge", d3.forceManyBody().strength(d => d.type === "category" ? -400 : -60))
+  .force("center", d3.forceCenter(width / 2, height / 2))
+  .force("collision", d3.forceCollide().radius(d => d.radius + 4))
+  .force("x", d3.forceX(width / 2).strength(0.03))
+  .force("y", d3.forceY(height / 2).strength(0.03));
+
+// Draw links
+const linkSel = g.append("g")
+  .selectAll("line")
+  .data(links)
+  .join("line")
+  .attr("class", "link")
+  .attr("stroke", d => {
+    if (d.type === "semantic") return "#58a6ff";
+    if (d.type === "category") return "#3a4555";
+    return "#1e2a36";
+  })
+  .attr("stroke-width", d => d.type === "semantic" ? 1.5 : d.type === "category" ? 1 : 0.5)
+  .attr("stroke-dasharray", d => d.type === "session" ? "2,4" : "none");
+
+// Draw nodes
+const nodeSel = g.append("g")
+  .selectAll("g")
+  .data(nodes)
+  .join("g")
+  .style("cursor", "pointer")
+  .call(d3.drag()
+    .on("start", (e, d) => { if (!e.active) simulation.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+    .on("drag", (e, d) => { d.fx = e.x; d.fy = e.y; })
+    .on("end", (e, d) => { if (!e.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; })
+  );
+
+// Category hub nodes
+nodeSel.filter(d => d.type === "category")
+  .append("circle")
+  .attr("r", d => d.radius)
+  .attr("fill", d => catColor(d.category))
+  .attr("opacity", 0.15)
+  .attr("stroke", d => catColor(d.category))
+  .attr("stroke-width", 2)
+  .attr("stroke-opacity", 0.6);
+
+nodeSel.filter(d => d.type === "category")
+  .append("text")
+  .attr("class", "node-label")
+  .attr("dy", "0.35em")
+  .style("font-size", "10px")
+  .style("fill", d => catColor(d.category))
+  .style("font-weight", "600")
+  .text(d => d.name);
+
+// Finding nodes
+nodeSel.filter(d => d.type === "finding")
+  .append("circle")
+  .attr("r", d => d.radius)
+  .attr("fill", d => sevColor[d.severity])
+  .attr("stroke", d => d.severity === "CRITICAL" ? "#ff4444" : d.severity === "HIGH" ? "#ffaa22" : "rgba(255,255,255,0.1)")
+  .attr("stroke-width", d => d.severity === "CRITICAL" ? 2.5 : d.severity === "HIGH" ? 1.5 : 0.5)
+  .attr("opacity", d => d.impact > 0 ? 0.85 : 0.4)
+  .classed("glow", d => d.severity === "CRITICAL");
+
+// Labels for high-impact findings
+nodeSel.filter(d => d.type === "finding" && d.impact >= 5)
+  .append("text")
+  .attr("class", "node-label")
+  .attr("dy", d => d.radius + 12)
+  .style("font-size", "8px")
+  .text(d => d.name);
+
+// Hover & click
+nodeSel.on("mouseover", function(event, d) {
+  // Highlight connected
+  const connected = new Set();
+  links.forEach(l => {
+    const sid = typeof l.source === "object" ? l.source.id : l.source;
+    const tid = typeof l.target === "object" ? l.target.id : l.target;
+    if (sid === d.id) connected.add(tid);
+    if (tid === d.id) connected.add(sid);
+  });
+  connected.add(d.id);
+
+  nodeSel.select("circle").attr("opacity", n => connected.has(n.id) ? 1 : 0.08);
+  nodeSel.select("text").attr("opacity", n => connected.has(n.id) ? 1 : 0.08);
+  linkSel.attr("stroke-opacity", l => {
+    const sid = typeof l.source === "object" ? l.source.id : l.source;
+    const tid = typeof l.target === "object" ? l.target.id : l.target;
+    return (sid === d.id || tid === d.id) ? 0.7 : 0.02;
+  });
+})
+.on("mouseout", function() {
+  nodeSel.select("circle").attr("opacity", d => {
+    if (d.type === "category") return 0.15;
+    return d.impact > 0 ? 0.85 : 0.4;
+  });
+  nodeSel.select("text").attr("opacity", 1);
+  linkSel.attr("stroke-opacity", 0.15);
+})
+.on("click", function(event, d) {
+  if (d.type === "category") return;
+  const panel = document.getElementById("info-panel");
+  panel.classList.add("visible");
+  document.getElementById("info-title").textContent = d.name;
+  document.getElementById("info-body").innerHTML = `
+    <span class="severity-tag" style="background:${sevColor[d.severity]};color:${d.severity==='PATCHED'||d.severity==='BLOCKED'?'#8b949e':'#0a0e14'}">${d.severity}</span>
+    <div class="field"><span class="label">Category:</span> ${d.category}</div>
+    <div class="field"><span class="label">Session:</span> ${d.session}</div>
+    <div class="field"><span class="label">Impact:</span> ${'█'.repeat(d.impact)}${'░'.repeat(10-d.impact)} ${d.impact}/10</div>
+  `;
+});
+
+// Tick
+simulation.on("tick", () => {
+  linkSel
+    .attr("x1", d => d.source.x).attr("y1", d => d.source.y)
+    .attr("x2", d => d.target.x).attr("y2", d => d.target.y);
+  nodeSel.attr("transform", d => `translate(${d.x},${d.y})`);
+});
+
+// Stats
+document.getElementById("node-count").textContent = nodes.length;
+document.getElementById("edge-count").textContent = links.length;
+document.getElementById("cluster-count").textContent = categories.length;
+
+// Controls — filter by category
+const controls = d3.select("#controls");
+controls.append("button").attr("class","ctrl-btn active").text("All")
+  .on("click", function() {
+    controls.selectAll(".ctrl-btn").classed("active", false);
+    d3.select(this).classed("active", true);
+    nodeSel.select("circle").attr("opacity", d => d.type==="category"?0.15:d.impact>0?0.85:0.4);
+    nodeSel.select("text").attr("opacity", 1);
+    linkSel.attr("stroke-opacity", 0.15);
+  });
+
+categories.forEach(cat => {
+  controls.append("button").attr("class","ctrl-btn").text(cat)
+    .on("click", function() {
+      controls.selectAll(".ctrl-btn").classed("active", false);
+      d3.select(this).classed("active", true);
+      nodeSel.select("circle").attr("opacity", d => {
+        if (d.category === cat) return d.type==="category"?0.3:0.9;
+        return 0.04;
+      });
+      nodeSel.select("text").attr("opacity", d => d.category === cat ? 1 : 0.05);
+      linkSel.attr("stroke-opacity", l => {
+        const s = typeof l.source === "object" ? l.source : nodes.find(n=>n.id===l.source);
+        const t = typeof l.target === "object" ? l.target : nodes.find(n=>n.id===l.target);
+        return (s.category===cat || t.category===cat) ? 0.4 : 0.01;
+      });
+    });
+});
+</script>
+</body>
+</html>

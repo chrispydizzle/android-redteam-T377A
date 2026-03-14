@@ -1,3 +1,0 @@
-List of devices attached
-52030d9842d7a3bd	device
-

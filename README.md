@@ -1,41 +1,128 @@
-# Samsung SM-T377A Security Research
+# Samsung SM-T377A / Galaxy Tab E 8.0 Research Repo
 
-Security audit, CTF root path enumeration, and kernel fuzzing lab for a
-Samsung Galaxy Tab A (SM-T377A) running Android 6.0.1 / Kernel 3.10.9.
+Privilege-escalation, kernel-surface, Bluetooth, and firmware research for the
+**Samsung SM-T377A / Galaxy Tab E 8.0 (AT&T)** running **Android 6.0.1** on
+**kernel 3.10.9** / **Exynos 3475**.
 
-**Audit Date:** 2026-02-18  
-**Device:** Samsung SM-T377A (Galaxy Tab A) · AT&T · Exynos 3475  
-**Android:** 6.0.1 (MMB29K.T377AUCU2AQGF) · SPL 2017-07-01  
-**Kernel:** Linux 3.10.9-11788437 · ARMv7 Cortex-A7  
-**Overall Risk:** 🔴 CRITICAL (unpatched since July 2017)
+**As of:** 2026-03-08  
+**Primary goal:** achieve **root** from either **ADB shell** (`uid=2000`) or an
+**installed APK/app context**  
+**Source of truth:** [`STATUS.md`](STATUS.md)  
+**Chronological log:** [`PROGRESS-LOG.md`](PROGRESS-LOG.md)
+
+> If this README and `STATUS.md` ever disagree, trust `STATUS.md`.
 
 ---
 
 ## Quick Summary
 
-- **Local root exploits:** All 20+ paths tested — **blocked** (SELinux, PIE enforcement, nosuid, Knox)
-- **Remote root (wireless):** **CRITICAL** — BlueBorne & KRACK unpatched
-- **Kernel attack surface:** 5 world-writable `/dev` nodes openable from shell, **no KASLR, no stack canaries, no RKP**
-- **Mali GPU driver:** Survived 29K+ fuzz ops (24 function IDs) — **robust**
-- **ION allocator:** 🔴 **Heap bit 2 causes kernel crash** from unprivileged shell; survived 57K+ fuzz ops on safe heaps
-- **Binder IPC:** 🔴 **Handle 0 refcount ops kill context manager** (system freeze DoS) — reproduced 2x, root-caused; safe fuzzer ran 38K ops clean
-- **Ashmem:** Survived 151K+ fuzz ops across 3 runs — **robust**
-- **Total kernel fuzzing:** 368K+ operations across 9 surfaces, 2 DoS vulnerabilities found
-- **Service layer:** 🔴 `pm grant` gives dangerous permissions to any app; `pm create-user` creates persistent accounts; `pm uninstall` removes system apps
-- **WiFi intel:** All 8 saved networks + BSSIDs + device MAC exposed via `dumpsys wifi`
-- **Info disclosure:** debugfs, dmesg, slabinfo, contacts, IMEI, ftrace — all readable from shell
-- **Ftrace abuse:** Shell can enable sched_switch (process enumeration), inject trace markers (evidence tampering)
-- **AM/PM abuse:** `am force-stop` kills any app; `am start` launches any activity; `am broadcast` sends system intents
+- **Binder lane:** effectively **exhausted** after typed follow-up on `gatekeeper`,
+  `keystore`, `persona`, `enterprise_policy`, and `SatsService`
+- **Bluetooth lane:** still one of the best remaining vectors, but **not** via the
+  old kernel BlueBorne L2CAP path
+- **Bluetooth RE result:** `bluetooth.default.so` BNEP parsing is hardened enough to
+  block the classic malformed BlueBorne payload families
+- **Live PAN result:** hidden `BluetoothPan` control now works from the installed
+  agent; the tablet can reach **PAN state 2** against a host NAP
+- **Live host-socket result:** a repo-local **custom BlueZ `Profile1` NAP handler**
+  now owns the inbound BNEP socket and can capture / answer the tablet's setup
+  request
+- **Accepted-socket result:** the remaining valid-frame probes were adapted, and the
+  current **PANU -> host NAP** direction rejects host-originated `SETUP_CONN_REQ`
+  traffic as `CONN_NOT_ALLOWED` / `setup request when we are originator`
+- **Mali lane:** recent high-signal hypotheses tested **negative**:
+  - imported-JC post-submit rewrite path
+  - alias controlled-reclaim stale native-tail / stale alias writes
+- **New Mali result:** when the alias race wins and the stale alias VA is pinned
+   back down with `commit=0`, the **first disjoint 8-page allocation** immediately
+   reclaims **all 8** freed source pages
+- **Newest Mali result:** `src\mali\mali_alias_chain_consumer_probe.c`
+  confirms a **non-direct chain consumer**: a separately submitted head
+  descriptor can follow its `next` pointer into a preserved seeded victim page
+- **Cross-pool result:** `src\mali\mali_alias_ion_cross_pool_probe.c` shows
+  Mali and ION system-heap use **disjoint physical page pools** — seeded
+  Mali pages never appear in ION allocs (0/240 sentinel hits over 17 race wins)
+- **Best remaining vectors:** DM/HDLC binary protocol to diagexe,
+  accessibility automation, timerfd, cross-process Mali reclaim (untested)
+
+---
+
+## Current Research Snapshot
+
+### Completed / well-mapped
+
+- Broad recon, service mapping, firmware collection, and kernel-surface auditing
+- Typed binder follow-up confirming binder is now low-value for privesc
+- Bluetooth userspace BNEP reversing focused on valid-frame logic instead of old
+  malformed-packet replay
+- Live PAN bring-up from the device-owner APK using hidden `BluetoothPan`
+- Custom BlueZ `Profile1` NAP ownership proving the host can receive
+  `NewConnection(fd)`, reply to setup, and observe live BNEP traffic
+- Accepted-socket live experiments showing PANU -> NAP rejects host-originated
+  setup replay with `CONN_NOT_ALLOWED` / originator-side rejection
+- Mali validation that removed two previously attractive but now-invalidated stories
+- Mali reuse-timing confirmation that immediate, disjoint reclaim is possible once
+  the alias race wins
+- Mali same-context controlled-injection confirmation that a seeded reclaimed page
+  can survive free/realloc and later execute as a GPU-consumed JC page
+- Mali indirect chain-consumer confirmation that a preserved seeded victim page
+  can execute as a later descriptor without direct JC resubmission
+- Mali × ION cross-pool test confirming that Mali and ION system-heap use
+  **disjoint** physical page pools — freed Mali pages do not appear in fresh
+  ION system-heap allocations (0/240 sentinel hits across 17 race wins)
+
+### Closed or deprioritized
+
+| Area | Status | Why |
+| --- | --- | --- |
+| Binder privesc follow-up | Closed for now | Typed follow-up produced no viable escalation path |
+| Kernel BlueBorne L2CAP route | Closed | Android 6.0.1 keeps L2CAP in Bluedroid userspace here |
+| Old malformed BlueBorne BNEP payloads | Closed | `bluetooth.default.so` validates the old payload families away |
+| Mali imported-JC post-submit rewrite | Negative | Live tests did not preserve the expected steering window |
+| Mali stale alias / stale native-tail writes | Negative | Signal disappeared after overlap confounds were removed |
+
+### What still looks promising
+
+| Area | Why it still matters |
+| --- | --- |
+| **Mali imported/retained consumer follow-up** | **CLOSED — disjoint pools.** ION system-heap does not share pages with Mali; 0/240 sentinel hits. Cross-process Mali reclaim (untested) remains as a possibility. |
+| **Alternate-role Bluetooth coverage** | Socket ownership is solved, but PANU -> NAP rejects host setup replay; another role/path would be needed |
+| **DM / HDLC binary protocol** | **Best remaining vector** — diagexe UID 1000 + SYS_ADMIN, completely unexplored HDLC binary protocol, AT surface only partially mapped |
+| **Accessibility UI automation** | Already working and still useful as an enabler lane |
+| **timerfd / diagexe DM protocol** | Still listed among the best remaining vectors |
+
+### Immediate next steps
+
+1. **Mali cross-process reclaim (optional):** explore whether seeded pages freed
+   from our Mali context appear in a different process's Mali allocation (system
+   service actively using GPU). If yes, this re-opens the retained-consumer lane.
+2. **DM/HDLC main line:** HDLC binary protocol to diagexe is the single most
+   attractive unexplored vector — UID 1000 + SYS_ADMIN, no SELinux block, binary
+   protocol completely untouched. Send structured HDLC frames over the DM COM port
+   and observe diagexe's response.
+3. **Parallel fallback:** accessibility automation continues as a low-risk enabler
+   stalls or proves too narrow to reach a surviving reference
+
+### Important Bluetooth correction
+
+Earlier README-era summaries that treated BlueBorne as a straightforward remote
+kernel path are now **outdated for this device**. The live Bluetooth target is the
+userspace stack in `bluetooth.default.so`, and the practical research focus is now
+valid-frame BNEP logic/state behavior.
 
 ---
 
 ## Documentation
 
+Many documents below are **phase-specific or historical**. Use them for depth and
+artifact recovery, but use [`STATUS.md`](STATUS.md) for the current conclusion of
+each lane.
+
 ### 📋 Final Report
 
 | Document | Description |
 | ---------- | ------------- |
-| [**Final Security Assessment**](findings/final-security-report.md) | Consolidated report: 4 critical + 12 high + 8 medium findings, 368K+ fuzz ops, 27 recommendations |
+| [**Final Security Assessment**](findings/recon/final-security-report.md) | Consolidated report: 4 critical + 12 high + 8 medium findings, 368K+ fuzz ops, 27 recommendations |
 
 ### Security Audit
 
@@ -52,6 +139,14 @@ Samsung Galaxy Tab A (SM-T377A) running Android 6.0.1 / Kernel 3.10.9.
 | [**CTF Root Enumeration**](docs/04-ctf-root-enumeration.md) | All privilege escalation paths tested, kernel device node deep-dive, mitigation assessment, info leak chain, SmartcomRoot AIDL, CTF verdict |
 | [**Exploit Failure Analysis**](docs/05-exploit-failure-analysis.md) | Why legacy exploits (Dirty COW, psneuter, zergRush) fail — 5 defense layers, kernel build date analysis |
 
+### Hardware / BootROM Research
+
+| Document | Description |
+| ---------- | ------------- |
+| [**EUB/BootROM Consolidated Findings**](findings/firmware/eub-bootrom-consolidated.md) | Master summary: EDL inapplicability, EUB mode as carrier-lock bypass vector, MUIC chip (SM5502) verified state, boot chain architecture, 4 EUB entry methods, action plan |
+| [**EDL Cable Research**](findings/firmware/edl-cable-research.md) | Deep dive: EDL fundamentals, Exynos alternatives (EUB, ISP/JTAG, JIG UART), Samsung JIG cable construction, firmware sources |
+| [**EUB Mode Deep Dive**](findings/firmware/eub-mode-deep-dive.md) | Technical deep dive: Exynos 3475 hardware addresses, BootROM USB protocol (dldata), exynos-usbdl integer overflow, SBOOT RE approach, MUIC sysfs, combination firmware |
+
 ### QEMU Kernel Fuzzing Lab
 
 | Document | Description |
@@ -59,11 +154,11 @@ Samsung Galaxy Tab A (SM-T377A) running Android 6.0.1 / Kernel 3.10.9.
 | [**Fuzzing Lab Overview**](qemu/QEMU_FUZZING_LAB.md) | Quick start, VM details, workflow guide |
 | [**Building the QEMU Image**](qemu/BUILDING_THE_QEMU_IMAGE.md) | Step-by-step build: kernel 3.10.108, Linaro GCC 4.9.4, busybox rootfs, troubleshooting |
 | [**Getting Mali into QEMU**](qemu/GETTING_MALI_INTO_QEMU.md) | 4 approaches tried, Samsung GPL source analysis, stub driver design |
-| [**Mali Fuzzing Results**](findings/mali-fuzzing-results.md) | Full-coverage fuzzer results: 29K ops, 24 func IDs, UAF/double-free testing |
-| [**ION Fuzzing Results**](findings/ion-fuzzing-results.md) | ION allocator fuzzer: heap crash DoS, 57K+ ops, UAF testing, hardening recs |
-| [**Binder & Ashmem Results**](findings/binder-ashmem-fuzzing-results.md) | Binder + ashmem fuzzing: 110K+ ops, binder DoS root-caused, ashmem robust |
-| [**Info Disclosure & Attack Surface**](findings/info-disclosure-attack-surface.md) | Procfs/debugfs leaks, binder service access, network, SELinux, risk matrix |
-| [**Service & AM/PM Analysis**](findings/service-am-pm-analysis.md) | 164 binder services, pm grant/create-user, WiFi intel, AM capabilities |
+| [**Mali Fuzzing Results**](findings/mali/mali-fuzzing-results.md) | Full-coverage fuzzer results: 29K ops, 24 func IDs, UAF/double-free testing |
+| [**ION Fuzzing Results**](findings/ion/ion-fuzzing-results.md) | ION allocator fuzzer: heap crash DoS, 57K+ ops, UAF testing, hardening recs |
+| [**Binder & Ashmem Results**](findings/binder/binder-ashmem-fuzzing-results.md) | Binder + ashmem fuzzing: 110K+ ops, binder DoS root-caused, ashmem robust |
+| [**Info Disclosure & Attack Surface**](findings/recon/info-disclosure-attack-surface.md) | Procfs/debugfs leaks, binder service access, network, SELinux, risk matrix |
+| [**Service & AM/PM Analysis**](findings/binder/service-am-pm-analysis.md) | 164 binder services, pm grant/create-user, WiFi intel, AM capabilities |
 
 ---
 
@@ -72,62 +167,67 @@ Samsung Galaxy Tab A (SM-T377A) running Android 6.0.1 / Kernel 3.10.9.
 ```log
 android-redteam/
 ├── README.md                    ← You are here
-├── device_forensics_data.txt    Raw device forensics (kernel, build, hardware)
-│
-├── docs/                        Security audit & analysis documents
-│   ├── 01-device-audit.md           Device info, network, apps, permissions, services
-│   ├── 02-hardening-recommendations.md  Prioritized remediation steps
-│   ├── 03-cve-and-apk-analysis.md   CVE exposure, APK analysis, gap assessment
-│   ├── 04-ctf-root-enumeration.md   All root paths tested, kernel deep-dive, verdict
-│   └── 05-exploit-failure-analysis.md   Why legacy exploits fail (consolidated)
-│
+├── STATUS.md                    Consolidated current assessment state
+├── PROGRESS-LOG.md              Detailed chronological research log
+├── docs/                        Analysis docs + operator notes
+│   ├── 01-device-audit.md
+│   ├── 02-hardening-recommendations.md
+│   ├── 03-cve-and-apk-analysis.md
+│   ├── 04-ctf-root-enumeration.md
+│   ├── 05-exploit-failure-analysis.md
+│   ├── dashboards/              Interactive HTML visualizations
+│   ├── handoff/                 Session-to-session context handoff
+│   └── service-mode/            Service mode app analysis
+├── src/                         Source code organized by attack surface
+│   ├── binder/                  Binder IPC exploits, UAF, fuzzing (23 files)
+│   ├── bluetooth/               BlueBorne, BNEP, L2CAP exploits (26 files)
+│   ├── exploit-primitives/      Heap spray, slab reclaim, BPF (28 files)
+│   ├── firmware-analysis/       Kernel/firmware analysis scripts (21 files)
+│   ├── fuzzing/                 Generic kernel fuzzers (30 files)
+│   ├── ion/                     ION heap exploits and UAF (21 files)
+│   ├── kernel-cve/              CVE-specific exploits: towelroot, dirtycow, etc. (48 files)
+│   ├── mali/                    Mali GPU driver exploits and fuzzing (50 files)
+│   ├── modem-at/                AT command and DM port probes (12 files)
+│   ├── recon/                   Device probes, enumeration, analysis (35 files)
+│   └── selinux/                 SELinux policy analysis tools (18 files)
+├── findings/                    Consolidated reports by topic
+│   ├── binder/                  Binder/service fuzzing results
+│   ├── bluetooth/               BlueBorne protocol RE and audit
+│   ├── firmware/                Bootloader, EDL, EUB, kernel audit
+│   ├── ion/                     ION heap exploitation research
+│   ├── kernel/                  Input fuzzing, ioctl results
+│   ├── mali/                    Mali driver fuzzing and vulns
+│   ├── otp/                     OTP/diagexe string analysis
+│   ├── recon/                   Recon sessions, audits, final reports
+│   └── service-mode/            DRParser, SysDump, OTP bypass
+├── device-data/                 Device filesystem and firmware
+│   ├── extracted/               Pulled data: sboot, PIT, param, sysdump
+│   ├── firmware-images/         Full firmware tars, boot.img, ramdisk
+│   ├── priv-app/                Privileged APKs pulled from /system/priv-app
+│   ├── system/                  System partition config (SW_Configuration, VODB)
+│   └── system-libs/             Shared libraries from /system/lib
+├── compiled/                    Pre-built ARM binaries for device
+├── apk/                         Probe APK build project
 ├── qemu/                        QEMU ARM kernel fuzzing lab
-│   ├── QEMU_FUZZING_LAB.md         Quick start & overview
-│   ├── BUILDING_THE_QEMU_IMAGE.md   Full build walkthrough
-│   ├── GETTING_MALI_INTO_QEMU.md    Mali stub driver story
-│   ├── mali_stub.c                  Mali r7p0 stub kernel module
-│   ├── build_mali_stub.sh           Build & inject mali_stub.ko
-│   ├── run-qemu.bat                 Launch QEMU VM
-│   ├── rebuild-kernel.bat           Rebuild kernel (menuconfig)
-│   ├── push-to-qemu.bat            Compile C → inject into rootfs
-│   └── build-arm.bat               Cross-compile for physical device (ADB)
-│
-├── src/                         C source for ioctl testing & fuzzing
-│   ├── ioctl_enum.c                Binder + ashmem + Mali ioctl enumerator (QEMU)
-│   ├── ioctl_enum.live.c           Enumerator for physical device (correct struct sizes)
-│   ├── mali_fuzz_live_limited.c    Mali stateful fuzzer v1 (alloc/free/query)
-│   ├── mali_fuzz_full.c            Mali full-coverage fuzzer v2 (24 func IDs)
-│   ├── ion_fuzz.c                  ION memory allocator fuzzer (10 operation types)
-│   ├── ion_probe3.c                ION safe probe (heap/flag/lifecycle testing)
-│   ├── ion_uaf_test.c              ION targeted UAF validation
-│   ├── binder_fuzz.c               Binder IPC fuzzer (BC commands, refcount, looper)
-│   ├── ashmem_fuzz.c               Ashmem shared memory fuzzer (pin/unpin/mmap/purge)
-│   ├── netlink_fuzz.c              Netlink ROUTE + SELINUX socket fuzzer
-│   ├── alarm_fuzz.c                /dev/alarm ioctl fuzzer
-│   ├── icmp_fuzz.c                 ICMP/UDP socket fuzzer
-│   ├── kernel_surface_probe.c      Deep kernel surface prober (alarm, sockets, proc, ftrace)
-│   ├── dev_probe.c                 /dev node accessibility probe
-│   ├── ioctlfuzz.c                 Simple ioctl fuzzer
-│   └── hello.c                     ARM test program
-│
-└── findings/                    Raw audit data & pulled APKs
-    ├── final-security-report.md     ★ CONSOLIDATED REPORT — all findings, risk matrix, recs
-    ├── mali-fuzzing-results.md      Mali fuzzer results & analysis
-    ├── ion-fuzzing-results.md       ION fuzzer results: heap crash, 57K ops, recommendations
-    ├── binder-ashmem-fuzzing-results.md  Binder + ashmem: 110K+ ops, binder DoS, ashmem robust
-    ├── info-disclosure-attack-surface.md  Procfs/debugfs leaks, services, network, risk matrix
-    ├── service-am-pm-analysis.md    ★ Service layer: pm grant, create-user, WiFi, AM abuse
-    ├── device-info.txt              Device properties
-    ├── network-audit.txt            Network interfaces, ports, connections
-    ├── app-audit.txt                Package listings, permissions
-    ├── permissions-audit.txt        File permissions, mount options
-    ├── services-audit.txt           Running processes, init services
-    ├── config-audit.txt             Security configuration settings
-    ├── apk-analysis.txt             Androguard APK analysis output
-    ├── ioctl_fuzz.log               Ioctl fuzzing output log
-    ├── apks/                        Pulled APK files (Hijacker, Magisk, cSploit, etc.)
-    └── smartcomroot/                SmartcomRoot APK, ODEX, extracted assets
+├── exynos_src/                  Samsung GPL kernel source repos
+├── work/                        Operational workspace
+│   ├── privesc_apk/             PrivEsc agent APK (device owner)
+│   ├── firmware/                Kernel images, vmlinux, SELinux policy
+│   ├── decompile/               Decompiled APK/ODEX sources
+│   ├── drparser/                DRParser reverse engineering
+│   ├── recon/                   Raw device recon dumps
+│   └── ...                      (smartcomroot, sysdump, logs, tools, etc.)
+└── archive/                     Temp files, old logs, misc artifacts
 ```
+
+### Layout Note (Why this organization)
+
+- Root level is clean: just entry points (`README.md`, `STATUS.md`, `PROGRESS-LOG.md`) plus major working directories.
+- `src/` is organized by **attack surface** (binder, mali, ion, bluetooth, kernel-cve, fuzzing, recon, etc.) for quick navigation of 300+ source files.
+- `findings/` is organized by **topic** so related reports are grouped together.
+- `device-data/` consolidates all device filesystem pulls and firmware images under one umbrella.
+- `archive/` holds temp files, old logs, and misc artifacts that aren't actively needed.
+- `work/`, `qemu/`, `apk/`, `exynos_src/` are self-contained workspaces left as-is.
 
 ---
 

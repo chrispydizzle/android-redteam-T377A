@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SM-T377A — Security Findings Dashboard</title>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --critical: #f85149;
+    --high: #d29922;
+    --medium: #3fb950;
+    --low: #8b949e;
+    --info: #58a6ff;
+    --blocked: #484f58;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  .header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 24px 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .header h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #f0f6fc;
+  }
+
+  .header .subtitle {
+    color: var(--text-muted);
+    font-size: 14px;
+  }
+
+  .header .badge {
+    background: var(--critical);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .dashboard {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    overflow: hidden;
+  }
+
+  .card.full-width { grid-column: 1 / -1; }
+  .card h2 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 16px;
+  }
+
+  .stats-row {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    text-align: center;
+  }
+
+  .stat-card .number {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-card .label {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .tooltip-box {
+    position: absolute;
+    display: none;
+    padding: 12px 16px;
+    background: #1c2128;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    pointer-events: none;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    font-size: 12px;
+    z-index: 1000;
+    max-width: 350px;
+    line-height: 1.6;
+  }
+
+  .tooltip-box strong { color: #f0f6fc; }
+  .tooltip-box .tt-severity {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  svg text { fill: var(--text-muted); font-family: inherit; }
+  svg .tick line { stroke: var(--border); }
+  svg .domain { stroke: var(--border); }
+  svg .grid line { stroke: var(--border); opacity: 0.3; }
+  svg .grid .domain { display: none; }
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: background 0.15s;
+  }
+
+  .legend-item:hover { background: rgba(255,255,255,0.05); }
+  .legend-item.dimmed { opacity: 0.3; }
+
+  .legend-swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  .filter-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: inherit;
+  }
+
+  .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .filter-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #0d1117;
+    font-weight: 600;
+  }
+
+  .detail-panel {
+    grid-column: 1 / -1;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    display: none;
+  }
+
+  .detail-panel.visible { display: block; }
+
+  .detail-panel h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #f0f6fc;
+    margin-bottom: 8px;
+  }
+
+  .detail-grid {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 6px 16px;
+    font-size: 13px;
+  }
+
+  .detail-grid dt { color: var(--text-muted); }
+  .detail-grid dd { color: var(--text); }
+
+  @media (max-width: 900px) {
+    .dashboard { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>🔒 SM-T377A Security Findings Dashboard</h1>
+    <div class="subtitle">Samsung Galaxy Tab E 8.0 · Android 6.0.1 · Kernel 3.10.9 · SPL 2017-07-01</div>
+  </div>
+  <span class="badge">Critical Risk</span>
+</div>
+
+<div class="dashboard">
+  <div class="stats-row" id="stats-row"></div>
+  <div class="card full-width" id="timeline-card">
+    <h2>Findings Timeline — Impact vs. Discovery Date</h2>
+    <div class="filter-bar" id="timeline-filters"></div>
+    <div id="timeline-chart"></div>
+    <div class="legend" id="timeline-legend"></div>
+  </div>
+  <div class="card" id="severity-card">
+    <h2>Severity Distribution</h2>
+    <div id="severity-chart"></div>
+  </div>
+  <div class="card" id="surface-card">
+    <h2>Attack Surface Coverage</h2>
+    <div id="surface-chart"></div>
+  </div>
+  <div class="card" id="cve-card">
+    <h2>CVE Status Breakdown</h2>
+    <div id="cve-chart"></div>
+  </div>
+  <div class="card" id="fuzz-card">
+    <h2>Fuzzing Operations by Target</h2>
+    <div id="fuzz-chart"></div>
+  </div>
+  <div class="detail-panel" id="detail-panel">
+    <h3 id="detail-title"></h3>
+    <dl class="detail-grid" id="detail-grid"></dl>
+  </div>
+</div>
+
+<div class="tooltip-box" id="tooltip"></div>
+
+<script>
+// ═══════════════════════════════════════════════════
+// DATA — Extracted from STATUS.md and findings/
+// ═══════════════════════════════════════════════════
+
+const findings = [
+  // Session 1-2: Initial recon
+  { id: "dirty-cow", name: "Dirty COW (CVE-2016-5195)", date: "2026-02-25", session: 1, category: "Kernel CVE", severity: "PATCHED", impact: 0, details: "MAP_PRIVATE not modified after racing. Patched." },
+  { id: "pipe-iov", name: "pipe iov (CVE-2015-1805)", date: "2026-02-25", session: 1, category: "Kernel CVE", severity: "PATCHED", impact: 0, details: "readv/writev returns EFAULT correctly." },
+  { id: "towelroot", name: "Towelroot (CVE-2014-3153)", date: "2026-02-25", session: 1, category: "Kernel CVE", severity: "PATCHED", impact: 0, details: "Samsung blanket-patched requeue_pi. EINVAL on all calls." },
+  { id: "ping-uaf", name: "Ping socket UAF (CVE-2015-3636)", date: "2026-02-25", session: 1, category: "Kernel CVE", severity: "PATCHED", impact: 0, details: "LIST_POISON2 page not written." },
+  { id: "perf-oob", name: "perf_event OOB (CVE-2013-2094)", date: "2026-02-25", session: 1, category: "Kernel CVE", severity: "PATCHED", impact: 0, details: "OOB config values return ENOENT." },
+  { id: "ntty-race", name: "n_tty write race (CVE-2014-0196)", date: "2026-02-25", session: 1, category: "Kernel CVE", severity: "PATCHED", impact: 1, details: "Process hung but no crash. Likely patched." },
+  { id: "keyring", name: "Keyring overflow (CVE-2016-0728)", date: "2026-02-25", session: 1, category: "Kernel CVE", severity: "BLOCKED", impact: 1, details: "26,502 ops/sec too slow (2701 min), EDQUOT at 198." },
+  { id: "inotify", name: "inotify/rename race (CVE-2017-7533)", date: "2026-02-25", session: 1, category: "Kernel CVE", severity: "PATCHED", impact: 0, details: "558K events, 56K renames, 0 crashes." },
+  { id: "mq-notify", name: "mq_notify (CVE-2017-11176)", date: "2026-02-25", session: 1, category: "Kernel CVE", severity: "N/A", impact: 0, details: "POSIX MQ returns ENOSYS. Not compiled." },
+
+  // Session 3: Service mode
+  { id: "service-mode-sec", name: "All Samsung services secured", date: "2026-02-25", session: 3, category: "Services", severity: "BLOCKED", impact: 1, details: "Knox, properties, service mode all properly locked." },
+
+  // Session 4: App context
+  { id: "device-owner", name: "Device Owner + Profile Owner achieved", date: "2026-02-25", session: 4, category: "APK Agent", severity: "HIGH", impact: 7, details: "com.privesc.agent installed as device owner with 31 permissions, accessibility service active." },
+  { id: "pm-grant", name: "pm grant gives dangerous permissions", date: "2026-02-25", session: 4, category: "Services", severity: "HIGH", impact: 6, details: "Shell can grant any permission to any app." },
+  { id: "am-abuse", name: "AM/PM abuse capabilities", date: "2026-02-25", session: 4, category: "Services", severity: "HIGH", impact: 5, details: "force-stop any app, launch any activity, broadcast system intents." },
+
+  // Session 5: CVE-2019-2215 + Mali
+  { id: "binder-uaf", name: "Binder UAF (CVE-2019-2215)", date: "2026-02-25", session: 5, category: "Binder", severity: "CRITICAL", impact: 8, details: "UAF confirmed. Samsung patched binder_free_thread (nullifies whead). BPF reclaims k256 but no trigger." },
+  { id: "mali-false", name: "Mali vendor dispatch (FALSE POSITIVE)", date: "2026-02-25", session: 5, category: "Mali GPU", severity: "LOW", impact: 1, details: "Was ION struct misalignment bug in test code. Mali works normally with correct struct." },
+
+  // Session 6: Network + DRParser
+  { id: "drparser-goldmine", name: "DRParser goldmine (post-root)", date: "2026-02-25", session: 6, category: "Services", severity: "MEDIUM", impact: 5, details: "AT_COMMAND, INSTALL_PACKAGES, MASTER_CLEAR, MODIFY_IPTABLES. RSA private key in APK assets." },
+  { id: "wifi-intel", name: "WiFi intelligence exposure", date: "2026-02-25", session: 6, category: "Info Disclosure", severity: "MEDIUM", impact: 4, details: "All 8 saved networks + BSSIDs + device MAC via dumpsys wifi." },
+  { id: "info-disclosure", name: "debugfs/dmesg/slabinfo readable", date: "2026-02-25", session: 6, category: "Info Disclosure", severity: "MEDIUM", impact: 5, details: "contacts, IMEI, ftrace, binder/ion/mali debug stats all readable from shell." },
+
+  // Session 7: Zero-day race
+  { id: "tee-deadlock", name: "tee() ABBA deadlock (ZERO-DAY)", date: "2026-02-25", session: 7, category: "Kernel Fuzzing", severity: "MEDIUM", impact: 4, details: "DoS-only. Circular tee(p1→p2)+tee(p2→p1) causes ABBA deadlock. 233M+ fuzz ops." },
+
+  // Session 8: Binder deep exploit
+  { id: "binder-samsung-fix", name: "Samsung proprietary binder fix", date: "2026-02-25", session: 8, category: "Binder", severity: "BLOCKED", impact: 3, details: "binder_free_thread nullifies eppoll_entry->whead before kfree. 288 combos tested, 0 crashes." },
+
+  // Session 9: Corrections
+  { id: "ion-uaf", name: "ION UAF (91% race win)", date: "2026-02-25", session: 9, category: "ION Heap", severity: "HIGH", impact: 6, details: "Race win rate 91%. Spray +1169 k64. No victim object with callable FPs." },
+  { id: "ion-dos", name: "ION heap DoS (kernel panic)", date: "2026-02-25", session: 9, category: "ION Heap", severity: "HIGH", impact: 5, details: "Heap bits 2/12 cause kernel panic from unprivileged shell. DoS only." },
+  { id: "binder-dos", name: "Binder context manager DoS", date: "2026-02-25", session: 9, category: "Binder", severity: "HIGH", impact: 5, details: "Handle 0 refcount ops kill context manager → system freeze. Reproduced 2x." },
+
+  // Session 10a-h: Deep recon
+  { id: "smartcomroot", name: "SmartcomRoot 15 AIDL methods callable", date: "2026-02-26", session: 10, category: "Services", severity: "MEDIUM", impact: 4, details: "All 15 methods callable from untrusted_app. Runtime.exec prevents injection." },
+  { id: "tima-leak", name: "TIMA physical address leak", date: "2026-02-26", session: 10, category: "Info Disclosure", severity: "HIGH", impact: 7, details: "selinux_enforcing=0xC0B7AD18 confirmed via dmesg TIMA paddr leak. NO KASLR." },
+  { id: "dnsproxyd", name: "dnsproxyd protocol reversed", date: "2026-02-26", session: 10, category: "Services", severity: "LOW", impact: 2, details: "FrameworkListener protocol. No crash on fuzzing. netd has ALL capabilities." },
+  { id: "dm-port", name: "DM port raw AT access", date: "2026-02-26", session: 10, category: "Modem/AT", severity: "HIGH", impact: 6, details: "180 AT commands, no auth. Shannon 308 modem fully accessible." },
+  { id: "netlink-route", name: "NETLINK_ROUTE full access", date: "2026-02-26", session: 10, category: "Kernel Fuzzing", severity: "LOW", impact: 2, details: "7.2M+ fuzz operations, 0 bugs. Robust." },
+  { id: "ptrace-children", name: "ptrace on own children", date: "2026-02-26", session: 10, category: "Info Disclosure", severity: "LOW", impact: 2, details: "PTRACE_ATTACH, GETREGS, PEEKDATA, /proc/pid/mem O_RDWR on children." },
+  { id: "data-log-write", name: "/data/log write access", date: "2026-02-26", session: 10, category: "Info Disclosure", severity: "LOW", impact: 2, details: "Shell can write files and symlinks in /data/log/." },
+
+  // Session 11: SELinux analysis
+  { id: "selinux-dead", name: "SELinux policy = DEAD END", date: "2026-02-27", session: 11, category: "SELinux", severity: "BLOCKED", impact: 0, details: "10,896 rules parsed. No permissive types. No transitions from shell. No su/rd_shell domains." },
+  { id: "bt-domain-value", name: "Bluetooth domain has kernel primitives", date: "2026-02-27", session: 11, category: "Bluetooth", severity: "MEDIUM", impact: 5, details: "52 allow rules, net_admin, packet_socket, raw L2 access. BlueBorne value confirmed." },
+
+  // Session 12: Attack surface discovery
+  { id: "perf-event", name: "perf_event_open accessible", date: "2026-02-27", session: 12, category: "Kernel CVE", severity: "MEDIUM", impact: 3, details: "security.perf_harden=0 settable. SW counters, mmap, groups work. CVE-2016-6786 PATCHED." },
+  { id: "timerfd", name: "timerfd CVE-2017-10661 reachable", date: "2026-02-27", session: 12, category: "Kernel CVE", severity: "MEDIUM", impact: 4, details: "TFD_TIMER_CANCEL_ON_SET works but needs clock_settime (CAP_SYS_TIME)." },
+  { id: "factory-broadcast", name: "Factory app broadcast accepted", date: "2026-02-27", session: 12, category: "Services", severity: "LOW", impact: 2, details: "CSC_MODEM_SETTING reaches FactoryTestBroadcastReceiver (UID 1000). KEYSTRING blocks exploit." },
+  { id: "dccp-compiled", name: "DCCP compiled but SELinux-blocked", date: "2026-02-27", session: 12, category: "Kernel CVE", severity: "BLOCKED", impact: 1, details: "socket() returns EPERM not ENOSYS. Blocked from both shell and untrusted_app." },
+  { id: "slabinfo", name: "/proc/slabinfo readable", date: "2026-02-27", session: 12, category: "Info Disclosure", severity: "MEDIUM", impact: 4, details: "All slab cache sizes and active objects visible. Enables precise heap spray targeting." },
+  { id: "perf-6786", name: "CVE-2016-6786 PATCHED", date: "2026-02-27", session: 12, category: "Kernel CVE", severity: "PATCHED", impact: 0, details: "7000 iterations, 0 crashes/hangs." },
+  { id: "perf-6001", name: "CVE-2017-6001 PATCHED", date: "2026-02-27", session: 12, category: "Kernel CVE", severity: "PATCHED", impact: 0, details: "10,000+ iterations across 3 phases, all clean." },
+
+  // Session 13: BlueBorne
+  { id: "bluborne-efs", name: "BlueBorne EFS amplification (CVE-2017-0782)", date: "2026-03-03", session: 13, category: "Bluetooth", severity: "CRITICAL", impact: 10, details: "EFS amplification: 60B input → 270B output → 206B past buf[64]. No stack canaries. Corrected exploit ready." },
+  { id: "bluborne-bnep", name: "BNEP channel FULLY OPEN", date: "2026-03-03", session: 13, category: "Bluetooth", severity: "HIGH", impact: 6, details: "Setup SUCCESS, IPv6 traffic flows. But BNEP heap overflow blocked — Samsung backported validation." },
+  { id: "bluborne-crash", name: "BlueBorne BT daemon crash", date: "2026-03-03", session: 13, category: "Bluetooth", severity: "HIGH", impact: 5, details: "L2CAP EFS amplification crashes BT userspace daemon. Confirmed on device." },
+  { id: "kallsyms", name: "43,664 kernel symbols decoded", date: "2026-03-03", session: 13, category: "Info Disclosure", severity: "MEDIUM", impact: 5, details: "Address table at offset 0x87A554. commit_creds at index 1955 (0xC0054328)." },
+
+  // SysDump/OTP (from findings)
+  { id: "sysdump-bypass", name: "SysDump OTP completely bypassed", date: "2026-03-03", session: 13, category: "Services", severity: "HIGH", impact: 7, details: "No OTP prompt when launched via DRParser SecretCodeIME. Full SysDump menu access." },
+  { id: "accessibility-ui", name: "Accessibility UI automation active", date: "2026-02-25", session: 4, category: "APK Agent", severity: "HIGH", impact: 6, details: "30+ commands: dump_ui, click_text, set_text, scroll, sysdump_attack, settings_attack." },
+];
+
+const fuzzData = [
+  { target: "mmap/ioctl races", ops: 225000000, crashes: 0, bugs: 0 },
+  { target: "NETLINK_ROUTE", ops: 7200000, crashes: 0, bugs: 0 },
+  { target: "splice/tee races", ops: 2900000, crashes: 0, bugs: 2 },
+  { target: "Deep race conditions", ops: 1300000, crashes: 0, bugs: 1 },
+  { target: "Ashmem", ops: 100000, crashes: 0, bugs: 0 },
+  { target: "Binder", ops: 72000, crashes: 0, bugs: 1 },
+  { target: "ION", ops: 50000, crashes: 1, bugs: 1 },
+  { target: "Mali GPU", ops: 30000, crashes: 0, bugs: 0 },
+  { target: "SCM_RIGHTS fd race", ops: 22700, crashes: 0, bugs: 0 },
+  { target: "BPF filter races", ops: 16000, crashes: 0, bugs: 0 },
+  { target: "Additional surfaces", ops: 5000, crashes: 0, bugs: 0 },
+  { target: "PTMX/TTY", ops: 700, crashes: 0, bugs: 0 },
+  { target: "tee exploitation", ops: 400, crashes: 0, bugs: 1 },
+];
+
+// ═══════════════════════════════════════════════════
+// SEVERITY COLORS
+// ═══════════════════════════════════════════════════
+
+const severityColor = {
+  "CRITICAL": "#f85149",
+  "HIGH": "#d29922",
+  "MEDIUM": "#3fb950",
+  "LOW": "#8b949e",
+  "PATCHED": "#484f58",
+  "BLOCKED": "#484f58",
+  "N/A": "#30363d",
+};
+
+const categoryColor = d3.scaleOrdinal()
+  .domain(["Kernel CVE", "Binder", "Bluetooth", "ION Heap", "Mali GPU", "Services", "Info Disclosure", "Kernel Fuzzing", "SELinux", "Modem/AT", "APK Agent"])
+  .range(["#f85149", "#d29922", "#58a6ff", "#3fb950", "#bc8cff", "#f0883e", "#79c0ff", "#56d364", "#8b949e", "#ff7b72", "#d2a8ff"]);
+
+const tooltip = d3.select("#tooltip");
+
+// ═══════════════════════════════════════════════════
+// STATS ROW
+// ═══════════════════════════════════════════════════
+
+function drawStats() {
+  const critical = findings.filter(f => f.severity === "CRITICAL").length;
+  const high = findings.filter(f => f.severity === "HIGH").length;
+  const medium = findings.filter(f => f.severity === "MEDIUM").length;
+  const patched = findings.filter(f => f.severity === "PATCHED" || f.severity === "BLOCKED" || f.severity === "N/A").length;
+  const totalOps = fuzzData.reduce((s, d) => s + d.ops, 0);
+
+  const stats = [
+    { number: critical, label: "Critical", color: "var(--critical)" },
+    { number: high, label: "High", color: "var(--high)" },
+    { number: medium, label: "Medium", color: "var(--medium)" },
+    { number: patched, label: "Patched / Blocked", color: "var(--blocked)" },
+    { number: (totalOps / 1e6).toFixed(0) + "M+", label: "Fuzz Operations", color: "var(--accent)" },
+  ];
+
+  const row = d3.select("#stats-row");
+  stats.forEach(s => {
+    const card = row.append("div").attr("class", "stat-card");
+    card.append("div").attr("class", "number").style("color", s.color).text(s.number);
+    card.append("div").attr("class", "label").text(s.label);
+  });
+}
+
+// ═══════════════════════════════════════════════════
+// TIMELINE SCATTER (Impact vs Date, sized by severity)
+// ═══════════════════════════════════════════════════
+
+function drawTimeline() {
+  const container = d3.select("#timeline-chart");
+  const width = container.node().getBoundingClientRect().width;
+  const height = 420;
+  const margin = { top: 20, right: 30, bottom: 50, left: 60 };
+  const iw = width - margin.left - margin.right;
+  const ih = height - margin.top - margin.bottom;
+
+  const svg = container.append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+  const g = svg.append("g")
+    .attr("transform", `translate(${margin.left},${margin.top})`);
+
+  // Parse dates
+  const parseDate = d3.timeParse("%Y-%m-%d");
+  const data = findings.map(f => ({ ...f, dateObj: parseDate(f.date) }));
+
+  // Scales
+  const xScale = d3.scaleTime()
+    .domain(d3.extent(data, d => d.dateObj))
+    .range([0, iw])
+    .nice();
+
+  const yScale = d3.scaleLinear()
+    .domain([0, 11])
+    .range([ih, 0]);
+
+  const rScale = d3.scaleSqrt()
+    .domain([0, 10])
+    .range([4, 18]);
+
+  // Grid
+  g.append("g").attr("class", "grid")
+    .call(d3.axisLeft(yScale).tickSize(-iw).tickFormat(""));
+  g.append("g").attr("class", "grid")
+    .attr("transform", `translate(0,${ih})`)
+    .call(d3.axisBottom(xScale).tickSize(-ih).tickFormat(""));
+
+  // Impact zones
+  const zones = [
+    { y1: 0, y2: 3, label: "Low Impact", fill: "rgba(139,148,158,0.05)" },
+    { y1: 3, y2: 6, label: "Medium Impact", fill: "rgba(63,185,80,0.05)" },
+    { y1: 6, y2: 8, label: "High Impact", fill: "rgba(210,153,34,0.05)" },
+    { y1: 8, y2: 11, label: "Critical Impact", fill: "rgba(248,81,73,0.05)" },
+  ];
+
+  zones.forEach(z => {
+    g.append("rect")
+      .attr("x", 0).attr("width", iw)
+      .attr("y", yScale(z.y2)).attr("height", yScale(z.y1) - yScale(z.y2))
+      .attr("fill", z.fill);
+    g.append("text")
+      .attr("x", iw - 4).attr("y", yScale(z.y2) + 14)
+      .attr("text-anchor", "end")
+      .style("font-size", "10px")
+      .style("fill", "rgba(139,148,158,0.4)")
+      .text(z.label);
+  });
+
+  // Axes
+  g.append("g")
+    .attr("transform", `translate(0,${ih})`)
+    .call(d3.axisBottom(xScale).ticks(6).tickFormat(d3.timeFormat("%b %d")));
+
+  g.append("g")
+    .call(d3.axisLeft(yScale).ticks(10));
+
+  // Axis labels
+  g.append("text")
+    .attr("x", iw / 2).attr("y", ih + 40)
+    .attr("text-anchor", "middle")
+    .style("font-size", "12px")
+    .text("Discovery Date");
+
+  g.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("x", -ih / 2).attr("y", -45)
+    .attr("text-anchor", "middle")
+    .style("font-size", "12px")
+    .text("Impact Score (0–10)");
+
+  // Jitter for overlapping points
+  const jitter = (d, i) => {
+    const sameDate = data.filter(dd => dd.date === d.date && dd.impact === d.impact);
+    const idx = sameDate.indexOf(d);
+    return (idx - sameDate.length / 2) * 8;
+  };
+
+  // Points
+  const circles = g.selectAll("circle")
+    .data(data)
+    .join("circle")
+    .attr("cx", (d, i) => xScale(d.dateObj) + jitter(d, i))
+    .attr("cy", d => yScale(d.impact))
+    .attr("r", 0)
+    .attr("fill", d => categoryColor(d.category))
+    .attr("stroke", d => d.severity === "CRITICAL" ? "#f85149" : d.severity === "HIGH" ? "#d29922" : "rgba(255,255,255,0.2)")
+    .attr("stroke-width", d => d.severity === "CRITICAL" ? 3 : d.severity === "HIGH" ? 2 : 1)
+    .attr("opacity", 0.85)
+    .style("cursor", "pointer");
+
+  // Animate in
+  circles.transition()
+    .duration(600)
+    .delay((d, i) => i * 15)
+    .attr("r", d => rScale(d.impact));
+
+  // Interactions
+  circles
+    .on("mouseover", function(event, d) {
+      d3.select(this).transition().duration(150)
+        .attr("opacity", 1).attr("stroke-width", 3);
+
+      tooltip.style("display", "block")
+        .style("left", (event.pageX + 12) + "px")
+        .style("top", (event.pageY - 12) + "px")
+        .html(`
+          <strong>${d.name}</strong><br/>
+          <span class="tt-severity" style="background:${severityColor[d.severity]}; color:${d.severity === 'PATCHED' || d.severity === 'BLOCKED' ? '#c9d1d9' : '#0d1117'}">${d.severity}</span>
+          &nbsp; Session ${d.session} · ${d.date}<br/>
+          Impact: ${'█'.repeat(d.impact)}${'░'.repeat(10 - d.impact)} ${d.impact}/10<br/>
+          <span style="color:var(--text-muted)">${d.details.substring(0, 120)}${d.details.length > 120 ? '…' : ''}</span>
+        `);
+    })
+    .on("mousemove", function(event) {
+      tooltip.style("left", (event.pageX + 12) + "px")
+        .style("top", (event.pageY - 12) + "px");
+    })
+    .on("mouseout", function(event, d) {
+      d3.select(this).transition().duration(150)
+        .attr("opacity", 0.85)
+        .attr("stroke-width", d.severity === "CRITICAL" ? 3 : d.severity === "HIGH" ? 2 : 1);
+      tooltip.style("display", "none");
+    })
+    .on("click", function(event, d) {
+      showDetail(d);
+    });
+
+  // Filter buttons
+  const categories = [...new Set(findings.map(f => f.category))];
+  const filterBar = d3.select("#timeline-filters");
+  filterBar.append("button").attr("class", "filter-btn active").text("All")
+    .on("click", function() {
+      filterBar.selectAll(".filter-btn").classed("active", false);
+      d3.select(this).classed("active", true);
+      circles.transition().duration(300).attr("opacity", 0.85).attr("r", d => rScale(d.impact));
+    });
+
+  categories.forEach(cat => {
+    filterBar.append("button").attr("class", "filter-btn").text(cat)
+      .on("click", function() {
+        filterBar.selectAll(".filter-btn").classed("active", false);
+        d3.select(this).classed("active", true);
+        circles.transition().duration(300)
+          .attr("opacity", d => d.category === cat ? 0.9 : 0.08)
+          .attr("r", d => d.category === cat ? rScale(d.impact) * 1.2 : rScale(d.impact) * 0.6);
+      });
+  });
+
+  // Legend
+  const legend = d3.select("#timeline-legend");
+  categories.forEach(cat => {
+    const item = legend.append("div").attr("class", "legend-item");
+    item.append("div").attr("class", "legend-swatch").style("background", categoryColor(cat));
+    item.append("span").text(cat);
+  });
+}
+
+// ═══════════════════════════════════════════════════
+// SEVERITY DONUT
+// ═══════════════════════════════════════════════════
+
+function drawSeverity() {
+  const container = d3.select("#severity-chart");
+  const width = container.node().getBoundingClientRect().width;
+  const height = 300;
+  const radius = Math.min(width, height) / 2 - 20;
+
+  const svg = container.append("svg")
+    .attr("width", width).attr("height", height);
+
+  const g = svg.append("g")
+    .attr("transform", `translate(${width / 2},${height / 2})`);
+
+  const sevCounts = d3.rollup(findings, v => v.length, d => d.severity);
+  const pieData = Array.from(sevCounts, ([key, value]) => ({ severity: key, count: value }))
+    .sort((a, b) => b.count - a.count);
+
+  const pie = d3.pie().value(d => d.count).sort(null).padAngle(0.03);
+  const arc = d3.arc().innerRadius(radius * 0.55).outerRadius(radius);
+  const arcHover = d3.arc().innerRadius(radius * 0.55).outerRadius(radius + 6);
+
+  const arcs = g.selectAll("path")
+    .data(pie(pieData))
+    .join("path")
+    .attr("d", arc)
+    .attr("fill", d => severityColor[d.data.severity])
+    .attr("stroke", "var(--surface)")
+    .attr("stroke-width", 2)
+    .style("cursor", "pointer");
+
+  arcs.on("mouseover", function(event, d) {
+    d3.select(this).transition().duration(150).attr("d", arcHover);
+    tooltip.style("display", "block")
+      .style("left", (event.pageX + 10) + "px")
+      .style("top", (event.pageY - 10) + "px")
+      .html(`<strong>${d.data.severity}</strong>: ${d.data.count} findings (${Math.round(d.data.count / findings.length * 100)}%)`);
+  })
+  .on("mousemove", function(event) {
+    tooltip.style("left", (event.pageX + 10) + "px").style("top", (event.pageY - 10) + "px");
+  })
+  .on("mouseout", function() {
+    d3.select(this).transition().duration(150).attr("d", arc);
+    tooltip.style("display", "none");
+  });
+
+  // Center text
+  g.append("text").attr("text-anchor", "middle").attr("dy", "-0.3em")
+    .style("font-size", "28px").style("font-weight", "700").style("fill", "#f0f6fc")
+    .text(findings.length);
+  g.append("text").attr("text-anchor", "middle").attr("dy", "1.2em")
+    .style("font-size", "12px").style("fill", "var(--text-muted)")
+    .text("Total Findings");
+
+  // Labels
+  const labelArc = d3.arc().innerRadius(radius + 16).outerRadius(radius + 16);
+  g.selectAll(".label")
+    .data(pie(pieData).filter(d => d.data.count >= 2))
+    .join("text")
+    .attr("transform", d => `translate(${labelArc.centroid(d)})`)
+    .attr("text-anchor", "middle")
+    .style("font-size", "11px")
+    .style("fill", "var(--text-muted)")
+    .text(d => `${d.data.severity} (${d.data.count})`);
+}
+
+// ═══════════════════════════════════════════════════
+// ATTACK SURFACE HORIZONTAL BAR
+// ═══════════════════════════════════════════════════
+
+function drawSurface() {
+  const container = d3.select("#surface-chart");
+  const width = container.node().getBoundingClientRect().width;
+  const height = 300;
+  const margin = { top: 5, right: 60, bottom: 25, left: 110 };
+  const iw = width - margin.left - margin.right;
+  const ih = height - margin.top - margin.bottom;
+
+  const catCounts = d3.rollup(findings, v => v.length, d => d.category);
+  const data = Array.from(catCounts, ([key, value]) => ({ category: key, count: value }))
+    .sort((a, b) => b.count - a.count);
+
+  const svg = container.append("svg").attr("width", width).attr("height", height);
+  const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+  const yScale = d3.scaleBand().domain(data.map(d => d.category)).range([0, ih]).padding(0.25);
+  const xScale = d3.scaleLinear().domain([0, d3.max(data, d => d.count)]).range([0, iw]).nice();
+
+  g.append("g").call(d3.axisLeft(yScale).tickSize(0)).select(".domain").remove();
+  g.append("g").attr("transform", `translate(0,${ih})`).call(d3.axisBottom(xScale).ticks(5));
+
+  g.selectAll("rect")
+    .data(data)
+    .join("rect")
+    .attr("y", d => yScale(d.category))
+    .attr("height", yScale.bandwidth())
+    .attr("x", 0)
+    .attr("width", 0)
+    .attr("fill", d => categoryColor(d.category))
+    .attr("rx", 3)
+    .attr("opacity", 0.85)
+    .transition().duration(600).delay((d, i) => i * 50)
+    .attr("width", d => xScale(d.count));
+
+  g.selectAll(".count-label")
+    .data(data)
+    .join("text")
+    .attr("class", "count-label")
+    .attr("x", d => xScale(d.count) + 6)
+    .attr("y", d => yScale(d.category) + yScale.bandwidth() / 2)
+    .attr("dy", "0.35em")
+    .style("font-size", "12px")
+    .style("font-weight", "600")
+    .style("fill", "var(--text)")
+    .text(d => d.count);
+}
+
+// ═══════════════════════════════════════════════════
+// CVE STATUS STACKED BAR
+// ═══════════════════════════════════════════════════
+
+function drawCVE() {
+  const container = d3.select("#cve-chart");
+  const width = container.node().getBoundingClientRect().width;
+  const height = 300;
+  const margin = { top: 5, right: 20, bottom: 25, left: 40 };
+  const iw = width - margin.left - margin.right;
+  const ih = height - margin.top - margin.bottom;
+
+  const statuses = ["PATCHED", "BLOCKED", "N/A", "MEDIUM", "HIGH", "CRITICAL"];
+  const cveFindings = findings.filter(f => f.category === "Kernel CVE");
+  const statusCounts = statuses.map(s => ({
+    status: s,
+    count: cveFindings.filter(f => f.severity === s).length
+  })).filter(d => d.count > 0);
+
+  const svg = container.append("svg").attr("width", width).attr("height", height);
+  const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+  const xScale = d3.scaleBand().domain(statusCounts.map(d => d.status)).range([0, iw]).padding(0.3);
+  const yScale = d3.scaleLinear().domain([0, d3.max(statusCounts, d => d.count)]).range([ih, 0]).nice();
+
+  g.append("g").attr("transform", `translate(0,${ih})`).call(d3.axisBottom(xScale).tickSize(0));
+  g.append("g").call(d3.axisLeft(yScale).ticks(5));
+
+  g.selectAll("rect")
+    .data(statusCounts)
+    .join("rect")
+    .attr("x", d => xScale(d.status))
+    .attr("width", xScale.bandwidth())
+    .attr("y", ih)
+    .attr("height", 0)
+    .attr("fill", d => severityColor[d.status])
+    .attr("rx", 3)
+    .transition().duration(600).delay((d, i) => i * 80)
+    .attr("y", d => yScale(d.count))
+    .attr("height", d => ih - yScale(d.count));
+
+  g.selectAll(".count")
+    .data(statusCounts)
+    .join("text")
+    .attr("x", d => xScale(d.status) + xScale.bandwidth() / 2)
+    .attr("y", d => yScale(d.count) - 6)
+    .attr("text-anchor", "middle")
+    .style("font-size", "13px")
+    .style("font-weight", "600")
+    .style("fill", "var(--text)")
+    .text(d => d.count);
+
+  // Summary
+  container.append("div")
+    .style("text-align", "center")
+    .style("font-size", "12px")
+    .style("color", "var(--text-muted)")
+    .style("margin-top", "8px")
+    .html(`${cveFindings.length} CVEs tested · ${cveFindings.filter(f => f.severity === "PATCHED").length} patched · ${cveFindings.filter(f => f.severity === "CRITICAL" || f.severity === "HIGH" || f.severity === "MEDIUM").length} exploitable`);
+}
+
+// ═══════════════════════════════════════════════════
+// FUZZING LOG-SCALE BAR
+// ═══════════════════════════════════════════════════
+
+function drawFuzz() {
+  const container = d3.select("#fuzz-chart");
+  const width = container.node().getBoundingClientRect().width;
+  const height = 340;
+  const margin = { top: 5, right: 50, bottom: 25, left: 140 };
+  const iw = width - margin.left - margin.right;
+  const ih = height - margin.top - margin.bottom;
+
+  const data = [...fuzzData].sort((a, b) => b.ops - a.ops);
+
+  const svg = container.append("svg").attr("width", width).attr("height", height);
+  const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+  const yScale = d3.scaleBand().domain(data.map(d => d.target)).range([0, ih]).padding(0.2);
+  const xScale = d3.scaleLog().domain([100, 300000000]).range([0, iw]).clamp(true);
+
+  g.append("g").call(d3.axisLeft(yScale).tickSize(0)).select(".domain").remove();
+  g.append("g").attr("transform", `translate(0,${ih})`)
+    .call(d3.axisBottom(xScale).ticks(5, "~s"));
+
+  g.selectAll("rect")
+    .data(data)
+    .join("rect")
+    .attr("y", d => yScale(d.target))
+    .attr("height", yScale.bandwidth())
+    .attr("x", 0)
+    .attr("width", 0)
+    .attr("fill", d => d.bugs > 0 ? "#d29922" : "#238636")
+    .attr("rx", 3)
+    .attr("opacity", 0.8)
+    .on("mouseover", function(event, d) {
+      d3.select(this).attr("opacity", 1);
+      tooltip.style("display", "block")
+        .style("left", (event.pageX + 10) + "px")
+        .style("top", (event.pageY - 10) + "px")
+        .html(`<strong>${d.target}</strong><br/>Operations: ${d.ops.toLocaleString()}<br/>Crashes: ${d.crashes}<br/>Bugs found: ${d.bugs}`);
+    })
+    .on("mousemove", function(event) {
+      tooltip.style("left", (event.pageX + 10) + "px").style("top", (event.pageY - 10) + "px");
+    })
+    .on("mouseout", function() {
+      d3.select(this).attr("opacity", 0.8);
+      tooltip.style("display", "none");
+    })
+    .transition().duration(600).delay((d, i) => i * 40)
+    .attr("width", d => xScale(Math.max(d.ops, 200)));
+
+  // Bug indicators
+  g.selectAll(".bug-dot")
+    .data(data.filter(d => d.bugs > 0))
+    .join("circle")
+    .attr("cx", d => xScale(Math.max(d.ops, 200)) + 8)
+    .attr("cy", d => yScale(d.target) + yScale.bandwidth() / 2)
+    .attr("r", 5)
+    .attr("fill", "#d29922")
+    .attr("stroke", "var(--surface)")
+    .attr("stroke-width", 2);
+
+  container.append("div")
+    .style("display", "flex")
+    .style("gap", "16px")
+    .style("justify-content", "center")
+    .style("margin-top", "8px")
+    .style("font-size", "11px")
+    .style("color", "var(--text-muted)")
+    .html(`<span>🟢 Clean</span><span>🟡 Bugs Found</span><span>Scale: logarithmic</span>`);
+}
+
+// ═══════════════════════════════════════════════════
+// DETAIL PANEL
+// ═══════════════════════════════════════════════════
+
+function showDetail(d) {
+  const panel = d3.select("#detail-panel").classed("visible", true);
+  d3.select("#detail-title").text(d.name);
+
+  const grid = d3.select("#detail-grid");
+  grid.html("");
+
+  const fields = [
+    ["Severity", `<span style="color:${severityColor[d.severity]};font-weight:600">${d.severity}</span>`],
+    ["Impact Score", `${'█'.repeat(d.impact)}${'░'.repeat(10 - d.impact)} ${d.impact}/10`],
+    ["Category", d.category],
+    ["Session", `Session ${d.session}`],
+    ["Date", d.date],
+    ["Details", d.details],
+  ];
+
+  fields.forEach(([label, value]) => {
+    grid.append("dt").text(label);
+    grid.append("dd").html(value);
+  });
+
+  panel.node().scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
+// ═══════════════════════════════════════════════════
+// RENDER ALL
+// ═══════════════════════════════════════════════════
+
+drawStats();
+drawTimeline();
+drawSeverity();
+drawSurface();
+drawCVE();
+drawFuzz();
+</script>
+</body>
+</html>
