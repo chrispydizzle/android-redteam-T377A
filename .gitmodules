@@ -1,0 +1,16 @@
+[submodule "samsung_src/android_device_samsung_exynos3475-common"]
+	path = samsung_src/android_device_samsung_exynos3475-common
+	url = https://github.com/Exynos3475/android_device_samsung_exynos3475-common.git
+[submodule "samsung_src/android_device_samsung_universal3475-common"]
+	path = samsung_src/android_device_samsung_universal3475-common
+	url = https://github.com/Exynos3475/android_device_samsung_universal3475-common.git
+[submodule "samsung_src/android_kernel_samsung_exynos3475"]
+	path = samsung_src/android_kernel_samsung_exynos3475
+	url = https://github.com/Exynos3475/android_kernel_samsung_exynos3475.git
+	branch = clean_base
+[submodule "samsung_src/android_prebuilts_gcc_linux-x86_arm_arm-eabi-4.8"]
+	path = samsung_src/android_prebuilts_gcc_linux-x86_arm_arm-eabi-4.8
+	url = https://github.com/Exynos3475/android_prebuilts_gcc_linux-x86_arm_arm-eabi-4.8.git
+[submodule "samsung_src/android_vendor_samsung"]
+	path = samsung_src/android_vendor_samsung
+	url = https://github.com/Exynos3475/android_vendor_samsung.git

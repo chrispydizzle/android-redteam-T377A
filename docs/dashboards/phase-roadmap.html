@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SM-T377A — Strategic Phase Roadmap</title>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<style>
+  :root {
+    --bg:#080c12; --surface:#0d1219; --card:#131a24; --border:#1e2d3d;
+    --text:#c0d0e0; --muted:#5a7090; --bright:#e8f0fa;
+    --red:#ff4d4d; --orange:#ff9933; --green:#33cc77; --blue:#4499ff;
+    --purple:#aa77ff; --cyan:#33ddee; --yellow:#ffcc33;
+    --dim:#1a2535;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;overflow-x:hidden}
+
+  /* ── HEADER ── */
+  .header{
+    background:linear-gradient(135deg,#0a1020 0%,#0d1525 50%,#0f1a2a 100%);
+    border-bottom:1px solid var(--border);padding:28px 40px;
+  }
+  .header h1{font-size:22px;font-weight:700;color:var(--bright);margin-bottom:2px}
+  .header .sub{font-size:13px;color:var(--muted);line-height:1.5}
+  .header .sub em{color:var(--cyan);font-style:normal}
+
+  /* ── LAYOUT ── */
+  .page{max-width:1500px;margin:0 auto;padding:24px 32px}
+
+  /* ── PHASE SWIM LANES ── */
+  .swim-container{position:relative;margin-bottom:40px}
+
+  .phase-row{
+    display:grid;grid-template-columns:200px 1fr;
+    margin-bottom:2px;min-height:100px;position:relative;
+  }
+  .phase-label{
+    background:var(--card);border:1px solid var(--border);border-right:none;
+    padding:16px;display:flex;flex-direction:column;justify-content:center;
+    border-radius:8px 0 0 8px;position:relative;z-index:2;
+  }
+  .phase-label .num{font-size:28px;font-weight:800;line-height:1;margin-bottom:4px}
+  .phase-label .name{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+  .phase-label .status{font-size:10px;margin-top:6px;padding:2px 8px;border-radius:10px;display:inline-block;font-weight:600}
+
+  .phase-track{
+    background:var(--surface);border:1px solid var(--border);border-left:none;
+    padding:12px 16px;border-radius:0 8px 8px 0;
+    display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+    position:relative;overflow:hidden;
+  }
+
+  /* ── TASK NODES ── */
+  .task{
+    background:var(--card);border:1px solid var(--border);border-radius:8px;
+    padding:10px 14px;font-size:11px;cursor:pointer;
+    transition:all .2s;position:relative;min-width:140px;flex-shrink:0;
+  }
+  .task:hover{border-color:var(--cyan);transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.4)}
+  .task .task-name{font-weight:600;color:var(--bright);font-size:12px;margin-bottom:4px}
+  .task .task-detail{color:var(--muted);line-height:1.4}
+  .task .task-icon{position:absolute;top:8px;right:8px;font-size:14px}
+
+  .task.critical{border-left:3px solid var(--red)}
+  .task.high{border-left:3px solid var(--orange)}
+  .task.medium{border-left:3px solid var(--yellow)}
+  .task.ready{border-left:3px solid var(--green)}
+  .task.blocked{border-left:3px solid var(--muted);opacity:.6}
+  .task.done{border-left:3px solid var(--green);opacity:.5}
+
+  /* ── DEPENDENCY ARROWS (SVG overlay) ── */
+  .dep-overlay{position:absolute;top:0;left:0;pointer-events:none;z-index:1}
+
+  /* ── QUAD CHART ── */
+  .chart-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:32px}
+  .chart-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px;overflow:hidden}
+  .chart-card.full{grid-column:1/-1}
+  .chart-card h2{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:16px}
+
+  svg text{fill:var(--muted);font-family:inherit}
+  svg .domain{stroke:var(--border)}
+  svg .tick line{stroke:var(--border)}
+
+  .tooltip{
+    position:absolute;display:none;padding:12px 16px;
+    background:#141e2c;border:1px solid var(--border);border-radius:6px;
+    pointer-events:none;box-shadow:0 8px 32px rgba(0,0,0,.6);font-size:12px;z-index:1000;
+    max-width:320px;line-height:1.6;
+  }
+  .tooltip strong{color:var(--bright)}
+  .tooltip .tt-sev{display:inline-block;padding:1px 6px;border-radius:3px;font-size:10px;font-weight:700}
+
+  /* ── GLOW ── */
+  @keyframes pulse{0%,100%{box-shadow:0 0 8px rgba(255,77,77,.2)}50%{box-shadow:0 0 20px rgba(255,77,77,.4)}}
+  .task.pulse{animation:pulse 2s infinite}
+
+  /* ── PREREQ PILLS ── */
+  .prereq{display:inline-block;font-size:9px;padding:1px 6px;border-radius:8px;background:var(--dim);color:var(--muted);margin-top:4px;margin-right:3px}
+  .prereq.met{background:#1a3328;color:var(--green)}
+  .prereq.unmet{background:#331a1a;color:var(--red)}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>⚔️ SM-T377A — Strategic Attack Roadmap</h1>
+  <div class="sub">
+    Next phases for privilege escalation · <em>13 sessions completed</em> · 42 findings · 236M+ fuzz ops
+    <br/>Goal: UID 0 from ADB shell (UID 2000) or installed APK (UID 10139)
+  </div>
+</div>
+
+<div class="page">
+  <!-- Feasibility × Impact quadrant -->
+  <div class="chart-row">
+    <div class="chart-card full">
+      <h2>Feasibility × Impact — Remaining Attack Vectors</h2>
+      <div id="quad-chart"></div>
+    </div>
+  </div>
+
+  <!-- Phase swim lanes -->
+  <div class="chart-card full" style="margin-bottom:24px">
+    <h2>Phase Roadmap — Dependency Chain to Root</h2>
+    <div class="swim-container" id="swim-lanes"></div>
+  </div>
+
+  <!-- Kill chain + blockers -->
+  <div class="chart-row">
+    <div class="chart-card">
+      <h2>Kill Chain Progress</h2>
+      <div id="kill-chain"></div>
+    </div>
+    <div class="chart-card">
+      <h2>Blocker Analysis</h2>
+      <div id="blockers"></div>
+    </div>
+  </div>
+</div>
+
+<div class="tooltip" id="tooltip"></div>
+
+<script>
+// ═══════════════════════════════════════════════════
+// STRATEGIC DATA — derived from STATUS.md + android-redteam skill
+// ═══════════════════════════════════════════════════
+
+const vectors = [
+  {
+    id: "bluborne-crash", name: "BlueBorne Crash Test",
+    phase: 1, feasibility: 8, impact: 7, status: "ready",
+    detail: "Run bluborne_efs_overflow.py in crash mode (0xDEADBEEF). Confirm kernel PC control via stack overflow.",
+    prereqs: [
+      { name: "Kali + BT adapter", met: true },
+      { name: "BT proximity", met: false },
+      { name: "Exploit written", met: true },
+    ],
+    category: "Bluetooth", risk: "BT daemon crash, possible reboot",
+  },
+  {
+    id: "bluborne-payload", name: "BlueBorne Payload Dev",
+    phase: 1, feasibility: 7, impact: 10, status: "blocked",
+    detail: "Craft ARM32 shellcode: prepare_kernel_cred(0) → commit_creds → disable SELinux → ret. No canaries, no PXN, no KASLR.",
+    prereqs: [
+      { name: "Crash confirmed", met: false },
+      { name: "Stack layout mapped", met: false },
+      { name: "Kernel addrs known", met: true },
+    ],
+    category: "Bluetooth", risk: "Kernel panic if offset wrong. TIMA may detect.",
+    depends: ["bluborne-crash"],
+  },
+  {
+    id: "tima-bypass", name: "TIMA Bypass Research",
+    phase: 2, feasibility: 5, impact: 9, status: "ready",
+    detail: "TIMA checks kernel integrity + SELinux every 5 min. Must neutralize before/simultaneously with SELinux disable. Options: (1) patch TIMA check routine in TZ, (2) time exploit between checks, (3) crash TZ daemon.",
+    prereqs: [
+      { name: "Root exploit working", met: false },
+      { name: "TIMA interval known", met: true },
+      { name: "MobiCore RE", met: false },
+    ],
+    category: "TrustZone", risk: "Device lockdown if detected",
+  },
+  {
+    id: "selinux-disable", name: "SELinux Disable",
+    phase: 2, feasibility: 8, impact: 9, status: "blocked",
+    detail: "Write 0 to selinux_enforcing (0xC0B7AD18). Requires kernel write primitive from BlueBorne. Must happen simultaneously with TIMA bypass.",
+    prereqs: [
+      { name: "Kernel write primitive", met: false },
+      { name: "Exact address confirmed", met: true },
+      { name: "TIMA neutralized", met: false },
+    ],
+    category: "Kernel", risk: "TIMA detects within 5 min",
+    depends: ["bluborne-payload", "tima-bypass"],
+  },
+  {
+    id: "persistent-root", name: "Persistent Root Shell",
+    phase: 2, feasibility: 6, impact: 10, status: "blocked",
+    detail: "After SELinux disable + TIMA bypass: set UID 0, install su binary, or patch adbd. Must survive reboot (modify boot.img or persist mechanism).",
+    prereqs: [
+      { name: "SELinux disabled", met: false },
+      { name: "TIMA bypassed", met: false },
+      { name: "Kernel code exec", met: false },
+    ],
+    category: "Post-Exploit", risk: "Knox trip, warranty void",
+    depends: ["selinux-disable"],
+  },
+  {
+    id: "dm-port-re", name: "DM Port DIAG Deep RE",
+    phase: 3, feasibility: 7, impact: 5, status: "ready",
+    detail: "Shannon 308 modem on COM11. 180 AT commands, no auth. Need deeper DIAG binary protocol RE. Could yield modem-level code exec or baseband secrets.",
+    prereqs: [
+      { name: "COM port access", met: true },
+      { name: "AT+CLAC enumerated", met: true },
+      { name: "DIAG framing RE", met: false },
+    ],
+    category: "Modem/AT", risk: "USB disconnect on aggressive probing",
+  },
+  {
+    id: "sysdump-chain", name: "SysDump Exploit Chain",
+    phase: 3, feasibility: 9, impact: 6, status: "ready",
+    detail: "SysDump OTP bypassed via DRParser chain. TCP dump gives root pcap. Debug Level HIGH persists across reboot. CP RAM LOGGING triggers modem dump. Chain with accessibility for automated data exfil.",
+    prereqs: [
+      { name: "OTP bypass working", met: true },
+      { name: "Accessibility active", met: true },
+      { name: "APK agent installed", met: true },
+    ],
+    category: "Services", risk: "Debug Level change triggers reboot",
+  },
+  {
+    id: "timerfd-trigger", name: "timerfd Race Trigger",
+    phase: 3, feasibility: 3, impact: 8, status: "blocked",
+    detail: "CVE-2017-10661: timerfd + TFD_TIMER_CANCEL_ON_SET works. Need clock_settime trigger. Options: (1) NTP time sync event, (2) APK with SET_TIME permission, (3) AT command timezone change.",
+    prereqs: [
+      { name: "timerfd accessible", met: true },
+      { name: "clock_settime trigger", met: false },
+    ],
+    category: "Kernel CVE", risk: "Kernel UAF if successful",
+    depends: [],
+  },
+  {
+    id: "carrier-unlock", name: "Carrier Unlock",
+    phase: 4, feasibility: 4, impact: 7, status: "blocked",
+    detail: "AT&T carrier lock. With root: modify PARAM partition NV data, or use AT+CLCK with correct NCK code. Bootloader flash becomes possible post-unlock.",
+    prereqs: [
+      { name: "Root achieved", met: false },
+      { name: "PARAM partition mapped", met: true },
+      { name: "NCK code or NV access", met: false },
+    ],
+    category: "Post-Exploit", risk: "Brick risk on PARAM modification",
+    depends: ["persistent-root"],
+  },
+  {
+    id: "drparser-postroot", name: "DRParser Post-Root Goldmine",
+    phase: 4, feasibility: 9, impact: 6, status: "blocked",
+    detail: "With root: DRParser gives INSTALL_PACKAGES, MASTER_CLEAR, MODIFY_IPTABLES, MODIFY_PHONE_STATE. Full modem DIAG access. Keystring XML injection from /sdcard/.",
+    prereqs: [
+      { name: "Root achieved", met: false },
+      { name: "DRParser analyzed", met: true },
+      { name: "RSA key extracted", met: true },
+    ],
+    category: "Post-Exploit", risk: "Minimal with root",
+    depends: ["persistent-root"],
+  },
+];
+
+const phases = [
+  { num: 1, name: "BlueBorne Exploitation", color: "#ff4d4d", status: "NEXT", statusColor: "#ff4d4d",
+    desc: "Confirm kernel crash via BT, then develop payload for code execution" },
+  { num: 2, name: "Root & Persistence", color: "#ff9933", status: "BLOCKED", statusColor: "#ff9933",
+    desc: "Disable SELinux, bypass TIMA, achieve persistent root shell" },
+  { num: 3, name: "Parallel Vectors", color: "#4499ff", status: "AVAILABLE", statusColor: "#4499ff",
+    desc: "Independent attack paths: DM port RE, SysDump chain, timerfd" },
+  { num: 4, name: "Post-Root Objectives", color: "#aa77ff", status: "WAITING", statusColor: "#5a7090",
+    desc: "Carrier unlock, DRParser exploitation, full device control" },
+];
+
+const killChainSteps = [
+  { name: "Recon & Enumeration", progress: 100, detail: "13 sessions, 42 findings, 330 services, 17 CVEs tested" },
+  { name: "Vulnerability Discovery", progress: 95, detail: "BlueBorne EFS amplification, ION UAF, Binder UAF, tee() deadlock" },
+  { name: "Exploit Development", progress: 60, detail: "bluborne_efs_overflow.py written. Crash test pending." },
+  { name: "Initial Access (kernel)", progress: 5, detail: "Awaiting BlueBorne crash confirmation from Kali box" },
+  { name: "Privilege Escalation", progress: 0, detail: "Blocked on kernel code execution" },
+  { name: "Persistence", progress: 0, detail: "Blocked on root" },
+  { name: "Carrier Unlock", progress: 0, detail: "Blocked on persistent root" },
+];
+
+const blockers = [
+  { name: "BT Proximity Required", severity: "CRITICAL", vector: "BlueBorne",
+    detail: "Must be within ~10m with Kali box running bluborne_efs_overflow.py",
+    mitigation: "Set up dedicated attack station near device" },
+  { name: "TIMA Integrity Monitor", severity: "HIGH", vector: "Root Persistence",
+    detail: "TrustZone checks every 5 min. Detects SELinux modification.",
+    mitigation: "Time exploit between checks, or crash MobiCore daemon" },
+  { name: "clock_settime Trigger", severity: "MEDIUM", vector: "timerfd CVE-2017-10661",
+    detail: "Needs CAP_SYS_TIME. Shell doesn't have it.",
+    mitigation: "NTP sync event, AT command TZ change, or APK SET_TIME permission" },
+  { name: "Stack Layout Unknown", severity: "MEDIUM", vector: "BlueBorne Payload",
+    detail: "Exact offset from buf[64] to saved LR needs empirical measurement",
+    mitigation: "Crash mode with pattern → read panic dump for exact offset" },
+];
+
+const tooltip = d3.select("#tooltip");
+
+// ═══════════════════════════════════════════════════
+// FEASIBILITY × IMPACT QUADRANT
+// ═══════════════════════════════════════════════════
+
+function drawQuad() {
+  const container = d3.select("#quad-chart");
+  const width = container.node().getBoundingClientRect().width;
+  const height = 420;
+  const margin = { top: 30, right: 40, bottom: 50, left: 60 };
+  const iw = width - margin.left - margin.right;
+  const ih = height - margin.top - margin.bottom;
+
+  const svg = container.append("svg").attr("width", width).attr("height", height);
+  const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+  const x = d3.scaleLinear().domain([0, 10]).range([0, iw]);
+  const y = d3.scaleLinear().domain([0, 10]).range([ih, 0]);
+
+  // Quadrant backgrounds
+  const quads = [
+    { x1:0, x2:5, y1:5, y2:10, fill:"rgba(255,77,77,0.04)", label:"Low Feasibility\nHigh Impact" },
+    { x1:5, x2:10, y1:5, y2:10, fill:"rgba(51,204,119,0.06)", label:"🎯 PRIORITY\nHigh Both" },
+    { x1:0, x2:5, y1:0, y2:5, fill:"rgba(90,112,144,0.03)", label:"Deprioritize" },
+    { x1:5, x2:10, y1:0, y2:5, fill:"rgba(68,153,255,0.04)", label:"Quick Wins\nLow Impact" },
+  ];
+
+  quads.forEach(q => {
+    g.append("rect").attr("x", x(q.x1)).attr("y", y(q.y2))
+      .attr("width", x(q.x2) - x(q.x1)).attr("height", y(q.y1) - y(q.y2))
+      .attr("fill", q.fill).attr("rx", 4);
+    g.append("text").attr("x", x((q.x1+q.x2)/2)).attr("y", y((q.y1+q.y2)/2))
+      .attr("text-anchor", "middle").attr("dominant-baseline", "central")
+      .style("font-size", "10px").style("fill", "rgba(140,160,180,0.3)")
+      .selectAll("tspan").data(q.label.split("\n")).join("tspan")
+      .attr("x", x((q.x1+q.x2)/2)).attr("dy", (d,i) => i ? "1.2em" : 0).text(d => d);
+  });
+
+  // Grid
+  g.append("g").style("opacity", .12)
+    .call(d3.axisLeft(y).tickSize(-iw).tickFormat("")).select(".domain").remove();
+  g.append("g").style("opacity", .12).attr("transform", `translate(0,${ih})`)
+    .call(d3.axisBottom(x).tickSize(-ih).tickFormat("")).select(".domain").remove();
+
+  // Midlines
+  g.append("line").attr("x1", x(5)).attr("x2", x(5)).attr("y1", 0).attr("y2", ih)
+    .attr("stroke", "var(--border)").attr("stroke-width", 1).attr("stroke-dasharray", "4,4");
+  g.append("line").attr("x1", 0).attr("x2", iw).attr("y1", y(5)).attr("y2", y(5))
+    .attr("stroke", "var(--border)").attr("stroke-width", 1).attr("stroke-dasharray", "4,4");
+
+  // Axes
+  g.append("g").attr("transform", `translate(0,${ih})`).call(d3.axisBottom(x).ticks(10));
+  g.append("g").call(d3.axisLeft(y).ticks(10));
+
+  g.append("text").attr("x", iw/2).attr("y", ih+40).attr("text-anchor", "middle")
+    .style("font-size", "12px").style("fill", "var(--text)").text("Feasibility →");
+  g.append("text").attr("transform", "rotate(-90)").attr("x", -ih/2).attr("y", -45)
+    .attr("text-anchor", "middle").style("font-size", "12px").style("fill", "var(--text)").text("Impact →");
+
+  const phaseColor = { 1: "#ff4d4d", 2: "#ff9933", 3: "#4499ff", 4: "#aa77ff" };
+
+  // Dependency arrows
+  vectors.forEach(v => {
+    if (!v.depends) return;
+    v.depends.forEach(depId => {
+      const dep = vectors.find(vv => vv.id === depId);
+      if (!dep) return;
+      g.append("line")
+        .attr("x1", x(dep.feasibility)).attr("y1", y(dep.impact))
+        .attr("x2", x(v.feasibility)).attr("y2", y(v.impact))
+        .attr("stroke", "rgba(100,140,180,0.15)")
+        .attr("stroke-width", 1)
+        .attr("marker-end", "url(#arrowhead)");
+    });
+  });
+
+  // Arrow marker
+  svg.append("defs").append("marker")
+    .attr("id", "arrowhead").attr("viewBox", "0 0 10 10")
+    .attr("refX", 10).attr("refY", 5).attr("markerWidth", 6).attr("markerHeight", 6)
+    .attr("orient", "auto")
+    .append("path").attr("d", "M0,0 L10,5 L0,10 Z").attr("fill", "rgba(100,140,180,0.3)");
+
+  // Plot vectors
+  const dots = g.selectAll(".vec-dot")
+    .data(vectors)
+    .join("g")
+    .attr("transform", d => `translate(${x(d.feasibility)},${y(d.impact)})`)
+    .style("cursor", "pointer");
+
+  dots.append("circle")
+    .attr("r", d => d.status === "ready" ? 10 : 8)
+    .attr("fill", d => phaseColor[d.phase])
+    .attr("opacity", d => d.status === "blocked" ? 0.35 : 0.85)
+    .attr("stroke", d => d.status === "ready" ? "#fff" : "rgba(255,255,255,0.15)")
+    .attr("stroke-width", d => d.status === "ready" ? 2 : 1);
+
+  // Phase number inside dot
+  dots.append("text")
+    .attr("text-anchor", "middle").attr("dy", "0.35em")
+    .style("font-size", "9px").style("font-weight", "700")
+    .style("fill", d => d.status === "blocked" ? "rgba(255,255,255,0.3)" : "#fff")
+    .style("pointer-events", "none")
+    .text(d => d.phase);
+
+  // Labels for key vectors
+  dots.filter(d => d.impact >= 7 || d.status === "ready")
+    .append("text")
+    .attr("x", 14).attr("dy", "0.35em")
+    .style("font-size", "10px").style("fill", "var(--text)")
+    .text(d => d.name);
+
+  // Hover
+  dots.on("mouseover", function(event, d) {
+    d3.select(this).select("circle").attr("opacity", 1).attr("stroke-width", 3);
+    const prereqHtml = d.prereqs.map(p =>
+      `<span style="color:${p.met ? '#33cc77' : '#ff4d4d'}">${p.met ? '✓' : '✗'}</span> ${p.name}`
+    ).join('<br/>');
+    tooltip.style("display", "block")
+      .style("left", (event.pageX + 14) + "px")
+      .style("top", (event.pageY - 14) + "px")
+      .html(`
+        <strong>${d.name}</strong> <span class="tt-sev" style="background:${phaseColor[d.phase]};color:#080c12">Phase ${d.phase}</span><br/>
+        Feasibility: ${d.feasibility}/10 · Impact: ${d.impact}/10<br/>
+        Status: <strong style="color:${d.status==='ready'?'#33cc77':d.status==='blocked'?'#ff4d4d':'var(--muted)'}">${d.status.toUpperCase()}</strong><br/>
+        <span style="color:var(--muted)">${d.detail.substring(0,140)}…</span><br/><br/>
+        <strong>Prerequisites:</strong><br/>${prereqHtml}<br/><br/>
+        ⚠ Risk: ${d.risk}
+      `);
+  })
+  .on("mousemove", function(event) {
+    tooltip.style("left", (event.pageX + 14) + "px").style("top", (event.pageY - 14) + "px");
+  })
+  .on("mouseout", function(event, d) {
+    d3.select(this).select("circle").attr("opacity", d.status === "blocked" ? 0.35 : 0.85)
+      .attr("stroke-width", d.status === "ready" ? 2 : 1);
+    tooltip.style("display", "none");
+  });
+
+  // Legend
+  const leg = g.append("g").attr("transform", `translate(${iw - 240}, 8)`);
+  phases.forEach((p, i) => {
+    const row = leg.append("g").attr("transform", `translate(0, ${i * 20})`);
+    row.append("circle").attr("r", 6).attr("fill", p.color).attr("opacity", 0.8);
+    row.append("text").attr("x", 14).attr("dy", "0.35em").style("font-size", "10px")
+      .style("fill", "var(--text)").text(`Phase ${p.num}: ${p.name}`);
+  });
+  const extra = leg.append("g").attr("transform", `translate(0, ${phases.length * 20 + 8})`);
+  extra.append("circle").attr("r", 6).attr("fill", "none").attr("stroke", "#fff").attr("stroke-width", 2);
+  extra.append("text").attr("x", 14).attr("dy", "0.35em").style("font-size", "10px")
+    .style("fill", "var(--text)").text("Ready (white ring)");
+}
+
+// ═══════════════════════════════════════════════════
+// SWIM LANE ROADMAP
+// ═══════════════════════════════════════════════════
+
+function drawSwimLanes() {
+  const container = d3.select("#swim-lanes");
+
+  phases.forEach(phase => {
+    const row = container.append("div").attr("class", "phase-row");
+
+    // Label
+    const label = row.append("div").attr("class", "phase-label");
+    label.append("div").attr("class", "num").style("color", phase.color).text(phase.num);
+    label.append("div").attr("class", "name").style("color", phase.color).text(phase.name);
+    label.append("div").attr("class", "status")
+      .style("background", phase.statusColor + "22").style("color", phase.statusColor)
+      .text(phase.status);
+
+    // Track
+    const track = row.append("div").attr("class", "phase-track");
+
+    // Phase description
+    track.append("div").style("font-size", "11px").style("color", "var(--muted)")
+      .style("min-width", "100%").style("margin-bottom", "4px").text(phase.desc);
+
+    const tasksInPhase = vectors.filter(v => v.phase === phase.num);
+    const taskContainer = track.append("div").style("display", "flex").style("gap", "12px").style("flex-wrap", "wrap");
+
+    tasksInPhase.forEach(v => {
+      const statusClass = v.status === "ready" && v.impact >= 8 ? "critical pulse" :
+                          v.status === "ready" ? "ready" :
+                          v.status === "blocked" ? "blocked" : "medium";
+
+      const task = taskContainer.append("div")
+        .attr("class", `task ${statusClass}`)
+        .attr("data-id", v.id);
+
+      task.append("div").attr("class", "task-name").text(v.name);
+      task.append("div").attr("class", "task-detail")
+        .text(`F:${v.feasibility} I:${v.impact} · ${v.category}`);
+      task.append("div").attr("class", "task-icon")
+        .text(v.status === "ready" ? "🟢" : v.status === "blocked" ? "🔴" : "🟡");
+
+      // Prereq pills
+      const pills = task.append("div").style("margin-top", "6px");
+      v.prereqs.forEach(p => {
+        pills.append("span").attr("class", `prereq ${p.met ? 'met' : 'unmet'}`)
+          .text((p.met ? "✓ " : "✗ ") + p.name);
+      });
+    });
+  });
+}
+
+// ═══════════════════════════════════════════════════
+// KILL CHAIN PROGRESS
+// ═══════════════════════════════════════════════════
+
+function drawKillChain() {
+  const container = d3.select("#kill-chain");
+  const width = container.node().getBoundingClientRect().width;
+  const barH = 22;
+  const gap = 10;
+  const margin = { left: 160, right: 50 };
+  const iw = width - margin.left - margin.right;
+  const height = (barH + gap) * killChainSteps.length;
+
+  const svg = container.append("svg").attr("width", width).attr("height", height);
+  const g = svg.append("g").attr("transform", `translate(${margin.left}, 0)`);
+
+  const x = d3.scaleLinear().domain([0, 100]).range([0, iw]);
+
+  killChainSteps.forEach((step, i) => {
+    const y = i * (barH + gap);
+    const color = step.progress >= 80 ? "#33cc77" : step.progress >= 40 ? "#ff9933" : step.progress > 0 ? "#ff4d4d" : "#1e2d3d";
+
+    // Label
+    svg.append("text").attr("x", margin.left - 8).attr("y", y + barH / 2).attr("dy", "0.35em")
+      .attr("text-anchor", "end").style("font-size", "11px").style("fill", "var(--text)")
+      .text(step.name);
+
+    // Track
+    g.append("rect").attr("x", 0).attr("y", y).attr("width", iw).attr("height", barH)
+      .attr("rx", 4).attr("fill", "var(--dim)");
+
+    // Fill
+    g.append("rect").attr("x", 0).attr("y", y)
+      .attr("width", 0).attr("height", barH)
+      .attr("rx", 4).attr("fill", color).attr("opacity", 0.8)
+      .transition().duration(800).delay(i * 100)
+      .attr("width", x(step.progress));
+
+    // Percentage
+    g.append("text").attr("x", x(step.progress) + 6).attr("y", y + barH / 2).attr("dy", "0.35em")
+      .style("font-size", "10px").style("font-weight", "600").style("fill", "var(--text)")
+      .text(`${step.progress}%`);
+  });
+}
+
+// ═══════════════════════════════════════════════════
+// BLOCKERS
+// ═══════════════════════════════════════════════════
+
+function drawBlockers() {
+  const container = d3.select("#blockers");
+  const sevColor = { CRITICAL: "#ff4d4d", HIGH: "#ff9933", MEDIUM: "#ffcc33", LOW: "#8b949e" };
+
+  blockers.forEach(b => {
+    const card = container.append("div")
+      .style("background", "var(--surface)").style("border", "1px solid var(--border)")
+      .style("border-left", `3px solid ${sevColor[b.severity]}`)
+      .style("border-radius", "6px").style("padding", "12px 14px").style("margin-bottom", "10px")
+      .style("font-size", "12px");
+
+    card.append("div").style("display", "flex").style("justify-content", "space-between")
+      .style("margin-bottom", "4px")
+      .html(`<strong style="color:var(--bright)">${b.name}</strong>
+             <span style="color:${sevColor[b.severity]};font-size:10px;font-weight:600">${b.severity}</span>`);
+
+    card.append("div").style("color", "var(--muted)").style("margin-bottom", "6px")
+      .text(b.detail);
+
+    card.append("div").style("color", "#33cc77").style("font-size", "11px")
+      .html(`💡 ${b.mitigation}`);
+
+    card.append("div").style("color", "var(--muted)").style("font-size", "10px").style("margin-top", "4px")
+      .text(`Blocks: ${b.vector}`);
+  });
+}
+
+// ═══════════════════════════════════════════════════
+// RENDER
+// ═══════════════════════════════════════════════════
+
+drawQuad();
+drawSwimLanes();
+drawKillChain();
+drawBlockers();
+</script>
+</body>
+</html>

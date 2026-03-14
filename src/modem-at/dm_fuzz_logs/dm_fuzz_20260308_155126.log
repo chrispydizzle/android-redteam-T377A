@@ -1,0 +1,36 @@
+[15:51:26.644] DM Protocol Fuzzer - Samsung SM-T377A
+[15:51:26.644] Target: diagexe via COM18 @ 115200
+[15:51:26.644] Log: C:\InfoSec\android-redteam\src\modem-at\dm_fuzz_logs\dm_fuzz_20260308_155126.log
+[15:51:26.644] 
+[15:51:26.784] Initial diagexe PID: 2211
+[15:51:26.785] Serial port COM18 opened
+[15:51:26.785] ============================================================
+[15:51:26.785] PHASE 0: Baseline verification
+[15:51:26.785] ============================================================
+[15:51:26.785] Test 1: AT command
+[15:51:27.785]   No AT response (may need DM mode)
+[15:51:27.785] Test 2: Minimal DM frame (empty)
+[15:51:27.785]   Sending: 7f 7e
+[15:51:28.787]   No response to empty frame
+[15:51:28.787] Test 3: DM frame with cmd=0x00
+[15:51:28.787]   Sending: 7f 00 7e
+[15:51:29.787]   No response
+[15:51:29.787] Test 4: DIAG version request (cmd=0x00)
+[15:51:29.787]   Sending: 7f 00 7e
+[15:51:30.788] Test 5: DIAG log config (cmd=0x73)
+[15:51:30.788]   Sending: 7f 73 00 7e
+[15:51:31.904]   diagexe PID=2211, alive=True
+[15:51:31.904] ============================================================
+[15:51:31.904] PHASE 4: Command code spray (0x00-0xFF)
+[15:51:31.904] ============================================================
+[15:51:44.853]   Progress: 64/256, diagexe alive=True
+[15:51:57.803]   Progress: 128/256, diagexe alive=True
+[15:52:10.730]   Progress: 192/256, diagexe alive=True
+[15:52:23.685]   Progress: 256/256, diagexe alive=True
+[15:52:23.685] 
+Responding commands (0):
+[15:52:23.685] 
+Serial port closed
+[15:52:23.786] 
+Final diagexe PID: 2211, alive=True
+[15:52:23.786] Crash detected: False

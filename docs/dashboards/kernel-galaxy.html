@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SM-T377A — The Kernel Galaxy</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#000;color:#c0d8f0;font-family:'SF Mono',Consolas,monospace;overflow:hidden;cursor:crosshair}
+  canvas{display:block}
+
+  /* HUD */
+  .hud{position:fixed;z-index:10;pointer-events:none}
+  .hud>*{pointer-events:auto}
+
+  .hud-tl{top:16px;left:16px}
+  .hud-tr{top:16px;right:16px;text-align:right}
+  .hud-bl{bottom:16px;left:16px}
+  .hud-br{bottom:16px;right:16px;text-align:right}
+
+  .hud-title{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(100,180,255,.6);margin-bottom:4px}
+  .hud-big{font-size:28px;font-weight:800;color:#fff;line-height:1;text-shadow:0 0 20px rgba(88,166,255,.5)}
+  .hud-sub{font-size:10px;color:rgba(180,200,220,.5);margin-top:4px;line-height:1.4}
+
+  .hud-stat{display:inline-block;margin:0 10px 4px 0;font-size:11px}
+  .hud-stat .v{font-weight:700;font-size:14px;color:#fff}
+  .hud-stat .l{color:rgba(180,200,220,.4);font-size:9px;text-transform:uppercase;letter-spacing:.5px}
+
+  .scanline{position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:5;
+    background:repeating-linear-gradient(0deg,rgba(0,0,0,0) 0px,rgba(0,0,0,0) 2px,rgba(0,20,40,.03) 2px,rgba(0,20,40,.03) 4px)}
+
+  /* Info panel */
+  .info-panel{
+    position:fixed;bottom:60px;right:16px;width:340px;
+    background:rgba(8,12,20,.92);border:1px solid rgba(88,166,255,.2);
+    border-radius:8px;padding:16px;backdrop-filter:blur(12px);
+    display:none;z-index:20;font-size:12px;line-height:1.6;
+    box-shadow:0 0 40px rgba(88,166,255,.1);
+  }
+  .info-panel.visible{display:block}
+  .info-panel h3{font-size:14px;color:#fff;font-weight:700;margin-bottom:8px;font-family:-apple-system,sans-serif}
+  .info-panel .field{display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+  .info-panel .field .k{color:rgba(180,200,220,.5)}
+  .info-panel .field .val{color:#e0eaf5;font-weight:600}
+  .info-panel .sev-tag{display:inline-block;padding:1px 8px;border-radius:4px;font-size:10px;font-weight:700;text-transform:uppercase}
+  .info-panel .detail{margin-top:10px;color:rgba(180,200,220,.6);font-size:11px;font-family:-apple-system,sans-serif;line-height:1.5}
+  .info-panel .connections{margin-top:10px}
+  .info-panel .conn{font-size:10px;color:rgba(100,180,255,.6);cursor:pointer;padding:2px 0}
+  .info-panel .conn:hover{color:#fff}
+
+  /* Controls */
+  .controls{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:10;display:flex;gap:6px}
+  .ctrl{background:rgba(8,12,20,.8);border:1px solid rgba(88,166,255,.15);color:rgba(180,200,220,.6);
+    padding:5px 14px;border-radius:16px;font-size:10px;cursor:pointer;font-family:inherit;
+    text-transform:uppercase;letter-spacing:.5px;transition:all .2s;backdrop-filter:blur(8px)}
+  .ctrl:hover{border-color:rgba(88,166,255,.5);color:#fff}
+  .ctrl.active{background:rgba(88,166,255,.15);border-color:rgba(88,166,255,.4);color:#58a6ff}
+
+  /* Warp effect */
+  @keyframes warp{0%{transform:scale(1)}50%{transform:scale(1.02)}100%{transform:scale(1)}}
+</style>
+</head>
+<body>
+
+<canvas id="galaxy"></canvas>
+<div class="scanline"></div>
+
+<div class="hud hud-tl">
+  <div class="hud-title">Samsung SM-T377A · Kernel Galaxy</div>
+  <div class="hud-big" id="focused-name">OVERVIEW</div>
+  <div class="hud-sub" id="focused-sub">42 stars · 236M fuzz particles · 18 source moons · 5 PII beacons · 14 dead paths<br/>Click a star. Scroll to zoom. Drag to orbit. Orbit right to find the Graveyard.</div>
+</div>
+
+<div class="hud hud-tr">
+  <div class="hud-stat"><div class="v" style="color:#ff4d4d">2</div><div class="l">Critical</div></div>
+  <div class="hud-stat"><div class="v" style="color:#ffaa22">11</div><div class="l">High</div></div>
+  <div class="hud-stat"><div class="v" style="color:#44bb66">10</div><div class="l">Medium</div></div>
+  <div class="hud-stat"><div class="v" style="color:#556677">19</div><div class="l">Dead</div></div>
+</div>
+
+<div class="hud hud-bl">
+  <div id="coord-display" style="font-size:10px;color:rgba(100,180,255,.3)">θ: 0.00 · φ: 0.00 · r: 1.00</div>
+</div>
+
+<div class="controls">
+  <button class="ctrl active" data-filter="all">All Stars</button>
+  <button class="ctrl" data-filter="live">Live Vectors</button>
+  <button class="ctrl" data-filter="critical">Critical Only</button>
+  <button class="ctrl" data-filter="killchain">Kill Chain</button>
+  <button class="ctrl" data-filter="pii">⚠ PII Beacons</button>
+  <button class="ctrl" data-filter="graveyard">☠ Graveyard</button>
+</div>
+
+<div class="info-panel" id="info-panel">
+  <h3 id="info-title"></h3>
+  <div id="info-body"></div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════
+// THE KERNEL GALAXY
+// Every finding is a star. Severity = brightness.
+// Category = constellation (orbital ring).
+// Sessions = time (radial distance from center).
+// Connections = gravitational links.
+// The device is the black hole at the center.
+// ═══════════════════════════════════════════════════
+
+const canvas = document.getElementById('galaxy');
+const ctx = canvas.getContext('2d');
+
+let W, H;
+function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+resize();
+window.addEventListener('resize', resize);
+
+// ── DATA ──
+
+const findings = [
+  {id:0,name:"Dirty COW",cat:"Kernel CVE",sev:"PATCHED",imp:0,sess:1,detail:"CVE-2016-5195. MAP_PRIVATE not modified. Patched.",deps:[]},
+  {id:1,name:"pipe iov",cat:"Kernel CVE",sev:"PATCHED",imp:0,sess:1,detail:"CVE-2015-1805. readv/writev EFAULT. Patched.",deps:[]},
+  {id:2,name:"Towelroot",cat:"Kernel CVE",sev:"PATCHED",imp:0,sess:1,detail:"CVE-2014-3153. EINVAL on all requeue_pi. Samsung blanket-patched.",deps:[]},
+  {id:3,name:"Ping UAF",cat:"Kernel CVE",sev:"PATCHED",imp:0,sess:1,detail:"CVE-2015-3636. LIST_POISON2 not written.",deps:[]},
+  {id:4,name:"perf OOB",cat:"Kernel CVE",sev:"PATCHED",imp:0,sess:1,detail:"CVE-2013-2094. ENOENT on OOB config.",deps:[]},
+  {id:5,name:"n_tty race",cat:"Kernel CVE",sev:"PATCHED",imp:1,sess:1,detail:"CVE-2014-0196. Hung but no crash.",deps:[]},
+  {id:6,name:"Keyring",cat:"Kernel CVE",sev:"BLOCKED",imp:1,sess:1,detail:"CVE-2016-0728. 26K ops/sec too slow. EDQUOT at 198.",deps:[]},
+  {id:7,name:"inotify",cat:"Kernel CVE",sev:"PATCHED",imp:0,sess:1,detail:"CVE-2017-7533. 558K events, 0 crashes.",deps:[]},
+  {id:8,name:"mq_notify",cat:"Kernel CVE",sev:"N/A",imp:0,sess:1,detail:"CVE-2017-11176. ENOSYS. Not compiled.",deps:[]},
+  {id:9,name:"Device Owner",cat:"APK Agent",sev:"HIGH",imp:7,sess:4,detail:"com.privesc.agent as device+profile owner. 31 permissions. Accessibility active.",deps:[10,11]},
+  {id:10,name:"pm grant abuse",cat:"Services",sev:"HIGH",imp:6,sess:4,detail:"Shell grants any dangerous permission to any app.",deps:[]},
+  {id:11,name:"AM/PM abuse",cat:"Services",sev:"HIGH",imp:5,sess:4,detail:"force-stop any app, launch any activity, broadcast system intents.",deps:[]},
+  {id:12,name:"Accessibility UI",cat:"APK Agent",sev:"HIGH",imp:6,sess:4,detail:"30+ commands. dump_ui, click_text, set_text, sysdump_attack.",deps:[9]},
+  {id:13,name:"Binder UAF 2215",cat:"Binder",sev:"CRITICAL",imp:8,sess:5,detail:"CVE-2019-2215. UAF confirmed. Samsung patched binder_free_thread.",deps:[14,15]},
+  {id:14,name:"Samsung binder fix",cat:"Binder",sev:"BLOCKED",imp:3,sess:8,detail:"Nullifies eppoll_entry->whead. 288 combos tested, 0 crashes.",deps:[]},
+  {id:15,name:"Binder ctx DoS",cat:"Binder",sev:"HIGH",imp:5,sess:9,detail:"Handle 0 refcount ops kill context manager. System freeze.",deps:[]},
+  {id:16,name:"DRParser goldmine",cat:"Services",sev:"MEDIUM",imp:5,sess:6,detail:"AT_COMMAND, INSTALL_PACKAGES, MASTER_CLEAR. RSA key in assets.",deps:[35]},
+  {id:17,name:"WiFi intel leak",cat:"Info Disclosure",sev:"MEDIUM",imp:4,sess:6,detail:"8 saved networks + BSSIDs + device MAC via dumpsys wifi.",deps:[]},
+  {id:18,name:"debugfs/dmesg",cat:"Info Disclosure",sev:"MEDIUM",imp:5,sess:6,detail:"IMEI, contacts, ftrace, binder/ion/mali debug stats readable.",deps:[23]},
+  {id:19,name:"tee() deadlock ☆",cat:"Kernel Fuzzing",sev:"MEDIUM",imp:4,sess:7,detail:"ZERO-DAY. ABBA deadlock. DoS-only. 233M+ fuzz ops.",deps:[]},
+  {id:20,name:"ION UAF 91%",cat:"ION Heap",sev:"HIGH",imp:6,sess:9,detail:"Race win 91%. +1169 k64 spray. No callable FPs in kmalloc-64.",deps:[21,28]},
+  {id:21,name:"ION heap DoS",cat:"ION Heap",sev:"HIGH",imp:5,sess:9,detail:"Heap bits 2/12 → kernel panic from unprivileged shell.",deps:[]},
+  {id:22,name:"SmartcomRoot",cat:"Services",sev:"MEDIUM",imp:4,sess:10,detail:"15 AIDL methods callable. Runtime.exec prevents injection.",deps:[]},
+  {id:23,name:"TIMA addr leak",cat:"Info Disclosure",sev:"HIGH",imp:7,sess:10,detail:"selinux_enforcing=0xC0B7AD18. NO KASLR. commit_creds=0xC0054328.",deps:[36]},
+  {id:24,name:"DM port AT",cat:"Modem/AT",sev:"HIGH",imp:6,sess:10,detail:"180 AT commands. Shannon 308. No auth. COM11.",deps:[]},
+  {id:25,name:"NETLINK_ROUTE",cat:"Kernel Fuzzing",sev:"LOW",imp:2,sess:10,detail:"7.2M+ fuzz operations. 0 bugs. Robust.",deps:[]},
+  {id:26,name:"SELinux dead end",cat:"SELinux",sev:"BLOCKED",imp:0,sess:11,detail:"10,896 rules. No transitions. No su/rd_shell domains.",deps:[]},
+  {id:27,name:"BT domain value",cat:"Bluetooth",sev:"MEDIUM",imp:5,sess:11,detail:"52 allow rules, net_admin, packet_socket, raw L2 access.",deps:[30]},
+  {id:28,name:"slabinfo readable",cat:"Info Disclosure",sev:"MEDIUM",imp:4,sess:12,detail:"All slab caches visible. Precise heap spray targeting.",deps:[20]},
+  {id:29,name:"timerfd reachable",cat:"Kernel CVE",sev:"MEDIUM",imp:4,sess:12,detail:"CVE-2017-10661. TFD_TIMER_CANCEL_ON_SET works. Needs clock_settime.",deps:[]},
+  {id:30,name:"BlueBorne EFS ☆☆",cat:"Bluetooth",sev:"CRITICAL",imp:10,sess:13,detail:"EFS amplification: 60B→270B→206B past buf[64]. No canaries. No PXN. No KASLR. THE PATH TO ROOT.",deps:[27,23,33,31]},
+  {id:31,name:"BNEP channel",cat:"Bluetooth",sev:"HIGH",imp:6,sess:13,detail:"Setup SUCCESS. IPv6 flows. Samsung backported BNEP validation.",deps:[]},
+  {id:32,name:"BT daemon crash",cat:"Bluetooth",sev:"HIGH",imp:5,sess:13,detail:"L2CAP EFS amplification crashes BT userspace daemon.",deps:[30]},
+  {id:33,name:"43K symbols",cat:"Info Disclosure",sev:"MEDIUM",imp:5,sess:13,detail:"Address table at 0x87A554. commit_creds at index 1955.",deps:[23]},
+  {id:34,name:"SysDump bypass",cat:"Services",sev:"HIGH",imp:7,sess:13,detail:"OTP bypassed via DRParser SecretCodeIME chain. Full menu access.",deps:[16,12]},
+  {id:35,name:"Mali false pos",cat:"Mali GPU",sev:"LOW",imp:1,sess:5,detail:"Was ION struct misalignment. Mali works fine.",deps:[]},
+  {id:36,name:"perf 6786",cat:"Kernel CVE",sev:"PATCHED",imp:0,sess:12,detail:"CVE-2016-6786. 7000 iterations clean.",deps:[]},
+  {id:37,name:"perf 6001",cat:"Kernel CVE",sev:"PATCHED",imp:0,sess:12,detail:"CVE-2017-6001. 10K+ iterations clean.",deps:[]},
+  {id:38,name:"DCCP blocked",cat:"Kernel CVE",sev:"BLOCKED",imp:1,sess:12,detail:"SELinux blocks from both shell and untrusted_app.",deps:[]},
+  {id:39,name:"Factory bcast",cat:"Services",sev:"LOW",imp:2,sess:12,detail:"CSC_MODEM_SETTING reaches UID 1000. KEYSTRING blocks.",deps:[]},
+  {id:40,name:"perf_event",cat:"Kernel CVE",sev:"MEDIUM",imp:3,sess:12,detail:"perf_harden=0 settable. SW counters work. HW counters blocked.",deps:[]},
+  {id:41,name:"/data/log write",cat:"Info Disclosure",sev:"LOW",imp:2,sess:10,detail:"Shell writes files and symlinks in /data/log/.",deps:[]},
+];
+
+const categories = ["Kernel CVE","Binder","Bluetooth","ION Heap","Mali GPU","Services","Info Disclosure","Kernel Fuzzing","SELinux","Modem/AT","APK Agent"];
+const catAngle = {};
+categories.forEach((c,i) => catAngle[c] = (i / categories.length) * Math.PI * 2);
+
+const sevColor = {
+  CRITICAL:[255,77,77],HIGH:[255,170,34],MEDIUM:[68,187,102],LOW:[85,102,119],
+  PATCHED:[40,50,60],BLOCKED:[40,50,60],"N/A":[30,35,45]
+};
+const sevGlow = {CRITICAL:40,HIGH:20,MEDIUM:10,LOW:4,PATCHED:0,BLOCKED:0,"N/A":0};
+
+// ── STAR POSITIONS (3D → 2D projection) ──
+
+const stars = findings.map(f => {
+  const angle = catAngle[f.cat] + (Math.random() - 0.5) * 0.4;
+  const sessionRadius = 0.15 + (f.sess / 14) * 0.7; // closer sessions = inner ring
+  const impactZ = (f.imp / 10) * 0.3; // high impact = closer to viewer
+  const jitter = (Math.random() - 0.5) * 0.08;
+  
+  return {
+    ...f,
+    // 3D position in unit sphere
+    x3d: Math.cos(angle) * sessionRadius + jitter,
+    y3d: Math.sin(angle) * sessionRadius + jitter,
+    z3d: impactZ + (Math.random() - 0.5) * 0.1,
+    // Visual properties
+    baseRadius: f.sev === 'CRITICAL' ? 8 : f.sev === 'HIGH' ? 5 : f.sev === 'MEDIUM' ? 3.5 : 2,
+    pulsePhase: Math.random() * Math.PI * 2,
+    orbitSpeed: 0.0001 + Math.random() * 0.0003,
+    twinkleSpeed: 0.5 + Math.random() * 2,
+  };
+});
+
+// ── BACKGROUND STARS ──
+
+const bgStars = Array.from({length: 2000}, () => ({
+  x: Math.random() * 2 - 1,
+  y: Math.random() * 2 - 1,
+  z: Math.random(),
+  brightness: Math.random() * 0.5 + 0.1,
+  size: Math.random() * 1.2 + 0.3,
+  twinkle: Math.random() * 3,
+}));
+
+// Nebula particles (for constellation clouds)
+const nebulae = categories.map((cat, i) => {
+  const angle = catAngle[cat];
+  const particles = Array.from({length: 60}, () => {
+    const r = 0.2 + Math.random() * 0.5;
+    const a = angle + (Math.random() - 0.5) * 0.5;
+    return {
+      x: Math.cos(a) * r + (Math.random() - 0.5) * 0.15,
+      y: Math.sin(a) * r + (Math.random() - 0.5) * 0.15,
+      size: 20 + Math.random() * 80,
+      alpha: 0.005 + Math.random() * 0.015,
+      color: sevColor[['MEDIUM','HIGH','MEDIUM','HIGH'][i % 4]] || [60,80,120],
+    };
+  });
+  return { cat, angle, particles };
+});
+
+// ── CAMERA ──
+
+let camTheta = 0, camPhi = 0.3;
+let camDist = 0.7;
+let targetTheta = 0, targetPhi = 0.3, targetDist = 0.7;
+let isDragging = false, lastMouse = {x:0,y:0};
+let selectedStar = null;
+let currentFilter = 'all';
+let time = 0;
+
+// Kill chain order for that filter mode
+const killChainOrder = [18,23,33,28,20,13,30,32,27,34,9,12,16,24];
+
+// ── FUZZING PARTICLE SWARMS ──
+// Each fuzz target gets a cloud of particles around its constellation
+
+const fuzzTargets = [
+  {name:"mmap/ioctl",ops:225e6,cat:"Kernel Fuzzing",bugs:0},
+  {name:"NETLINK_ROUTE",ops:7.2e6,cat:"Kernel Fuzzing",bugs:0},
+  {name:"splice/tee",ops:2.9e6,cat:"Kernel Fuzzing",bugs:2},
+  {name:"Deep race",ops:1.3e6,cat:"Kernel Fuzzing",bugs:1},
+  {name:"Ashmem",ops:100e3,cat:"Binder",bugs:0},
+  {name:"Binder",ops:72e3,cat:"Binder",bugs:1},
+  {name:"ION",ops:50e3,cat:"ION Heap",bugs:1},
+  {name:"Mali GPU",ops:30e3,cat:"Mali GPU",bugs:0},
+  {name:"PTMX/TTY",ops:700,cat:"Kernel CVE",bugs:0},
+];
+
+const fuzzParticles = [];
+fuzzTargets.forEach(ft => {
+  const baseAngle = catAngle[ft.cat] || 0;
+  const count = Math.min(80, Math.max(8, Math.log10(ft.ops) * 8));
+  for (let i = 0; i < count; i++) {
+    const a = baseAngle + (Math.random() - 0.5) * 0.35;
+    const r = 0.25 + Math.random() * 0.55;
+    fuzzParticles.push({
+      x: Math.cos(a) * r + (Math.random() - 0.5) * 0.06,
+      y: Math.sin(a) * r + (Math.random() - 0.5) * 0.06,
+      z: (Math.random() - 0.5) * 0.15,
+      speed: 0.003 + Math.random() * 0.01,
+      phase: Math.random() * Math.PI * 2,
+      size: 0.5 + Math.random() * 1.2,
+      hasBug: ft.bugs > 0 && Math.random() < 0.15,
+      targetName: ft.name,
+      ops: ft.ops,
+    });
+  }
+});
+
+// ── SOURCE FILE MOONS ──
+// Key source files orbit around their associated finding
+
+const srcMoons = [
+  {name:"bluborne_efs_overflow.py",finding:30,size:2,color:[88,166,255]},
+  {name:"bluborne_hci.py",finding:30,size:1.5,color:[88,166,255]},
+  {name:"bluborne_pwn.c",finding:30,size:1.5,color:[88,166,255]},
+  {name:"cve_2019_2215_real.c",finding:13,size:2,color:[255,170,34]},
+  {name:"binder_uaf.c",finding:13,size:1.5,color:[255,170,34]},
+  {name:"ion_race_free_share.c",finding:20,size:2,color:[68,187,102]},
+  {name:"ion_uaf_v3.c",finding:20,size:1.5,color:[68,187,102]},
+  {name:"mali_exploit16.c",finding:35,size:1.5,color:[188,140,255]},
+  {name:"deep_race_fuzz.c",finding:19,size:2,color:[86,211,100]},
+  {name:"privesc_probe.c",finding:9,size:2,color:[210,168,255]},
+  {name:"otp_solver.py",finding:34,size:1.8,color:[240,136,62]},
+  {name:"binder_service_fuzzer.c",finding:15,size:1.5,color:[255,170,34]},
+  {name:"timerfd_uaf_exploit2.c",finding:29,size:1.8,color:[68,187,102]},
+  {name:"selinux_deep_analysis4.py",finding:26,size:1.5,color:[139,148,158]},
+  {name:"at_deep_probe.py",finding:24,size:1.8,color:[255,123,114]},
+  {name:"bnep_exploit.py",finding:31,size:1.5,color:[88,166,255]},
+  {name:"kallsyms_decode_v2.py",finding:33,size:1.5,color:[121,192,255]},
+  {name:"CommandReceiver.java",finding:12,size:2,color:[210,168,255]},
+].map(m => ({
+  ...m,
+  orbitRadius: 0.03 + Math.random() * 0.02,
+  orbitSpeed: 0.5 + Math.random() * 1.5,
+  orbitPhase: Math.random() * Math.PI * 2,
+}));
+
+// ── PII WARNING BEACONS ──
+
+const piiBeacons = [
+  {name:"IMEI exposed",cat:"Info Disclosure",files:4,severity:"CRITICAL",angle:0},
+  {name:"Real name in dumps",cat:"Info Disclosure",files:3,severity:"CRITICAL",angle:0.3},
+  {name:"WiFi SSIDs (location)",cat:"Info Disclosure",files:2,severity:"HIGH",angle:0.6},
+  {name:"MAC addresses",cat:"Info Disclosure",files:3,severity:"HIGH",angle:0.9},
+  {name:"Serial numbers",cat:"Modem/AT",files:2,severity:"CRITICAL",angle:1.2},
+].map(b => {
+  const base = catAngle[b.cat] || 0;
+  return {
+    ...b,
+    x: Math.cos(base + b.angle) * 0.95,
+    y: Math.sin(base + b.angle) * 0.95,
+    z: 0.15,
+    pulsePhase: Math.random() * Math.PI * 2,
+  };
+});
+
+// ── BLOCKED PATH GRAVEYARD ──
+// Dead ends drift outward into the void
+
+const graveyard = [
+  {name:"Bootloader flash",reason:"AT&T carrier lock"},
+  {name:"Platform key forgery",reason:"Samsung proprietary"},
+  {name:"SmartcomRoot injection",reason:"exec(String[]) array form"},
+  {name:"Abstract sockets",reason:"SELinux EPERM"},
+  {name:"JDWP debugging",reason:"ro.debuggable=0"},
+  {name:"ctl.start/stop",reason:"SELinux denies all"},
+  {name:"/dev/mem, /dev/kmem",reason:"Don't exist"},
+  {name:"User namespaces",reason:"Not compiled"},
+  {name:"eBPF",reason:"ENOSYS"},
+  {name:"POSIX MQ",reason:"Not compiled"},
+  {name:"userfaultfd",reason:"Not compiled"},
+  {name:"mount remount rw",reason:"Permission denied"},
+  {name:"SUID binaries",reason:"None exist"},
+  {name:"run-as",reason:"set_capabilities EPERM"},
+].map((g, i) => ({
+  ...g,
+  x: 1.1 + Math.random() * 0.3,
+  y: (i / 14 - 0.5) * 1.8,
+  z: (Math.random() - 0.5) * 0.3,
+  drift: 0.0002 + Math.random() * 0.0003,
+  alpha: 0.3 + Math.random() * 0.3,
+  size: 1 + Math.random() * 1.5,
+}));
+
+// ── 3D PROJECTION ──
+
+function project(x3d, y3d, z3d) {
+  // Rotate by camera angles
+  const cosT = Math.cos(camTheta), sinT = Math.sin(camTheta);
+  const cosP = Math.cos(camPhi), sinP = Math.sin(camPhi);
+  
+  let x = x3d * cosT - y3d * sinT;
+  let y2 = x3d * sinT + y3d * cosT;
+  let y = y2 * cosP - z3d * sinP;
+  let z = y2 * sinP + z3d * cosP;
+  
+  // Perspective projection
+  const perspective = camDist / (camDist + z + 0.5);
+  const screenX = W/2 + x * perspective * Math.min(W, H) * 0.75;
+  const screenY = H/2 + y * perspective * Math.min(W, H) * 0.75;
+  
+  return { x: screenX, y: screenY, scale: perspective, z: z };
+}
+
+// ── RENDER ──
+
+function render() {
+  time += 0.016;
+  
+  // Smooth camera
+  camTheta += (targetTheta - camTheta) * 0.05;
+  camPhi += (targetPhi - camPhi) * 0.05;
+  camDist += (targetDist - camDist) * 0.05;
+  
+  // Auto-rotate slowly
+  if (!isDragging && !selectedStar) {
+    targetTheta += 0.0008;
+  }
+  
+  ctx.fillStyle = '#000';
+  ctx.fillRect(0, 0, W, H);
+  
+  // Background stars
+  for (const s of bgStars) {
+    const p = project(s.x * 3, s.y * 3, s.z * 2 - 1);
+    const twinkle = 0.5 + 0.5 * Math.sin(time * s.twinkle);
+    const alpha = s.brightness * twinkle * p.scale;
+    ctx.fillStyle = `rgba(180,200,240,${alpha})`;
+    ctx.fillRect(p.x, p.y, s.size * p.scale, s.size * p.scale);
+  }
+  
+  // Nebula clouds
+  for (const neb of nebulae) {
+    for (const p of neb.particles) {
+      const proj = project(p.x, p.y, 0);
+      const sz = p.size * proj.scale;
+      const grad = ctx.createRadialGradient(proj.x, proj.y, 0, proj.x, proj.y, sz);
+      const [r,g,b] = p.color;
+      grad.addColorStop(0, `rgba(${r},${g},${b},${p.alpha * 1.5})`);
+      grad.addColorStop(1, `rgba(${r},${g},${b},0)`);
+      ctx.fillStyle = grad;
+      ctx.fillRect(proj.x - sz, proj.y - sz, sz * 2, sz * 2);
+    }
+  }
+  
+  // ── FUZZING PARTICLE SWARM ──
+  for (const fp of fuzzParticles) {
+    const wobble = Math.sin(time * fp.speed * 10 + fp.phase) * 0.02;
+    const px = fp.x + wobble;
+    const py = fp.y + Math.cos(time * fp.speed * 8 + fp.phase) * 0.02;
+    const p = project(px, py, fp.z);
+    const alpha = 0.15 + 0.1 * Math.sin(time * 3 + fp.phase);
+    if (fp.hasBug) {
+      ctx.fillStyle = `rgba(255,77,77,${alpha * 2})`;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, fp.size * p.scale * 2, 0, Math.PI * 2);
+      ctx.fill();
+    } else {
+      ctx.fillStyle = `rgba(100,200,255,${alpha})`;
+      ctx.fillRect(p.x, p.y, fp.size * p.scale, fp.size * p.scale);
+    }
+  }
+  
+  // Orbital rings (constellation boundaries)
+  ctx.strokeStyle = 'rgba(88,166,255,0.04)';
+  ctx.lineWidth = 1;
+  for (let r = 0.2; r <= 0.85; r += 0.15) {
+    ctx.beginPath();
+    for (let a = 0; a <= Math.PI * 2; a += 0.05) {
+      const p = project(Math.cos(a) * r, Math.sin(a) * r, 0);
+      if (a === 0) ctx.moveTo(p.x, p.y);
+      else ctx.lineTo(p.x, p.y);
+    }
+    ctx.stroke();
+  }
+  
+  // Center black hole (the device)
+  const center = project(0, 0, 0);
+  const bhSize = 25 * center.scale;
+  const bhGrad = ctx.createRadialGradient(center.x, center.y, 0, center.x, center.y, bhSize * 3);
+  bhGrad.addColorStop(0, 'rgba(20,10,40,0.8)');
+  bhGrad.addColorStop(0.3, 'rgba(60,30,120,0.15)');
+  bhGrad.addColorStop(0.6, 'rgba(88,166,255,0.05)');
+  bhGrad.addColorStop(1, 'rgba(0,0,0,0)');
+  ctx.fillStyle = bhGrad;
+  ctx.fillRect(center.x - bhSize*3, center.y - bhSize*3, bhSize*6, bhSize*6);
+  
+  // Accretion disk
+  ctx.strokeStyle = 'rgba(88,166,255,0.08)';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  for (let a = 0; a <= Math.PI * 2; a += 0.02) {
+    const wobble = 1 + 0.05 * Math.sin(a * 3 + time * 0.5);
+    const p = project(Math.cos(a) * 0.08 * wobble, Math.sin(a) * 0.08 * wobble, 0);
+    if (a === 0) ctx.moveTo(p.x, p.y);
+    else ctx.lineTo(p.x, p.y);
+  }
+  ctx.stroke();
+  
+  // Connection lines (dependencies = gravitational links)
+  for (const star of stars) {
+    if (!isVisible(star)) continue;
+    for (const depId of star.deps) {
+      const dep = stars[depId];
+      if (!dep || !isVisible(dep)) continue;
+      const p1 = project(star.x3d, star.y3d, star.z3d);
+      const p2 = project(dep.x3d, dep.y3d, dep.z3d);
+      
+      const alpha = selectedStar && (selectedStar.id === star.id || selectedStar.id === dep.id) ? 0.4 : 0.06;
+      const [r,g,b] = sevColor[star.sev] || [80,100,140];
+      
+      ctx.strokeStyle = `rgba(${r},${g},${b},${alpha})`;
+      ctx.lineWidth = selectedStar && (selectedStar.id === star.id || selectedStar.id === dep.id) ? 2 : 0.5;
+      ctx.beginPath();
+      ctx.moveTo(p1.x, p1.y);
+      // Curved line through midpoint offset toward center
+      const mx = (p1.x + p2.x) / 2 + (center.x - (p1.x + p2.x) / 2) * 0.2;
+      const my = (p1.y + p2.y) / 2 + (center.y - (p1.y + p2.y) / 2) * 0.2;
+      ctx.quadraticCurveTo(mx, my, p2.x, p2.y);
+      ctx.stroke();
+    }
+  }
+  
+  // Sort stars by Z for proper depth ordering
+  const projected = stars.map(s => {
+    const p = project(s.x3d, s.y3d, s.z3d);
+    return { star: s, px: p.x, py: p.y, scale: p.scale, z: p.z };
+  }).sort((a, b) => a.z - b.z);
+  
+  // Draw stars
+  for (const {star, px, py, scale} of projected) {
+    if (!isVisible(star)) continue;
+    
+    const pulse = 1 + 0.15 * Math.sin(time * star.twinkleSpeed + star.pulsePhase);
+    const radius = star.baseRadius * scale * pulse;
+    const [r,g,b] = sevColor[star.sev] || [80,100,140];
+    const glowSize = sevGlow[star.sev] * scale;
+    const isSelected = selectedStar && selectedStar.id === star.id;
+    const isFaded = selectedStar && !isSelected && !selectedStar.deps.includes(star.id) && !star.deps.includes(selectedStar.id);
+    const alpha = isFaded ? 0.15 : 1;
+    
+    // Kill chain line
+    if (currentFilter === 'killchain') {
+      const idx = killChainOrder.indexOf(star.id);
+      if (idx > 0) {
+        const prevId = killChainOrder[idx - 1];
+        const prev = projected.find(p => p.star.id === prevId);
+        if (prev) {
+          ctx.strokeStyle = `rgba(255,200,50,0.3)`;
+          ctx.lineWidth = 2;
+          ctx.setLineDash([4, 4]);
+          ctx.beginPath();
+          ctx.moveTo(prev.px, prev.py);
+          ctx.lineTo(px, py);
+          ctx.stroke();
+          ctx.setLineDash([]);
+        }
+      }
+    }
+    
+    // Outer glow
+    if (glowSize > 0) {
+      const glow = ctx.createRadialGradient(px, py, 0, px, py, radius + glowSize);
+      glow.addColorStop(0, `rgba(${r},${g},${b},${0.3 * alpha})`);
+      glow.addColorStop(1, `rgba(${r},${g},${b},0)`);
+      ctx.fillStyle = glow;
+      ctx.beginPath();
+      ctx.arc(px, py, radius + glowSize, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    
+    // Core
+    const coreGrad = ctx.createRadialGradient(px, py, 0, px, py, radius);
+    coreGrad.addColorStop(0, `rgba(255,255,255,${0.9 * alpha})`);
+    coreGrad.addColorStop(0.3, `rgba(${r},${g},${b},${0.8 * alpha})`);
+    coreGrad.addColorStop(1, `rgba(${r},${g},${b},${0.2 * alpha})`);
+    ctx.fillStyle = coreGrad;
+    ctx.beginPath();
+    ctx.arc(px, py, radius, 0, Math.PI * 2);
+    ctx.fill();
+    
+    // Selection ring
+    if (isSelected) {
+      ctx.strokeStyle = `rgba(${r},${g},${b},0.8)`;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.arc(px, py, radius + 8, 0, Math.PI * 2);
+      ctx.stroke();
+      
+      // Crosshair
+      ctx.strokeStyle = `rgba(${r},${g},${b},0.3)`;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(px - 20, py); ctx.lineTo(px + 20, py);
+      ctx.moveTo(px, py - 20); ctx.lineTo(px, py + 20);
+      ctx.stroke();
+    }
+    
+    // Label for high-impact or selected
+    if ((star.imp >= 6 || isSelected) && !isFaded && radius > 3) {
+      ctx.font = `${isSelected ? 11 : 9}px 'SF Mono',Consolas,monospace`;
+      ctx.fillStyle = `rgba(${r},${g},${b},${0.8 * alpha})`;
+      ctx.textAlign = 'left';
+      ctx.fillText(star.name, px + radius + 6, py + 3);
+    }
+  }
+  
+  // Constellation labels
+  ctx.font = '10px sans-serif';
+  ctx.textAlign = 'center';
+  categories.forEach((cat, i) => {
+    const angle = catAngle[cat];
+    const p = project(Math.cos(angle) * 0.92, Math.sin(angle) * 0.92, 0);
+    ctx.fillStyle = 'rgba(88,166,255,0.2)';
+    ctx.fillText(cat.toUpperCase(), p.x, p.y);
+  });
+  
+  // ── SOURCE FILE MOONS ──
+  for (const moon of srcMoons) {
+    const parent = stars[moon.finding];
+    if (!parent || !isVisible(parent)) continue;
+    const orbitAngle = time * moon.orbitSpeed + moon.orbitPhase;
+    const mx = parent.x3d + Math.cos(orbitAngle) * moon.orbitRadius;
+    const my = parent.y3d + Math.sin(orbitAngle) * moon.orbitRadius;
+    const mz = parent.z3d + Math.sin(orbitAngle * 0.7) * moon.orbitRadius * 0.3;
+    const p = project(mx, my, mz);
+    const [r,g,b] = moon.color;
+    const isFaded = selectedStar && selectedStar.id !== moon.finding;
+    const alpha = isFaded ? 0.05 : 0.6;
+    
+    // Orbit trail
+    if (!isFaded) {
+      ctx.strokeStyle = `rgba(${r},${g},${b},0.06)`;
+      ctx.lineWidth = 0.5;
+      ctx.beginPath();
+      const pp = project(parent.x3d, parent.y3d, parent.z3d);
+      for (let a = 0; a <= Math.PI * 2; a += 0.2) {
+        const ox = parent.x3d + Math.cos(a) * moon.orbitRadius;
+        const oy = parent.y3d + Math.sin(a) * moon.orbitRadius;
+        const op = project(ox, oy, parent.z3d);
+        if (a === 0) ctx.moveTo(op.x, op.y);
+        else ctx.lineTo(op.x, op.y);
+      }
+      ctx.stroke();
+    }
+    
+    // Moon dot
+    ctx.fillStyle = `rgba(${r},${g},${b},${alpha})`;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, moon.size * p.scale, 0, Math.PI * 2);
+    ctx.fill();
+    
+    // Moon label on hover proximity or when parent selected
+    if (selectedStar && selectedStar.id === moon.finding) {
+      ctx.font = '8px monospace';
+      ctx.fillStyle = `rgba(${r},${g},${b},0.5)`;
+      ctx.textAlign = 'left';
+      ctx.fillText(moon.name, p.x + moon.size * p.scale + 3, p.y + 3);
+    }
+  }
+  
+  // ── PII WARNING BEACONS ──
+  for (const beacon of piiBeacons) {
+    const p = project(beacon.x, beacon.y, beacon.z);
+    const pulse = 0.5 + 0.5 * Math.sin(time * 2.5 + beacon.pulsePhase);
+    const isCrit = beacon.severity === 'CRITICAL';
+    const color = isCrit ? [255,50,50] : [255,160,40];
+    const [r,g,b] = color;
+    const sz = (isCrit ? 14 : 10) * p.scale;
+    
+    // Pulsing ring
+    ctx.strokeStyle = `rgba(${r},${g},${b},${0.15 + pulse * 0.25})`;
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, sz + pulse * 8 * p.scale, 0, Math.PI * 2);
+    ctx.stroke();
+    
+    // Inner ring
+    ctx.strokeStyle = `rgba(${r},${g},${b},${0.3 + pulse * 0.3})`;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, sz, 0, Math.PI * 2);
+    ctx.stroke();
+    
+    // Warning triangle
+    ctx.fillStyle = `rgba(${r},${g},${b},${0.4 + pulse * 0.3})`;
+    ctx.font = `${Math.round(12 * p.scale)}px sans-serif`;
+    ctx.textAlign = 'center';
+    ctx.fillText('⚠', p.x, p.y + 4 * p.scale);
+    
+    // Label
+    ctx.font = `${Math.round(9 * p.scale)}px monospace`;
+    ctx.fillStyle = `rgba(${r},${g},${b},0.6)`;
+    ctx.fillText(beacon.name, p.x, p.y + sz + 12 * p.scale);
+    ctx.fillStyle = `rgba(${r},${g},${b},0.3)`;
+    ctx.fillText(`${beacon.files} files`, p.x, p.y + sz + 22 * p.scale);
+  }
+  
+  // ── GRAVEYARD (blocked paths drifting into void) ──
+  for (const ghost of graveyard) {
+    ghost.x += ghost.drift; // slowly drifting outward
+    if (ghost.x > 2) ghost.x = 1.1; // wrap around
+    const p = project(ghost.x, ghost.y, ghost.z);
+    const fade = Math.max(0, 1 - (ghost.x - 1.1) * 2);
+    
+    // Ghostly cross
+    ctx.strokeStyle = `rgba(80,90,110,${ghost.alpha * fade * 0.3})`;
+    ctx.lineWidth = 1;
+    const csz = ghost.size * p.scale * 3;
+    ctx.beginPath();
+    ctx.moveTo(p.x - csz, p.y); ctx.lineTo(p.x + csz, p.y);
+    ctx.moveTo(p.x, p.y - csz); ctx.lineTo(p.x, p.y + csz * 0.7);
+    ctx.stroke();
+    
+    // Name
+    ctx.font = `${Math.round(8 * p.scale)}px monospace`;
+    ctx.fillStyle = `rgba(80,90,110,${ghost.alpha * fade * 0.5})`;
+    ctx.textAlign = 'center';
+    ctx.fillText(ghost.name, p.x, p.y + csz + 10 * p.scale);
+    ctx.fillStyle = `rgba(60,70,85,${ghost.alpha * fade * 0.3})`;
+    ctx.font = `${Math.round(7 * p.scale)}px monospace`;
+    ctx.fillText(ghost.reason, p.x, p.y + csz + 19 * p.scale);
+  }
+  
+  // HUD coordinate display
+  document.getElementById('coord-display').textContent =
+    `θ: ${camTheta.toFixed(2)} · φ: ${camPhi.toFixed(2)} · r: ${camDist.toFixed(2)} · ${fuzzParticles.length} fuzz particles · ${srcMoons.length} source moons · ${piiBeacons.length} PII beacons · ${graveyard.length} dead paths`;
+  
+  requestAnimationFrame(render);
+}
+
+function isVisible(star) {
+  if (currentFilter === 'all') return true;
+  if (currentFilter === 'live') return !['PATCHED','BLOCKED','N/A'].includes(star.sev);
+  if (currentFilter === 'critical') return star.sev === 'CRITICAL' || (selectedStar && (star.deps.includes(selectedStar.id) || selectedStar.deps.includes(star.id)));
+  if (currentFilter === 'pii') return star.cat === 'Info Disclosure' || star.imp >= 5;
+  if (currentFilter === 'graveyard') return !['PATCHED','BLOCKED','N/A'].includes(star.sev);
+  if (currentFilter === 'killchain') return killChainOrder.includes(star.id);
+  return true;
+}
+
+// ── INTERACTION ──
+
+canvas.addEventListener('mousedown', e => {
+  isDragging = true;
+  lastMouse = { x: e.clientX, y: e.clientY };
+});
+
+canvas.addEventListener('mousemove', e => {
+  if (isDragging) {
+    const dx = e.clientX - lastMouse.x;
+    const dy = e.clientY - lastMouse.y;
+    targetTheta += dx * 0.005;
+    targetPhi = Math.max(-1.2, Math.min(1.2, targetPhi + dy * 0.005));
+    lastMouse = { x: e.clientX, y: e.clientY };
+  }
+});
+
+canvas.addEventListener('mouseup', () => isDragging = false);
+canvas.addEventListener('mouseleave', () => isDragging = false);
+
+canvas.addEventListener('wheel', e => {
+  e.preventDefault();
+  targetDist = Math.max(0.1, Math.min(5, targetDist + e.deltaY * 0.003));
+});
+
+canvas.addEventListener('click', e => {
+  const mx = e.clientX, my = e.clientY;
+  let closest = null, closestDist = 20;
+  
+  for (const star of stars) {
+    if (!isVisible(star)) continue;
+    const p = project(star.x3d, star.y3d, star.z3d);
+    const dist = Math.hypot(p.x - mx, p.y - my);
+    if (dist < closestDist) {
+      closest = star;
+      closestDist = dist;
+    }
+  }
+  
+  if (closest) {
+    selectedStar = closest;
+    showInfo(closest);
+    document.getElementById('focused-name').textContent = closest.name.toUpperCase();
+    document.getElementById('focused-sub').innerHTML =
+      `${closest.cat} · Session ${closest.sess} · Impact ${closest.imp}/10`;
+  } else {
+    selectedStar = null;
+    document.getElementById('info-panel').classList.remove('visible');
+    document.getElementById('focused-name').textContent = 'OVERVIEW';
+    document.getElementById('focused-sub').innerHTML = '42 findings · 13 sessions · 236M fuzz ops<br/>Click a star to inspect. Scroll to zoom. Drag to orbit.';
+  }
+});
+
+function showInfo(star) {
+  const panel = document.getElementById('info-panel');
+  panel.classList.add('visible');
+  document.getElementById('info-title').textContent = star.name;
+  
+  const [r,g,b] = sevColor[star.sev];
+  const sevStyle = `background:rgba(${r},${g},${b},0.2);color:rgb(${r},${g},${b})`;
+  
+  let connectionsHtml = '';
+  const allConnected = [...star.deps];
+  stars.forEach(s => { if (s.deps.includes(star.id) && !allConnected.includes(s.id)) allConnected.push(s.id); });
+  
+  if (allConnected.length > 0) {
+    connectionsHtml = '<div class="connections"><div style="font-size:10px;color:rgba(180,200,220,.4);margin-bottom:4px">GRAVITATIONAL LINKS</div>';
+    allConnected.forEach(id => {
+      const s = stars[id];
+      if (s) {
+        const [cr,cg,cb] = sevColor[s.sev];
+        connectionsHtml += `<div class="conn" onclick="focusStar(${id})">→ ${s.name} <span style="color:rgb(${cr},${cg},${cb})">(${s.sev})</span></div>`;
+      }
+    });
+    connectionsHtml += '</div>';
+  }
+  
+  document.getElementById('info-body').innerHTML = `
+    <span class="sev-tag" style="${sevStyle}">${star.sev}</span>
+    <div class="field"><span class="k">Category</span><span class="val">${star.cat}</span></div>
+    <div class="field"><span class="k">Session</span><span class="val">${star.sess}</span></div>
+    <div class="field"><span class="k">Impact</span><span class="val">${'█'.repeat(star.imp)}${'░'.repeat(10-star.imp)} ${star.imp}/10</span></div>
+    <div class="field"><span class="k">Constellation</span><span class="val">${star.cat}</span></div>
+    <div class="detail">${star.detail}</div>
+    ${connectionsHtml}
+  `;
+}
+
+window.focusStar = function(id) {
+  const star = stars[id];
+  if (!star) return;
+  selectedStar = star;
+  showInfo(star);
+  document.getElementById('focused-name').textContent = star.name.toUpperCase();
+  document.getElementById('focused-sub').innerHTML = `${star.cat} · Session ${star.sess} · Impact ${star.imp}/10`;
+  // Fly camera toward it
+  targetTheta = -Math.atan2(star.y3d, star.x3d) + Math.PI/2;
+  targetDist = 0.6;
+};
+
+// Filter buttons
+document.querySelectorAll('.ctrl').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.ctrl').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    currentFilter = this.dataset.filter;
+    selectedStar = null;
+    document.getElementById('info-panel').classList.remove('visible');
+  });
+});
+
+// ── GO ──
+render();
+</script>
+</body>
+</html>

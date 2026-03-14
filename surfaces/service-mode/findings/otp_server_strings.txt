@@ -1,0 +1,555 @@
+
+Strings v2.54 - Search for ANSI and Unicode strings in binary images.
+Copyright (C) 1999-2021 Mark Russinovich
+Sysinternals - www.sysinternals.com
+
+ELF
+tdhb
+/system/bin/linker
+Android
+GNU
+dladdr
+LIBC
+libdl.so
+__libc_init
+libc.so
+__cxa_atexit
+__register_atfork
+__snprintf_chk
+strzcmp16
+_ZNK7android7RefBase9incStrongEPKv
+_ZN7android10IInterfaceC2Ev
+__android_log_print
+_ZN7android7RefBaseC2Ev
+_ZN7android10IInterfaceD2Ev
+_ZN7android7RefBaseD2Ev
+_ZdlPv
+_ZN7android7BBinderD2Ev
+_ZN7android7BBinderC2Ev
+pthread_mutex_init
+malloc
+free
+mcOpenDevice
+mcOpenSession
+mcCloseDevice
+__stack_chk_fail
+__stack_chk_guard
+mcCloseSession
+mcNotify
+mcWaitNotification
+mcGetSessionErrorCode
+pthread_mutex_lock
+_ZN7android14IPCThreadState4selfEv
+_ZN7android14IPCThreadState20clearCallingIdentityEv
+_ZNK7android6Parcel14checkInterfaceEPNS_7IBinderE
+_ZNK7android6Parcel9readInt32EPi
+_ZN7android6Parcel10writeInt32Ei
+_ZNK7android6Parcel4readEPvj
+memcpy
+_ZN7android6Parcel5writeEPKvj
+_ZN7android7BBinder10onTransactEjRKNS_6ParcelEPS1_j
+_ZN7android14IPCThreadState22restoreCallingIdentityEx
+pthread_mutex_unlock
+pthread_mutex_destroy
+_ZN7android21defaultServiceManagerEv
+_ZN7android8String16C1EPKc
+_Znwj
+memset
+_ZNK7android7RefBase9decStrongEPKv
+_ZN7android8String16D1Ev
+_ZN7android12ProcessState4selfEv
+_ZN7android12ProcessState15startThreadPoolEv
+_ZN7android14IPCThreadState14joinThreadPoolEb
+__aeabi_atexit
+LIBC_PRIVATE
+_ZN7android7IBinder19queryLocalInterfaceERKNS_8String16E
+__cxa_pure_virtual
+_ZNK7android7IBinder13checkSubclassEPKv
+_ZN7android7IBinder11localBinderEv
+_ZN7android7IBinder12remoteBinderEv
+_ZN7android7RefBase10onFirstRefEv
+_ZN7android7RefBase15onLastStrongRefEPKv
+_ZN7android7RefBase20onIncStrongAttemptedEjPKv
+abort
+_ZN7android7RefBase13onLastWeakRefEPKv
+stderr
+_ZNK7android7BBinder22getInterfaceDescriptorEv
+fprintf
+_ZNK7android7BBinder13isBinderAliveEv
+_ZN7android7BBinder10pingBinderEv
+_ZN7android7BBinder4dumpEiRKNS_6VectorINS_8String16EEE
+_ZN7android7BBinder8transactEjRKNS_6ParcelEPS1_j
+_ZN7android7BBinder11linkToDeathERKNS_2spINS_7IBinder14DeathRecipientEEEPvj
+_ZN7android7BBinder13unlinkToDeathERKNS_2wpINS_7IBinder14DeathRecipientEEEPvjPS4_
+_ZN7android7BBinder12attachObjectEPKvPvS3_PFvS2_S3_S3_E
+_ZNK7android7BBinder10findObjectEPKv
+_ZN7android7BBinder12detachObjectEPKv
+_ZN7android7BBinder11localBinderEv
+__aeabi_memcpy
+__aeabi_memset
+__gnu_Unwind_Find_exidx
+__bss_start
+_end
+_edata
+liblog.so
+libcutils.so
+libbinder.so
+libutils.so
+libMcClient.so
+libc++.so
+libm.so
+,TD
+ JL
+|DB
+zD!F
+FJ!F
+ zD
+0FAI
+0yD
+6I FyD
+3HxD
+"`40aQ
+HFE
+M)F
+*FPF1F
+h)FS
+0h9FP
+I#F
+ yDzD
+JyDzD
+9hQ
+)F8D
+JyDzD
+I|DyD F
+I F
+JyD
+hzD
+HxDpG
+ pG
+0pG
+.`N
+1hQ
+)F0D
+ (`(Fh
+I#`
+yD"P
+JzD
+ F8
+K{D
+3+`
+ (D
+JzD<2
+JyDzD
+L|D!
+(Fp
+00`
+!1D
+H9X010F@
+L<Y!
+kh#`
+ja`
+!+h#`*kS
+mke`
+I#F
+"ba
+3ZacE
+ F8
+ 'JyDzD
+%MB
+ }DzD)F
+"J)FB
+ zD
+J)FO
+ zD
+J)FO
+ zD
+#"aO
+@ba)F
+ c`zD
+J)F
+ zD
+0Fp
+` Fp
+/K{D
+ *J~DzD1F
+$J1F
+ zD
+ 1F
+$zD
+JyDzD
+J~DzD1F
+i F
+h9F
+J1F
+ zD
+ 1FzD
+ F+h
+F'L
+ 'J|DzD!F
+%J!F
+ zD
+"J!F
+ zD
+J!F
+$zD
+J}DzD)F
+ )F
+$zD
+J}DzD)F
+J)F
+ zD
+ Fp
+F'M
+ 'J}DzD)F
+ )FzD
+J)FCF
+ zD
+J)F
+ zD
+0FO
+#F)FzD
+9F0F
+F)F
+JzD
+ )FzD
+F0F
+QJKFA
+9FzD
+EJ9F
+ zD
+@FO
+LFJ
+(FIF
+ 9FzD
+ 9FzD
+iIFB
+ 9FzD
+@FO
+h@FB
+J9F+F
+ zD
+F*FIFCF
+K{D
+3+`
+JzD
+IyD41i`
+L|D!
+(Fp
+F{D
+IXX
+0 `
+41a`
+ F8
+r F
+F!#
+IIk
+ " F
+" F
+" F
+GFo
+B F
+B F
+(F1F
+(F"F
+JyD
+q(F"F
+2h F)F
+JyD
+q F
+:l:
+h)F
+)F@h
+JyD
+ pG
+FaF
+F(F
+`)F0F
+(F1F
+d*F
+hF!F
+F(F
+"i(FO
+(Fo
+(FIF
+d*F
+ e8F
+JyD
+jFO
+1(F
+ a(F
+mmF
+F(F
+(F!F
+JyD
+H{D
+#DbF
+KxD
+2"`@"``
+F0h
+h0F
+0h)F
+h0F
+G `
+F h
+h F
+ h)F2F
+i F
+%Bk F
+G(Fp
+F0h
+FBi0F
+0h)F
+i0F
+F8h
+FBi8F
+8h1F*FCF
+i8F
+hJj!F
+Gah
+CpG-
+IzD
+,dp
+ldp
+qDPp
+IzD
+"p(O
+CpG-
+IzD
+Fp(
+qEPO
+qEPO
+qEPO
+qDP
+IzD
+!Bk F
+ ho
+i F
+ Fo
+JyD
+0F)F
+F hO
+h F
+ F)F
+HyD
+L@X!D
+rFcF
+Fbh^h
+(F)FP
+7CO
+F0N
+*~D
+(J)NzDV
+u9D
+!(F
+IzD
+IzD
+%F}
+'Dl
+1a)
+#xD
+rllllllllllllllllllllllllllllllllllllllllllllllll
+DpG
+"(.4:@FLRX^djnrvz~
+IxD
+IxD
+IxD
+IxD
+IxD}
+IxDy
+IxDu
+IxDq
+IxDm
+IxDi
+IxDe
+IxDa
+{H|IxD]
+wHxIxDY
+sHtIxDU
+oHpIxDQ
+kHlIxDM
+xDG
+xDA
+xD;
+xD5
+xD/
+xD)
+xD#
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+{H|IxD
+wHxIxD
+sHtIxD
+oHpIxD
+kHlIxD
+gHhIxD
+cHdIxD
+_H`IxD
+[H\IxD
+WHXIxD
+SHTIxD
+OHPIxD
+KHLIxD
+GHHIxD
+CHDIxD}
+TLC_OTP
+IClientOtpServer::IClientOtpServer()
+IClientOtpServer::~IClientOtpServer()
+comm_ctx_t malloc failed
+Before aligned max_sendmsg_size = %d
+Before aligned max_recvmsg_size = %d
+aligned max_sendmsg_size = %d
+aligned max_recvmsg_size = %d
+Allocating message buffer for TCI
+message malloc failed
+Opening t-base device.
+MC_DRV_ERR_DEVICE_ALREADY_OPEN!
+mcOpenDevice failed: mcRet = 0x%08x
+tlc_otp_open: NULL pointer data
+Opening the session.
+Open Trustlet failed: %d.
+open() succeeded.
+tlc_otp_close was called
+tlc_close: NULL pointer data
+Closing the session.
+Closing session failed: %d.
+Closing t-base device.
+Closing t-base device failed: %d.
+Freeing otp_Comm_msg.
+Freeing otp_Comm_msg. 3
+tlc_communicate was called
+tlc_communicate: NULL pointer data
+mcNotify failed: mcRet = 0x%08x
+mcNotify is completed
+mcWaitNotification failed: mcRet = 0x%08x
+ret = 0x%08x, mcGetSessionErrorCode provided ret_val = 0x%08x
+mcWaitNotification is completed
+BnOTP::onTransact(%i) %i
+BnOTP::onTransact reply is a NULL pointer!
+BnOTP::onTransact() data.read() returns an error!
+communication error! pCommMsg is NULL
+tlc_communicate failed: ret = 0x%08x
+reply->write() failed: ret = 0x%08x
+OTP SERVER...
+OTP server started - checking def cert status
+OTP
+defaultServiceManager()->addService() returns an error 0x%x
+### OTP server is now ready
+###Exit TZ OTP Server
+void _Unwind_Resume(_Unwind_Exception *)
+external/libcxxabi/src/Unwind/Unwind-EHABI.cpp
+_Unwind_Resume() can't return
+_Unwind_VRS_Result _Unwind_VRS_Set(_Unwind_Context *, _Unwind_VRS_RegClass, uint32_t, _Unwind_VRS_DataRepresentation, void *)
+unsupported register class
+_Unwind_VRS_Result _Unwind_VRS_Pop(_Unwind_Context *, _Unwind_VRS_RegClass, uint32_t, _Unwind_VRS_DataRepresentation)
+_Unwind_Reason_Code unwind_phase2(unw_context_t *, _Unwind_Exception *, bool)
+during phase1 personality function said it would stop here, but now in phase2 it did not stop here
+libunwind: %s %s:%d - %s
+_Unwind_VRS_Result _Unwind_VRS_Get_Internal(_Unwind_Context *, _Unwind_VRS_RegClass, uint32_t, _Unwind_VRS_DataRepresentation, void *)
+external/libcxxabi/src/Unwind/UnwindCursor.hpp
+uint32_t libunwind::Registers_arm::getRegister(int)
+external/libcxxabi/src/Unwind/Registers.hpp
+unsupported arm register
+void libunwind::Registers_arm::setRegister(int, uint32_t)
+unw_fpreg_t libunwind::Registers_arm::getFloatRegister(int)
+Unknown ARM float register
+void libunwind::Registers_arm::setFloatRegister(int, unw_fpreg_t)
+bool libunwind::UnwindCursor<libunwind::LocalAddressSpace, libunwind::Registers_arm>::getInfoFromEHABISection(pint_t, const libunwind::UnwindInfoSections &) [A = libunwind::LocalAddressSpace, R = libunwind::Registers_arm]
+unknown personality routine
+index inlined table detected but pr function requires extra words
+r10
+r11
+r12
+s10
+s11
+s12
+s13
+s14
+s15
+s16
+s17
+s18
+s19
+s20
+s21
+s22
+s23
+s24
+s25
+s26
+s27
+s28
+s29
+s30
+s31
+d10
+d11
+d12
+d13
+d14
+d15
+d16
+d17
+d18
+d19
+d20
+d21
+d22
+d23
+d24
+d25
+d26
+d27
+d28
+d29
+d30
+d31
+unknown register
+GCC: (GNU) 4.9.x-google 20140827 (prerelease)
+clang version 3.6 
+GNU
+gold 1.11
+aeabi
+ARM v7
+.shstrtab
+.interp
+.note.android.ident
+.note.gnu.build-id
+.dynsym
+.dynstr
+.gnu.hash
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.text
+.ARM.exidx
+.ARM.extab
+.rodata
+.data.rel.ro.local
+.preinit_array
+.init_array
+.fini_array
+.data.rel.ro
+.dynamic
+.got
+.bss
+.comment
+.note.gnu.gold-version
+.ARM.attributes

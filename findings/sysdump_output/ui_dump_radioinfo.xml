@@ -1,0 +1,556 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<hierarchy rotation="0">
+    <node index="0" text="" resource-id="" class="android.widget.FrameLayout"
+        package="com.android.settings" content-desc="" checkable="false" checked="false"
+        clickable="false" enabled="true" focusable="false" focused="false" scrollable="false"
+        long-clickable="false" password="false" selected="false" bounds="[0,0][800,1280]">
+        <node index="0" text="" resource-id="android:id/decor_content_parent"
+            class="android.view.ViewGroup" package="com.android.settings" content-desc=""
+            checkable="false" checked="false" clickable="false" enabled="true" focusable="false"
+            focused="false" scrollable="false" long-clickable="false" password="false"
+            selected="false" bounds="[0,0][800,1280]">
+            <node index="0" text="" resource-id="android:id/action_bar_container"
+                class="android.widget.FrameLayout" package="com.android.settings" content-desc=""
+                checkable="false" checked="false" clickable="false" enabled="true" focusable="false"
+                focused="false" scrollable="false" long-clickable="false" password="false"
+                selected="false" bounds="[0,32][800,117]">
+                <node index="0" text="" resource-id="android:id/action_bar"
+                    class="android.view.ViewGroup" package="com.android.settings" content-desc=""
+                    checkable="false" checked="false" clickable="false" enabled="true"
+                    focusable="false" focused="false" scrollable="false" long-clickable="false"
+                    password="false" selected="false" bounds="[0,32][800,117]">
+                    <node index="0" text="Device info" resource-id=""
+                        class="android.widget.TextView" package="com.android.settings"
+                        content-desc="" checkable="false" checked="false" clickable="false"
+                        enabled="true" focusable="false" focused="false" scrollable="false"
+                        long-clickable="false" password="false" selected="false"
+                        bounds="[31,57][153,91]" />
+                    <node index="1" text="" resource-id="" class="android.widget.LinearLayout"
+                        package="com.android.settings" content-desc="" checkable="false"
+                        checked="false" clickable="false" enabled="true" focusable="false"
+                        focused="false" scrollable="false" long-clickable="false" password="false"
+                        selected="false" bounds="[699,32][784,117]">
+                        <node index="0" text="More" resource-id="" class="android.widget.Button"
+                            package="com.android.settings" content-desc="More options"
+                            checkable="false" checked="false" clickable="true" enabled="true"
+                            focusable="true" focused="false" scrollable="false"
+                            long-clickable="false" password="false" selected="false"
+                            bounds="[699,32][784,117]" />
+                    </node>
+                </node>
+            </node>
+            <node index="1" text="" resource-id="android:id/content"
+                class="android.widget.FrameLayout" package="com.android.settings" content-desc=""
+                checkable="false" checked="false" clickable="false" enabled="true" focusable="false"
+                focused="false" scrollable="false" long-clickable="false" password="false"
+                selected="false" bounds="[0,117][800,1280]">
+                <node index="0" text="" resource-id="" class="android.widget.ScrollView"
+                    package="com.android.settings" content-desc="" checkable="false" checked="false"
+                    clickable="false" enabled="true" focusable="true" focused="false"
+                    scrollable="true" long-clickable="false" password="false" selected="false"
+                    bounds="[0,117][800,1280]">
+                    <node index="0" text="" resource-id="" class="android.widget.LinearLayout"
+                        package="com.android.settings" content-desc="" checkable="false"
+                        checked="false" clickable="false" enabled="true" focusable="false"
+                        focused="false" scrollable="false" long-clickable="false" password="false"
+                        selected="false" bounds="[0,117][800,1280]">
+                        <node index="0" text="" resource-id="" class="android.widget.LinearLayout"
+                            package="com.android.settings" content-desc="" checkable="false"
+                            checked="false" clickable="false" enabled="true" focusable="false"
+                            focused="false" scrollable="false" long-clickable="false"
+                            password="false" selected="false" bounds="[32,140][247,167]">
+                            <node index="0" text="IMEI:" resource-id=""
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[32,140][82,167]" />
+                            <node index="1" text="353608074799027"
+                                resource-id="com.android.settings:id/imei"
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[82,140][247,167]" />
+                        </node>
+                        <node index="1" text="" resource-id="" class="android.widget.LinearLayout"
+                            package="com.android.settings" content-desc="" checkable="false"
+                            checked="false" clickable="false" enabled="true" focusable="false"
+                            focused="false" scrollable="false" long-clickable="false"
+                            password="false" selected="false" bounds="[32,167][245,194]">
+                            <node index="0" text="Phone number:" resource-id=""
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[32,167][168,194]" />
+                            <node index="1" text="Unknown"
+                                resource-id="com.android.settings:id/number"
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[168,167][245,194]" />
+                        </node>
+                        <node index="2" text="" resource-id="" class="android.widget.LinearLayout"
+                            package="com.android.settings" content-desc="" checkable="false"
+                            checked="false" clickable="false" enabled="true" focusable="false"
+                            focused="false" scrollable="false" long-clickable="false"
+                            password="false" selected="false" bounds="[32,194][180,221]">
+                            <node index="0" text="Current network:" resource-id=""
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[32,194][180,221]" />
+                        </node>
+                        <node index="3" text="Run ping test"
+                            resource-id="com.android.settings:id/ping_test"
+                            class="android.widget.Button" package="com.android.settings"
+                            content-desc="" checkable="false" checked="false" clickable="true"
+                            enabled="true" focusable="true" focused="false" scrollable="false"
+                            long-clickable="false" password="false" selected="false"
+                            bounds="[32,232][180,296]" />
+                        <node index="4" text="" resource-id="" class="android.widget.LinearLayout"
+                            package="com.android.settings" content-desc="" checkable="false"
+                            checked="false" clickable="false" enabled="true" focusable="false"
+                            focused="false" scrollable="false" long-clickable="false"
+                            password="false" selected="false" bounds="[32,296][145,323]">
+                            <node index="0" text="Ping IpAddr:" resource-id=""
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[32,296][145,323]" />
+                        </node>
+                        <node index="5" text="" resource-id="" class="android.widget.LinearLayout"
+                            package="com.android.settings" content-desc="" checkable="false"
+                            checked="false" clickable="false" enabled="true" focusable="false"
+                            focused="false" scrollable="false" long-clickable="false"
+                            password="false" selected="false" bounds="[32,323][336,350]">
+                            <node index="0" text="Ping Hostname(www.google.com):" resource-id=""
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[32,323][336,350]" />
+                        </node>
+                        <node index="6" text="" resource-id="" class="android.widget.LinearLayout"
+                            package="com.android.settings" content-desc="" checkable="false"
+                            checked="false" clickable="false" enabled="true" focusable="false"
+                            focused="false" scrollable="false" long-clickable="false"
+                            password="false" selected="false" bounds="[32,350][182,377]">
+                            <node index="0" text="HTTP Client test:" resource-id=""
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[32,350][182,377]" />
+                        </node>
+                        <node index="7" text="" resource-id="" class="android.widget.LinearLayout"
+                            package="com.android.settings" content-desc="" checkable="false"
+                            checked="false" clickable="false" enabled="true" focusable="false"
+                            focused="false" scrollable="false" long-clickable="false"
+                            password="false" selected="false" bounds="[32,377][317,404]">
+                            <node index="0" text="Signal strength:" resource-id=""
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[32,377][173,404]" />
+                            <node index="1" text="-81 dBm   59 asu"
+                                resource-id="com.android.settings:id/dbm"
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[173,377][317,404]" />
+                        </node>
+                        <node index="8" text="" resource-id="" class="android.widget.LinearLayout"
+                            package="com.android.settings" content-desc="" checkable="false"
+                            checked="false" clickable="false" enabled="true" focusable="false"
+                            focused="false" scrollable="false" long-clickable="false"
+                            password="false" selected="false" bounds="[32,404][338,431]">
+                            <node index="0" text="Location:" resource-id=""
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[32,404][116,431]" />
+                            <node index="1" text="LAC = 985   CID = c5efd09"
+                                resource-id="com.android.settings:id/location"
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[116,404][338,431]" />
+                        </node>
+                        <node index="9" text="" resource-id="" class="android.widget.LinearLayout"
+                            package="com.android.settings" content-desc="" checkable="false"
+                            checked="false" clickable="false" enabled="true" focusable="false"
+                            focused="false" scrollable="false" long-clickable="false"
+                            password="false" selected="false" bounds="[32,431][258,458]">
+                            <node index="0" text="Neighboring CID:" resource-id=""
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[32,431][183,458]" />
+                            <node index="1" text="unknown"
+                                resource-id="com.android.settings:id/neighboring"
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[183,431][258,458]" />
+                        </node>
+                        <node index="10" text="" resource-id="" class="android.widget.LinearLayout"
+                            package="com.android.settings" content-desc="" checkable="false"
+                            checked="false" clickable="false" enabled="true" focusable="false"
+                            focused="false" scrollable="false" long-clickable="false"
+                            password="false" selected="false" bounds="[32,458][109,485]">
+                            <node index="0" text="CellInfo:" resource-id=""
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[32,458][109,485]" />
+                        </node>
+                        <node index="11" text="" resource-id="" class="android.widget.LinearLayout"
+                            package="com.android.settings" content-desc="" checkable="false"
+                            checked="false" clickable="false" enabled="true" focusable="false"
+                            focused="false" scrollable="false" long-clickable="false"
+                            password="false" selected="false" bounds="[32,485][656,512]">
+                            <node index="0" text="DcRtInfo:" resource-id=""
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[32,485][117,512]" />
+                            <node index="1"
+                                text="mTime=9223372036854775807 mDcPowerState=2147483647"
+                                resource-id="com.android.settings:id/dcrtinfo"
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[117,485][656,512]" />
+                        </node>
+                        <node index="12" text="" resource-id="" class="android.widget.LinearLayout"
+                            package="com.android.settings" content-desc="" checkable="false"
+                            checked="false" clickable="false" enabled="true" focusable="false"
+                            focused="false" scrollable="false" long-clickable="false"
+                            password="false" selected="false" bounds="[32,512][224,539]">
+                            <node index="0" text="Roaming:" resource-id=""
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[32,512][118,539]" />
+                            <node index="1" text="Not roaming"
+                                resource-id="com.android.settings:id/roaming"
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[118,512][224,539]" />
+                        </node>
+                        <node index="13" text="" resource-id="" class="android.widget.LinearLayout"
+                            package="com.android.settings" content-desc="" checkable="false"
+                            checked="false" clickable="false" enabled="true" focusable="false"
+                            focused="false" scrollable="false" long-clickable="false"
+                            password="false" selected="false" bounds="[32,539][330,566]">
+                            <node index="0" text="GSM service:" resource-id=""
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[32,539][151,566]" />
+                            <node index="1" text="Emergency calls only"
+                                resource-id="com.android.settings:id/gsm"
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[151,539][330,566]" />
+                        </node>
+                        <node index="14" text="" resource-id="" class="android.widget.LinearLayout"
+                            package="com.android.settings" content-desc="" checkable="false"
+                            checked="false" clickable="false" enabled="true" focusable="false"
+                            focused="false" scrollable="false" long-clickable="false"
+                            password="false" selected="false" bounds="[32,566][273,593]">
+                            <node index="0" text="GPRS service:" resource-id=""
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[32,566][158,593]" />
+                            <node index="1" text="Disconnected"
+                                resource-id="com.android.settings:id/gprs"
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[158,566][273,593]" />
+                        </node>
+                        <node index="15" text="" resource-id="" class="android.widget.LinearLayout"
+                            package="com.android.settings" content-desc="" checkable="false"
+                            checked="false" clickable="false" enabled="true" focusable="false"
+                            focused="false" scrollable="false" long-clickable="false"
+                            password="false" selected="false" bounds="[32,593][184,620]">
+                            <node index="0" text="Network type:" resource-id=""
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[32,593][155,620]" />
+                            <node index="1" text="LTE" resource-id="com.android.settings:id/network"
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[155,593][184,620]" />
+                        </node>
+                        <node index="16" text="" resource-id="" class="android.widget.LinearLayout"
+                            package="com.android.settings" content-desc="" checkable="false"
+                            checked="false" clickable="false" enabled="true" focusable="false"
+                            focused="false" scrollable="false" long-clickable="false"
+                            password="false" selected="false" bounds="[32,620][229,647]">
+                            <node index="0" text="Message waiting:" resource-id=""
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[32,620][187,647]" />
+                            <node index="1" text="false" resource-id="com.android.settings:id/mwi"
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[187,620][229,647]" />
+                        </node>
+                        <node index="17" text="" resource-id="" class="android.widget.LinearLayout"
+                            package="com.android.settings" content-desc="" checkable="false"
+                            checked="false" clickable="false" enabled="true" focusable="false"
+                            focused="false" scrollable="false" long-clickable="false"
+                            password="false" selected="false" bounds="[32,647][187,674]">
+                            <node index="0" text="Call redirect:" resource-id=""
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[32,647][145,674]" />
+                            <node index="1" text="false" resource-id="com.android.settings:id/cfi"
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[145,647][187,674]" />
+                        </node>
+                        <node index="18" text="" resource-id="" class="android.widget.LinearLayout"
+                            package="com.android.settings" content-desc="" checkable="false"
+                            checked="false" clickable="false" enabled="true" focusable="false"
+                            focused="false" scrollable="false" long-clickable="false"
+                            password="false" selected="false" bounds="[32,674][163,701]">
+                            <node index="0" text="Call status:" resource-id=""
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[32,674][132,701]" />
+                            <node index="1" text="Idle" resource-id="com.android.settings:id/call"
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[132,674][163,701]" />
+                        </node>
+                        <node index="19" text="" resource-id="" class="android.widget.LinearLayout"
+                            package="com.android.settings" content-desc="" checkable="false"
+                            checked="false" clickable="false" enabled="true" focusable="false"
+                            focused="false" scrollable="false" long-clickable="false"
+                            password="false" selected="false" bounds="[32,701][160,728]">
+                            <node index="0" text="Radio resets:" resource-id=""
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[32,701][149,728]" />
+                            <node index="1" text="0" resource-id="com.android.settings:id/resets"
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[149,701][160,728]" />
+                        </node>
+                        <node index="20" text="" resource-id="" class="android.widget.LinearLayout"
+                            package="com.android.settings" content-desc="" checkable="false"
+                            checked="false" clickable="false" enabled="true" focusable="false"
+                            focused="false" scrollable="false" long-clickable="false"
+                            password="false" selected="false" bounds="[32,728][171,755]">
+                            <node index="0" text="Data attempts:" resource-id=""
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[32,728][160,755]" />
+                            <node index="1" text="0" resource-id="com.android.settings:id/attempts"
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[160,728][171,755]" />
+                        </node>
+                        <node index="21" text="" resource-id="" class="android.widget.LinearLayout"
+                            package="com.android.settings" content-desc="" checkable="false"
+                            checked="false" clickable="false" enabled="true" focusable="false"
+                            focused="false" scrollable="false" long-clickable="false"
+                            password="false" selected="false" bounds="[32,755][187,782]">
+                            <node index="0" text="Data successes:" resource-id=""
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[32,755][176,782]" />
+                            <node index="1" text="0" resource-id="com.android.settings:id/successes"
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[176,755][187,782]" />
+                        </node>
+                        <node index="22" text="" resource-id="" class="android.widget.LinearLayout"
+                            package="com.android.settings" content-desc="" checkable="false"
+                            checked="false" clickable="false" enabled="true" focusable="false"
+                            focused="false" scrollable="false" long-clickable="false"
+                            password="false" selected="false" bounds="[32,782][395,833]">
+                            <node index="0" text="GSM disconnects:" resource-id=""
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[32,782][194,809]" />
+                            <node index="1" text="========DATA=======&#10;"
+                                resource-id="com.android.settings:id/disconnects"
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[194,782][395,833]" />
+                        </node>
+                        <node index="23" text="" resource-id="" class="android.widget.LinearLayout"
+                            package="com.android.settings" content-desc="" checkable="false"
+                            checked="false" clickable="false" enabled="true" focusable="false"
+                            focused="false" scrollable="false" long-clickable="false"
+                            password="false" selected="false" bounds="[32,833][244,860]">
+                            <node index="0" text="PPP sent:" resource-id=""
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[32,833][120,860]" />
+                            <node index="1" text="0 pkts, 0 bytes"
+                                resource-id="com.android.settings:id/sent"
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[120,833][244,860]" />
+                        </node>
+                        <node index="24" text="" resource-id="" class="android.widget.LinearLayout"
+                            package="com.android.settings" content-desc="" checkable="false"
+                            checked="false" clickable="false" enabled="true" focusable="false"
+                            focused="false" scrollable="false" long-clickable="false"
+                            password="false" selected="false" bounds="[32,860][280,887]">
+                            <node index="0" text="PPP received:" resource-id=""
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[32,860][156,887]" />
+                            <node index="1" text="0 pkts, 0 bytes"
+                                resource-id="com.android.settings:id/received"
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[156,860][280,887]" />
+                        </node>
+                        <node index="25" text="" resource-id="" class="android.widget.LinearLayout"
+                            package="com.android.settings" content-desc="" checkable="false"
+                            checked="false" clickable="false" enabled="true" focusable="false"
+                            focused="false" scrollable="false" long-clickable="false"
+                            password="false" selected="false" bounds="[32,887][328,914]">
+                            <node index="0" text="Number of PPP reset since boot:" resource-id=""
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[32,887][317,914]" />
+                            <node index="1" text="0"
+                                resource-id="com.android.settings:id/sentSinceReceived"
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[317,887][328,914]" />
+                        </node>
+                        <node index="26" text="Set preferred network type:" resource-id=""
+                            class="android.widget.TextView" package="com.android.settings"
+                            content-desc="" checkable="false" checked="false" clickable="false"
+                            enabled="true" focusable="false" focused="false" scrollable="false"
+                            long-clickable="false" password="false" selected="false"
+                            bounds="[32,914][768,941]" />
+                        <node index="27" text=""
+                            resource-id="com.android.settings:id/preferredNetworkType"
+                            class="android.widget.Spinner" package="com.android.settings"
+                            content-desc="" checkable="false" checked="false" clickable="true"
+                            enabled="true" focusable="true" focused="false" scrollable="true"
+                            long-clickable="false" password="false" selected="false"
+                            bounds="[32,941][768,997]">
+                            <node index="0" text="Unknown" resource-id="android:id/text1"
+                                class="android.widget.TextView" package="com.android.settings"
+                                content-desc="" checkable="false" checked="false" clickable="false"
+                                enabled="true" focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[32,941][731,997]" />
+                        </node>
+                        <node index="28" text="Turn off radio"
+                            resource-id="com.android.settings:id/radio_power"
+                            class="android.widget.Button" package="com.android.settings"
+                            content-desc="" checkable="false" checked="false" clickable="true"
+                            enabled="true" focusable="true" focused="false" scrollable="false"
+                            long-clickable="false" password="false" selected="false"
+                            bounds="[32,1008][192,1072]" />
+                        <node index="29" text="CellInfoListRate 2147483647"
+                            resource-id="com.android.settings:id/cell_info_list_rate"
+                            class="android.widget.Button" package="com.android.settings"
+                            content-desc="" checkable="false" checked="false" clickable="true"
+                            enabled="true" focusable="true" focused="false" scrollable="false"
+                            long-clickable="false" password="false" selected="false"
+                            bounds="[32,1083][327,1147]" />
+                        <node index="30" text="Turn on IMS registration required"
+                            resource-id="com.android.settings:id/ims_reg_required"
+                            class="android.widget.Button" package="com.android.settings"
+                            content-desc="" checkable="false" checked="false" clickable="true"
+                            enabled="true" focusable="true" focused="false" scrollable="false"
+                            long-clickable="false" password="false" selected="false"
+                            bounds="[32,1158][390,1222]" />
+                        <node index="31" text="Turn off VoLTE provisioned flag"
+                            resource-id="com.android.settings:id/volte_provisioned_flag"
+                            class="android.widget.Button" package="com.android.settings"
+                            content-desc="" checkable="false" checked="false" clickable="true"
+                            enabled="true" focusable="true" focused="false" scrollable="false"
+                            long-clickable="false" password="false" selected="false"
+                            bounds="[32,1233][368,1280]" />
+                    </node>
+                </node>
+            </node>
+        </node>
+        <node index="1" text="" resource-id="android:id/statusBarBackground"
+            class="android.view.View" package="com.android.settings" content-desc=""
+            checkable="false" checked="false" clickable="false" enabled="true" focusable="false"
+            focused="false" scrollable="false" long-clickable="false" password="false"
+            selected="false" bounds="[0,0][800,32]" />
+    </node>
+</hierarchy>

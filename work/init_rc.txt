@@ -1,2 +1,0 @@
-/system/bin/sh: cat: /init.rc: Permission denied
-

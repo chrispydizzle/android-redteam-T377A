@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SM-T377A — Loot Dashboard</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --bg: #0a0e17;
+    --surface: #111827;
+    --surface2: #1a2235;
+    --surface3: #0d1320;
+    --border: #1e293b;
+    --accent: #38bdf8;
+    --accent2: #818cf8;
+    --green: #34d399;
+    --red: #f87171;
+    --orange: #fb923c;
+    --yellow: #fbbf24;
+    --pink: #f472b6;
+    --text: #e2e8f0;
+    --text-dim: #64748b;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Inter', system-ui, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* Animated background grid */
+  .grid-bg {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(56,189,248,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(56,189,248,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridPulse 8s ease-in-out infinite;
+  }
+  @keyframes gridPulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+
+  /* Scanline */
+  .scanline {
+    position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 100;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    animation: scanDown 6s ease-in-out infinite;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  @keyframes scanDown {
+    0% { top: -3px; opacity: 0; }
+    5% { opacity: 0.4; }
+    95% { opacity: 0.4; }
+    100% { top: 100vh; opacity: 0; }
+  }
+
+  .container {
+    position: relative; z-index: 1;
+    max-width: 1400px; margin: 0 auto; padding: 2rem;
+  }
+
+  /* Header */
+  .header {
+    text-align: center; margin-bottom: 3rem;
+    animation: fadeSlideIn 600ms cubic-bezier(0.23, 1, 0.32, 1) both;
+  }
+  .header h1 {
+    font-family: var(--mono); font-size: 2.2rem; font-weight: 700;
+    background: linear-gradient(135deg, var(--accent), var(--accent2), var(--pink));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+  }
+  .header .subtitle {
+    color: var(--text-dim); font-size: 0.9rem; font-family: var(--mono);
+  }
+  .header .target-badge {
+    display: inline-block; margin-top: 1rem; padding: 0.5rem 1.2rem;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 999px; font-family: var(--mono); font-size: 0.8rem;
+    color: var(--accent);
+  }
+
+  /* Stats bar */
+  .stats-bar {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem; margin-bottom: 2.5rem;
+  }
+  .stat-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.2rem; text-align: center;
+    animation: fadeSlideIn 600ms cubic-bezier(0.23, 1, 0.32, 1) both;
+    transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1), border-color 200ms ease;
+  }
+  .stat-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+  }
+  .stat-card .number {
+    font-family: var(--mono); font-size: 2rem; font-weight: 700;
+    line-height: 1;
+  }
+  .stat-card .label {
+    font-size: 0.75rem; color: var(--text-dim); margin-top: 0.4rem;
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+
+  /* Section */
+  .section {
+    margin-bottom: 2.5rem;
+    animation: fadeSlideIn 600ms cubic-bezier(0.23, 1, 0.32, 1) both;
+  }
+  .section-title {
+    font-family: var(--mono); font-size: 1rem; font-weight: 500;
+    color: var(--accent); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .section-title::before {
+    content: '▸'; opacity: 0.5;
+  }
+
+  /* Cards grid */
+  .cards-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1rem;
+  }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.2rem; position: relative; overflow: hidden;
+    transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1),
+                border-color 200ms ease, box-shadow 200ms ease;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+    box-shadow: 0 8px 32px rgba(56,189,248,0.06);
+  }
+  .card .card-glow {
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    border-radius: 12px 12px 0 0;
+  }
+  .card h3 {
+    font-family: var(--mono); font-size: 0.85rem; font-weight: 600;
+    margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;
+  }
+  .card p, .card li { font-size: 0.8rem; color: var(--text-dim); line-height: 1.6; }
+  .card ul { list-style: none; padding: 0; }
+  .card li::before { content: '›'; margin-right: 0.5rem; color: var(--accent); font-weight: 700; }
+
+  /* Tag pills */
+  .tag {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    font-family: var(--mono); font-size: 0.65rem; font-weight: 500;
+    margin: 1px;
+  }
+  .tag-green { background: rgba(52,211,153,0.15); color: var(--green); }
+  .tag-red { background: rgba(248,113,113,0.15); color: var(--red); }
+  .tag-orange { background: rgba(251,146,60,0.15); color: var(--orange); }
+  .tag-blue { background: rgba(56,189,248,0.15); color: var(--accent); }
+  .tag-pink { background: rgba(244,114,182,0.15); color: var(--pink); }
+  .tag-yellow { background: rgba(251,191,36,0.15); color: var(--yellow); }
+  .tag-purple { background: rgba(129,140,248,0.15); color: var(--accent2); }
+
+  /* Kernel address table */
+  .addr-table {
+    width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 0.78rem;
+  }
+  .addr-table th {
+    text-align: left; padding: 0.5rem 0.8rem; color: var(--text-dim);
+    border-bottom: 1px solid var(--border); font-weight: 500; font-size: 0.7rem;
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .addr-table td {
+    padding: 0.5rem 0.8rem; border-bottom: 1px solid rgba(30,41,59,0.5);
+  }
+  .addr-table tr { transition: background 150ms ease; }
+  .addr-table tr:hover { background: rgba(56,189,248,0.04); }
+  .addr-val { color: var(--green); font-weight: 500; }
+
+  /* CVE list */
+  .cve-item {
+    display: flex; align-items: center; gap: 0.8rem;
+    padding: 0.6rem 0; border-bottom: 1px solid rgba(30,41,59,0.5);
+    font-size: 0.8rem; transition: background 150ms ease;
+  }
+  .cve-item:last-child { border-bottom: none; }
+  .cve-item:hover { background: rgba(56,189,248,0.03); margin: 0 -0.5rem; padding-left: 0.5rem; padding-right: 0.5rem; border-radius: 6px; }
+  .cve-id { font-family: var(--mono); font-weight: 600; min-width: 130px; }
+  .cve-name { color: var(--text-dim); flex: 1; }
+
+  /* Attack vector priority */
+  .vector-item {
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding: 1rem; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; margin-bottom: 0.8rem;
+    transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1), border-color 200ms ease;
+  }
+  .vector-item:hover {
+    transform: translateX(4px);
+    border-color: color-mix(in srgb, var(--accent) 30%, transparent);
+  }
+  .vector-rank {
+    font-family: var(--mono); font-size: 1.5rem; font-weight: 700;
+    color: var(--accent); min-width: 2rem; text-align: center;
+    line-height: 1;
+  }
+  .vector-body h4 { font-size: 0.85rem; margin-bottom: 0.3rem; }
+  .vector-body p { font-size: 0.75rem; color: var(--text-dim); line-height: 1.5; }
+
+  /* Mitigation grid */
+  .mitigation-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.6rem;
+  }
+  .mit-item {
+    display: flex; align-items: center; gap: 0.6rem;
+    padding: 0.6rem 0.8rem; background: var(--surface2); border-radius: 8px;
+    font-size: 0.78rem; font-family: var(--mono);
+    transition: transform 150ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .mit-item:hover { transform: scale(1.02); }
+  .mit-icon { font-size: 1rem; }
+
+  /* Device node list */
+  .node-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.5rem;
+  }
+  .node-item {
+    padding: 0.5rem 0.7rem; background: var(--surface2); border-radius: 6px;
+    font-family: var(--mono); font-size: 0.72rem;
+    display: flex; align-items: center; gap: 0.5rem;
+    transition: transform 150ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .node-item:hover { transform: translateY(-1px); }
+
+  /* Fuzz progress bars */
+  .fuzz-bar-container { margin-bottom: 0.8rem; }
+  .fuzz-label {
+    display: flex; justify-content: space-between; font-size: 0.75rem;
+    margin-bottom: 0.3rem;
+  }
+  .fuzz-label span:first-child { font-family: var(--mono); }
+  .fuzz-label span:last-child { color: var(--text-dim); font-family: var(--mono); }
+  .fuzz-bar {
+    height: 6px; background: var(--surface2); border-radius: 3px; overflow: hidden;
+  }
+  .fuzz-fill {
+    height: 100%; border-radius: 3px;
+    transform-origin: left;
+    animation: barGrow 1200ms cubic-bezier(0.23, 1, 0.32, 1) both;
+  }
+  @keyframes barGrow {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
+  /* Two-column layout */
+  .two-col {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+  }
+  @media (max-width: 900px) { .two-col { grid-template-columns: 1fr; } }
+
+  /* Ring stats */
+  .ring-container {
+    display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+    justify-content: center;
+  }
+  .ring-stat {
+    display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
+  }
+  .ring-stat svg { width: 80px; height: 80px; }
+  .ring-stat .ring-label { font-size: 0.7rem; color: var(--text-dim); font-family: var(--mono); }
+  .ring-circle-bg { fill: none; stroke: var(--surface2); stroke-width: 6; }
+  .ring-circle {
+    fill: none; stroke-width: 6; stroke-linecap: round;
+    transform: rotate(-90deg); transform-origin: center;
+    animation: ringDraw 1500ms cubic-bezier(0.23, 1, 0.32, 1) both;
+  }
+  @keyframes ringDraw {
+    from { stroke-dashoffset: var(--circumference); }
+    to { stroke-dashoffset: var(--offset); }
+  }
+  .ring-value {
+    font-family: var(--mono); font-size: 0.9rem; font-weight: 700;
+    fill: var(--text);
+  }
+
+  /* Stagger animation */
+  @keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .stagger-1 { animation-delay: 50ms; }
+  .stagger-2 { animation-delay: 100ms; }
+  .stagger-3 { animation-delay: 150ms; }
+  .stagger-4 { animation-delay: 200ms; }
+  .stagger-5 { animation-delay: 250ms; }
+  .stagger-6 { animation-delay: 300ms; }
+  .stagger-7 { animation-delay: 350ms; }
+  .stagger-8 { animation-delay: 400ms; }
+
+  /* Pulse dot */
+  .pulse-dot {
+    width: 8px; height: 8px; border-radius: 50%; display: inline-block;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .full-width { grid-column: 1 / -1; }
+
+  /* ============================================
+     EXPANDABLE SECTIONS (drill-down)
+     ============================================ */
+  .expandable {
+    cursor: pointer;
+    user-select: none;
+  }
+  .expandable .expand-icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 20px; height: 20px; border-radius: 4px;
+    background: var(--surface2); border: 1px solid var(--border);
+    font-family: var(--mono); font-size: 0.7rem; color: var(--text-dim);
+    transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1),
+                background 200ms ease, color 200ms ease;
+    flex-shrink: 0;
+  }
+  .expandable.open .expand-icon {
+    transform: rotate(90deg);
+    background: rgba(56,189,248,0.15);
+    color: var(--accent);
+  }
+  .expand-hint {
+    font-size: 0.65rem; color: var(--text-dim); font-family: var(--mono);
+    margin-left: auto; opacity: 0.5; font-weight: 400;
+    transition: opacity 200ms ease;
+  }
+  .expandable:hover .expand-hint { opacity: 1; }
+  .expandable.open .expand-hint { opacity: 0; }
+
+  .drill-down {
+    max-height: 0; overflow: hidden; opacity: 0;
+    transition: max-height 500ms cubic-bezier(0.23, 1, 0.32, 1),
+                opacity 300ms ease,
+                margin 300ms ease;
+    margin-top: 0;
+  }
+  .drill-down.open {
+    max-height: 3000px;
+    opacity: 1;
+    margin-top: 1rem;
+  }
+  .drill-content {
+    background: var(--surface3); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.2rem;
+  }
+  .drill-content h4 {
+    font-family: var(--mono); font-size: 0.8rem; color: var(--accent);
+    margin-bottom: 0.6rem; font-weight: 500;
+  }
+  .drill-content p, .drill-content li {
+    font-size: 0.78rem; color: var(--text-dim); line-height: 1.7;
+  }
+  .drill-content ul { list-style: none; padding: 0; }
+  .drill-content li { padding: 0.15rem 0; }
+  .drill-content li::before { content: '›'; margin-right: 0.5rem; color: var(--accent2); font-weight: 700; }
+  .drill-content code {
+    font-family: var(--mono); font-size: 0.72rem; background: rgba(56,189,248,0.08);
+    padding: 1px 5px; border-radius: 3px; color: var(--accent);
+  }
+  .drill-content .drill-table {
+    width: 100%; border-collapse: collapse; margin-top: 0.5rem;
+    font-family: var(--mono); font-size: 0.72rem;
+  }
+  .drill-content .drill-table th {
+    text-align: left; padding: 0.4rem 0.6rem; color: var(--text-dim);
+    border-bottom: 1px solid var(--border); font-size: 0.65rem;
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .drill-content .drill-table td {
+    padding: 0.4rem 0.6rem; border-bottom: 1px solid rgba(30,41,59,0.3);
+  }
+  .drill-content .sub-section {
+    margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid var(--border);
+  }
+  .drill-content .file-list {
+    display: flex; flex-wrap: wrap; gap: 4px; margin-top: 0.4rem;
+  }
+  .drill-content .file-tag {
+    font-family: var(--mono); font-size: 0.65rem; padding: 2px 6px;
+    background: rgba(129,140,248,0.1); color: var(--accent2);
+    border-radius: 3px;
+  }
+
+  /* Loose ends / unaccounted section */
+  .loose-end-card {
+    background: var(--surface); border: 1px solid rgba(251,146,60,0.25);
+    border-radius: 10px; padding: 1rem 1.2rem; margin-bottom: 0.8rem;
+    transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1), border-color 200ms ease;
+  }
+  .loose-end-card:hover {
+    transform: translateX(3px);
+    border-color: var(--orange);
+  }
+  .loose-end-card h4 {
+    font-family: var(--mono); font-size: 0.82rem; font-weight: 600;
+    display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;
+  }
+  .loose-end-card .le-count {
+    font-family: var(--mono); font-size: 0.7rem; color: var(--orange);
+    background: rgba(251,146,60,0.12); padding: 1px 6px; border-radius: 4px;
+  }
+  .loose-end-card p {
+    font-size: 0.78rem; color: var(--text-dim); line-height: 1.5;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation: none !important;
+      transition-duration: 0.01ms !important;
+    }
+    .drill-down { transition: none !important; }
+    .drill-down.open { max-height: 3000px; opacity: 1; }
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center; padding: 2rem 0 1rem; color: var(--text-dim);
+    font-family: var(--mono); font-size: 0.7rem;
+    border-top: 1px solid var(--border); margin-top: 2rem;
+  }
+
+  /* Smooth scroll */
+  html { scroll-behavior: smooth; }
+</style>
+</head>
+<body>
+
+<div class="grid-bg"></div>
+<div class="scanline"></div>
+
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>SM-T377A Loot Dashboard</h1>
+    <div class="subtitle">Samsung Galaxy Tab E 8.0 · Security Research Intelligence</div>
+    <div class="target-badge">
+      <span class="pulse-dot" style="background:var(--green); margin-right:6px;"></span>
+      Exynos 3475 · Android 6.0.1 · Kernel 3.10.9 · SPL 2017-07-01
+    </div>
+  </div>
+
+  <!-- Top stats -->
+  <div class="stats-bar">
+    <div class="stat-card stagger-1">
+      <div class="number" style="color:var(--accent)">233M+</div>
+      <div class="label">Fuzz Operations</div>
+    </div>
+    <div class="stat-card stagger-2">
+      <div class="number" style="color:var(--green)">230+</div>
+      <div class="label">Source Files</div>
+    </div>
+    <div class="stat-card stagger-3">
+      <div class="number" style="color:var(--orange)">15</div>
+      <div class="label">CVEs Tested</div>
+    </div>
+    <div class="stat-card stagger-4">
+      <div class="number" style="color:var(--pink)">330</div>
+      <div class="label">Binder Services</div>
+    </div>
+    <div class="stat-card stagger-5">
+      <div class="number" style="color:var(--accent2)">60+</div>
+      <div class="label">Findings Reports</div>
+    </div>
+    <div class="stat-card stagger-6">
+      <div class="number" style="color:var(--yellow)">12</div>
+      <div class="label">Sessions</div>
+    </div>
+  </div>
+
+  <!-- ===== KERNEL ADDRESSES ===== -->
+  <div class="section stagger-3" id="sec-kernel">
+    <div class="section-title expandable" onclick="toggle('drill-kernel')">
+      <span class="expand-icon">▸</span>
+      Kernel Addresses (No KASLR — Static)
+      <span class="expand-hint">click to drill in</span>
+    </div>
+    <div class="card">
+      <div class="card-glow" style="background: linear-gradient(90deg, var(--green), var(--accent));"></div>
+      <table class="addr-table">
+        <tr><th>Symbol</th><th>Virtual Address</th><th>Notes</th></tr>
+        <tr><td>commit_creds</td><td class="addr-val">0xC0054328</td><td style="color:var(--text-dim)">Root primitive target</td></tr>
+        <tr><td>prepare_kernel_cred</td><td class="addr-val">0xC00548E0</td><td style="color:var(--text-dim)">Creates UID 0 cred struct</td></tr>
+        <tr><td>selinux_enforcing</td><td class="addr-val">0xC0B7AD18</td><td style="color:var(--text-dim)">⚠ Corrected from 0xC0B7AD54</td></tr>
+        <tr><td>selinux_enabled</td><td class="addr-val">0xC0AB00A8</td><td style="color:var(--text-dim)">TIMA paddr leak source</td></tr>
+        <tr><td>task_struct→cred</td><td class="addr-val">offset 0x164</td><td style="color:var(--text-dim)">Cred pointer in task</td></tr>
+        <tr><td>thread_info→addr_limit</td><td class="addr-val">offset 0x8</td><td style="color:var(--text-dim)">KERNEL_DS = 0xFFFFFFFF</td></tr>
+        <tr><td>PAGE_OFFSET</td><td class="addr-val">0xC0000000</td><td style="color:var(--text-dim)">Standard ARM32</td></tr>
+        <tr><td>PHYS_OFFSET</td><td class="addr-val">0x20000000</td><td style="color:var(--text-dim)">vaddr = paddr + 0xA0000000</td></tr>
+      </table>
+    </div>
+    <div class="drill-down" id="drill-kernel">
+      <div class="drill-content">
+        <h4>How These Were Obtained</h4>
+        <p>TIMA TrustZone leaks physical addresses in <code>dmesg</code> accessible from shell (UID 2000). Physical-to-virtual conversion: <code>vaddr = paddr + 0xA0000000</code>. Firmware symbol table from Samsung GPL kernel source at <code>github.com/Exynos3475/android_kernel_samsung_exynos3475</code> (branch <code>clean_base</code>).</p>
+        <div class="sub-section">
+          <h4>Exploitation Implications</h4>
+          <ul>
+            <li>With <strong>arbitrary write</strong>: overwrite <code>selinux_enforcing</code> (0xC0B7AD18) to 0 → disable SELinux</li>
+            <li>With <strong>code execution in kernel</strong>: call <code>prepare_kernel_cred(0)</code> → <code>commit_creds()</code> → instant root</li>
+            <li>No PXN: userspace shellcode can run directly in kernel context</li>
+            <li><strong>TIMA caveat</strong>: monitors <code>selinux_enforcing</code> every 5 min — must neutralize or race TIMA</li>
+          </ul>
+        </div>
+        <div class="sub-section">
+          <h4>Related Source Files</h4>
+          <div class="file-list">
+            <span class="file-tag">find_kallsyms.py</span>
+            <span class="file-tag">find_kallsyms2.py</span>
+            <span class="file-tag">decode_kallsyms.py</span>
+            <span class="file-tag">verify_kernel.py</span>
+            <span class="file-tag">analyze_kernel.py</span>
+            <span class="file-tag">find_cred_offset.py</span>
+            <span class="file-tag">extract_kernel.py</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MITIGATIONS ===== -->
+  <div class="section stagger-4" id="sec-mitigations">
+    <div class="section-title expandable" onclick="toggle('drill-mitigations')">
+      <span class="expand-icon">▸</span>
+      Kernel Mitigations Assessment
+      <span class="expand-hint">click to drill in</span>
+    </div>
+    <div class="mitigation-grid">
+      <div class="mit-item"><span class="mit-icon">🟢</span> KASLR — <span style="color:var(--green)">OFF</span></div>
+      <div class="mit-item"><span class="mit-icon">🟢</span> PXN — <span style="color:var(--green)">OFF</span></div>
+      <div class="mit-item"><span class="mit-icon">🟢</span> Stack Canaries — <span style="color:var(--green)">OFF</span></div>
+      <div class="mit-item"><span class="mit-icon">🟢</span> HARDENED_USERCOPY — <span style="color:var(--green)">OFF</span></div>
+      <div class="mit-item"><span class="mit-icon">🔴</span> SELinux — <span style="color:var(--red)">ENFORCING</span></div>
+      <div class="mit-item"><span class="mit-icon">🔴</span> kptr_restrict — <span style="color:var(--red)">ACTIVE</span></div>
+      <div class="mit-item"><span class="mit-icon">🟡</span> mmap_min_addr — <span style="color:var(--yellow)">0x8000</span></div>
+      <div class="mit-item"><span class="mit-icon">🔴</span> TIMA TrustZone — <span style="color:var(--red)">ACTIVE (5min)</span></div>
+      <div class="mit-item"><span class="mit-icon">🟢</span> /dev/mem — <span style="color:var(--green)">NOT EXIST</span></div>
+      <div class="mit-item"><span class="mit-icon">🔴</span> pagemap — <span style="color:var(--red)">EPERM</span></div>
+    </div>
+    <div class="drill-down" id="drill-mitigations">
+      <div class="drill-content">
+        <h4>What This Means For Exploitation</h4>
+        <p>The kernel has <strong>4 major protections OFF</strong> that modern kernels typically have. This is an extremely favorable target.</p>
+        <ul>
+          <li><strong>No KASLR</strong> → all kernel addresses are known and static (see table above)</li>
+          <li><strong>No PXN</strong> → can map shellcode in userspace and jump to it from kernel — <code>ret2user</code> works</li>
+          <li><strong>No stack canaries</strong> → stack buffer overflows give direct PC control (no info leak needed)</li>
+          <li><strong>No HARDENED_USERCOPY</strong> → copy_to/from_user won't bounds-check, enabling arbitrary kernel read/write</li>
+          <li><strong>mmap_min_addr=0x8000</strong> → can map at low addresses for null-deref exploitation (map at 0x8000+)</li>
+        </ul>
+        <div class="sub-section">
+          <h4>Active Defenses To Bypass</h4>
+          <ul>
+            <li><strong>SELinux (Enforcing)</strong> — fully analyzed policy, 10,896 rules parsed. CONFIRMED dead end for policy-based bypass. Must disable via kernel write to <code>selinux_enforcing</code></li>
+            <li><strong>TIMA TrustZone</strong> — Samsung integrity monitor in secure world. Checks kernel code + SELinux status every 5 min. Any modification detected → device lockdown. Must race or neutralize</li>
+            <li><strong>kptr_restrict</strong> — /proc/kallsyms shows 0x00000000. Bypassed via TIMA paddr leak in dmesg</li>
+            <li><strong>panic_on_oops=1</strong> — any kernel oops → panic → ramdump. Must be precise, no trial-and-error</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CVE STATUS + ATTACK VECTORS ===== -->
+  <div class="two-col">
+
+    <!-- CVE Status -->
+    <div class="section stagger-5" id="sec-cves">
+      <div class="section-title expandable" onclick="toggle('drill-cves')">
+        <span class="expand-icon">▸</span>
+        CVE Status Board
+        <span class="expand-hint">click to drill in</span>
+      </div>
+      <div class="card" style="max-height: 520px; overflow-y: auto;">
+        <div class="cve-item"><span class="cve-id">CVE-2016-5195</span><span class="cve-name">Dirty COW</span><span class="tag tag-red">PATCHED</span></div>
+        <div class="cve-item"><span class="cve-id">CVE-2015-1805</span><span class="cve-name">pipe iov</span><span class="tag tag-red">PATCHED</span></div>
+        <div class="cve-item"><span class="cve-id">CVE-2014-3153</span><span class="cve-name">Towelroot/futex</span><span class="tag tag-red">PATCHED</span></div>
+        <div class="cve-item"><span class="cve-id">CVE-2015-3636</span><span class="cve-name">ping UAF</span><span class="tag tag-red">PATCHED</span></div>
+        <div class="cve-item"><span class="cve-id">CVE-2013-2094</span><span class="cve-name">perf OOB</span><span class="tag tag-red">PATCHED</span></div>
+        <div class="cve-item"><span class="cve-id">CVE-2014-0196</span><span class="cve-name">n_tty race</span><span class="tag tag-red">PATCHED</span></div>
+        <div class="cve-item"><span class="cve-id">CVE-2016-0728</span><span class="cve-name">keyring</span><span class="tag tag-orange">TOO SLOW</span></div>
+        <div class="cve-item"><span class="cve-id">CVE-2017-7533</span><span class="cve-name">inotify race</span><span class="tag tag-orange">SURVIVED</span></div>
+        <div class="cve-item"><span class="cve-id">CVE-2017-11176</span><span class="cve-name">mq_notify</span><span class="tag tag-purple">NOT COMPILED</span></div>
+        <div class="cve-item"><span class="cve-id">CVE-2016-4557</span><span class="cve-name">eBPF UAF</span><span class="tag tag-purple">NOT COMPILED</span></div>
+        <div class="cve-item"><span class="cve-id">CVE-2019-2215</span><span class="cve-name">binder UAF</span><span class="tag tag-yellow">SAMSUNG FIX</span></div>
+        <div class="cve-item"><span class="cve-id">CVE-2016-6786</span><span class="cve-name">perf SET_OUTPUT</span><span class="tag tag-red">PATCHED</span></div>
+        <div class="cve-item"><span class="cve-id">CVE-2017-6001</span><span class="cve-name">perf move_group</span><span class="tag tag-red">PATCHED</span></div>
+        <div class="cve-item"><span class="cve-id" style="color:var(--green)">CVE-2017-0782</span><span class="cve-name">BlueBorne L2CAP</span><span class="tag tag-green">UNPATCHED ✦</span></div>
+        <div class="cve-item"><span class="cve-id">CVE-2017-10661</span><span class="cve-name">timerfd race</span><span class="tag tag-yellow">NEEDS CAP</span></div>
+      </div>
+      <div class="drill-down" id="drill-cves">
+        <div class="drill-content">
+          <h4>Detailed CVE Test Results</h4>
+          <table class="drill-table">
+            <tr><th>CVE</th><th>Test Method</th><th>Iterations</th><th>Result</th></tr>
+            <tr><td style="color:var(--red)">CVE-2016-5195</td><td>MAP_PRIVATE write race</td><td>Multiple</td><td>Memory not modified — patched</td></tr>
+            <tr><td style="color:var(--red)">CVE-2014-3153</td><td>FUTEX_CMP_REQUEUE_PI</td><td>All flag combos</td><td>EINVAL on every call — Samsung blanket-patched requeue_pi</td></tr>
+            <tr><td style="color:var(--yellow)">CVE-2019-2215</td><td>binder_thread UAF + BPF spray</td><td>288 combos (48×6)</td><td>Samsung nullifies whead before kfree. UIO_FASTIOV=32 blocks iovec spray</td></tr>
+            <tr><td style="color:var(--green)">CVE-2017-0782</td><td>Kernel source audit</td><td>—</td><td><strong>ZERO input validation</strong> in l2cap_parse_conf_rsp on CONF_PENDING path. buf[64] on stack</td></tr>
+            <tr><td style="color:var(--yellow)">CVE-2017-10661</td><td>timerfd + CANCEL_ON_SET</td><td>143K clock changes in 120s</td><td>Race triggerable but needs clock_settime (CAP_SYS_TIME)</td></tr>
+            <tr><td style="color:var(--red)">CVE-2016-6786</td><td>perf SET_OUTPUT race</td><td>7000</td><td>Clean — patched</td></tr>
+            <tr><td style="color:var(--red)">CVE-2017-6001</td><td>perf move_group + cross-task</td><td>10,000+</td><td>3 phases all clean — patched</td></tr>
+          </table>
+          <div class="sub-section">
+            <h4>Source Files (by CVE)</h4>
+            <div class="file-list">
+              <span class="file-tag">dirtycow.c</span>
+              <span class="file-tag">dirtycow_probe.c</span>
+              <span class="file-tag">towelroot.c (×11)</span>
+              <span class="file-tag">futex_probe.c</span>
+              <span class="file-tag">cve_2019_2215*.c (×12)</span>
+              <span class="file-tag">bluborne_*.py (×5)</span>
+              <span class="file-tag">bluborne_l2cap.c</span>
+              <span class="file-tag">timerfd_*.c (×2)</span>
+              <span class="file-tag">cve_2016_6786_race.c</span>
+              <span class="file-tag">cve_2017_6001_race.c</span>
+              <span class="file-tag">ping_root.c</span>
+              <span class="file-tag">keyring_root.c</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Priority Attack Vectors -->
+    <div class="section stagger-6" id="sec-vectors">
+      <div class="section-title expandable" onclick="toggle('drill-vectors')">
+        <span class="expand-icon">▸</span>
+        Priority Attack Vectors
+        <span class="expand-hint">click to drill in</span>
+      </div>
+      <div class="vector-item">
+        <div class="vector-rank">1</div>
+        <div class="vector-body">
+          <h4 style="color:var(--green)">BlueBorne (CVE-2017-0781/0782) <span class="tag tag-green">UNPATCHED</span></h4>
+          <p>L2CAP stack overflow, ZERO validation. buf[64], no canaries, no KASLR. bluetooth domain has packet_socket + net_admin. Needs BT proximity.</p>
+        </div>
+      </div>
+      <div class="vector-item">
+        <div class="vector-rank">2</div>
+        <div class="vector-body">
+          <h4 style="color:var(--accent)">DM Port DIAG Protocol <span class="tag tag-blue">ACCESSIBLE</span></h4>
+          <p>Shannon 308 modem, no auth. 180 AT commands. COM11 direct access. Deeper protocol RE needed.</p>
+        </div>
+      </div>
+      <div class="vector-item">
+        <div class="vector-rank">3</div>
+        <div class="vector-body">
+          <h4 style="color:var(--accent2)">Accessibility UI Automation <span class="tag tag-purple">ACTIVE</span></h4>
+          <p>Full screen interaction. Can automate privileged UI actions, interact with system dialogs.</p>
+        </div>
+      </div>
+      <div class="vector-item">
+        <div class="vector-rank">4</div>
+        <div class="vector-body">
+          <h4 style="color:var(--yellow)">timerfd Race (CVE-2017-10661) <span class="tag tag-yellow">BLOCKED</span></h4>
+          <p>Race IS triggerable (~1200 clock changes/sec). Needs clock_settime (CAP_SYS_TIME).</p>
+        </div>
+      </div>
+      <div class="drill-down" id="drill-vectors">
+        <div class="drill-content">
+          <h4>BlueBorne Deep-Dive</h4>
+          <ul>
+            <li>BT address: <code>02:00:00:00:00:21</code>, state ON</li>
+            <li>Kernel driver: BCM43454, firmware V0100.0131</li>
+            <li><code>l2cap_parse_conf_rsp</code>: L2CAP_CONF_PENDING path has <strong>zero length check</strong> before memcpy into <code>buf[64]</code></li>
+            <li>BNEP (CVE-2017-0781) is NOT compiled — only L2CAP path works</li>
+            <li>bluetooth SELinux domain: <code>net_admin</code>, <code>packet_socket</code>, <code>tun_socket</code> — more surface than shell</li>
+            <li>Requires Bluetooth proximity + crafted L2CAP configuration responses</li>
+          </ul>
+          <div class="sub-section">
+            <h4>DM Port / Modem Intel</h4>
+            <ul>
+              <li>Shannon 308 baseband — COM port changes on USB disruption (was COM5 → COM9 → COM11)</li>
+              <li>No authentication, no DM framing needed for AT commands</li>
+              <li>AT+CLAC returns 180 commands. Key ones: AT+DEVCONINFO, AT+CLCK, AT+DUMPCTRL, AT+CFUN (12 modes)</li>
+              <li>diagexe (UID 1000) proxies USB↔modem — has CAP_SYS_ADMIN but SELinux-jailed (only 8 allow rules)</li>
+              <li>at_distributor (UID 1001) — abstract sockets blocked from shell/app by SELinux</li>
+              <li>⚠ Aggressive probing disrupts USB composite device → ADB disconnect</li>
+            </ul>
+          </div>
+          <div class="sub-section">
+            <h4>Accessibility Agent Capabilities</h4>
+            <ul>
+              <li>Bound accessibility service — reads ALL screen content</li>
+              <li>Can inject taps/swipes to interact with system UI</li>
+              <li>SysDump (*#9900#) reachable: APK → SecretCodeIME → input *#9900# → SysDump opens as system UID</li>
+              <li>30+ SysDump buttons visible (run_dump_all, tcpdump, silentlog, kernel_log, ramdump_mode)</li>
+              <li>Some features require OTP auth — solver script exists (<code>otp_solver.py</code>)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FUZZING PROGRESS ===== -->
+  <div class="section stagger-7" id="sec-fuzzing">
+    <div class="section-title expandable" onclick="toggle('drill-fuzzing')">
+      <span class="expand-icon">▸</span>
+      Fuzzing Campaign Results (233M+ Operations)
+      <span class="expand-hint">click to drill in</span>
+    </div>
+    <div class="card">
+      <div class="card-glow" style="background: linear-gradient(90deg, var(--accent2), var(--pink));"></div>
+      <div class="fuzz-bar-container">
+        <div class="fuzz-label"><span>mmap/ioctl races</span><span>225M+ ops · 0 crashes</span></div>
+        <div class="fuzz-bar"><div class="fuzz-fill" style="width:96%; background: linear-gradient(90deg, var(--accent), var(--accent2)); animation-delay: 200ms;"></div></div>
+      </div>
+      <div class="fuzz-bar-container">
+        <div class="fuzz-label"><span>splice/tee races</span><span>2.9M ops · 2 bugs (DoS)</span></div>
+        <div class="fuzz-bar"><div class="fuzz-fill" style="width:65%; background: linear-gradient(90deg, var(--orange), var(--yellow)); animation-delay: 300ms;"></div></div>
+      </div>
+      <div class="fuzz-bar-container">
+        <div class="fuzz-label"><span>Deep race conditions</span><span>1.3M ops · 1 bug</span></div>
+        <div class="fuzz-bar"><div class="fuzz-fill" style="width:55%; background: linear-gradient(90deg, var(--orange), var(--pink)); animation-delay: 400ms;"></div></div>
+      </div>
+      <div class="fuzz-bar-container">
+        <div class="fuzz-label"><span>ION allocator</span><span>50K+ ops · UAF 91% win (blocked)</span></div>
+        <div class="fuzz-bar"><div class="fuzz-fill" style="width:40%; background: linear-gradient(90deg, var(--yellow), var(--red)); animation-delay: 500ms;"></div></div>
+      </div>
+      <div class="fuzz-bar-container">
+        <div class="fuzz-label"><span>Binder IPC</span><span>72K+ ops · DoS only</span></div>
+        <div class="fuzz-bar"><div class="fuzz-fill" style="width:35%; background: linear-gradient(90deg, var(--accent), var(--green)); animation-delay: 600ms;"></div></div>
+      </div>
+      <div class="fuzz-bar-container">
+        <div class="fuzz-label"><span>Mali GPU</span><span>30K+ ops · Clean</span></div>
+        <div class="fuzz-bar"><div class="fuzz-fill" style="width:25%; background: linear-gradient(90deg, var(--green), var(--accent)); animation-delay: 700ms;"></div></div>
+      </div>
+      <div class="fuzz-bar-container">
+        <div class="fuzz-label"><span>Ashmem</span><span>100K+ ops · Clean</span></div>
+        <div class="fuzz-bar"><div class="fuzz-fill" style="width:30%; background: linear-gradient(90deg, var(--accent2), var(--accent)); animation-delay: 800ms;"></div></div>
+      </div>
+      <div class="fuzz-bar-container">
+        <div class="fuzz-label"><span>BPF filters</span><span>16K+ cycles · SLUB noise</span></div>
+        <div class="fuzz-bar"><div class="fuzz-fill" style="width:15%; background: linear-gradient(90deg, var(--text-dim), var(--accent2)); animation-delay: 900ms;"></div></div>
+      </div>
+    </div>
+    <div class="drill-down" id="drill-fuzzing">
+      <div class="drill-content">
+        <h4>Fuzzer Inventory & Key Results</h4>
+        <table class="drill-table">
+          <tr><th>Surface</th><th>Fuzzer Files</th><th>Findings</th></tr>
+          <tr><td>ION</td><td><code>ion_fuzz.c</code>, <code>ion_fuzz_multithreaded.c</code>, <code>ion_race_free_share.c</code> (×3), <code>ion_uaf_exploit.c</code> (×2), <code>ion_seq_spray.c</code>, <code>ion_slab_probe.c</code></td><td>UAF 91% win rate. heap bits 2/12 = panic. No viable fn-ptr victim in k64. seq_operations is .rodata NOT heap</td></tr>
+          <tr><td>Binder</td><td><code>binder_fuzz*.c</code> (×3), <code>binder_uaf*.c</code> (×10), <code>binder_slab*.c</code> (×2), <code>binder_mass_uaf.c</code></td><td>Context manager DoS. CVE-2019-2215 Samsung-patched. 288 exploit combos → 0 crashes</td></tr>
+          <tr><td>Mali</td><td><code>mali_fuzz*.c</code> (×5), <code>mali_race*.c</code> (×3), <code>mali_exploit*.c</code> (×16), <code>mali_pipe_uaf.c</code></td><td>r7p0 sizeof checks block all dispatch fuzzing. 1150 race trials clean. Import crash was ION struct bug</td></tr>
+          <tr><td>Ashmem</td><td><code>ashmem_fuzz.c</code>, <code>ashmem_fuzz_multithreaded.c</code></td><td>100K+ ops fully clean. No writeup exists (gap)</td></tr>
+          <tr><td>BPF</td><td><code>bpf_filter_race.c</code>, <code>bpf_reclaim*.c</code> (×5), <code>bpf_slab_probe.c</code>, <code>bpf_mass_spray.c</code></td><td>sk_filter reclaims k256 but anomalies are SLUB caching noise</td></tr>
+          <tr><td>PTY/TTY</td><td><code>ptmx_race_fuzz.c</code>, <code>ntty_race.c</code>, <code>splice_tty_race.c</code></td><td>7 tests × 700 trials = 0 anomalies</td></tr>
+          <tr><td>Network</td><td><code>icmp_fuzz.c</code>, <code>netlink_fuzz.c</code>, <code>dnsproxyd_probe*.c</code> (×4)</td><td>netd survived all fuzzing. Format strings treated as literals</td></tr>
+          <tr><td>Input</td><td><code>input_fuzz.c</code>, <code>input_ioctl_fuzzer.c</code></td><td>Modem side-channel: mif:LNK-TX logs during input injection</td></tr>
+        </table>
+        <div class="sub-section">
+          <h4>Undocumented Fuzz Logs (work/logs/)</h4>
+          <p>40+ log files exist in <code>work/logs/</code> that aren't linked to any findings report. Includes crash artifacts (20260223_013727/), 6 dmesg snapshots, ANR traces, and 6 DM protocol fuzz log files.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ATTACK SURFACE ===== -->
+  <div class="section stagger-8" id="sec-surface">
+    <div class="section-title expandable" onclick="toggle('drill-surface')">
+      <span class="expand-icon">▸</span>
+      Accessible Attack Surface
+      <span class="expand-hint">click to drill in</span>
+    </div>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-glow" style="background: linear-gradient(90deg, var(--green), var(--accent));"></div>
+        <h3>🔓 Device Nodes</h3>
+        <div class="node-grid">
+          <div class="node-item"><span style="color:var(--green)">✓</span> /dev/binder</div>
+          <div class="node-item"><span style="color:var(--green)">✓</span> /dev/ashmem</div>
+          <div class="node-item"><span style="color:var(--green)">✓</span> /dev/ion</div>
+          <div class="node-item"><span style="color:var(--green)">✓</span> /dev/mali0</div>
+          <div class="node-item"><span style="color:var(--green)">✓</span> /dev/ptmx</div>
+          <div class="node-item"><span style="color:var(--green)">✓</span> /dev/input/*</div>
+          <div class="node-item"><span style="color:var(--red)">✗</span> /dev/mobicore</div>
+          <div class="node-item"><span style="color:var(--red)">✗</span> /dev/umts_*</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-glow" style="background: linear-gradient(90deg, var(--accent2), var(--pink));"></div>
+        <h3>🔌 Sockets</h3>
+        <div class="node-grid">
+          <div class="node-item"><span style="color:var(--green)">✓</span> dnsproxyd</div>
+          <div class="node-item"><span style="color:var(--green)">✓</span> logd</div>
+          <div class="node-item"><span style="color:var(--green)">✓</span> fwmarkd</div>
+          <div class="node-item"><span style="color:var(--green)">✓</span> property_svc</div>
+          <div class="node-item"><span style="color:var(--red)">✗</span> @FactoryClient</div>
+          <div class="node-item"><span style="color:var(--red)">✗</span> @ATDMultiClient</div>
+          <div class="node-item"><span style="color:var(--red)">✗</span> @diag_mycmc</div>
+          <div class="node-item"><span style="color:var(--red)">✗</span> netd (root)</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-glow" style="background: linear-gradient(90deg, var(--yellow), var(--orange));"></div>
+        <h3>📱 APK Agent (com.privesc.agent)</h3>
+        <ul>
+          <li>Device Owner + Profile Owner</li>
+          <li>31 permissions (WRITE_SECURE_SETTINGS, READ_LOGS, DUMP)</li>
+          <li>Accessibility service — reads ALL screens</li>
+          <li>12 system apps re-enabled</li>
+          <li>mprotect RWX memory</li>
+          <li>Silent APK install sessions</li>
+          <li>Broadcast command dispatch</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-glow" style="background: linear-gradient(90deg, var(--pink), var(--red));"></div>
+        <h3>📡 DM Port / Modem</h3>
+        <ul>
+          <li>Shannon 308 — COM11 direct access</li>
+          <li>180 AT commands (no auth)</li>
+          <li>AT+DEVCONINFO, AT+CLCK, AT+DUMPCTRL</li>
+          <li>CFUN modes 0-12 (engineering)</li>
+          <li>Network lock: PN ACTIVE (AT&T)</li>
+          <li>⚠ AT$ARMEE=1 → download mode</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-glow" style="background: linear-gradient(90deg, var(--green), var(--yellow));"></div>
+        <h3>🔍 Info Disclosure</h3>
+        <ul>
+          <li>dmesg readable (TIMA addr leak)</li>
+          <li>debugfs: binder, ion, mali, tracing</li>
+          <li>/proc/slabinfo readable</li>
+          <li>/proc/tima_*_log readable (TZ logs)</li>
+          <li>ftrace: buffer_size, tracing_on writable</li>
+          <li>/proc/self/maps from APK</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-glow" style="background: linear-gradient(90deg, var(--accent), var(--accent2));"></div>
+        <h3>🎯 High-Value Services</h3>
+        <ul>
+          <li>SmartcomRoot (UID 1000) — 15 methods</li>
+          <li>EngineeringModeService — auth errors M3-M7</li>
+          <li>ABTPersistenceService — 13 methods bypass auth</li>
+          <li>DRParser (system) — AT_CMD, INSTALL_PACKAGES</li>
+          <li>SysDump (*#9900#) — 30+ buttons, some OTP</li>
+          <li>DLP, persona, gatekeeper, keystore</li>
+        </ul>
+      </div>
+    </div>
+    <div class="drill-down" id="drill-surface">
+      <div class="drill-content">
+        <h4>Binder Services (330 Enumerated)</h4>
+        <table class="drill-table">
+          <tr><th>Service</th><th>UID</th><th>Methods</th><th>Status</th></tr>
+          <tr><td>SmartcomRoot (APNWidgetRootService)</td><td>1000</td><td>15</td><td>Callable but features disabled (iptables/tcpdump need root)</td></tr>
+          <tr><td>DLP (IDLPManager)</td><td>1000</td><td>3</td><td>Accessible, purpose unclear</td></tr>
+          <tr><td>EngineeringModeService</td><td>1000</td><td>7</td><td>M1-M2 return values, M3-M7 return -1300 (auth)</td></tr>
+          <tr><td>DeviceRootKeyService</td><td>1000</td><td>5</td><td>M1 OK, M2/M5 errors</td></tr>
+          <tr><td>execute (IExecuteManager)</td><td>—</td><td>2</td><td>Returns app list, no cmd exec</td></tr>
+          <tr><td>ABTPersistenceService</td><td>1000</td><td>25</td><td>12 auth-checked, 13 bypass to validation only</td></tr>
+          <tr><td>tima (ITimaService)</td><td>—</td><td>3</td><td>M1-M2 return -1, M3 empty</td></tr>
+          <tr><td>persona (IPersonaManager)</td><td>—</td><td>24</td><td>Accessible</td></tr>
+        </table>
+        <div class="sub-section">
+          <h4>Critical Processes</h4>
+          <table class="drill-table">
+            <tr><th>Process</th><th>UID</th><th>Capabilities</th><th>SELinux</th></tr>
+            <tr><td>netd (PID 2191)</td><td>root</td><td>ALL (0x1fffffffff)</td><td>u:r:netd:s0</td></tr>
+            <tr><td>diagexe (PID 2209)</td><td>1000</td><td>DAC_OVERRIDE, NET_ADMIN, SYS_ADMIN, SYS_BOOT</td><td>u:r:diagexe:s0 (8 allow rules only)</td></tr>
+            <tr><td>at_distributor (PID 2210)</td><td>1001</td><td>CHOWN, DAC_OVERRIDE, SYS_ADMIN, SYS_BOOT, SYS_TIME</td><td>u:r:at_distributor:s0</td></tr>
+            <tr><td>SmartcomRoot (~22696)</td><td>1000</td><td>—</td><td>—</td></tr>
+          </table>
+        </div>
+        <div class="sub-section">
+          <h4>DRParser (Post-Root Goldmine)</h4>
+          <ul>
+            <li>Package: <code>com.sec.android.app.parser</code>, UID 1000 (system)</li>
+            <li>Permissions: AT_COMMAND, QCOM_DIAG, INSTALL_PACKAGES, MASTER_CLEAR, MODIFY_IPTABLES</li>
+            <li>SecretCodeIME: Protected by "normal" level permission (any app can request)</li>
+            <li>RSA private key in APK assets (keystring encryption reversible)</li>
+            <li>Keystring XML loadable from <code>/sdcard/keystrings_EFS.xml</code></li>
+            <li>OTP algorithm: DJB2 hash of <code>(key + YYMMmmDDHH)</code> in GMT</li>
+          </ul>
+        </div>
+        <div class="sub-section">
+          <h4>SELinux Policy Summary</h4>
+          <p>Fully parsed: 10,896 of 29,594 avtab entries. <strong>CONFIRMED DEAD END</strong>. No permissive types. Shell → only <code>runas</code> (dead end). No su/rd_shell domains. No transitions to kernel/init/system_server from any reachable domain. bluetooth domain has most kernel surface (packet_socket, net_admin).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CONFIRMED VULNERABILITIES ===== -->
+  <div class="section" id="sec-vulns">
+    <div class="section-title expandable" onclick="toggle('drill-vulns')">
+      <span class="expand-icon">▸</span>
+      Confirmed Vulnerabilities (6 Found)
+      <span class="expand-hint">click to drill in</span>
+    </div>
+    <div class="cards-grid">
+      <div class="card" style="border-color: rgba(52,211,153,0.3);">
+        <div class="card-glow" style="background: var(--green);"></div>
+        <h3><span class="tag tag-green">UNPATCHED</span> BlueBorne L2CAP (CVE-2017-0782)</h3>
+        <p>l2cap_parse_conf_rsp stack overflow. ZERO validation on CONF_PENDING. buf[64], no canaries, no KASLR. BT: 02:00:00:00:00:21.</p>
+      </div>
+      <div class="card" style="border-color: rgba(251,146,60,0.3);">
+        <div class="card-glow" style="background: var(--orange);"></div>
+        <h3><span class="tag tag-orange">DoS ONLY</span> ION UAF (kmalloc-64)</h3>
+        <p>91% race win. socketpair spray +1169 k64/200 ops. No callable fn-ptrs in k64 victims.</p>
+      </div>
+      <div class="card" style="border-color: rgba(251,146,60,0.3);">
+        <div class="card-glow" style="background: var(--orange);"></div>
+        <h3><span class="tag tag-orange">DoS ONLY</span> tee() ABBA Deadlock (Zero-Day)</h3>
+        <p>SPLICE_F_NONBLOCK ignored. Circular tee deadlocks propagate across processes.</p>
+      </div>
+      <div class="card" style="border-color: rgba(251,191,36,0.3);">
+        <div class="card-glow" style="background: var(--yellow);"></div>
+        <h3><span class="tag tag-yellow">SAMSUNG FIX</span> CVE-2019-2215 Binder UAF (k256)</h3>
+        <p>UAF confirmed + BPF cross-allocation. Samsung nullifies whead. 288 combos → 0 crashes.</p>
+      </div>
+      <div class="card" style="border-color: rgba(248,113,113,0.3);">
+        <div class="card-glow" style="background: var(--red);"></div>
+        <h3><span class="tag tag-red">DoS</span> ION Heap Panic</h3>
+        <p>Heap bits 2/12 → instant kernel panic. TrustZone secure heap semaphore.</p>
+      </div>
+      <div class="card" style="border-color: rgba(248,113,113,0.3);">
+        <div class="card-glow" style="background: var(--red);"></div>
+        <h3><span class="tag tag-red">DoS</span> Binder Context Manager Hijack</h3>
+        <p>BINDER_SET_CONTEXT_MGR from unprivileged → global IPC freeze. Hard reboot required.</p>
+      </div>
+    </div>
+    <div class="drill-down" id="drill-vulns">
+      <div class="drill-content">
+        <h4>Exploitation Status Deep-Dive</h4>
+        <table class="drill-table">
+          <tr><th>Vuln</th><th>Primitive</th><th>Blocker</th><th>Bypass Ideas</th></tr>
+          <tr>
+            <td style="color:var(--green)">BlueBorne L2CAP</td>
+            <td>Stack overflow → PC control</td>
+            <td>Needs BT proximity</td>
+            <td>ret2user shellcode (no PXN). Direct <code>commit_creds(prepare_kernel_cred(0))</code></td>
+          </tr>
+          <tr>
+            <td style="color:var(--orange)">ION UAF</td>
+            <td>atomic_inc at offset 0 (kref_get)</td>
+            <td>No fn-ptr victim at offset 0 in k64. pipe_buffer ops at offset 12</td>
+            <td>Find new k64 object with fn-ptr at offset 0. Cross-cache to different slab?</td>
+          </tr>
+          <tr>
+            <td style="color:var(--yellow)">CVE-2019-2215</td>
+            <td>UAF in k256 via binder_thread</td>
+            <td>Samsung nullifies whead. UIO_FASTIOV=32 → iovec on stack</td>
+            <td>Alternative spray objects? writev with exactly 32 iovecs? Different trigger path?</td>
+          </tr>
+          <tr>
+            <td style="color:var(--yellow)">timerfd race</td>
+            <td>UAF in timerfd cancel path</td>
+            <td>Requires CAP_SYS_TIME for clock_settime</td>
+            <td>NTP sync event? at_distributor has SYS_TIME (if reachable). APP SET_TIME permission?</td>
+          </tr>
+        </table>
+        <div class="sub-section">
+          <h4>Slab Cache Layout</h4>
+          <table class="drill-table">
+            <tr><th>Cache</th><th>Size</th><th>Key Objects</th></tr>
+            <tr><td style="color:var(--accent)">kmalloc-64</td><td>52-64B</td><td>ION handles, Mali tracking, pipe_buffer[2], buffer_head</td></tr>
+            <tr><td style="color:var(--accent)">kmalloc-128</td><td>65-128B</td><td>Binder metadata</td></tr>
+            <tr><td style="color:var(--accent)">kmalloc-192</td><td>129-192B</td><td>ION buffers, binder_thread (via epoll_ctl)</td></tr>
+            <tr><td style="color:var(--accent)">kmalloc-256</td><td>193-256B</td><td>binder_thread (252B), BPF sk_filter (26 insns)</td></tr>
+            <tr><td style="color:var(--accent)">kmalloc-512</td><td>257-512B</td><td>readv iov array (iovcnt 33-64)</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== DEAD ENDS ===== -->
+  <div class="section" id="sec-deadends">
+    <div class="section-title expandable" onclick="toggle('drill-deadends')">
+      <span class="expand-icon">▸</span>
+      Blocked Paths (24 Dead Ends — Do Not Retry)
+      <span class="expand-hint">click to drill in</span>
+    </div>
+    <div class="card" style="border-color: rgba(248,113,113,0.15);">
+      <div style="display:flex; flex-wrap:wrap; gap:6px;">
+        <span class="tag tag-red">Bootloader flash (carrier lock)</span>
+        <span class="tag tag-red">Platform signing key</span>
+        <span class="tag tag-red">SmartcomRoot injection</span>
+        <span class="tag tag-red">Abstract sockets (SELinux)</span>
+        <span class="tag tag-red">JDWP debugging</span>
+        <span class="tag tag-red">ctl.start/stop</span>
+        <span class="tag tag-red">/dev/mem, /dev/kmem</span>
+        <span class="tag tag-red">User namespaces</span>
+        <span class="tag tag-red">AF_PACKET</span>
+        <span class="tag tag-red">eBPF</span>
+        <span class="tag tag-red">POSIX MQ</span>
+        <span class="tag tag-red">userfaultfd</span>
+        <span class="tag tag-red">Keyring (EDQUOT@198)</span>
+        <span class="tag tag-red">Factory KEYSTRING perms</span>
+        <span class="tag tag-red">ftrace function tracing</span>
+        <span class="tag tag-red">remount rw</span>
+        <span class="tag tag-red">Block device reads</span>
+        <span class="tag tag-red">run-as</span>
+        <span class="tag tag-red">ABT M5 install</span>
+        <span class="tag tag-red">Content provider SQLi</span>
+        <span class="tag tag-red">SELinux policy transitions</span>
+        <span class="tag tag-red">DCCP (SELinux)</span>
+        <span class="tag tag-red">CVE-2016-6786</span>
+        <span class="tag tag-red">CVE-2017-6001</span>
+      </div>
+    </div>
+    <div class="drill-down" id="drill-deadends">
+      <div class="drill-content">
+        <h4>Why Each Path Failed</h4>
+        <table class="drill-table">
+          <tr><th>Path</th><th>Failure Reason</th></tr>
+          <tr><td>Bootloader flash (Odin)</td><td>AT&T carrier lock rejects all unsigned images</td></tr>
+          <tr><td>Platform signing key</td><td>Samsung proprietary key, not AOSP test key</td></tr>
+          <tr><td>SmartcomRoot injection</td><td><code>Runtime.exec(String[])</code> array form prevents metacharacter injection</td></tr>
+          <tr><td>Abstract sockets</td><td>SELinux blocks socket creation from both shell and untrusted_app</td></tr>
+          <tr><td>JDWP debugging</td><td><code>ro.debuggable=0</code> — only user apps exposed</td></tr>
+          <tr><td>ctl.start/stop</td><td>DAC passes but SELinux denies all operations</td></tr>
+          <tr><td>/dev/mem, /dev/kmem</td><td>Device nodes do not exist on this kernel</td></tr>
+          <tr><td>User namespaces</td><td>CONFIG_USER_NS not compiled (EINVAL)</td></tr>
+          <tr><td>AF_PACKET</td><td>No CAP_NET_RAW, SELinux blocks from shell</td></tr>
+          <tr><td>eBPF</td><td>No eBPF syscall (only seccomp_bpf compiled)</td></tr>
+          <tr><td>POSIX MQ</td><td>Returns ENOSYS (not compiled)</td></tr>
+          <tr><td>userfaultfd</td><td>Returns ENOSYS (not compiled)</td></tr>
+          <tr><td>Keyring (add_key)</td><td>SELinux blocks after 198 keys; 26K ops/sec too slow (2701 min)</td></tr>
+          <tr><td>Factory KEYSTRING</td><td>Requires signature|privileged permission</td></tr>
+          <tr><td>ftrace</td><td>Only <code>nop</code> tracer compiled, can't enable function tracing</td></tr>
+          <tr><td>remount rw</td><td>Permission denied (no CAP_SYS_ADMIN)</td></tr>
+          <tr><td>Block device reads</td><td>SELinux blocks all block device access</td></tr>
+          <tr><td>run-as</td><td>"Could not set capabilities: Operation not permitted"</td></tr>
+          <tr><td>ABT M5 install</td><td>Enforces auth with properly formatted Parcelable</td></tr>
+          <tr><td>Content provider SQLi</td><td>Most blocked by permissions</td></tr>
+          <tr><td>SELinux transitions</td><td>No transitions from shell/untrusted_app. No su/rd_shell domains exist</td></tr>
+          <tr><td>DCCP</td><td>Compiled but SELinux blocks socket creation from shell AND untrusted_app</td></tr>
+          <tr><td>CVE-2016-6786</td><td>7000 iterations, 0 crashes — patched</td></tr>
+          <tr><td>CVE-2017-6001</td><td>10,000+ iterations across 3 phases — patched</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== RESEARCH INVENTORY ===== -->
+  <div class="section" id="sec-inventory">
+    <div class="section-title expandable" onclick="toggle('drill-inventory')">
+      <span class="expand-icon">▸</span>
+      Research Inventory
+      <span class="expand-hint">click to drill in</span>
+    </div>
+    <div class="card">
+      <div class="ring-container">
+        <div class="ring-stat">
+          <svg viewBox="0 0 40 40">
+            <circle class="ring-circle-bg" cx="20" cy="20" r="16"/>
+            <circle class="ring-circle" cx="20" cy="20" r="16"
+              stroke="var(--accent)" stroke-dasharray="100.53" stroke-dashoffset="0"
+              style="--circumference: 100.53; --offset: 0;"/>
+            <text class="ring-value" x="20" y="22" text-anchor="middle" dominant-baseline="middle">230</text>
+          </svg>
+          <span class="ring-label">C/Python src</span>
+        </div>
+        <div class="ring-stat">
+          <svg viewBox="0 0 40 40">
+            <circle class="ring-circle-bg" cx="20" cy="20" r="16"/>
+            <circle class="ring-circle" cx="20" cy="20" r="16"
+              stroke="var(--green)" stroke-dasharray="100.53" stroke-dashoffset="20"
+              style="--circumference: 100.53; --offset: 20;"/>
+            <text class="ring-value" x="20" y="22" text-anchor="middle" dominant-baseline="middle">60+</text>
+          </svg>
+          <span class="ring-label">Reports</span>
+        </div>
+        <div class="ring-stat">
+          <svg viewBox="0 0 40 40">
+            <circle class="ring-circle-bg" cx="20" cy="20" r="16"/>
+            <circle class="ring-circle" cx="20" cy="20" r="16"
+              stroke="var(--orange)" stroke-dasharray="100.53" stroke-dashoffset="40"
+              style="--circumference: 100.53; --offset: 40;"/>
+            <text class="ring-value" x="20" y="22" text-anchor="middle" dominant-baseline="middle">15</text>
+          </svg>
+          <span class="ring-label">CVEs Tested</span>
+        </div>
+        <div class="ring-stat">
+          <svg viewBox="0 0 40 40">
+            <circle class="ring-circle-bg" cx="20" cy="20" r="16"/>
+            <circle class="ring-circle" cx="20" cy="20" r="16"
+              stroke="var(--pink)" stroke-dasharray="100.53" stroke-dashoffset="50"
+              style="--circumference: 100.53; --offset: 50;"/>
+            <text class="ring-value" x="20" y="22" text-anchor="middle" dominant-baseline="middle">6</text>
+          </svg>
+          <span class="ring-label">Vulns Found</span>
+        </div>
+        <div class="ring-stat">
+          <svg viewBox="0 0 40 40">
+            <circle class="ring-circle-bg" cx="20" cy="20" r="16"/>
+            <circle class="ring-circle" cx="20" cy="20" r="16"
+              stroke="var(--accent2)" stroke-dasharray="100.53" stroke-dashoffset="70"
+              style="--circumference: 100.53; --offset: 70;"/>
+            <text class="ring-value" x="20" y="22" text-anchor="middle" dominant-baseline="middle">2</text>
+          </svg>
+          <span class="ring-label">APK Agents</span>
+        </div>
+        <div class="ring-stat">
+          <svg viewBox="0 0 40 40">
+            <circle class="ring-circle-bg" cx="20" cy="20" r="16"/>
+            <circle class="ring-circle" cx="20" cy="20" r="16"
+              stroke="var(--yellow)" stroke-dasharray="100.53" stroke-dashoffset="30"
+              style="--circumference: 100.53; --offset: 30;"/>
+            <text class="ring-value" x="20" y="22" text-anchor="middle" dominant-baseline="middle">10K+</text>
+          </svg>
+          <span class="ring-label">SELinux Rules</span>
+        </div>
+      </div>
+    </div>
+    <div class="drill-down" id="drill-inventory">
+      <div class="drill-content">
+        <h4>Source File Breakdown (src/)</h4>
+        <table class="drill-table">
+          <tr><th>Category</th><th>Count</th><th>Key Files</th></tr>
+          <tr><td>Binder exploits</td><td>~20</td><td>binder_uaf*.c, binder_fuzz*.c, binder_slab*.c, binder_get_service*.c</td></tr>
+          <tr><td>Mali GPU</td><td>~30</td><td>mali_exploit*.c (×16), mali_fuzz*.c (×5), mali_race*.c, mali_probe*.c</td></tr>
+          <tr><td>ION memory</td><td>~18</td><td>ion_exploit*.c, ion_fuzz*.c, ion_uaf*.c, ion_race*.c, ion_slab_probe.c</td></tr>
+          <tr><td>CVE PoCs</td><td>~25</td><td>cve_2019_2215*.c (×12), towelroot*.c (×11), dirtycow*.c, futex*.c</td></tr>
+          <tr><td>BlueBorne</td><td>~6</td><td>bluborne_*.py (×5), bluborne_l2cap.c, bluborne_pwn.c</td></tr>
+          <tr><td>BPF spray</td><td>~8</td><td>bpf_reclaim*.c (×5), bpf_filter_race.c, bpf_mass_spray.c</td></tr>
+          <tr><td>SELinux analysis</td><td>~12</td><td>selinux_deep_analysis*.py (×4), sepolicy_analyze*.py (×3), avtab_*.c/py</td></tr>
+          <tr><td>DM/modem</td><td>~10</td><td>dm_*.py (×5), at_*.py (×4), odin_proto.py</td></tr>
+          <tr><td>Network</td><td>~6</td><td>dnsproxyd_probe*.c (×4), icmp_fuzz.c, netlink_fuzz.c</td></tr>
+          <tr><td>Misc probes</td><td>~25</td><td>priv_probe*.c, dev_probe.c, kernel_surface_probe.c, samsung_deep_probe.c</td></tr>
+          <tr><td>Analysis tools</td><td>~20</td><td>analyze_*.py, extract_*.py, find_*.py, decode_*.py, match_symbols.py</td></tr>
+        </table>
+        <div class="sub-section">
+          <h4>Findings Reports (findings/)</h4>
+          <p>60+ files spanning ION, binder, Mali, BlueBorne, SELinux, DRParser, modem, SysDump, OTP, download mode, EUB, EDL cable, and more. Key reports: <code>final-report.md</code>, <code>bluetooth-bluborne-audit.md</code>, <code>ion-driver-source-audit.md</code>, <code>selinux-policy-analysis.md</code>, <code>deep-attack-surface-session12.md</code>.</p>
+        </div>
+        <div class="sub-section">
+          <h4>Work Directory (work/)</h4>
+          <ul>
+            <li><code>work/privesc_apk/</code> — APK agent source (CommandReceiver, DeepProbeService, AndroidManifest)</li>
+            <li><code>work/firmware/</code> — boot.img, vmlinux variants, SELinux policy binaries, TIMA logs</li>
+            <li><code>work/recon/</code> — 30+ device enumeration dumps</li>
+            <li><code>work/logs/</code> — 40+ fuzzing logs and crash artifacts</li>
+            <li><code>work/sysdump/</code> — SysDump app analysis + diagnostic logs</li>
+            <li><code>work/drparser*/</code> — 3 directories of decompiled DRParser output</li>
+            <li><code>work/smartcomroot/</code> — SmartcomRoot APK + analysis</li>
+            <li><code>work/keystrings/</code> — Extracted + decrypted keystring data</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 🔶 UNACCOUNTED WORK / LOOSE ENDS — NEW SECTION ===== -->
+  <div class="section" id="sec-loose-ends">
+    <div class="section-title" style="color: var(--orange);">
+      <span style="opacity:0.5">▸</span>
+      ⚠ Unaccounted Work &amp; Loose Ends
+    </div>
+    <p style="font-size: 0.8rem; color: var(--text-dim); margin-bottom: 1.2rem; line-height: 1.6;">
+      Research trails that were started but lack proper documentation, synthesis, or clear conclusions.
+      These represent potential <strong>missed opportunities</strong> or <strong>hidden findings</strong> worth revisiting.
+    </p>
+
+    <!-- Undocumented source files -->
+    <div class="loose-end-card expandable" onclick="toggle('drill-le-src')">
+      <h4>
+        <span class="expand-icon">▸</span>
+        📄 Undocumented Source Files
+        <span class="le-count">80+ files</span>
+        <span class="expand-hint">click to drill in</span>
+      </h4>
+      <p>Source files in src/ with no corresponding entry in findings/ or STATUS.md. Tests were run but results never documented.</p>
+    </div>
+    <div class="drill-down" id="drill-le-src">
+      <div class="drill-content">
+        <h4>Race Condition Exploits (No Writeup)</h4>
+        <div class="file-list">
+          <span class="file-tag">ntty_race.c</span>
+          <span class="file-tag">splice_tty_race.c</span>
+          <span class="file-tag">inotify_race.c</span>
+          <span class="file-tag">inotify_rename_race.c</span>
+          <span class="file-tag">mmap_ioctl_race.c</span>
+        </div>
+        <h4 style="margin-top:0.8rem">Privilege Escalation PoCs (No Analysis)</h4>
+        <div class="file-list">
+          <span class="file-tag">perf_root.c</span>
+          <span class="file-tag">perf_debug.c</span>
+          <span class="file-tag">keyring_root.c</span>
+          <span class="file-tag">ping_root.c</span>
+          <span class="file-tag">pipe_root.c</span>
+          <span class="file-tag">multi_root.c</span>
+          <span class="file-tag">direct_root.c</span>
+          <span class="file-tag">seq_root.c</span>
+          <span class="file-tag">iov_root.c</span>
+          <span class="file-tag">pipe_uaf_exploit.c</span>
+        </div>
+        <h4 style="margin-top:0.8rem">Heap/Slab Primitives (No Exploitation Writeup)</h4>
+        <div class="file-list">
+          <span class="file-tag">heap_primitives.c</span>
+          <span class="file-tag">slab_probe.c</span>
+          <span class="file-tag">slab_hunt.c</span>
+          <span class="file-tag">slab_readv_test.c</span>
+          <span class="file-tag">reclaim_test.c</span>
+          <span class="file-tag">physmap_test.c</span>
+          <span class="file-tag">xattr_reclaim_test.c</span>
+          <span class="file-tag">xctx_slab.c</span>
+          <span class="file-tag">k256_leak_confirm.c</span>
+          <span class="file-tag">k256_spray_finder.c</span>
+          <span class="file-tag">k64_object_audit.c</span>
+        </div>
+        <h4 style="margin-top:0.8rem">Hardware-Specific Probes (No Findings)</h4>
+        <div class="file-list">
+          <span class="file-tag">alarm_rtc_probe.c</span>
+          <span class="file-tag">alarm_fuzz.c</span>
+          <span class="file-tag">jdwp_probe.c</span>
+          <span class="file-tag">mobicore_probe.c</span>
+          <span class="file-tag">probe-devnodes.c</span>
+          <span class="file-tag">dev_probe.c</span>
+          <span class="file-tag">kernel_surface_probe.c</span>
+          <span class="file-tag">kernel_addr_leak.c</span>
+        </div>
+        <h4 style="margin-top:0.8rem">Network Fuzzers (Minimal Doc)</h4>
+        <div class="file-list">
+          <span class="file-tag">icmp_fuzz.c</span>
+          <span class="file-tag">netlink_fuzz.c</span>
+          <span class="file-tag">socket_probe.c</span>
+          <span class="file-tag">socket_scan.c</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Raw recon data -->
+    <div class="loose-end-card expandable" onclick="toggle('drill-le-recon')">
+      <h4>
+        <span class="expand-icon">▸</span>
+        🗂️ Raw Recon Data (Never Synthesized)
+        <span class="le-count">30+ files</span>
+        <span class="expand-hint">click to drill in</span>
+      </h4>
+      <p>Device dumps in work/recon/ that were collected but never threat-modeled or synthesized into findings.</p>
+    </div>
+    <div class="drill-down" id="drill-le-recon">
+      <div class="drill-content">
+        <h4>Recon Dumps (work/recon/)</h4>
+        <ul>
+          <li><code>all_props.txt</code> — Full Android property dump (no threat modeling)</li>
+          <li><code>all_providers.txt</code> — Content provider enumeration (thin analysis)</li>
+          <li><code>exported_noauth_services.txt</code> — Exported services without auth (no exploitation attempts)</li>
+          <li><code>init_*.txt</code> (5 files) — Init scripts extracted but minimal analysis</li>
+          <li><code>service_list*.txt</code> (2 versions) — Which is authoritative?</li>
+          <li><code>unix_sockets.txt</code> — Socket enumeration (fuzzing scattered)</li>
+          <li><code>dumpstate_app_native.txt</code> + <code>.gz</code> — Compressed system dump, never analyzed</li>
+        </ul>
+        <div class="sub-section">
+          <h4>Data Directory (data/)</h4>
+          <ul>
+            <li><code>events.jsonl</code> — Event log, no parsing or analysis</li>
+            <li><code>adv-env.img</code> — Boot environment image, no extraction notes</li>
+            <li><code>sboot.bin</code> — Samsung bootloader binary (string analysis done, deeper RE incomplete)</li>
+            <li><code>param.bin</code> — Parameter block, no forensic analysis</li>
+            <li><code>sm-t377a.pit</code> — PIT partition table (parsed but minimal findings)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fuzzing logs -->
+    <div class="loose-end-card expandable" onclick="toggle('drill-le-logs')">
+      <h4>
+        <span class="expand-icon">▸</span>
+        📋 Orphaned Fuzzing Logs
+        <span class="le-count">40+ files</span>
+        <span class="expand-hint">click to drill in</span>
+      </h4>
+      <p>Fuzzing logs in work/logs/ that aren't linked to any findings report. May contain uncaptured crash data.</p>
+    </div>
+    <div class="drill-down" id="drill-le-logs">
+      <div class="drill-content">
+        <h4>Crash Artifacts</h4>
+        <ul>
+          <li><code>crash_artifacts/20260223_013727/</code> — 10 files from a crash session. Only ION/binder crashes mentioned in findings. Others?</li>
+        </ul>
+        <h4 style="margin-top:0.8rem">Kernel Logs</h4>
+        <ul>
+          <li><code>dmesg_*.txt</code> (6 versions) — Different timestamps, unclear which used for final report</li>
+          <li><code>anr_traces_binder_dead.txt</code> — ANR traces from binder DoS, no writeup linking them</li>
+        </ul>
+        <h4 style="margin-top:0.8rem">DM Protocol Fuzz Logs</h4>
+        <ul>
+          <li><code>dm_fuzz_logs/</code> — 6 dated DM protocol fuzzing logs with NO DM attack surface writeup</li>
+          <li>Only AT command-level findings documented, deeper DIAG protocol work not synthesized</li>
+        </ul>
+        <h4 style="margin-top:0.8rem">Other Logs</h4>
+        <ul>
+          <li><code>ashmem_rerun_10k.log</code> — 100K+ ashmem ops, results not in any finding</li>
+          <li><code>binder_*.log</code> (multiple) — 72K+ ops claimed but actual log analysis missing</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SysDump diagnostics -->
+    <div class="loose-end-card expandable" onclick="toggle('drill-le-sysdump')">
+      <h4>
+        <span class="expand-icon">▸</span>
+        🔬 SysDump Diagnostic Data (Unanalyzed)
+        <span class="le-count">25+ files</span>
+        <span class="expand-hint">click to drill in</span>
+      </h4>
+      <p>Raw diagnostic captures from SysDump (*#9900#) including BT snoop, CP logs, radio traces, and security audit logs — none analyzed for security implications.</p>
+    </div>
+    <div class="drill-down" id="drill-le-sysdump">
+      <div class="drill-content">
+        <h4>Binary Captures (Never Parsed)</h4>
+        <ul>
+          <li><code>btsnoop_fresh.cfa</code> — Bluetooth HCI snoop capture. Could reveal BT stack behavior for BlueBorne targeting</li>
+          <li><code>cplog_*.bin</code> (2 versions) — CP/modem binary logs. May contain Shannon baseband debug data</li>
+          <li><code>tima_debug_log.bin</code>, <code>tima_rkp_log.bin</code> — TIMA integrity logs in binary format</li>
+        </ul>
+        <h4 style="margin-top:0.8rem">Text Logs</h4>
+        <ul>
+          <li><code>avc_msg_*.log</code> (3 versions) — SELinux audit logs. NOT analyzed for policy breach patterns</li>
+          <li><code>radio_*.log</code> (3 versions) — Modem traces. Minimal radio-specific findings</li>
+          <li><code>sec_log*.log</code> (4 versions, 2MB total) — Samsung security logs. NO analysis</li>
+          <li><code>recovery_kernel.log</code> — Recovery mode kernel log. Purpose unclear</li>
+        </ul>
+        <h4 style="margin-top:0.8rem">Potential Value</h4>
+        <p>The <code>btsnoop_fresh.cfa</code> file could be especially valuable for BlueBorne — it may reveal L2CAP negotiation patterns, MTU sizes, and configuration flow on this specific device stack.</p>
+      </div>
+    </div>
+
+    <!-- Incomplete investigations -->
+    <div class="loose-end-card expandable" onclick="toggle('drill-le-investigations')">
+      <h4>
+        <span class="expand-icon">▸</span>
+        🔍 Incomplete Investigations
+        <span class="le-count">5 trails</span>
+        <span class="expand-hint">click to drill in</span>
+      </h4>
+      <p>Research areas where initial RE was done but exploitation/synthesis was never completed.</p>
+    </div>
+    <div class="drill-down" id="drill-le-investigations">
+      <div class="drill-content">
+        <h4>1. DRParser Keystring Exploitation</h4>
+        <ul>
+          <li>RSA private keys extracted from APK assets — encryption is reversible</li>
+          <li>Keystrings decrypted: <code>work/keystrings/ATT_keystrings_decrypted.xml</code></li>
+          <li>Can load custom keystrings from <code>/sdcard/keystrings_EFS.xml</code></li>
+          <li><strong>Gap</strong>: No PoC for keystring injection. What keystrings trigger privileged actions?</li>
+        </ul>
+        <h4 style="margin-top:0.8rem">2. SmartcomRoot Deep Analysis</h4>
+        <ul>
+          <li>APK + ODEX extracted to <code>work/smartcomroot/</code></li>
+          <li>Factory service (UID 1000) with 15 callable methods</li>
+          <li>Features disabled (iptables/tcpdump need root) — but is the disablement bypassable?</li>
+          <li><strong>Gap</strong>: OAT directory never analyzed. Only surface-level limitations documented</li>
+        </ul>
+        <h4 style="margin-top:0.8rem">3. DM Protocol Deep RE</h4>
+        <ul>
+          <li>180 AT commands documented via AT+CLAC</li>
+          <li>6 DM fuzz log files collected but never synthesized</li>
+          <li>diagexe proxies USB↔modem — has SYS_ADMIN but SELinux-jailed</li>
+          <li><strong>Gap</strong>: No DIAG binary protocol analysis. Only AT text commands explored</li>
+        </ul>
+        <h4 style="margin-top:0.8rem">4. Firmware Binary Analysis</h4>
+        <ul>
+          <li>3 vmlinux variants in <code>work/firmware/</code> — which is authoritative?</li>
+          <li><code>selinux_policy.bin</code> vs <code>live_sepolicy</code> — diff never documented</li>
+          <li><code>file_contexts</code> — unusual labels never analyzed</li>
+          <li><strong>Gap</strong>: TIMA architecture + integrity checking bypass potential not assessed</li>
+        </ul>
+        <h4 style="margin-top:0.8rem">5. Collected APKs (work/apks/)</h4>
+        <ul>
+          <li>7 APKs collected (Magisk, Hijacker, RuckyDucky, SuperSU, c-Sploit, others)</li>
+          <li>Only service-level analysis in findings — no static analysis or capability assessment</li>
+          <li><code>wssyncmldm.apk</code> in repo root — purpose unknown, never scanned</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Root directory binaries -->
+    <div class="loose-end-card expandable" onclick="toggle('drill-le-bins')">
+      <h4>
+        <span class="expand-icon">▸</span>
+        ⚙️ Orphaned Root Binaries
+        <span class="le-count">15 binaries</span>
+        <span class="expand-hint">click to drill in</span>
+      </h4>
+      <p>Compiled binaries in the repository root with no documentation of their test results.</p>
+    </div>
+    <div class="drill-down" id="drill-le-bins">
+      <div class="drill-content">
+        <h4>Binaries With Source (results undocumented)</h4>
+        <div class="file-list" style="gap: 6px;">
+          <span class="file-tag">alarm_rtc_probe</span>
+          <span class="file-tag">binder_files_race</span>
+          <span class="file-tag">dirtycow_probe</span>
+          <span class="file-tag">dirtycow_probe2</span>
+          <span class="file-tag">dnsproxyd_probe4</span>
+          <span class="file-tag">futex_probe</span>
+          <span class="file-tag">mali_alias_toctou</span>
+          <span class="file-tag">timerfd_race_exploit</span>
+          <span class="file-tag">timerfd_clock_race</span>
+          <span class="file-tag">xattr_spray</span>
+        </div>
+        <h4 style="margin-top:0.8rem">Towelroot Iterations (7 variants)</h4>
+        <div class="file-list" style="gap: 6px;">
+          <span class="file-tag">towelroot5</span>
+          <span class="file-tag">towelroot6</span>
+          <span class="file-tag">towelroot7</span>
+          <span class="file-tag">towelroot8</span>
+          <span class="file-tag">towelroot9</span>
+          <span class="file-tag">towelroot10</span>
+          <span class="file-tag">towelroot11</span>
+        </div>
+        <p style="margin-top: 0.6rem;">All towelroot variants target CVE-2014-3153 (futex) which is confirmed <span class="tag tag-red">PATCHED</span>. Samsung blanket-patched requeue_pi — EINVAL on all calls. These 7 iterations were likely parameter/offset variations that all failed identically.</p>
+        <h4 style="margin-top:0.8rem">Unknown APK</h4>
+        <ul>
+          <li><code>wssyncmldm.apk</code> — SyncML Device Management APK. Never scanned or analyzed. May relate to carrier OTA provisioning.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Multi-session overlap -->
+    <div class="loose-end-card expandable" onclick="toggle('drill-le-sessions')">
+      <h4>
+        <span class="expand-icon">▸</span>
+        🔀 Multi-Session Investigation Overlap
+        <span class="le-count">4 sessions</span>
+        <span class="expand-hint">click to drill in</span>
+      </h4>
+      <p>Sessions 10-14 have overlapping scopes with unclear final state. Some recommendations never followed up.</p>
+    </div>
+    <div class="drill-down" id="drill-le-sessions">
+      <div class="drill-content">
+        <table class="drill-table">
+          <tr><th>Session</th><th>Reports</th><th>Gap</th></tr>
+          <tr>
+            <td>10 (a-h)</td>
+            <td>4 reports with overlapping scope: comprehensive-recon, deep-recon, dm-port-recon, smartcomroot-at-commands</td>
+            <td>Unclear final recommendations — which supersedes which?</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>deep-attack-surface-session12.md</td>
+            <td>Fuzzing results not integrated into main STATUS.md attack vectors</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>session13-sysdump-otp-surface-closure.md</td>
+            <td>OTP analysis — unclear if all SysDump buttons were tested</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>session14-repo-analysis-kernel-audit.md</td>
+            <td>Recommends re-checking 30+ items — were any of them done?</td>
+          </tr>
+        </table>
+        <div class="sub-section">
+          <h4>Analysis Scripts With Unclear Output</h4>
+          <ul>
+            <li><code>selinux_deep_analysis*.py</code> (4 versions) — which produced the final policy analysis?</li>
+            <li><code>analyze_*.py</code> (6 tools) — firmware/APK/kernel analysis. Output not linked to findings</li>
+            <li><code>extract_*.py</code> (4 tools) — kernel/binary extraction. No synthesis doc</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    SM-T377A Security Research · 12 Sessions · Last updated 2026-02-27 · Generated by Copilot
+  </div>
+
+</div>
+
+<script>
+  // Toggle expandable sections
+  function toggle(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const isOpen = el.classList.contains('open');
+
+    // Find the clickable parent (expandable)
+    const allExpandables = el.previousElementSibling ?
+      [el.previousElementSibling] :
+      [];
+    // Walk up to find the expandable trigger
+    let trigger = el.previousElementSibling;
+    while (trigger && !trigger.classList.contains('expandable')) {
+      trigger = trigger.previousElementSibling;
+    }
+    // Also check parent's previous sibling for section-level drills
+    if (!trigger) {
+      let parent = el.parentElement;
+      const sectionTitle = parent.querySelector('.expandable');
+      if (sectionTitle) trigger = sectionTitle;
+    }
+
+    if (isOpen) {
+      el.classList.remove('open');
+      if (trigger) trigger.classList.remove('open');
+    } else {
+      el.classList.add('open');
+      if (trigger) trigger.classList.add('open');
+      // Smooth scroll into view after animation starts
+      setTimeout(() => {
+        el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 100);
+    }
+  }
+
+  // Intersection Observer for scroll-triggered animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.section, .stat-card, .vector-item, .loose-end-card').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Hover glow effect on cards
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(56,189,248,0.04), var(--surface) 60%)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.background = 'var(--surface)';
+    });
+  });
+
+  // Keyboard shortcut: Escape to collapse all
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.drill-down.open').forEach(el => el.classList.remove('open'));
+      document.querySelectorAll('.expandable.open').forEach(el => el.classList.remove('open'));
+    }
+  });
+</script>
+
+</body>
+</html>

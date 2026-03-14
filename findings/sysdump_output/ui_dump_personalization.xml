@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<hierarchy rotation="0">
+    <node index="0" text="" resource-id="" class="android.widget.FrameLayout"
+        package="com.sec.android.app.personalization" content-desc="" checkable="false"
+        checked="false" clickable="false" enabled="true" focusable="false" focused="false"
+        scrollable="false" long-clickable="false" password="false" selected="false"
+        bounds="[59,446][740,866]">
+        <node index="0" text="" resource-id="" class="android.widget.LinearLayout"
+            package="com.sec.android.app.personalization" content-desc="" checkable="false"
+            checked="false" clickable="false" enabled="true" focusable="false" focused="false"
+            scrollable="false" long-clickable="false" password="false" selected="false"
+            bounds="[80,467][719,845]">
+            <node index="0" text="" resource-id="android:id/title" class="android.widget.TextView"
+                package="com.sec.android.app.personalization" content-desc="" checkable="false"
+                checked="false" clickable="false" enabled="true" focusable="false" focused="false"
+                scrollable="false" long-clickable="false" password="false" selected="false"
+                bounds="[80,467][719,528]" />
+            <node index="2" text="" resource-id="" class="android.widget.FrameLayout"
+                package="com.sec.android.app.personalization" content-desc="" checkable="false"
+                checked="false" clickable="false" enabled="true" focusable="false" focused="false"
+                scrollable="false" long-clickable="false" password="false" selected="false"
+                bounds="[80,528][719,845]">
+                <node index="0" text="" resource-id="android:id/content"
+                    class="android.widget.FrameLayout" package="com.sec.android.app.personalization"
+                    content-desc="" checkable="false" checked="false" clickable="false"
+                    enabled="true" focusable="false" focused="false" scrollable="false"
+                    long-clickable="false" password="false" selected="false"
+                    bounds="[80,528][719,845]">
+                    <node index="0" text="" resource-id="" class="android.widget.RelativeLayout"
+                        package="com.sec.android.app.personalization" content-desc=""
+                        checkable="false" checked="false" clickable="false" enabled="true"
+                        focusable="false" focused="false" scrollable="false" long-clickable="false"
+                        password="false" selected="false" bounds="[80,528][719,845]">
+                        <node index="0" text=""
+                            resource-id="com.sec.android.app.personalization:id/perso_unlock_entry_panel"
+                            class="android.widget.LinearLayout"
+                            package="com.sec.android.app.personalization" content-desc=""
+                            checkable="false" checked="false" clickable="false" enabled="true"
+                            focusable="false" focused="false" scrollable="false"
+                            long-clickable="false" password="false" selected="false"
+                            bounds="[229,528][569,845]">
+                            <node index="0" text="Network Lock"
+                                resource-id="com.sec.android.app.personalization:id/perso_unlock_title"
+                                class="android.widget.TextView"
+                                package="com.sec.android.app.personalization" content-desc=""
+                                checkable="false" checked="false" clickable="false" enabled="true"
+                                focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[229,528][377,561]" />
+                            <node index="1" text="Enter Network Lock Control Key"
+                                resource-id="com.sec.android.app.personalization:id/perso_unlock_label"
+                                class="android.widget.TextView"
+                                package="com.sec.android.app.personalization" content-desc=""
+                                checkable="false" checked="false" clickable="false" enabled="true"
+                                focusable="false" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[229,612][569,645]" />
+                            <node NAF="true" index="2" text=""
+                                resource-id="com.sec.android.app.personalization:id/perso_unlock_control_key_entry"
+                                class="android.widget.EditText"
+                                package="com.sec.android.app.personalization" content-desc=""
+                                checkable="false" checked="false" clickable="true" enabled="true"
+                                focusable="true" focused="true" scrollable="false"
+                                long-clickable="true" password="true" selected="false"
+                                bounds="[229,653][569,713]" />
+                            <node index="3" text="OK"
+                                resource-id="com.sec.android.app.personalization:id/perso_unlock_button"
+                                class="android.widget.Button"
+                                package="com.sec.android.app.personalization" content-desc=""
+                                checkable="false" checked="false" clickable="true" enabled="true"
+                                focusable="true" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[229,713][429,777]" />
+                            <node index="4" text="Dismiss"
+                                resource-id="com.sec.android.app.personalization:id/perso_unlock_button_dismiss"
+                                class="android.widget.Button"
+                                package="com.sec.android.app.personalization" content-desc=""
+                                checkable="false" checked="false" clickable="true" enabled="true"
+                                focusable="true" focused="false" scrollable="false"
+                                long-clickable="false" password="false" selected="false"
+                                bounds="[229,781][429,845]" />
+                        </node>
+                    </node>
+                </node>
+            </node>
+        </node>
+    </node>
+</hierarchy>

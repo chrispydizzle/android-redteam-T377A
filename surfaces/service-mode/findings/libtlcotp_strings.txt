@@ -1,0 +1,1845 @@
+
+Strings v2.54 - Search for ANSI and Unicode strings in binary images.
+Copyright (C) 1999-2021 Mark Russinovich
+Sysinternals - www.sysinternals.com
+
+ELF
+/system/bin/linker
+Android
+GNU
+__snprintf_chk
+LIBC
+libc.so
+libtlcotp.so
+__cxa_finalize
+dladdr
+libdl.so
+__cxa_atexit
+__register_atfork
+_ZNK16IClientOtpServer22getInterfaceDescriptorEv
+_ZN16IClientOtpServer10descriptorE
+_ZN7android2spI16IClientOtpServerED2Ev
+_ZNK7android7RefBase9decStrongEPKv
+_ZN7android2spI16IClientOtpServerED1Ev
+_ZN7android6ParcelC1Ev
+_ZN7android6Parcel19writeInterfaceTokenERKNS_8String16E
+_ZN7android6Parcel10writeInt32Ei
+_ZN7android6Parcel5writeEPKvj
+_ZNK7android6Parcel9readInt32EPi
+__android_log_print
+_ZNK7android6Parcel4readEPvj
+_ZN7android6ParcelD1Ev
+_ZN16IClientOtpServerC2Ev
+_ZN7android10IInterfaceC2Ev
+_ZN16IClientOtpServer11asInterfaceERKN7android2spINS0_7IBinderEEE
+_ZNK7android7RefBase9incStrongEPKv
+_Znwj
+_ZN7android7RefBaseC2Ev
+_ZN7android9BpRefBaseC2ERKNS_2spINS_7IBinderEEE
+_ZTT17BpClientOtpServer
+_ZTV17BpClientOtpServer
+_ZN16IClientOtpServerC1Ev
+_ZTT16IClientOtpServer
+_ZTV16IClientOtpServer
+__aeabi_memcpy
+LIBC_PRIVATE
+_ZN7android10IInterfaceD2Ev
+__aeabi_memset
+_ZN7android7RefBaseD2Ev
+__gnu_Unwind_Find_exidx
+_ZdlPv
+_ZN16IClientOtpServerD2Ev
+_ZN7android9BpRefBaseD2Ev
+_ZTVN7android11BpInterfaceI16IClientOtpServerEE
+_ZTTN7android11BpInterfaceI16IClientOtpServerEE
+_ZN16IClientOtpServerD1Ev
+_ZTv0_n12_N16IClientOtpServerD1Ev
+_ZN16IClientOtpServerD0Ev
+_ZTv0_n12_N16IClientOtpServerD0Ev
+_Z35convert_certificate_error_to_stringi
+memset
+strcpy
+__stack_chk_fail
+__stack_chk_guard
+_Z28otp_generate_otp_certificatePc
+generateServiceKey
+getServiceKeyPath
+_Z26otp_check_otp_cert_presentv
+__errno
+stat
+strerror
+_Z12otp_shutdownv
+_Z14create_otp_dirv
+mkdir
+abort
+_Z19remove_file_genericPKc
+fprintf
+remove
+_Z22read_from_file_genericPKcPcPj
+fopen
+fseek
+ftell
+fread
+ferror
+fclose
+_Z21write_to_file_genericPKcPKhj
+fwrite
+_Z13get_file_pathPKcPc
+__sprintf_chk
+strlcat
+stderr
+_Z13write_to_filePKcS0_j
+_Z21remove_tokendata_filePKc
+_Z16otp_delete_tokenPKc
+_ZN7android2spINS_15IServiceManagerEED2Ev
+_ZN7android2spINS_15IServiceManagerEED1Ev
+_ZN7android2spINS_7IBinderEED2Ev
+_ZN7android2spINS_7IBinderEED1Ev
+_ZN7android2spINS_15IServiceManagerEEaSERKS2_
+_ZN7android2spINS_7IBinderEEaSERKS2_
+_Z23decrypt_otp_certificatePc
+_ZN7android21defaultServiceManagerEv
+_ZN7android8String16C1EPKc
+_ZN7android8String16D1Ev
+__cxa_guard_acquire
+__cxa_guard_release
+__aeabi_atexit
+malloc
+free
+_Z8otp_initv
+open
+lseek
+__read_chk
+close
+_Z16otp_create_tokenPKcjPKhjjyjjS0_S2_jiS2_jS2_jS2_jjjPhjS0_S3_jS3_jj
+strlen
+__memcpy_chk
+__strcpy_chk
+__strlen_chk
+_Z16otp_generate_otpPKcjyS0_S0_S0_jPc
+_Z20otp_set_db_hmac_dataPKcii
+__strcat_chk
+_Z20otp_get_db_hmac_dataPci
+memcpy
+_Z19otp_get_derived_keyPKciPKhiiiPh
+_Z19otp_get_crypto_hmacPKciPKhiPh
+_Z10otp_unwrapPKcPhPj
+_Z23otp_get_otp_certificatePhPj
+_Z26otp_dskpp_get_client_noncePhPjPKc
+_Z33otp_dskpp_get_authentication_dataPhPjS_S0_PKcS2_S2_S2_S_jjjj
+_Z23get_client_hello_paramsPhPjS_S0_jPKcS2_S2_S2_S_jjjj
+_ZN7android9BpRefBase10onFirstRefEv
+_ZN7android9BpRefBase15onLastStrongRefEPKv
+_ZN7android9BpRefBase20onIncStrongAttemptedEjPKv
+_ZTv0_n16_N7android9BpRefBase10onFirstRefEv
+_ZTv0_n20_N7android9BpRefBase15onLastStrongRefEPKv
+_ZTv0_n24_N7android9BpRefBase20onIncStrongAttemptedEjPKv
+_ZN7android7RefBase13onLastWeakRefEPKv
+__cxa_pure_virtual
+_ZN7android7RefBase10onFirstRefEv
+_ZN7android7RefBase15onLastStrongRefEPKv
+_ZN7android7RefBase20onIncStrongAttemptedEjPKv
+print_version_CSTORAGE_SKM_LIB
+drk_dir
+symm_key_path
+generateServiceKeyEx
+sync
+verifyServiceKey
+access
+strncpy
+getRootPK
+checkAuthKey
+readKeyUID
+time
+localtime_r
+snprintf
+__system_property_get
+strncmp
+read
+opendir
+readdir
+closedir
+strcmp
+unlink
+strdup
+strtok_r
+strcat
+rewind
+chmod
+chown
+getuid
+write
+strchr
+socket
+connect
+send
+recv
+mcOpenDevice
+mcMallocWsm
+mcCloseDevice
+mcOpenSession
+mcCloseSession
+mcNotify
+mcWaitNotification
+__bss_start
+_end
+_edata
+liblog.so
+libcutils.so
+libbinder.so
+libutils.so
+libcrypto.so
+libMcClient.so
+libc++.so
+libm.so
+ !A
+}t yY
+(QP]9
+{eN
+/9hph
+-bj-
+yYx
+}1'
+Kj(
+%NaCE
+yYYY
+I|D$hyD F
+I F
+JyD
+hzD
+HxD
+hpG
+hpG
+h!FR
+ 2JyDzD4
+ 0JyDzD-
+F(F
+!F(F
+"F(FIF
+*FLi
+  JyDzD#
+JyDzD
+JyDzD
+F9F
+`0F
+JyDzD
+F0F
+I#`
+yD"P
+JzD
+ F8
+h.JzD
+(h!FP
+!h1
+D!F
+*h1FR
+~D6h(F
+D?h
+I,7(`
+ yDzDo`
++h!FS
+&h6
+2h!FR
+%` F
+I FyD
+I{D
+hyD
+"`<3
+Jc`zD
+0(`
+!)D
+X<3
+JyDzD
+L<Y!
+00`
+!1D
+X\3
+H9X,10F@
+L<Y!
+!~D6h(F@"3h
+5I(FyDM
+2I(FyDF
+.I(FyD<
++I(FyD
+)I(F\$yD
+&I(FyD&
+%I(FyD"
+$I(FyD
+#I(FyD
+"I(FyD
+!I(FyD
+ I(FyD
+I(FyD
+I(FyD
+I(FyD
+I(FyD]$
+KyDzD
+ F1h
+F}D-h
+ 4J+h4O#
+4K~D{D1FzD
+p*K"
+ {D!
+ zD1F#F
+ 1FzD
+AFO
+r8F
+1FzD
+ #F
+ 1F
+JzD#F
+JCFzD
+J#FyDzD
+ "N
+"J#K~D{D1FzD
+HxD
+,h(h
+J#F
+1FzD
+ (`
+$(h
+I3F
+ yDzD
+I#F
+ yDzD
+KyDzD{D
+J|DzD!F
+ !FzD
+ !FzD
+JyDzD
+K}D
+)FzD
+ {D
+ )F
+#zD
+ )FzD
+F+M
+F+J
+F+K}D
+)FzD
+ {D
+'I FyD
+%J)F
+#zD
+)FO
+J3F
+%zD
+J3FzD
+F F
+!2F#F8F
+J)F
+ zD
+% F
+ |D
+zD!F{D
+I(FyD
+ !F
+&zD
+!2F+F8F
+F!FZ
+&zD
+&zD
+F~D6h
+F3h
+!@F
+!@" F
+0J9F
+ zD
+.K@F
+!{D
+ 9F
+#zDO
+$I@" FyD
+"I@" FyD
+AF@" F
+I@" FyD
+J#FyDzD
+EtFB
+JKFyDzD
+HF5h
+F|D$h
+F}D
+!#h
+F8F@"
+)J)F
+ zD
+'J)F
+ zD
+0F9F
+!J)F3F
+ zD
+I8FyD
+ )F
+&zD
+!BF;FHF
+F)FZ
+&zD
+JzD
+0F!h
+M!L
+F|D$h
+!~DO
+b#h8F
+J1F
+ zD
+(F9F
+J1F+F
+ zD
+ 1F
+#zD
+ 1FzD
+$(F!h
+J K}D{D)FzD
+K{D
+ )FZ$zD
+ )F
+$zD
+ zD#F
+ )FzD
+ )FzD
+I#F
+ yDzD
++h!FS
+!h1
+D!F
+%` F8
+|D$h
+J#h
+ yDzD{D
+F8h
+K{D
+!F(F
+I(F
+ yD
+*F FAF
+G!F8F
+(F|D
+D@F
+I@F
+JyD
+hzD
+JyDzD
+#yDO
+xICFxJ
+ yDzD
+vNCF
+ ~D
+D1F
+!8F
+!BF;F
+ bFD
+bK{D
+ZF!F
+ 1FzD
+#YI
+ YJO
+yDzD
+ 1FzD
+ 1FzD>
+PJ[F1F
+ zD
+MJ1F
+ zD
+PFA
+ 1FzD
+AJ1F
+QHF
+ 7JyDzD[F
+0I[F0J
+ yDzD
+$H/h
+JS#yDS&zD
+DzDQF{D
+&`B
+``1F}H
+`xD
+FQF
+ zD+F
+wJQF
+ zD
+"(F
+"(F
+F1F2F(F
+ QF[FzD
+iJQF[F
+ zD
+ZFB
+ QFzD
+`(F
+)FHF
+QIyD
+2F(FQF
+)F@F
+DPF
+@IPF@JyD
+hzD
+h!F
+h;F
+ 7JyDzD
+#5I
+ 5J
+&yDzD
+>{^
+ 1I
+D1J
+ yDzD
+ .JyDzD
+ -J3FyDzD
+ &J
+#yD
+&zD
+hyD
+RF8F
+9FXF
+D@F
+0'yD
+hzD
+!@"
+'=FyD
+FzDZ$
+&S#yD
+%zDS$
+DzDQF{D
+ QFzD
+&8`yDzD
+#yDzD;`
+0Fy`
+"XF
+F1FXFB
+8b5
+zbO
+!8cPF
+Xzc
+DzDYF
+o<P
+PIF
+0"FA
+eE_
+1xD
+!@"PF
+PFC
+!@"XF
+R F
+ FF
+0@+
+4@" F
+ FH
+ YFzD
+V)@*
+!@"XF
+XF=
+!@"PF
+PF?
+ YFzD
+@"PF
+PF8
+bXF
+XFIF"FA
+!@"HF
+HF;
+PFIF"FA
+gIFzD
+$IF;j
+ zD
+JIF
+ zD
+JIF{k
+ zD
+JIF
+ zD
+jIF;k
+JzD
+JIF{j
+ zD
+jIFzD
+JIF
+ zD
+ UEIF
+TzD
+JIF
+ zD
+JIF+F
+ zD
+JIF #
+ zD
+J[FIF
+ zD
+@!XF
+FIF
+ zD
+3IFzD
+ #hIFzD*
+J+FzD
+JIF
+ zD
+JIF
+ zD
+JIF
+ zD
+JIF
+ zD
+9IFzD
+yDzD
+DzDIF
+JIF
+ zD
+JIF
+ zD
+ IF
+FzD
+0FQF
+ IF#FzD
+IPFyD
+ IF
+#zD
+JIF[F
+ zD
+!F"F(F
+!ZF+F
+ zD
+JIF
+[FzD
+ }JyDzD
+#{I
+ {J
+$yDzD
+ xJ
+DzDIF
+ IFzD&
+sJIF
+ zD
+pJIF
+ #FzD
+$0F
+fIfJyDzD
+eIfJyDzD#F
+$cI
+ cJ#FyDzD
+ZI#FZJ
+ yDzD
+hyD6i
+JF F
+!F0F
+HF|D
+D@F
+I@F
+JyD
+hzD
+!@"
+JIF
+ zD{D
+ IFO
+ IFO
+JS#yDO
+"@F
+F9F@FB
+,@YFO
+QF@"
+*x2
+)FO
+8FYF
+ICF
+ yDzD
+IXFyD
+#yDO
+IKF
+ yDzD
+MAFBFPF}D
+!JFSF
+ zD
+J)F
+J)F
+ zD
+$$)F
+{JzD
+zJ)F
+ zD
+wJ)F
+ zD
+tJ)F
+ zD
+qJ)F
+ zD
+4)FzD
+!F3F
+ )FzD
+#`I
+ `JO
+yDzD
+ )FzD
+ )FzD;
+pFC
+ OJ
+#}DzD)F
+JJ)F
+ zD
+GJ)F
+ zD
+0$8FYF
+ )FzDCF
+6ICF6J
+ yDzD
+F|D$h
+KzD{DyD
+1FPF
+(F9h
+IyD
+*F9F
+O0F
+1F@F
+{LAF|D F
+wI FwJyD
+hzD
+nIyD
+ mJZ'yDzD
+ eJyDzD
+ _J
+'yDzD
+[IyD
+[IyD
+YI;FYJ
+ yDzD
+'aB
+YFJFB
+h!F
+h+F
+ EJyDzD
+#CI
+ CJ
+'yDzD
+ @J
+DzDYF
+/{'
+ YFzD
+<J;FYF
+(HF
+ YFzD;F
+' F
++I;F+J
+ yDzD
+F|D$h
+KyD{D
+FAF
+I2hyD
+*F1F
+N@F
+G~DAFXF
+LYF|D F
+I F
+JyD
+hzD
+!@"
+JzD
+JZ$yDzD
+JyDzD
+yIyD
+xIyDxN
+wJ[F~D
+ zD1F
+XFIF
+mJ1F#F
+ zD
+jIHFyD
+gJ1F
+ zD
+!FPFO
+\J1F[F
+ zD
+!F"FHF
+!ZFKF
+h)F
+h;F
+ 1FzD
+#EI
+ EJ
+$yDzD
+ 1FzD
+<{<
+?J1F#F
+ zD
+<J1F
+ #FzD
+!FPFO
+$(F
+-I#F-J
+ yDzD
+$HF
+ ~D6h
+KzD{DyD
+IyD
+BF FYF
+G!FXF
+@F|D
+NYF~D0F
+I0F
+JyD
+hzD
+!@F@"
+JZ%yDzD
+JyDzD
+%F5
+%yDzD
+8FAF
+I+F
+ yDzD
+I@FyD
+#yD
+%zD
+I[F
+ yDzD
+)F*F@F
+!ZFCF(F
+ yDzD
+l@D
+"XF
+F9FXFB
+!@"XF
+XFRFB
+d4#F'
+QFzD
+pJQF
+ zD
+nJQF
+ zD
+kJQF
+ zD
+hJQF
+ zD
+eJ+FQF
+ zDA
+ cYQFzD
+ QF
+'zD
+hTJ
+YFzD
+ YF;FzD
+ YFzD
+5{=
+JJYF+F
+ zD
+GJYF;F
+ zD
+ 3iYFzD
+9FHFO
+% F
+%@F
+ ~D6h
+KzD{DyD
+IyD
+BF FYF
+G!FXF
+@F|D
+NYF~D0F
+I0F
+JyD
+hzD
+!@F@"
+JZ%yDzD
+JyDzD
+%F$
+%yDzD
+8FAF
+I+F
+ yDzD
+I@FyD
+#yD
+%zD
+I[F
+ yDzD
+)F*F@F
+!ZFCF(F
+ yDzD
+l@D
+"XF
+F9FXFB
+!@"8F
+8FRFB
+#rJ
+`QFzD[F
+oJQF
+ zD
+lJQF
+ zD
+iJ+FQF
+ zDA
+fJQFcY
+ zD
+ QFzD
+ QF
+'zD
+hVJ
+YFzD
+ YF;FzD
+ YFzD
+5{=
+LJYF+F
+ zD
+IJYF;F
+ zD
+ 3iYFzD
+9FHFO
+% F
+7I+F7J
+ yDzD
+%@F
+FqK
+FqI
+FzD
+ {D
+# F
+!F@F
+eI0hyD
+i(F
+*F F1F
+!F8F
+(F\M
+}D)h
+WN9F~D0F
+TI0FTJyD
+hzD
+RJzD
+ QJZ$yDzD
+ HJS#yDS$zD
+ (`
+Ri`XF
+h)F
+F3F
+ 6JyDzD
+#4I
+ 4J
+$yDzD
+ 1J
+DzDYF
+.JYF#F
+ zD
++JYF#F
+ zD
+PFZF
+I#F
+ yDzD
+F9M
+F|D$h
+ 7J
+#h&F}DA
+)F4KzD{D
+ .J
+$yDzD
+*J)F
+ zD
+$JzD
+$JzD
+JzD#F
+JzD
+ )FzD
+HIF:FxD
+ yDzD;h
+J#FyDzD
+ {D
+#0F
+D1F
+ F)h
+IyD
+"F0F)F
+G1FHF
+tMIF}D(F
+pI(FpJyD
+hzD
+ lJZ&lKyDzD{D
+ gJ
+&gKyDzD{D
+^IS&^J
+ ^K
+yDzD{D
+! "PF
+F9FPFB
+ LOMJ
+DAF
+;FzD
+IIyD
+h)F
+ AF;FzD
+ ?J@K
+&yDzD{D
+ AF;FzD
+&{.
+AFzD
+0AF1J
+;FzD
+AF.J
+ zD;F
+ (J(KyDzD{D
+04zDyD
+ {D
+# F
+hyD
+iPF
+RF F
+!F8F
+PF|D
+DPF
+IPF
+JyD
+hzD
+KyDzD{D
+KyDzD{D
+KyDzD{D
+IS&
+yDzD{D
+! "PF
+FIFPFB
+!@"HF
+FAFHFB
+!@"@F
+F1F@FB
+r0F
+F)F0FB
+0+FD
+J~D
+1FzD
++FzD1F
+1FzD+F
++FuJ
+ zD
+1FrJ+FT
++FnJ
+1FzD
+01FjJ
++FzD
+ 1F
+D+F
+ dJzD
+1FaJ+F
+ zD
+WJ1F
+ +FzD
+ SIO
+RJSKyDzD{D
+ 1F+FzD
+1FzD2
+ @J
+h1FzD
+1F+F
+:JzD
+1F8J+F
+ zD
+ 4J
+1FzD+F
+KyDzD{D
+F#N
+F#J
+F~D
+F}D1FzD+F
+J1F+F
+ zD
+1FzD+F
+yDzD{D
+F{D
+IXX
+0 `
+!!D
+,1a`
+ F8
+0H-
+0H-
+;0C
+70C
+30C
+/0C
+;@D
+;0C
+;0C
+;@D
+;0C
+3@D
+30C
+30C
+3 B
+00C
+/0C
+7@D
+30C
+70C
+0H-
+0H-
+^/K
+^?K
+b?K
+^?K
+^?K
+^?K
+00K
+4 K
+00K
+p K
+p0K
+p0K
+p0K
+p0K
+p0K
+p K
+p0K
+p0K
+00K
+00K
+00K
+l0K
+l0K
+l K
+ 0K
+ 0K
+#Eg
+vT2
+@ b
+VUUUh}
+0H-
+30C
+;0C
+70C
+7@D
+70C
+40C
+30C
+40C
+7 B
+40C
+70C
+70C
+7 B
+70C
+;0C
+70C
+;0C
+*,0
+r F
+F!#
+IIk
+ " F
+" F
+" F
+GFo
+B F
+B F
+(F1F
+(F"F
+JyD
+q(F"F
+2h F)F
+JyD
+q F
+:l:
+h)F
+)F@h
+JyD
+ pG
+FaF
+F(F
+`)F0F
+(F1F
+d*F
+hF!F
+F(F
+"i(FO
+(Fo
+(FIF
+d*F
+ e8F
+JyD
+jFO
+1(F
+ a(F
+mmF
+F(F
+(F!F
+JyD
+H{D
+#DbF
+KxD
+2"`@"``
+F0h
+h0F
+0h)F
+h0F
+G `
+F h
+h F
+ h)F2F
+i F
+%Bk F
+G(Fp
+F0h
+FBi0F
+0h)F
+i0F
+F8h
+FBi8F
+8h1F*FCF
+i8F
+hJj!F
+Gah
+CpG-
+IzD
+,dp
+ldp
+qDPp
+IzD
+"p(O
+CpG-
+IzD
+Fp(
+qEPO
+qEPO
+qEPO
+qDP
+IzD
+!Bk F
+ ho
+i F
+ Fo
+JyD
+0F)F
+F hO
+h F
+ F)F
+HyD
+L@X!D
+rFcF
+Fbh^h
+(F)FP
+7CO
+F0N
+*~D
+(J)NzDV
+u9D
+!(F
+IzD
+IzD
+%F}
+'Dl
+1a)
+#xD
+rllllllllllllllllllllllllllllllllllllllllllllllll
+DpG
+"(.4:@FLRX^djnrvz~
+IxD
+IxD
+IxD
+IxD
+IxD}
+IxDy
+IxDu
+IxDq
+IxDm
+IxDi
+IxDe
+IxDa
+{H|IxD]
+wHxIxDY
+sHtIxDU
+oHpIxDQ
+kHlIxDM
+xDG
+xDA
+xD;
+xD5
+xD/
+xD)
+xD#
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+IxD
+{H|IxD
+wHxIxD
+sHtIxD
+oHpIxD
+kHlIxD
+gHhIxD
+cHdIxD
+_H`IxD
+[H\IxD
+WHXIxD
+SHTIxD
+OHPIxD
+KHLIxD
+GHHIxD
+CHDIxD}
+otpdb
+uint8_t get_client_hello_params(uint8_t*, uint32_t*, uint8_t*, uint32_t*, uint32_t, const char*, const char*, const char*, const char*, uint8_t*, uint32_t, uint32_t, uint32_t, uint32_t)
+int8_t otp_delete_token(const char*)
+int8_t otp_get_derived_key(const char*, int, const unsigned char*, int, int, int, unsigned char*)
+int8_t otp_get_db_hmac_data(char*, int)
+int8_t otp_generate_otp_certificate(char*)
+int8_t otp_shutdown()
+int8_t otp_init()
+int write_to_file_generic(const char*, const uint8_t*, size_t)
+int8_t otp_get_crypto_hmac(const char*, int, const unsigned char*, int, unsigned char*)
+int8_t otp_check_otp_cert_present()
+int8_t otp_create_token(const char*, uint32_t, const unsigned char*, uint32_t, uint32_t, uint64_t, uint32_t, uint32_t, const char*, const unsigned char*, uint32_t, int, const unsigned char*, uint32_t, const unsigned char*, uint32_t, const unsigned char*, uint32_t, uint32_t, uint32_t, uint8_t*, uint32_t, const char*, uint8_t*, uint32_t, uint8_t*, uint32_t, uint32_t)
+int decrypt_otp_certificate(char*)
+int8_t otp_set_db_hmac_data(const char*, int, int)
+int remove_file_generic(const char*)
+int8_t otp_dskpp_get_authentication_data(uint8_t*, uint32_t*, uint8_t*, uint32_t*, const char*, const char*, const char*, const char*, uint8_t*, uint32_t, uint32_t, uint32_t, uint32_t)
+int8_t otp_generate_otp(const char*, uint32_t, uint64_t, const char*, const char*, const char*, uint32_t, char*)
+int8_t otp_unwrap(const char*, uint8_t*, uint32_t*)
+int convert_certificate_error_to_string(int)
+int read_from_file_generic(const char*, char*, uint32_t*)
+int8_t otp_dskpp_get_client_nonce(uint8_t*, uint32_t*, const char*)
+int8_t otp_get_otp_certificate(uint8_t*, uint32_t*)
+TLC_OTP
+Invalid input pointers (NULL)!
+Invalid msgLen (0)!
+remote()->transact(COMMUNICATE, data, &reply) failed, ret=0x%x
+reply.readInt32() returns an error!
+Invalid reply length!:%d
+reply.read() communicate : returns an error-%d
+IClientOtpServer::IClientOtpServer()
+BpClientOtpServer::BpClientOtpServer()
+IClientOtpServer::~IClientOtpServer()
+NO_ERROR
+UNSUPPORTED_CMD
+WRONG_DATA
+PLATFORM_INTERNAL_ERROR
+SHA256_ERROR
+HMAC_ERROR
+SFS_READ_ERROR
+WRONG_RSA_CERT
+WRONG_PRIV_KEY
+NO_KEY_ERROR
+WRITE_KEY_ERROR
+READ_KEY_ERROR
+WRITE_SYMM_KEY_ERROR
+INSTALL_SYMM_KEY_ERROR
+NOT_IMPLEMENTED
+UNKNOWN_ERROR
+%s Error: %s
+otp_generate_otp_certificate--%s
+OTP
+generateServiceKey result = %d internal result = %d
+generateServiceKey failed : result = %d
+getServiceKeyPath result = %d internal result = %d
+getServiceKeyPath failed : result = %d
+OTP KEY FILE PATH : %s
+otp_generate_otp_certificate return  = %d 
+otp_check_otp_cert_present--%s
+/data/otp/OtpCertificate
+OTP_CERTIFICATE_FILE not found. error = %d : %s 
+/data/otp/OtpPrivateKey
+otp_check_otp_cert_present return  = %d 
+OTP_PRIVATE_KEY_FILE not found. error = %d : %s 
+otp_shutdown--%s
+create_otp_dir :: ENTER
+/data/otp
+create_otp_dir :: Creating Directory
+create_otp_dir :: EXIT
+create_otp_dir :: Directory already exists
+%s ENTER: file: %s
+mc_otp::remove_file_generic | remove FAILED [ret=%d]
+mc_otp::remove_file_generic | Successful
+%s ENTER: file_path: %s 
+read_from_file_generic :: could not open the file. FAILED [ret=%d]
+read_from_file_generic :: ftell returned negative. FAILED [sz=%d]
+read_from_file_generic: File size [sz=%d]
+read_from_file_generic :: read byte: %d
+%s ENTER: file: %s content_size: %d
+write_to_file :: could not open the file. FAILED
+write_to_file | file operation failed, result = %d
+mc_otp::write_to_file | Successful ret = %d
+mc_otp::get_file_path | ENTER
+mc_otp::get_file_path | token_id int to string conversion FAILED [ret=%d]
+.otp
+mc_otp::get_file_path | filePath = %s
+mc_otp::get_file_path | Successful ret = %d
+write_to_file :: Enter
+write_to_file :: Calling create_otp_dir
+write_to_file :: get_file_path FAILED [ret=%d]
+mc_otp::remove_tokendata_file | ENTER
+mc_otp::remove_tokendata_file | get_file_path FAILED [ret=%d]
+mc_otp::remove_tokendata_file | remove FAILED [ret=%d]
+mc_otp::remove_tokendata_file | Successful
+delete_token--%s
+OTP not initialized ,TIMA Boot measurement check Failed
+otp_delete_account:: TLC_OTP_NULL_POINTER
+otp_delete_account:: remove_tokendata_file CALL [ret=%d]
+otp_delete_account:: FAILED
+otp_delete_account:: SUCCESSFUL
+otp_delete_token : Value returning from otp_init result =  %d
+decrypt_otp_certificate--%s %s
+decrypt_otp_certificate - malloc failed
+decrypt_otp_certificate :: could not open the file. FAILED [ret=%d]
+decrypt_otp_certificate :: ftell returned negative. FAILED [sz=%d]
+decrypt_otp_certificate :: OTP CERT FILE SIZE [sz=%d]
+decrypt_otp_certificate :: otp_server not present
+decrypt_otp_certificate :: tlc_otp_communication failed: result = 0x%08x
+decrypt_otp_certificate :: tlc_otp_communication is completed
+decrypt_otp_certificate :: failed: result = %d
+decrypt_otp_certificate :: tz result received: %d
+decrypt_otp_certificate :: writing certificate to file
+decrypt_otp_certificate :: writing otp_certificate_file failed: result = 0x%08x
+decrypt_otp_certificate :: writing private key to file
+decrypt_otp_certificate :: writing otp_private_key_file failed: result = 0x%08x
+decrypt_otp_certificate :: RETURN: result = %d
+otp_init::malloc failed result = 0x%08x
+otp_init--%s
+/system/tima_measurement_info
+tlc_otp_readMsr_file Tima measurements file handle--%d
+tlc_otp_readMsr_file : Measurement info file missing
+tlc_otp_readMsr_file Tima measurements file length--%d
+tlc_otp_readMsr_file :tima_measurement_info too big for INIT buffer: %d
+tlc_otp_readMsr_file : Cannot read file into memory: 
+otp_init :: otp_server not present
+otp_init tlc_otp_communicate failed: result = 0x%08x
+OTP initialization Success ,TIMA Boot measurement check Sucess
+OTP initialization failed ,TIMA Boot measurement check Failed
+otp_init completed result =  %d
+otp_init : Measurement info file Read failed - Error : %d
+otp_create_token--%s
+otp_create_token ERROR shared_secret_len exceeds 1024 limit
+otp_create_token-- Resync = TRUE
+otp_create_token--Resync = FALSE
+otp_create_account Adding encryption info
+otp_create_account Adding PBE info
+otp_create_account Adding encryption_key info
+otp_create_token token_id = --%s
+otp_create_token oath_protocol = --%d
+otp_create_token shared_secret_len = --%d
+otp_create_token hash_algo = --%d
+otp_create_token encryption_algo = --%d
+otp_create_token otp_param = --%llu
+otp_create_token otp_length = --%d
+otp_create_token otp_encoding = --%d
+otp_create_token | OTP Certificate Data
+otp_create_token | DSKPP Data
+otp_create_token msg_hash len = --%d
+otp_create_token msg_hash = --%s
+otp_create_token msg_hash len should be --%d
+otp_create_token server_id = --%s
+otp_create_token server_id len = --%d
+otp_create_token K_PROV len = --%d
+otp_create_token MAC_len = --%d
+otp_create_token encryption_key = --%s
+otp_create_token encryption_key_len = --%d
+otp_create_token encryption_iv_len = --%d
+otp_create_token Iteration_count = --%d
+otp_create_token Password_len = --%d
+otp_create_token Password_salt_len = --%d
+otp_create_token ocra_suite = --%s
+otp_create_token time_drift = --%d
+otp_create_token flags = --%d
+otp_create_token - sending CMD_OTP_CREATE_TOKEN
+otp_create_token - structure size = %d
+otp_create_token (RESYNC) :: get_file_path FAILED [ret=%d]
+otp_create_token (RESYNC) :: could not open the file. FAILED [ret=%d]
+otp_create_token (RESYNC) :: ftell returned negative. FAILED [sz=%d]
+otp_create_token (RESYNC)  read %d bytes from file
+otp_create_token (RESYNC) wrappedFile size --%d
+otp_create_token :: otp_server not present
+otp_create_token tlc_otp_communicate failed: resultt = 0x%08x
+otp_create_token :: tlc_otp_communication is completed
+otp_create_token create_token failed: result = %d
+otp_create_token encrypted data len = %d
+otp_create_token create_token Succesful: %d.
+otp_create_token  write_to_file failed, result = %d
+otp_create_token write_to_file Succesful, result = %d.
+otp_create_token :  exit label result =  %d
+otp_create_token tlc_otp_close is completed. result =  %d
+otp_generate_otp--%s
+Allocation Error
+otp_generate_otp::malloc failed result = 0x%08x
+otp_generate_otp :: get_file_path FAILED [ret=%d]
+otp_generate_otp :: could not open the file. FAILED [ret=%d]
+otp_generate_otp :: ftell returned negative. FAILED [sz=%d]
+otp_generate_otp read %d bytes from file
+otp_generate_otp token_id --%s
+otp_generate_otp oath_protocol --%d
+otp_generate_otp current_time --%llu
+otp_generate_otp is_signature --%d
+otp_generate_otp challenge --%s
+otp_generate_otp pin --%s
+otp_generate_otp session --%s
+otp_generate_otp wrappedFile size --%d
+otp_generate_otp :: otp_server not present
+otp_generate_otp tlc_otp_communicate failed: resultt = 0x%08x
+otp_generate_otp :: tlc_otp_communication is completed
+otp_generate_otp generate_otp failed: result = %d
+otp_generate_otp generate_otp Succesful: %d.
+otp_generate_otp encrypted data len = %d
+otp_generate_otp update counter | start
+otp_generate_otp  write_to_file failed, result = %d
+otp_generate_otp tlc_otp_close is completed. result = %d.
+otp_set_db_hmac_data--%s
+otp_set_db_hmac_data - malloc failed
+_key
+_hmac
+otp_set_db_hmac_data - filename --%s
+otp_set_db_hmac_data :: otp_server not present
+otp_set_db_hmac_data - tlc_otp_communication failed: result = 0x%08x
+otp_set_db_hmac_data :: tlc_otp_communication is completed
+otp_set_db_hmac_data failed: result = %d
+otp_set_db_hmac_data - tz result: %d.
+otp_set_db_hmac_data - write_to_file failed, result = %d
+otp_set_db_hmac_data - EXIT [result =  %d]
+otp_get_db_hmac_data--%s
+otp_get_db_hmac_data - filename --%s
+otp_get_db_hmac_data :: get_file_path FAILED [ret=%d]
+otp_get_db_hmac_data :: could not open the file. FAILED [ret=%d]
+otp_get_db_hmac_data :: ftell returned negative. FAILED [sz=%d]
+otp_get_db_hmac_data :: otp_server not present
+otp_get_db_hmac_data - tlc_otp_communication failed: resultt = 0x%08x
+otp_get_db_hmac_data - tlc_otp_communication is completed
+otp_get_db_hmac_data failed: result = %d
+otp_get_db_hmac_data - tz result: %d.
+otp_get_db_hmac_data - EXIT [result =  %d]
+otp_get_derived_key--%s
+otp_get_derived_key::Allocation Error
+otp_get_derived_key :: get_file_path FAILED [ret=%d]
+otp_get_derived_key :: could not open the file. FAILED [ret=%d]
+otp_get_derived_key :: ftell returned negative. FAILED [sz=%d]
+otp_get_derived_key:: read %d bytes from file
+otp_get_derived_key | out - token_id = --%s
+otp_get_derived_key | out - type = --%d
+otp_get_derived_key | out - salt_len = --%d
+otp_get_derived_key | out - iteration_count = --%d
+otp_get_derived_key | out - derived_key_len = --%d
+otp_get_derived_key | out - wrapped data = --%s
+otp_get_derived_key | out - wrapped data size = --%d
+otp_get_derived_key :: otp_server not present
+otp_get_derived_key-- [QCOM_send_command ret = %d, OTP_GET_CRYPTO_DERIVED_KEY ret = %d]
+otp_get_derived_key - tlc_otp_communication failed: resultt = 0x%08x
+otp_get_derived_key - tlc_otp_communication is completed
+otp_get_derived_key failed: result = %d
+otp_get_derived_key - tz result: %d.
+otp_get_derived_key | output buffer size = --%d
+otp_get_crypto_hmac--%s
+otp_get_crypto_hmac::Allocation Error
+otp_get_crypto_hmac :: get_file_path FAILED [ret=%d]
+otp_get_crypto_hmac :: could not open the file. FAILED [ret=%d]
+otp_get_crypto_hmac :: ftell returned negative. FAILED [sz=%d]
+otp_get_crypto_hmac:: read %d bytes from file
+otp_get_crypto_hmac token_id --%s
+otp_get_crypto_hmac type --%d
+otp_get_crypto_hmac size --%d
+otp_get_crypto_hmac- sending OTP_GET_CRYPTO_HMAC
+otp_get_crypto_hmac :: otp_server not present
+otp_get_crypto_hmac-- MCORE_send_command ret = %d, OTP_GET_CRYPTO_HMAC ret = %d]
+otp_get_crypto_hmac - tlc_otp_communication failed: resultt = 0x%08x
+otp_get_crypto_hmac - tlc_otp_communication is completed
+otp_get_crypto_hmac failed: result = %d
+otp_get_crypto_hmac - tz result: %d.
+otp_get_derived_key | result = --%d
+otp_unwrap--%s
+otp_unwrap::malloc failed result = 0x%08x
+otp_unwrap :: otp_server not present
+otp_unwrap tlc_otp_communicate failed: resultt = 0x%08x
+otp_unwrap - tlc_otp_communication is completed
+otp_unwrap failed: result = %d
+otp_unwrap - tz result: %d.
+otp_unwrap | result = --%d
+otp_get_otp_certificate--%s
+otp_get_otp_certificate-- NULL input parameters passed 
+otp_certificates NOT present, calling generate otp certificate
+otp_certificate generation failed: ret = %d
+otp_certificate generated successfully, now decrypting
+decrypt_otp_certificate failed: ret = %d
+decrypt_otp_certificate successfully, now unwrapping
+otp_certificates already present
+otp_get_otp_certificate-- cert_size = %d 
+otp_get_otp_certificate-- ret =  %d 
+otp_dskpp_get_client_nonce--%s
+%s | OTP not initialized ,TIMA Boot measurement check Failed
+%s -- NULL input parameters passed 
+%s :: malloc failed result = 0x%08x
+%s :: RC2 - IMEI is %s
+%s :: otp_server not present
+%s ::  tlc_otp_communicate failed: resultt = 0x%08x
+%s :: tlc_otp_communication is completed
+%s :: failed: result = %d
+%s :: Generated RC length is %d
+%s :: Generated RC is %s
+%s | result = --%d
+otp_dskpp_get_authentication_data--%s
+%s -- Iteration count too small. Minimum value of iter_count should be %d
+%s :: client_id = %s
+%s :: client_pwd = %s
+%s :: server_url, url_s = %s
+%s :: Encryption key len enc_key_len, k = %d
+%s :: Encryption key enc_key, k = %s
+%s :: encryption_key_type = %d
+%s :: iter_count = %d
+%s :: prf_algo = %d
+%s :: Generated RC Lenght is %d
+%s :: Generated AD Lenght is %d
+%s :: Generated AD is %s
+get_client_hello_params--%s
+%s :: calling otp_dskpp_get_authentication_data() to generate AD & RC
+void _Unwind_Resume(_Unwind_Exception *)
+external/libcxxabi/src/Unwind/Unwind-EHABI.cpp
+_Unwind_Resume() can't return
+_Unwind_VRS_Result _Unwind_VRS_Set(_Unwind_Context *, _Unwind_VRS_RegClass, uint32_t, _Unwind_VRS_DataRepresentation, void *)
+unsupported register class
+_Unwind_VRS_Result _Unwind_VRS_Pop(_Unwind_Context *, _Unwind_VRS_RegClass, uint32_t, _Unwind_VRS_DataRepresentation)
+_Unwind_Reason_Code unwind_phase2(unw_context_t *, _Unwind_Exception *, bool)
+during phase1 personality function said it would stop here, but now in phase2 it did not stop here
+libunwind: %s %s:%d - %s
+_Unwind_VRS_Result _Unwind_VRS_Get_Internal(_Unwind_Context *, _Unwind_VRS_RegClass, uint32_t, _Unwind_VRS_DataRepresentation, void *)
+external/libcxxabi/src/Unwind/UnwindCursor.hpp
+uint32_t libunwind::Registers_arm::getRegister(int)
+external/libcxxabi/src/Unwind/Registers.hpp
+unsupported arm register
+void libunwind::Registers_arm::setRegister(int, uint32_t)
+unw_fpreg_t libunwind::Registers_arm::getFloatRegister(int)
+Unknown ARM float register
+void libunwind::Registers_arm::setFloatRegister(int, unw_fpreg_t)
+bool libunwind::UnwindCursor<libunwind::LocalAddressSpace, libunwind::Registers_arm>::getInfoFromEHABISection(pint_t, const libunwind::UnwindInfoSections &) [A = libunwind::LocalAddressSpace, R = libunwind::Registers_arm]
+unknown personality routine
+index inlined table detected but pr function requires extra words
+r10
+r11
+r12
+s10
+s11
+s12
+s13
+s14
+s15
+s16
+s17
+s18
+s19
+s20
+s21
+s22
+s23
+s24
+s25
+s26
+s27
+s28
+s29
+s30
+s31
+d10
+d11
+d12
+d13
+d14
+d15
+d16
+d17
+d18
+d19
+d20
+d21
+d22
+d23
+d24
+d25
+d26
+d27
+d28
+d29
+d30
+d31
+unknown register
+/efs/prov_data
+CSTORAGE
+================================================
+ %s, v%s, %s
+CSTORAGE_SKM_LIB
+1.0.50
+MOBICORE
+/efs/prov_data/dev_root/dev_root.dat
+/efs/prov_data/dev_root/sym_key.dat
+_kmLockAndLoadTA enter
+Loading Trustlet Application failed! Error code : %d
+_kmLockAndLoadTA leave
+Unloading Trustlet Application failed! Error code : %d
+Unlocking failed
+Unlocking failed! Error code : %d
+KeyInfo can't be NULL
+Wrong KeyInfo size: expected: %u, actual: %u
+Service name in KeyInfo is invalid
+Incorrect TID
+Unable to determine current time! Error code: %d
+Unable to get device's model name! Error code: %d.
+Unable to get device's serial number! Error code: %d.
+Haven't permission to load trustlets, sending command to daemon...
+DRK read error
+keyType must be either RSA_KEY, SYMM_KEY or EC_SK_KEY!
+Generation of Service Key failed! Error code: %d
+Wrong service name
+Unable to create directory
+fopen() FAILED! returned = %d
+fwrite() FAILED! returned = %d
+fwrite() written %d bytes to %s
+W SK SUCCESS...
+Unsupported keyType
+No access to file
+Unable to get file's stat
+Service key is not a regular file
+Unable to determine file size
+serviceName is invalid
+Output buffer is too small
+Some argument is NULL
+checkAuthKey
+keyType must be either APCS_KEY or SYMM_KEY!
+Key read error
+Verification of Service Key failed! Error code: %d
+V DRK SUCCESS...
+Unable to determine UID. Error code: %d
+DRK ReadUID SUCCESS...
+CSTORAGE
+helperKeyTypeInfo: incorrect size of buffer, len = %d
+helperKeyTypeInfo: buffer too small
+ro.product.model
+ro.product.base_model
+/efs/FactoryApp/serial_no
+ril.serialnumber
+ro.serialno
+ro.boot.serialno
+CSTORAGE
+Failed to get localtime_r
+%.2d%.2d%.2d%.2d%.2d%.2d
+Failed to get time
+SAMSUNG-
+getSerialNo: base64 string too long to fit into buffer
+delDirFile: opendir: %s
+lost+found
+%s/%s
+delDirFile: stat: %s
+delDirFile: remove: %s
+createDirsForFile: wrong argument
+createDirsForFile: mkdir %s: %s
+readFile: wrong argument
+DRK access fail
+DRK fopen fail
+Unable to determine size of file %s
+File %s too large
+read len (%d) != real len (%d)
+chmod in chmod644(): %s
+ownerSetSystem: stat failed
+ownerSetSystem: path is symbolic link!
+ownerSetSystem: chown failed
+Failed to open %s : %d
+Cannot write file (length = %zu, written = %zu)
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
+CSTORAGE
+Couldn't create socket
+/dev/socket/cs_socket/cs_socket
+Couldn't connect to the skm daemon
+Couldn't send data to the skm daemon
+Incorrect size of responce from the daemon
+cs_sock_rpc_with_data: data buffer too small
+/efs/prov_data
+:KNOX
+/efs/prov_data/knox/knox.dat
+MLDAP
+/efs/prov_data/mldap/mldap.dat
+/efs/prov_data/ru/ru.dat
+DMVT
+/efs/prov_data/dmvt/dmvt.dat
+CCM
+/efs/prov_data/ccm/ccm.dat
+TUI
+/efs/prov_data/tui/tui.dat
+SKP
+/efs/prov_data/skp/skp.dat
+OTP
+/efs/prov_data/otp/otp.dat
+VISA_PAY
+/efs/prov_data/pay/visa_pay.dat
+GOLDFISH
+/efs/prov_data/gf/gf_serv.dat
+AEXP_PAY
+/efs/prov_data/aexp_pay/aexp_pay.dat
+PLCC_PAY
+/efs/prov_data/plcc_pay/plcc_pay.dat
+KRCC_PAY
+/efs/prov_data/krcc_pay/krcc_pay.dat
+SEM
+/efs/prov_data/sem/sem.dat
+DISC_PAY
+/efs/prov_data/disc_pay/disc_pay.dat
+CNCC_PAY
+/efs/prov_data/cncc_pay/cncc_pay.dat
+JIC_PAY
+/efs/prov_data/jic_pay/jic_pay.dat
+DCM
+/efs/prov_data/dcm/dcm.dat
+MC_PAY
+/efs/prov_data/mc_pay/mc_pay.dat
+TUI_PAY
+/efs/prov_data/tui_pay/tui_pay.dat
+EUR_PAY
+/efs/prov_data/eur_pay/eur_pay.dat
+CHN_PAY
+/efs/prov_data/chn_pay/chn_pay.dat
+%s/%s/%s.dat
+CSTORAGE
+Trustlet is already loaded
+Running trustlet failed with ret = %d
+Shared buffer allocation failed with ret = %d
+Open session failed with ret = %d
+Close session failed with ret = %d
+Close device failed with ret = %d
+Some of arguments is NULL or zero
+kmSendCmdGen: TIDLen > MAX_TID_SIZE
+Trustlet isn't loaded
+kmSendCmdGen: cmd->data is too small to hold all arguments
+Allocated buffer for wrappedKey is too small! It must be at least %u bytes.
+Not enough space to store UID. Required %u bytes but allocated %u bytes.
+Buffer overflow while processing UID
+Some of arguments is NULL
+Not enough space to store PK. Required %u bytes but allocated %u bytes.
+Buffer overflow while processing GET_ROOT_PK_CMD
+mcNotify() failed! Error code: %d
+mcWaitNotification() failed! Error code: %d
+Application TA reported error code: %d
+GCC: (GNU) 4.9.x-google 20140827 (prerelease)
+GCC: (GNU) 4.8
+clang version 3.6 
+GNU
+gold 1.11
+aeabi
+ARM v7
+.shstrtab
+.interp
+.note.android.ident
+.note.gnu.build-id
+.dynsym
+.dynstr
+.gnu.hash
+.gnu.version
+.gnu.version_d
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.text
+.ARM.exidx
+.ARM.extab
+.rodata
+.data.rel.ro.local
+.fini_array
+.init_array
+.data.rel.ro
+.dynamic
+.got
+.data
+.bss
+.comment
+.note.gnu.gold-version
+.ARM.attributes
