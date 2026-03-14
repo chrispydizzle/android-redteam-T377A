@@ -76,7 +76,7 @@ These permissions were NOT originally granted. Shell escalated the camera app's 
 
 ```
 pm list users:
-  UserInfo{0:Christopher P Posada:13} running
+  UserInfo{0::13} running
   UserInfo{10:TestAuditUser:0}
 ```
 

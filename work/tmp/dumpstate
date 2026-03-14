@@ -100916,7 +100916,7 @@ User state[attributes:{id=0, currentUser=true, accessibilityEnabled=false, touch
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 DUMP OF SERVICE account:
-User UserInfo{0:Christopher P Posada:13}:
+User UserInfo{0::13}:
   Accounts: 4
     Account {name=pasada.chris@gmail.com, type=com.google}
     Account {name=eatmyshortshomeslice@gmail.com, type=com.google}
