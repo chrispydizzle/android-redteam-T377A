@@ -41,7 +41,7 @@ static void cleanup_socket(void)
 
 static void usage(const char *prog)
 {
-    fprintf(stderr, "Usage: %s --socket <path> [--shell <path>]\n", prog);
+    fprintf(stderr, "Usage: %s --socket <path> [--shell <path>] [--relay-fifo-in <path> --relay-fifo-out <path>]\n", prog);
 }
 
 static int write_all(int fd, const void *buf, size_t len)
@@ -243,7 +243,7 @@ static void reap_child(pid_t child_pid)
     }
 }
 
-static int relay_loop(int client_fd, int pty_fd)
+static int relay_loop(int client_fd, int pty_fd_in, int pty_fd_out)
 {
     unsigned char buffer[4096];
 
@@ -259,7 +259,7 @@ static int relay_loop(int client_fd, int pty_fd)
         pfds[0].fd = client_fd;
         pfds[0].events = POLLIN | POLLERR | POLLHUP;
         pfds[0].revents = 0;
-        pfds[1].fd = pty_fd;
+        pfds[1].fd = pty_fd_in;
         pfds[1].events = POLLIN | POLLERR | POLLHUP;
         pfds[1].revents = 0;
 
@@ -282,21 +282,25 @@ static int relay_loop(int client_fd, int pty_fd)
             if (nread == 0) {
                 return 0;
             }
-            if (write_all(pty_fd, buffer, (size_t)nread) < 0) {
+            if (write_all(pty_fd_out, buffer, (size_t)nread) < 0) {
                 return -1;
             }
         }
 
         if (pfds[1].revents & POLLIN) {
-            ssize_t nread = read(pty_fd, buffer, sizeof(buffer));
+            ssize_t nread = read(pty_fd_in, buffer, sizeof(buffer));
             if (nread < 0) {
-                if (errno == EINTR) {
+                if (errno == EAGAIN || errno == EWOULDBLOCK || errno == EINTR) {
                     continue;
                 }
                 return -1;
             }
             if (nread == 0) {
-                return 0;
+                /* For a non-blocking FIFO, we might get POLLIN but 0 bytes if writers left.
+                   Instead of exiting immediately, we can sleep a bit or just ignore. 
+                   But if we return 0, the session ends. Let's just avoid spinning. */
+                usleep(10000);
+                continue;
             }
             if (write_all(client_fd, buffer, (size_t)nread) < 0) {
                 return -1;
@@ -312,6 +316,15 @@ static int relay_loop(int client_fd, int pty_fd)
     }
 }
 
+static int handle_relay_session(int client_fd, int pty_fd_in, int pty_fd_out)
+{
+    static const char ok_msg[] = "OK\n";
+    if (write_all(client_fd, ok_msg, sizeof(ok_msg) - 1) < 0) {
+        return -1;
+    }
+    return relay_loop(client_fd, pty_fd_in, pty_fd_out);
+}
+
 static int handle_shell_session(int client_fd, const char *shell_path)
 {
     int master_fd = -1;
@@ -323,13 +336,13 @@ static int handle_shell_session(int client_fd, const char *shell_path)
         return -1;
     }
 
-    (void)relay_loop(client_fd, master_fd);
+    (void)relay_loop(client_fd, master_fd, master_fd);
     close(master_fd);
     reap_child(child_pid);
     return 0;
 }
 
-static int handle_client(int client_fd, const char *shell_path, int *exit_requested)
+static int handle_client(int client_fd, const char *shell_path, int relay_fd_in, int relay_fd_out, int *exit_requested)
 {
     unsigned char op = 0;
     ssize_t nread;
@@ -350,7 +363,11 @@ static int handle_client(int client_fd, const char *shell_path, int *exit_reques
         return write_all(client_fd, pong, sizeof(pong) - 1);
     }
     case 'S':
-        return handle_shell_session(client_fd, shell_path);
+        if (relay_fd_in >= 0 && relay_fd_out >= 0) {
+            return handle_relay_session(client_fd, relay_fd_in, relay_fd_out);
+        } else {
+            return handle_shell_session(client_fd, shell_path);
+        }
     case 'X':
     {
         static const char bye[] = "BYE\n";
@@ -392,6 +409,11 @@ int main(int argc, char **argv)
 {
     const char *socket_path = NULL;
     const char *shell_path = "/data/local/tmp/root_mini_shell";
+    const char *relay_fifo_in = NULL;
+    const char *relay_fifo_out = NULL;
+    const char *allocate_pty_out = NULL;
+    int relay_fd = -1;
+    int master_pty_fd = -1;
     int i;
 
     for (i = 1; i < argc; ++i) {
@@ -407,6 +429,24 @@ int main(int argc, char **argv)
                 return EXIT_FAILURE;
             }
             shell_path = argv[i];
+        } else if (strcmp(argv[i], "--relay-fifo-in") == 0) {
+            if (++i >= argc) {
+                usage(argv[0]);
+                return EXIT_FAILURE;
+            }
+            relay_fifo_in = argv[i];
+        } else if (strcmp(argv[i], "--relay-fifo-out") == 0) {
+            if (++i >= argc) {
+                usage(argv[0]);
+                return EXIT_FAILURE;
+            }
+            relay_fifo_out = argv[i];
+        } else if (strcmp(argv[i], "--allocate-pty-out") == 0) {
+            if (++i >= argc) {
+                usage(argv[0]);
+                return EXIT_FAILURE;
+            }
+            allocate_pty_out = argv[i];
         } else {
             usage(argv[0]);
             return EXIT_FAILURE;
@@ -436,6 +476,41 @@ int main(int argc, char **argv)
         return EXIT_FAILURE;
     }
 
+    /* Note: with separate FIFOs, we need to open them carefully to avoid deadlock.
+       Normally, opening a FIFO for writing blocks until there's a reader, and vice versa.
+       O_NONBLOCK helps here. */
+    int fifo_in_fd = -1;
+    int fifo_out_fd = -1;
+
+    if (relay_fifo_in != NULL && relay_fifo_out != NULL) {
+        fifo_in_fd = open(relay_fifo_in, O_RDONLY | O_NONBLOCK);
+        if (fifo_in_fd < 0) {
+            perror("relay fifo in open");
+        } else {
+            fifo_out_fd = open(relay_fifo_out, O_WRONLY | O_NONBLOCK);
+            if (fifo_out_fd < 0) {
+                perror("relay fifo out open");
+            } else {
+                /* non-blocking remains active so poll returns quickly when empty */
+            }
+        }
+    }
+
+    if (allocate_pty_out != NULL) {
+        char slave_name[128];
+        if (open_pty_master(&master_pty_fd, slave_name, sizeof(slave_name)) < 0) {
+            perror("open_pty_master");
+            return EXIT_FAILURE;
+        }
+        int log_fd = open(allocate_pty_out, O_WRONLY | O_CREAT | O_TRUNC, 0666);
+        if (log_fd >= 0) {
+            write_all(log_fd, slave_name, strlen(slave_name));
+            close(log_fd);
+        } else {
+            perror("open allocate_pty_out");
+        }
+    }
+
     while (!g_stop) {
         int client_fd;
         int exit_requested = 0;
@@ -451,8 +526,14 @@ int main(int argc, char **argv)
             break;
         }
 
-        if (handle_client(client_fd, shell_path, &exit_requested) < 0 && !g_stop) {
-            perror("client");
+        if (master_pty_fd >= 0) {
+            if (handle_client(client_fd, shell_path, master_pty_fd, master_pty_fd, &exit_requested) < 0 && !g_stop) {
+                perror("client");
+            }
+        } else {
+            if (handle_client(client_fd, shell_path, fifo_in_fd, fifo_out_fd, &exit_requested) < 0 && !g_stop) {
+                perror("client");
+            }
         }
         close(client_fd);
 

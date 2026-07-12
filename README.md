@@ -81,28 +81,6 @@ Privilege-escalation, kernel-surface, Bluetooth, and firmware research for the
 | Mali imported-JC post-submit rewrite | Negative | Live tests did not preserve the expected steering window |
 | Mali stale alias / stale native-tail writes | Negative | Signal disappeared after overlap confounds were removed |
 
-### What still looks promising
-
-| Area | Why it still matters |
-| --- | --- |
-| **Mali imported/retained consumer follow-up** | **CLOSED — disjoint pools.** ION system-heap does not share pages with Mali; 0/240 sentinel hits. Cross-process Mali reclaim (untested) remains as a possibility. |
-| **Alternate-role Bluetooth coverage** | Socket ownership is solved, but PANU -> NAP rejects host setup replay; another role/path would be needed |
-| **DM / HDLC binary protocol** | **Best remaining vector** — diagexe UID 1000 + SYS_ADMIN, completely unexplored HDLC binary protocol, AT surface only partially mapped |
-| **Accessibility UI automation** | Already working and still useful as an enabler lane |
-| **timerfd / diagexe DM protocol** | Still listed among the best remaining vectors |
-
-### Immediate next steps
-
-1. **Mali cross-process reclaim (optional):** explore whether seeded pages freed
-   from our Mali context appear in a different process's Mali allocation (system
-   service actively using GPU). If yes, this re-opens the retained-consumer lane.
-2. **DM/HDLC main line:** HDLC binary protocol to diagexe is the single most
-   attractive unexplored vector — UID 1000 + SYS_ADMIN, no SELinux block, binary
-   protocol completely untouched. Send structured HDLC frames over the DM COM port
-   and observe diagexe's response.
-3. **Parallel fallback:** accessibility automation continues as a low-risk enabler
-   stalls or proves too narrow to reach a surviving reference
-
 ### Important Bluetooth correction
 
 Earlier README-era summaries that treated BlueBorne as a straightforward remote
